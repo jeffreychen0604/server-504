@@ -29,6 +29,7 @@
     { slug:'hero-natasha', file:'hero-natasha.md', group:'HERO PROFILE', title:'Natasha', description:'Shooter combat support focused on Shooter DEF, ATK and high-star faction-wide battle damage.' },
     { slug:'hero-margaret', file:'hero-margaret.md', group:'HERO PROFILE', title:'Margaret', description:'Shooter combat hero combining Shooter HP with battle-damage scaling.' },
     { slug:'hero-rosa', file:'hero-rosa.md', group:'HERO PROFILE', title:'Rosa', description:'Shooter combat hero combining faction damage with counterattack-damage mitigation.' },
+    { slug:'hero-lan-yan-pending', file:'hero-lan-yan-pending.md', group:'HERO PROFILE · PENDING', title:'Lan Yan — Verification Pending', description:'Skills and acquisition are documented, but Fighter-vs-Shooter faction identity remains unresolved pending Server 504 evidence.' },
     { slug:'hero-skills-and-passives', file:'hero-skills-and-passives.md', group:'HEROES', title:'Hero Skills & Passives', description:'Active skills, normal attacks, progression/passive skills and exclusive talents.' },
     { slug:'hero-equipment', file:'hero-equipment.md', group:'HEROES', title:'Hero Equipment', description:'Standard equipment, Power Cores and equipment progression.' },
     { slug:'exclusive-equipment-and-hall-of-honor', file:'exclusive-equipment-and-hall-of-honor.md', group:'HEROES', title:'Exclusive Equipment & Hall of Honor', description:'Hero-specific equipment, Red Star breakthrough, swapping and Hall of Honor.' },
@@ -99,7 +100,7 @@
           <span>OPEN REFERENCE →</span>
         </a>`).join('')}
       </div>
-      <div class="wiki-research-footnote">Hero profile coverage now includes the current verified S-rarity roster except Lan Yan, whose faction data remains internally contradictory in public sources. Remaining research backlog: Lan Yan in-game verification, exact Chip Factory recipes, shops/currencies and Server 504 screenshot verification for version-sensitive numeric data.</div>
+      <div class="wiki-research-footnote">Hero profile coverage now includes every current public S-rarity entry: verified heroes have normal profiles, while Lan Yan remains a visible verification-pending profile. Remaining research backlog: exact Chip Factory recipes, shops/currencies and Server 504 screenshot verification for version-sensitive numeric data.</div>
     </section>`;
   }
 
