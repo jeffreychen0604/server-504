@@ -1,0 +1,16 @@
+name = "server-504-feedback"
+main = "src/index.js"
+compatibility_date = "2026-08-07"
+workers_dev = true
+
+[vars]
+ALLOWED_ORIGIN = "https://jeffreychen0604.github.io"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "server-504-feedback"
+database_id = "REPLACE_WITH_D1_DATABASE_ID"
+
+# Add secrets with Wrangler, never commit them:
+# npx wrangler secret put IP_HASH_SALT
+# npx wrangler secret put TURNSTILE_SECRET   # optional until Turnstile is enabled
