@@ -121,7 +121,7 @@ body[data-route="codex"] .markdown-body {
   padding-right: clamp(34px, 4vw, 62px);
 }
 
-/* Keep prose readable while allowing structural elements to span the full card. */
+/* Keep prose readable and center it inside the wider document canvas. */
 body[data-route="charter"] .markdown-body > p,
 body[data-route="codex"] .markdown-body > p,
 body[data-route="charter"] .markdown-body > ul,
@@ -130,15 +130,25 @@ body[data-route="charter"] .markdown-body > ol,
 body[data-route="codex"] .markdown-body > ol,
 body[data-route="charter"] .markdown-body > blockquote,
 body[data-route="codex"] .markdown-body > blockquote {
+  width: 100%;
   max-width: 96ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Sub-headings belong to the reading column; major sections stay full-width. */
+body[data-route="charter"] .markdown-body > h3,
+body[data-route="codex"] .markdown-body > h3 {
+  width: 100%;
+  max-width: 96ch;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 body[data-route="charter"] .markdown-body > table,
 body[data-route="codex"] .markdown-body > table,
 body[data-route="charter"] .markdown-body > h2,
 body[data-route="codex"] .markdown-body > h2,
-body[data-route="charter"] .markdown-body > h3,
-body[data-route="codex"] .markdown-body > h3,
 body[data-route="charter"] .markdown-body > hr,
 body[data-route="codex"] .markdown-body > hr {
   max-width: none;
@@ -188,6 +198,19 @@ body[data-route="codex"] .markdown-body > hr {
   body[data-route="codex"] .markdown-body {
     padding-left: 24px;
     padding-right: 22px;
+  }
+
+  body[data-route="charter"] .markdown-body > p,
+  body[data-route="codex"] .markdown-body > p,
+  body[data-route="charter"] .markdown-body > ul,
+  body[data-route="codex"] .markdown-body > ul,
+  body[data-route="charter"] .markdown-body > ol,
+  body[data-route="codex"] .markdown-body > ol,
+  body[data-route="charter"] .markdown-body > blockquote,
+  body[data-route="codex"] .markdown-body > blockquote,
+  body[data-route="charter"] .markdown-body > h3,
+  body[data-route="codex"] .markdown-body > h3 {
+    max-width: none;
   }
 }
 
