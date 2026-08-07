@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0b0e12" />
+  <meta name="robots" content="noindex,nofollow" />
+  <title>Community Inbox | Server 504</title>
+  <link rel="stylesheet" href="./assets/styles.css" />
+  <link rel="stylesheet" href="./assets/moderation.css" />
+</head>
+<body class="moderation-body">
+  <div class="noise" aria-hidden="true"></div>
+
+  <header class="moderation-topbar">
+    <a class="brand" href="./#/home" aria-label="Back to Server 504">
+      <span class="brand-mark">504</span>
+      <span class="brand-copy">
+        <strong>SERVER 504</strong>
+        <small>COMMUNITY INBOX</small>
+      </span>
+    </a>
+    <div class="moderation-top-actions">
+      <span class="moderation-private">PRIVATE MODERATION</span>
+      <a class="secondary-button moderation-home-link" href="./#/home">Back to site</a>
+    </div>
+  </header>
+
+  <main class="moderation-shell">
+    <section id="moderationLogin" class="moderation-login-card">
+      <div class="eyebrow">SERVER 504 · MODERATION</div>
+      <h1>Community Inbox</h1>
+      <p>Enter the private admin token configured on the feedback Worker. The token is kept only for this browser session.</p>
+      <form id="moderationLoginForm">
+        <label>
+          <span>Admin token</span>
+          <input id="moderationToken" type="password" autocomplete="current-password" required />
+        </label>
+        <p id="moderationLoginStatus" class="moderation-message" hidden aria-live="polite"></p>
+        <button class="primary-button" type="submit">Open inbox</button>
+      </form>
+    </section>
+
+    <section id="moderationApp" class="moderation-app" hidden>
+      <header class="moderation-hero">
+        <div>
+          <div class="eyebrow">COMMUNITY · REVIEW QUEUE</div>
+          <h1>Community Inbox</h1>
+          <p>Review suggestions submitted from the public Server 504 site and move each item through the moderation workflow.</p>
+        </div>
+        <div class="moderation-actions">
+          <button id="moderationRefresh" class="secondary-button" type="button">Refresh</button>
+          <button id="moderationLogout" class="secondary-button" type="button">Lock inbox</button>
+        </div>
+      </header>
+
+      <div id="moderationStats" class="moderation-stats"></div>
+
+      <div class="moderation-toolbar">
+        <div class="moderation-filter-group" role="group" aria-label="Filter feedback by status">
+          <button class="moderation-filter active" data-filter="pending" type="button">Pending</button>
+          <button class="moderation-filter" data-filter="accepted" type="button">Accepted</button>
+          <button class="moderation-filter" data-filter="applied" type="button">Applied</button>
+          <button class="moderation-filter" data-filter="rejected" type="button">Rejected</button>
+          <button class="moderation-filter" data-filter="spam" type="button">Spam</button>
+          <button class="moderation-filter" data-filter="all" type="button">All</button>
+        </div>
+        <span id="moderationCount" class="moderation-count"></span>
+      </div>
+
+      <p id="moderationStatus" class="moderation-message" hidden aria-live="polite"></p>
+      <div id="moderationList" class="moderation-list"></div>
+    </section>
+  </main>
+
+  <script src="./assets/feedback-config.js"></script>
+  <script src="./assets/moderation.js" defer></script>
+</body>
+</html>
