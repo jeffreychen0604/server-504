@@ -156,6 +156,138 @@
   background: linear-gradient(145deg, rgba(70, 24, 35, .72), rgba(12, 14, 20, .70));
 }
 
+/* ------------------------------------------------------------
+   Subtle Sakura layer — accent only, Sealed Isle remains primary
+   ------------------------------------------------------------ */
+
+/* Two independent petal fields moving at different speeds. */
+.sealed-atmosphere::before,
+.sealed-atmosphere::after {
+  content: "";
+  position: absolute;
+  inset: -14% -10%;
+  pointer-events: none;
+  z-index: 5;
+  opacity: .34;
+  background-repeat: no-repeat;
+  filter: drop-shadow(0 0 5px rgba(231, 145, 183, .12));
+  will-change: transform;
+}
+
+.sealed-atmosphere::before {
+  background-image:
+    radial-gradient(ellipse at center, rgba(255, 207, 221, .82) 0 37%, rgba(232, 150, 183, .54) 40% 61%, transparent 66%),
+    radial-gradient(ellipse at center, rgba(247, 190, 211, .72) 0 38%, rgba(211, 123, 163, .42) 43% 62%, transparent 67%),
+    radial-gradient(ellipse at center, rgba(255, 219, 229, .74) 0 38%, rgba(227, 139, 177, .43) 42% 61%, transparent 67%),
+    radial-gradient(ellipse at center, rgba(240, 178, 205, .62) 0 38%, rgba(205, 112, 157, .34) 42% 61%, transparent 67%),
+    radial-gradient(ellipse at center, rgba(255, 206, 220, .68) 0 38%, rgba(224, 138, 174, .38) 42% 61%, transparent 67%),
+    radial-gradient(ellipse at center, rgba(246, 194, 215, .62) 0 38%, rgba(215, 126, 166, .35) 42% 61%, transparent 67%);
+  background-size: 11px 6px, 8px 5px, 10px 6px, 7px 5px, 9px 5px, 8px 5px;
+  background-position: 8% 9%, 23% 28%, 42% 13%, 61% 37%, 78% 18%, 93% 42%;
+  animation: sakuraDriftNear 18s linear infinite;
+}
+
+.sealed-atmosphere::after {
+  opacity: .22;
+  background-image:
+    radial-gradient(ellipse at center, rgba(255, 214, 229, .72) 0 39%, rgba(224, 145, 181, .42) 43% 62%, transparent 67%),
+    radial-gradient(ellipse at center, rgba(242, 181, 208, .62) 0 39%, rgba(202, 116, 161, .34) 43% 62%, transparent 67%),
+    radial-gradient(ellipse at center, rgba(252, 208, 224, .64) 0 39%, rgba(218, 132, 171, .34) 43% 62%, transparent 67%),
+    radial-gradient(ellipse at center, rgba(245, 190, 213, .54) 0 39%, rgba(209, 124, 166, .30) 43% 62%, transparent 67%),
+    radial-gradient(ellipse at center, rgba(255, 217, 230, .62) 0 39%, rgba(225, 145, 179, .34) 43% 62%, transparent 67%);
+  background-size: 7px 4px, 6px 4px, 8px 5px, 6px 4px, 7px 4px;
+  background-position: 16% 43%, 34% 8%, 56% 26%, 73% 7%, 88% 31%;
+  animation: sakuraDriftFar 25s linear infinite;
+}
+
+@keyframes sakuraDriftNear {
+  0% { transform: translate3d(-3%, -9%, 0) rotate(-2deg); }
+  50% { transform: translate3d(2%, 13%, 0) rotate(7deg); }
+  100% { transform: translate3d(7%, 34%, 0) rotate(13deg); }
+}
+
+@keyframes sakuraDriftFar {
+  0% { transform: translate3d(3%, -12%, 0) rotate(4deg); }
+  50% { transform: translate3d(-1%, 11%, 0) rotate(-4deg); }
+  100% { transform: translate3d(-6%, 31%, 0) rotate(-9deg); }
+}
+
+/* Faint blossom branches frame the hero instead of becoming a focal point. */
+.hero-grid::before,
+.hero-grid::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  z-index: 4;
+  opacity: .18;
+  filter: blur(.15px) drop-shadow(0 0 10px rgba(218, 116, 163, .08));
+}
+
+.hero-grid::before {
+  top: -56px;
+  left: -82px;
+  width: 310px;
+  height: 210px;
+  transform: rotate(-8deg);
+  background:
+    radial-gradient(circle at 32% 27%, rgba(250, 194, 215, .88) 0 3px, transparent 4px),
+    radial-gradient(circle at 42% 38%, rgba(239, 166, 197, .78) 0 3px, transparent 4px),
+    radial-gradient(circle at 52% 22%, rgba(255, 208, 224, .76) 0 2.5px, transparent 3.5px),
+    radial-gradient(circle at 63% 47%, rgba(230, 145, 181, .68) 0 3px, transparent 4px),
+    radial-gradient(circle at 72% 31%, rgba(250, 190, 213, .74) 0 2.5px, transparent 3.5px),
+    linear-gradient(151deg, transparent 0 42%, rgba(78, 45, 51, .92) 43% 45%, transparent 46%),
+    linear-gradient(126deg, transparent 0 55%, rgba(74, 42, 49, .75) 56% 58%, transparent 59%);
+}
+
+.hero-grid::after {
+  top: -38px;
+  right: -58px;
+  width: 230px;
+  height: 160px;
+  transform: rotate(13deg) scaleX(-1);
+  opacity: .11;
+  background:
+    radial-gradient(circle at 34% 31%, rgba(248, 191, 214, .82) 0 2.6px, transparent 3.5px),
+    radial-gradient(circle at 48% 41%, rgba(233, 154, 190, .72) 0 2.8px, transparent 3.7px),
+    radial-gradient(circle at 61% 25%, rgba(255, 211, 226, .72) 0 2.4px, transparent 3.3px),
+    linear-gradient(149deg, transparent 0 43%, rgba(72, 42, 49, .82) 44% 46%, transparent 47%);
+}
+
+/* Small pink-violet accents, kept below the crimson primary hierarchy. */
+.field-terminal {
+  box-shadow:
+    var(--shadow),
+    0 0 46px rgba(166, 84, 188, .045),
+    inset 0 0 60px rgba(255,255,255,.012);
+}
+
+.home-portal-grid .portal-card {
+  border-color: rgba(211, 180, 204, .12);
+}
+
+.home-portal-grid .portal-card:hover {
+  border-color: rgba(224, 145, 183, .24);
+  box-shadow:
+    0 18px 38px rgba(0,0,0,.24),
+    0 0 28px rgba(192, 91, 159, .055);
+}
+
+/* Tiny blossom mark on the content strip. */
+.home-portal-grid .portal-card small::before {
+  content: "";
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  margin-right: 7px;
+  vertical-align: 1px;
+  border-radius: 55% 45% 55% 45%;
+  background: rgba(234, 151, 187, .72);
+  box-shadow:
+    3px 2px 0 rgba(223, 129, 172, .30),
+    -2px 3px 0 rgba(250, 190, 213, .22);
+  transform: rotate(28deg);
+}
+
 @media (max-width: 1020px) {
   .sealed-atmosphere {
     background-position: 61% center;
@@ -163,6 +295,11 @@
 
   .field-terminal::before {
     background-position: 54% 38%;
+  }
+
+  .hero-grid::after {
+    opacity: .07;
+    right: -24px;
   }
 }
 
@@ -194,12 +331,40 @@
   .home-portal-grid::before {
     background-position: 62% center;
   }
+
+  .sealed-atmosphere::before {
+    opacity: .22;
+    background-size: 8px 5px, 6px 4px, 7px 4px, 6px 4px, 7px 4px, 6px 4px;
+  }
+
+  .sealed-atmosphere::after {
+    opacity: .12;
+  }
+
+  .hero-grid::before {
+    width: 190px;
+    height: 130px;
+    left: -48px;
+    top: -28px;
+    opacity: .11;
+  }
+
+  .hero-grid::after {
+    display: none;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .sealed-atmosphere > .miasma,
   .sealed-atmosphere > .ember-field,
-  .sealed-atmosphere > .seal-sigil {
+  .sealed-atmosphere > .seal-sigil,
+  .sealed-atmosphere::before,
+  .sealed-atmosphere::after {
     animation: none !important;
+  }
+
+  .sealed-atmosphere::before,
+  .sealed-atmosphere::after {
+    transform: none !important;
   }
 }
