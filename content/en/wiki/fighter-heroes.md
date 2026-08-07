@@ -9,17 +9,17 @@ Fighter heroes belong to one side of Dark War: Survival's faction triangle. Figh
 
 | Hero | Specialty | Key value | Acquisition reference |
 | --- | --- | --- | --- |
-| Guy | Adventure / Combat | Adventure food + energy utility; strong general early account value | Radio Station, Radar fragments, first top-up |
-| Tristan | Combat | Fighter combat passive and direct damage | Elite Recruitment, Goodie Bazaar |
-| Francis | Combat | Fighter HP / durability-oriented passive | Goodie Bazaar |
-| Noah | Combat | Fighter damage plus normal-attack damage mitigation | Legend Battle Pass |
-| Catherine & Rex | Radar | Extra Radar activity / Radar reward utility | Legend Battle Pass / offers |
+| [Guy](#/wiki/hero-guy) | Adventure / Combat | Adventure food + energy utility; strong general early account value | Radio Station, Radar fragments, first top-up |
+| [Tristan](#/wiki/hero-tristan) | Combat | Fighter DEF / ATK support and high-star faction-wide battle damage | Elite Recruitment, Goodie Bazaar |
+| [Francis](#/wiki/hero-francis) | Combat | Fighter HP / durability-oriented passive | Goodie Bazaar |
+| [Noah](#/wiki/hero-noah) | Combat | Fighter damage plus normal-attack damage mitigation | Legend Battle Pass |
+| [Catherine & Rex](#/wiki/hero-catherine-and-rex) | Radar | Extra Radar activity / Radar reward utility | Legend Battle Pass / offers |
 
 ## Combat archetypes
 
 ### Tristan
 
-Community data classifies Tristan as Fighter / Combat. His kit follows the standard Active Skill + Normal Attack structure and includes a Fighter-oriented combat passive. He is useful as a straightforward formation combat hero, but exact investment priority depends on the generation of heroes available to the State.
+Community data classifies Tristan as Fighter / Combat. His faction passive improves Fighter defense and attack progression, with a high-star faction-wide battle-damage effect that can remain valuable even outside the active march.
 
 ### Francis
 
@@ -27,7 +27,7 @@ Francis is a Fighter / Combat hero whose passive is built around Fighter surviva
 
 ### Noah
 
-Noah is a later Fighter / Combat hero in the community database. His passive combines Fighter damage with reduced **normal attack damage taken** by the troop he leads as stars increase. This makes him a good example of why the Wiki should describe a hero's mechanic before assigning a tier.
+Noah's passive combines Fighter damage with reduced **normal attack damage taken** by the troop he leads as stars increase. This makes him a good example of why the Wiki describes a hero's mechanic before assigning a tier.
 
 ## Utility archetypes
 
@@ -45,7 +45,7 @@ Faction alignment matters because Fighter heroes can stack with Fighter troop re
 
 ## Verification gap
 
-**Lan Yan is deliberately excluded from the Fighter roster until Server 504 confirms the current in-game faction label.** Her public data page internally conflicts between Fighter-oriented prose/passive text and a Shooter structured faction field.
+[**Lan Yan — Verification Pending**](#/wiki/hero-lan-yan-pending) is deliberately excluded from the Fighter roster until Server 504 confirms the current in-game faction label. Her public data page internally conflicts between Fighter-oriented prose/passive text and a Shooter structured faction field.
 
 ## Sources
 
