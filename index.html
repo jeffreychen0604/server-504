@@ -123,14 +123,25 @@
         <span data-i18n="allianceOptional">Alliance / player name (optional)</span>
         <input id="contributionIdentity" maxlength="80" />
       </label>
+      <label>
+        <span>Contact (optional)</span>
+        <input id="contributionContact" maxlength="160" placeholder="Discord, email, or other contact" />
+      </label>
+      <label class="feedback-honeypot" aria-hidden="true" tabindex="-1">
+        <span>Website</span>
+        <input id="contributionWebsite" autocomplete="off" tabindex="-1" />
+      </label>
       <p class="form-note" data-i18n="githubNote">V0 stores community suggestions as GitHub Issues. Anonymous submission can be added later with the free D1 backend.</p>
+      <p id="feedbackStatus" class="feedback-status" hidden aria-live="polite"></p>
       <button class="primary-button" type="submit" data-i18n="continueGithub">Continue to GitHub</button>
     </form>
   </dialog>
 
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="./assets/feedback-config.js"></script>
   <script src="./assets/app.js" defer></script>
   <script src="./assets/pages-fancy.js" defer></script>
   <script src="./assets/header-search.js" defer></script>
+  <script src="./assets/feedback.js" defer></script>
 </body>
 </html>
