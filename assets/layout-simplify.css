@@ -1,0 +1,70 @@
+/* Navigation simplification: sidebar is the single persistent navigation surface. */
+
+/* Header is now utility-only: brand + search + language + mobile menu. */
+.desktop-nav {
+  display: none !important;
+}
+
+.topbar {
+  gap: 16px;
+}
+
+.header-actions {
+  margin-left: auto;
+}
+
+/* Hero is presentation + action, not another navigation surface. */
+.field-terminal,
+.hero-meta {
+  display: none !important;
+}
+
+.hero-grid {
+  grid-template-columns: minmax(0, 1fr) !important;
+  gap: 0 !important;
+  max-width: 780px;
+  min-height: 500px;
+}
+
+.hero-copy {
+  max-width: 740px;
+}
+
+/* Give the artwork more breathing room now that the terminal is gone. */
+.sealed-atmosphere {
+  background-position: 72% center;
+}
+
+.home-portal-grid {
+  margin-top: 32px;
+}
+
+@media (max-width: 1020px) {
+  .hero-grid {
+    max-width: 720px;
+    min-height: 470px;
+  }
+
+  .sealed-atmosphere {
+    background-position: 67% center;
+  }
+}
+
+@media (max-width: 760px) {
+  .topbar {
+    gap: 10px;
+  }
+
+  .hero-grid {
+    max-width: none;
+    min-height: 440px;
+  }
+
+  .sealed-atmosphere {
+    background-position: 70% center;
+  }
+
+  .home-portal-grid {
+    margin-top: 24px;
+  }
+}
