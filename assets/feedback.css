@@ -10,6 +10,18 @@
   border: 0 !important;
 }
 
+.feedback-turnstile {
+  min-height: 2px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: -2px 0 2px;
+}
+
+.feedback-turnstile[hidden] {
+  display: none !important;
+}
+
 .feedback-status {
   margin: -2px 0 0;
   padding: 10px 12px;
@@ -31,6 +43,13 @@
   border-color: rgba(216,72,67,.34);
   background: rgba(216,72,67,.07);
   color: #e4b3b1;
+}
+
+.feedback-status[data-state="verification"],
+.feedback-status[data-state="loading"] {
+  border-color: rgba(189,160,100,.24);
+  background: rgba(189,160,100,.055);
+  color: #d6c899;
 }
 
 .contribute-dialog button[type="submit"]:disabled {
