@@ -7,6 +7,11 @@
     { slug:'game-overview', file:'game-overview.md', group:'FOUNDATION', title:'Game Overview', description:'Core gameplay loop, publisher, platform and current-era systems.' },
     { slug:'combat-system-and-reports', file:'combat-system-and-reports.md', group:'COMBAT', title:'Combat System & Reports', description:'Troop battles, Hero Battles and how to diagnose real power gaps from combat reports.' },
     { slug:'factions-and-heroes', file:'factions-and-heroes.md', group:'HEROES', title:'Factions & Heroes', description:'Fighter, Rider and Shooter counters, hero progression and formation principles.' },
+    { slug:'hero-database', file:'hero-database.md', group:'HEROES', title:'Hero Database', description:'First-pass S-rarity roster with faction, specialty, acquisition, verification status and conflict queue.' },
+    { slug:'fighter-heroes', file:'fighter-heroes.md', group:'HEROES', title:'Fighter Heroes', description:'S-rarity Fighter combat and progression specialists with stable identity data separated from meta ranking.' },
+    { slug:'rider-heroes', file:'rider-heroes.md', group:'HEROES', title:'Rider Heroes', description:'Quinn, Corleone, Cyrus, Marcia, Katrina and Lucas with specialty and acquisition context.' },
+    { slug:'shooter-heroes', file:'shooter-heroes.md', group:'HEROES', title:'Shooter Heroes', description:'Evans, Natasha, Margaret, Megan, Darian and Rosa with combat/progression distinctions.' },
+    { slug:'hero-investment-framework', file:'hero-investment-framework.md', group:'HEROES', title:'Hero Investment Framework', description:'A replacement-cost and main-faction framework that keeps stable hero data separate from fast-changing tier meta.' },
     { slug:'hero-skills-and-passives', file:'hero-skills-and-passives.md', group:'HEROES', title:'Hero Skills & Passives', description:'Active skills, normal attacks, progression/passive skills and exclusive talents.' },
     { slug:'hero-equipment', file:'hero-equipment.md', group:'HEROES', title:'Hero Equipment', description:'Standard equipment, Power Cores and equipment progression.' },
     { slug:'exclusive-equipment-and-hall-of-honor', file:'exclusive-equipment-and-hall-of-honor.md', group:'HEROES', title:'Exclusive Equipment & Hall of Honor', description:'Hero-specific equipment, Red Star breakthrough, swapping and Hall of Honor.' },
@@ -77,7 +82,7 @@
           <span>OPEN REFERENCE →</span>
         </a>`).join('')}
       </div>
-      <div class="wiki-research-footnote">Current research backlog: individual hero database, exact Chip Factory recipes, shops/currencies and Server 504 screenshot verification for numeric Season 4 tables. Community-only values remain visibly provisional until confirmed in-game.</div>
+      <div class="wiki-research-footnote">Current research backlog: individual hero profile pages, exact Chip Factory recipes, shops/currencies and Server 504 screenshot verification for conflicting hero/season numeric data. Hero identity data is kept separate from fast-changing meta assessments.</div>
     </section>`;
   }
 
