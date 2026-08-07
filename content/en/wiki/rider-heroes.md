@@ -9,18 +9,18 @@ Rider heroes sit between Fighters and Shooters in the faction counter triangle. 
 
 | Hero | Specialty | Key value | Acquisition reference |
 | --- | --- | --- | --- |
-| Quinn | Alliance Duel | Unit training + Alliance Duel progression | Radio Station |
-| Corleone | Tech Research | Research economy and speed | Prime Recruitment, Goodie Bazaar |
-| Cyrus | Combat | Rider combat passive | Elite Recruitment, Goodie Bazaar |
-| Marcia | Combat | Rider HP + battle-damage progression | Elite Recruitment, Goodie Bazaar |
-| Katrina | Combat | Rider normal-attack damage specialization | Lucky Chest, Elite Recruitment |
-| Lucas | Combat | Rider damage + counterattack-damage mitigation | Legend Battle Pass, Elite Recruitment, offers |
+| [Quinn](#/wiki/hero-quinn) | Alliance Duel | Unit training + Alliance Duel progression | Radio Station |
+| [Corleone](#/wiki/hero-corleone) | Tech Research | Research economy and speed | Prime Recruitment, Goodie Bazaar |
+| [Cyrus](#/wiki/hero-cyrus) | Combat | Rider DEF / ATK support and high-star faction-wide battle damage | Elite Recruitment, Goodie Bazaar |
+| [Marcia](#/wiki/hero-marcia) | Combat | Rider HP + battle-damage progression | Elite Recruitment, Goodie Bazaar |
+| [Katrina](#/wiki/hero-katrina) | Combat | Rider normal-attack damage specialization | Lucky Chest, Elite Recruitment |
+| [Lucas](#/wiki/hero-lucas) | Combat | Rider damage + counterattack-damage mitigation | Legend Battle Pass, Elite Recruitment, offers |
 
 ## Progression specialists
 
 ### Quinn
 
-Quinn is a Rider hero whose third skill is an **Alliance Duel / unit training progression skill** rather than a pure faction combat passive. Community data lists resource reduction for training at base level and, at higher stars, increasing training speed and Alliance Duel points. This makes Quinn valuable to an account even when another Rider might be stronger in direct combat.
+Quinn's third skill is an **Alliance Duel / unit training progression skill** rather than a pure faction combat passive. Community data lists training-resource reduction and, at higher stars, increasing training speed and Alliance Duel points. This gives Quinn account value even when another Rider is stronger in direct combat.
 
 ### Corleone
 
@@ -30,11 +30,11 @@ Corleone is a Rider / Tech Research specialist. His progression skill reduces re
 
 ### Cyrus
 
-Cyrus is a Rider / Combat hero with a Rider-oriented passive. His public skill data follows the typical S-rarity combat structure: Active Skill, Normal Attack, faction passive and Exclusive Talent.
+Cyrus is a Rider / Combat hero with Rider DEF and ATK support. At the highest listed star breakpoint his passive also contributes Rider battle damage whether deployed or not, increasing replacement cost for a developed Cyrus.
 
 ### Marcia
 
-Marcia is a Rider / Combat hero whose public passive data focuses on Rider HP and additional Rider battle damage at higher stars.
+Marcia is a Rider / Combat hero whose public passive data focuses on Rider HP and additional Rider battle damage through star progression.
 
 ### Katrina
 
