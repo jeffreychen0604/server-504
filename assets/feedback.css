@@ -1,0 +1,39 @@
+.feedback-honeypot {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+.feedback-status {
+  margin: -2px 0 0;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(255,255,255,.025);
+  color: var(--muted);
+  font-size: .78rem;
+  line-height: 1.45;
+}
+
+.feedback-status[data-state="success"] {
+  border-color: rgba(105,200,150,.28);
+  background: rgba(105,200,150,.07);
+  color: #a9dfc1;
+}
+
+.feedback-status[data-state="error"] {
+  border-color: rgba(216,72,67,.34);
+  background: rgba(216,72,67,.07);
+  color: #e4b3b1;
+}
+
+.contribute-dialog button[type="submit"]:disabled {
+  opacity: .58;
+  cursor: wait;
+}
