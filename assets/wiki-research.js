@@ -12,6 +12,14 @@
     { slug:'rider-heroes', file:'rider-heroes.md', group:'HEROES', title:'Rider Heroes', description:'Quinn, Corleone, Cyrus, Marcia, Katrina and Lucas with specialty and acquisition context.' },
     { slug:'shooter-heroes', file:'shooter-heroes.md', group:'HEROES', title:'Shooter Heroes', description:'Evans, Natasha, Margaret, Megan, Darian and Rosa with combat/progression distinctions.' },
     { slug:'hero-investment-framework', file:'hero-investment-framework.md', group:'HEROES', title:'Hero Investment Framework', description:'A replacement-cost and main-faction framework that keeps stable hero data separate from fast-changing tier meta.' },
+    { slug:'hero-quinn', file:'hero-quinn.md', group:'HERO PROFILE', title:'Quinn', description:'Rider Alliance Duel specialist with unit-training and score-efficiency progression value.' },
+    { slug:'hero-corleone', file:'hero-corleone.md', group:'HERO PROFILE', title:'Corleone', description:'Rider Tech Research specialist focused on research economy, speed and long-cycle account value.' },
+    { slug:'hero-megan', file:'hero-megan.md', group:'HERO PROFILE', title:'Megan', description:'Shooter Construction specialist for build economy, free construction time and speed.' },
+    { slug:'hero-evans', file:'hero-evans.md', group:'HERO PROFILE', title:'Evans', description:'Shooter Vehicle Transformation specialist tied to Gear and Modified Vehicle progression.' },
+    { slug:'hero-catherine-and-rex', file:'hero-catherine-and-rex.md', group:'HERO PROFILE', title:'Catherine & Rex', description:'Fighter Radar specialist with free-task and Radar-yield account utility.' },
+    { slug:'hero-francis', file:'hero-francis.md', group:'HERO PROFILE', title:'Francis', description:'Fighter Combat hero with durability-oriented identity and an explicitly documented source-conflict note.' },
+    { slug:'hero-lucas', file:'hero-lucas.md', group:'HERO PROFILE', title:'Lucas', description:'Rider Combat hero combining faction damage with counterattack-damage mitigation.' },
+    { slug:'hero-darian', file:'hero-darian.md', group:'HERO PROFILE', title:'Darian', description:'Shooter Combat hero built around Shooter ATK and troop skill damage, with officially confirmed Exclusive Equipment.' },
     { slug:'hero-skills-and-passives', file:'hero-skills-and-passives.md', group:'HEROES', title:'Hero Skills & Passives', description:'Active skills, normal attacks, progression/passive skills and exclusive talents.' },
     { slug:'hero-equipment', file:'hero-equipment.md', group:'HEROES', title:'Hero Equipment', description:'Standard equipment, Power Cores and equipment progression.' },
     { slug:'exclusive-equipment-and-hall-of-honor', file:'exclusive-equipment-and-hall-of-honor.md', group:'HEROES', title:'Exclusive Equipment & Hall of Honor', description:'Hero-specific equipment, Red Star breakthrough, swapping and Hall of Honor.' },
@@ -82,7 +90,7 @@
           <span>OPEN REFERENCE →</span>
         </a>`).join('')}
       </div>
-      <div class="wiki-research-footnote">Current research backlog: individual hero profile pages, exact Chip Factory recipes, shops/currencies and Server 504 screenshot verification for conflicting hero/season numeric data. Hero identity data is kept separate from fast-changing meta assessments.</div>
+      <div class="wiki-research-footnote">Current research backlog: remaining individual hero profiles, exact Chip Factory recipes, shops/currencies and Server 504 screenshot verification for conflicting hero/season numeric data. Hero identity data is kept separate from fast-changing meta assessments.</div>
     </section>`;
   }
 
