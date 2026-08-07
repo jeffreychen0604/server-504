@@ -12,6 +12,13 @@
       description: 'Core gameplay loop, publisher, platform and current-era systems.'
     },
     {
+      slug: 'combat-system-and-reports',
+      file: 'combat-system-and-reports.md',
+      group: 'COMBAT',
+      title: 'Combat System & Reports',
+      description: 'Troop battles, Hero Battles and how to diagnose real power gaps from combat reports.'
+    },
+    {
       slug: 'factions-and-heroes',
       file: 'factions-and-heroes.md',
       group: 'HEROES',
@@ -19,11 +26,39 @@
       description: 'Fighter, Rider and Shooter counters, hero progression and formation principles.'
     },
     {
+      slug: 'hero-skills-and-passives',
+      file: 'hero-skills-and-passives.md',
+      group: 'HEROES',
+      title: 'Hero Skills & Passives',
+      description: 'Active skills, normal attacks, progression/passive skills and exclusive talents.'
+    },
+    {
       slug: 'hero-equipment',
       file: 'hero-equipment.md',
       group: 'HEROES',
       title: 'Hero Equipment',
-      description: 'Standard equipment, Power Cores and Exclusive Equipment progression.'
+      description: 'Standard equipment, Power Cores and equipment progression.'
+    },
+    {
+      slug: 'exclusive-equipment-and-hall-of-honor',
+      file: 'exclusive-equipment-and-hall-of-honor.md',
+      group: 'HEROES',
+      title: 'Exclusive Equipment & Hall of Honor',
+      description: 'Hero-specific equipment, Red Star breakthrough, swapping and Hall of Honor.'
+    },
+    {
+      slug: 'formations-and-unit-presets',
+      file: 'formations-and-unit-presets.md',
+      group: 'COMBAT',
+      title: 'Formations & Unit Presets',
+      description: 'Faction alignment, Recommended presets, Defense Presets and chip-aware formations.'
+    },
+    {
+      slug: 'rally-reinforcement-and-defense',
+      file: 'rally-reinforcement-and-defense.md',
+      group: 'COMBAT',
+      title: 'Rally, Reinforcement & Defense',
+      description: 'Rally Restrictions, Capital/Turret rules, reinforcement and City Gate defense.'
     },
     {
       slug: 'watchtower-and-industrial',
@@ -37,7 +72,35 @@
       file: 'apc-modified-vehicle.md',
       group: 'APC',
       title: 'APC & Modified Vehicle',
-      description: 'Vehicle progression, parts, chips, set bonuses and Tactical Modification.'
+      description: 'Vehicle progression overview: parts, chips, sets and Tactical Modification.'
+    },
+    {
+      slug: 'apc-chips',
+      file: 'apc-chips.md',
+      group: 'APC',
+      title: 'APC Chips',
+      description: 'Chip sources, faction integration, star progression and data-quality rules.'
+    },
+    {
+      slug: 'chip-factory',
+      file: 'chip-factory.md',
+      group: 'APC',
+      title: 'Chip Factory',
+      description: 'Targeted chip crafting, material types, access notes and recipe-verification plan.'
+    },
+    {
+      slug: 'apc-parts-and-sets',
+      file: 'apc-parts-and-sets.md',
+      group: 'APC',
+      title: 'APC Parts & Parts Set',
+      description: 'Six-part progression, Parts Set milestones and modern material-rule changes.'
+    },
+    {
+      slug: 'tactical-modification',
+      file: 'tactical-modification.md',
+      group: 'APC',
+      title: 'Tactical Modification',
+      description: 'Official endgame unlock routes through Modify Lv.500, parts Lv.66 or Orange chip 10★.'
     },
     {
       slug: 'events-overview',
@@ -94,7 +157,7 @@
           <span>OPEN REFERENCE →</span>
         </a>`).join('')}
       </div>
-      <div class="wiki-research-footnote">More datasets will be added progressively: individual heroes, skill tables, Watchtower/Industrial costs, APC chips, event scoring, shops/currencies and season-by-season guides.</div>
+      <div class="wiki-research-footnote">Next research batches: individual hero database, exact Chip Factory recipes from Server 504 captures, Watchtower/Industrial cost tables, Alliance Duel & Survival Preparedness scoring, event shops/currencies and deeper Season 4 mechanics.</div>
     </section>`;
   }
 
