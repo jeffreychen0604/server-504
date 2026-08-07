@@ -25,22 +25,22 @@ const contentMap = {
 
 const ui = {
   en: {
-    navWiki:'Wiki', navCharter:'Charter', navCodex:'Operations', knowledge:'Knowledge', home:'Home', gameWiki:'Game Wiki', serverCharter:'Server Charter', operationalCodex:'Operational Codex', community:'Community', contribute:'Contribute / Suggest', searchLabel:'GLOBAL SEARCH', searchTitle:'Search Server 504', communityContribution:'COMMUNITY CONTRIBUTION', sendSuggestion:'Send a suggestion', type:'Type', title:'Title', details:'Details', allianceOptional:'Alliance / player name (optional)', githubNote:'V0 stores community suggestions as GitHub Issues. Anonymous submission can be added later with the free D1 backend.', continueGithub:'Continue to GitHub', heroKicker:'DARK WAR: SURVIVAL · SERVER 504', heroLead:'A shared knowledge base for game information, server governance and practical operations.', searchKnowledge:'Search the Knowledge Base', sendSuggestionBtn:'Send a suggestion', wikiDescription:'Game knowledge and practical reference for Server 504 players. The category structure is ready; detailed game articles will be added progressively.'
+    navWiki:'Wiki', navCharter:'Charter', navCodex:'Operations', knowledge:'Knowledge', home:'Home', gameWiki:'Game Wiki', serverCharter:'Server Charter', operationalCodex:'Operational Codex', community:'Community', contribute:'Contribute / Suggest', searchLabel:'GLOBAL SEARCH', searchTitle:'Search Server 504', communityContribution:'COMMUNITY CONTRIBUTION', sendSuggestion:'Send a suggestion', type:'Type', title:'Title', details:'Details', allianceOptional:'Alliance / player name (optional)', githubNote:'V0 stores community suggestions as GitHub Issues. Anonymous submission can be added later with the free D1 backend.', continueGithub:'Continue to GitHub', heroKicker:'DARK WAR: SURVIVAL · SERVER 504', heroLead:'One shared place for Dark War: Survival knowledge, Server 504 governance and practical operations.', searchKnowledge:'Search the Knowledge Base', sendSuggestionBtn:'Send a suggestion', wikiDescription:'Game knowledge and practical reference for Server 504 players. The category structure is ready; detailed game articles will be added progressively.'
   },
   fr: {
-    navWiki:'Wiki', navCharter:'Charte', navCodex:'Opérations', knowledge:'Connaissances', home:'Accueil', gameWiki:'Wiki du jeu', serverCharter:'Charte du serveur', operationalCodex:'Codex opérationnel', community:'Communauté', contribute:'Contribuer / Suggérer', searchLabel:'RECHERCHE GLOBALE', searchTitle:'Rechercher sur Server 504', communityContribution:'CONTRIBUTION COMMUNAUTAIRE', sendSuggestion:'Envoyer une suggestion', type:'Type', title:'Titre', details:'Détails', allianceOptional:'Alliance / joueur (optionnel)', githubNote:'La V0 enregistre les suggestions dans GitHub Issues. Une soumission anonyme via D1 pourra être ajoutée plus tard.', continueGithub:'Continuer vers GitHub', heroKicker:'DARK WAR: SURVIVAL · SERVER 504', heroLead:'Une base commune pour les informations du jeu, la gouvernance du serveur et les opérations pratiques.', searchKnowledge:'Rechercher', sendSuggestionBtn:'Envoyer une suggestion', wikiDescription:'Connaissances du jeu et références pratiques pour les joueurs du Server 504.'
+    navWiki:'Wiki', navCharter:'Charte', navCodex:'Opérations', knowledge:'Connaissances', home:'Accueil', gameWiki:'Wiki du jeu', serverCharter:'Charte du serveur', operationalCodex:'Codex opérationnel', community:'Communauté', contribute:'Contribuer / Suggérer', searchLabel:'RECHERCHE GLOBALE', searchTitle:'Rechercher sur Server 504', communityContribution:'CONTRIBUTION COMMUNAUTAIRE', sendSuggestion:'Envoyer une suggestion', type:'Type', title:'Titre', details:'Détails', allianceOptional:'Alliance / joueur (optionnel)', githubNote:'La V0 enregistre les suggestions dans GitHub Issues. Une soumission anonyme via D1 pourra être ajoutée plus tard.', continueGithub:'Continuer vers GitHub', heroKicker:'DARK WAR: SURVIVAL · SERVER 504', heroLead:'Un espace commun pour les connaissances de Dark War: Survival, la gouvernance du Server 504 et les opérations pratiques.', searchKnowledge:'Rechercher', sendSuggestionBtn:'Envoyer une suggestion', wikiDescription:'Connaissances du jeu et références pratiques pour les joueurs du Server 504.'
   },
   es: {
-    navWiki:'Wiki', navCharter:'Carta', navCodex:'Operaciones', knowledge:'Conocimiento', home:'Inicio', gameWiki:'Wiki del juego', serverCharter:'Carta del servidor', operationalCodex:'Códice operativo', community:'Comunidad', contribute:'Contribuir / Sugerir', searchLabel:'BÚSQUEDA GLOBAL', searchTitle:'Buscar en Server 504', communityContribution:'CONTRIBUCIÓN COMUNITARIA', sendSuggestion:'Enviar una sugerencia', type:'Tipo', title:'Título', details:'Detalles', allianceOptional:'Alianza / jugador (opcional)', githubNote:'La V0 guarda las sugerencias como GitHub Issues. Más adelante se puede añadir envío anónimo con D1.', continueGithub:'Continuar a GitHub', heroKicker:'DARK WAR: SURVIVAL · SERVER 504', heroLead:'Una base compartida para información del juego, gobernanza del servidor y operaciones prácticas.', searchKnowledge:'Buscar', sendSuggestionBtn:'Enviar sugerencia', wikiDescription:'Conocimiento del juego y referencia práctica para jugadores del Server 504.'
+    navWiki:'Wiki', navCharter:'Carta', navCodex:'Operaciones', knowledge:'Conocimiento', home:'Inicio', gameWiki:'Wiki del juego', serverCharter:'Carta del servidor', operationalCodex:'Códice operativo', community:'Comunidad', contribute:'Contribuir / Sugerir', searchLabel:'BÚSQUEDA GLOBAL', searchTitle:'Buscar en Server 504', communityContribution:'CONTRIBUCIÓN COMUNITARIA', sendSuggestion:'Enviar una sugerencia', type:'Tipo', title:'Título', details:'Detalles', allianceOptional:'Alianza / jugador (opcional)', githubNote:'La V0 guarda las sugerencias como GitHub Issues. Más adelante se puede añadir envío anónimo con D1.', continueGithub:'Continuar a GitHub', heroKicker:'DARK WAR: SURVIVAL · SERVER 504', heroLead:'Un lugar compartido para conocimiento de Dark War: Survival, gobernanza del Server 504 y operaciones prácticas.', searchKnowledge:'Buscar', sendSuggestionBtn:'Enviar sugerencia', wikiDescription:'Conocimiento del juego y referencia práctica para jugadores del Server 504.'
   },
   pt: {
-    navWiki:'Wiki', navCharter:'Carta', navCodex:'Operações', knowledge:'Conhecimento', home:'Início', gameWiki:'Wiki do jogo', serverCharter:'Carta do servidor', operationalCodex:'Códice operacional', community:'Comunidade', contribute:'Contribuir / Sugerir', searchLabel:'BUSCA GLOBAL', searchTitle:'Pesquisar no Server 504', communityContribution:'CONTRIBUIÇÃO DA COMUNIDADE', sendSuggestion:'Enviar sugestão', type:'Tipo', title:'Título', details:'Detalhes', allianceOptional:'Aliança / jogador (opcional)', githubNote:'A V0 armazena sugestões como GitHub Issues. Envio anônimo com D1 pode ser adicionado depois.', continueGithub:'Continuar para GitHub', heroKicker:'DARK WAR: SURVIVAL · SERVER 504', heroLead:'Uma base compartilhada para informações do jogo, governança do servidor e operações práticas.', searchKnowledge:'Pesquisar', sendSuggestionBtn:'Enviar sugestão', wikiDescription:'Conhecimento do jogo e referência prática para jogadores do Server 504.'
+    navWiki:'Wiki', navCharter:'Carta', navCodex:'Operações', knowledge:'Conhecimento', home:'Início', gameWiki:'Wiki do jogo', serverCharter:'Carta do servidor', operationalCodex:'Códice operacional', community:'Comunidade', contribute:'Contribuir / Sugerir', searchLabel:'BUSCA GLOBAL', searchTitle:'Pesquisar no Server 504', communityContribution:'CONTRIBUIÇÃO DA COMUNIDADE', sendSuggestion:'Enviar sugestão', type:'Tipo', title:'Título', details:'Detalhes', allianceOptional:'Aliança / jogador (opcional)', githubNote:'A V0 armazena sugestões como GitHub Issues. Envio anônimo com D1 pode ser adicionado depois.', continueGithub:'Continuar para GitHub', heroKicker:'DARK WAR: SURVIVAL · SERVER 504', heroLead:'Um espaço compartilhado para conhecimento de Dark War: Survival, governança do Server 504 e operações práticas.', searchKnowledge:'Pesquisar', sendSuggestionBtn:'Enviar sugestão', wikiDescription:'Conhecimento do jogo e referência prática para jogadores do Server 504.'
   },
   ko: {
-    navWiki:'위키', navCharter:'헌장', navCodex:'운영', knowledge:'정보', home:'홈', gameWiki:'게임 위키', serverCharter:'서버 헌장', operationalCodex:'운영 규정', community:'커뮤니티', contribute:'의견 제안', searchLabel:'전체 검색', searchTitle:'Server 504 검색', communityContribution:'커뮤니티 제안', sendSuggestion:'의견 보내기', type:'유형', title:'제목', details:'내용', allianceOptional:'연맹 / 플레이어명 (선택)', githubNote:'V0는 제안을 GitHub Issues에 저장합니다. 이후 무료 D1 백엔드로 익명 제출을 추가할 수 있습니다.', continueGithub:'GitHub에서 계속', heroKicker:'DARK WAR: SURVIVAL · SERVER 504', heroLead:'게임 정보, 서버 거버넌스 및 실전 운영을 위한 공동 지식 베이스입니다.', searchKnowledge:'지식 베이스 검색', sendSuggestionBtn:'의견 보내기', wikiDescription:'Server 504 플레이어를 위한 게임 지식과 실전 참고 자료입니다.'
+    navWiki:'위키', navCharter:'헌장', navCodex:'운영', knowledge:'정보', home:'홈', gameWiki:'게임 위키', serverCharter:'서버 헌장', operationalCodex:'운영 규정', community:'커뮤니티', contribute:'의견 제안', searchLabel:'전체 검색', searchTitle:'Server 504 검색', communityContribution:'커뮤니티 제안', sendSuggestion:'의견 보내기', type:'유형', title:'제목', details:'내용', allianceOptional:'연맹 / 플레이어명 (선택)', githubNote:'V0는 제안을 GitHub Issues에 저장합니다. 이후 무료 D1 백엔드로 익명 제출을 추가할 수 있습니다.', continueGithub:'GitHub에서 계속', heroKicker:'DARK WAR: SURVIVAL · SERVER 504', heroLead:'Dark War: Survival 정보, Server 504 거버넌스 및 실전 운영을 위한 공동 공간입니다.', searchKnowledge:'지식 베이스 검색', sendSuggestionBtn:'의견 보내기', wikiDescription:'Server 504 플레이어를 위한 게임 지식과 실전 참고 자료입니다.'
   },
   vi: {
-    navWiki:'Wiki', navCharter:'Hiến chương', navCodex:'Vận hành', knowledge:'Tri thức', home:'Trang chủ', gameWiki:'Wiki game', serverCharter:'Hiến chương Server', operationalCodex:'Operational Codex', community:'Cộng đồng', contribute:'Đóng góp / Góp ý', searchLabel:'TRA CỨU TOÀN SITE', searchTitle:'Tra cứu Server 504', communityContribution:'ĐÓNG GÓP CỘNG ĐỒNG', sendSuggestion:'Gửi góp ý', type:'Loại góp ý', title:'Tiêu đề', details:'Nội dung', allianceOptional:'Liên minh / tên người chơi (không bắt buộc)', githubNote:'V0 lưu góp ý dưới dạng GitHub Issues. Sau này có thể thêm gửi ẩn danh bằng backend D1 miễn phí.', continueGithub:'Tiếp tục trên GitHub', heroKicker:'DARK WAR: SURVIVAL · SERVER 504', heroLead:'Kho tri thức chung cho thông tin game, quản trị server và vận hành thực tế.', searchKnowledge:'Tra cứu kho tri thức', sendSuggestionBtn:'Gửi góp ý', wikiDescription:'Kiến thức game và tài liệu tra cứu thực tế cho người chơi Server 504. Cấu trúc danh mục đã sẵn sàng và các bài wiki chi tiết sẽ được bổ sung dần.'
+    navWiki:'Wiki', navCharter:'Hiến chương', navCodex:'Vận hành', knowledge:'Tri thức', home:'Trang chủ', gameWiki:'Wiki game', serverCharter:'Hiến chương Server', operationalCodex:'Operational Codex', community:'Cộng đồng', contribute:'Đóng góp / Góp ý', searchLabel:'TRA CỨU TOÀN SITE', searchTitle:'Tra cứu Server 504', communityContribution:'ĐÓNG GÓP CỘNG ĐỒNG', sendSuggestion:'Gửi góp ý', type:'Loại góp ý', title:'Tiêu đề', details:'Nội dung', allianceOptional:'Liên minh / tên người chơi (không bắt buộc)', githubNote:'V0 lưu góp ý dưới dạng GitHub Issues. Sau này có thể thêm gửi ẩn danh bằng backend D1 miễn phí.', continueGithub:'Tiếp tục trên GitHub', heroKicker:'DARK WAR: SURVIVAL · SERVER 504', heroLead:'Một nơi dùng chung cho kiến thức Dark War: Survival, quản trị Server 504 và các quy tắc vận hành thực tế.', searchKnowledge:'Tra cứu kho tri thức', sendSuggestionBtn:'Gửi góp ý', wikiDescription:'Kiến thức game và tài liệu tra cứu thực tế cho người chơi Server 504. Cấu trúc danh mục đã sẵn sàng và các bài wiki chi tiết sẽ được bổ sung dần.'
   }
 };
 
@@ -80,18 +80,86 @@ function pageHeader(eyebrow, title, description, badges = []) {
 }
 
 function homePage() {
-  return `<section class="page hero">
-    <div class="eyebrow">${t('heroKicker')}</div>
-    <h1>KNOWLEDGE.<br><span>GOVERNANCE.</span><br>OPERATIONS.</h1>
-    <p>${t('heroLead')}</p>
-    <div class="hero-actions">
-      <button class="primary-button search-trigger" type="button">${t('searchKnowledge')}</button>
-      <button class="secondary-button contribute-trigger" type="button">${t('sendSuggestionBtn')}</button>
+  return `<section class="page sealed-isle-home">
+    <div class="sealed-atmosphere" aria-hidden="true">
+      <div class="blood-moon"><span></span></div>
+      <div class="seal-sigil"><i></i><b></b></div>
+      <div class="island-silhouette"></div>
+      <div class="torii">
+        <span class="torii-top"></span>
+        <span class="torii-mid"></span>
+        <span class="torii-leg torii-leg-left"></span>
+        <span class="torii-leg torii-leg-right"></span>
+      </div>
+      <div class="miasma miasma-one"></div>
+      <div class="miasma miasma-two"></div>
+      <div class="ember-field"></div>
     </div>
-    <div class="portal-grid">
-      <a class="portal-card" href="#/wiki"><small>01 · KNOWLEDGE</small><h3>${t('gameWiki')}</h3><p>Heroes, APC, combat, events, seasons and game mechanics.</p></a>
-      <a class="portal-card" href="#/charter"><small>02 · GOVERNANCE</small><h3>${t('serverCharter')}</h3><p>Permanent cooperation principles and Council authority.</p></a>
-      <a class="portal-card" href="#/codex"><small>03 · OPERATIONS</small><h3>${t('operationalCodex')}</h3><p>Practical rules for R4/R5 and real server incidents.</p></a>
+
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <div class="season-chip"><span></span> SEASON 4 · SEALED ISLE</div>
+        <div class="eyebrow">${t('heroKicker')}</div>
+        <h1 class="hero-title"><span class="hero-title-word">SERVER</span><strong>504</strong></h1>
+        <div class="hero-motto">KNOWLEDGE <i>·</i> GOVERNANCE <i>·</i> OPERATIONS</div>
+        <p class="hero-lead">${t('heroLead')}</p>
+
+        <div class="hero-actions">
+          <button class="primary-button search-trigger home-search-button" type="button">
+            <span class="search-rune" aria-hidden="true"></span>
+            <span>${t('searchKnowledge')}</span>
+            <kbd>/</kbd>
+          </button>
+          <button class="secondary-button contribute-trigger" type="button">${t('sendSuggestionBtn')}</button>
+        </div>
+
+        <div class="hero-meta">
+          <span><b>01</b> GAME WIKI</span>
+          <span><b>02</b> SERVER CHARTER</span>
+          <span><b>03</b> OPERATIONAL CODEX</span>
+        </div>
+      </div>
+
+      <aside class="field-terminal" aria-label="Server 504 portal shortcuts">
+        <div class="terminal-corners" aria-hidden="true"></div>
+        <div class="terminal-head">
+          <span>504 // ARCHIVE NODE</span>
+          <i></i>
+        </div>
+        <div class="terminal-emblem" aria-hidden="true">
+          <span>五</span>
+          <b>504</b>
+        </div>
+        <div class="terminal-rule"></div>
+        <a href="#/wiki"><span>01</span><strong>${t('gameWiki')}</strong><i>↗</i></a>
+        <a href="#/charter"><span>02</span><strong>${t('serverCharter')}</strong><i>↗</i></a>
+        <a href="#/codex"><span>03</span><strong>${t('operationalCodex')}</strong><i>↗</i></a>
+        <div class="terminal-foot"><span class="status-dot"></span> GOVERNANCE V2 · AUG 2026</div>
+      </aside>
+    </div>
+
+    <div class="portal-grid home-portal-grid">
+      <a class="portal-card portal-wiki" href="#/wiki">
+        <div class="portal-glyph glyph-wiki" aria-hidden="true"><span></span><span></span><span></span></div>
+        <small>01 · KNOWLEDGE</small>
+        <h3>${t('gameWiki')}</h3>
+        <p>Heroes, APC, combat, events, seasons and game mechanics.</p>
+        <b class="portal-arrow">↗</b>
+      </a>
+      <a class="portal-card portal-charter" href="#/charter">
+        <div class="portal-glyph glyph-charter" aria-hidden="true"><span></span></div>
+        <small>02 · GOVERNANCE</small>
+        <h3>${t('serverCharter')}</h3>
+        <p>Permanent cooperation principles and Council authority.</p>
+        <b class="portal-arrow">↗</b>
+      </a>
+      <a class="portal-card portal-codex" href="#/codex">
+        <div class="portal-glyph glyph-codex" aria-hidden="true"><span></span></div>
+        <small>03 · OPERATIONS</small>
+        <h3>${t('operationalCodex')}</h3>
+        <p>Practical rules for R4/R5 and real server incidents.</p>
+        <b class="portal-arrow">↗</b>
+      </a>
     </div>
   </section>`;
 }
@@ -253,6 +321,13 @@ document.querySelectorAll('[data-close-dialog]').forEach(btn => {
     const dialog = document.getElementById(btn.dataset.closeDialog);
     if (dialog) dialog.close();
   });
+});
+
+document.addEventListener('keydown', e => {
+  if (e.key === '/' && !['INPUT','TEXTAREA','SELECT'].includes(document.activeElement.tagName)) {
+    e.preventDefault();
+    openSearch();
+  }
 });
 
 document.getElementById('contributeForm').addEventListener('submit', e => {
