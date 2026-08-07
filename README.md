@@ -7,7 +7,6 @@ Community knowledge, governance, and operations portal for Dark War: Survival Se
 - Dark War: Survival Wiki
 - Server 504 Charter
 - Operational Codex
-- Current Season information
 - Search
 - Community contributions
 - Multilingual UI: English, Français, Español, Português, 한국어, Tiếng Việt
