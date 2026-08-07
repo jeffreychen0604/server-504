@@ -9,12 +9,12 @@ Shooter heroes complete the faction counter triangle. Shooters are strong agains
 
 | Hero | Specialty | Key value | Acquisition reference |
 | --- | --- | --- | --- |
-| Evans | Vehicle Transformation | Modified Vehicle / Gear progression | Radio Station |
-| Natasha | Combat | Shooter faction combat passive | Elite Recruitment |
-| Margaret | Combat | Shooter HP + battle-damage progression | Goodie Bazaar |
-| Megan | Construction | Construction economy and speed | Prime Recruitment |
-| Darian | Combat | Shooter attack / troop skill damage | Legend Battle Pass, Lucky Chest |
-| Rosa | Combat | Shooter damage + counterattack mitigation | Legend Battle Pass |
+| [Evans](#/wiki/hero-evans) | Vehicle Transformation | Modified Vehicle / Gear progression | Radio Station |
+| [Natasha](#/wiki/hero-natasha) | Combat | Shooter DEF / ATK support and high-star faction-wide battle damage | Elite Recruitment |
+| [Margaret](#/wiki/hero-margaret) | Combat | Shooter HP + battle-damage progression | Goodie Bazaar |
+| [Megan](#/wiki/hero-megan) | Construction | Construction economy and speed | Prime Recruitment |
+| [Darian](#/wiki/hero-darian) | Combat | Shooter attack / troop skill damage | Legend Battle Pass, Lucky Chest |
+| [Rosa](#/wiki/hero-rosa) | Combat | Shooter damage + counterattack mitigation | Legend Battle Pass |
 
 ## Progression specialists
 
@@ -30,7 +30,9 @@ Megan is a Shooter-faction Construction specialist. Her third skill increases fr
 
 ### Natasha
 
-Natasha is a Shooter / Combat hero with a Shooter-oriented faction passive. Her public data places her among the earlier stable combat heroes available through Elite Recruitment.
+Natasha is a Shooter / Combat hero with Shooter DEF and ATK support. At the highest listed star breakpoint her passive also contributes Shooter battle damage whether deployed or not.
+
+The public source contains a copy-text error naming Cyrus inside Natasha's passive description; the faction field and stat lines still consistently indicate Shooter.
 
 ### Margaret
 
@@ -46,7 +48,7 @@ Rosa is a later Shooter / Combat hero. Her public passive combines Shooter damag
 
 ## Verification gap — Lan Yan
 
-Lan Yan is **not included in the canonical Shooter roster yet**. The same public source says Fighter in its prose, Shooter in its structured faction row, and gives a Fighter-oriented passive. Server 504 in-game evidence should resolve this before the Wiki places her permanently.
+[**Lan Yan — Verification Pending**](#/wiki/hero-lan-yan-pending) is not included in the canonical Shooter roster yet. The same public source says Fighter in its prose, Shooter in its structured faction row, and gives a Fighter-oriented passive. Server 504 in-game evidence should resolve this before the Wiki places her permanently.
 
 ## Sources
 
