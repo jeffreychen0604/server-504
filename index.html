@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="./assets/layout-refine.css" />
   <link rel="stylesheet" href="./assets/feedback.css" />
   <link rel="stylesheet" href="./assets/wiki-research.css" />
+  <link rel="stylesheet" href="./assets/wiki-calculators.css" />
 </head>
 <body>
   <div class="noise" aria-hidden="true"></div>
@@ -134,9 +135,9 @@
         <input id="contributionWebsite" autocomplete="off" tabindex="-1" />
       </label>
       <div id="feedbackTurnstile" class="feedback-turnstile" hidden aria-label="Human verification"></div>
-      <p class="form-note" data-i18n="githubNote">V0 stores community suggestions as GitHub Issues. Anonymous submission can be added later with the free D1 backend.</p>
+      <p class="form-note" data-i18n="githubNote">No account is required. Protected by Cloudflare Turnstile; submissions go directly to the Server 504 moderation inbox.</p>
       <p id="feedbackStatus" class="feedback-status" hidden aria-live="polite"></p>
-      <button class="primary-button" type="submit" data-i18n="continueGithub">Continue to GitHub</button>
+      <button class="primary-button" type="submit" data-i18n="continueGithub">Submit feedback</button>
     </form>
   </dialog>
 
@@ -147,5 +148,6 @@
   <script src="./assets/header-search.js" defer></script>
   <script src="./assets/feedback.js" defer></script>
   <script src="./assets/wiki-research.js" defer></script>
+  <script src="./assets/wiki-calculators.js" defer></script>
 </body>
 </html>
