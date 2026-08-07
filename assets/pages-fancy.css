@@ -1,0 +1,539 @@
+/* Fancy interior pages — Server 504 / Dark War: Survival
+   Home remains untouched. Interior pages prioritize readability over spectacle. */
+
+body[data-route="wiki"],
+body[data-route="charter"],
+body[data-route="codex"] {
+  --page-accent: #d84a45;
+  --page-accent-soft: rgba(216, 74, 69, .16);
+  --page-accent-faint: rgba(216, 74, 69, .06);
+  --page-metal: #9da8b3;
+}
+
+body[data-route="wiki"] {
+  --page-accent: #d68fb8;
+  --page-accent-soft: rgba(214, 143, 184, .16);
+  --page-accent-faint: rgba(184, 111, 177, .07);
+  --page-metal: #b9aecb;
+}
+
+body[data-route="charter"] {
+  --page-accent: #c8a567;
+  --page-accent-soft: rgba(200, 165, 103, .17);
+  --page-accent-faint: rgba(200, 165, 103, .065);
+  --page-metal: #cdbf9e;
+}
+
+body[data-route="codex"] {
+  --page-accent: #e15a52;
+  --page-accent-soft: rgba(225, 90, 82, .16);
+  --page-accent-faint: rgba(174, 65, 63, .065);
+  --page-metal: #aab6c0;
+}
+
+body[data-route="wiki"] .main-content,
+body[data-route="charter"] .main-content,
+body[data-route="codex"] .main-content {
+  background:
+    radial-gradient(circle at 82% 8%, var(--page-accent-faint), transparent 28rem),
+    linear-gradient(180deg, rgba(255,255,255,.008), transparent 34rem);
+}
+
+body[data-route="wiki"] .page,
+body[data-route="charter"] .page,
+body[data-route="codex"] .page {
+  max-width: 1180px;
+}
+
+/* ------------------------------------------------------------
+   Interior page hero / archive cover
+   ------------------------------------------------------------ */
+body[data-route="wiki"] .page-header,
+body[data-route="charter"] .page-header,
+body[data-route="codex"] .page-header {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: 245px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 42px clamp(28px, 4.6vw, 58px) 34px;
+  margin: -10px 0 34px;
+  border: 1px solid rgba(255,255,255,.10);
+  border-radius: 16px;
+  background: #0d1117;
+  box-shadow: 0 24px 70px rgba(0,0,0,.28), inset 0 0 0 1px rgba(255,255,255,.018);
+}
+
+body[data-route="wiki"] .page-header::before,
+body[data-route="charter"] .page-header::before,
+body[data-route="codex"] .page-header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transform: scale(1.02);
+  transition: transform 8s ease;
+}
+
+body[data-route="wiki"] .page-header::before {
+  background-image:
+    linear-gradient(90deg, rgba(8,10,15,.96) 0%, rgba(8,10,15,.78) 45%, rgba(8,10,15,.28) 100%),
+    linear-gradient(180deg, rgba(8,10,15,.16), rgba(8,10,15,.88)),
+    url("./art/sacred-tree.webp");
+  background-position: 58% 42%;
+}
+
+body[data-route="charter"] .page-header::before {
+  background-image:
+    linear-gradient(90deg, rgba(8,9,13,.96) 0%, rgba(9,9,13,.78) 48%, rgba(9,9,13,.38) 100%),
+    linear-gradient(180deg, rgba(8,9,13,.16), rgba(8,9,13,.91)),
+    url("./art/blood-moon-banner.webp");
+  background-position: 62% 47%;
+}
+
+body[data-route="codex"] .page-header::before {
+  background-image:
+    linear-gradient(90deg, rgba(7,9,13,.97) 0%, rgba(8,9,14,.83) 47%, rgba(8,8,13,.40) 100%),
+    linear-gradient(180deg, rgba(7,9,13,.18), rgba(7,9,13,.92)),
+    url("./art/sealed-hero.webp");
+  background-position: 70% 46%;
+}
+
+body[data-route="wiki"] .page-header::after,
+body[data-route="charter"] .page-header::after,
+body[data-route="codex"] .page-header::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, var(--page-accent-soft), transparent 22%, transparent 78%, rgba(255,255,255,.018)),
+    radial-gradient(ellipse at 75% 0%, var(--page-accent-faint), transparent 38%);
+  box-shadow: inset 0 -1px rgba(255,255,255,.04);
+}
+
+body[data-route="wiki"] .page-header .eyebrow,
+body[data-route="charter"] .page-header .eyebrow,
+body[data-route="codex"] .page-header .eyebrow {
+  color: var(--page-accent);
+  text-shadow: 0 0 18px var(--page-accent-soft);
+}
+
+body[data-route="wiki"] .page-header h1,
+body[data-route="charter"] .page-header h1,
+body[data-route="codex"] .page-header h1 {
+  margin: 10px 0 9px;
+  max-width: 760px;
+  font-size: clamp(2.35rem, 5vw, 4.65rem);
+  line-height: .96;
+  letter-spacing: -.055em;
+  text-shadow: 0 8px 28px rgba(0,0,0,.42);
+}
+
+body[data-route="wiki"] .page-header p,
+body[data-route="charter"] .page-header p,
+body[data-route="codex"] .page-header p {
+  max-width: 690px;
+  color: #bbc4cc;
+  font-size: .94rem;
+  line-height: 1.62;
+  text-shadow: 0 3px 14px rgba(0,0,0,.45);
+}
+
+body[data-route="wiki"] .meta-chip,
+body[data-route="charter"] .meta-chip,
+body[data-route="codex"] .meta-chip {
+  border-color: rgba(255,255,255,.13);
+  background: rgba(8,10,15,.53);
+  color: #c6cdd3;
+  backdrop-filter: blur(9px);
+  -webkit-backdrop-filter: blur(9px);
+}
+
+body[data-route="wiki"] .meta-chip:first-child,
+body[data-route="charter"] .meta-chip:first-child,
+body[data-route="codex"] .meta-chip:first-child {
+  border-color: color-mix(in srgb, var(--page-accent) 42%, transparent);
+  color: var(--page-accent);
+}
+
+/* Tiny blossom / spirit particles on the page covers only. */
+body[data-route="wiki"] .page-header .meta-row::after,
+body[data-route="charter"] .page-header .meta-row::after,
+body[data-route="codex"] .page-header .meta-row::after {
+  content: "";
+  position: absolute;
+  right: 6%;
+  top: 13%;
+  width: 180px;
+  height: 110px;
+  pointer-events: none;
+  opacity: .20;
+  background-image:
+    radial-gradient(ellipse, rgba(247,190,211,.76) 0 37%, transparent 64%),
+    radial-gradient(ellipse, rgba(224,145,181,.58) 0 37%, transparent 64%),
+    radial-gradient(ellipse, rgba(255,215,226,.66) 0 37%, transparent 64%),
+    radial-gradient(ellipse, rgba(215,132,173,.52) 0 37%, transparent 64%);
+  background-size: 9px 5px, 7px 4px, 8px 5px, 6px 4px;
+  background-position: 11% 19%, 41% 57%, 68% 24%, 88% 69%;
+  background-repeat: no-repeat;
+  animation: interiorPetals 17s ease-in-out infinite alternate;
+}
+
+@keyframes interiorPetals {
+  from { transform: translate3d(0,-4px,0) rotate(-2deg); }
+  to { transform: translate3d(17px,14px,0) rotate(7deg); }
+}
+
+/* Charter receives a quiet seal watermark. */
+body[data-route="charter"] .page-header .meta-row::before {
+  content: "";
+  position: absolute;
+  right: clamp(22px, 4vw, 56px);
+  bottom: 16px;
+  width: 126px;
+  height: 126px;
+  opacity: .15;
+  background: url("./art/sealed-emblem.webp") center 36% / 124% auto no-repeat;
+  filter: saturate(.8) sepia(.12) drop-shadow(0 0 18px rgba(200,165,103,.18));
+  pointer-events: none;
+}
+
+/* ------------------------------------------------------------
+   Wiki — field compendium cards
+   ------------------------------------------------------------ */
+body[data-route="wiki"] .wiki-grid {
+  position: relative;
+  gap: 16px;
+}
+
+body[data-route="wiki"] .wiki-card {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: 218px;
+  padding: 23px 23px 21px;
+  border-color: rgba(214,143,184,.14);
+  background:
+    radial-gradient(circle at 100% 0%, rgba(157,92,171,.09), transparent 13rem),
+    linear-gradient(145deg, rgba(18,23,31,.94), rgba(11,15,20,.90));
+  box-shadow: 0 14px 36px rgba(0,0,0,.14), inset 0 1px rgba(255,255,255,.018);
+  transition: transform .22s ease, border-color .22s ease, box-shadow .22s ease;
+}
+
+body[data-route="wiki"] .wiki-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 72px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--page-accent), transparent);
+  box-shadow: 0 0 16px rgba(214,143,184,.18);
+}
+
+body[data-route="wiki"] .wiki-card::after {
+  content: "";
+  position: absolute;
+  right: -54px;
+  bottom: -68px;
+  width: 160px;
+  height: 160px;
+  border: 1px solid rgba(214,143,184,.07);
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 18px rgba(214,143,184,.018), inset 0 0 0 38px rgba(214,143,184,.012);
+  z-index: -1;
+}
+
+body[data-route="wiki"] .wiki-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(214,143,184,.28);
+  box-shadow: 0 22px 48px rgba(0,0,0,.23), 0 0 30px rgba(175,91,157,.045);
+}
+
+body[data-route="wiki"] .wiki-card .eyebrow {
+  color: var(--page-accent);
+  opacity: .88;
+}
+
+body[data-route="wiki"] .wiki-card h3 {
+  margin-top: 13px;
+  font-size: 1.16rem;
+  letter-spacing: -.015em;
+}
+
+body[data-route="wiki"] .wiki-card p {
+  max-width: 92%;
+  color: #99a5af;
+}
+
+body[data-route="wiki"] .wiki-card li::marker {
+  color: rgba(214,143,184,.68);
+}
+
+/* ------------------------------------------------------------
+   Charter + Codex — readable sealed archive document
+   ------------------------------------------------------------ */
+body[data-route="charter"] .markdown-body,
+body[data-route="codex"] .markdown-body {
+  position: relative;
+  max-width: 930px;
+  padding: clamp(28px, 4vw, 48px) clamp(25px, 5vw, 60px) 58px;
+  border: 1px solid rgba(255,255,255,.085);
+  border-radius: 14px;
+  background:
+    linear-gradient(90deg, var(--page-accent-faint), transparent 8%, transparent 92%, rgba(255,255,255,.012)),
+    linear-gradient(180deg, rgba(18,23,30,.84), rgba(10,14,19,.90));
+  box-shadow: 0 24px 70px rgba(0,0,0,.22), inset 0 1px rgba(255,255,255,.02);
+  counter-reset: interior-section;
+}
+
+body[data-route="charter"] .markdown-body::before,
+body[data-route="codex"] .markdown-body::before {
+  content: "";
+  position: absolute;
+  left: 17px;
+  top: 40px;
+  bottom: 44px;
+  width: 1px;
+  background: linear-gradient(transparent, var(--page-accent-soft) 8%, var(--page-accent-soft) 92%, transparent);
+}
+
+body[data-route="charter"] .markdown-body::after,
+body[data-route="codex"] .markdown-body::after {
+  content: "504";
+  position: absolute;
+  right: 26px;
+  top: 18px;
+  color: var(--page-accent);
+  opacity: .07;
+  font-size: clamp(4rem, 9vw, 7rem);
+  font-weight: 950;
+  letter-spacing: -.09em;
+  pointer-events: none;
+}
+
+body[data-route="charter"] .markdown-body h2,
+body[data-route="codex"] .markdown-body h2 {
+  counter-increment: interior-section;
+  position: relative;
+  display: grid;
+  grid-template-columns: 42px minmax(0,1fr);
+  align-items: baseline;
+  gap: 12px;
+  margin: 49px 0 16px;
+  color: #f3f4f5;
+  font-size: clamp(1.36rem, 2.4vw, 1.72rem);
+  letter-spacing: -.025em;
+}
+
+body[data-route="charter"] .markdown-body h2::before,
+body[data-route="codex"] .markdown-body h2::before {
+  content: counter(interior-section, decimal-leading-zero);
+  color: var(--page-accent);
+  font-size: .64rem;
+  font-weight: 900;
+  letter-spacing: .09em;
+  transform: translateY(-2px);
+  text-shadow: 0 0 16px var(--page-accent-soft);
+}
+
+body[data-route="charter"] .markdown-body h2::after,
+body[data-route="codex"] .markdown-body h2::after {
+  content: "";
+  grid-column: 1 / -1;
+  height: 1px;
+  margin-top: 8px;
+  background: linear-gradient(90deg, var(--page-accent-soft), rgba(255,255,255,.055), transparent 78%);
+}
+
+body[data-route="charter"] .markdown-body h3,
+body[data-route="codex"] .markdown-body h3 {
+  color: #e8ecef;
+  padding-left: 13px;
+  border-left: 2px solid var(--page-accent-soft);
+}
+
+body[data-route="charter"] .markdown-body p,
+body[data-route="codex"] .markdown-body p,
+body[data-route="charter"] .markdown-body li,
+body[data-route="codex"] .markdown-body li {
+  color: #c1c9d0;
+}
+
+body[data-route="charter"] .markdown-body strong,
+body[data-route="codex"] .markdown-body strong {
+  color: #f4f5f5;
+  text-shadow: 0 0 14px rgba(255,255,255,.025);
+}
+
+body[data-route="charter"] .markdown-body blockquote,
+body[data-route="codex"] .markdown-body blockquote {
+  position: relative;
+  overflow: hidden;
+  margin: 25px 0;
+  padding: 17px 20px 17px 22px;
+  border: 1px solid color-mix(in srgb, var(--page-accent) 22%, transparent);
+  border-left: 3px solid var(--page-accent);
+  border-radius: 0 9px 9px 0;
+  background:
+    linear-gradient(90deg, var(--page-accent-faint), rgba(255,255,255,.014));
+  color: #c7cfd5;
+  box-shadow: inset 18px 0 36px var(--page-accent-faint);
+}
+
+body[data-route="charter"] .markdown-body blockquote::after,
+body[data-route="codex"] .markdown-body blockquote::after {
+  content: "";
+  position: absolute;
+  right: -28px;
+  top: -30px;
+  width: 90px;
+  height: 90px;
+  border: 1px solid var(--page-accent-soft);
+  border-radius: 50%;
+  opacity: .45;
+}
+
+body[data-route="charter"] .markdown-body table,
+body[data-route="codex"] .markdown-body table {
+  border-radius: 9px;
+  background: rgba(4,6,9,.22);
+  box-shadow: 0 14px 34px rgba(0,0,0,.12);
+}
+
+body[data-route="charter"] .markdown-body th,
+body[data-route="codex"] .markdown-body th {
+  background: linear-gradient(180deg, rgba(30,36,44,.96), rgba(20,25,32,.96));
+  color: #eef1f3;
+  border-color: rgba(255,255,255,.10);
+}
+
+body[data-route="charter"] .markdown-body td,
+body[data-route="codex"] .markdown-body td {
+  border-color: rgba(255,255,255,.075);
+  background: rgba(255,255,255,.008);
+}
+
+body[data-route="charter"] .markdown-body tr:hover td,
+body[data-route="codex"] .markdown-body tr:hover td {
+  background: var(--page-accent-faint);
+}
+
+body[data-route="charter"] .markdown-body hr,
+body[data-route="codex"] .markdown-body hr {
+  position: relative;
+  margin: 42px 0;
+  border-top-color: rgba(255,255,255,.08);
+}
+
+body[data-route="charter"] .markdown-body a,
+body[data-route="codex"] .markdown-body a {
+  color: var(--page-accent);
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, var(--page-accent) 35%, transparent);
+  text-underline-offset: 3px;
+}
+
+/* Codex gets slightly sharper tactical geometry. */
+body[data-route="codex"] .page-header,
+body[data-route="codex"] .markdown-body {
+  clip-path: polygon(12px 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%, 0 12px);
+  border-radius: 0;
+}
+
+/* Charter remains softer and ceremonial. */
+body[data-route="charter"] .markdown-body {
+  background:
+    radial-gradient(circle at 92% 5%, rgba(200,165,103,.045), transparent 17rem),
+    linear-gradient(90deg, rgba(200,165,103,.045), transparent 9%, transparent 93%),
+    linear-gradient(180deg, rgba(19,22,27,.87), rgba(11,14,18,.92));
+}
+
+/* ------------------------------------------------------------
+   Responsive
+   ------------------------------------------------------------ */
+@media (max-width: 760px) {
+  body[data-route="wiki"] .page-header,
+  body[data-route="charter"] .page-header,
+  body[data-route="codex"] .page-header {
+    min-height: 220px;
+    padding: 31px 22px 25px;
+    margin-top: -12px;
+    border-radius: 12px;
+  }
+
+  body[data-route="wiki"] .page-header::before { background-position: 67% 42%; }
+  body[data-route="charter"] .page-header::before { background-position: 68% 48%; }
+  body[data-route="codex"] .page-header::before { background-position: 73% 46%; }
+
+  body[data-route="wiki"] .page-header h1,
+  body[data-route="charter"] .page-header h1,
+  body[data-route="codex"] .page-header h1 {
+    font-size: clamp(2.05rem, 11vw, 3.2rem);
+  }
+
+  body[data-route="charter"] .page-header .meta-row::before {
+    width: 86px;
+    height: 86px;
+    right: 7px;
+    bottom: 3px;
+    opacity: .10;
+  }
+
+  body[data-route="wiki"] .page-header .meta-row::after,
+  body[data-route="charter"] .page-header .meta-row::after,
+  body[data-route="codex"] .page-header .meta-row::after {
+    width: 120px;
+    right: 2%;
+    opacity: .12;
+  }
+
+  body[data-route="wiki"] .wiki-card {
+    min-height: 192px;
+  }
+
+  body[data-route="charter"] .markdown-body,
+  body[data-route="codex"] .markdown-body {
+    padding: 25px 20px 44px;
+    border-radius: 11px;
+  }
+
+  body[data-route="charter"] .markdown-body::before,
+  body[data-route="codex"] .markdown-body::before {
+    display: none;
+  }
+
+  body[data-route="charter"] .markdown-body::after,
+  body[data-route="codex"] .markdown-body::after {
+    right: 14px;
+    top: 10px;
+    font-size: 4rem;
+  }
+
+  body[data-route="charter"] .markdown-body h2,
+  body[data-route="codex"] .markdown-body h2 {
+    grid-template-columns: 32px minmax(0,1fr);
+    gap: 8px;
+    margin-top: 41px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body[data-route="wiki"] .page-header .meta-row::after,
+  body[data-route="charter"] .page-header .meta-row::after,
+  body[data-route="codex"] .page-header .meta-row::after {
+    animation: none !important;
+  }
+
+  body[data-route="wiki"] .wiki-card,
+  body[data-route="charter"] .wiki-card,
+  body[data-route="codex"] .wiki-card {
+    transition: none !important;
+  }
+}
