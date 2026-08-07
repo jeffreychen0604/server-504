@@ -1,0 +1,57 @@
+# Wiki Verification Queue
+
+> **Updated:** 8 Aug 2026  
+> **Purpose:** One place to track public data that is useful but not yet safe to call canonical for Server 504.
+
+The Wiki prefers visible uncertainty over confidently publishing stale numbers.
+
+## Priority A — one screenshot can resolve it
+
+| Topic | What is needed | Current status |
+| --- | --- | --- |
+| Chip Factory — Purple recipe | Common Chip Material cost for one selected Purple chip | OPEN |
+| Chip Factory — Orange recipe | Confirm whether selected Orange chip still costs 800 Advanced Chip Materials | OPEN |
+| Honor Shop | Full item cost + limit screenshots | OPEN |
+| Parts Set | milestone levels and exact bonuses | OPEN |
+| Lan Yan | current English UI faction label | OPEN |
+| Katrina | current English UI spelling: Katrina or Katerina | OPEN |
+
+## Priority B — repeated captures needed
+
+| Topic | Needed data | Why multiple captures |
+| --- | --- | --- |
+| APC Parts Lv.1–66 | Titanium Alloy / Design Blueprint cost by level | legacy table stops at Lv.42 and contains removed Gear costs |
+| Watchtower conflicts | prerequisites at disputed levels | public tables disagree |
+| Troop tier unlocks | camp/WT/research conditions | public tables disagree |
+| Season 4 building costs | Oni Seal Hall / Quartz Factory level costs | season data can vary or be patched |
+| Sacred Tree / Float Parade | exact thresholds, reward limits, reset cycle | community-backed but insufficient official numeric data |
+
+## Already resolved by official patch notes
+
+- Capital Shop + Black Gold Shop + Arena Shop → Honor Shop.
+- Legacy conversion: Capital Glory Badge ×40; Black Gold Coin ×2.
+- Modified Vehicle Parts no longer consume Gears.
+- Modified Vehicle Modify cap raised to Lv.500.
+- Tactical Modification unlock paths include all Parts Lv.66 or one Orange chip 10★.
+- Chip Materials added to Daily Alliance Duel point chests 3 / 6 / 9.
+- Zombie Siege received Random Blue Chip Chests.
+
+## Evidence acceptance rule
+
+For Server 504-specific numeric verification, preferred evidence is:
+
+1. current in-game screenshot showing the relevant UI;
+2. screenshot date / season context;
+3. English UI if terminology is being canonicalized;
+4. two separate captures when a value changes with level or State progression.
+
+A player memory or old guide can identify what to investigate, but it does not overwrite current UI evidence.
+
+## How to contribute
+
+Use the site's **Contribute / Suggest** form and choose either:
+
+- `Game Wiki correction`, or
+- `New Wiki information`.
+
+Include the exact screen, level/state context and the observed value. A moderator can then move the entry from `OPEN` to verified and update the corresponding Wiki article.
