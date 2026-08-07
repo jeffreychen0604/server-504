@@ -20,6 +20,15 @@
     { slug:'hero-francis', file:'hero-francis.md', group:'HERO PROFILE', title:'Francis', description:'Fighter Combat hero with durability-oriented identity and an explicitly documented source-conflict note.' },
     { slug:'hero-lucas', file:'hero-lucas.md', group:'HERO PROFILE', title:'Lucas', description:'Rider Combat hero combining faction damage with counterattack-damage mitigation.' },
     { slug:'hero-darian', file:'hero-darian.md', group:'HERO PROFILE', title:'Darian', description:'Shooter Combat hero built around Shooter ATK and troop skill damage, with officially confirmed Exclusive Equipment.' },
+    { slug:'hero-guy', file:'hero-guy.md', group:'HERO PROFILE', title:'Guy', description:'Fighter Adventure-economy specialist with Food, Energy and a documented Adventure-vs-Combat type conflict.' },
+    { slug:'hero-tristan', file:'hero-tristan.md', group:'HERO PROFILE', title:'Tristan', description:'Fighter combat support focused on Fighter DEF, ATK and high-star faction-wide battle damage.' },
+    { slug:'hero-noah', file:'hero-noah.md', group:'HERO PROFILE', title:'Noah', description:'Fighter combat hero combining faction damage with normal-attack damage mitigation.' },
+    { slug:'hero-cyrus', file:'hero-cyrus.md', group:'HERO PROFILE', title:'Cyrus', description:'Rider combat support focused on Rider DEF, ATK and high-star faction-wide battle damage.' },
+    { slug:'hero-marcia', file:'hero-marcia.md', group:'HERO PROFILE', title:'Marcia', description:'Rider combat hero combining Rider HP with battle-damage scaling.' },
+    { slug:'hero-katrina', file:'hero-katrina.md', group:'HERO PROFILE', title:'Katrina', description:'Rider normal-attack specialist with a documented Katrina/Katerina naming conflict.' },
+    { slug:'hero-natasha', file:'hero-natasha.md', group:'HERO PROFILE', title:'Natasha', description:'Shooter combat support focused on Shooter DEF, ATK and high-star faction-wide battle damage.' },
+    { slug:'hero-margaret', file:'hero-margaret.md', group:'HERO PROFILE', title:'Margaret', description:'Shooter combat hero combining Shooter HP with battle-damage scaling.' },
+    { slug:'hero-rosa', file:'hero-rosa.md', group:'HERO PROFILE', title:'Rosa', description:'Shooter combat hero combining faction damage with counterattack-damage mitigation.' },
     { slug:'hero-skills-and-passives', file:'hero-skills-and-passives.md', group:'HEROES', title:'Hero Skills & Passives', description:'Active skills, normal attacks, progression/passive skills and exclusive talents.' },
     { slug:'hero-equipment', file:'hero-equipment.md', group:'HEROES', title:'Hero Equipment', description:'Standard equipment, Power Cores and equipment progression.' },
     { slug:'exclusive-equipment-and-hall-of-honor', file:'exclusive-equipment-and-hall-of-honor.md', group:'HEROES', title:'Exclusive Equipment & Hall of Honor', description:'Hero-specific equipment, Red Star breakthrough, swapping and Hall of Honor.' },
@@ -90,7 +99,7 @@
           <span>OPEN REFERENCE →</span>
         </a>`).join('')}
       </div>
-      <div class="wiki-research-footnote">Current research backlog: remaining individual hero profiles, exact Chip Factory recipes, shops/currencies and Server 504 screenshot verification for conflicting hero/season numeric data. Hero identity data is kept separate from fast-changing meta assessments.</div>
+      <div class="wiki-research-footnote">Hero profile coverage now includes the current verified S-rarity roster except Lan Yan, whose faction data remains internally contradictory in public sources. Remaining research backlog: Lan Yan in-game verification, exact Chip Factory recipes, shops/currencies and Server 504 screenshot verification for version-sensitive numeric data.</div>
     </section>`;
   }
 
