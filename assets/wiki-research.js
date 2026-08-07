@@ -110,6 +110,41 @@
       description: 'Alliance Duel, Survival Preparedness, State of Supremacy and recurring events.'
     },
     {
+      slug: 'alliance-duel',
+      file: 'alliance-duel.md',
+      group: 'EVENTS',
+      title: 'Alliance Duel',
+      description: 'Weekly alliance-vs-alliance themes, Enemy Buster, resource timing and current patch-sensitive scoring.'
+    },
+    {
+      slug: 'survival-preparedness',
+      file: 'survival-preparedness.md',
+      group: 'EVENTS',
+      title: 'Survival Preparedness',
+      description: 'Rotating progression themes, current matchmaking and double-dip planning with Alliance Duel.'
+    },
+    {
+      slug: 'state-of-supremacy',
+      file: 'state-of-supremacy.md',
+      group: 'EVENTS',
+      title: 'State of Supremacy',
+      description: 'Cross-state preparation, Capital/Turret warfare, teleport rules and State Hospital settlement.'
+    },
+    {
+      slug: 'zombie-siege',
+      file: 'zombie-siege.md',
+      group: 'EVENTS',
+      title: 'Zombie Siege',
+      description: 'Wave defense, reinforcement scoring, current 37.5-minute pacing and alliance coordination.'
+    },
+    {
+      slug: 'bio-mutant',
+      file: 'bio-mutant.md',
+      group: 'EVENTS',
+      title: 'Bio-Mutant — Frankenstein',
+      description: 'Alliance damage event, two-round Lv.20 Alliance Gifts rule and rally planning.'
+    },
+    {
       slug: 'season-4-sealed-island',
       file: 'season-4-sealed-island.md',
       group: 'SEASON 4',
@@ -157,7 +192,7 @@
           <span>OPEN REFERENCE →</span>
         </a>`).join('')}
       </div>
-      <div class="wiki-research-footnote">Next research batches: individual hero database, exact Chip Factory recipes from Server 504 captures, Watchtower/Industrial cost tables, Alliance Duel & Survival Preparedness scoring, event shops/currencies and deeper Season 4 mechanics.</div>
+      <div class="wiki-research-footnote">Next research batches: individual hero database, exact Chip Factory recipes from Server 504 captures, Watchtower/Industrial cost tables, event shops/currencies and deeper Season 4 mechanics.</div>
     </section>`;
   }
 
