@@ -188,6 +188,42 @@
     </section>`;
   }
 
+  async function enrichGlobalSearch() {
+    try {
+      if (typeof searchIndex === 'undefined' || !Array.isArray(searchIndex)) return;
+
+      const genericTitles = new Set(articles.map(a => a.title.toLowerCase()));
+      searchIndex = searchIndex.filter(entry => !(
+        entry.route === 'wiki' && genericTitles.has(String(entry.heading || '').toLowerCase())
+      ));
+
+      const researchedEntries = await Promise.all(articles.map(async article => {
+        let body = article.description;
+        try {
+          const res = await fetch(`content/en/wiki/${article.file}`, { cache: 'no-store' });
+          if (res.ok) {
+            const text = await res.text();
+            body = text
+              .replace(/^---[\s\S]*?---/m, ' ')
+              .replace(/https?:\/\/\S+/g, ' ')
+              .replace(/[#>*_`|\[\]()]/g, ' ')
+              .replace(/\s+/g, ' ')
+              .trim();
+          }
+        } catch (_) {}
+
+        return {
+          route: `wiki/${article.slug}`,
+          label: `Game Wiki · ${article.group}`,
+          heading: article.title,
+          body
+        };
+      }));
+
+      searchIndex.push(...researchedEntries);
+    } catch (_) {}
+  }
+
   async function renderWiki() {
     if (!isWikiRoute()) {
       app.removeAttribute('data-wiki-research-route');
@@ -238,4 +274,5 @@
   languageSelect?.addEventListener('change', scheduleRender);
   startObserver();
   setTimeout(scheduleRender, 120);
+  setTimeout(enrichGlobalSearch, 180);
 })();
