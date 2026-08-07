@@ -68,6 +68,34 @@
       description: 'Shelter progression gates, prerequisites, Precision Parts and Industrial Age.'
     },
     {
+      slug: 'watchtower-progression-reference',
+      file: 'watchtower-progression-reference.md',
+      group: 'PROGRESSION',
+      title: 'Watchtower Progression Reference',
+      description: 'WT prerequisite chain, community-source conflicts and the levels that need Server 504 in-game verification.'
+    },
+    {
+      slug: 'industrial-age-and-precision-parts',
+      file: 'industrial-age-and-precision-parts.md',
+      group: 'PROGRESSION',
+      title: 'Industrial Age & Precision Parts',
+      description: 'Industrial upgrade model, Precision Part bottlenecks and versioned community cost snapshots.'
+    },
+    {
+      slug: 'troop-tier-progression',
+      file: 'troop-tier-progression.md',
+      group: 'PROGRESSION',
+      title: 'Troop Tier Progression',
+      description: 'T1–T10 milestone reference, research/camp gates and a transparent audit of conflicting public unlock tables.'
+    },
+    {
+      slug: 'progression-planning',
+      file: 'progression-planning.md',
+      group: 'PROGRESSION',
+      title: 'Progression Planning',
+      description: 'How to pre-queue prerequisites, time upgrades with events and plan the transition into Industrial progression.'
+    },
+    {
       slug: 'apc-modified-vehicle',
       file: 'apc-modified-vehicle.md',
       group: 'APC',
@@ -192,7 +220,7 @@
           <span>OPEN REFERENCE →</span>
         </a>`).join('')}
       </div>
-      <div class="wiki-research-footnote">Next research batches: individual hero database, exact Chip Factory recipes from Server 504 captures, Watchtower/Industrial cost tables, event shops/currencies and deeper Season 4 mechanics.</div>
+      <div class="wiki-research-footnote">Next research batches: individual hero database, exact Chip Factory recipes from Server 504 captures, event shops/currencies and deeper Season 4 mechanics. Progression rows with conflicting public data are intentionally marked for in-game verification.</div>
     </section>`;
   }
 
