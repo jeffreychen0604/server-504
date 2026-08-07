@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0b0e12" />
+  <meta name="description" content="Server 504 knowledge, governance and operations portal for Dark War: Survival." />
+  <title>Server 504 | Dark War: Survival</title>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+  <link rel="stylesheet" href="./assets/styles.css" />
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <a class="brand" href="#/home" aria-label="Server 504 Home">
+      <span class="brand-mark">504</span>
+      <span class="brand-copy">
+        <strong>SERVER 504</strong>
+        <small>KNOWLEDGE & OPERATIONS</small>
+      </span>
+    </a>
+
+    <nav class="desktop-nav" aria-label="Main navigation">
+      <a href="#/wiki" data-i18n="navWiki">Wiki</a>
+      <a href="#/charter" data-i18n="navCharter">Charter</a>
+      <a href="#/codex" data-i18n="navCodex">Operations</a>
+      <a href="#/season" data-i18n="navSeason">Current Season</a>
+    </nav>
+
+    <div class="header-actions">
+      <button class="icon-button search-trigger" type="button" aria-label="Search">⌕</button>
+      <select id="languageSelect" class="language-select" aria-label="Language">
+        <option value="en">EN</option>
+        <option value="fr">FR</option>
+        <option value="es">ES</option>
+        <option value="pt">PT</option>
+        <option value="ko">KO</option>
+        <option value="vi">VI</option>
+      </select>
+      <button id="menuToggle" class="icon-button menu-toggle" type="button" aria-label="Open menu">☰</button>
+    </div>
+  </header>
+
+  <div class="shell">
+    <aside id="sidebar" class="sidebar">
+      <div class="sidebar-section">
+        <div class="sidebar-label" data-i18n="knowledge">Knowledge</div>
+        <a href="#/home" data-route="home" data-i18n="home">Home</a>
+        <a href="#/wiki" data-route="wiki" data-i18n="gameWiki">Game Wiki</a>
+      </div>
+
+      <div class="sidebar-section">
+        <div class="sidebar-label">Server 504</div>
+        <a href="#/charter" data-route="charter" data-i18n="serverCharter">Server Charter</a>
+        <a href="#/codex" data-route="codex" data-i18n="operationalCodex">Operational Codex</a>
+        <a href="#/season" data-route="season" data-i18n="seasonalAnnex">Seasonal Annex</a>
+      </div>
+
+      <div class="sidebar-section">
+        <div class="sidebar-label" data-i18n="community">Community</div>
+        <button id="contributeSidebar" class="sidebar-button" type="button" data-i18n="contribute">Contribute / Suggest</button>
+      </div>
+
+      <div class="sidebar-foot">
+        <span class="status-dot"></span>
+        <div>
+          <strong>Governance V2</strong>
+          <small>August 2026</small>
+        </div>
+      </div>
+    </aside>
+
+    <main id="app" class="main-content" tabindex="-1"></main>
+  </div>
+
+  <button id="mobileContribute" class="floating-contribute" type="button" aria-label="Contribute">+</button>
+
+  <dialog id="searchDialog" class="dialog search-dialog">
+    <div class="dialog-head">
+      <div>
+        <small data-i18n="searchLabel">GLOBAL SEARCH</small>
+        <h2 data-i18n="searchTitle">Search Server 504</h2>
+      </div>
+      <button class="dialog-close" type="button" data-close-dialog="searchDialog">×</button>
+    </div>
+    <input id="searchInput" class="search-input" type="search" autocomplete="off" placeholder="Search Armory, Capital, KOS, rally..." />
+    <div id="searchResults" class="search-results"></div>
+  </dialog>
+
+  <dialog id="contributeDialog" class="dialog contribute-dialog">
+    <div class="dialog-head">
+      <div>
+        <small data-i18n="communityContribution">COMMUNITY CONTRIBUTION</small>
+        <h2 data-i18n="sendSuggestion">Send a suggestion</h2>
+      </div>
+      <button class="dialog-close" type="button" data-close-dialog="contributeDialog">×</button>
+    </div>
+
+    <form id="contributeForm">
+      <label>
+        <span data-i18n="type">Type</span>
+        <select id="contributionType" required>
+          <option>Game Wiki correction</option>
+          <option>New Wiki information</option>
+          <option>Charter proposal</option>
+          <option>Operational Codex proposal</option>
+          <option>Translation correction</option>
+          <option>Server operation suggestion</option>
+          <option>Other</option>
+        </select>
+      </label>
+      <label>
+        <span data-i18n="title">Title</span>
+        <input id="contributionTitle" required maxlength="120" />
+      </label>
+      <label>
+        <span data-i18n="details">Details</span>
+        <textarea id="contributionDetails" required rows="7"></textarea>
+      </label>
+      <label>
+        <span data-i18n="allianceOptional">Alliance / player name (optional)</span>
+        <input id="contributionIdentity" maxlength="80" />
+      </label>
+      <p class="form-note" data-i18n="githubNote">V0 stores community suggestions as GitHub Issues. Anonymous submission can be added later with the free D1 backend.</p>
+      <button class="primary-button" type="submit" data-i18n="continueGithub">Continue to GitHub</button>
+    </form>
+  </dialog>
+
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="./assets/app.js" defer></script>
+</body>
+</html>
