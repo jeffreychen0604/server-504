@@ -1,5 +1,4 @@
 const REPO = 'jeffreychen0604/server-504';
-const BASE = location.pathname.endsWith('/') ? location.pathname : location.pathname.replace(/\/[^/]*$/, '/');
 
 const app = document.getElementById('app');
 const sidebar = document.getElementById('sidebar');
@@ -141,7 +140,7 @@ async function render() {
 
   bindDynamicTriggers();
   app.focus({ preventScroll: true });
-  window.scrollTo({ top: 0, behavior: 'instant' });
+  window.scrollTo({ top: 0, behavior: 'auto' });
 }
 
 function bindDynamicTriggers() {
