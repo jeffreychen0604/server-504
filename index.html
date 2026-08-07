@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="./assets/art-overrides.css" />
   <link rel="stylesheet" href="./assets/layout-simplify.css" />
   <link rel="stylesheet" href="./assets/pages-fancy.css" />
+  <link rel="stylesheet" href="./assets/layout-refine.css" />
 </head>
 <body>
   <div class="noise" aria-hidden="true"></div>
@@ -24,8 +25,13 @@
       </span>
     </a>
 
+    <label class="header-search" aria-label="Search Server 504">
+      <span class="header-search-icon" aria-hidden="true"></span>
+      <input id="headerSearchInput" type="search" placeholder="Search Server 504 knowledge..." autocomplete="off" readonly />
+      <kbd>/</kbd>
+    </label>
+
     <div class="header-actions">
-      <button class="icon-button search-trigger" type="button" aria-label="Search">⌕</button>
       <select id="languageSelect" class="language-select" aria-label="Language">
         <option value="en">EN</option>
         <option value="fr">FR</option>
@@ -125,5 +131,6 @@
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <script src="./assets/app.js" defer></script>
   <script src="./assets/pages-fancy.js" defer></script>
+  <script src="./assets/header-search.js" defer></script>
 </body>
 </html>
