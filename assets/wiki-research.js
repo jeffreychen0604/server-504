@@ -45,6 +45,13 @@
     { slug:'chip-factory', file:'chip-factory.md', group:'APC', title:'Chip Factory', description:'Targeted chip crafting, material types, access notes and recipe-verification plan.' },
     { slug:'apc-parts-and-sets', file:'apc-parts-and-sets.md', group:'APC', title:'APC Parts & Parts Set', description:'Six-part progression, Parts Set milestones and modern material-rule changes.' },
     { slug:'tactical-modification', file:'tactical-modification.md', group:'APC', title:'Tactical Modification', description:'Official endgame unlock routes through Modify Lv.500, parts Lv.66 or Orange chip 10★.' },
+    { slug:'shops-and-currencies-overview', file:'shops-and-currencies-overview.md', group:'ECONOMY', title:'Shops & Currencies Overview', description:'Current shop map, 2026 Honor Shop migration, legacy-name translation and purchase-priority rules.' },
+    { slug:'honor-shop', file:'honor-shop.md', group:'ECONOMY', title:'Honor Shop', description:'Unified Capital/Arena/Black Gold shop model, Honor Points and legacy currency conversion.' },
+    { slug:'alliance-shop', file:'alliance-shop.md', group:'ECONOMY', title:'Alliance Shop', description:'Personal Points, Wisdom Medals, Orange fragments, teleporters, shields and weekly purchase logic.' },
+    { slug:'season-and-vip-shops', file:'season-and-vip-shops.md', group:'ECONOMY', title:'Season Shop & VIP Shop', description:'Recurring scarce-material sources, permanent-season rewards and version-sensitive VIP stock.' },
+    { slug:'resource-source-index', file:'resource-source-index.md', group:'ECONOMY', title:'Resource Source Index', description:'Fast lookup for Power Cores, Wisdom Medals, Precision Parts, Titanium Alloy, Blueprints and more.' },
+    { slug:'equipment-and-apc-material-sources', file:'equipment-and-apc-material-sources.md', group:'ECONOMY', title:'Equipment & APC Material Sources', description:'Separates Boost Ores, Power Cores and DX Blueprints from Titanium Alloy and APC Design Blueprints.' },
+    { slug:'event-and-premium-currencies', file:'event-and-premium-currencies.md', group:'ECONOMY', title:'Event & Premium Currencies', description:'Honor Points, Alliance points, Mechanical Components, Magatama, Shell Coins, Dawn Badges and lifecycle rules.' },
     { slug:'events-overview', file:'events-overview.md', group:'EVENTS', title:'Events Overview', description:'Alliance Duel, Survival Preparedness, State of Supremacy and recurring events.' },
     { slug:'alliance-duel', file:'alliance-duel.md', group:'EVENTS', title:'Alliance Duel', description:'Weekly alliance-vs-alliance themes, Enemy Buster, resource timing and current patch-sensitive scoring.' },
     { slug:'survival-preparedness', file:'survival-preparedness.md', group:'EVENTS', title:'Survival Preparedness', description:'Rotating progression themes, current matchmaking and double-dip planning with Alliance Duel.' },
@@ -100,7 +107,7 @@
           <span>OPEN REFERENCE →</span>
         </a>`).join('')}
       </div>
-      <div class="wiki-research-footnote">Hero profile coverage now includes every current public S-rarity entry: verified heroes have normal profiles, while Lan Yan remains a visible verification-pending profile. Remaining research backlog: exact Chip Factory recipes, shops/currencies and Server 504 screenshot verification for version-sensitive numeric data.</div>
+      <div class="wiki-research-footnote">Hero profile coverage includes every current public S-rarity entry, and W8 adds a version-aware shop/currency/resource layer. Remaining research backlog: exact Chip Factory recipes plus Server 504 screenshots for current shop inventory, prices, purchase limits and other version-sensitive numeric data.</div>
     </section>`;
   }
 
