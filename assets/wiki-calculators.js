@@ -64,8 +64,5 @@
     updateChip();
   }
 
-  const observer = new MutationObserver(mountCalculators);
-  observer.observe(document.body, { childList: true, subtree: true });
-  window.addEventListener('hashchange', () => setTimeout(mountCalculators, 80));
-  setTimeout(mountCalculators, 180);
+  window.Server504WikiCalculators = { mount: mountCalculators };
 })();
