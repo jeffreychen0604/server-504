@@ -29,7 +29,7 @@
     </header>`;
   }
 
-  async function renderArticle(article) {
+  async function renderArticle(article, routeKey) {
     const requestedLocale = locale();
     let usedFallback = false;
     let res = await fetch(`content/${requestedLocale}/wiki/${article.file}`, { cache:'no-store' });
@@ -40,17 +40,19 @@
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const text = await res.text();
     const badge = usedFallback ? `EN SOURCE · ${requestedLocale.toUpperCase()} PENDING` : requestedLocale.toUpperCase();
-    app.innerHTML = `<section class="page wiki-research-page wiki-article-page">
+    app.innerHTML = `<section class="page wiki-research-page wiki-article-page" data-w12-article="${article.slug}">
       <a class="wiki-back" href="#/wiki">← Game Wiki</a>
       ${header(article, badge)}
       <article class="markdown-body wiki-article-body">${marked.parse(text)}</article>
     </section>`;
+    app.dataset.w12Route = routeKey;
     window.scrollTo({ top:0, behavior:'auto' });
   }
 
   function injectRootCards() {
     const route = parts();
     if (route[0] !== 'wiki' || route.length !== 1) return;
+    app.removeAttribute('data-w12-route');
     const grid = app.querySelector('.wiki-research-grid');
     if (!grid || grid.dataset.w12Injected === '1') return;
     grid.dataset.w12Injected = '1';
@@ -77,10 +79,13 @@
     }
     const article = articles.find(a => a.slug === route[1]);
     if (!article) return;
+    const routeKey = `${article.slug}:${locale()}`;
+    if (app.dataset.w12Route === routeKey && app.querySelector(`[data-w12-article="${article.slug}"]`)) return;
     try {
-      await renderArticle(article);
+      await renderArticle(article, routeKey);
     } catch (error) {
       app.innerHTML = `<section class="page"><div class="error-box">Unable to load Wiki article: ${error.message}</div></section>`;
+      app.dataset.w12Route = routeKey;
     }
   }
 
