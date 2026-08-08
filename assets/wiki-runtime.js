@@ -6,6 +6,26 @@
   if (!app || !window.marked) return;
 
   const MANIFEST_URL = 'content/wiki-manifest.json';
+  const STOP_WORDS = new Set([
+    'and','the','for','with','from','into','that','this','current','overview','reference','system','systems',
+    'dark','war','survival','server','game','wiki','guide','progression','official','community','data'
+  ]);
+  const HUB_BOOSTS = {
+    'HERO PROFILE': ['hero-database','factions-and-heroes','hero-investment-framework'],
+    'HEROES': ['hero-database','factions-and-heroes','hero-investment-framework'],
+    'APC': ['apc-modified-vehicle','apc-chips','apc-parts-and-sets'],
+    'PET AGENTS': ['pet-agents-overview','pet-roster-and-unlocks'],
+    'ALLIANCE': ['alliance-systems-overview'],
+    'EVENTS': ['events-overview'],
+    'PROGRESSION': ['progression-planning','watchtower-and-industrial'],
+    'RESEARCH': ['research-center-overview','research-priority-framework'],
+    'SHELTER': ['shelter-buildings-overview','shelter-building-priority'],
+    'DAILY UTILITY': ['daily-utility-systems-overview','daily-utility-routine'],
+    'ECONOMY': ['shops-and-currencies-overview','resource-source-index'],
+    'WORLD & STATE': ['world-map-and-state-systems'],
+    'SEASON 4': ['season-4-sealed-island']
+  };
+
   let manifestPromise;
   let searchEntriesPromise;
   let observer;
@@ -23,6 +43,24 @@
     return group;
   }
 
+  function normalizeText(value) {
+    return String(value || '')
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '')
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, ' ')
+      .replace(/\s+/g, ' ')
+      .trim();
+  }
+
+  function significantTokens(value) {
+    return new Set(
+      normalizeText(value)
+        .split(' ')
+        .filter(token => token.length > 2 && !STOP_WORDS.has(token))
+    );
+  }
+
   async function loadManifest() {
     if (!manifestPromise) {
       manifestPromise = fetch(MANIFEST_URL, { cache: 'no-store' }).then(async res => {
@@ -32,10 +70,18 @@
           throw new Error('Invalid Wiki manifest');
         }
         data.articleMap = new Map(data.articles.map(article => [article.slug, article]));
+        data.categories.forEach(category => {
+          category.normalizedGroups = new Set(category.groups.map(normalizeGroup));
+        });
         return data;
       });
     }
     return manifestPromise;
+  }
+
+  function categoryForArticle(manifest, article) {
+    const group = normalizeGroup(article.group);
+    return manifest.categories.find(category => category.normalizedGroups?.has(group)) || null;
   }
 
   function header(title, description, badges = []) {
@@ -92,10 +138,9 @@
     const sections = [];
 
     manifest.categories.forEach(def => {
-      const groupSet = new Set(def.groups.map(normalizeGroup));
       const matches = manifest.articles.filter(article => {
         if (used.has(article.slug)) return false;
-        if (!groupSet.has(normalizeGroup(article.group))) return false;
+        if (!def.normalizedGroups.has(normalizeGroup(article.group))) return false;
         used.add(article.slug);
         return true;
       });
@@ -119,11 +164,65 @@
       </div>
       ${confidenceLegend()}
       <div class="wiki-research-grid wiki-ia-grouped">${sections.join('')}</div>
-      <div class="wiki-ia-audit-note">${manifest.articles.length} references are indexed from one manifest. Taxonomy, routing and global search now use the same article registry.</div>
+      <div class="wiki-ia-audit-note">${manifest.articles.length} references are indexed from one manifest. Taxonomy, routing and global search use the same article registry.</div>
     </section>`;
   }
 
-  async function articlePage(article) {
+  function relatedScore(manifest, current, candidate) {
+    if (current.slug === candidate.slug) return -1;
+
+    const currentGroup = normalizeGroup(current.group);
+    const candidateGroup = normalizeGroup(candidate.group);
+    const currentCategory = categoryForArticle(manifest, current)?.id || '';
+    const candidateCategory = categoryForArticle(manifest, candidate)?.id || '';
+    let score = 0;
+
+    if (currentGroup === candidateGroup) score += 40;
+    if (currentCategory && currentCategory === candidateCategory) score += 18;
+
+    const currentTokens = significantTokens(`${current.title} ${current.description}`);
+    const candidateTokens = significantTokens(`${candidate.title} ${candidate.description}`);
+    currentTokens.forEach(token => {
+      if (candidateTokens.has(token)) score += 7;
+    });
+
+    const hubs = HUB_BOOSTS[currentGroup] || [];
+    const hubIndex = hubs.indexOf(candidate.slug);
+    if (hubIndex >= 0) score += 34 - hubIndex * 5;
+
+    if (current.slug.startsWith('hero-') && candidate.slug === 'hero-database') score += 24;
+    if (current.slug.startsWith('pet-') && candidate.slug === 'pet-agents-overview') score += 24;
+    if (current.slug.includes('chip') && candidate.slug === 'chip-factory') score += 20;
+    if (current.slug.includes('armory') && candidate.slug === 'alliance-systems-overview') score += 16;
+
+    return score;
+  }
+
+  function relatedReferences(manifest, article, limit = 4) {
+    return manifest.articles
+      .map(candidate => ({ candidate, score: relatedScore(manifest, article, candidate) }))
+      .filter(item => item.score > 0)
+      .sort((a, b) => b.score - a.score || a.candidate.title.localeCompare(b.candidate.title))
+      .slice(0, limit)
+      .map(item => item.candidate);
+  }
+
+  function relatedSection(manifest, article) {
+    const related = relatedReferences(manifest, article);
+    if (!related.length) return '';
+    return `<section class="wiki-related" aria-labelledby="wikiRelatedTitle">
+      <div class="wiki-related-head">
+        <div>
+          <small>DISCOVER NEXT</small>
+          <h2 id="wikiRelatedTitle">Related references</h2>
+        </div>
+        <a href="#/wiki">Browse all →</a>
+      </div>
+      <div class="wiki-related-grid">${related.map(card).join('')}</div>
+    </section>`;
+  }
+
+  async function articlePage(manifest, article) {
     const requestedLocale = locale();
     const localized = `content/${requestedLocale}/wiki/${article.file}`;
     const fallback = `content/en/wiki/${article.file}`;
@@ -145,6 +244,7 @@
       <a class="wiki-back" href="#/wiki">← Game Wiki</a>
       ${header(article.title, article.description, ['VERIFIED AUG 2026', localeBadge])}
       <article class="markdown-body wiki-article-body">${marked.parse(text)}</article>
+      ${relatedSection(manifest, article)}
     </section>`;
   }
 
@@ -185,7 +285,7 @@
       } else {
         const article = manifest.articleMap.get(slug);
         app.innerHTML = article
-          ? await articlePage(article)
+          ? await articlePage(manifest, article)
           : `<section class="page wiki-research-page">${header('Wiki article not found', 'The requested Dark War: Survival reference does not exist.', ['404'])}<a class="wiki-back" href="#/wiki">← Return to Game Wiki</a></section>`;
       }
     } catch (error) {
@@ -222,11 +322,15 @@
             const res = await fetch(`content/en/wiki/${article.file}`, { cache: 'no-store' });
             if (res.ok) body = cleanMarkdown(await res.text());
           } catch (_) {}
+          const category = categoryForArticle(manifest, article);
           return {
             route: `wiki/${article.slug}`,
             label: `Game Wiki · ${article.group}`,
             heading: article.title,
-            body
+            body,
+            group: normalizeGroup(article.group),
+            category: category?.title || 'Game Wiki',
+            aliases: [article.slug.replace(/-/g, ' ')]
           };
         }));
 
@@ -234,7 +338,10 @@
           route: 'wiki',
           label: 'Game Wiki',
           heading: 'Game Wiki',
-          body: `${manifest.rootDescription} ${manifest.categories.map(x => x.title).join(' ')}`
+          body: `${manifest.rootDescription} ${manifest.categories.map(x => x.title).join(' ')}`,
+          group: 'FOUNDATION',
+          category: 'Game Wiki',
+          aliases: ['knowledge base', 'wiki']
         });
         return entries;
       });
@@ -264,7 +371,12 @@
   window.Server504Wiki = {
     loadManifest,
     render: () => renderWiki(true),
-    refreshSearch: ensureWikiSearchIndex
+    refreshSearch: ensureWikiSearchIndex,
+    related: async slug => {
+      const manifest = await loadManifest();
+      const article = manifest.articleMap.get(slug);
+      return article ? relatedReferences(manifest, article) : [];
+    }
   };
 
   window.addEventListener('hashchange', () => scheduleRender(true, 0));
