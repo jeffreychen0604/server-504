@@ -11,6 +11,21 @@ Community knowledge, governance and operations portal for Dark War: Survival Ser
 - Anonymous community contributions with moderation
 - Multilingual UI: English, Français, Español, Português, 한국어, Tiếng Việt
 
+## Localization policy
+
+The public language contract is exactly six locales: `en`, `fr`, `es`, `pt`, `ko`, `vi`.
+
+Localization is intentionally split by content lifecycle:
+
+- UI chrome, Home, navigation, search, contribution flow, Wiki taxonomy, confidence labels and category browsing are localized for all six locales through `assets/i18n.js`.
+- Server Charter and Operational Codex have complete Markdown variants under `content/<locale>/` for all six locales.
+- Wiki article titles are localized through `content/wiki-titles.json` while official in-game names and established game terms remain unchanged where translation would make them harder to match against the game UI.
+- The 117 English Wiki article bodies remain the current source-of-truth dataset. A non-English Wiki route first looks for `content/<locale>/wiki/<file>` and transparently falls back to the English source when no localized article body exists; the UI explicitly marks that fallback instead of pretending the body is translated.
+- Search normalization is Unicode-aware so Korean and accented French, Spanish, Portuguese and Vietnamese queries are preserved.
+- Contribution type display labels are localized, while the underlying values remain stable English API enums so the Cloudflare Worker allowlist does not change with UI language.
+
+`scripts/validate-i18n.js` makes the six-locale contract deployment-blocking by checking UI-key parity, language-selector parity, localized governance files, Wiki taxonomy/group translations and localized-title slug integrity.
+
 ## Wiki data policy
 
 The Wiki separates:
@@ -31,12 +46,13 @@ Before deployment, `scripts/validate-wiki.sh` checks:
 - unrelated-game contamination;
 - removed navigation concepts;
 - article H1 and verification/update metadata;
-- Wiki, calculator and search-discovery JavaScript syntax;
+- syntax of active public JavaScript, including i18n, app, feedback, Wiki, calculators and search discovery;
+- the six-locale localization contract through `scripts/validate-i18n.js`;
 - manifest slug/file uniqueness;
 - manifest ↔ Markdown file completeness in both directions;
 - taxonomy coverage;
 - accidental reintroduction of retired Wiki route modules;
-- presence of the consolidated Wiki runtime and W18 discovery assets in the public entrypoint.
+- presence of the consolidated Wiki runtime and discovery assets in the public entrypoint.
 
 W19 adds `scripts/audit-wiki-content.py`, which separately checks the documentation layer for:
 
@@ -51,6 +67,8 @@ W19 adds `scripts/audit-wiki-content.py`, which separately checks the documentat
 
 - static HTML/CSS/JavaScript
 - Markdown Wiki content rendered client-side with `marked`
+- `assets/i18n.js` as the shared six-locale UI/taxonomy copy contract
+- `content/wiki-titles.json` as localized Wiki-title metadata
 - `content/wiki-manifest.json` as the single Wiki registry and taxonomy source
 - `content/wiki-coverage.json` as the machine-readable content coverage/backlog contract
 - `assets/wiki-runtime.js` as the single Wiki router, article loader, related-reference engine and Wiki search indexer
@@ -63,7 +81,9 @@ W19 adds `scripts/audit-wiki-content.py`, which separately checks the documentat
 
 ## Search & discovery behavior
 
-Global search ranks exact titles and aliases above labels/body text, expands common Dark War abbreviations and synonyms such as `WT`, `APC`, `Frankenstein`, `EE`, `RSS` and `S4`, and applies lightweight typo tolerance against title/alias tokens only. Search results can be filtered by Wiki taxonomy category or governance/operations content.
+Global search ranks exact titles and aliases above labels/body text, expands common Dark War abbreviations and synonyms such as `WT`, `APC`, `Frankenstein`, `EE`, `RSS` and `S4`, and applies lightweight typo tolerance against title/alias tokens only. Search results can be filtered by localized Wiki taxonomy category or governance/operations content.
+
+Search text normalization uses Unicode letters and numbers rather than ASCII-only matching, so Korean and accented Latin-language input remains searchable.
 
 Wiki article pages also render up to four related references derived from the same manifest using group, taxonomy category, title/description overlap and hub-page boosts.
 
@@ -80,3 +100,5 @@ Lower-priority breadth includes dedicated encyclopedic pages for some side modes
 Public portal is operational. Wiki research waves W1–W15 cover foundation, combat/heroes, progression, APC, events, Sealed Island, economy, calculators/data audits, Pet Agents, alliance/state systems, research, shelter and daily utility systems.
 
 W16 completed source hygiene and information-architecture cleanup. W17 consolidated the Wiki into one manifest-driven runtime and made registry consistency a deployment-blocking CI contract. W18 upgraded discovery quality with ranked synonym-aware search, category filters, lightweight typo tolerance and related-reference recommendations without changing existing article URLs. W19 adds a formal coverage/backlog contract plus content-quality and cross-link auditing so future work prioritizes verification and decision value over raw article count.
+
+The August 2026 localization pass standardizes EN/FR/ES/PT/KO/VI across the site, adds complete six-language Charter/Codex variants, localizes Wiki navigation/title metadata, makes search Unicode-aware and promotes locale completeness into the deployment-blocking CI contract.
