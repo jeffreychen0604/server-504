@@ -3,7 +3,7 @@
 > **Last verified:** 8 Aug 2026  
 > **Status:** Legacy tables exist, but they are not safe to use as a current Lv.1–66 calculator.
 
-Several public APC tables were created before the late-2025 Modified Vehicle overhaul. They are useful for historical structure, but not as current canonical costs.
+Several public APC tables were created before the late-2025 Modified Vehicle overhaul. For the stable current structure, use [APC & Modified Vehicle](#/wiki/apc-modified-vehicle), [APC Parts & Parts Set](#/wiki/apc-parts-and-sets) and [Tactical Modification](#/wiki/tactical-modification); this page exists only to decide whether numeric cost tables are safe to reuse.
 
 ## Why the old table is outdated
 
@@ -25,6 +25,8 @@ Community data still helps establish the material relationship:
 - early Parts progression uses **Titanium Alloy**;
 - **Design Blueprints** enter the advanced Parts path after the early levels;
 - Design Blueprint is an APC/Parts resource, not the same item as DX Blueprint.
+
+For acquisition context rather than upgrade-cost claims, use [Equipment & APC Material Sources](#/wiki/equipment-and-apc-material-sources).
 
 ## Current canonical dependency model
 
