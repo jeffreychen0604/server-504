@@ -44,4 +44,5 @@ If resources are constrained, keeping the primary faction camp near the progress
 
 - Fandom Military Center: https://dark-war-survival.fandom.com/wiki/Military_Center
 - Fandom Structures: https://dark-war-survival.fandom.com/wiki/Structures
-- Archived Military Center table: https://darkwar.wiki/base-building/military-center/
+
+> Historical retired-source tables are intentionally excluded from live source links and remain verification targets only.
