@@ -1,58 +1,24 @@
 {
   "version": 1,
-  "updated": "2026-08-08",
+  "updated": "2026-08-09",
   "sourceLocale": "en",
   "supportedLocales": ["en", "fr", "es", "pt", "ko", "vi"],
   "policy": "English Markdown is the gameplay source of truth. A locale is marked translated only when a complete article file exists and preserves official Dark War: Survival system names where translation would make in-game lookup harder.",
   "batches": [
-    {
-      "id": "L10N-01",
-      "name": "Start Here / Foundation",
-      "status": "complete",
-      "slugs": ["game-overview"]
-    },
-    {
-      "id": "L10N-02",
-      "name": "Combat Basics",
-      "status": "complete",
-      "slugs": ["combat-system-and-reports", "formations-and-unit-presets", "rally-reinforcement-and-defense"]
-    },
-    {
-      "id": "L10N-03",
-      "name": "Hero Fundamentals",
-      "status": "complete",
-      "slugs": ["factions-and-heroes", "hero-skills-and-passives", "hero-equipment", "exclusive-equipment-and-hall-of-honor"]
-    },
-    {
-      "id": "L10N-04",
-      "name": "Hero Roster & Investment",
-      "status": "complete",
-      "slugs": ["hero-database", "fighter-heroes", "rider-heroes", "shooter-heroes", "hero-investment-framework"]
-    },
-    {
-      "id": "L10N-05",
-      "name": "Hero Profiles A",
-      "status": "complete",
-      "slugs": ["hero-quinn", "hero-corleone", "hero-megan", "hero-evans", "hero-catherine-and-rex"]
-    },
-    {
-      "id": "L10N-06",
-      "name": "Hero Profiles B",
-      "status": "complete",
-      "slugs": ["hero-francis", "hero-lucas", "hero-darian", "hero-guy", "hero-tristan"]
-    },
-    {
-      "id": "L10N-07",
-      "name": "Hero Profiles C",
-      "status": "complete",
-      "slugs": ["hero-noah", "hero-cyrus", "hero-marcia", "hero-natasha"]
-    }
+    {"id":"L10N-01","name":"Start Here / Foundation","status":"complete","slugs":["game-overview"]},
+    {"id":"L10N-02","name":"Combat Basics","status":"complete","slugs":["combat-system-and-reports","formations-and-unit-presets","rally-reinforcement-and-defense"]},
+    {"id":"L10N-03","name":"Hero Fundamentals","status":"complete","slugs":["factions-and-heroes","hero-skills-and-passives","hero-equipment","exclusive-equipment-and-hall-of-honor"]},
+    {"id":"L10N-04","name":"Hero Roster & Investment","status":"complete","slugs":["hero-database","fighter-heroes","rider-heroes","shooter-heroes","hero-investment-framework"]},
+    {"id":"L10N-05","name":"Hero Profiles A","status":"complete","slugs":["hero-quinn","hero-corleone","hero-megan","hero-evans","hero-catherine-and-rex"]},
+    {"id":"L10N-06","name":"Hero Profiles B","status":"complete","slugs":["hero-francis","hero-lucas","hero-darian","hero-guy","hero-tristan"]},
+    {"id":"L10N-07","name":"Hero Profiles C","status":"complete","slugs":["hero-noah","hero-cyrus","hero-marcia","hero-natasha"]},
+    {"id":"L10N-08","name":"Hero Profiles D","status":"complete","slugs":["hero-margaret","hero-katrina","hero-rosa","hero-lan-yan-pending"]}
   ],
   "translated": {
-    "fr": ["game-overview", "combat-system-and-reports", "formations-and-unit-presets", "rally-reinforcement-and-defense", "factions-and-heroes", "hero-skills-and-passives", "hero-equipment", "exclusive-equipment-and-hall-of-honor", "hero-database", "fighter-heroes", "rider-heroes", "shooter-heroes", "hero-investment-framework", "hero-quinn", "hero-corleone", "hero-megan", "hero-evans", "hero-catherine-and-rex", "hero-francis", "hero-lucas", "hero-darian", "hero-guy", "hero-tristan", "hero-noah", "hero-cyrus", "hero-marcia", "hero-natasha"],
-    "es": ["game-overview", "combat-system-and-reports", "formations-and-unit-presets", "rally-reinforcement-and-defense", "factions-and-heroes", "hero-skills-and-passives", "hero-equipment", "exclusive-equipment-and-hall-of-honor", "hero-database", "fighter-heroes", "rider-heroes", "shooter-heroes", "hero-investment-framework", "hero-quinn", "hero-corleone", "hero-megan", "hero-evans", "hero-catherine-and-rex", "hero-francis", "hero-lucas", "hero-darian", "hero-guy", "hero-tristan", "hero-noah", "hero-cyrus", "hero-marcia", "hero-natasha"],
-    "pt": ["game-overview", "combat-system-and-reports", "formations-and-unit-presets", "rally-reinforcement-and-defense", "factions-and-heroes", "hero-skills-and-passives", "hero-equipment", "exclusive-equipment-and-hall-of-honor", "hero-database", "fighter-heroes", "rider-heroes", "shooter-heroes", "hero-investment-framework", "hero-quinn", "hero-corleone", "hero-megan", "hero-evans", "hero-catherine-and-rex", "hero-francis", "hero-lucas", "hero-darian", "hero-guy", "hero-tristan", "hero-noah", "hero-cyrus", "hero-marcia", "hero-natasha"],
-    "ko": ["game-overview", "combat-system-and-reports", "formations-and-unit-presets", "rally-reinforcement-and-defense", "factions-and-heroes", "hero-skills-and-passives", "hero-equipment", "exclusive-equipment-and-hall-of-honor", "hero-database", "fighter-heroes", "rider-heroes", "shooter-heroes", "hero-investment-framework", "hero-quinn", "hero-corleone", "hero-megan", "hero-evans", "hero-catherine-and-rex", "hero-francis", "hero-lucas", "hero-darian", "hero-guy", "hero-tristan", "hero-noah", "hero-cyrus", "hero-marcia", "hero-natasha"],
-    "vi": ["game-overview", "combat-system-and-reports", "formations-and-unit-presets", "rally-reinforcement-and-defense", "factions-and-heroes", "hero-skills-and-passives", "hero-equipment", "exclusive-equipment-and-hall-of-honor", "hero-database", "fighter-heroes", "rider-heroes", "shooter-heroes", "hero-investment-framework", "hero-quinn", "hero-corleone", "hero-megan", "hero-evans", "hero-catherine-and-rex", "hero-francis", "hero-lucas", "hero-darian", "hero-guy", "hero-tristan", "hero-noah", "hero-cyrus", "hero-marcia", "hero-natasha"]
+    "fr": ["game-overview","combat-system-and-reports","formations-and-unit-presets","rally-reinforcement-and-defense","factions-and-heroes","hero-skills-and-passives","hero-equipment","exclusive-equipment-and-hall-of-honor","hero-database","fighter-heroes","rider-heroes","shooter-heroes","hero-investment-framework","hero-quinn","hero-corleone","hero-megan","hero-evans","hero-catherine-and-rex","hero-francis","hero-lucas","hero-darian","hero-guy","hero-tristan","hero-noah","hero-cyrus","hero-marcia","hero-natasha","hero-margaret","hero-katrina","hero-rosa","hero-lan-yan-pending"],
+    "es": ["game-overview","combat-system-and-reports","formations-and-unit-presets","rally-reinforcement-and-defense","factions-and-heroes","hero-skills-and-passives","hero-equipment","exclusive-equipment-and-hall-of-honor","hero-database","fighter-heroes","rider-heroes","shooter-heroes","hero-investment-framework","hero-quinn","hero-corleone","hero-megan","hero-evans","hero-catherine-and-rex","hero-francis","hero-lucas","hero-darian","hero-guy","hero-tristan","hero-noah","hero-cyrus","hero-marcia","hero-natasha","hero-margaret","hero-katrina","hero-rosa","hero-lan-yan-pending"],
+    "pt": ["game-overview","combat-system-and-reports","formations-and-unit-presets","rally-reinforcement-and-defense","factions-and-heroes","hero-skills-and-passives","hero-equipment","exclusive-equipment-and-hall-of-honor","hero-database","fighter-heroes","rider-heroes","shooter-heroes","hero-investment-framework","hero-quinn","hero-corleone","hero-megan","hero-evans","hero-catherine-and-rex","hero-francis","hero-lucas","hero-darian","hero-guy","hero-tristan","hero-noah","hero-cyrus","hero-marcia","hero-natasha","hero-margaret","hero-katrina","hero-rosa","hero-lan-yan-pending"],
+    "ko": ["game-overview","combat-system-and-reports","formations-and-unit-presets","rally-reinforcement-and-defense","factions-and-heroes","hero-skills-and-passives","hero-equipment","exclusive-equipment-and-hall-of-honor","hero-database","fighter-heroes","rider-heroes","shooter-heroes","hero-investment-framework","hero-quinn","hero-corleone","hero-megan","hero-evans","hero-catherine-and-rex","hero-francis","hero-lucas","hero-darian","hero-guy","hero-tristan","hero-noah","hero-cyrus","hero-marcia","hero-natasha","hero-margaret","hero-katrina","hero-rosa","hero-lan-yan-pending"],
+    "vi": ["game-overview","combat-system-and-reports","formations-and-unit-presets","rally-reinforcement-and-defense","factions-and-heroes","hero-skills-and-passives","hero-equipment","exclusive-equipment-and-hall-of-honor","hero-database","fighter-heroes","rider-heroes","shooter-heroes","hero-investment-framework","hero-quinn","hero-corleone","hero-megan","hero-evans","hero-catherine-and-rex","hero-francis","hero-lucas","hero-darian","hero-guy","hero-tristan","hero-noah","hero-cyrus","hero-marcia","hero-natasha","hero-margaret","hero-katrina","hero-rosa","hero-lan-yan-pending"]
   }
 }
