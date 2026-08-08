@@ -55,12 +55,11 @@ Again, this is versioned conquest content.
 
 ## Cross-state protection example
 
-Mutant Mines documentation also shows that territory/Watchtower attack permissions can change by zone: cross-state players may be prevented from attacking Watchtowers outside Lost Lands while those protections are removed in the Capital area.
+Historical Mutant Mines community notes also show that territory/Watchtower attack permissions can change by zone: cross-state players may be prevented from attacking Watchtowers outside Lost Lands while those protections are removed in the Capital area.
 
-This is why the Wiki stores `season`, `event`, `zone` and `version` alongside any territory rule.
+That historical event rule is retained only as an investigation example until reconfirmed in current Server 504 UI. This is why the Wiki stores `season`, `event`, `zone` and `version` alongside any territory rule.
 
 ## Sources
 
 - Apple App Store — official 2026 Territory Triumph / Stronghold / Origin Lands changes: https://apps.apple.com/app/dark-war-survival/id6670441558
 - DarkWarData — Glory War: https://darkwardata.com/events/glory-war-event/
-- Dark War Survival Wiki — Mutant Mines: https://darkwar.wiki/events-quests/mutant-mines-event-guide/
