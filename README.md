@@ -25,15 +25,26 @@ Version-sensitive numbers must not be silently promoted into permanent facts. Th
 
 `main` is the source of truth. GitHub Pages deploys directly from this repository.
 
-Before deployment, `scripts/validate-wiki.sh` checks the public Wiki for retired or forbidden source domains, unrelated-game contamination, removed navigation concepts and minimum article metadata.
+Before deployment, `scripts/validate-wiki.sh` checks:
+
+- retired or forbidden source domains;
+- unrelated-game contamination;
+- removed navigation concepts;
+- article H1 and verification/update metadata;
+- Wiki runtime JavaScript syntax;
+- manifest slug/file uniqueness;
+- manifest ↔ Markdown file completeness in both directions;
+- taxonomy coverage;
+- accidental reintroduction of retired Wiki route modules.
 
 ## Current architecture
 
 - static HTML/CSS/JavaScript
 - Markdown Wiki content rendered client-side with `marked`
-- original Wiki registry in `assets/wiki-research.js`
-- modular Wiki expansion layers in `assets/wiki-w12.js` through `assets/wiki-w15.js`
-- grouped Wiki information architecture in `assets/wiki-ia.js`
+- `content/wiki-manifest.json` as the single Wiki registry and taxonomy source
+- `assets/wiki-runtime.js` as the single Wiki router, article loader and Wiki search indexer
+- `assets/wiki-calculators.js` as a runtime-mounted utility hook, not a separate route observer
+- 117 registered Wiki article routes as of 8 Aug 2026
 - Cloudflare Worker + D1 anonymous feedback backend
 - GitHub Pages deployment through `.github/workflows/pages.yml`
 
@@ -41,4 +52,4 @@ Before deployment, `scripts/validate-wiki.sh` checks the public Wiki for retired
 
 Public portal is operational. Wiki research waves W1–W15 cover foundation, combat/heroes, progression, APC, events, Sealed Island, economy, calculators/data audits, Pet Agents, alliance/state systems, research, shelter and daily utility systems.
 
-W16 begins the audit/cleanup phase: taxonomy, source hygiene, CI validation and maintenance architecture take priority over adding more breadth.
+W16 completed source hygiene and information-architecture cleanup. W17 consolidates the Wiki into one manifest-driven runtime, removes the W12–W15/IA mutation-module chain and makes registry consistency a deployment-blocking CI contract.
