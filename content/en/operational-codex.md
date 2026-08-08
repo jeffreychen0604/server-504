@@ -39,7 +39,7 @@ No alliance may independently initiate organized military action against another
 Shared assets shall be distributed by published schedules, stable allocation rules, or measurable criteria wherever practical. “Council discretion” should be a fallback, not the default system.
 
 ## 2.2 Armory
-1. The Seasonal Strategic Annex shall publish the normal Armory rotation or access method.
+1. The Council shall publish the current Armory allocation or access method and announce any change before it takes effect.
 2. Eligibility criteria may include activity, event participation, contribution, and ability to use the benefit effectively.
 3. A temporary override may be approved by a two-thirds Council vote for a defined major server objective.
 4. Any override must state the beneficiary, purpose, duration, and return-to-normal date.
@@ -184,7 +184,7 @@ The Council shall not order internal demotions, forced transfers, R4/R5 appointm
 3. The primary and deputy may both participate in discussion, but only one vote may be cast for that alliance.
 
 ## 7.2 Eligibility
-The Seasonal Strategic Annex shall define which alliances hold Council voting eligibility for that season. Criteria should be objective and may include activity, sustained membership, server contribution, ability to fulfill shared responsibilities, and stability. Eligibility should not change every time rankings move slightly.
+Council voting eligibility for the current season shall be published in the current Council operational record. Criteria should be objective and may include activity, sustained membership, server contribution, ability to fulfill shared responsibilities, and stability. Eligibility should not change every time rankings move slightly.
 
 ## 7.3 Working Groups
 The Council may maintain non-political working groups such as:
@@ -213,12 +213,12 @@ Material decisions should be recorded in a concise decision log. Sensitive opera
 Formal alliances, mutual-defense agreements, or long-term cross-server arrangements require a two-thirds Council vote unless they create commitments significant enough to fall under the three-quarters threshold in the Charter.
 
 ## 8.2 Allied, Neutral, and Hostile Servers
-The Seasonal Strategic Annex shall maintain the current list of:
+The Council shall maintain a current diplomacy record identifying:
 - allied / partner servers;
 - neutral or undeclared servers;
 - hostile or priority-target servers.
 
-The previous Codex listed Server 502 as a current priority partner. That status should be reconfirmed during ratification of the new Seasonal Annex rather than hard-coded permanently into this Codex.
+Diplomatic status is operational and time-sensitive. It should be reconfirmed when conditions change rather than hard-coded permanently into this Codex.
 
 ## 8.3 Unofficial Diplomacy
 Players may communicate socially with other servers, but no individual may make commitments on behalf of Server 504 without authorization.
@@ -268,4 +268,4 @@ Mergers remain voluntary. The Council may facilitate negotiations but cannot com
 
 1. The Codex should be reviewed when game mechanics, server population, or recurring disputes show that a rule no longer works.
 2. Codex changes normally require a two-thirds Council vote, unless the change modifies a Charter-level principle, in which case the Charter amendment threshold applies.
-3. Season-specific schedules, lists, targets, and assignments should be changed in the Seasonal Strategic Annex rather than in this Codex.
+3. Season-specific schedules, lists, targets, and assignments should be published through current Council operational plans and decision records rather than embedded permanently in this Codex.
