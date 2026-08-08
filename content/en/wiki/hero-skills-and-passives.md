@@ -71,4 +71,5 @@ Each future hero article should record:
 
 - Apple App Store version history — hero talent reworks and current hero-system changes: https://apps.apple.com/app/dark-war-survival/id6670441558
 - Dark War Survival Data — hero database: https://darkwardata.com/
-- Dark War Survival Wiki — Hero Abilities: https://darkwar.wiki/category/heroes-characters/hero-abilities/
+
+> Retired community hero-category links are intentionally excluded from current source authority.
