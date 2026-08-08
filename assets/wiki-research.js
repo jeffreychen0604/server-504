@@ -54,6 +54,14 @@
     ['pet-resources-and-event-timing','pet-resources-and-event-timing.md','PET AGENTS','Pet Resources & Event Timing','Server 504 Pet resource names, Alliance Duel/Survival Preparedness integration and save/spend timing.'],
     ['shadow-calls-and-pet-rescue','shadow-calls-and-pet-rescue.md','PET AGENTS','Shadow Calls & Pet Rescue','Rescue gates, dispatch-based Pet resource farming and the fields still requiring in-game capture.'],
     ['pet-regulus','pet-regulus.md','PET AGENT PROFILE','Regulus','Newest S-tier Pet Agent: Titan Lv.50 rescue gate and King’s Decree Troop ATK skill.'],
+    ['alliance-systems-overview','alliance-systems-overview.md','ALLIANCE','Alliance Systems — Overview','Alliance Help, Tech, Gifts, administration, territory and the boundary between game mechanics and Server 504 policy.'],
+    ['alliance-help-and-alliance-hall','alliance-help-and-alliance-hall.md','ALLIANCE','Alliance Help & Alliance Hall','Timer reduction, reinforcement capacity and the personal building that gates high-level Watchtower progression.'],
+    ['alliance-tech','alliance-tech.md','ALLIANCE','Alliance Tech','Shared technology donations, alliance-wide development/combat bonuses and the data needed for a current tech tree.'],
+    ['alliance-gifts','alliance-gifts.md','ALLIANCE','Alliance Gifts','Shared gift progression and the official Alliance Gifts Lv.20 gate for two Bio-Mutant rounds.'],
+    ['alliance-administration-and-logs','alliance-administration-and-logs.md','ALLIANCE','R4/R5 Administration & Logs','Event registration permissions, Bio-Mutant scheduling, Allied Power task control and current Alliance Log structure.'],
+    ['armory-assault','armory-assault.md','ALLIANCE','Armory Assault','Eight Armories, registration, rally/reinforcement capture mechanics, reward rotation and verification fields.'],
+    ['capital-and-turrets','capital-and-turrets.md','ALLIANCE','Capital & Turrets','Current multiple-rally/reinforcement model, +40,000 capacity bonus and State Hospital connection.'],
+    ['alliance-centers-territory-strongholds','alliance-centers-territory-strongholds.md','ALLIANCE','Alliance Centers, Territory & Strongholds','Season-aware alliance structures, tiles, cities, truce/protection rules and Stronghold control.'],
     ['shops-and-currencies-overview','shops-and-currencies-overview.md','ECONOMY','Shops & Currencies Overview','Current shop map, 2026 Honor Shop migration, legacy-name translation and purchase-priority rules.'],
     ['honor-shop','honor-shop.md','ECONOMY','Honor Shop','Unified Capital/Arena/Black Gold shop model, Honor Points and legacy currency conversion.'],
     ['honor-shop-price-audit','honor-shop-price-audit.md','DATA AUDIT','Honor Shop — Price & Limit Audit','Separates official shop identity/conversion from prices and weekly limits that still need Server 504 screenshots.'],
@@ -63,7 +71,7 @@
     ['equipment-and-apc-material-sources','equipment-and-apc-material-sources.md','ECONOMY','Equipment & APC Material Sources','Separates Boost Ores, Power Cores and DX Blueprints from Titanium Alloy and APC Design Blueprints.'],
     ['event-and-premium-currencies','event-and-premium-currencies.md','ECONOMY','Event & Premium Currencies','Honor Points, Alliance points, Mechanical Components, Magatama, Shell Coins, Dawn Badges and lifecycle rules.'],
     ['wiki-calculators','wiki-calculators.md','TOOLS','Resource Calculators','Interactive Honor migration conversion and overrideable Orange Chip material planning with confidence labels.'],
-    ['wiki-verification-queue','wiki-verification-queue.md','DATA AUDIT','Wiki Verification Queue','Central queue for Chip Factory recipes, Honor prices, APC Lv.1–66 costs and other unresolved Server 504 values.'],
+    ['wiki-verification-queue','wiki-verification-queue.md','DATA AUDIT','Wiki Verification Queue','Central queue for Chip Factory recipes, Honor prices, APC costs, alliance data and other unresolved Server 504 values.'],
     ['events-overview','events-overview.md','EVENTS','Events Overview','Alliance Duel, Survival Preparedness, State of Supremacy and recurring events.'],
     ['alliance-duel','alliance-duel.md','EVENTS','Alliance Duel','Weekly alliance-vs-alliance themes, Enemy Buster, resource timing and current patch-sensitive scoring.'],
     ['survival-preparedness','survival-preparedness.md','EVENTS','Survival Preparedness','Rotating progression themes, current matchmaking and double-dip planning with Alliance Duel.'],
@@ -120,7 +128,7 @@
           <span>OPEN REFERENCE →</span>
         </a>`).join('')}
       </div>
-      <div class="wiki-research-footnote">W10 adds the Pet Agent / Special Ops Outpost knowledge layer. Official release and Regulus conditions are locked; detailed Pet unlock tables, material values and training rolls remain versioned or marked for Server 504 verification.</div>
+      <div class="wiki-research-footnote">W11 adds the Alliance Systems & Territory layer. Permanent alliance mechanics are separated from season-specific conquest rules and from Server 504 governance policy; unresolved numeric tables remain in the verification queue.</div>
     </section>`;
   }
 
