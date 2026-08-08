@@ -13,4 +13,8 @@
       launchSearch();
     }
   });
+
+  document.addEventListener('click', event => {
+    if (event.target.closest?.('.wiki-open-search')) launchSearch();
+  });
 })();
