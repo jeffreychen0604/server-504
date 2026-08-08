@@ -118,13 +118,19 @@ def main() -> int:
         if any(name in lowered for name in legacy_names) and "legacy" not in lowered and "former" not in lowered and "histor" not in lowered:
             warn("Retired shop naming appears without an obvious legacy/historical label", path)
 
-    # Heuristic overlap report. This never blocks deploy; it identifies review candidates.
+    # Heuristic overlap report. Template-based profile families intentionally share structure,
+    # so profile-vs-profile pairs are excluded from duplication warnings.
     overlap_candidates: list[tuple[float, str, str]] = []
     for i, left in enumerate(articles):
+        left_group = normalize_group(left.get("group", ""))
         left_tokens = tokens(f"{left['title']} {left['description']}")
         if not left_tokens:
             continue
         for right in articles[i + 1 :]:
+            right_group = normalize_group(right.get("group", ""))
+            if left_group == right_group and left_group in {"HERO PROFILE", "PET AGENT PROFILE"}:
+                continue
+
             right_tokens = tokens(f"{right['title']} {right['description']}")
             if not right_tokens:
                 continue
