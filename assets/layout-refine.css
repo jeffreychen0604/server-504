@@ -107,6 +107,31 @@
   margin-left: 0 !important;
 }
 
+/* Keep the native language picker visually consistent with the dark header.
+   Windows/Chromium can otherwise open a white option surface while inheriting
+   the site's light text color, making unselected languages nearly invisible. */
+.language-select {
+  color-scheme: dark;
+  background-color: #0d1218;
+  color: #eef2f4;
+}
+
+.language-select option {
+  background-color: #0f151c;
+  color: #eef2f4;
+}
+
+.language-select option:checked {
+  background-color: #24374a;
+  color: #ffffff;
+}
+
+.language-select:focus {
+  outline: none;
+  border-color: rgba(216,72,67,.42);
+  box-shadow: 0 0 0 3px rgba(216,72,67,.055);
+}
+
 /* Charter/Codex: use the available reading canvas instead of a narrow card. */
 body[data-route="charter"] .page,
 body[data-route="codex"] .page {
