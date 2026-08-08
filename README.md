@@ -31,25 +31,33 @@ Before deployment, `scripts/validate-wiki.sh` checks:
 - unrelated-game contamination;
 - removed navigation concepts;
 - article H1 and verification/update metadata;
-- Wiki runtime JavaScript syntax;
+- Wiki, calculator and search-discovery JavaScript syntax;
 - manifest slug/file uniqueness;
 - manifest ↔ Markdown file completeness in both directions;
 - taxonomy coverage;
-- accidental reintroduction of retired Wiki route modules.
+- accidental reintroduction of retired Wiki route modules;
+- presence of the consolidated Wiki runtime and W18 discovery assets in the public entrypoint.
 
 ## Current architecture
 
 - static HTML/CSS/JavaScript
 - Markdown Wiki content rendered client-side with `marked`
 - `content/wiki-manifest.json` as the single Wiki registry and taxonomy source
-- `assets/wiki-runtime.js` as the single Wiki router, article loader and Wiki search indexer
+- `assets/wiki-runtime.js` as the single Wiki router, article loader, related-reference engine and Wiki search indexer
+- `assets/search-discovery.js` for ranked global search, synonyms, lightweight typo tolerance and category filtering
 - `assets/wiki-calculators.js` as a runtime-mounted utility hook, not a separate route observer
 - 117 registered Wiki article routes as of 8 Aug 2026
 - Cloudflare Worker + D1 anonymous feedback backend
 - GitHub Pages deployment through `.github/workflows/pages.yml`
 
+## Search & discovery behavior
+
+Global search ranks exact titles and aliases above labels/body text, expands common Dark War abbreviations and synonyms such as `WT`, `APC`, `Frankenstein`, `EE`, `RSS` and `S4`, and applies lightweight typo tolerance against title/alias tokens only. Search results can be filtered by Wiki taxonomy category or governance/operations content.
+
+Wiki article pages also render up to four related references derived from the same manifest using group, taxonomy category, title/description overlap and hub-page boosts.
+
 ## Status — August 2026
 
 Public portal is operational. Wiki research waves W1–W15 cover foundation, combat/heroes, progression, APC, events, Sealed Island, economy, calculators/data audits, Pet Agents, alliance/state systems, research, shelter and daily utility systems.
 
-W16 completed source hygiene and information-architecture cleanup. W17 consolidates the Wiki into one manifest-driven runtime, removes the W12–W15/IA mutation-module chain and makes registry consistency a deployment-blocking CI contract.
+W16 completed source hygiene and information-architecture cleanup. W17 consolidated the Wiki into one manifest-driven runtime and made registry consistency a deployment-blocking CI contract. W18 upgrades discovery quality with ranked synonym-aware search, category filters, lightweight typo tolerance and related-reference recommendations without changing existing article URLs.
