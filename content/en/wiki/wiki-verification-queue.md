@@ -23,6 +23,9 @@ The Wiki prefers visible uncertainty over confidently publishing stale numbers.
 | City Gate Defense Presets | current preset-slot limit and exact UI priority behavior | OPEN |
 | Trade Post / Merchant Guild | dark-zone radius and current control/capture interface | OPEN |
 | Presidential Palace | current full Officials roster and exact President/Vice President permissions | OPEN |
+| Research Center | current branch names visible on Server 504 | OPEN |
+| Research queue | current second-queue unlock condition and VIP wording | OPEN |
+| Wisdom Medal | current Alliance Shop price and weekly purchase limit | OPEN |
 
 ## Priority B — repeated captures needed
 
@@ -47,6 +50,13 @@ The Wiki prefers visible uncertainty over confidently publishing stale numbers.
 | Shelter durability | maximum durability, recovery, fire thresholds and relocation behavior | values may differ by structure/event context |
 | Mutant Mines | live windows, free teleports, mine tiers, production rates and daily resource caps | community guide data must be checked against the active event |
 | Presidential Officials | buff values, durations/cooldowns and gift limits | multiple positions and term-dependent values need separate captures |
+| Research Center levels | Research Speed effect, cost, build time and prerequisite by level | community table is incomplete and not official-current |
+| Development / Economy research | node names, prerequisites, max levels, effect values and costs | full tree requires many captures and can change with account progression |
+| Battle / faction research | Fighter/Rider/Shooter/universal nodes, levels and values | combat tree is large and exact order/cost must come from current UI |
+| Duel Research | Incentive nodes, Victory Tycoon, Richer Rewards I/II, One More, exact effects and Wisdom Medal costs | public guides agree on names but server-generation costs/presentation have changed |
+| Battle Strategy | node names, Kill Training levels, effects, prerequisites and Wisdom Medal/resource costs | official patch confirms branch behavior but not the complete tree |
+| Research event scoring | Tech CP, Research Speedup and Wisdom Medal point values across active themes | scoring can rotate or be rebalanced |
+| Late-game / Industrial research | post-WT30 branches, costs, timers and scope | public current full-tree data is incomplete |
 
 ## Already resolved by official patch notes
 
@@ -73,6 +83,8 @@ The Wiki prefers visible uncertainty over confidently publishing stale numbers.
 - Watchtower destruction base values were rebalanced to 6,000 solo / 18,000 rally, with a 60-minute durability-restoration cooldown.
 - Trade Post / Merchant Guild dark-zone shelter combat uses the patched attacker/defender mortality changes and +500% durability reduction multiplier.
 - Presidential Palace officially includes Grand Marshal, Supreme General and the Security/Agriculture/Science/Construction Secretary positions; those positions can self-resign after more than 30 minutes.
+- Research Center → Battle Strategy → Kill Training is an active current research path.
+- During Origin Lands, Kill Training technologies take effect on War Days (Wednesday & Saturday).
 
 ## Evidence acceptance rule
 
