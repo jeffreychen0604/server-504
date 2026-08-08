@@ -53,4 +53,5 @@ This article describes **what the game permits**. Server 504 agreements about wh
 
 - Apple App Store — current version history: https://apps.apple.com/us/app/dark-war-survival/id6670441558
 - Apple App Store — cross-state teleport patch history: https://apps.apple.com/kg/app/dark-war-survival/id6670441558
-- Dark War Survival Wiki — community base-building references: https://darkwar.wiki/category/base-building/
+
+> Retired community base-building directories are intentionally excluded from current source authority.
