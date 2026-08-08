@@ -43,6 +43,18 @@
         "shooter-heroes",
         "hero-investment-framework"
       ]
+    },
+    {
+      "id": "L10N-05",
+      "name": "Hero Profiles A",
+      "status": "complete",
+      "slugs": [
+        "hero-quinn",
+        "hero-corleone",
+        "hero-megan",
+        "hero-evans",
+        "hero-catherine-and-rex"
+      ]
     }
   ],
   "translated": {
@@ -59,7 +71,12 @@
       "fighter-heroes",
       "rider-heroes",
       "shooter-heroes",
-      "hero-investment-framework"
+      "hero-investment-framework",
+      "hero-quinn",
+      "hero-corleone",
+      "hero-megan",
+      "hero-evans",
+      "hero-catherine-and-rex"
     ],
     "es": [
       "game-overview",
@@ -74,7 +91,12 @@
       "fighter-heroes",
       "rider-heroes",
       "shooter-heroes",
-      "hero-investment-framework"
+      "hero-investment-framework",
+      "hero-quinn",
+      "hero-corleone",
+      "hero-megan",
+      "hero-evans",
+      "hero-catherine-and-rex"
     ],
     "pt": [
       "game-overview",
@@ -89,7 +111,12 @@
       "fighter-heroes",
       "rider-heroes",
       "shooter-heroes",
-      "hero-investment-framework"
+      "hero-investment-framework",
+      "hero-quinn",
+      "hero-corleone",
+      "hero-megan",
+      "hero-evans",
+      "hero-catherine-and-rex"
     ],
     "ko": [
       "game-overview",
@@ -104,7 +131,12 @@
       "fighter-heroes",
       "rider-heroes",
       "shooter-heroes",
-      "hero-investment-framework"
+      "hero-investment-framework",
+      "hero-quinn",
+      "hero-corleone",
+      "hero-megan",
+      "hero-evans",
+      "hero-catherine-and-rex"
     ],
     "vi": [
       "game-overview",
@@ -119,7 +151,12 @@
       "fighter-heroes",
       "rider-heroes",
       "shooter-heroes",
-      "hero-investment-framework"
+      "hero-investment-framework",
+      "hero-quinn",
+      "hero-corleone",
+      "hero-megan",
+      "hero-evans",
+      "hero-catherine-and-rex"
     ]
   }
 }
