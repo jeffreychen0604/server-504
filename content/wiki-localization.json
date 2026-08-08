@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "updated": "2026-08-08",
+  "sourceLocale": "en",
+  "supportedLocales": ["en", "fr", "es", "pt", "ko", "vi"],
+  "policy": "English Markdown is the gameplay source of truth. A locale is marked translated only when a complete article file exists and preserves official Dark War: Survival system names where translation would make in-game lookup harder.",
+  "batches": [
+    {
+      "id": "L10N-01",
+      "name": "Start Here / Foundation",
+      "status": "complete",
+      "slugs": ["game-overview"]
+    }
+  ],
+  "translated": {
+    "fr": ["game-overview"],
+    "es": ["game-overview"],
+    "pt": ["game-overview"],
+    "ko": ["game-overview"],
+    "vi": ["game-overview"]
+  }
+}
