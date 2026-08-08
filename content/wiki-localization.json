@@ -55,6 +55,18 @@
         "hero-evans",
         "hero-catherine-and-rex"
       ]
+    },
+    {
+      "id": "L10N-06",
+      "name": "Hero Profiles B",
+      "status": "complete",
+      "slugs": [
+        "hero-francis",
+        "hero-lucas",
+        "hero-darian",
+        "hero-guy",
+        "hero-tristan"
+      ]
     }
   ],
   "translated": {
@@ -76,7 +88,12 @@
       "hero-corleone",
       "hero-megan",
       "hero-evans",
-      "hero-catherine-and-rex"
+      "hero-catherine-and-rex",
+      "hero-francis",
+      "hero-lucas",
+      "hero-darian",
+      "hero-guy",
+      "hero-tristan"
     ],
     "es": [
       "game-overview",
@@ -96,7 +113,12 @@
       "hero-corleone",
       "hero-megan",
       "hero-evans",
-      "hero-catherine-and-rex"
+      "hero-catherine-and-rex",
+      "hero-francis",
+      "hero-lucas",
+      "hero-darian",
+      "hero-guy",
+      "hero-tristan"
     ],
     "pt": [
       "game-overview",
@@ -116,7 +138,12 @@
       "hero-corleone",
       "hero-megan",
       "hero-evans",
-      "hero-catherine-and-rex"
+      "hero-catherine-and-rex",
+      "hero-francis",
+      "hero-lucas",
+      "hero-darian",
+      "hero-guy",
+      "hero-tristan"
     ],
     "ko": [
       "game-overview",
@@ -136,7 +163,12 @@
       "hero-corleone",
       "hero-megan",
       "hero-evans",
-      "hero-catherine-and-rex"
+      "hero-catherine-and-rex",
+      "hero-francis",
+      "hero-lucas",
+      "hero-darian",
+      "hero-guy",
+      "hero-tristan"
     ],
     "vi": [
       "game-overview",
@@ -156,7 +188,12 @@
       "hero-corleone",
       "hero-megan",
       "hero-evans",
-      "hero-catherine-and-rex"
+      "hero-catherine-and-rex",
+      "hero-francis",
+      "hero-lucas",
+      "hero-darian",
+      "hero-guy",
+      "hero-tristan"
     ]
   }
 }
