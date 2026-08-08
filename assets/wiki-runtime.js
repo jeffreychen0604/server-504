@@ -6,6 +6,9 @@
   if (!app || !window.marked) return;
 
   const MANIFEST_URL = 'content/wiki-manifest.json';
+  const TITLES_URL = 'content/wiki-titles.json';
+  const i18n = window.Server504I18N;
+  const t = key => i18n?.t(key, locale()) || key;
   const STOP_WORDS = new Set([
     'and','the','for','with','from','into','that','this','current','overview','reference','system','systems',
     'dark','war','survival','server','game','wiki','guide','progression','official','community','data'
@@ -27,6 +30,7 @@
   };
 
   let manifestPromise;
+  let titleMapPromise;
   let searchEntriesPromise;
   let observer;
   let renderTimer;
@@ -43,22 +47,41 @@
     return group;
   }
 
+  function localizedGroup(raw) {
+    return i18n?.group(normalizeGroup(raw), locale()) || raw;
+  }
+
   function normalizeText(value) {
     return String(value || '')
       .normalize('NFD')
       .replace(/[\u0300-\u036f]/g, '')
       .toLowerCase()
-      .replace(/[^a-z0-9]+/g, ' ')
+      .replace(/[^\p{L}\p{N}]+/gu, ' ')
       .replace(/\s+/g, ' ')
       .trim();
   }
 
   function significantTokens(value) {
-    return new Set(
-      normalizeText(value)
-        .split(' ')
-        .filter(token => token.length > 2 && !STOP_WORDS.has(token))
-    );
+    return new Set(normalizeText(value).split(' ').filter(token => token.length > 2 && !STOP_WORDS.has(token)));
+  }
+
+  async function loadTitleMap() {
+    if (!titleMapPromise) {
+      titleMapPromise = fetch(TITLES_URL, { cache: 'no-store' })
+        .then(res => res.ok ? res.json() : { titles: {} })
+        .catch(() => ({ titles: {} }));
+    }
+    return titleMapPromise;
+  }
+
+  function localTitle(article, titleMap) {
+    if (locale() === 'en') return article.title;
+    return titleMap?.titles?.[article.slug]?.[locale()] || article.title;
+  }
+
+  function localCategory(def) {
+    const localized = i18n?.category(def.id, locale());
+    return localized ? { ...def, title: localized[0], description: localized[1] } : def;
   }
 
   async function loadManifest() {
@@ -66,13 +89,9 @@
       manifestPromise = fetch(MANIFEST_URL, { cache: 'no-store' }).then(async res => {
         if (!res.ok) throw new Error(`Manifest HTTP ${res.status}`);
         const data = await res.json();
-        if (!Array.isArray(data.articles) || !Array.isArray(data.categories)) {
-          throw new Error('Invalid Wiki manifest');
-        }
+        if (!Array.isArray(data.articles) || !Array.isArray(data.categories)) throw new Error('Invalid Wiki manifest');
         data.articleMap = new Map(data.articles.map(article => [article.slug, article]));
-        data.categories.forEach(category => {
-          category.normalizedGroups = new Set(category.groups.map(normalizeGroup));
-        });
+        data.categories.forEach(category => { category.normalizedGroups = new Set(category.groups.map(normalizeGroup)); });
         return data;
       });
     }
@@ -86,7 +105,7 @@
 
   function header(title, description, badges = []) {
     return `<header class="page-header wiki-research-header">
-      <div class="eyebrow">DARK WAR: SURVIVAL · VERIFIED KNOWLEDGE</div>
+      <div class="eyebrow">${t('wikiEyebrow')}</div>
       <h1>${title}</h1>
       <p>${description}</p>
       <div class="meta-row">${badges.map(x => `<span class="meta-chip">${x}</span>`).join('')}</div>
@@ -95,50 +114,34 @@
 
   function confidenceLegend() {
     return `<details class="wiki-trust-panel">
-      <summary>
-        <span><strong>How to read this Wiki</strong><small>Source confidence & verification policy</small></span>
-        <span class="wiki-trust-chevron" aria-hidden="true">⌄</span>
-      </summary>
+      <summary><span><strong>${t('howReadWiki')}</strong><small>${t('sourceConfidence')}</small></span><span class="wiki-trust-chevron" aria-hidden="true">⌄</span></summary>
       <div class="wiki-trust-body">
-        <div class="wiki-research-notice">
-          <strong>Source policy</strong>
-          <span>Official patch notes first for current limits and feature changes; established Dark War community databases for deeper mechanics; Server 504 in-game evidence wins when sources conflict.</span>
-        </div>
+        <div class="wiki-research-notice"><strong>${t('sourcePolicyLabel')}</strong><span>${t('sourcePolicy')}</span></div>
         <div class="wiki-confidence-legend">
-          <div class="wiki-confidence-item">
-            <strong>Official / Current</strong>
-            <span>Official listing, patch notes or current in-game evidence supports the claim.</span>
-          </div>
-          <div class="wiki-confidence-item">
-            <strong>Community / Cross-checked</strong>
-            <span>Useful community evidence, but the mechanic or number may still be version-sensitive.</span>
-          </div>
-          <div class="wiki-confidence-item">
-            <strong>Verify Server 504</strong>
-            <span>Current Server 504 UI evidence is required before treating the value as canonical.</span>
-          </div>
+          <div class="wiki-confidence-item"><strong>${t('confidenceOfficial')}</strong><span>${t('confidenceOfficialDesc')}</span></div>
+          <div class="wiki-confidence-item"><strong>${t('confidenceCommunity')}</strong><span>${t('confidenceCommunityDesc')}</span></div>
+          <div class="wiki-confidence-item"><strong>${t('confidenceVerify')}</strong><span>${t('confidenceVerifyDesc')}</span></div>
         </div>
       </div>
     </details>`;
   }
 
-  function card(article) {
+  function card(article, titleMap) {
+    const showDescription = locale() === 'en';
     return `<a class="wiki-research-card" href="#/wiki/${article.slug}">
-      <small>${article.group}</small>
-      <h3>${article.title}</h3>
-      <p>${article.description}</p>
-      <span>OPEN REFERENCE →</span>
+      <small>${localizedGroup(article.group)}</small>
+      <h3>${localTitle(article, titleMap)}</h3>
+      ${showDescription ? `<p>${article.description}</p>` : ''}
+      <span>${t('openReference')}</span>
     </a>`;
   }
 
-  function browserCard(article) {
+  function browserCard(article, titleMap) {
     const group = normalizeGroup(article.group);
-    return `<a class="wiki-browser-card" href="#/wiki/${article.slug}" data-wiki-browser-group="${group}">
-      <div>
-        <small>${article.group}</small>
-        <h3>${article.title}</h3>
-      </div>
-      <p>${article.description}</p>
+    const showDescription = locale() === 'en';
+    return `<a class="wiki-browser-card${showDescription ? '' : ' wiki-browser-card-compact'}" href="#/wiki/${article.slug}" data-wiki-browser-group="${group}">
+      <div><small>${localizedGroup(article.group)}</small><h3>${localTitle(article, titleMap)}</h3></div>
+      ${showDescription ? `<p>${article.description}</p>` : ''}
       <span aria-hidden="true">→</span>
     </a>`;
   }
@@ -155,11 +158,11 @@
   }
 
   function categoryTile(def, articles, active) {
-    const groupLabels = [...new Set(articles.map(article => normalizeGroup(article.group)))];
+    const localized = localCategory(def);
+    const groupLabels = [...new Set(articles.map(article => localizedGroup(article.group)))];
     return `<button class="wiki-category-tile${active ? ' active' : ''}" type="button" data-wiki-category-button="${def.id}" aria-selected="${active ? 'true' : 'false'}">
-      <span class="wiki-category-tile-top"><small>${articles.length} REFERENCES</small><b aria-hidden="true">↘</b></span>
-      <strong>${def.title}</strong>
-      <span>${def.description}</span>
+      <span class="wiki-category-tile-top"><small>${articles.length} ${t('wikiReferences')}</small><b aria-hidden="true">↘</b></span>
+      <strong>${localized.title}</strong><span>${localized.description}</span>
       <em>${groupLabels.slice(0, 4).join(' · ')}${groupLabels.length > 4 ? ' · +' : ''}</em>
     </button>`;
   }
@@ -167,46 +170,38 @@
   function groupFilters(articles, panelId) {
     const groups = [...new Set(articles.map(article => normalizeGroup(article.group)))];
     if (groups.length <= 1) return '';
-    return `<div class="wiki-group-filters" aria-label="Filter this category">
-      <button class="active" type="button" data-wiki-group-filter="all" data-wiki-group-panel="${panelId}" aria-pressed="true">ALL</button>
-      ${groups.map(group => `<button type="button" data-wiki-group-filter="${group}" data-wiki-group-panel="${panelId}" aria-pressed="false">${group}</button>`).join('')}
+    return `<div class="wiki-group-filters" aria-label="${t('filterCategory')}">
+      <button class="active" type="button" data-wiki-group-filter="all" data-wiki-group-panel="${panelId}" aria-pressed="true">${t('searchAll').toUpperCase()}</button>
+      ${groups.map(group => `<button type="button" data-wiki-group-filter="${group}" data-wiki-group-panel="${panelId}" aria-pressed="false">${localizedGroup(group)}</button>`).join('')}
     </div>`;
   }
 
-  function categoryPanel(def, articles, active) {
+  function categoryPanel(def, articles, active, titleMap) {
+    const localized = localCategory(def);
     return `<section class="wiki-browser-panel" id="wiki-category-${def.id}" data-wiki-category-panel="${def.id}" ${active ? '' : 'hidden'}>
       <div class="wiki-browser-head">
-        <div>
-          <small>BROWSE CATEGORY</small>
-          <h2>${def.title}</h2>
-          <p>${def.description}</p>
-        </div>
-        <span class="wiki-ia-count">${articles.length} REFERENCES</span>
+        <div><small>${t('browseCategory')}</small><h2>${localized.title}</h2><p>${localized.description}</p></div>
+        <span class="wiki-ia-count">${articles.length} ${t('wikiReferences')}</span>
       </div>
       ${groupFilters(articles, def.id)}
-      <div class="wiki-browser-list">${articles.map(browserCard).join('')}</div>
+      <div class="wiki-browser-list">${articles.map(article => browserCard(article, titleMap)).join('')}</div>
     </section>`;
   }
 
-  function allReferencesPanel(manifest, active) {
-    const articles = [...manifest.articles].sort((a, b) => a.title.localeCompare(b.title));
+  function allReferencesPanel(manifest, active, titleMap) {
+    const articles = [...manifest.articles].sort((a, b) => localTitle(a, titleMap).localeCompare(localTitle(b, titleMap), locale()));
     return `<section class="wiki-browser-panel wiki-browser-panel-all" id="wiki-category-all" data-wiki-category-panel="all" ${active ? '' : 'hidden'}>
       <div class="wiki-browser-head">
-        <div>
-          <small>FULL INDEX</small>
-          <h2>All references</h2>
-          <p>Alphabetical compact index of every registered Wiki article. Use global search for the fastest exact lookup.</p>
-        </div>
-        <span class="wiki-ia-count">${articles.length} REFERENCES</span>
+        <div><small>${t('fullIndex')}</small><h2>${t('allReferences')}</h2><p>${t('allReferencesDesc')}</p></div>
+        <span class="wiki-ia-count">${articles.length} ${t('wikiReferences')}</span>
       </div>
-      <div class="wiki-all-reference-list">${articles.map(article => `<a href="#/wiki/${article.slug}"><span>${article.title}</span><small>${article.group}</small></a>`).join('')}</div>
+      <div class="wiki-all-reference-list">${articles.map(article => `<a href="#/wiki/${article.slug}"><span>${localTitle(article, titleMap)}</span><small>${localizedGroup(article.group)}</small></a>`).join('')}</div>
     </section>`;
   }
 
   function bindRootInteractions() {
     const root = app.querySelector('[data-wiki-runtime-root]');
     if (!root) return;
-
     const categoryButtons = [...root.querySelectorAll('[data-wiki-category-button]')];
     const panels = [...root.querySelectorAll('[data-wiki-category-panel]')];
 
@@ -216,11 +211,8 @@
         button.classList.toggle('active', active);
         button.setAttribute('aria-selected', String(active));
       });
-      panels.forEach(panel => {
-        panel.hidden = panel.dataset.wikiCategoryPanel !== categoryId;
-      });
+      panels.forEach(panel => { panel.hidden = panel.dataset.wikiCategoryPanel !== categoryId; });
       try { sessionStorage.setItem('server504-wiki-category', categoryId); } catch (_) {}
-
       const panel = panels.find(item => item.dataset.wikiCategoryPanel === categoryId);
       if (shouldScroll && panel) {
         const reduceMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
@@ -228,119 +220,83 @@
       }
     };
 
-    categoryButtons.forEach(button => {
-      button.addEventListener('click', () => selectCategory(button.dataset.wikiCategoryButton));
-    });
-
+    categoryButtons.forEach(button => button.addEventListener('click', () => selectCategory(button.dataset.wikiCategoryButton)));
     root.querySelectorAll('[data-wiki-group-filter]').forEach(button => {
       button.addEventListener('click', () => {
-        const panelId = button.dataset.wikiGroupPanel;
-        const group = button.dataset.wikiGroupFilter;
-        const panel = root.querySelector(`[data-wiki-category-panel="${panelId}"]`);
+        const panel = root.querySelector(`[data-wiki-category-panel="${button.dataset.wikiGroupPanel}"]`);
         if (!panel) return;
-
+        const group = button.dataset.wikiGroupFilter;
         panel.querySelectorAll('[data-wiki-group-filter]').forEach(filterButton => {
           const active = filterButton === button;
           filterButton.classList.toggle('active', active);
           filterButton.setAttribute('aria-pressed', String(active));
         });
-        panel.querySelectorAll('[data-wiki-browser-group]').forEach(articleCard => {
-          articleCard.hidden = group !== 'all' && articleCard.dataset.wikiBrowserGroup !== group;
-        });
+        panel.querySelectorAll('[data-wiki-browser-group]').forEach(articleCard => { articleCard.hidden = group !== 'all' && articleCard.dataset.wikiBrowserGroup !== group; });
       });
+    });
+    root.querySelector('.wiki-open-search')?.addEventListener('click', () => {
+      if (typeof openSearch === 'function') openSearch();
     });
   }
 
-  function rootPage(manifest) {
+  async function rootPage(manifest) {
+    const titleMap = await loadTitleMap();
     const selectedCategory = preferredRootCategory(manifest);
     const categorySets = manifest.categories.map(def => ({ def, articles: categoryArticles(manifest, def) }));
-
-    const categoryTiles = categorySets
-      .filter(item => item.articles.length)
-      .map(item => categoryTile(item.def, item.articles, selectedCategory === item.def.id));
+    const categoryTiles = categorySets.filter(item => item.articles.length).map(item => categoryTile(item.def, item.articles, selectedCategory === item.def.id));
 
     categoryTiles.push(`<button class="wiki-category-tile wiki-category-tile-all${selectedCategory === 'all' ? ' active' : ''}" type="button" data-wiki-category-button="all" aria-selected="${selectedCategory === 'all' ? 'true' : 'false'}">
-      <span class="wiki-category-tile-top"><small>${manifest.articles.length} REFERENCES</small><b aria-hidden="true">↘</b></span>
-      <strong>All references</strong>
-      <span>Compact alphabetical index for scanning the entire knowledge base without expanding every article card.</span>
-      <em>FULL INDEX</em>
+      <span class="wiki-category-tile-top"><small>${manifest.articles.length} ${t('wikiReferences')}</small><b aria-hidden="true">↘</b></span>
+      <strong>${t('allReferences')}</strong><span>${t('allReferencesDesc')}</span><em>${t('fullIndex')}</em>
     </button>`);
 
-    const panels = categorySets
-      .filter(item => item.articles.length)
-      .map(item => categoryPanel(item.def, item.articles, selectedCategory === item.def.id));
-    panels.push(allReferencesPanel(manifest, selectedCategory === 'all'));
+    const panels = categorySets.filter(item => item.articles.length).map(item => categoryPanel(item.def, item.articles, selectedCategory === item.def.id, titleMap));
+    panels.push(allReferencesPanel(manifest, selectedCategory === 'all', titleMap));
 
     return `<section class="page wiki-research-page wiki-overview-page" data-wiki-runtime-root="1">
-      ${header('Game Wiki', manifest.rootDescription, [`${manifest.articles.length} REFERENCES`, 'AUG 2026', 'COMMUNITY MAINTAINED'])}
+      ${header(t('wikiTitle'), t('browseByCategoryDesc'), [`${manifest.articles.length} ${t('wikiReferences')}`, t('august2026'), t('communityMaintained')])}
       ${confidenceLegend()}
       <section class="wiki-category-overview" aria-labelledby="wikiBrowseTitle">
-        <div class="wiki-overview-head">
-          <div>
-            <small>KNOWLEDGE MAP</small>
-            <h2 id="wikiBrowseTitle">Browse by category</h2>
-            <p>Start with a category to keep the Wiki compact. Only the selected category is expanded below.</p>
-          </div>
-          <button class="wiki-open-search search-trigger" type="button">SEARCH WIKI <kbd>/</kbd></button>
-        </div>
-        <div class="wiki-category-dashboard" role="tablist" aria-label="Wiki categories">${categoryTiles.join('')}</div>
+        <div class="wiki-overview-head"><div><small>${t('knowledgeMap')}</small><h2 id="wikiBrowseTitle">${t('browseByCategory')}</h2><p>${t('browseByCategoryDesc')}</p></div><button class="wiki-open-search search-trigger" type="button">${t('searchWiki')} <kbd>/</kbd></button></div>
+        <div class="wiki-category-dashboard" role="tablist" aria-label="${t('browseByCategory')}">${categoryTiles.join('')}</div>
       </section>
       <div class="wiki-browser">${panels.join('')}</div>
-      <div class="wiki-ia-audit-note">${manifest.articles.length} references · ${manifest.categories.length} primary categories · one manifest-driven Wiki index. Use Search for exact lookup or category drill-down for browsing.</div>
+      <div class="wiki-ia-audit-note">${manifest.articles.length} ${t('wikiAuditNote')}</div>
     </section>`;
   }
 
   function relatedScore(manifest, current, candidate) {
     if (current.slug === candidate.slug) return -1;
-
     const currentGroup = normalizeGroup(current.group);
     const candidateGroup = normalizeGroup(candidate.group);
     const currentCategory = categoryForArticle(manifest, current)?.id || '';
     const candidateCategory = categoryForArticle(manifest, candidate)?.id || '';
     let score = 0;
-
     if (currentGroup === candidateGroup) score += 40;
     if (currentCategory && currentCategory === candidateCategory) score += 18;
-
     const currentTokens = significantTokens(`${current.title} ${current.description}`);
     const candidateTokens = significantTokens(`${candidate.title} ${candidate.description}`);
-    currentTokens.forEach(token => {
-      if (candidateTokens.has(token)) score += 7;
-    });
-
+    currentTokens.forEach(token => { if (candidateTokens.has(token)) score += 7; });
     const hubs = HUB_BOOSTS[currentGroup] || [];
     const hubIndex = hubs.indexOf(candidate.slug);
     if (hubIndex >= 0) score += 34 - hubIndex * 5;
-
     if (current.slug.startsWith('hero-') && candidate.slug === 'hero-database') score += 24;
     if (current.slug.startsWith('pet-') && candidate.slug === 'pet-agents-overview') score += 24;
     if (current.slug.includes('chip') && candidate.slug === 'chip-factory') score += 20;
     if (current.slug.includes('armory') && candidate.slug === 'alliance-systems-overview') score += 16;
-
     return score;
   }
 
   function relatedReferences(manifest, article, limit = 4) {
-    return manifest.articles
-      .map(candidate => ({ candidate, score: relatedScore(manifest, article, candidate) }))
-      .filter(item => item.score > 0)
-      .sort((a, b) => b.score - a.score || a.candidate.title.localeCompare(b.candidate.title))
-      .slice(0, limit)
-      .map(item => item.candidate);
+    return manifest.articles.map(candidate => ({ candidate, score: relatedScore(manifest, article, candidate) })).filter(item => item.score > 0).sort((a, b) => b.score - a.score || a.candidate.title.localeCompare(b.candidate.title)).slice(0, limit).map(item => item.candidate);
   }
 
-  function relatedSection(manifest, article) {
+  async function relatedSection(manifest, article, titleMap) {
     const related = relatedReferences(manifest, article);
     if (!related.length) return '';
     return `<section class="wiki-related" aria-labelledby="wikiRelatedTitle">
-      <div class="wiki-related-head">
-        <div>
-          <small>DISCOVER NEXT</small>
-          <h2 id="wikiRelatedTitle">Related references</h2>
-        </div>
-        <a href="#/wiki">Browse all →</a>
-      </div>
-      <div class="wiki-related-grid">${related.map(card).join('')}</div>
+      <div class="wiki-related-head"><div><small>${t('discoverNext')}</small><h2 id="wikiRelatedTitle">${t('relatedReferences')}</h2></div><a href="#/wiki">${t('browseAll')}</a></div>
+      <div class="wiki-related-grid">${related.map(item => card(item, titleMap)).join('')}</div>
     </section>`;
   }
 
@@ -350,35 +306,27 @@
     const fallback = `content/en/wiki/${article.file}`;
     let usedFallback = false;
     let res = await fetch(localized, { cache: 'no-store' });
-
     if (!res.ok) {
       usedFallback = requestedLocale !== 'en';
       res = await fetch(fallback, { cache: 'no-store' });
     }
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
 
-    const text = await res.text();
-    const localeBadge = usedFallback
-      ? `EN SOURCE · ${requestedLocale.toUpperCase()} PENDING`
-      : requestedLocale.toUpperCase();
-
+    const [text, titleMap] = await Promise.all([res.text(), loadTitleMap()]);
+    const localeBadge = usedFallback ? `${t('englishSource')} · ${requestedLocale.toUpperCase()} ${t('translationPending')}` : requestedLocale.toUpperCase();
+    const description = usedFallback ? `${t('englishSource')} · ${t('translationPending')}` : article.description;
     return `<section class="page wiki-research-page wiki-article-page" data-wiki-runtime-article="${article.slug}">
-      <a class="wiki-back" href="#/wiki">← Game Wiki</a>
-      ${header(article.title, article.description, ['VERIFIED AUG 2026', localeBadge])}
+      <a class="wiki-back" href="#/wiki">${t('backWiki')}</a>
+      ${header(localTitle(article, titleMap), description, [t('august2026'), localeBadge])}
       <article class="markdown-body wiki-article-body">${marked.parse(text)}</article>
-      ${relatedSection(manifest, article)}
+      ${await relatedSection(manifest, article, titleMap)}
     </section>`;
   }
 
-  function stopObserver() {
-    observer?.disconnect();
-  }
-
+  function stopObserver() { observer?.disconnect(); }
   function startObserver() {
     observer?.disconnect();
-    observer = new MutationObserver(() => {
-      if (isWikiRoute()) scheduleRender(true, 0);
-    });
+    observer = new MutationObserver(() => { if (isWikiRoute()) scheduleRender(true, 0); });
     observer.observe(app, { childList: true, subtree: false });
   }
 
@@ -393,26 +341,23 @@
     const parts = routeParts();
     const slug = parts[1] || '';
     const key = `${slug || 'root'}:${locale()}`;
-
     if (!force && activeKey === key && app.dataset.wikiRuntimeRoute === key) return;
     if (force && activeKey === key && app.dataset.wikiRuntimeRoute === key && app.querySelector('[data-wiki-runtime-root], [data-wiki-runtime-article]')) return;
 
     activeKey = key;
     stopObserver();
-    app.innerHTML = '<div class="page loading">Loading Wiki…</div>';
+    app.innerHTML = `<div class="page loading">${t('loading')}</div>`;
 
     try {
       if (!slug) {
-        app.innerHTML = rootPage(manifest);
+        app.innerHTML = await rootPage(manifest);
         bindRootInteractions();
       } else {
         const article = manifest.articleMap.get(slug);
-        app.innerHTML = article
-          ? await articlePage(manifest, article)
-          : `<section class="page wiki-research-page">${header('Wiki article not found', 'The requested Dark War: Survival reference does not exist.', ['404'])}<a class="wiki-back" href="#/wiki">← Return to Game Wiki</a></section>`;
+        app.innerHTML = article ? await articlePage(manifest, article) : `<section class="page wiki-research-page">${header(t('wikiNotFound'), t('wikiNotFoundDesc'), ['404'])}<a class="wiki-back" href="#/wiki">${t('returnWiki')}</a></section>`;
       }
     } catch (error) {
-      app.innerHTML = `<section class="page"><div class="error-box">Unable to load Wiki: ${error.message}</div></section>`;
+      app.innerHTML = `<section class="page"><div class="error-box">${t('unableDocument')}: ${error.message}</div></section>`;
     }
 
     app.dataset.wikiRuntimeRoute = key;
@@ -428,66 +373,48 @@
   }
 
   function cleanMarkdown(text) {
-    return text
-      .replace(/^---[\s\S]*?---/m, ' ')
-      .replace(/https?:\/\/\S+/g, ' ')
-      .replace(/[#>*_`|\[\]()]/g, ' ')
-      .replace(/\s+/g, ' ')
-      .trim();
+    return text.replace(/^---[\s\S]*?---/m, ' ').replace(/https?:\/\/\S+/g, ' ').replace(/[#>*_`|\[\]()]/g, ' ').replace(/\s+/g, ' ').trim();
   }
 
   async function getWikiSearchEntries() {
-    if (!searchEntriesPromise) {
-      searchEntriesPromise = loadManifest().then(async manifest => {
-        const entries = await Promise.all(manifest.articles.map(async article => {
-          let body = article.description;
-          try {
-            const res = await fetch(`content/en/wiki/${article.file}`, { cache: 'no-store' });
-            if (res.ok) body = cleanMarkdown(await res.text());
-          } catch (_) {}
-          const category = categoryForArticle(manifest, article);
-          return {
-            route: `wiki/${article.slug}`,
-            label: `Game Wiki · ${article.group}`,
-            heading: article.title,
-            body,
-            group: normalizeGroup(article.group),
-            category: category?.title || 'Game Wiki',
-            aliases: [article.slug.replace(/-/g, ' ')]
-          };
-        }));
+    const manifest = await loadManifest();
+    const titleMap = await loadTitleMap();
+    const lang = locale();
+    const entries = await Promise.all(manifest.articles.map(async article => {
+      let body = article.description;
+      try {
+        let res = await fetch(`content/${lang}/wiki/${article.file}`, { cache: 'no-store' });
+        if (!res.ok) res = await fetch(`content/en/wiki/${article.file}`, { cache: 'no-store' });
+        if (res.ok) body = cleanMarkdown(await res.text());
+      } catch (_) {}
+      const category = categoryForArticle(manifest, article);
+      const localizedCategory = category ? localCategory(category).title : t('gameWiki');
+      return {
+        route: `wiki/${article.slug}`,
+        label: `${t('gameWiki')} · ${localizedGroup(article.group)}`,
+        heading: localTitle(article, titleMap),
+        body,
+        group: normalizeGroup(article.group),
+        category: localizedCategory,
+        aliases: [article.slug.replace(/-/g, ' '), article.title]
+      };
+    }));
 
-        entries.unshift({
-          route: 'wiki',
-          label: 'Game Wiki',
-          heading: 'Game Wiki',
-          body: `${manifest.rootDescription} ${manifest.categories.map(x => x.title).join(' ')}`,
-          group: 'FOUNDATION',
-          category: 'Game Wiki',
-          aliases: ['knowledge base', 'wiki']
-        });
-        return entries;
-      });
-    }
-    return searchEntriesPromise;
+    entries.unshift({
+      route: 'wiki', label: t('gameWiki'), heading: t('wikiTitle'), body: `${t('browseByCategoryDesc')} ${manifest.categories.map(x => localCategory(x).title).join(' ')}`,
+      group: 'FOUNDATION', category: t('gameWiki'), aliases: ['knowledge base','wiki']
+    });
+    return entries;
   }
 
   async function ensureWikiSearchIndex() {
     try {
       if (typeof searchIndex === 'undefined' || !Array.isArray(searchIndex)) return;
-      const entries = await getWikiSearchEntries();
-      const wikiRoutes = new Set(entries.map(entry => entry.route));
-
-      searchIndex = searchIndex.filter(entry => {
-        if (entry.route === 'wiki') return false;
-        if (String(entry.route || '').startsWith('wiki/')) return false;
-        return !wikiRoutes.has(entry.route);
-      });
+      if (!searchEntriesPromise) searchEntriesPromise = getWikiSearchEntries();
+      const entries = await searchEntriesPromise;
+      searchIndex = searchIndex.filter(entry => entry.route !== 'wiki' && !String(entry.route || '').startsWith('wiki/'));
       searchIndex.push(...entries);
-
-      if (searchDialogEl?.open && typeof renderSearchResults === 'function') {
-        renderSearchResults(searchInputEl?.value || '');
-      }
+      if (searchDialogEl?.open && typeof renderSearchResults === 'function') renderSearchResults(searchInputEl?.value || '');
     } catch (_) {}
   }
 
@@ -505,12 +432,17 @@
   window.addEventListener('hashchange', () => scheduleRender(true, 0));
   languageSelect?.addEventListener('change', () => {
     activeKey = '';
+    searchEntriesPromise = null;
+    scheduleRender(true, 0);
+    setTimeout(ensureWikiSearchIndex, 120);
+  });
+  window.addEventListener('server504:localechange', () => {
+    activeKey = '';
+    searchEntriesPromise = null;
     scheduleRender(true, 0);
   });
   searchInputEl?.addEventListener('focus', ensureWikiSearchIndex);
-  document.addEventListener('pointerdown', event => {
-    if (event.target.closest?.('.header-search, .search-trigger')) ensureWikiSearchIndex();
-  }, true);
+  document.addEventListener('pointerdown', event => { if (event.target.closest?.('.header-search, .search-trigger')) ensureWikiSearchIndex(); }, true);
 
   startObserver();
   setTimeout(() => scheduleRender(true, 0), 160);
