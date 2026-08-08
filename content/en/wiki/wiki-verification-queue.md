@@ -19,6 +19,10 @@ The Wiki prefers visible uncertainty over confidently publishing stale numbers.
 | Regulus | King's Decree exact ATK %, duration and cooldown | OPEN |
 | Special Ops Outpost | current English tab names and construction prerequisite | OPEN |
 | Armory Assault registration | current registration limit, selected time-slot count, cycle wording and participation-lock text | OPEN |
+| Peace Shields | current item durations, shop source, cost, weekly limits and shield-breaking warning text | OPEN |
+| City Gate Defense Presets | current preset-slot limit and exact UI priority behavior | OPEN |
+| Trade Post / Merchant Guild | dark-zone radius and current control/capture interface | OPEN |
+| Presidential Palace | current full Officials roster and exact President/Vice President permissions | OPEN |
 
 ## Priority B — repeated captures needed
 
@@ -39,6 +43,10 @@ The Wiki prefers visible uncertainty over confidently publishing stale numbers.
 | Alliance Gifts levels | XP requirement, gift-level rewards and any gates beyond Lv.20 | progression changes by Gift Level |
 | Armory reward table | current reward assigned to each of the 8 Armories across a cycle | reward assignments rotate and must be separated from Armory identity |
 | Territory / Stronghold rules | season, event, zone, protection, truce and reinforcement values | conquest mechanics are season-specific and actively rebalanced |
+| Radar scouting thresholds | information revealed at multiple Radar levels | scout-information detail may not scale identically to Scouting Speed |
+| Shelter durability | maximum durability, recovery, fire thresholds and relocation behavior | values may differ by structure/event context |
+| Mutant Mines | live windows, free teleports, mine tiers, production rates and daily resource caps | community guide data must be checked against the active event |
+| Presidential Officials | buff values, durations/cooldowns and gift limits | multiple positions and term-dependent values need separate captures |
 
 ## Already resolved by official patch notes
 
@@ -58,6 +66,13 @@ The Wiki prefers visible uncertainty over confidently publishing stale numbers.
 - Capital/Turret rally and reinforcement troop capacity receives an additional +40,000.
 - Alliance Logs use War / Members structure and include an Events tab for administrative actions.
 - Current conquest patches include season-specific Stronghold and city truce/protection rules; those values must retain their season/version labels.
+- Supported cross-state events allow direct destination selection instead of random teleport placement.
+- Advanced Teleporters can be used in Capital Lost Lands; Capital Teleporters were removed from the Alliance Shop.
+- Alliance Shop Advanced Teleporter weekly limit was increased from 1 to 4 in the current patch line.
+- City Gate supports multiple Defense Presets, and one hero can only belong to one defense squad at a time.
+- Watchtower destruction base values were rebalanced to 6,000 solo / 18,000 rally, with a 60-minute durability-restoration cooldown.
+- Trade Post / Merchant Guild dark-zone shelter combat uses the patched attacker/defender mortality changes and +500% durability reduction multiplier.
+- Presidential Palace officially includes Grand Marshal, Supreme General and the Security/Agriculture/Science/Construction Secretary positions; those positions can self-resign after more than 30 minutes.
 
 ## Evidence acceptance rule
 
