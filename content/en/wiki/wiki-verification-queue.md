@@ -15,6 +15,9 @@ The Wiki prefers visible uncertainty over confidently publishing stale numbers.
 | Parts Set | milestone levels and exact bonuses | OPEN |
 | Lan Yan | current English UI faction label | OPEN |
 | Katrina | current English UI spelling: Katrina or Katerina | OPEN |
+| Pet Agent resources | inventory tooltips for Advanced Tactical Rations, Nutrient Potion, Potential Chips, Spec Ops Honor Medals and Training Protocols | OPEN |
+| Regulus | King's Decree exact ATK %, duration and cooldown | OPEN |
+| Special Ops Outpost | current English tab names and construction prerequisite | OPEN |
 
 ## Priority B — repeated captures needed
 
@@ -25,6 +28,11 @@ The Wiki prefers visible uncertainty over confidently publishing stale numbers.
 | Troop tier unlocks | camp/WT/research conditions | public tables disagree |
 | Season 4 building costs | Oni Seal Hall / Quartz Factory level costs | season data can vary or be patched |
 | Sacred Tree / Float Parade | exact thresholds, reward limits, reset cycle | community-backed but insufficient official numeric data |
+| Pet Agent unlock path | full roster, rarity and required previous-Agent level | current public guides are incomplete and partly strategy-oriented |
+| Pet level / breakthrough costs | resource requirements across multiple levels and rarities | costs change with level and Agent tier |
+| Pet training rolls | attribute pool and ranges | repeated rolls are needed to establish current ranges safely |
+| Pet event scoring | item-by-item Alliance Duel / Survival Preparedness points | scoring may rotate or change by event version |
+| Shadow Calls Pet rewards | mission tags, Pet-specific rewards and Great Success behavior | dispatch types and rewards vary |
 
 ## Already resolved by official patch notes
 
@@ -35,6 +43,10 @@ The Wiki prefers visible uncertainty over confidently publishing stale numbers.
 - Tactical Modification unlock paths include all Parts Lv.66 or one Orange chip 10★.
 - Chip Materials added to Daily Alliance Duel point chests 3 / 6 / 9.
 - Zombie Siege received Random Blue Chip Chests.
+- Pet Agents are unlocked through the Special Ops Outpost and include Rescue, training and growth.
+- Pet-item consumption scores in Survival Preparedness — Unit Training and Alliance Duel — Holistic Growth.
+- Regulus requires Titan Lv.50 plus rescue tasks.
+- Regulus's exclusive skill King's Decree temporarily boosts Troop ATK.
 
 ## Evidence acceptance rule
 
