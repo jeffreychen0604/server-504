@@ -20,6 +20,17 @@
         "formations-and-unit-presets",
         "rally-reinforcement-and-defense"
       ]
+    },
+    {
+      "id": "L10N-03",
+      "name": "Hero Fundamentals",
+      "status": "complete",
+      "slugs": [
+        "factions-and-heroes",
+        "hero-skills-and-passives",
+        "hero-equipment",
+        "exclusive-equipment-and-hall-of-honor"
+      ]
     }
   ],
   "translated": {
@@ -27,31 +38,51 @@
       "game-overview",
       "combat-system-and-reports",
       "formations-and-unit-presets",
-      "rally-reinforcement-and-defense"
+      "rally-reinforcement-and-defense",
+      "factions-and-heroes",
+      "hero-skills-and-passives",
+      "hero-equipment",
+      "exclusive-equipment-and-hall-of-honor"
     ],
     "es": [
       "game-overview",
       "combat-system-and-reports",
       "formations-and-unit-presets",
-      "rally-reinforcement-and-defense"
+      "rally-reinforcement-and-defense",
+      "factions-and-heroes",
+      "hero-skills-and-passives",
+      "hero-equipment",
+      "exclusive-equipment-and-hall-of-honor"
     ],
     "pt": [
       "game-overview",
       "combat-system-and-reports",
       "formations-and-unit-presets",
-      "rally-reinforcement-and-defense"
+      "rally-reinforcement-and-defense",
+      "factions-and-heroes",
+      "hero-skills-and-passives",
+      "hero-equipment",
+      "exclusive-equipment-and-hall-of-honor"
     ],
     "ko": [
       "game-overview",
       "combat-system-and-reports",
       "formations-and-unit-presets",
-      "rally-reinforcement-and-defense"
+      "rally-reinforcement-and-defense",
+      "factions-and-heroes",
+      "hero-skills-and-passives",
+      "hero-equipment",
+      "exclusive-equipment-and-hall-of-honor"
     ],
     "vi": [
       "game-overview",
       "combat-system-and-reports",
       "formations-and-unit-presets",
-      "rally-reinforcement-and-defense"
+      "rally-reinforcement-and-defense",
+      "factions-and-heroes",
+      "hero-skills-and-passives",
+      "hero-equipment",
+      "exclusive-equipment-and-hall-of-honor"
     ]
   }
 }
