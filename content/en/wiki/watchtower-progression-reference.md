@@ -72,6 +72,7 @@ The fastest way to turn this article into a definitive table is to collect scree
 
 ## Sources
 
-- Dark War Survival Wiki — Watchtower: https://darkwar.wiki/base-building/watchtower/
 - Dark War Survival Fandom — Watchtower: https://dark-war-survival.fandom.com/wiki/Watchtower
 - Dark War Survival progression reference: https://dark-war.com/progression
+
+> Retired Watchtower community tables are intentionally excluded from current source links; disputed rows remain explicit verification targets.
