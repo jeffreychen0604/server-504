@@ -41,6 +41,37 @@ report_matches \
   'seasonal-annex|Seasonal Annex' \
   assets index.html README.md "$manifest"
 
+# W17 architecture guard: the browser must use only the consolidated Wiki runtime.
+legacy_scripts=(
+  'wiki-research.js'
+  'wiki-w12.js'
+  'wiki-w13.js'
+  'wiki-w14.js'
+  'wiki-w15.js'
+  'wiki-ia.js'
+)
+for legacy in "${legacy_scripts[@]}"; do
+  if grep -q "$legacy" index.html; then
+    echo "::error file=index.html::Retired Wiki runtime is referenced by the public entrypoint: $legacy"
+    fail=1
+  fi
+done
+
+if ! grep -q 'assets/wiki-runtime.js' index.html; then
+  echo "::error file=index.html::Unified Wiki runtime is missing from the public entrypoint"
+  fail=1
+fi
+
+# Parse-check the active Wiki JavaScript before Pages deployment.
+if ! node --check assets/wiki-runtime.js >/dev/null; then
+  echo "::error file=assets/wiki-runtime.js::Unified Wiki runtime has a JavaScript syntax error"
+  fail=1
+fi
+if ! node --check assets/wiki-calculators.js >/dev/null; then
+  echo "::error file=assets/wiki-calculators.js::Wiki calculator hook has a JavaScript syntax error"
+  fail=1
+fi
+
 # Minimal article-shape validation for every English Wiki reference.
 # Accepted date markers cover general references, hero profiles and audit queues.
 for file in "$wiki_root"/*.md; do
@@ -140,4 +171,4 @@ if [[ "$fail" -ne 0 ]]; then
   exit 1
 fi
 
-echo "Wiki validation passed with zero blocking or metadata issues."
+echo "Wiki validation passed with zero blocking, registry or runtime issues."
