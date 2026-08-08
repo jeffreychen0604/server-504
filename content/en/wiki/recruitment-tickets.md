@@ -27,7 +27,7 @@ The exact Elite hero roster has changed over time. Do not use an old list to dec
 
 ## Prime / other recruitment tickets
 
-Some current hero acquisition references describe **Prime Recruitment Tickets**. Because naming and pool availability can depend on progression/state generation, the Wiki records the ticket family but does not invent a universal acquisition table.
+DarkWarData hero profiles for Corleone and Megan document **Prime Recruitment Tickets** as a Radio Station acquisition path. Because naming and pool availability can depend on progression/state generation, the Wiki records the ticket family but does not invent a universal acquisition table.
 
 ## Spend framework
 
@@ -43,6 +43,7 @@ Use this order:
 
 - Standard Recruitment Tickets: https://darkwardata.com/items/recruitment-tickets/
 - Elite Recruitment Tickets: https://darkwardata.com/items/elite-recruitment-tickets/
-- Current hero acquisition examples: https://dark-war-survival.com/heroes/corleone
+- Prime Recruitment example — Corleone: https://darkwardata.com/heroes/corleone/
+- Prime Recruitment example — Megan: https://darkwardata.com/heroes/megan/
 
 > **VERIFY SERVER 504:** exact ticket names, hero pools, pity/guarantee rules, event scoring and current recurring sources.
