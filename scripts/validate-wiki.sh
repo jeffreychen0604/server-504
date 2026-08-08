@@ -72,17 +72,24 @@ if ! grep -q 'assets/search-discovery.css' index.html; then
   fail=1
 fi
 
-# Parse-check active Wiki/discovery JavaScript before Pages deployment.
-if ! node --check assets/wiki-runtime.js >/dev/null; then
-  echo "::error file=assets/wiki-runtime.js::Unified Wiki runtime has a JavaScript syntax error"
-  fail=1
-fi
-if ! node --check assets/wiki-calculators.js >/dev/null; then
-  echo "::error file=assets/wiki-calculators.js::Wiki calculator hook has a JavaScript syntax error"
-  fail=1
-fi
-if ! node --check assets/search-discovery.js >/dev/null; then
-  echo "::error file=assets/search-discovery.js::Search discovery runtime has a JavaScript syntax error"
+# Parse-check active public JavaScript before Pages deployment.
+active_js=(
+  assets/i18n.js
+  assets/app.js
+  assets/feedback.js
+  assets/wiki-runtime.js
+  assets/wiki-calculators.js
+  assets/search-discovery.js
+)
+for script in "${active_js[@]}"; do
+  if ! node --check "$script" >/dev/null; then
+    echo "::error file=$script::Public runtime has a JavaScript syntax error"
+    fail=1
+  fi
+done
+
+# Six-locale UI/content contract: EN / FR / ES / PT / KO / VI.
+if ! node scripts/validate-i18n.js; then
   fail=1
 fi
 
@@ -185,4 +192,4 @@ if [[ "$fail" -ne 0 ]]; then
   exit 1
 fi
 
-echo "Wiki validation passed with zero blocking, registry, runtime or discovery issues."
+echo "Wiki validation passed with zero blocking, registry, runtime, discovery or localization issues."
