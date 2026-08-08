@@ -107,13 +107,13 @@
       <label>
         <span data-i18n="type">Type</span>
         <select id="contributionType" required>
-          <option>Game Wiki correction</option>
-          <option>New Wiki information</option>
-          <option>Charter proposal</option>
-          <option>Operational Codex proposal</option>
-          <option>Translation correction</option>
-          <option>Server operation suggestion</option>
-          <option>Other</option>
+          <option value="Game Wiki correction">Game Wiki correction</option>
+          <option value="New Wiki information">New Wiki information</option>
+          <option value="Charter proposal">Charter proposal</option>
+          <option value="Operational Codex proposal">Operational Codex proposal</option>
+          <option value="Translation correction">Translation correction</option>
+          <option value="Server operation suggestion">Server operation suggestion</option>
+          <option value="Other">Other</option>
         </select>
       </label>
       <label>
@@ -129,7 +129,7 @@
         <input id="contributionIdentity" maxlength="80" />
       </label>
       <label>
-        <span>Contact (optional)</span>
+        <span data-i18n="contactOptional">Contact (optional)</span>
         <input id="contributionContact" maxlength="160" placeholder="Discord, email, or other contact" />
       </label>
       <label class="feedback-honeypot" aria-hidden="true" tabindex="-1">
@@ -137,14 +137,15 @@
         <input id="contributionWebsite" autocomplete="off" tabindex="-1" />
       </label>
       <div id="feedbackTurnstile" class="feedback-turnstile" hidden aria-label="Human verification"></div>
-      <p class="form-note" data-i18n="githubNote">No account is required. Protected by Cloudflare Turnstile; submissions go directly to the Server 504 moderation inbox.</p>
+      <p class="form-note" data-i18n="feedbackNote">No account is required. Protected by Cloudflare Turnstile; submissions go directly to the Server 504 moderation inbox.</p>
       <p id="feedbackStatus" class="feedback-status" hidden aria-live="polite"></p>
-      <button class="primary-button" type="submit" data-i18n="continueGithub">Submit feedback</button>
+      <button class="primary-button" type="submit" data-i18n="submitFeedback">Submit feedback</button>
     </form>
   </dialog>
 
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <script src="./assets/feedback-config.js"></script>
+  <script src="./assets/i18n.js"></script>
   <script src="./assets/app.js" defer></script>
   <script src="./assets/pages-fancy.js" defer></script>
   <script src="./assets/header-search.js" defer></script>
