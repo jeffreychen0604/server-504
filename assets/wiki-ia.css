@@ -330,6 +330,11 @@
   transition: border-color 0.15s ease, background 0.15s ease;
 }
 
+.wiki-browser-card-compact {
+  grid-template-columns: minmax(0, 1fr) 18px;
+  min-height: 58px;
+}
+
 .wiki-browser-card:hover {
   border-color: rgba(216, 72, 67, 0.24);
   background: rgba(216, 72, 67, 0.04);
