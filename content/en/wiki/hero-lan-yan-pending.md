@@ -1,6 +1,6 @@
 # Lan Yan — Verification Pending
 
-> **Identity reviewed:** 7 Aug 2026  
+> **Identity verified:** 7 Aug 2026 — faction remains pending  
 > **Rarity:** S / Orange  
 > **Canonical faction:** **UNRESOLVED — verify in Server 504**  
 > **Public-source conflict:** Fighter in prose/passive, Shooter in structured faction field.
