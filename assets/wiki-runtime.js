@@ -94,20 +94,32 @@
   }
 
   function confidenceLegend() {
-    return `<div class="wiki-confidence-legend">
-      <div class="wiki-confidence-item">
-        <strong>Official / Current</strong>
-        <span>Official listing, patch notes or current in-game evidence supports the claim.</span>
+    return `<details class="wiki-trust-panel">
+      <summary>
+        <span><strong>How to read this Wiki</strong><small>Source confidence & verification policy</small></span>
+        <span class="wiki-trust-chevron" aria-hidden="true">⌄</span>
+      </summary>
+      <div class="wiki-trust-body">
+        <div class="wiki-research-notice">
+          <strong>Source policy</strong>
+          <span>Official patch notes first for current limits and feature changes; established Dark War community databases for deeper mechanics; Server 504 in-game evidence wins when sources conflict.</span>
+        </div>
+        <div class="wiki-confidence-legend">
+          <div class="wiki-confidence-item">
+            <strong>Official / Current</strong>
+            <span>Official listing, patch notes or current in-game evidence supports the claim.</span>
+          </div>
+          <div class="wiki-confidence-item">
+            <strong>Community / Cross-checked</strong>
+            <span>Useful community evidence, but the mechanic or number may still be version-sensitive.</span>
+          </div>
+          <div class="wiki-confidence-item">
+            <strong>Verify Server 504</strong>
+            <span>Current Server 504 UI evidence is required before treating the value as canonical.</span>
+          </div>
+        </div>
       </div>
-      <div class="wiki-confidence-item">
-        <strong>Community / Cross-checked</strong>
-        <span>Useful community evidence, but the mechanic or number may still be version-sensitive.</span>
-      </div>
-      <div class="wiki-confidence-item">
-        <strong>Verify Server 504</strong>
-        <span>Current Server 504 UI evidence is required before treating the value as canonical.</span>
-      </div>
-    </div>`;
+    </details>`;
   }
 
   function card(article) {
@@ -119,52 +131,162 @@
     </a>`;
   }
 
-  function categorySection(def, articles) {
-    return `<section class="wiki-ia-section" data-wiki-category="${def.id}">
-      <div class="wiki-ia-section-head">
-        <div class="wiki-ia-section-copy">
-          <small>GAME WIKI CATEGORY</small>
+  function browserCard(article) {
+    const group = normalizeGroup(article.group);
+    return `<a class="wiki-browser-card" href="#/wiki/${article.slug}" data-wiki-browser-group="${group}">
+      <div>
+        <small>${article.group}</small>
+        <h3>${article.title}</h3>
+      </div>
+      <p>${article.description}</p>
+      <span aria-hidden="true">→</span>
+    </a>`;
+  }
+
+  function categoryArticles(manifest, def) {
+    return manifest.articles.filter(article => def.normalizedGroups.has(normalizeGroup(article.group)));
+  }
+
+  function preferredRootCategory(manifest) {
+    let saved = '';
+    try { saved = sessionStorage.getItem('server504-wiki-category') || ''; } catch (_) {}
+    if (saved === 'all' || manifest.categories.some(category => category.id === saved)) return saved;
+    return manifest.categories[0]?.id || 'all';
+  }
+
+  function categoryTile(def, articles, active) {
+    const groupLabels = [...new Set(articles.map(article => normalizeGroup(article.group)))];
+    return `<button class="wiki-category-tile${active ? ' active' : ''}" type="button" data-wiki-category-button="${def.id}" aria-selected="${active ? 'true' : 'false'}">
+      <span class="wiki-category-tile-top"><small>${articles.length} REFERENCES</small><b aria-hidden="true">↘</b></span>
+      <strong>${def.title}</strong>
+      <span>${def.description}</span>
+      <em>${groupLabels.slice(0, 4).join(' · ')}${groupLabels.length > 4 ? ' · +' : ''}</em>
+    </button>`;
+  }
+
+  function groupFilters(articles, panelId) {
+    const groups = [...new Set(articles.map(article => normalizeGroup(article.group)))];
+    if (groups.length <= 1) return '';
+    return `<div class="wiki-group-filters" aria-label="Filter this category">
+      <button class="active" type="button" data-wiki-group-filter="all" data-wiki-group-panel="${panelId}" aria-pressed="true">ALL</button>
+      ${groups.map(group => `<button type="button" data-wiki-group-filter="${group}" data-wiki-group-panel="${panelId}" aria-pressed="false">${group}</button>`).join('')}
+    </div>`;
+  }
+
+  function categoryPanel(def, articles, active) {
+    return `<section class="wiki-browser-panel" id="wiki-category-${def.id}" data-wiki-category-panel="${def.id}" ${active ? '' : 'hidden'}>
+      <div class="wiki-browser-head">
+        <div>
+          <small>BROWSE CATEGORY</small>
           <h2>${def.title}</h2>
           <p>${def.description}</p>
         </div>
         <span class="wiki-ia-count">${articles.length} REFERENCES</span>
       </div>
-      <div class="wiki-ia-cards">${articles.map(card).join('')}</div>
+      ${groupFilters(articles, def.id)}
+      <div class="wiki-browser-list">${articles.map(browserCard).join('')}</div>
     </section>`;
   }
 
-  function rootPage(manifest) {
-    const used = new Set();
-    const sections = [];
+  function allReferencesPanel(manifest, active) {
+    const articles = [...manifest.articles].sort((a, b) => a.title.localeCompare(b.title));
+    return `<section class="wiki-browser-panel wiki-browser-panel-all" id="wiki-category-all" data-wiki-category-panel="all" ${active ? '' : 'hidden'}>
+      <div class="wiki-browser-head">
+        <div>
+          <small>FULL INDEX</small>
+          <h2>All references</h2>
+          <p>Alphabetical compact index of every registered Wiki article. Use global search for the fastest exact lookup.</p>
+        </div>
+        <span class="wiki-ia-count">${articles.length} REFERENCES</span>
+      </div>
+      <div class="wiki-all-reference-list">${articles.map(article => `<a href="#/wiki/${article.slug}"><span>${article.title}</span><small>${article.group}</small></a>`).join('')}</div>
+    </section>`;
+  }
 
-    manifest.categories.forEach(def => {
-      const matches = manifest.articles.filter(article => {
-        if (used.has(article.slug)) return false;
-        if (!def.normalizedGroups.has(normalizeGroup(article.group))) return false;
-        used.add(article.slug);
-        return true;
+  function bindRootInteractions() {
+    const root = app.querySelector('[data-wiki-runtime-root]');
+    if (!root) return;
+
+    const categoryButtons = [...root.querySelectorAll('[data-wiki-category-button]')];
+    const panels = [...root.querySelectorAll('[data-wiki-category-panel]')];
+
+    const selectCategory = (categoryId, shouldScroll = true) => {
+      categoryButtons.forEach(button => {
+        const active = button.dataset.wikiCategoryButton === categoryId;
+        button.classList.toggle('active', active);
+        button.setAttribute('aria-selected', String(active));
       });
-      if (matches.length) sections.push(categorySection(def, matches));
+      panels.forEach(panel => {
+        panel.hidden = panel.dataset.wikiCategoryPanel !== categoryId;
+      });
+      try { sessionStorage.setItem('server504-wiki-category', categoryId); } catch (_) {}
+
+      const panel = panels.find(item => item.dataset.wikiCategoryPanel === categoryId);
+      if (shouldScroll && panel) {
+        const reduceMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+        panel.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
+      }
+    };
+
+    categoryButtons.forEach(button => {
+      button.addEventListener('click', () => selectCategory(button.dataset.wikiCategoryButton));
     });
 
-    const unmatched = manifest.articles.filter(article => !used.has(article.slug));
-    if (unmatched.length) {
-      sections.push(categorySection({
-        id: 'other',
-        title: 'Other References',
-        description: 'References that have not yet been mapped into the current Wiki taxonomy.'
-      }, unmatched));
-    }
+    root.querySelectorAll('[data-wiki-group-filter]').forEach(button => {
+      button.addEventListener('click', () => {
+        const panelId = button.dataset.wikiGroupPanel;
+        const group = button.dataset.wikiGroupFilter;
+        const panel = root.querySelector(`[data-wiki-category-panel="${panelId}"]`);
+        if (!panel) return;
 
-    return `<section class="page wiki-research-page" data-wiki-runtime-root="1">
-      ${header('Game Wiki', manifest.rootDescription, ['RESEARCHED', 'AUG 2026', 'COMMUNITY MAINTAINED'])}
-      <div class="wiki-research-notice">
-        <strong>Source policy</strong>
-        <span>${manifest.sourcePolicy}</span>
-      </div>
+        panel.querySelectorAll('[data-wiki-group-filter]').forEach(filterButton => {
+          const active = filterButton === button;
+          filterButton.classList.toggle('active', active);
+          filterButton.setAttribute('aria-pressed', String(active));
+        });
+        panel.querySelectorAll('[data-wiki-browser-group]').forEach(articleCard => {
+          articleCard.hidden = group !== 'all' && articleCard.dataset.wikiBrowserGroup !== group;
+        });
+      });
+    });
+  }
+
+  function rootPage(manifest) {
+    const selectedCategory = preferredRootCategory(manifest);
+    const categorySets = manifest.categories.map(def => ({ def, articles: categoryArticles(manifest, def) }));
+
+    const categoryTiles = categorySets
+      .filter(item => item.articles.length)
+      .map(item => categoryTile(item.def, item.articles, selectedCategory === item.def.id));
+
+    categoryTiles.push(`<button class="wiki-category-tile wiki-category-tile-all${selectedCategory === 'all' ? ' active' : ''}" type="button" data-wiki-category-button="all" aria-selected="${selectedCategory === 'all' ? 'true' : 'false'}">
+      <span class="wiki-category-tile-top"><small>${manifest.articles.length} REFERENCES</small><b aria-hidden="true">↘</b></span>
+      <strong>All references</strong>
+      <span>Compact alphabetical index for scanning the entire knowledge base without expanding every article card.</span>
+      <em>FULL INDEX</em>
+    </button>`);
+
+    const panels = categorySets
+      .filter(item => item.articles.length)
+      .map(item => categoryPanel(item.def, item.articles, selectedCategory === item.def.id));
+    panels.push(allReferencesPanel(manifest, selectedCategory === 'all'));
+
+    return `<section class="page wiki-research-page wiki-overview-page" data-wiki-runtime-root="1">
+      ${header('Game Wiki', manifest.rootDescription, [`${manifest.articles.length} REFERENCES`, 'AUG 2026', 'COMMUNITY MAINTAINED'])}
       ${confidenceLegend()}
-      <div class="wiki-research-grid wiki-ia-grouped">${sections.join('')}</div>
-      <div class="wiki-ia-audit-note">${manifest.articles.length} references are indexed from one manifest. Taxonomy, routing and global search use the same article registry.</div>
+      <section class="wiki-category-overview" aria-labelledby="wikiBrowseTitle">
+        <div class="wiki-overview-head">
+          <div>
+            <small>KNOWLEDGE MAP</small>
+            <h2 id="wikiBrowseTitle">Browse by category</h2>
+            <p>Start with a category to keep the Wiki compact. Only the selected category is expanded below.</p>
+          </div>
+          <button class="wiki-open-search search-trigger" type="button">SEARCH WIKI <kbd>/</kbd></button>
+        </div>
+        <div class="wiki-category-dashboard" role="tablist" aria-label="Wiki categories">${categoryTiles.join('')}</div>
+      </section>
+      <div class="wiki-browser">${panels.join('')}</div>
+      <div class="wiki-ia-audit-note">${manifest.articles.length} references · ${manifest.categories.length} primary categories · one manifest-driven Wiki index. Use Search for exact lookup or category drill-down for browsing.</div>
     </section>`;
   }
 
@@ -282,6 +404,7 @@
     try {
       if (!slug) {
         app.innerHTML = rootPage(manifest);
+        bindRootInteractions();
       } else {
         const article = manifest.articleMap.get(slug);
         app.innerHTML = article
