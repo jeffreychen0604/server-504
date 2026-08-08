@@ -41,16 +41,16 @@ report_matches \
   assets index.html README.md
 
 # Minimal article-shape validation for every English Wiki reference.
-# Three date markers are accepted because article families use different but
-# equivalent metadata labels: general references, hero profiles and audit queues.
+# Accepted date markers cover general references, hero profiles and audit queues.
 for file in "$wiki_root"/*.md; do
   if ! grep -q '^# ' "$file"; then
     echo "::error file=$file::Wiki article is missing an H1 title"
     fail=1
   fi
 
-  if ! grep -qiE '(Last verified|Identity verified|Updated):' "$file"; then
-    echo "::error file=$file::Wiki article is missing a verification/update date marker"
+  if ! head -n 16 "$file" | grep -qiE '\*\*(Last verified|Identity verified|Updated):\*\*'; then
+    echo "MISSING_VERIFICATION_DATE: $file"
+    echo "::error file=$file::Wiki article is missing a verification/update date marker near the top"
     fail=1
   fi
 done
