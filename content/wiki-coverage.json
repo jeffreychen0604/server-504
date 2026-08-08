@@ -1,0 +1,164 @@
+{
+  "version": 1,
+  "updated": "2026-08-08",
+  "statusDefinitions": {
+    "covered": "The Wiki has a dedicated, usable reference layer for this domain.",
+    "covered-verify": "The domain is documented, but exact numbers, unlocks, prices, limits or current Server 504 UI fields remain in verification.",
+    "partial": "Useful references exist, but the domain is not yet complete enough to call covered.",
+    "backlog": "No dedicated reference layer yet; research should begin only when its player value justifies the maintenance cost."
+  },
+  "domains": [
+    {
+      "id": "foundation",
+      "title": "Foundation & Game Orientation",
+      "status": "covered",
+      "priority": "maintain",
+      "articles": ["game-overview"],
+      "gaps": []
+    },
+    {
+      "id": "combat",
+      "title": "Combat, Formations & Reports",
+      "status": "covered",
+      "priority": "maintain",
+      "articles": ["combat-system-and-reports", "formations-and-unit-presets", "rally-reinforcement-and-defense"],
+      "gaps": ["Keep current Capital, reinforcement and defense exceptions versioned when patches change them."]
+    },
+    {
+      "id": "heroes",
+      "title": "Heroes, Factions & Investment",
+      "status": "covered",
+      "priority": "maintain",
+      "articles": ["factions-and-heroes", "hero-database", "fighter-heroes", "rider-heroes", "shooter-heroes", "hero-investment-framework"],
+      "gaps": ["Current public profile layer intentionally prioritizes S-rarity heroes rather than pretending to be a complete all-rarity encyclopedia.", "Lan Yan faction remains unresolved pending Server 504 UI evidence."]
+    },
+    {
+      "id": "hero-equipment",
+      "title": "Hero Equipment & Exclusive Equipment",
+      "status": "covered-verify",
+      "priority": "high",
+      "articles": ["hero-equipment", "exclusive-equipment-and-hall-of-honor", "equipment-and-apc-material-sources"],
+      "gaps": ["Exact late-game/red-equipment resource tables require current corroboration before calculator use."]
+    },
+    {
+      "id": "progression",
+      "title": "Watchtower, Industrial & Troop Progression",
+      "status": "covered-verify",
+      "priority": "high",
+      "articles": ["watchtower-and-industrial", "watchtower-progression-reference", "industrial-age-and-precision-parts", "troop-tier-progression", "progression-planning"],
+      "gaps": ["Disputed Watchtower prerequisites and exact Industrial/Precision Part tables remain version-sensitive."]
+    },
+    {
+      "id": "research",
+      "title": "Research Center & Technology Trees",
+      "status": "covered-verify",
+      "priority": "high",
+      "articles": ["research-center-overview", "development-and-economy-research", "battle-and-faction-research", "duel-research", "battle-strategy-and-kill-training", "wisdom-medals", "research-queues-speed-and-timing", "late-game-and-industrial-research", "research-priority-framework"],
+      "gaps": ["Exact node costs, second-queue unlock and advanced-tree values need current Server 504 evidence."]
+    },
+    {
+      "id": "shelter",
+      "title": "Shelter Buildings & Survivor Systems",
+      "status": "covered-verify",
+      "priority": "high",
+      "articles": ["shelter-buildings-overview", "survivors-jobs-health-happiness", "dorm-kitchen-deerhunter-bar", "resource-production-buildings", "hospital-infirmary-conscription-office", "warehouse-resource-protection", "library-construction-hall-training-ground", "military-center-training-camps", "shelter-building-priority"],
+      "gaps": ["Infirmary meaning, several building unlocks and per-level values remain unresolved or version-sensitive."]
+    },
+    {
+      "id": "daily-utility",
+      "title": "Recruitment, Exploration & Daily Utility",
+      "status": "covered-verify",
+      "priority": "medium",
+      "articles": ["daily-utility-systems-overview", "radio-station-and-recruitment", "recruitment-tickets", "black-market", "mart-and-world-gathering", "gathering-ground-and-apocalypse-guide", "adventure-camp-and-exploration", "supply-station-and-energy", "daily-utility-routine"],
+      "gaps": ["Recruitment pools/pity, market refresh ladder, Adventure idle cap and Energy schedule remain patch-sensitive."]
+    },
+    {
+      "id": "apc",
+      "title": "APC, Chips, Parts & Tactical Modification",
+      "status": "covered-verify",
+      "priority": "high",
+      "articles": ["apc-modified-vehicle", "apc-chips", "chip-factory", "chip-factory-recipes-reference", "apc-parts-and-sets", "apc-parts-current-cost-audit", "tactical-modification"],
+      "gaps": ["Exact Chip Factory recipes and current APC Parts Lv.1–66 resource tables remain verification blockers."]
+    },
+    {
+      "id": "pets",
+      "title": "Pet Agents & Special Ops Outpost",
+      "status": "covered-verify",
+      "priority": "high",
+      "articles": ["pet-agents-overview", "special-ops-outpost", "pet-roster-and-unlocks", "pet-training-and-growth", "pet-resources-and-event-timing", "shadow-calls-and-pet-rescue", "pet-regulus"],
+      "gaps": ["Full unlock chain, resource costs, training roll ranges and exact Pet event score values require current UI capture."]
+    },
+    {
+      "id": "alliance",
+      "title": "Alliance Administration, Territory & Shared Systems",
+      "status": "covered-verify",
+      "priority": "high",
+      "articles": ["alliance-systems-overview", "alliance-help-and-alliance-hall", "alliance-tech", "alliance-gifts", "alliance-administration-and-logs", "armory-assault", "capital-and-turrets", "alliance-centers-territory-strongholds"],
+      "gaps": ["Alliance Tech tree, Alliance Hall/Gifts level values, Armory registration/reward screens and season-specific territory rules need current verification."]
+    },
+    {
+      "id": "events",
+      "title": "Recurring Alliance & State Events",
+      "status": "covered",
+      "priority": "maintain",
+      "articles": ["events-overview", "alliance-duel", "survival-preparedness", "state-of-supremacy", "zombie-siege", "bio-mutant"],
+      "gaps": ["Scoring tables should remain versioned rather than copied into permanent rules when event tuning changes."]
+    },
+    {
+      "id": "world-state",
+      "title": "World Map & State Systems",
+      "status": "covered-verify",
+      "priority": "medium",
+      "articles": ["world-map-and-state-systems", "radar-and-scouting", "peace-shields-and-shelter-defense", "teleport-and-cross-state-movement", "city-gate-durability-and-shelter-attacks", "trade-post-and-merchant-guild", "mutant-mines", "president-and-officials"],
+      "gaps": ["Shield inventory/durations, map-zone control rules, Mutant Mine live schedule and Presidential buffs remain current-state verification items."]
+    },
+    {
+      "id": "economy",
+      "title": "Shops, Currencies & Resource Sources",
+      "status": "covered-verify",
+      "priority": "high",
+      "articles": ["shops-and-currencies-overview", "honor-shop", "honor-shop-price-audit", "alliance-shop", "season-and-vip-shops", "resource-source-index", "equipment-and-apc-material-sources", "event-and-premium-currencies"],
+      "gaps": ["Current Server 504 shop inventory, prices and purchase limits should not be treated as canonical until captured."]
+    },
+    {
+      "id": "season4",
+      "title": "Season 4 — Sealed Island",
+      "status": "covered-verify",
+      "priority": "high",
+      "articles": ["season-4-sealed-island", "sealed-island-season-buildings", "miasma-and-virus-resistance", "blood-moon-shroud", "rotting-oni-and-booze-brute", "oni-king", "sacred-tree-blessing", "float-parade"],
+      "gaps": ["Exact seasonal thresholds, shop prices, contribution tables and other numeric fields stay versioned until Server 504 evidence resolves them."]
+    },
+    {
+      "id": "tools-audits",
+      "title": "Calculators, Verification & Data Audits",
+      "status": "covered",
+      "priority": "maintain",
+      "articles": ["wiki-calculators", "wiki-verification-queue"],
+      "gaps": ["Only formulas with sufficient confidence should graduate from reference text into calculators."]
+    },
+    {
+      "id": "competitive-side-modes",
+      "title": "Competitive & Side-Mode Encyclopedic Coverage",
+      "status": "partial",
+      "priority": "medium",
+      "articles": ["state-of-supremacy", "event-and-premium-currencies", "resource-source-index"],
+      "gaps": ["No dedicated current reference pages yet for Arena, Trial, Total War, Black Gold Battlefield, Lost Lands and Origin Lands as standalone modes."]
+    },
+    {
+      "id": "vip-store",
+      "title": "VIP & Store Progression",
+      "status": "partial",
+      "priority": "low",
+      "articles": ["season-and-vip-shops", "event-and-premium-currencies"],
+      "gaps": ["VIP progression itself, benefit tiers and pack architecture are not yet documented as a dedicated system; avoid turning monetization tables into maintenance-heavy Wiki clutter without clear player value."]
+    },
+    {
+      "id": "social-account-utility",
+      "title": "Social, Account & Communication Utilities",
+      "status": "backlog",
+      "priority": "low",
+      "articles": [],
+      "gaps": ["Mail, chat, profile/account utility and similar low-strategy systems have no dedicated reference layer yet."]
+    }
+  ]
+}
