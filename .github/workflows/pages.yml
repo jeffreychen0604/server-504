@@ -27,6 +27,9 @@ jobs:
       - name: Validate public Wiki
         run: bash scripts/validate-wiki.sh
 
+      - name: Audit Wiki content quality
+        run: python3 scripts/audit-wiki-content.py
+
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
         with:
