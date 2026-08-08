@@ -31,6 +31,10 @@ The Wiki prefers visible uncertainty over confidently publishing stale numbers.
 | Training Ground | current effect name/value shown in the building tooltip | OPEN |
 | Kitchen | current tooltip confirming meal/canned-food functions | OPEN |
 | Deerhunter Bar | current tooltip confirming happiness/mood effect | OPEN |
+| Radio Station | current recruitment tabs, free-recruit timer/cooldown and pool-preview wording | OPEN |
+| Recruitment tickets | current standard / Elite / Prime ticket names, pool labels and pity/guarantee wording | OPEN |
+| Black Market | current daily refresh interface, Ruby refresh cost ladder and time-limited Black Market tabs | OPEN |
+| Supply Station | current Energy refill amount, refresh timer and storage/carry-over wording | OPEN |
 
 ## Priority B — repeated captures needed
 
@@ -70,6 +74,12 @@ The Wiki prefers visible uncertainty over confidently publishing stale numbers.
 | Warehouse | resource/coin protection by level and interaction with other protection bonuses | older tables may not reflect current scaling |
 | Library / Construction Hall / Training Ground | throughput effect by level and Industrial progression values | speed effects need multiple levels to establish current scaling |
 | Military Center / faction Camps | Unit Cap, Troop Capacity, training capacity and Industrial costs | values vary by building level and faction progression |
+| Mart Lv.1–30 | total Gathering Speed, Gathering Load, costs and Ruby-exclusion wording | public tables disagree on incremental vs total presentation |
+| Gathering Ground | Daily Exploration Attempts, Rare Task Refresh Rate, costs and level milestones | current public table is incomplete and may be stale |
+| Adventure Camp / Exploration | idle reward cap, Food/hour by stage, sweep/claim rules and milestone rewards | output changes with stage and possibly season/account progression |
+| Recruitment pools | hero availability by standard / Elite / Prime pool and rotation timing | pools can change with progression, season and game updates |
+| Black Market inventory | item pool, discount ranges and refresh-value progression | inventory rotates and refresh behavior may vary over time |
+| Energy economy | Supply Station refill amount, free recovery cap, consumable Energy sources and event scoring | multiple states/timers are needed to distinguish base rules from event modifiers |
 
 ## Already resolved by official patch notes / official listing
 
@@ -100,6 +110,12 @@ The Wiki prefers visible uncertainty over confidently publishing stale numbers.
 - During Origin Lands, Kill Training technologies take effect on War Days (Wednesday & Saturday).
 - The official game listing confirms survivor job assignment plus health/happiness management as core shelter systems.
 - Official Origin Lands patches can temporarily modify Hospital Capacity, Healing Speed and Healing Cost; those event modifiers must not be copied as permanent Hospital values.
+- Official App Store editorial confirms a free daily Radio Station recruit.
+- Official App Store editorial confirms daily Black Market refresh, optional Ruby refresh and rotating discounted resources/speedups/recruitment items.
+- Official patch history added Quick Buy to the time-limited Black Market.
+- Survivors with Shelter Lv.10+ can access Apocalypse Guide through Gathering Ground to review upcoming major events.
+- Radar Quick Start unlocks at Radar Lv.15 and applies to all Radar-event types in the current patch line.
+- Current patches allow low-Energy prompts to claim available Energy directly without navigating back to Supply Station.
 
 ## Evidence acceptance rule
 
