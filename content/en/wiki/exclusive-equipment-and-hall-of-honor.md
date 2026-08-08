@@ -46,5 +46,6 @@ Fragment cost per star, breakthrough cost and hero-specific Exclusive Equipment 
 ## Sources
 
 - Apple App Store version history — Exclusive Equipment Swap, Red Star, Hall of Honor and Core of Rotation: https://apps.apple.com/app/dark-war-survival/id6670441558
-- Dark War Survival Wiki — Equipment category: https://darkwar.wiki/category/heroes-characters/equipment/
 - Meta Instincts — early feature reference (historical/community): https://www.youtube.com/watch?v=Odie4hJMTK8
+
+> Retired community equipment-category links are intentionally excluded from current source authority.
