@@ -93,6 +93,11 @@ if ! node scripts/validate-i18n.js; then
   fail=1
 fi
 
+# Wiki body localization contract: completed batches must exist in every declared locale.
+if ! python3 scripts/validate-wiki-localization.py; then
+  fail=1
+fi
+
 # Minimal article-shape validation for every English Wiki reference.
 # Accepted date markers cover general references, hero profiles and audit queues.
 for file in "$wiki_root"/*.md; do
