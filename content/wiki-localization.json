@@ -31,6 +31,18 @@
         "hero-equipment",
         "exclusive-equipment-and-hall-of-honor"
       ]
+    },
+    {
+      "id": "L10N-04",
+      "name": "Hero Roster & Investment",
+      "status": "complete",
+      "slugs": [
+        "hero-database",
+        "fighter-heroes",
+        "rider-heroes",
+        "shooter-heroes",
+        "hero-investment-framework"
+      ]
     }
   ],
   "translated": {
@@ -42,7 +54,12 @@
       "factions-and-heroes",
       "hero-skills-and-passives",
       "hero-equipment",
-      "exclusive-equipment-and-hall-of-honor"
+      "exclusive-equipment-and-hall-of-honor",
+      "hero-database",
+      "fighter-heroes",
+      "rider-heroes",
+      "shooter-heroes",
+      "hero-investment-framework"
     ],
     "es": [
       "game-overview",
@@ -52,7 +69,12 @@
       "factions-and-heroes",
       "hero-skills-and-passives",
       "hero-equipment",
-      "exclusive-equipment-and-hall-of-honor"
+      "exclusive-equipment-and-hall-of-honor",
+      "hero-database",
+      "fighter-heroes",
+      "rider-heroes",
+      "shooter-heroes",
+      "hero-investment-framework"
     ],
     "pt": [
       "game-overview",
@@ -62,7 +84,12 @@
       "factions-and-heroes",
       "hero-skills-and-passives",
       "hero-equipment",
-      "exclusive-equipment-and-hall-of-honor"
+      "exclusive-equipment-and-hall-of-honor",
+      "hero-database",
+      "fighter-heroes",
+      "rider-heroes",
+      "shooter-heroes",
+      "hero-investment-framework"
     ],
     "ko": [
       "game-overview",
@@ -72,7 +99,12 @@
       "factions-and-heroes",
       "hero-skills-and-passives",
       "hero-equipment",
-      "exclusive-equipment-and-hall-of-honor"
+      "exclusive-equipment-and-hall-of-honor",
+      "hero-database",
+      "fighter-heroes",
+      "rider-heroes",
+      "shooter-heroes",
+      "hero-investment-framework"
     ],
     "vi": [
       "game-overview",
@@ -82,7 +114,12 @@
       "factions-and-heroes",
       "hero-skills-and-passives",
       "hero-equipment",
-      "exclusive-equipment-and-hall-of-honor"
+      "exclusive-equipment-and-hall-of-honor",
+      "hero-database",
+      "fighter-heroes",
+      "rider-heroes",
+      "shooter-heroes",
+      "hero-investment-framework"
     ]
   }
 }
