@@ -62,13 +62,27 @@ if ! grep -q 'assets/wiki-runtime.js' index.html; then
   fail=1
 fi
 
-# Parse-check the active Wiki JavaScript before Pages deployment.
+# W18 discovery layer must stay attached to the same public entrypoint.
+if ! grep -q 'assets/search-discovery.js' index.html; then
+  echo "::error file=index.html::Search discovery runtime is missing from the public entrypoint"
+  fail=1
+fi
+if ! grep -q 'assets/search-discovery.css' index.html; then
+  echo "::error file=index.html::Search discovery stylesheet is missing from the public entrypoint"
+  fail=1
+fi
+
+# Parse-check active Wiki/discovery JavaScript before Pages deployment.
 if ! node --check assets/wiki-runtime.js >/dev/null; then
   echo "::error file=assets/wiki-runtime.js::Unified Wiki runtime has a JavaScript syntax error"
   fail=1
 fi
 if ! node --check assets/wiki-calculators.js >/dev/null; then
   echo "::error file=assets/wiki-calculators.js::Wiki calculator hook has a JavaScript syntax error"
+  fail=1
+fi
+if ! node --check assets/search-discovery.js >/dev/null; then
+  echo "::error file=assets/search-discovery.js::Search discovery runtime has a JavaScript syntax error"
   fail=1
 fi
 
@@ -171,4 +185,4 @@ if [[ "$fail" -ne 0 ]]; then
   exit 1
 fi
 
-echo "Wiki validation passed with zero blocking, registry or runtime issues."
+echo "Wiki validation passed with zero blocking, registry, runtime or discovery issues."
