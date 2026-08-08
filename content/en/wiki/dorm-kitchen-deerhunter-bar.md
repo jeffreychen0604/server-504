@@ -11,7 +11,7 @@ Community references consistently describe the Dorm as increasing survivor popul
 
 ## Kitchen
 
-Early-game/tutorial references show the Kitchen being built to prepare food for the survivor group. A Japanese community reference also describes it as producing survivor food and canned food used for exploration-related activity.
+Historical early-game references show the Kitchen being built to prepare food for the survivor group. A Japanese community reference also describes it as producing survivor food and canned food used for exploration-related activity.
 
 Because public English structure pages currently lack a clean effect table, exact meal production, storage and worker-slot numbers remain provisional.
 
@@ -40,4 +40,5 @@ Expanding only Dorm capacity without maintaining food and mood support can creat
 - Fandom Dorm: https://dark-war-survival.fandom.com/wiki/Dorm
 - Fandom Structures: https://dark-war-survival.fandom.com/wiki/Structures
 - Japanese shelter reference: https://w.atwiki.jp/darkwarsurvival/pages/17.html
-- Archived early-game tutorial reference: https://darkwar.wiki/events-quests/game-tutorial-first-10-levels/
+
+> Retired early-game community pages are preserved only as historical investigation notes and are intentionally not linked from the public Wiki.
