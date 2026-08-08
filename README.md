@@ -38,14 +38,25 @@ Before deployment, `scripts/validate-wiki.sh` checks:
 - accidental reintroduction of retired Wiki route modules;
 - presence of the consolidated Wiki runtime and W18 discovery assets in the public entrypoint.
 
+W19 adds `scripts/audit-wiki-content.py`, which separately checks the documentation layer for:
+
+- coverage-contract status and priority integrity;
+- coverage references that point to unknown Wiki slugs;
+- taxonomy categories with no represented coverage domain;
+- broken explicit `#/wiki/<slug>` cross-links;
+- editorial warnings for suspicious Season-number mixing or retired shop naming without legacy context;
+- high-similarity article pairs that may deserve overlap review.
+
 ## Current architecture
 
 - static HTML/CSS/JavaScript
 - Markdown Wiki content rendered client-side with `marked`
 - `content/wiki-manifest.json` as the single Wiki registry and taxonomy source
+- `content/wiki-coverage.json` as the machine-readable content coverage/backlog contract
 - `assets/wiki-runtime.js` as the single Wiki router, article loader, related-reference engine and Wiki search indexer
 - `assets/search-discovery.js` for ranked global search, synonyms, lightweight typo tolerance and category filtering
 - `assets/wiki-calculators.js` as a runtime-mounted utility hook, not a separate route observer
+- `docs/WIKI_CONTENT_AUDIT.md` as the human-readable W19 maintenance/audit policy
 - 117 registered Wiki article routes as of 8 Aug 2026
 - Cloudflare Worker + D1 anonymous feedback backend
 - GitHub Pages deployment through `.github/workflows/pages.yml`
@@ -56,8 +67,16 @@ Global search ranks exact titles and aliases above labels/body text, expands com
 
 Wiki article pages also render up to four related references derived from the same manifest using group, taxonomy category, title/description overlap and hub-page boosts.
 
+## Content coverage behavior
+
+W19 tracks documentation domains as `covered`, `covered-verify`, `partial` or `backlog` instead of equating article count with completeness.
+
+The current high-value backlog is mostly verification work: current shop screens, Chip Factory recipes, APC Parts costs, disputed Watchtower/Industrial prerequisites, advanced Research Center values, Pet Agent numeric data, Alliance Tech/Gifts/Armory UI and current Sealed Island numeric rules.
+
+Lower-priority breadth includes dedicated encyclopedic pages for some side modes, VIP progression and low-strategy account/social utilities. New gameplay routes should be created only when they represent a genuinely different maintenance lifecycle and change a player decision.
+
 ## Status — August 2026
 
 Public portal is operational. Wiki research waves W1–W15 cover foundation, combat/heroes, progression, APC, events, Sealed Island, economy, calculators/data audits, Pet Agents, alliance/state systems, research, shelter and daily utility systems.
 
-W16 completed source hygiene and information-architecture cleanup. W17 consolidated the Wiki into one manifest-driven runtime and made registry consistency a deployment-blocking CI contract. W18 upgrades discovery quality with ranked synonym-aware search, category filters, lightweight typo tolerance and related-reference recommendations without changing existing article URLs.
+W16 completed source hygiene and information-architecture cleanup. W17 consolidated the Wiki into one manifest-driven runtime and made registry consistency a deployment-blocking CI contract. W18 upgraded discovery quality with ranked synonym-aware search, category filters, lightweight typo tolerance and related-reference recommendations without changing existing article URLs. W19 adds a formal coverage/backlog contract plus content-quality and cross-link auditing so future work prioritizes verification and decision value over raw article count.
