@@ -1,15 +1,15 @@
 # Mutant Mines
 
 > **Last verified:** 8 Aug 2026  
-> **Confidence:** Community-backed event rules; exact schedule/reward caps must be checked against the active Server 504 event.
+> **Confidence:** Historical community capture only; exact schedule, teleport count and reward caps must be checked against the active Server 504 event.
 
-Mutant Mines are a cross-state resource-control activity documented in community guides. They are useful for understanding how map resource systems can temporarily override normal State boundaries.
+Mutant Mines are a cross-state resource-control activity documented in an older community guide. The mechanic is useful for understanding how map resource systems can temporarily override normal State boundaries, but the original public source is no longer treated as a live authority.
 
-## Community-documented event loop
+## Historically documented event loop
 
-The current public guide describes Mutant Mines in the Back Zone as being protected by high virus concentration except during recurring **sandstorm windows**. During those windows, survivors can cross into States in the same season group and contest the mines.
+The archived community description recorded Mutant Mines in the Back Zone as being protected by high virus concentration except during recurring **sandstorm windows**. During those windows, survivors could cross into States in the same season group and contest the mines.
 
-The guide lists three daily windows at:
+The historical guide listed three daily windows at:
 
 - 01:00 server time;
 - 10:00 server time;
@@ -17,50 +17,50 @@ The guide lists three daily windows at:
 
 with each reduced-virus window lasting one hour.
 
-Because this schedule is community-sourced and event timing can be patched, Server 504 should verify the live schedule before publishing it as current.
+These times are preserved only as investigation targets. Server 504 should verify the live event Rules page before publishing them as current.
 
 ## Resources
 
-Community documentation says captured Mutant Mines continuously generate:
+The historical community description says captured Mutant Mines continuously generated:
 
 - **Antigens**;
 - **Crimson Ores**.
 
-Collection also contributes alliance gathering points. The guide states that personal resource collection has a daily cap while alliance gathering-point contribution does not.
+Collection also contributed alliance gathering points. The same guide said personal resource collection had a daily cap while alliance gathering-point contribution did not.
 
 ## Cross-state movement
 
-The same guide describes **3 free cross-state teleport chances per day** during active Mutant Mine periods.
+The archived description recorded **3 free cross-state teleport chances per day** during active Mutant Mine periods.
 
-This rule belongs to the Mutant Mines event and should not be generalized to State of Supremacy or other cross-state systems.
+This value is not current-canonical until reconfirmed in game. It also belongs specifically to the Mutant Mines event and must not be generalized to State of Supremacy or other cross-state systems.
 
 ## Combat restrictions
 
-Community documentation says cross-state survivors cannot attack Watchtowers outside the Lost Lands and their own Watchtowers are likewise protected, while the Lost Lands / Capital area removes that restriction.
+Historical community documentation said cross-state survivors could not attack Watchtowers outside the Lost Lands and their own Watchtowers were likewise protected, while the Lost Lands / Capital area removed that restriction.
 
-Treat this as event-specific until reconfirmed in the current event rules panel.
+Treat this as event-specific and unverified until reconfirmed in the current Rules panel.
 
 ## Strategy layer
 
 Mutant Mines combine three different objectives:
 
 1. secure an active-window position;
-2. capture/hold productive mines;
+2. capture or hold productive mines;
 3. convert personal gathering into alliance ranking contribution.
 
-A strong alliance plan therefore needs both combat groups and collection uptime rather than treating the activity as a pure PvP event.
+A strong alliance plan therefore needs both combat groups and collection uptime rather than treating the activity as pure PvP.
 
 ## Verification needed
 
-Capture the active event Rules page for:
+Capture the active Server 504 event Rules page for:
 
 - current sandstorm windows;
 - free teleport count;
-- daily Antigen/Crimson Ore caps;
+- daily Antigen / Crimson Ore caps;
 - alliance ranking formula;
 - Watchtower attack restrictions;
 - mine tiers and production rates.
 
-## Sources
+## Source status
 
-- Dark War Survival Wiki — Mutant Mines Event Guide: https://darkwar.wiki/events-quests/mutant-mines-event-guide/
+The community page originally used for this reference is no longer maintained as a dependable live source. Its link has been intentionally removed from the public Wiki. The values above remain historical investigation notes until replaced by current in-game evidence.
