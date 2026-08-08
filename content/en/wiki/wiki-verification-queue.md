@@ -18,6 +18,7 @@ The Wiki prefers visible uncertainty over confidently publishing stale numbers.
 | Pet Agent resources | inventory tooltips for Advanced Tactical Rations, Nutrient Potion, Potential Chips, Spec Ops Honor Medals and Training Protocols | OPEN |
 | Regulus | King's Decree exact ATK %, duration and cooldown | OPEN |
 | Special Ops Outpost | current English tab names and construction prerequisite | OPEN |
+| Armory Assault registration | current registration limit, selected time-slot count, cycle wording and participation-lock text | OPEN |
 
 ## Priority B — repeated captures needed
 
@@ -33,6 +34,11 @@ The Wiki prefers visible uncertainty over confidently publishing stale numbers.
 | Pet training rolls | attribute pool and ranges | repeated rolls are needed to establish current ranges safely |
 | Pet event scoring | item-by-item Alliance Duel / Survival Preparedness points | scoring may rotate or change by event version |
 | Shadow Calls Pet rewards | mission tags, Pet-specific rewards and Great Success behavior | dispatch types and rewards vary |
+| Alliance Hall | Alliance Help Cap, reinforcement capacity, cost and build time by level | values change by Hall level and public tables are incomplete |
+| Alliance Tech tree | categories, names, prerequisites, max levels and effect values | shared tree needs many screens and may change over time |
+| Alliance Gifts levels | XP requirement, gift-level rewards and any gates beyond Lv.20 | progression changes by Gift Level |
+| Armory reward table | current reward assigned to each of the 8 Armories across a cycle | reward assignments rotate and must be separated from Armory identity |
+| Territory / Stronghold rules | season, event, zone, protection, truce and reinforcement values | conquest mechanics are season-specific and actively rebalanced |
 
 ## Already resolved by official patch notes
 
@@ -47,6 +53,11 @@ The Wiki prefers visible uncertainty over confidently publishing stale numbers.
 - Pet-item consumption scores in Survival Preparedness — Unit Training and Alliance Duel — Holistic Growth.
 - Regulus requires Titan Lv.50 plus rescue tasks.
 - Regulus's exclusive skill King's Decree temporarily boosts Troop ATK.
+- Alliance Gifts Lv.20 enables two Frankenstein rounds in one Bio-Mutant event.
+- Capital and Turret rally/reinforcement limits were removed; multiple rallies and reinforcement squads are supported.
+- Capital/Turret rally and reinforcement troop capacity receives an additional +40,000.
+- Alliance Logs use War / Members structure and include an Events tab for administrative actions.
+- Current conquest patches include season-specific Stronghold and city truce/protection rules; those values must retain their season/version labels.
 
 ## Evidence acceptance rule
 
