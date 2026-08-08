@@ -3,7 +3,7 @@
 ## Preamble
 Server 504 is a community of autonomous alliances that choose to cooperate for long-term stability, competitive strength, fair access to shared benefits, and success in cross-server content.
 
-This Charter establishes the permanent principles of cooperation. It is not intended to control the internal management of any alliance. Operational rules are defined in the Server 504 Operational Codex, while season-specific arrangements are defined in the Seasonal Strategic Annex.
+This Charter establishes the permanent principles of cooperation. It is not intended to control the internal management of any alliance. Operational rules are defined in the Server 504 Operational Codex, while season-specific schedules and arrangements are published through current Council operational plans and decision records.
 
 ---
 
@@ -90,11 +90,11 @@ Unless a more specific rule applies:
 
 ## Article 16 — Seasonal Review
 1. The Charter should be reviewed at the beginning of each new season but amended only when a permanent principle truly needs to change.
-2. Operational details should normally be changed in the Codex or Seasonal Strategic Annex instead of rewriting the Charter.
+2. Operational details should normally be changed in the Codex or in current season-specific Council operational plans instead of rewriting the Charter.
 3. Charter amendments require a three-quarters majority of eligible signatory alliances.
 
 ## Article 17 — Withdrawal and Accession
-1. Alliances may join by accepting this Charter, the Operational Codex, and the current Seasonal Strategic Annex.
+1. Alliances may join by accepting this Charter and the Operational Codex, together with any current Council decisions that apply to shared Server 504 operations.
 2. An alliance may withdraw by formally notifying the Council.
 3. Withdrawal removes future treaty privileges and protections but does not erase obligations arising from incidents that occurred before withdrawal.
 
