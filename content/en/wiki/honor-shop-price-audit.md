@@ -3,6 +3,8 @@
 > **Last verified:** 8 Aug 2026  
 > **Confidence:** High for the shop merger and legacy-currency conversion; current item prices/weekly limits require Server 504 verification.
 
+For the stable current shop model, use [Honor Shop](#/wiki/honor-shop) and [Shops & Currencies Overview](#/wiki/shops-and-currencies-overview). This page exists specifically to audit price/limit claims that can drift after rollout or tuning; the [Resource Calculators](#/wiki/wiki-calculators) only uses the official historical currency-conversion formula.
+
 Honor Shop replaced three older shop surfaces:
 
 - Capital Shop
