@@ -49,7 +49,8 @@ Old community charts may show outdated caps or old prerequisite values. When the
 
 ## Sources
 
-- Dark War Survival Wiki — Watchtower: https://darkwar.wiki/base-building/watchtower/
 - Dark War Survival Guide — Watchtower progression: https://dark-war.com/progression
 - Dark War Survival Data — Max Levels: https://darkwardata.com/guides/max-levels/
 - Apple App Store version history for current-system changes: https://apps.apple.com/app/dark-war-survival/id6670441558
+
+> Retired community Watchtower pages are intentionally excluded from current source authority.
