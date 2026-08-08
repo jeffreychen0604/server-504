@@ -2,7 +2,6 @@
 set -euo pipefail
 
 fail=0
-warnings=0
 wiki_root="content/en/wiki"
 
 report_matches() {
@@ -42,18 +41,17 @@ report_matches \
   assets index.html README.md
 
 # Minimal article-shape validation for every English Wiki reference.
+# Three date markers are accepted because article families use different but
+# equivalent metadata labels: general references, hero profiles and audit queues.
 for file in "$wiki_root"/*.md; do
   if ! grep -q '^# ' "$file"; then
     echo "::error file=$file::Wiki article is missing an H1 title"
     fail=1
   fi
 
-  # Older foundation articles predate the current metadata convention.
-  # Keep this visible as migration debt without blocking production deploys.
-  if ! grep -qi 'Last verified' "$file"; then
-    echo "MISSING_LAST_VERIFIED: $file"
-    echo "::warning file=$file::Wiki article is missing a Last verified marker"
-    warnings=$((warnings + 1))
+  if ! grep -qiE '(Last verified|Identity verified|Updated):' "$file"; then
+    echo "::error file=$file::Wiki article is missing a verification/update date marker"
+    fail=1
   fi
 done
 
@@ -62,4 +60,4 @@ if [[ "$fail" -ne 0 ]]; then
   exit 1
 fi
 
-echo "Wiki validation passed with $warnings metadata warning(s)."
+echo "Wiki validation passed with zero blocking or metadata issues."
