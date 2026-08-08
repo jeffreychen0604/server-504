@@ -73,6 +73,7 @@ The Wiki intentionally separates **planning principles** from **hard-number tabl
 ## Sources
 
 - Dark War Survival progression reference: https://dark-war.com/progression
-- Dark War Survival Wiki — Watchtower: https://darkwar.wiki/base-building/watchtower/
 - Dark War Survival Data — Precision Parts: https://darkwardata.com/items/precision-parts/
 - Dark War Survival Data — Max Levels: https://darkwardata.com/guides/max-levels/
+
+> Retired Watchtower community pages are intentionally excluded from current source authority.
