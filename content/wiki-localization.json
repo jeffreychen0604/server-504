@@ -10,13 +10,48 @@
       "name": "Start Here / Foundation",
       "status": "complete",
       "slugs": ["game-overview"]
+    },
+    {
+      "id": "L10N-02",
+      "name": "Combat Basics",
+      "status": "complete",
+      "slugs": [
+        "combat-system-and-reports",
+        "formations-and-unit-presets",
+        "rally-reinforcement-and-defense"
+      ]
     }
   ],
   "translated": {
-    "fr": ["game-overview"],
-    "es": ["game-overview"],
-    "pt": ["game-overview"],
-    "ko": ["game-overview"],
-    "vi": ["game-overview"]
+    "fr": [
+      "game-overview",
+      "combat-system-and-reports",
+      "formations-and-unit-presets",
+      "rally-reinforcement-and-defense"
+    ],
+    "es": [
+      "game-overview",
+      "combat-system-and-reports",
+      "formations-and-unit-presets",
+      "rally-reinforcement-and-defense"
+    ],
+    "pt": [
+      "game-overview",
+      "combat-system-and-reports",
+      "formations-and-unit-presets",
+      "rally-reinforcement-and-defense"
+    ],
+    "ko": [
+      "game-overview",
+      "combat-system-and-reports",
+      "formations-and-unit-presets",
+      "rally-reinforcement-and-defense"
+    ],
+    "vi": [
+      "game-overview",
+      "combat-system-and-reports",
+      "formations-and-unit-presets",
+      "rally-reinforcement-and-defense"
+    ]
   }
 }
