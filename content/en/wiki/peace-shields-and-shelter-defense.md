@@ -52,4 +52,5 @@ Server 504 screenshots should eventually lock:
 
 - Apple App Store — Peace Shield world-map visibility: https://apps.apple.com/nl/app/dark-war-survival/id6670441558
 - Apple App Store — world battle / shelter combat adjustments: https://apps.apple.com/bb/app/dark-war-survival/id6670441558
-- Dark War Survival Wiki — Warehouse: https://darkwar.wiki/base-building/warehouse/
+
+> Retired Warehouse community links are intentionally excluded from current source authority.
