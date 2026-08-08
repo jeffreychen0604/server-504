@@ -25,7 +25,7 @@ This matters when preparing large construction/research upgrades. A player holdi
 
 ## Version-sensitive data
 
-An archived community table lists protection values through Lv.30, but this Wiki does not promote that table to current canonical data until Server 504 screenshots verify the current effect values.
+Historical community tables list protection values through Lv.30, but this Wiki does not promote those tables to current canonical data until Server 504 screenshots verify the current effect values.
 
 ## Verify Server 504
 
@@ -38,4 +38,5 @@ An archived community table lists protection values through Lv.30, but this Wiki
 
 - Fandom Warehouse: https://dark-war-survival.fandom.com/wiki/Warehouse
 - Fandom Resources: https://dark-war-survival.fandom.com/wiki/Resources
-- Archived Warehouse reference: https://darkwar.wiki/base-building/warehouse/
+
+> Historical retired-source tables are retained only as verification targets and are intentionally not linked from the public Wiki.
