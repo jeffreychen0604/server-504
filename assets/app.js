@@ -7,57 +7,68 @@ const searchDialog = document.getElementById('searchDialog');
 const searchInput = document.getElementById('searchInput');
 const searchResults = document.getElementById('searchResults');
 const contributeDialog = document.getElementById('contributeDialog');
+const i18n = window.Server504I18N;
 
 const contentMap = {
-  charter: {
-    file: 'charter.md',
-    title: 'Server 504 Charter',
-    eyebrow: 'GOVERNANCE · PERMANENT PRINCIPLES',
-    description: 'The permanent principles governing cooperation, autonomy, shared assets, due process and Council authority on Server 504.'
-  },
-  codex: {
-    file: 'operational-codex.md',
-    title: 'Operational Codex',
-    eyebrow: 'OPERATIONS · PRACTICAL RULES',
-    description: 'Fast-reference operational rules for R4/R5 teams, server events, shared assets, disputes, sanctions and cross-server coordination.'
-  }
+  charter: { file: 'charter.md', titleKey: 'charterTitle', eyebrowKey: 'charterEyebrow', descriptionKey: 'charterDescription' },
+  codex: { file: 'operational-codex.md', titleKey: 'codexTitle', eyebrowKey: 'codexEyebrow', descriptionKey: 'codexDescription' }
 };
 
-const ui = {
-  en: {
-    navWiki:'Wiki', navCharter:'Charter', navCodex:'Operations', knowledge:'Knowledge', home:'Home', gameWiki:'Game Wiki', serverCharter:'Server Charter', operationalCodex:'Operational Codex', community:'Community', contribute:'Contribute / Suggest', searchLabel:'GLOBAL SEARCH', searchTitle:'Search Server 504', communityContribution:'COMMUNITY CONTRIBUTION', sendSuggestion:'Send a suggestion', type:'Type', title:'Title', details:'Details', allianceOptional:'Alliance / player name (optional)', githubNote:'V0 stores community suggestions as GitHub Issues. Anonymous submission can be added later with the free D1 backend.', continueGithub:'Continue to GitHub', heroKicker:'DARK WAR: SURVIVAL · SERVER 504', heroLead:'One shared place for Dark War: Survival knowledge, Server 504 governance and practical operations.', searchKnowledge:'Search the Knowledge Base', sendSuggestionBtn:'Send a suggestion', wikiDescription:'Game knowledge and practical reference for Server 504 players. The category structure is ready; detailed game articles will be added progressively.'
-  },
-  fr: {
-    navWiki:'Wiki', navCharter:'Charte', navCodex:'Opérations', knowledge:'Connaissances', home:'Accueil', gameWiki:'Wiki du jeu', serverCharter:'Charte du serveur', operationalCodex:'Codex opérationnel', community:'Communauté', contribute:'Contribuer / Suggérer', searchLabel:'RECHERCHE GLOBALE', searchTitle:'Rechercher sur Server 504', communityContribution:'CONTRIBUTION COMMUNAUTAIRE', sendSuggestion:'Envoyer une suggestion', type:'Type', title:'Titre', details:'Détails', allianceOptional:'Alliance / joueur (optionnel)', githubNote:'La V0 enregistre les suggestions dans GitHub Issues. Une soumission anonyme via D1 pourra être ajoutée plus tard.', continueGithub:'Continuer vers GitHub', heroKicker:'DARK WAR: SURVIVAL · SERVER 504', heroLead:'Un espace commun pour les connaissances de Dark War: Survival, la gouvernance du Server 504 et les opérations pratiques.', searchKnowledge:'Rechercher', sendSuggestionBtn:'Envoyer une suggestion', wikiDescription:'Connaissances du jeu et références pratiques pour les joueurs du Server 504.'
-  },
-  es: {
-    navWiki:'Wiki', navCharter:'Carta', navCodex:'Operaciones', knowledge:'Conocimiento', home:'Inicio', gameWiki:'Wiki del juego', serverCharter:'Carta del servidor', operationalCodex:'Códice operativo', community:'Comunidad', contribute:'Contribuir / Sugerir', searchLabel:'BÚSQUEDA GLOBAL', searchTitle:'Buscar en Server 504', communityContribution:'CONTRIBUCIÓN COMUNITARIA', sendSuggestion:'Enviar una sugerencia', type:'Tipo', title:'Título', details:'Detalles', allianceOptional:'Alianza / jugador (opcional)', githubNote:'La V0 guarda las sugerencias como GitHub Issues. Más adelante se puede añadir envío anónimo con D1.', continueGithub:'Continuar a GitHub', heroKicker:'DARK WAR: SURVIVAL · SERVER 504', heroLead:'Un lugar compartido para conocimiento de Dark War: Survival, gobernanza del Server 504 y operaciones prácticas.', searchKnowledge:'Buscar', sendSuggestionBtn:'Enviar sugerencia', wikiDescription:'Conocimiento del juego y referencia práctica para jugadores del Server 504.'
-  },
-  pt: {
-    navWiki:'Wiki', navCharter:'Carta', navCodex:'Operações', knowledge:'Conhecimento', home:'Início', gameWiki:'Wiki do jogo', serverCharter:'Carta do servidor', operationalCodex:'Códice operacional', community:'Comunidade', contribute:'Contribuir / Sugerir', searchLabel:'BUSCA GLOBAL', searchTitle:'Pesquisar no Server 504', communityContribution:'CONTRIBUIÇÃO DA COMUNIDADE', sendSuggestion:'Enviar sugestão', type:'Tipo', title:'Título', details:'Detalhes', allianceOptional:'Aliança / jogador (opcional)', githubNote:'A V0 armazena sugestões como GitHub Issues. Envio anônimo com D1 pode ser adicionado depois.', continueGithub:'Continuar para GitHub', heroKicker:'DARK WAR: SURVIVAL · SERVER 504', heroLead:'Um espaço compartilhado para conhecimento de Dark War: Survival, governança do Server 504 e operações práticas.', searchKnowledge:'Pesquisar', sendSuggestionBtn:'Enviar sugestão', wikiDescription:'Conhecimento do jogo e referência prática para jogadores do Server 504.'
-  },
-  ko: {
-    navWiki:'위키', navCharter:'헌장', navCodex:'운영', knowledge:'정보', home:'홈', gameWiki:'게임 위키', serverCharter:'서버 헌장', operationalCodex:'운영 규정', community:'커뮤니티', contribute:'의견 제안', searchLabel:'전체 검색', searchTitle:'Server 504 검색', communityContribution:'커뮤니티 제안', sendSuggestion:'의견 보내기', type:'유형', title:'제목', details:'내용', allianceOptional:'연맹 / 플레이어명 (선택)', githubNote:'V0는 제안을 GitHub Issues에 저장합니다. 이후 무료 D1 백엔드로 익명 제출을 추가할 수 있습니다.', continueGithub:'GitHub에서 계속', heroKicker:'DARK WAR: SURVIVAL · SERVER 504', heroLead:'Dark War: Survival 정보, Server 504 거버넌스 및 실전 운영을 위한 공동 공간입니다.', searchKnowledge:'지식 베이스 검색', sendSuggestionBtn:'의견 보내기', wikiDescription:'Server 504 플레이어를 위한 게임 지식과 실전 참고 자료입니다.'
-  },
-  vi: {
-    navWiki:'Wiki', navCharter:'Hiến chương', navCodex:'Vận hành', knowledge:'Tri thức', home:'Trang chủ', gameWiki:'Wiki game', serverCharter:'Hiến chương Server', operationalCodex:'Operational Codex', community:'Cộng đồng', contribute:'Đóng góp / Góp ý', searchLabel:'TRA CỨU TOÀN SITE', searchTitle:'Tra cứu Server 504', communityContribution:'ĐÓNG GÓP CỘNG ĐỒNG', sendSuggestion:'Gửi góp ý', type:'Loại góp ý', title:'Tiêu đề', details:'Nội dung', allianceOptional:'Liên minh / tên người chơi (không bắt buộc)', githubNote:'V0 lưu góp ý dưới dạng GitHub Issues. Sau này có thể thêm gửi ẩn danh bằng backend D1 miễn phí.', continueGithub:'Tiếp tục trên GitHub', heroKicker:'DARK WAR: SURVIVAL · SERVER 504', heroLead:'Một nơi dùng chung cho kiến thức Dark War: Survival, quản trị Server 504 và các quy tắc vận hành thực tế.', searchKnowledge:'Tra cứu kho tri thức', sendSuggestionBtn:'Gửi góp ý', wikiDescription:'Kiến thức game và tài liệu tra cứu thực tế cho người chơi Server 504. Cấu trúc danh mục đã sẵn sàng và các bài wiki chi tiết sẽ được bổ sung dần.'
-  }
-};
-
+const supportedLocales = i18n?.supported || ['en','fr','es','pt','ko','vi'];
 let currentLocale = localStorage.getItem('server504-locale') || 'en';
+if (!supportedLocales.includes(currentLocale)) currentLocale = 'en';
 let searchIndex = [];
 
 function t(key) {
-  return (ui[currentLocale] && ui[currentLocale][key]) || ui.en[key] || key;
+  return i18n?.t(key, currentLocale) || key;
+}
+
+function setText(selector, value) {
+  const el = document.querySelector(selector);
+  if (el) el.textContent = value;
 }
 
 function applyUiLanguage() {
   document.documentElement.lang = currentLocale;
   languageSelect.value = currentLocale;
+
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const key = el.dataset.i18n;
-    if (t(key)) el.textContent = t(key);
+    if (key) el.textContent = t(key);
   });
+
+  const headerSearchInput = document.getElementById('headerSearchInput');
+  if (headerSearchInput) headerSearchInput.placeholder = t('searchPlaceholder');
+  if (searchInput) searchInput.placeholder = t('searchPlaceholder');
+
+  const details = document.getElementById('contributionDetails');
+  if (details) details.placeholder = t('detailsPlaceholder');
+  const contact = document.getElementById('contributionContact');
+  if (contact) contact.placeholder = t('contactPlaceholder');
+
+  const contactLabel = contact?.closest('label')?.querySelector('span');
+  if (contactLabel) contactLabel.textContent = t('contactOptional');
+
+  const contributionType = document.getElementById('contributionType');
+  if (contributionType) {
+    const types = [
+      ['Game Wiki correction','contributionWikiCorrection'],
+      ['New Wiki information','contributionWikiNew'],
+      ['Charter proposal','contributionCharter'],
+      ['Operational Codex proposal','contributionCodex'],
+      ['Translation correction','contributionTranslation'],
+      ['Server operation suggestion','contributionServerOps'],
+      ['Other','contributionOther']
+    ];
+    [...contributionType.options].forEach((option, index) => {
+      const item = types[index];
+      if (!item) return;
+      option.value = item[0];
+      option.textContent = t(item[1]);
+    });
+  }
+
+  document.title = `Server 504 | Dark War: Survival`;
 }
 
 function routeName() {
@@ -65,9 +76,8 @@ function routeName() {
 }
 
 function setActive(route) {
-  document.querySelectorAll('[data-route]').forEach(a => {
-    a.classList.toggle('active', a.dataset.route === route);
-  });
+  document.querySelectorAll('[data-route]').forEach(a => a.classList.toggle('active', a.dataset.route === route));
+  document.body.dataset.route = route;
 }
 
 function pageHeader(eyebrow, title, description, badges = []) {
@@ -85,137 +95,94 @@ function homePage() {
       <div class="blood-moon"><span></span></div>
       <div class="seal-sigil"><i></i><b></b></div>
       <div class="island-silhouette"></div>
-      <div class="torii">
-        <span class="torii-top"></span>
-        <span class="torii-mid"></span>
-        <span class="torii-leg torii-leg-left"></span>
-        <span class="torii-leg torii-leg-right"></span>
-      </div>
-      <div class="miasma miasma-one"></div>
-      <div class="miasma miasma-two"></div>
-      <div class="ember-field"></div>
+      <div class="torii"><span class="torii-top"></span><span class="torii-mid"></span><span class="torii-leg torii-leg-left"></span><span class="torii-leg torii-leg-right"></span></div>
+      <div class="miasma miasma-one"></div><div class="miasma miasma-two"></div><div class="ember-field"></div>
     </div>
 
     <div class="hero-grid">
       <div class="hero-copy">
-        <div class="season-chip"><span></span> SEASON 4 · SEALED ISLE</div>
+        <div class="season-chip"><span></span> ${t('seasonLabel')}</div>
         <div class="eyebrow">${t('heroKicker')}</div>
         <h1 class="hero-title"><span class="hero-title-word">SERVER</span><strong>504</strong></h1>
-        <div class="hero-motto">KNOWLEDGE <i>·</i> GOVERNANCE <i>·</i> OPERATIONS</div>
+        <div class="hero-motto">${t('heroMotto').split(' · ').map((item, index) => `${index ? '<i>·</i> ' : ''}${item}`).join('')}</div>
         <p class="hero-lead">${t('heroLead')}</p>
 
         <div class="hero-actions">
-          <button class="primary-button search-trigger home-search-button" type="button">
-            <span class="search-rune" aria-hidden="true"></span>
-            <span>${t('searchKnowledge')}</span>
-            <kbd>/</kbd>
-          </button>
+          <button class="primary-button search-trigger home-search-button" type="button"><span class="search-rune" aria-hidden="true"></span><span>${t('searchKnowledge')}</span><kbd>/</kbd></button>
           <button class="secondary-button contribute-trigger" type="button">${t('sendSuggestionBtn')}</button>
-        </div>
-
-        <div class="hero-meta">
-          <span><b>01</b> GAME WIKI</span>
-          <span><b>02</b> SERVER CHARTER</span>
-          <span><b>03</b> OPERATIONAL CODEX</span>
         </div>
       </div>
 
       <aside class="field-terminal" aria-label="Server 504 portal shortcuts">
         <div class="terminal-corners" aria-hidden="true"></div>
-        <div class="terminal-head">
-          <span>504 // ARCHIVE NODE</span>
-          <i></i>
-        </div>
-        <div class="terminal-emblem" aria-hidden="true">
-          <span>五</span>
-          <b>504</b>
-        </div>
+        <div class="terminal-head"><span>${t('archiveNode')}</span><i></i></div>
+        <div class="terminal-emblem" aria-hidden="true"><span>五</span><b>504</b></div>
         <div class="terminal-rule"></div>
         <a href="#/wiki"><span>01</span><strong>${t('gameWiki')}</strong><i>↗</i></a>
         <a href="#/charter"><span>02</span><strong>${t('serverCharter')}</strong><i>↗</i></a>
         <a href="#/codex"><span>03</span><strong>${t('operationalCodex')}</strong><i>↗</i></a>
-        <div class="terminal-foot"><span class="status-dot"></span> GOVERNANCE V2 · AUG 2026</div>
+        <div class="terminal-foot"><span class="status-dot"></span> ${t('governanceStatus')}</div>
       </aside>
     </div>
 
     <div class="portal-grid home-portal-grid">
       <a class="portal-card portal-wiki" href="#/wiki">
         <div class="portal-glyph glyph-wiki" aria-hidden="true"><span></span><span></span><span></span></div>
-        <small>01 · KNOWLEDGE</small>
-        <h3>${t('gameWiki')}</h3>
-        <p>Heroes, APC, combat, events, seasons and game mechanics.</p>
-        <b class="portal-arrow">↗</b>
+        <small>${t('portalKnowledgeLabel')}</small><h3>${t('gameWiki')}</h3><p>${t('portalKnowledgeDesc')}</p><b class="portal-arrow">↗</b>
       </a>
       <a class="portal-card portal-charter" href="#/charter">
         <div class="portal-glyph glyph-charter" aria-hidden="true"><span></span></div>
-        <small>02 · GOVERNANCE</small>
-        <h3>${t('serverCharter')}</h3>
-        <p>Permanent cooperation principles and Council authority.</p>
-        <b class="portal-arrow">↗</b>
+        <small>${t('portalGovernanceLabel')}</small><h3>${t('serverCharter')}</h3><p>${t('portalGovernanceDesc')}</p><b class="portal-arrow">↗</b>
       </a>
       <a class="portal-card portal-codex" href="#/codex">
         <div class="portal-glyph glyph-codex" aria-hidden="true"><span></span></div>
-        <small>03 · OPERATIONS</small>
-        <h3>${t('operationalCodex')}</h3>
-        <p>Practical rules for R4/R5 and real server incidents.</p>
-        <b class="portal-arrow">↗</b>
+        <small>${t('portalOperationsLabel')}</small><h3>${t('operationalCodex')}</h3><p>${t('portalOperationsDesc')}</p><b class="portal-arrow">↗</b>
       </a>
     </div>
   </section>`;
 }
 
 function wikiPage() {
-  const cards = [
-    ['Getting Started', 'Beginner progression, base development and daily routines.', ['Beginner Guide','Base Development','Resources','Daily Routine']],
-    ['Heroes', 'Hero roles, equipment and exclusive weapon systems.', ['Hero System','Hero Roles','Hero Equipment','Exclusive Weapons']],
-    ['APC', 'APC systems, chips, formations and crafting.', ['APC System','APC Chips','Chip Factory','Formations']],
-    ['Combat', 'Rallies, reinforcement, defense, troops and battle mechanics.', ['Rally','Reinforcement','Defense','Troops']],
-    ['Events', 'Server and alliance events with practical participation guides.', ['Alliance Duel','Survival Preparedness','Supreme Capital','Armory']],
-    ['Seasons', 'Game season mechanics, changes and historical references.', ['Season 1','Season 2','Season 3','Season 4']]
-  ];
+  return `<section class="page"><div class="loading">${t('loading')}</div></section>`;
+}
 
-  return `<section class="page">
-    ${pageHeader('DARK WAR: SURVIVAL · KNOWLEDGE BASE', t('gameWiki'), t('wikiDescription'), ['STRUCTURE V0','COMMUNITY MAINTAINED'])}
-    <div class="wiki-grid">${cards.map(([name,desc,items]) => `<article class="wiki-card"><div class="eyebrow">WIKI</div><h3>${name}</h3><p>${desc}</p><ul>${items.map(i => `<li>${i}</li>`).join('')}</ul></article>`).join('')}</div>
-  </section>`;
+async function fetchLocalizedDocument(file) {
+  const localePath = `content/${currentLocale}/${file}`;
+  const fallbackPath = `content/en/${file}`;
+  let fallback = false;
+  let res = await fetch(localePath, { cache: 'no-store' });
+  if (!res.ok) {
+    fallback = currentLocale !== 'en';
+    res = await fetch(fallbackPath, { cache: 'no-store' });
+  }
+  if (!res.ok) throw new Error(`HTTP ${res.status}`);
+  return { text: await res.text(), fallback };
 }
 
 async function loadMarkdown(route) {
   const cfg = contentMap[route];
-  const localePath = `content/${currentLocale}/${cfg.file}`;
-  const fallbackPath = `content/en/${cfg.file}`;
-  let text;
-  let fallback = false;
-
   try {
-    let res = await fetch(localePath, { cache: 'no-store' });
-    if (!res.ok) {
-      fallback = currentLocale !== 'en';
-      res = await fetch(fallbackPath, { cache: 'no-store' });
-    }
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    text = await res.text();
+    const { text, fallback } = await fetchLocalizedDocument(cfg.file);
+    const localeBadge = fallback ? `${t('englishSource')} · ${currentLocale.toUpperCase()} ${t('translationPending')}` : currentLocale.toUpperCase();
+    return `<section class="page">
+      ${pageHeader(t(cfg.eyebrowKey), t(cfg.titleKey), t(cfg.descriptionKey), [t('version2'), t('august2026'), localeBadge])}
+      <article class="markdown-body">${marked.parse(text)}</article>
+    </section>`;
   } catch (error) {
-    return `<section class="page"><div class="error-box">Unable to load document: ${error.message}</div></section>`;
+    return `<section class="page"><div class="error-box">${t('unableDocument')}: ${error.message}</div></section>`;
   }
-
-  const localeBadge = fallback ? `ENGLISH SOURCE · ${currentLocale.toUpperCase()} TRANSLATION PENDING` : currentLocale.toUpperCase();
-  return `<section class="page">
-    ${pageHeader(cfg.eyebrow, cfg.title, cfg.description, ['VERSION 2','AUGUST 2026', localeBadge])}
-    <article class="markdown-body">${marked.parse(text)}</article>
-  </section>`;
 }
 
 async function render() {
   const route = routeName();
   setActive(route);
   sidebar.classList.remove('open');
-  app.innerHTML = '<div class="page loading">Loading…</div>';
+  app.innerHTML = `<div class="page loading">${t('loading')}</div>`;
 
   if (route === 'home') app.innerHTML = homePage();
   else if (route === 'wiki') app.innerHTML = wikiPage();
   else if (contentMap[route]) app.innerHTML = await loadMarkdown(route);
-  else app.innerHTML = `<section class="page">${pageHeader('404','Page not found','The requested Server 504 page does not exist.')}</section>`;
+  else app.innerHTML = `<section class="page">${pageHeader('404', t('pageNotFound'), t('pageNotFoundDesc'))}</section>`;
 
   bindDynamicTriggers();
   app.focus({ preventScroll: true });
@@ -224,50 +191,28 @@ async function render() {
 
 function bindDynamicTriggers() {
   document.querySelectorAll('.search-trigger').forEach(btn => btn.onclick = openSearch);
-  document.querySelectorAll('.contribute-trigger').forEach(btn => {
-    btn.onclick = () => contributeDialog.showModal();
-  });
+  document.querySelectorAll('.contribute-trigger').forEach(btn => btn.onclick = () => contributeDialog.showModal());
 }
 
 async function buildSearchIndex() {
   const docs = [
-    ['charter','Server Charter','charter.md'],
-    ['codex','Operational Codex','operational-codex.md']
+    ['charter', t('serverCharter'), 'charter.md'],
+    ['codex', t('operationalCodex'), 'operational-codex.md']
   ];
   const entries = [];
 
-  for (const [route,label,file] of docs) {
+  for (const [route, label, file] of docs) {
     try {
-      const res = await fetch(`content/en/${file}`);
-      if (!res.ok) continue;
-      const text = await res.text();
-      const chunks = text.split(/\n(?=#{1,3} )/g);
-
-      chunks.forEach(chunk => {
+      const { text } = await fetchLocalizedDocument(file);
+      text.split(/\n(?=#{1,3} )/g).forEach(chunk => {
         const headingMatch = chunk.match(/^#{1,3}\s+(.+)/);
         if (!headingMatch) return;
         const heading = headingMatch[1].trim();
-        const body = chunk
-          .replace(/^#{1,3}\s+.+/, '')
-          .replace(/\s+/g, ' ')
-          .trim();
-        entries.push({ route, label, heading, body });
+        const body = chunk.replace(/^#{1,3}\s+.+/, '').replace(/\s+/g, ' ').trim();
+        entries.push({ route, label, heading, body, category: t('governanceOperations') });
       });
     } catch (_) {}
   }
-
-  [
-    'Getting Started','Heroes','APC','APC Chips','Chip Factory','Formations',
-    'Combat','Rally','Reinforcement','Defense','Troops','Alliance Duel',
-    'Survival Preparedness','Supreme Capital','Armory','Seasons'
-  ].forEach(topic => {
-    entries.push({
-      route:'wiki',
-      label:'Game Wiki',
-      heading:topic,
-      body:'Dark War: Survival game knowledge topic. Detailed article is being prepared for Server 504.'
-    });
-  });
 
   searchIndex = entries;
 }
@@ -280,17 +225,11 @@ function openSearch() {
 
 function renderSearchResults(query) {
   const q = query.trim().toLowerCase();
-  const matches = q
-    ? searchIndex.filter(x => `${x.heading} ${x.body} ${x.label}`.toLowerCase().includes(q)).slice(0, 14)
-    : searchIndex.slice(0, 8);
-
+  const matches = q ? searchIndex.filter(x => `${x.heading} ${x.body} ${x.label}`.toLowerCase().includes(q)).slice(0, 14) : searchIndex.slice(0, 8);
   searchResults.innerHTML = matches.length
     ? matches.map(x => `<a class="search-result" href="#/${x.route}" data-search-link><small>${x.label.toUpperCase()}</small><strong>${x.heading}</strong><p>${x.body.slice(0,150)}${x.body.length > 150 ? '…' : ''}</p></a>`).join('')
-    : '<div class="empty-state">No matching results.</div>';
-
-  searchResults.querySelectorAll('[data-search-link]').forEach(a => {
-    a.addEventListener('click', () => searchDialog.close());
-  });
+    : `<div class="empty-state">${t('searchNoResults')}</div>`;
+  searchResults.querySelectorAll('[data-search-link]').forEach(a => a.addEventListener('click', () => searchDialog.close()));
 }
 
 function openContribute() {
@@ -299,29 +238,22 @@ function openContribute() {
 
 window.addEventListener('hashchange', render);
 
-languageSelect.addEventListener('change', () => {
+languageSelect.addEventListener('change', async () => {
   currentLocale = languageSelect.value;
   localStorage.setItem('server504-locale', currentLocale);
   applyUiLanguage();
-  render();
+  await buildSearchIndex();
+  await render();
+  window.dispatchEvent(new CustomEvent('server504:localechange', { detail: { locale: currentLocale } }));
 });
 
 searchInput.addEventListener('input', e => renderSearchResults(e.target.value));
-
 document.querySelectorAll('.search-trigger').forEach(btn => btn.addEventListener('click', openSearch));
 document.getElementById('contributeSidebar').addEventListener('click', openContribute);
 document.getElementById('mobileContribute').addEventListener('click', openContribute);
+document.getElementById('menuToggle').addEventListener('click', () => sidebar.classList.toggle('open'));
 
-document.getElementById('menuToggle').addEventListener('click', () => {
-  sidebar.classList.toggle('open');
-});
-
-document.querySelectorAll('[data-close-dialog]').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const dialog = document.getElementById(btn.dataset.closeDialog);
-    if (dialog) dialog.close();
-  });
-});
+document.querySelectorAll('[data-close-dialog]').forEach(btn => btn.addEventListener('click', () => document.getElementById(btn.dataset.closeDialog)?.close()));
 
 document.addEventListener('keydown', e => {
   if (e.key === '/' && !['INPUT','TEXTAREA','SELECT'].includes(document.activeElement.tagName)) {
@@ -330,29 +262,27 @@ document.addEventListener('keydown', e => {
   }
 });
 
-document.getElementById('contributeForm').addEventListener('submit', e => {
-  e.preventDefault();
-  const type = document.getElementById('contributionType').value;
-  const title = document.getElementById('contributionTitle').value.trim();
-  const details = document.getElementById('contributionDetails').value.trim();
-  const identity = document.getElementById('contributionIdentity').value.trim();
-  const currentPage = location.hash || '#/home';
-
-  const issueTitle = `[${type}] ${title}`;
-  const issueBody = [
-    `**Type:** ${type}`,
-    `**Language:** ${currentLocale.toUpperCase()}`,
-    `**Related page:** ${currentPage}`,
-    identity ? `**Alliance / Player:** ${identity}` : '',
-    '',
-    '## Suggestion',
-    details
-  ].filter(Boolean).join('\n');
-
-  const issueUrl = `https://github.com/${REPO}/issues/new?title=${encodeURIComponent(issueTitle)}&body=${encodeURIComponent(issueBody)}`;
-  window.open(issueUrl, '_blank', 'noopener,noreferrer');
-  contributeDialog.close();
-});
+const feedbackApiConfigured = Boolean((window.SERVER504_CONFIG?.feedbackApi || '').trim());
+if (!feedbackApiConfigured) {
+  document.getElementById('contributeForm').addEventListener('submit', e => {
+    e.preventDefault();
+    const type = document.getElementById('contributionType').value;
+    const title = document.getElementById('contributionTitle').value.trim();
+    const details = document.getElementById('contributionDetails').value.trim();
+    const identity = document.getElementById('contributionIdentity').value.trim();
+    const currentPage = location.hash || '#/home';
+    const issueTitle = `[${type}] ${title}`;
+    const issueBody = [
+      `**Type:** ${type}`,
+      `**Language:** ${currentLocale.toUpperCase()}`,
+      `**Related page:** ${currentPage}`,
+      identity ? `**Alliance / Player:** ${identity}` : '',
+      '', '## Suggestion', details
+    ].filter(Boolean).join('\n');
+    window.open(`https://github.com/${REPO}/issues/new?title=${encodeURIComponent(issueTitle)}&body=${encodeURIComponent(issueBody)}`, '_blank', 'noopener,noreferrer');
+    contributeDialog.close();
+  });
+}
 
 applyUiLanguage();
 buildSearchIndex().then(() => render());
