@@ -82,4 +82,5 @@ The current public S-rarity roster now has individual pages for all verified ent
 - Dark War Survival Data — Heroes archive: https://darkwardata.com/category/heroes/
 - Dark War Survival community Fandom — factions: https://dark-war-survival.fandom.com/wiki/Factions
 - Apple App Store — official version history / Exclusive Equipment rules: https://apps.apple.com/app/dark-war-survival/id6670441558
-- Dark War Survival Wiki — community hero pages: https://darkwar.wiki/category/heroes-characters/
+
+> Retired community hero archives are intentionally excluded from current source authority.
