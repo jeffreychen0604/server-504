@@ -26,10 +26,8 @@ Power Cores are a scarce progression material. Community data lists recurring so
 
 - Season Shop
 - VIP Shop
-- Capital Shop
-- Arena Shop
+- legacy Capital / Arena / Black Gold shop families now represented by the current Honor system where applicable
 - Trial Shop
-- Black Gold Shop
 - selected event rewards
 - Bio-Mutant damage rewards
 - paid offers
@@ -60,5 +58,6 @@ For most developing accounts:
 
 - Dark War Survival Data — Power Core: https://darkwardata.com/items/power-core/
 - Dark War Survival Data — Hero Equipment Lucky Chest: https://darkwardata.com/items/hero-equipment-lucky-chest/
-- Dark War Survival Wiki — Equipment category: https://darkwar.wiki/category/heroes-characters/equipment/
 - Apple App Store version history: https://apps.apple.com/app/dark-war-survival/id6670441558
+
+> Retired community equipment-category links are intentionally excluded from current source authority.
