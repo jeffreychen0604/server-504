@@ -3,7 +3,7 @@
 > **Last verified:** 8 Aug 2026  
 > **Confidence:** High for material type and official material sources; medium for exact Orange crafting cost; Purple cost still needs Server 504 capture.
 
-Chip Factory is the targeted-crafting path for vehicle chips. It is strategically different from random Chip Chests because it lets you work toward a specific faction/type combination.
+Chip Factory is the targeted-crafting path for vehicle chips. For the stable system model, start with [Chip Factory](#/wiki/chip-factory) and [APC Chips](#/wiki/apc-chips); this page exists specifically to audit recipe/material claims that can become stale. The [Resource Calculators](#/wiki/wiki-calculators) intentionally keeps the Orange material cost overrideable for the same reason.
 
 ## Stable structure
 
