@@ -26,6 +26,11 @@ The Wiki prefers visible uncertainty over confidently publishing stale numbers.
 | Research Center | current branch names visible on Server 504 | OPEN |
 | Research queue | current second-queue unlock condition and VIP wording | OPEN |
 | Wisdom Medal | current Alliance Shop price and weekly purchase limit | OPEN |
+| Dorm | current English tooltip, exact Watchtower unlock and maximum level | OPEN |
+| Infirmary | current English tooltip confirming survivor-sickness vs wounded-unit function | OPEN |
+| Training Ground | current effect name/value shown in the building tooltip | OPEN |
+| Kitchen | current tooltip confirming meal/canned-food functions | OPEN |
+| Deerhunter Bar | current tooltip confirming happiness/mood effect | OPEN |
 
 ## Priority B — repeated captures needed
 
@@ -57,8 +62,16 @@ The Wiki prefers visible uncertainty over confidently publishing stale numbers.
 | Battle Strategy | node names, Kill Training levels, effects, prerequisites and Wisdom Medal/resource costs | official patch confirms branch behavior but not the complete tree |
 | Research event scoring | Tech CP, Research Speedup and Wisdom Medal point values across active themes | scoring can rotate or be rebalanced |
 | Late-game / Industrial research | post-WT30 branches, costs, timers and scope | public current full-tree data is incomplete |
+| Survivor wellbeing | happiness/health thresholds, productivity penalties and recovery rates | multiple survivors/states are needed to confirm scaling safely |
+| Dorm / Kitchen / Deerhunter Bar | capacity, production, happiness effect and upgrade costs by level | public pages are incomplete and exact unlock data conflicts |
+| Resource production buildings | Wood/Iron/Electricity/Food production and storage by level | account bonuses and old tables make single captures unreliable |
+| Hospital / Infirmary | capacity, healing/treatment behavior and cost by level | public sources blur survivor sickness with wounded-unit recovery |
+| Conscription Office | reserve capacity formula, Reserve Army Badge cost and recovery ratio | overflow behavior requires multiple combat/recovery states |
+| Warehouse | resource/coin protection by level and interaction with other protection bonuses | older tables may not reflect current scaling |
+| Library / Construction Hall / Training Ground | throughput effect by level and Industrial progression values | speed effects need multiple levels to establish current scaling |
+| Military Center / faction Camps | Unit Cap, Troop Capacity, training capacity and Industrial costs | values vary by building level and faction progression |
 
-## Already resolved by official patch notes
+## Already resolved by official patch notes / official listing
 
 - Capital Shop + Black Gold Shop + Arena Shop → Honor Shop.
 - Legacy conversion: Capital Glory Badge ×40; Black Gold Coin ×2.
@@ -85,6 +98,8 @@ The Wiki prefers visible uncertainty over confidently publishing stale numbers.
 - Presidential Palace officially includes Grand Marshal, Supreme General and the Security/Agriculture/Science/Construction Secretary positions; those positions can self-resign after more than 30 minutes.
 - Research Center → Battle Strategy → Kill Training is an active current research path.
 - During Origin Lands, Kill Training technologies take effect on War Days (Wednesday & Saturday).
+- The official game listing confirms survivor job assignment plus health/happiness management as core shelter systems.
+- Official Origin Lands patches can temporarily modify Hospital Capacity, Healing Speed and Healing Cost; those event modifiers must not be copied as permanent Hospital values.
 
 ## Evidence acceptance rule
 
