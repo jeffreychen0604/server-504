@@ -40,4 +40,5 @@ For a full current Radar table, capture:
 
 - Apple App Store — official main-screen / scouting changes: https://apps.apple.com/kg/app/dark-war-survival/id6670441558
 - Apple App Store — current Radar gathering behavior: https://apps.apple.com/us/app/dark-war-survival/id6670441558
-- Dark War Survival Wiki — Radar building: https://darkwar.wiki/base-building/radar/
+
+> Historical community Radar tables remain useful investigation targets, but retired-source links are intentionally excluded from current authority.
