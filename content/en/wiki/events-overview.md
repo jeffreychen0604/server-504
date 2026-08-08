@@ -62,5 +62,6 @@ Exact scoring charts should always carry a verification date.
 
 - Apple App Store version history: https://apps.apple.com/app/dark-war-survival/id6670441558
 - Dark War Survival Data — State Ruler / event data: https://darkwardata.com/events/state-ruler-event/
-- Dark War Survival Wiki — event strategy guides: https://darkwar.wiki/category/events-quests/event-strategy-guides/
 - DWSI community event directory: https://atlantisdws.com/dwsi
+
+> Retired community event-guide links are intentionally excluded; current event Rules pages take precedence when public references disagree.
