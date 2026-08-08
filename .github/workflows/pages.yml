@@ -24,6 +24,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Validate public Wiki
+        run: bash scripts/validate-wiki.sh
+
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
         with:
