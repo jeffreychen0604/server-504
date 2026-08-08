@@ -47,6 +47,13 @@
     ['apc-parts-and-sets','apc-parts-and-sets.md','APC','APC Parts & Parts Set','Six-part progression, Parts Set milestones and modern material-rule changes.'],
     ['apc-parts-current-cost-audit','apc-parts-current-cost-audit.md','DATA AUDIT','APC Parts — Current Cost Audit','Explains why pre-overhaul Lv.1–42 tables cannot be used as a current Lv.1–66 cost calculator.'],
     ['tactical-modification','tactical-modification.md','APC','Tactical Modification','Official endgame unlock routes through Modify Lv.500, parts Lv.66 or Orange chip 10★.'],
+    ['pet-agents-overview','pet-agents-overview.md','PET AGENTS','Pet Agents — Overview','Special Ops Outpost, Rescue, training/growth, persistent bonuses, exclusive skills and event integration.'],
+    ['special-ops-outpost','special-ops-outpost.md','PET AGENTS','Special Ops Outpost','The building that unlocks Pet Agent Rescue, training and growth, with current verification gaps.'],
+    ['pet-roster-and-unlocks','pet-roster-and-unlocks.md','PET AGENTS','Pet Roster & Unlock Path','Sentinel, Shining, Zeus, later-agent references and the official Titan Lv.50 → Regulus gate.'],
+    ['pet-training-and-growth','pet-training-and-growth.md','PET AGENTS','Pet Training & Growth','Level/breakthrough progression, attribute refinement, Replace-vs-Train safety and event timing.'],
+    ['pet-resources-and-event-timing','pet-resources-and-event-timing.md','PET AGENTS','Pet Resources & Event Timing','Server 504 Pet resource names, Alliance Duel/Survival Preparedness integration and save/spend timing.'],
+    ['shadow-calls-and-pet-rescue','shadow-calls-and-pet-rescue.md','PET AGENTS','Shadow Calls & Pet Rescue','Rescue gates, dispatch-based Pet resource farming and the fields still requiring in-game capture.'],
+    ['pet-regulus','pet-regulus.md','PET AGENT PROFILE','Regulus','Newest S-tier Pet Agent: Titan Lv.50 rescue gate and King’s Decree Troop ATK skill.'],
     ['shops-and-currencies-overview','shops-and-currencies-overview.md','ECONOMY','Shops & Currencies Overview','Current shop map, 2026 Honor Shop migration, legacy-name translation and purchase-priority rules.'],
     ['honor-shop','honor-shop.md','ECONOMY','Honor Shop','Unified Capital/Arena/Black Gold shop model, Honor Points and legacy currency conversion.'],
     ['honor-shop-price-audit','honor-shop-price-audit.md','DATA AUDIT','Honor Shop — Price & Limit Audit','Separates official shop identity/conversion from prices and weekly limits that still need Server 504 screenshots.'],
@@ -113,7 +120,7 @@
           <span>OPEN REFERENCE →</span>
         </a>`).join('')}
       </div>
-      <div class="wiki-research-footnote">W9 adds interactive planning tools plus a central verification queue. Official formulas are locked; community-observed numeric values remain overrideable or visibly provisional until Server 504 in-game evidence resolves them.</div>
+      <div class="wiki-research-footnote">W10 adds the Pet Agent / Special Ops Outpost knowledge layer. Official release and Regulus conditions are locked; detailed Pet unlock tables, material values and training rolls remain versioned or marked for Server 504 verification.</div>
     </section>`;
   }
 
