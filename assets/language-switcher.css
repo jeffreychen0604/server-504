@@ -1,1 +1,131 @@
-placeholder
+/* Language switcher — explicit, recognizable control */
+.language-control {
+  position: relative;
+  min-width: 154px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 5px 11px 5px 10px;
+  overflow: hidden;
+  border: 1px solid rgba(198, 211, 224, .18);
+  border-radius: 10px;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.045), rgba(255,255,255,.018)),
+    rgba(10,14,19,.78);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.035);
+  cursor: pointer;
+  transition: border-color .18s ease, background .18s ease, box-shadow .18s ease;
+}
+.language-control::before {
+  content: "";
+  position: absolute;
+  inset: 7px auto 7px 0;
+  width: 2px;
+  border-radius: 0 2px 2px 0;
+  background: linear-gradient(180deg, rgba(240,90,81,.25), var(--red-hot), rgba(240,90,81,.25));
+  opacity: .72;
+}
+.language-control:hover {
+  border-color: rgba(216,72,67,.42);
+  background:
+    linear-gradient(180deg, rgba(216,72,67,.075), rgba(255,255,255,.022)),
+    rgba(10,14,19,.84);
+}
+.language-control:focus-within {
+  border-color: rgba(240,90,81,.68);
+  box-shadow: 0 0 0 3px rgba(216,72,67,.09), inset 0 1px 0 rgba(255,255,255,.045);
+}
+.language-control-icon {
+  width: 21px;
+  height: 21px;
+  flex: 0 0 21px;
+  display: grid;
+  place-items: center;
+  color: var(--gold-soft);
+}
+.language-control-icon svg {
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.45;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.language-control-copy {
+  min-width: 0;
+  display: grid;
+  gap: 1px;
+  flex: 1;
+  line-height: 1;
+}
+.language-control-copy small {
+  color: #7f8b96;
+  font-size: .52rem;
+  line-height: 1;
+  font-weight: 800;
+  letter-spacing: .14em;
+  pointer-events: none;
+}
+.language-control .language-select {
+  width: 100%;
+  min-width: 0;
+  height: 22px;
+  padding: 0 18px 0 0;
+  border: 0;
+  border-radius: 0;
+  outline: 0;
+  appearance: none;
+  -webkit-appearance: none;
+  background: transparent;
+  color: #f2f5f7;
+  font-size: .78rem;
+  line-height: 22px;
+  font-weight: 720;
+  cursor: pointer;
+}
+.language-control .language-select option {
+  background: #0c1015;
+  color: #eef2f4;
+}
+.language-control-chevron {
+  position: absolute;
+  right: 10px;
+  bottom: 11px;
+  width: 7px;
+  height: 7px;
+  border-right: 1.5px solid #8996a1;
+  border-bottom: 1.5px solid #8996a1;
+  transform: rotate(45deg);
+  pointer-events: none;
+}
+
+@media (max-width: 760px) {
+  .language-control {
+    min-width: 118px;
+    height: 38px;
+    gap: 7px;
+    padding: 4px 9px;
+    border-radius: 9px;
+  }
+  .language-control::before { inset-block: 6px; }
+  .language-control-icon { width: 18px; height: 18px; flex-basis: 18px; }
+  .language-control-copy { display: block; }
+  .language-control-copy small { display: none; }
+  .language-control .language-select {
+    width: 78px;
+    height: 30px;
+    padding-right: 15px;
+    font-size: .73rem;
+    line-height: 30px;
+  }
+  .language-control-chevron { right: 9px; bottom: 15px; width: 6px; height: 6px; }
+}
+
+@media (max-width: 390px) {
+  .topbar { gap: 8px; padding-inline: 10px; }
+  .header-actions { gap: 6px; }
+  .language-control { min-width: 108px; padding-inline: 8px; }
+  .language-control .language-select { width: 70px; font-size: .7rem; }
+}
