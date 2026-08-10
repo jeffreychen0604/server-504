@@ -2,7 +2,7 @@
 
 > **Nom utilisé sur Server 504 :** Season 4 · Sealed Island  
 > **Dernière vérification :** 7 août 2026  
-> **Confiance des sources :** Élevée pour l’existence de Virus Resistance, Miasma et les changements d’équilibrage officiels ; moyenne pour les seuils de stacks issus de la communauté.
+> **Confiance des sources :** Élevée pour l’existence de Virus Resistance, Miasma et les changements d’équilibrage officiels ; moyenne pour les seuils de cumul issus de la communauté.
 
 La **Virus Resistance** est le principal verrou de combat de Sealed Island. La **Miasma** est le système d’infection et de pénalités lié aux combats saisonniers et à l’état du Shelter.
 
@@ -20,15 +20,15 @@ L’**Oni Seal Hall** est le principal bâtiment associé à la Virus Resistance
 
 ## Infection Miasma
 
-Les sources communautaires décrivent Miasma comme un système d’infection par stacks :
+Les sources communautaires décrivent Miasma comme un système d’infection par cumul :
 
-- les combats peuvent ajouter des stacks ;
+- les combats peuvent ajouter des cumuls de Miasma ;
 - les troupes ou Shelters infectés subissent des pénalités croissantes ;
 - les membres de l’alliance peuvent aider à purifier ;
 - une purification naturelle existe aussi dans le temps ;
-- un nombre élevé de stacks peut provoquer de lourdes conséquences pour le Shelter.
+- un niveau de cumul élevé peut provoquer de lourdes conséquences pour le Shelter.
 
-Certains guides publient des seuils tels que 20/40/100 stacks et un cycle destruction/teleport. Ces chiffres restent des références utiles mais **ne sont pas encore des données canoniques Server 504**.
+Certains guides publient des seuils tels que 20/40/100 cumuls et un cycle de destruction/téléportation. Ces chiffres restent des références utiles mais **ne sont pas encore des données canoniques Server 504**.
 
 ## Miasma Bursts Alert
 
@@ -51,10 +51,10 @@ Le CP brut ne suffit pas pour juger l’efficacité d’une cible saisonnière.
 ## Données encore à capturer sur Server 504
 
 - pénalité exacte selon le déficit de résistance ;
-- seuils de stacks et pénalités ;
-- quantité et cooldown de purification ;
+- seuils de cumul et pénalités ;
+- quantité et temps de recharge de la purification ;
 - vitesse de purification naturelle ;
-- règle de destruction/teleport au maximum de stacks ;
+- règle de destruction/téléportation au cumul maximal ;
 - seuils de succès liés à Miasma.
 
 ## Sources

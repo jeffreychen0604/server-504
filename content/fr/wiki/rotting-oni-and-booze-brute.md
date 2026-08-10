@@ -2,13 +2,13 @@
 
 > **Nom utilisé sur Server 504 :** Season 4 · Sealed Island  
 > **Dernière vérification :** 7 août 2026  
-> **Confiance des sources :** Élevée pour les noms officiels et changements d’équilibrage ; moyenne pour les rôles solo/rally et drops décrits par la communauté.
+> **Confiance des sources :** Élevée pour les noms officiels et changements d’équilibrage ; moyenne pour les rôles solo/rally et récompenses décrits par la communauté.
 
 **Rotting Oni** et **Booze Brute** sont les deux types d’ennemis infectés récurrents les plus importants des systèmes Miasma et Blood Moon.
 
 ## Rotting Oni
 
-Les guides décrivent Rotting Oni comme la cible saisonnière régulière de la world map. Son rôle pratique ressemble à un ennemi de progression solo : franchir les niveaux, obtenir des rewards saisonniers et avancer à mesure que la Virus Resistance augmente.
+Les guides décrivent Rotting Oni comme la cible saisonnière régulière de la carte du monde. Son rôle pratique ressemble à un ennemi de progression solo : franchir les niveaux, obtenir des récompenses saisonnières et avancer à mesure que la Virus Resistance augmente.
 
 ## Booze Brute
 
@@ -27,7 +27,7 @@ Les anciens tableaux CP/résistance peuvent donc devenir obsolètes même au cou
 
 ## Versions normales et Blood Moon
 
-Le jeu distingue les cibles normales des variantes **Blood Moon**. Lors des captures Server 504, il faut enregistrer séparément : CP recommandé, Virus Resistance, coût stamina/AP, exigence de rally, reward pool et drops de Magatama ou autres currencies saisonnières.
+Le jeu distingue les cibles normales des variantes **Blood Moon**. Lors des captures Server 504, il faut enregistrer séparément : CP recommandé, Virus Resistance, coût d’endurance/AP, exigence de rally, ensemble de récompenses et gains de Magatama ou d’autres monnaies saisonnières.
 
 ## Règle pratique de chasse
 
@@ -43,7 +43,7 @@ Ordre de vérification utile :
 
 ## Objectif de données Server 504
 
-Pour une future table exacte, capturer au moins cinq niveaux dans la plage actuellement accessible et enregistrer les deux variantes. Cela permettra d’observer la courbe de scaling sans dépendre d’anciens tableaux publics.
+Pour une future table exacte, capturer au moins cinq niveaux dans la plage actuellement accessible et enregistrer les deux variantes. Cela permettra d’observer la courbe de progression sans dépendre d’anciens tableaux publics.
 
 ## Sources
 

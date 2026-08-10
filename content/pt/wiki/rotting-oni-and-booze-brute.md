@@ -1,14 +1,14 @@
-# Rotting Oni & Booze Brute
+# Rotting Oni e Booze Brute
 
 > **Nome usado no Server 504:** Season 4 · Sealed Island  
 > **Última verificação:** 7 ago 2026  
-> **Confiança da fonte:** Alta para nomes oficiais e mudanças de balanceamento; média para descrições comunitárias de papéis solo/rally e drops.
+> **Confiança da fonte:** Alta para nomes oficiais e mudanças de balanceamento; média para descrições comunitárias de papéis solo/rally e recompensas.
 
 **Rotting Oni** e **Booze Brute** são os principais tipos de inimigos infectados recorrentes ligados aos sistemas Miasma e Blood Moon de Sealed Island.
 
 ## Rotting Oni
 
-Guias comunitários descrevem Rotting Oni como o alvo sazonal mais comum do world map. Seu papel prático é semelhante a um inimigo de progressão solo: superar níveis, obter rewards sazonais e avançar conforme a Virus Resistance melhora.
+Guias comunitários descrevem Rotting Oni como o alvo sazonal mais comum do mapa mundial. Seu papel prático é semelhante a um inimigo de progressão solo: superar níveis, obter recompensas sazonais e avançar conforme a Virus Resistance melhora.
 
 ## Booze Brute
 
@@ -27,7 +27,7 @@ Isso demonstra que tabelas antigas de CP/resistência podem ficar obsoletas até
 
 ## Versões normais e Blood Moon
 
-O jogo diferencia alvos normais de variantes **Blood Moon**. Quando o Server 504 capturar os dados atuais, registre separadamente: CP recomendado, Virus Resistance, custo stamina/AP, requisito de rally, reward pool e drops de Magatama ou outras currencies.
+O jogo diferencia alvos normais de variantes **Blood Moon**. Quando o Server 504 capturar os dados atuais, registre separadamente: CP recomendado, Virus Resistance, custo de energia/AP, requisito de rally, conjunto de recompensas e obtenção de Magatama ou outras moedas.
 
 ## Regra prática de caça
 
@@ -43,7 +43,7 @@ Uma boa ordem de checagem é:
 
 ## Objetivo de dados do Server 504
 
-Para uma futura tabela exata, capture pelo menos cinco níveis dentro da faixa acessível atual e registre as variantes normal e Blood Moon. Isso permitirá inferir o scaling sem depender de tabelas públicas antigas.
+Para uma futura tabela exata, capture pelo menos cinco níveis dentro da faixa acessível atual e registre as variantes normal e Blood Moon. Isso permitirá inferir a curva de progressão sem depender de tabelas públicas antigas.
 
 ## Fontes
 

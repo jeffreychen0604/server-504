@@ -1,56 +1,56 @@
 # Rotting Oni & Booze Brute
 
 > **Tên gọi trên Server 504:** Season 4 · Sealed Island  
-> **Xác minh lần cuối:** 7 Aug 2026  
-> **Độ tin cậy nguồn:** Cao đối với tên enemy chính thức và các thay đổi balance; trung bình đối với mô tả cộng đồng về vai trò solo/rally và drop.
+> **Xác minh lần cuối:** 7/8/2026  
+> **Độ tin cậy nguồn:** Cao đối với tên kẻ địch chính thức và các thay đổi cân bằng; trung bình đối với mô tả cộng đồng về vai trò đánh cá nhân/rally và vật phẩm rơi.
 
-**Rotting Oni** và **Booze Brute** là hai loại infected enemy lặp lại quan trọng nhất trong hệ thống Miasma và Blood Moon của Sealed Island.
+**Rotting Oni** và **Booze Brute** là hai loại kẻ địch nhiễm bệnh lặp lại quan trọng nhất trong các hệ thống Miasma và Blood Moon của Sealed Island.
 
 ## Rotting Oni
 
-Các guide cộng đồng thường mô tả Rotting Oni là seasonal hunting target phổ biến hơn trên world map. Vai trò thực tế gần với một solo progression enemy: vượt level, lấy seasonal reward và tiếp tục lên target cao hơn khi Virus Resistance được cải thiện.
+Nguồn cộng đồng thường mô tả Rotting Oni là mục tiêu săn mùa phổ biến hơn trên World Map. Về thực tế, đây gần với một mục tiêu tiến trình cá nhân: vượt cấp, lấy phần thưởng mùa và tiếp tục đánh cấp cao hơn khi Virus Resistance tăng.
 
 ## Booze Brute
 
-Booze Brute được mô tả là target lớn hơn, thiên về **rally**. Vì vậy Alliance participation quan trọng hơn sức mạnh riêng lẻ của một player.
+Booze Brute được mô tả là mục tiêu lớn hơn, thiên về **rally**. Vì vậy khả năng phối hợp của Alliance quan trọng hơn sức mạnh riêng lẻ của một người chơi.
 
-## Lịch sử balance chính thức
+## Lịch sử cân bằng chính thức
 
-Bản update tháng 11/2025 xác nhận các điều chỉnh:
+Bản cập nhật tháng 11/2025 xác nhận:
 
-- giảm recommended CP cho Rotting Oni Lv.1–65;
-- giảm recommended CP cho Booze Brute Lv.1–65;
-- giảm Viral Resistance requirement cho **Blood Moon Rotting Oni** Lv.65+;
-- giảm Viral Resistance requirement cho **Blood Moon Booze Brute** Lv.65+.
+- giảm CP khuyến nghị cho Rotting Oni Lv.1–65;
+- giảm CP khuyến nghị cho Booze Brute Lv.1–65;
+- giảm yêu cầu Viral Resistance cho **Blood Moon Rotting Oni** Lv.65+;
+- giảm yêu cầu Viral Resistance cho **Blood Moon Booze Brute** Lv.65+.
 
-Đây là bằng chứng rõ rằng các bảng CP/resistance cũ có thể lỗi thời ngay trong cùng một season.
+Đây là bằng chứng rõ rằng các bảng CP/Resistance cũ có thể lỗi thời ngay trong cùng một mùa.
 
-## Normal vs Blood Moon
+## Bản thường và Blood Moon
 
-Game phân biệt target mùa thông thường với biến thể **Blood Moon**. Khi Server 504 capture data hiện tại, nên tách riêng:
+Game phân biệt mục tiêu mùa thông thường với các biến thể **Blood Moon**. Khi Server 504 ghi nhận dữ liệu hiện tại, nên tách riêng:
 
-- recommended CP;
-- Virus Resistance requirement;
-- stamina/AP cost;
-- rally requirement;
-- reward pool;
-- Magatama hoặc seasonal currency drop khác.
+- CP khuyến nghị;
+- yêu cầu Virus Resistance;
+- chi phí stamina/AP;
+- yêu cầu rally;
+- nhóm phần thưởng;
+- lượng Magatama hoặc tiền tệ mùa khác rơi ra.
 
-## Quy tắc hunt thực tế
+## Quy tắc săn thực tế
 
-Không đánh giá các monster này chỉ bằng recommended CP. Player có raw CP đủ nhưng Virus Resistance thiếu vẫn có thể đánh cực kỳ kém hiệu quả.
+Không đánh giá các quái này chỉ bằng CP khuyến nghị. Người chơi có đủ CP thuần nhưng thiếu Virus Resistance vẫn có thể đánh rất kém hiệu quả.
 
 Thứ tự kiểm tra hữu ích:
 
 1. Virus Resistance;
-2. formation strength hiện tại;
-3. target level/version;
-4. normal hay Blood Moon;
-5. target dành cho solo hay rally.
+2. sức mạnh Formation hiện tại;
+3. cấp và phiên bản của mục tiêu;
+4. mục tiêu thường hay Blood Moon;
+5. mục tiêu dành cho đánh cá nhân hay rally.
 
 ## Mục tiêu dữ liệu cho Server 504
 
-Để xây bảng chính xác trong tương lai, nên capture ít nhất năm level trong range đang tiếp cận được và ghi cả normal lẫn Blood Moon variant. Điều này giúp suy luận scaling mà không cần dựa vào bảng public đã cũ.
+Để xây bảng chính xác trong tương lai, nên ghi nhận ít nhất năm cấp trong dải đang tiếp cận được và ghi cả bản thường lẫn Blood Moon. Điều đó giúp suy luận cách tăng độ khó mà không cần dựa vào các bảng công khai đã cũ.
 
 ## Nguồn
 

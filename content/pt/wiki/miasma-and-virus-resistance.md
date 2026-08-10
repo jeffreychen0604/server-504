@@ -1,8 +1,8 @@
-# Miasma & Virus Resistance
+# Miasma e Virus Resistance
 
 > **Nome usado no Server 504:** Season 4 · Sealed Island  
 > **Última verificação:** 7 ago 2026  
-> **Confiança da fonte:** Alta para a existência de Virus Resistance, Miasma e mudanças oficiais de balanceamento; média para thresholds de stacks derivados da comunidade.
+> **Confiança da fonte:** Alta para a existência de Virus Resistance, Miasma e mudanças oficiais de balanceamento; média para limiares de acúmulo derivados da comunidade.
 
 **Virus Resistance** é o principal bloqueio de combate sazonal em Sealed Island. **Miasma** é o sistema de infecção e penalidade que interage com o combate da temporada e o estado do Shelter.
 
@@ -20,15 +20,15 @@ O **Oni Seal Hall** é o principal edifício associado à Virus Resistance. Melh
 
 ## Infecção por Miasma
 
-Fontes comunitárias descrevem Miasma como um sistema de infecção baseado em stacks:
+Fontes comunitárias descrevem Miasma como um sistema de infecção baseado em acúmulos:
 
-- combate pode adicionar stacks;
+- combate pode adicionar acúmulos;
 - tropas ou Shelters infectados podem sofrer penalidades crescentes;
 - membros da aliança podem ajudar na purificação;
 - purificação natural também acontece com o tempo;
-- stacks muito altos podem causar consequências severas para o Shelter.
+- acúmulos muito altos podem causar consequências severas para o Shelter.
 
-Alguns guias publicam thresholds como 20/40/100 stacks e um ciclo de destruição/teleport. Esses números são úteis como referência, mas **ainda não são dados canônicos do Server 504**.
+Alguns guias publicam limiares como 20/40/100 acúmulos e um ciclo de destruição/teleport. Esses números são úteis como referência, mas **ainda não são dados canônicos do Server 504**.
 
 ## Miasma Bursts Alert
 
@@ -51,11 +51,11 @@ Não use apenas CP bruto para decidir se vale a pena lutar contra um alvo sazona
 ## O que ainda precisa de captura no Server 504
 
 - penalidade exata por déficit de resistência;
-- thresholds exatos de stacks e penalidades;
-- quantidade e cooldown de purificação;
+- limiares exatos de acúmulo e penalidades;
+- quantidade e tempo de recarga da purificação;
 - taxa de purificação natural;
-- regra de destruição/teleport no máximo de stacks;
-- thresholds de achievements ligados à Miasma.
+- regra de destruição/teleport no acúmulo máximo;
+- limiares de conquistas ligados à Miasma.
 
 ## Fontes
 

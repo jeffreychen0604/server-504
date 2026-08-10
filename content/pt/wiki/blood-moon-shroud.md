@@ -2,7 +2,7 @@
 
 > **Nome usado no Server 504:** Season 4 · Sealed Island  
 > **Última verificação:** 7 ago 2026  
-> **Confiança da fonte:** Alta para a existência do evento e o tratamento oficial de conflitos; média para detalhes comunitários de rewards/currency.
+> **Confiança da fonte:** Alta para a existência do evento e o tratamento oficial de conflitos; média para detalhes comunitários de recompensas e moedas.
 
 **Blood Moon Shroud** é uma fase de evento de Sealed Island ligada a inimigos sazonais corrompidos e ao ciclo mais amplo de Miasma.
 
@@ -12,7 +12,7 @@ Patch notes oficiais citam explicitamente versões Blood Moon de **Rotting Oni**
 
 Referências comunitárias descrevem Blood Moon como uma fase de escalada na qual aparecem alvos corrompidos mais fortes e ficam disponíveis moedas/recompensas sazonais.
 
-A reward table e os thresholds de monstros são sensíveis à versão. Notas oficiais já mostram que os desenvolvedores reduziram requisitos de Viral Resistance para inimigos Blood Moon de nível alto após o lançamento.
+A tabela de recompensas e os limiares de monstros são sensíveis à versão. Notas oficiais já mostram que os desenvolvedores reduziram requisitos de Viral Resistance para inimigos Blood Moon de nível alto após o lançamento.
 
 ## Tratamento de conflito entre eventos
 
@@ -22,28 +22,28 @@ Operacionalmente, a liderança da aliança não deve assumir que os dois eventos
 
 ## Magatama e conteúdo de troca
 
-Guias comunitários associam Blood Moon a **Magatama** e a um shop limitado frequentemente chamado **Lan's Shadow Shop**. Também descrevem Rotting Oni e Booze Brute como fontes importantes dessa moeda.
+Guias comunitários associam Blood Moon a **Magatama** e a uma loja limitada frequentemente chamada **Lan's Shadow Shop**. Também descrevem Rotting Oni e Booze Brute como fontes importantes dessa moeda.
 
-Como stock, custos e resets podem mudar, qualquer tabela de troca deve ser tratada como snapshot datado.
+Como o estoque, os custos e as reinicializações podem mudar, qualquer tabela de troca deve ser tratada como um registro datado.
 
-## Checklist prático
+## Lista prática de verificação
 
 Antes de Blood Moon Shroud:
 
 - confirmar sua Virus Resistance;
-- preparar stamina/AP para caça repetida;
+- preparar energia/AP para caça repetida;
 - verificar horários de rally para Booze Brutes;
 - checar sobreposição com outro evento de aliança;
-- revisar o seasonal shop ativo antes de gastar Magatama;
-- conferir regras de expiração antes de acumular grandes quantidades de currency temporária.
+- revisar a loja sazonal ativa antes de gastar Magatama;
+- conferir regras de expiração antes de acumular grandes quantidades de moeda temporária.
 
 ## O que ainda precisa de captura
 
 - horário e duração de Blood Moon;
 - faixas de nível dos monstros;
 - quantidades de Magatama;
-- reset e stock atual do shop;
-- milestone rewards;
+- reinício e estoque atual da loja;
+- recompensas de marco;
 - relação exata entre Miasma Bursts e Blood Moon Shroud no Server 504.
 
 ## Fontes

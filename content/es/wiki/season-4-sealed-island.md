@@ -2,7 +2,7 @@
 
 > **Nombre usado en Server 504:** Season 4 · Sealed Island  
 > **Última verificación:** 7 ago 2026  
-> **Confianza de la fuente:** Alta para el nombre de temporada de Server 504 y los sistemas Sealed Island confirmados oficialmente; media para detalles de side events solo comunitarios.
+> **Confianza de la fuente:** Alta para el nombre de temporada de Server 504 y los sistemas Sealed Island confirmados oficialmente; media para detalles de eventos secundarios documentados solo por la comunidad.
 
 Sealed Island es el marco estacional actual de Server 504. Combina edificios temporales, **Virus Resistance**, **Miasma**, enemigos Oni, fases Blood Moon y actividades estacionales de alianza.
 
@@ -38,7 +38,7 @@ Las referencias comunitarias identifican de forma consistente:
 - **Quartz** — producido por Quartz Factories y usado en progresión avanzada;
 - monedas u objetos como **Magatama** u **Omamori** durante actividades concretas.
 
-Los costes, tasas de producción y valores de shop no se fijan en este resumen porque dependen de la versión.
+Los costes, tasas de producción y valores de tienda no se fijan en este resumen porque dependen de la versión.
 
 ## Blood Moon y enemigos estacionales
 
@@ -46,7 +46,7 @@ El historial oficial confirma **Rotting Oni**, **Booze Brute**, sus variantes **
 
 Los desarrolladores ya han cambiado CP recomendado, Viral Resistance y HP de Oni King. Cualquier guía numérica debe tener fecha de verificación.
 
-## Cambios oficiales de balance importantes
+## Cambios oficiales de equilibrio importantes
 
 En noviembre de 2025 los desarrolladores:
 
@@ -57,9 +57,9 @@ En noviembre de 2025 los desarrolladores:
 
 Una actualización posterior también sustituyó el icono normal de Miasma por un icono **Oni King Statue** durante **Miasma Bursts Alert**.
 
-## Side events
+## Eventos secundarios
 
-Las fuentes comunitarias también documentan **Sacred Tree Blessing**, **Float Parade**, ciclos de shop/currency, logros de Miasma y mini-events. Las mecánicas se incluyen en el Wiki, pero cualquier tabla exacta de rewards sigue siendo provisional hasta verificarse contra la UI actual de Server 504.
+Las fuentes comunitarias también documentan **Sacred Tree Blessing**, **Float Parade**, ciclos de tienda y moneda estacional, logros de Miasma y eventos menores. Las mecánicas se incluyen en el Wiki, pero cualquier tabla exacta de recompensas sigue siendo temporal hasta verificarse contra la UI actual de Server 504.
 
 ## Límite entre Wiki y política de Server 504
 

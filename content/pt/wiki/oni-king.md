@@ -2,9 +2,9 @@
 
 > **Nome usado no Server 504:** Season 4 · Sealed Island  
 > **Última verificação:** 7 ago 2026  
-> **Confiança da fonte:** Alta para a existência oficial do boss e o rebalanceamento de HP; média para detalhes comunitários de fase/lore.
+> **Confiança da fonte:** Alta para a existência oficial do chefe e o rebalanceamento de HP; média para detalhes comunitários das fases e do contexto narrativo.
 
-O **Oni King** é o grande boss associado à escalada de fim de temporada de Sealed Island.
+O **Oni King** é o grande chefe associado à escalada de fim de temporada de Sealed Island.
 
 ## Histórico oficial de balanceamento
 
@@ -12,9 +12,9 @@ Patch notes oficiais de novembro de 2025 dizem que o HP do Oni King foi aumentad
 
 Essa distinção importa:
 
-- o **HP** do boss pode mudar;
-- a **difficulty** não necessariamente muda ao mesmo tempo;
-- expectativas antigas de kill time podem se tornar inválidas após um patch.
+- o **HP** do chefe pode mudar;
+- a **dificuldade** não necessariamente muda ao mesmo tempo;
+- estimativas antigas do tempo necessário para derrotá-lo podem se tornar inválidas após um patch.
 
 ## Conexão com Miasma Bursts
 
@@ -26,16 +26,16 @@ Isso indica uma ligação direta entre a escalada de Miasma e a atividade de Oni
 
 Antes da fase Oni King:
 
-1. anunciar o horário esperado em server time;
+1. anunciar o horário esperado pelo horário do servidor;
 2. garantir que os jogadores tenham Virus Resistance suficiente;
-3. manter os melhores rally leads disponíveis;
-4. evitar comprometer tropas desnecessariamente antes da janela do boss;
-5. coordenar a participação para não eliminar o boss antes de jogadores atrasados pontuarem, caso rewards de participação sejam relevantes;
-6. verificar na UI atual as regras de tentativas pessoais, damage ranking e milestones.
+3. manter os melhores líderes de rally disponíveis;
+4. evitar comprometer tropas desnecessariamente antes da janela do chefe;
+5. coordenar a participação para não eliminar o chefe antes de jogadores atrasados pontuarem, caso recompensas de participação sejam relevantes;
+6. verificar na UI atual as regras de tentativas pessoais, ranking de dano e marcos.
 
 ## O que não deve ser publicado como verdade permanente
 
-Não fixe: HP, CP recomendado, Virus Resistance, número de tentativas, damage milestones ou ranking rewards. O histórico oficial já prova que o HP mudou depois do lançamento.
+Não fixe: HP, CP recomendado, Virus Resistance, número de tentativas, marcos de dano ou recompensas de ranking. O histórico oficial já prova que o HP mudou depois do lançamento.
 
 ## Nota de nomenclatura comunitária
 
@@ -46,10 +46,10 @@ Alguns guias conectam Oni King a Shuten-dōji / Shuten-doom. Esses nomes ajudam 
 - HP atual;
 - fase de início/registro;
 - regras de participação rally ou solo;
-- tiers de damage ranking;
-- milestones pessoais;
+- faixas de classificação por dano;
+- marcos pessoais;
 - Virus Resistance exigida;
-- limites por tentativas ou stamina.
+- limites por tentativas ou energia.
 
 ## Fontes
 

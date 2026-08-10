@@ -1,4 +1,4 @@
-# Sealed Island — Bâtiments saisonniers
+# Oni Seal Hall & Quartz Factory
 
 > **Nom utilisé sur Server 504 :** Season 4 · Sealed Island  
 > **Dernière vérification :** 7 août 2026  
@@ -26,7 +26,7 @@ Les guides décrivent une boucle où :
 
 - **Stone** sert à établir ou développer les structures produisant du Quartz ;
 - **Quartz** est généré dans le temps puis dépensé dans la progression supérieure ;
-- d’autres sources peuvent apparaître via missions, passes, shops ou récompenses d’events.
+- d’autres sources peuvent apparaître via des missions, passes, boutiques ou récompenses d’événements.
 
 Les patch notes ont ensuite indiqué que Sealed Island recevait **plus de Mints**, ce qui confirme que l’économie saisonnière peut être ajustée après lancement.
 
@@ -41,7 +41,7 @@ Une future table vérifiée devrait inclure :
 - Virus Resistance gagnée ;
 - production de Quartz par heure ;
 - nombre maximal de Quartz Factories ;
-- bonus Pass/VIP affectant production ou nombre de factories.
+- bonus Pass/VIP affectant production ou nombre de fabriques.
 
 ## Avertissement qualité
 

@@ -1,4 +1,4 @@
-# Sealed Island — Edificios de temporada
+# Oni Seal Hall y Quartz Factory
 
 > **Nombre usado en Server 504:** Season 4 · Sealed Island  
 > **Última verificación:** 7 ago 2026  
@@ -12,9 +12,9 @@ El Oni Seal Hall es el edificio central de resistencia. Las guías comunitarias 
 
 Prioridad práctica:
 
-1. mantener el Oni Seal Hall avanzando antes de perseguir upgrades estacionales opcionales;
+1. mantener el Oni Seal Hall avanzando antes de buscar mejoras estacionales opcionales;
 2. comparar tu Virus Resistance con el requisito mostrado en el objetivo antes de atacar;
-3. evitar gastar Quartz de forma que retrase el siguiente breakpoint de resistencia.
+3. evitar gastar Quartz de forma que retrase el siguiente umbral de resistencia.
 
 La resistencia obtenida por nivel y los costes pueden cambiar entre versiones; el Wiki no debe congelar una tabla antigua sin capturas de la temporada actual.
 
@@ -26,7 +26,7 @@ Las guías describen un bucle donde:
 
 - **Stone** se usa para establecer o desarrollar estructuras productoras de Quartz;
 - **Quartz** se genera con el tiempo y luego se gasta en progresión superior;
-- pueden existir fuentes adicionales en misiones, passes, shops o rewards de eventos.
+- pueden existir fuentes adicionales en misiones, pases, tiendas o recompensas de eventos.
 
 Las patch notes posteriores mencionaron que Sealed Island recibió **más Mints**, confirmando que la economía de temporada ha sido ajustada tras el lanzamiento.
 
@@ -41,7 +41,7 @@ Una futura tabla verificada debería incluir:
 - Virus Resistance obtenida;
 - producción de Quartz por hora;
 - número máximo de Quartz Factories;
-- bonuses de Pass/VIP que afecten producción o cantidad de factories.
+- bonificaciones de Pass/VIP que afecten la producción o el número de fábricas.
 
 ## Advertencia de calidad
 

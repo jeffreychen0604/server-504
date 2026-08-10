@@ -1,8 +1,8 @@
-# Miasma & Virus Resistance
+# Miasma y Virus Resistance
 
 > **Nombre usado en Server 504:** Season 4 · Sealed Island  
 > **Última verificación:** 7 ago 2026  
-> **Confianza de la fuente:** Alta para la existencia de Virus Resistance, Miasma y los cambios oficiales de balance; media para umbrales de stacks de origen comunitario.
+> **Confianza de la fuente:** Alta para la existencia de Virus Resistance, Miasma y los cambios oficiales de equilibrio; media para umbrales de acumulación de origen comunitario.
 
 **Virus Resistance** es el principal bloqueo de combate estacional en Sealed Island. **Miasma** es el sistema de infección y penalizaciones que interactúa con el combate estacional y el estado del Shelter.
 
@@ -20,15 +20,15 @@ El **Oni Seal Hall** es el principal edificio asociado a Virus Resistance. Mejor
 
 ## Infección Miasma
 
-Las fuentes comunitarias describen Miasma como un sistema de infección basado en stacks:
+Las fuentes comunitarias describen Miasma como un sistema de infección basado en acumulaciones:
 
-- el combate puede añadir stacks;
+- el combate puede añadir acumulaciones;
 - tropas o Shelters infectados pueden sufrir penalizaciones crecientes;
 - miembros de la alianza pueden ayudar con la purificación;
 - también existe purificación natural con el tiempo;
-- stacks muy altos pueden provocar consecuencias graves para el Shelter.
+- acumulaciones muy altas pueden provocar consecuencias graves para el Shelter.
 
-Algunas guías publican umbrales como 20/40/100 stacks y un ciclo de destrucción/teleport. Son referencias útiles, pero **todavía no son datos canónicos de Server 504**.
+Algunas guías publican umbrales como 20/40/100 acumulaciones y un ciclo de destrucción/teleport. Son referencias útiles, pero **todavía no son datos canónicos de Server 504**.
 
 ## Miasma Bursts Alert
 
@@ -51,10 +51,10 @@ No uses solo CP bruto para decidir si un objetivo estacional es eficiente.
 ## Lo que aún necesita captura en Server 504
 
 - penalización exacta según déficit de resistencia;
-- umbrales exactos de stacks y penalizaciones;
-- cantidad y cooldown de purificación;
+- umbrales exactos de acumulación y penalizaciones;
+- cantidad y tiempo de recarga de la purificación;
 - tasa de purificación natural;
-- regla de destrucción/teleport al máximo de stacks;
+- regla de destrucción/teleport al máximo de acumulación;
 - umbrales de logros vinculados a Miasma.
 
 ## Fuentes

@@ -2,9 +2,9 @@
 
 > **Nome usado no Server 504:** Season 4 · Sealed Island  
 > **Última verificação:** 7 ago 2026  
-> **Confiança da fonte:** Alta para o nome da temporada no Server 504 e os sistemas Sealed Island confirmados oficialmente; média para detalhes de side events apenas comunitários.
+> **Confiança da fonte:** Alta para o nome da temporada no Server 504 e os sistemas Sealed Island confirmados oficialmente; média para detalhes de eventos secundários documentados apenas pela comunidade.
 
-Sealed Island é o framework sazonal atual do Server 504. Ele combina edifícios temporários, **Virus Resistance**, **Miasma**, inimigos Oni, fases Blood Moon e atividades sazonais de aliança.
+Sealed Island é a estrutura sazonal atual do Server 504. Ele combina edifícios temporários, **Virus Resistance**, **Miasma**, inimigos Oni, fases Blood Moon e atividades sazonais de aliança.
 
 ## Referência rápida
 
@@ -38,7 +38,7 @@ Referências comunitárias identificam de forma consistente:
 - **Quartz** — produzido pelas Quartz Factories e usado na progressão avançada;
 - itens/moedas como **Magatama** ou **Omamori** em atividades específicas.
 
-Custos exatos, taxas de produção e valores de shop não são fixados neste resumo porque dependem da versão.
+Custos exatos, taxas de produção e valores de loja não são fixados neste resumo porque dependem da versão.
 
 ## Blood Moon e inimigos sazonais
 
@@ -57,9 +57,9 @@ Em novembro de 2025, os desenvolvedores:
 
 Uma atualização posterior também substituiu o ícone normal de Miasma por um ícone **Oni King Statue** durante **Miasma Bursts Alert**.
 
-## Side events
+## Eventos secundários
 
-Fontes comunitárias também documentam **Sacred Tree Blessing**, **Float Parade**, ciclos de shop/currency, conquistas ligadas à Miasma e mini-events. As mecânicas aparecem no Wiki, mas qualquer tabela exata de rewards continua provisória até ser verificada na UI atual do Server 504.
+Fontes comunitárias também documentam **Sacred Tree Blessing**, **Float Parade**, ciclos de loja e moeda sazonal, conquistas ligadas à Miasma e mini-eventos. As mecânicas aparecem no Wiki, mas qualquer tabela exata de recompensas continua provisória até ser verificada na UI atual do Server 504.
 
 ## Limite entre Wiki e política do Server 504
 

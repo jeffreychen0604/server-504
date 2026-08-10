@@ -34,5 +34,20 @@
     {"id":"L10N-26","name":"Economy Advanced","status":"complete","slugs":["season-and-vip-shops","equipment-and-apc-material-sources","event-and-premium-currencies","wiki-verification-queue"]},
     {"id":"L10N-27","name":"Progression Legacy Hub","status":"complete","slugs":["watchtower-and-industrial"]},
     {"id":"L10N-28","name":"Season 4 — Sealed Island","status":"complete","slugs":["season-4-sealed-island","sealed-island-season-buildings","miasma-and-virus-resistance","blood-moon-shroud","rotting-oni-and-booze-brute","oni-king","sacred-tree-blessing","float-parade"]}
-  ]
+  ],
+  "qualityPolicy": {
+    "titleContract": "content/wiki-titles.json is canonical for user-visible localized Wiki page headers, cards and search titles.",
+    "h1Parity": "advisory-source-maintenance",
+    "internalLinkIntegrity": "blocking",
+    "officialTerms": "Preserve official Dark War: Survival UI, event, building and system names where translation would hinder in-game lookup.",
+    "editorialCodeSwitching": "Audit as non-blocking review candidates because heuristic language detection can match protected game terminology.",
+    "sourceNames": "External source names and source-page titles may remain in their original language."
+  },
+  "qa": {
+    "updated": "2026-08-10",
+    "deepReviewedLocales": ["vi", "ko"],
+    "deepReviewedSlugs": ["watchtower-and-industrial", "season-4-sealed-island", "sealed-island-season-buildings", "miasma-and-virus-resistance", "blood-moon-shroud", "rotting-oni-and-booze-brute", "oni-king", "sacred-tree-blessing", "float-parade"],
+    "targetedReviewedLocales": ["fr", "es", "pt"],
+    "targetedReviewedSlugs": ["season-4-sealed-island", "sealed-island-season-buildings", "miasma-and-virus-resistance", "blood-moon-shroud", "rotting-oni-and-booze-brute", "oni-king", "sacred-tree-blessing", "float-parade"]
+  }
 }

@@ -2,7 +2,7 @@
 
 > **Nom utilisé sur Server 504 :** Season 4 · Sealed Island  
 > **Dernière vérification :** 7 août 2026  
-> **Confiance des sources :** Élevée pour le nom de saison de Server 504 et les systèmes Sealed Island confirmés officiellement ; moyenne pour les détails de side events uniquement communautaires.
+> **Confiance des sources :** Élevée pour le nom de saison de Server 504 et les systèmes Sealed Island confirmés officiellement ; moyenne pour les détails d’événements secondaires uniquement documentés par la communauté.
 
 Sealed Island est le cadre saisonnier actuel de Server 504. Il combine bâtiments temporaires, **Virus Resistance**, **Miasma**, ennemis Oni, phases Blood Moon et activités saisonnières d’alliance.
 
@@ -38,7 +38,7 @@ Les références communautaires identifient régulièrement :
 - **Quartz** — produit par les Quartz Factories et utilisé pour la progression avancée ;
 - des objets ou monnaies comme **Magatama** ou **Omamori** pendant certaines activités.
 
-Les coûts, productions et valeurs de shop exacts ne sont pas figés ici car ces chiffres dépendent de la version.
+Les coûts exacts, les taux de production et les valeurs en boutique ne sont pas figés ici car ces chiffres dépendent de la version.
 
 ## Blood Moon et ennemis saisonniers
 
@@ -57,9 +57,9 @@ En novembre 2025, les développeurs ont :
 
 Une mise à jour ultérieure a aussi remplacé l’icône normale de Miasma par une icône **Oni King Statue** pendant **Miasma Bursts Alert**.
 
-## Side events
+## Événements secondaires
 
-Les sources communautaires mentionnent aussi **Sacred Tree Blessing**, **Float Parade**, des cycles de shop/currency, des succès liés à Miasma et plusieurs mini-events. Les mécaniques sont documentées, mais les tableaux de récompenses restent provisoires tant qu’ils ne sont pas vérifiés sur l’UI actuelle de Server 504.
+Les sources communautaires mentionnent aussi **Sacred Tree Blessing**, **Float Parade**, des cycles de boutique et de monnaie saisonnière, des succès liés à Miasma et plusieurs mini-événements. Les mécaniques sont documentées, mais les tableaux de récompenses restent provisoires tant qu’ils ne sont pas vérifiés sur l’UI actuelle de Server 504.
 
 ## Limite entre Wiki et politique Server 504
 

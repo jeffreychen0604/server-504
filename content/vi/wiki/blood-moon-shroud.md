@@ -1,49 +1,49 @@
 # Blood Moon Shroud
 
 > **Tên gọi trên Server 504:** Season 4 · Sealed Island  
-> **Xác minh lần cuối:** 7 Aug 2026  
-> **Độ tin cậy nguồn:** Cao đối với sự tồn tại của event và conflict handling đã được xác nhận chính thức; trung bình đối với reward/currency detail từ cộng đồng.
+> **Xác minh lần cuối:** 7/8/2026  
+> **Độ tin cậy nguồn:** Cao đối với sự tồn tại của sự kiện và cách xử lý xung đột đã được xác nhận chính thức; trung bình đối với chi tiết phần thưởng và tiền tệ từ cộng đồng.
 
-**Blood Moon Shroud** là một event phase của Sealed Island, gắn với các kẻ địch mùa bị corruption và vòng Miasma rộng hơn.
+**Blood Moon Shroud** là một giai đoạn sự kiện của Sealed Island, gắn với các kẻ địch mùa bị tha hóa và chu kỳ Miasma rộng hơn.
 
-Patch note chính thức nhắc trực tiếp tới phiên bản Blood Moon của cả **Rotting Oni** và **Booze Brute**, đồng thời về sau còn bổ sung cảnh báo khi **Zombie Siege** overlap với Blood Moon Shroud.
+Ghi chú cập nhật chính thức nhắc trực tiếp tới phiên bản Blood Moon của cả **Rotting Oni** và **Booze Brute**, đồng thời về sau còn bổ sung cảnh báo khi **Zombie Siege** trùng lịch với Blood Moon Shroud.
 
 ## Điều gì thay đổi trong Blood Moon
 
-Nguồn cộng đồng mô tả Blood Moon như một escalation phase nơi các target corruption mạnh hơn xuất hiện và seasonal currency/reward được mở ra.
+Nguồn cộng đồng mô tả Blood Moon như một giai đoạn leo thang, nơi các mục tiêu bị tha hóa mạnh hơn xuất hiện và người chơi có thể kiếm thêm tiền tệ hoặc phần thưởng mùa.
 
-Reward table và monster threshold cụ thể rất nhạy theo phiên bản. Official balance note đã cho thấy nhà phát triển từng giảm Viral Resistance requirement cho các Blood Moon enemy level cao sau launch.
+Bảng phần thưởng và ngưỡng quái rất nhạy theo phiên bản. Lịch sử cân bằng chính thức đã cho thấy nhà phát triển từng giảm yêu cầu Viral Resistance cho các kẻ địch Blood Moon cấp cao sau khi mùa ra mắt.
 
-## Xử lý event conflict
+## Xử lý xung đột sự kiện
 
-Patch note chính thức tháng 10/2025 bổ sung secondary confirmation khi **Zombie Siege** conflict với **Blood Moon Shroud**.
+Ghi chú cập nhật tháng 10/2025 bổ sung một bước xác nhận thứ hai khi **Zombie Siege** xung đột với **Blood Moon Shroud**.
 
-Về vận hành, Alliance leadership không nên mặc định rằng hai event có thể cùng chạy thoải mái. Khi schedule overlap, server/alliance có thể cần announcement ưu tiên rõ ràng.
+Về vận hành, ban lãnh đạo Alliance không nên mặc định rằng hai sự kiện có thể chạy đồng thời mà không ảnh hưởng lẫn nhau. Khi lịch trùng nhau, server hoặc Alliance có thể cần một thông báo ưu tiên rõ ràng.
 
-## Magatama và exchange content
+## Magatama và nội dung đổi thưởng
 
-Guide cộng đồng liên kết Blood Moon với **Magatama** và một limited exchange shop thường được gọi là **Lan's Shadow Shop**. Rotting Oni và Booze Brute cũng được ghi nhận là nguồn lớn của seasonal currency này.
+Nguồn cộng đồng liên kết Blood Moon với **Magatama** và một cửa hàng đổi thưởng giới hạn thường được gọi là **Lan's Shadow Shop**. Rotting Oni và Booze Brute cũng được ghi nhận là những nguồn lớn của loại tiền tệ mùa này.
 
-Vì shop stock, cost và reset behavior có thể thay đổi, mọi exchange table cụ thể cần được xem là dated snapshot.
+Vì hàng bán, giá và cách reset cửa hàng có thể thay đổi, mọi bảng đổi thưởng cụ thể nên được xem là ảnh chụp dữ liệu theo thời điểm chứ không phải danh sách cố định.
 
-## Checklist thực tế
+## Danh sách chuẩn bị
 
 Trước Blood Moon Shroud:
 
 - xác nhận Virus Resistance;
-- chuẩn bị stamina/AP nếu cần hunt nhiều lần;
-- kiểm tra rally timing cho Booze Brute;
-- xác minh event Alliance khác có overlap hay không;
-- xem seasonal shop đang active trước khi tiêu Magatama;
-- kiểm tra expiry rule trước khi giữ lượng lớn event-only currency tới phase cuối.
+- chuẩn bị stamina/AP nếu cần săn quái lặp lại;
+- kiểm tra thời điểm rally cho Booze Brute;
+- xác minh có sự kiện Alliance nào khác trùng lịch hay không;
+- xem cửa hàng mùa đang hoạt động trước khi tiêu Magatama;
+- kiểm tra quy tắc hết hạn trước khi giữ lượng lớn tiền tệ chỉ dùng trong sự kiện tới giai đoạn cuối.
 
-## Những dữ liệu vẫn cần capture
+## Những dữ liệu vẫn cần ghi nhận
 
-- Blood Moon schedule và duration;
-- monster level band;
-- lượng Magatama drop;
-- shop reset time và stock hiện tại;
-- event milestone reward;
+- lịch và thời lượng Blood Moon;
+- dải cấp quái;
+- lượng Magatama rơi;
+- thời điểm reset và hàng bán hiện tại của cửa hàng;
+- phần thưởng theo mốc sự kiện;
 - quan hệ chính xác giữa Miasma Bursts và Blood Moon Shroud trên Server 504.
 
 ## Nguồn

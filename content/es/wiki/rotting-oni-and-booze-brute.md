@@ -1,20 +1,20 @@
-# Rotting Oni & Booze Brute
+# Rotting Oni y Booze Brute
 
 > **Nombre usado en Server 504:** Season 4 · Sealed Island  
 > **Última verificación:** 7 ago 2026  
-> **Confianza de la fuente:** Alta para nombres oficiales y cambios de balance; media para descripciones comunitarias de roles solo/rally y drops.
+> **Confianza de la fuente:** Alta para nombres oficiales y cambios de equilibrio; media para descripciones comunitarias de roles solo/rally y recompensas.
 
 **Rotting Oni** y **Booze Brute** son los principales tipos de enemigos infectados recurrentes asociados a los sistemas Miasma y Blood Moon de Sealed Island.
 
 ## Rotting Oni
 
-Las guías comunitarias describen Rotting Oni como el objetivo estacional más habitual de la world map. Su función práctica se parece a un enemigo de progresión solo: superar niveles, obtener rewards de temporada y avanzar a medida que mejora Virus Resistance.
+Las guías comunitarias describen Rotting Oni como el objetivo estacional más habitual del mapa mundial. Su función práctica se parece a un enemigo de progresión solo: superar niveles, obtener recompensas de temporada y avanzar a medida que mejora Virus Resistance.
 
 ## Booze Brute
 
 Booze Brute se describe como un objetivo mayor orientado a **rally**. La participación de la alianza importa por tanto más que el poder aislado de un jugador.
 
-## Historial oficial de balance
+## Historial oficial de equilibrio
 
 La actualización oficial de noviembre de 2025 confirma:
 
@@ -27,7 +27,7 @@ Esto demuestra que tablas antiguas de CP/resistencia pueden quedar obsoletas inc
 
 ## Versiones normales y Blood Moon
 
-El juego distingue objetivos normales y variantes **Blood Moon**. Cuando Server 504 capture datos actuales, deben registrarse por separado: CP recomendado, Virus Resistance, coste stamina/AP, necesidad de rally, reward pool y drops de Magatama u otras currencies.
+El juego distingue objetivos normales y variantes **Blood Moon**. Cuando Server 504 capture datos actuales, deben registrarse por separado: CP recomendado, Virus Resistance, coste de resistencia/AP, necesidad de rally, conjunto de recompensas y obtención de Magatama u otras monedas.
 
 ## Regla práctica de caza
 
@@ -43,7 +43,7 @@ Orden útil de comprobación:
 
 ## Objetivo de datos para Server 504
 
-Para una futura tabla exacta, capturar al menos cinco niveles del rango accesible actual y registrar ambas variantes. Así podremos inferir el scaling sin depender de tablas públicas antiguas.
+Para una futura tabla exacta, capturar al menos cinco niveles del rango accesible actual y registrar ambas variantes. Así podremos inferir la curva de progresión sin depender de tablas públicas antiguas.
 
 ## Fuentes
 

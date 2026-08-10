@@ -98,6 +98,9 @@ if ! python3 scripts/validate-wiki-localization.py; then
   fail=1
 fi
 
+# Linguistic QA is advisory because official in-game English terms are intentionally preserved.
+python3 scripts/audit-wiki-linguistic.py
+
 # Minimal article-shape validation for every English Wiki reference.
 # Accepted date markers cover general references, hero profiles and audit queues.
 for file in "$wiki_root"/*.md; do
