@@ -84,7 +84,7 @@ for (const locale of locales) {
   }
 }
 
-// Wiki localization metadata must remain attached to real manifest slugs.
+// Wiki localization metadata must remain attached to every real manifest slug.
 let manifest;
 let titles;
 try { manifest = JSON.parse(read('content/wiki-manifest.json')); }
@@ -95,9 +95,13 @@ catch (e) { error(`Invalid Wiki title map JSON: ${e.message}`, 'content/wiki-tit
 if (manifest && titles) {
   const slugs = new Set((manifest.articles || []).map(article => article.slug));
   const localizedLocales = locales.filter(x => x !== 'en');
+  const titleSlugs = new Set(Object.keys(titles.titles || {}));
+  const missingTitleSlugs = [...slugs].filter(slug => !titleSlugs.has(slug)).sort();
+  const extraTitleSlugs = [...titleSlugs].filter(slug => !slugs.has(slug)).sort();
+  if (missingTitleSlugs.length) error(`Wiki title map missing manifest slug(s): ${missingTitleSlugs.join(', ')}`, 'content/wiki-titles.json');
+  if (extraTitleSlugs.length) error(`Wiki title map contains unknown slug(s): ${extraTitleSlugs.join(', ')}`, 'content/wiki-titles.json');
 
   for (const [slug, mapping] of Object.entries(titles.titles || {})) {
-    if (!slugs.has(slug)) error(`Localized title references unknown Wiki slug: ${slug}`, 'content/wiki-titles.json');
     for (const locale of localizedLocales) {
       if (!String(mapping?.[locale] || '').trim()) {
         error(`Localized Wiki title ${slug} is missing ${locale}`, 'content/wiki-titles.json');
