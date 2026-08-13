@@ -6,207 +6,29 @@
     featuredEvents: { live: [], upcoming: [] },
     activeAlliances: { updatedAt: null, alliances: [] },
     keWatch: { updatedAt: null, alliances: [] },
-    sharedAssets: {
-      capital: { current: null, next: null },
-      armories: Array.from({ length: 8 }, (_, i) => ({ number: i + 1, alliance: null }))
-    },
-    announcements: [],
-    migration: { windowStatus: 'Pending', availableSeats: null, priorities: [], allianceNeeds: [] }
+    sharedAssets: { capital: { current: null, next: null }, armories: Array.from({ length: 8 }, (_, i) => ({ number: i + 1, alliance: null })) },
+    announcements: [], migration: { windowStatus: 'Pending', availableSeats: null, priorities: [], allianceNeeds: [] }
   };
-
+  const copy = {
+    en:{eyebrow:'Server 504 · Knowledge · Governance · Operations',title:'Server Operations Dashboard',lastUpdated:'Last updated',season:'Season',theme:'Theme',councilStatus:'Server Council Status',pending:'Pending',open:'Open',closed:'Closed',upcoming:'Upcoming',available:'Available',featuredEvents:'Featured Events',featuredNote:'Only limited-time and seasonal / cross-server events are shown.',liveNow:'Live Now',comingUp:'Coming Up',noFeaturedTitle:'No featured event published',noFeaturedBody:'Awaiting the next confirmed limited-time or seasonal event.',unnamedEvent:'Unnamed Event',eventDetailsPending:'Event details will be published when confirmed.',rewardsPending:'Rewards pending',limitedEvent:'Limited Event',upcomingEvent:'Upcoming Event',startsIn:'Starts in',duration:'Duration',mainRewards:'Main rewards',keTitle:'Saturday KE — Alliance Invasion Watch',keExplainer:'Each alliance faces a weekly Alliance Duel opponent. On Saturday — commonly known as KE (Kill Event) — opposing players may enter Server 504 and freely attack players from any alliance. This board shows each 504 alliance’s opponent, their server and Total CP so the whole server can prepare.',keAwaiting:'Saturday KE opponent data is awaiting the weekly update.',alliance504:'504 Alliance',opponentAlliance:'Opponent Alliance',opponentServer:'Opponent Server',totalCP:'Total CP',activeAlliances:'Active Alliances — Weekly Update',allianceAwaiting:'Weekly alliance data is awaiting update.',allianceName:'Alliance Name',sharedAssets:'Shared Assets',currentAllocation:'Current operational allocation',currentCapital:'Current Capital Owner',currentRotation:'Current rotation holder',nextCapital:'Next Capital Owner',nextRotation:'Next scheduled holder',armoryRegistration:'Armory Registration',registered:'registered',armory:'Armory',awaitingRegistration:'Awaiting registration',announcements:'Server Announcements',notices:'Server-wide notices',noAnnouncementTitle:'No announcement published',noAnnouncementBody:'Server-wide notices will appear here.',migration:'Migration & Recruitment Status',planningStatus:'Current planning status',currentWindow:'Current Window',availableSeats:'Available Seats',recruitmentPriority:'Recruitment Priority',allianceNeeds:'Alliance Needs',awaitingAllocation:'Awaiting allocation',awaitingRecruitment:'Awaiting recruitment plan',awaitingAllianceNeeds:'Awaiting alliance placement needs',quickAccess:'Quick access',gameWiki:'Game Wiki',charter:'Server Charter',codex:'Operational Codex',contribute:'Contribute / Suggest',info:'Info',important:'Important',actionRequired:'Action Required',awaitingUpdate:'Awaiting update'},
+    fr:{eyebrow:'Server 504 · Connaissances · Gouvernance · Opérations',title:'Tableau de bord des opérations',lastUpdated:'Dernière mise à jour',season:'Saison',theme:'Thème',councilStatus:'Statut du Conseil du serveur',pending:'En attente',open:'Ouvert',closed:'Fermé',upcoming:'À venir',available:'Disponible',featuredEvents:'Événements à la une',featuredNote:'Seuls les événements limités et saisonniers / inter-serveurs sont affichés.',liveNow:'En cours',comingUp:'À venir',noFeaturedTitle:'Aucun événement à la une publié',noFeaturedBody:'En attente du prochain événement limité ou saisonnier confirmé.',unnamedEvent:'Événement sans nom',eventDetailsPending:'Les détails seront publiés après confirmation.',rewardsPending:'Récompenses en attente',limitedEvent:'Événement limité',upcomingEvent:'Événement à venir',startsIn:'Commence dans',duration:'Durée',mainRewards:'Récompenses principales',keTitle:'KE du samedi — Surveillance des invasions',keExplainer:'Chaque alliance affronte chaque semaine un adversaire en Alliance Duel. Le samedi — communément appelé KE (Kill Event) — les joueurs adverses peuvent entrer sur le Server 504 et attaquer librement les joueurs de n’importe quelle alliance. Ce tableau indique l’adversaire de chaque alliance 504, son serveur et sa Puissance totale afin que tout le serveur puisse se préparer.',keAwaiting:'Les adversaires du KE du samedi sont en attente de la mise à jour hebdomadaire.',alliance504:'Alliance 504',opponentAlliance:'Alliance adverse',opponentServer:'Serveur adverse',totalCP:'Puissance totale',activeAlliances:'Alliances actives — Mise à jour hebdomadaire',allianceAwaiting:'Les données hebdomadaires des alliances sont en attente.',allianceName:'Nom de l’alliance',sharedAssets:'Ressources partagées',currentAllocation:'Attribution opérationnelle actuelle',currentCapital:'Détenteur actuel de la Capitale',currentRotation:'Détenteur actuel de la rotation',nextCapital:'Prochain détenteur de la Capitale',nextRotation:'Prochain détenteur prévu',armoryRegistration:'Enregistrement des Armories',registered:'enregistrées',armory:'Armory',awaitingRegistration:'En attente d’enregistrement',announcements:'Annonces du serveur',notices:'Informations pour tout le serveur',noAnnouncementTitle:'Aucune annonce publiée',noAnnouncementBody:'Les annonces du serveur apparaîtront ici.',migration:'Migration & Recrutement',planningStatus:'État actuel de la planification',currentWindow:'Fenêtre actuelle',availableSeats:'Places disponibles',recruitmentPriority:'Priorité de recrutement',allianceNeeds:'Besoins des alliances',awaitingAllocation:'En attente de répartition',awaitingRecruitment:'En attente du plan de recrutement',awaitingAllianceNeeds:'En attente des besoins de placement',quickAccess:'Accès rapide',gameWiki:'Wiki du jeu',charter:'Charte du serveur',codex:'Codex opérationnel',contribute:'Contribuer / Suggérer',info:'Info',important:'Important',actionRequired:'Action requise',awaitingUpdate:'En attente de mise à jour'},
+    es:{eyebrow:'Server 504 · Conocimiento · Gobernanza · Operaciones',title:'Panel de operaciones del servidor',lastUpdated:'Última actualización',season:'Temporada',theme:'Tema',councilStatus:'Estado del Consejo del servidor',pending:'Pendiente',open:'Abierto',closed:'Cerrado',upcoming:'Próximo',available:'Disponible',featuredEvents:'Eventos destacados',featuredNote:'Solo se muestran eventos limitados y estacionales / entre servidores.',liveNow:'En curso',comingUp:'Próximamente',noFeaturedTitle:'No hay evento destacado publicado',noFeaturedBody:'Esperando el próximo evento limitado o estacional confirmado.',unnamedEvent:'Evento sin nombre',eventDetailsPending:'Los detalles se publicarán cuando estén confirmados.',rewardsPending:'Recompensas pendientes',limitedEvent:'Evento limitado',upcomingEvent:'Evento próximo',startsIn:'Comienza en',duration:'Duración',mainRewards:'Recompensas principales',keTitle:'KE del sábado — Vigilancia de invasiones',keExplainer:'Cada alianza se enfrenta semanalmente a un rival en Alliance Duel. El sábado — conocido habitualmente como KE (Kill Event) — los jugadores rivales pueden entrar en Server 504 y atacar libremente a jugadores de cualquier alianza. Este panel muestra el rival de cada alianza 504, su servidor y su Potencia total para que todo el servidor pueda prepararse.',keAwaiting:'Los datos de rivales del KE del sábado esperan la actualización semanal.',alliance504:'Alianza 504',opponentAlliance:'Alianza rival',opponentServer:'Servidor rival',totalCP:'Potencia total',activeAlliances:'Alianzas activas — Actualización semanal',allianceAwaiting:'Los datos semanales de alianzas están pendientes.',allianceName:'Nombre de alianza',sharedAssets:'Recursos compartidos',currentAllocation:'Asignación operativa actual',currentCapital:'Propietario actual de la Capital',currentRotation:'Titular actual de la rotación',nextCapital:'Próximo propietario de la Capital',nextRotation:'Próximo titular programado',armoryRegistration:'Registro de Armories',registered:'registradas',armory:'Armory',awaitingRegistration:'Pendiente de registro',announcements:'Anuncios del servidor',notices:'Avisos para todo el servidor',noAnnouncementTitle:'No hay anuncios publicados',noAnnouncementBody:'Los avisos del servidor aparecerán aquí.',migration:'Estado de migración y reclutamiento',planningStatus:'Estado actual de planificación',currentWindow:'Ventana actual',availableSeats:'Plazas disponibles',recruitmentPriority:'Prioridad de reclutamiento',allianceNeeds:'Necesidades de alianzas',awaitingAllocation:'Pendiente de asignación',awaitingRecruitment:'Pendiente del plan de reclutamiento',awaitingAllianceNeeds:'Pendiente de necesidades de colocación',quickAccess:'Acceso rápido',gameWiki:'Wiki del juego',charter:'Carta del servidor',codex:'Códice operativo',contribute:'Contribuir / Sugerir',info:'Info',important:'Importante',actionRequired:'Acción requerida',awaitingUpdate:'Pendiente de actualización'},
+    pt:{eyebrow:'Server 504 · Conhecimento · Governança · Operações',title:'Painel de Operações do Servidor',lastUpdated:'Última atualização',season:'Temporada',theme:'Tema',councilStatus:'Estado do Conselho do servidor',pending:'Pendente',open:'Aberto',closed:'Fechado',upcoming:'Em breve',available:'Disponível',featuredEvents:'Eventos em destaque',featuredNote:'São mostrados apenas eventos limitados e sazonais / entre servidores.',liveNow:'Ao vivo agora',comingUp:'Em breve',noFeaturedTitle:'Nenhum evento em destaque publicado',noFeaturedBody:'Aguardando o próximo evento limitado ou sazonal confirmado.',unnamedEvent:'Evento sem nome',eventDetailsPending:'Os detalhes serão publicados quando forem confirmados.',rewardsPending:'Recompensas pendentes',limitedEvent:'Evento limitado',upcomingEvent:'Próximo evento',startsIn:'Começa em',duration:'Duração',mainRewards:'Principais recompensas',keTitle:'KE de sábado — Alerta de invasão',keExplainer:'Cada aliança enfrenta semanalmente um adversário no Alliance Duel. No sábado — normalmente chamado de KE (Kill Event) — jogadores adversários podem entrar no Server 504 e atacar livremente jogadores de qualquer aliança. Este painel mostra o adversário de cada aliança 504, o servidor e o Poder total para que todo o servidor possa se preparar.',keAwaiting:'Os dados dos adversários do KE de sábado aguardam a atualização semanal.',alliance504:'Aliança 504',opponentAlliance:'Aliança adversária',opponentServer:'Servidor adversário',totalCP:'Poder total',activeAlliances:'Alianças ativas — Atualização semanal',allianceAwaiting:'Os dados semanais das alianças aguardam atualização.',allianceName:'Nome da aliança',sharedAssets:'Recursos compartilhados',currentAllocation:'Alocação operacional atual',currentCapital:'Atual detentor da Capital',currentRotation:'Atual detentor da rotação',nextCapital:'Próximo detentor da Capital',nextRotation:'Próximo detentor programado',armoryRegistration:'Registro de Armories',registered:'registradas',armory:'Armory',awaitingRegistration:'Aguardando registro',announcements:'Anúncios do servidor',notices:'Avisos para todo o servidor',noAnnouncementTitle:'Nenhum anúncio publicado',noAnnouncementBody:'Os avisos do servidor aparecerão aqui.',migration:'Migração e Recrutamento',planningStatus:'Estado atual do planejamento',currentWindow:'Janela atual',availableSeats:'Vagas disponíveis',recruitmentPriority:'Prioridade de recrutamento',allianceNeeds:'Necessidades das alianças',awaitingAllocation:'Aguardando alocação',awaitingRecruitment:'Aguardando plano de recrutamento',awaitingAllianceNeeds:'Aguardando necessidades de colocação',quickAccess:'Acesso rápido',gameWiki:'Wiki do jogo',charter:'Carta do servidor',codex:'Códice operacional',contribute:'Contribuir / Sugerir',info:'Info',important:'Importante',actionRequired:'Ação necessária',awaitingUpdate:'Aguardando atualização'},
+    ko:{eyebrow:'Server 504 · 지식 · 거버넌스 · 운영',title:'서버 운영 대시보드',lastUpdated:'마지막 업데이트',season:'시즌',theme:'테마',councilStatus:'서버 평의회 상태',pending:'대기 중',open:'진행 중',closed:'종료',upcoming:'예정',available:'사용 가능',featuredEvents:'주요 이벤트',featuredNote:'기간 한정 및 시즌 / 서버 간 이벤트만 표시합니다.',liveNow:'진행 중',comingUp:'예정 이벤트',noFeaturedTitle:'등록된 주요 이벤트 없음',noFeaturedBody:'다음 기간 한정 또는 시즌 이벤트 확정을 기다리는 중입니다.',unnamedEvent:'이름 없는 이벤트',eventDetailsPending:'확정 후 이벤트 세부 정보가 게시됩니다.',rewardsPending:'보상 정보 대기 중',limitedEvent:'기간 한정 이벤트',upcomingEvent:'예정 이벤트',startsIn:'시작까지',duration:'기간',mainRewards:'주요 보상',keTitle:'토요일 KE — 연맹 침공 경계',keExplainer:'각 연맹은 매주 Alliance Duel 상대를 배정받습니다. 토요일 — 일반적으로 KE(Kill Event)라고 부르는 날 — 상대 서버 플레이어가 Server 504에 들어와 어느 연맹의 플레이어든 자유롭게 공격할 수 있습니다. 이 표는 504 각 연맹의 상대 연맹, 서버, 총 전투력을 공개하여 서버 전체가 대비할 수 있도록 합니다.',keAwaiting:'토요일 KE 상대 정보는 주간 업데이트를 기다리는 중입니다.',alliance504:'504 연맹',opponentAlliance:'상대 연맹',opponentServer:'상대 서버',totalCP:'총 전투력',activeAlliances:'활성 연맹 — 주간 업데이트',allianceAwaiting:'주간 연맹 데이터 업데이트를 기다리는 중입니다.',allianceName:'연맹 이름',sharedAssets:'공유 자산',currentAllocation:'현재 운영 배정',currentCapital:'현재 수도 담당 연맹',currentRotation:'현재 로테이션 담당',nextCapital:'다음 수도 담당 연맹',nextRotation:'다음 예정 담당',armoryRegistration:'Armory 등록',registered:'등록',armory:'Armory',awaitingRegistration:'등록 대기 중',announcements:'서버 공지',notices:'서버 전체 공지',noAnnouncementTitle:'게시된 공지 없음',noAnnouncementBody:'서버 전체 공지가 여기에 표시됩니다.',migration:'이민 및 모집 상태',planningStatus:'현재 계획 상태',currentWindow:'현재 이민 기간',availableSeats:'사용 가능한 좌석',recruitmentPriority:'모집 우선순위',allianceNeeds:'연맹별 필요 인원',awaitingAllocation:'배정 대기',awaitingRecruitment:'모집 계획 대기',awaitingAllianceNeeds:'연맹 배치 수요 대기',quickAccess:'빠른 이동',gameWiki:'게임 위키',charter:'서버 헌장',codex:'운영 코덱스',contribute:'기여 / 제안',info:'정보',important:'중요',actionRequired:'조치 필요',awaitingUpdate:'업데이트 대기'},
+    vi:{eyebrow:'Server 504 · Tri thức · Quản trị · Vận hành',title:'Bảng điều hành Server 504',lastUpdated:'Cập nhật lần cuối',season:'Mùa',theme:'Chủ đề',councilStatus:'Trạng thái Hội đồng Server',pending:'Đang chờ',open:'Đang mở',closed:'Đã đóng',upcoming:'Sắp tới',available:'Còn trống',featuredEvents:'Sự kiện nổi bật',featuredNote:'Chỉ hiển thị sự kiện giới hạn thời gian và sự kiện seasonal / cross-server.',liveNow:'Đang diễn ra',comingUp:'Sắp diễn ra',noFeaturedTitle:'Chưa có sự kiện nổi bật được công bố',noFeaturedBody:'Đang chờ sự kiện giới hạn thời gian hoặc seasonal tiếp theo được xác nhận.',unnamedEvent:'Sự kiện chưa đặt tên',eventDetailsPending:'Chi tiết sự kiện sẽ được công bố sau khi xác nhận.',rewardsPending:'Chưa có thông tin phần thưởng',limitedEvent:'Sự kiện giới hạn',upcomingEvent:'Sự kiện sắp tới',startsIn:'Bắt đầu sau',duration:'Thời gian',mainRewards:'Phần thưởng chính',keTitle:'KE Thứ Bảy — Theo dõi Alliance Invasion',keExplainer:'Mỗi liên minh có một đối thủ Alliance Duel hằng tuần. Vào Thứ Bảy — thường được gọi là KE (Kill Event) — người chơi từ phía đối thủ có thể sang Server 504 và tự do tấn công người chơi của bất kỳ liên minh nào. Bảng này cho biết đối thủ của từng liên minh 504, server của họ và Tổng CP để toàn server chủ động chuẩn bị.',keAwaiting:'Thông tin đối thủ KE Thứ Bảy đang chờ cập nhật hằng tuần.',alliance504:'Liên minh 504',opponentAlliance:'Liên minh đối thủ',opponentServer:'Server đối thủ',totalCP:'Tổng CP',activeAlliances:'Danh sách liên minh hoạt động — Cập nhật hằng tuần',allianceAwaiting:'Dữ liệu liên minh hằng tuần đang chờ cập nhật.',allianceName:'Tên liên minh',sharedAssets:'Tài sản dùng chung',currentAllocation:'Phân bổ vận hành hiện tại',currentCapital:'Liên minh giữ Capital hiện tại',currentRotation:'Đơn vị đang trong lượt hiện tại',nextCapital:'Liên minh giữ Capital tiếp theo',nextRotation:'Đơn vị được lên lịch tiếp theo',armoryRegistration:'Đăng ký Armory',registered:'đã đăng ký',armory:'Armory',awaitingRegistration:'Đang chờ đăng ký',announcements:'Thông báo Server',notices:'Thông báo áp dụng toàn server',noAnnouncementTitle:'Chưa có thông báo',noAnnouncementBody:'Các thông báo toàn server sẽ xuất hiện tại đây.',migration:'Trạng thái Migration & Recruitment',planningStatus:'Trạng thái kế hoạch hiện tại',currentWindow:'Kỳ Migration hiện tại',availableSeats:'Số ghế còn lại',recruitmentPriority:'Ưu tiên tuyển dụng',allianceNeeds:'Nhu cầu của liên minh',awaitingAllocation:'Đang chờ phân bổ',awaitingRecruitment:'Đang chờ kế hoạch tuyển dụng',awaitingAllianceNeeds:'Đang chờ nhu cầu phân bổ thành viên',quickAccess:'Truy cập nhanh',gameWiki:'Game Wiki',charter:'Server Charter',codex:'Operational Codex',contribute:'Đóng góp / Đề xuất',info:'Thông tin',important:'Quan trọng',actionRequired:'Cần hành động',awaitingUpdate:'Đang chờ cập nhật'}
+  };
   let dashboardState = fallbackState;
-
-  const escapeHtml = value => String(value ?? '')
-    .replaceAll('&', '&amp;')
-    .replaceAll('<', '&lt;')
-    .replaceAll('>', '&gt;')
-    .replaceAll('"', '&quot;')
-    .replaceAll("'", '&#039;');
-
-  const displayDate = value => {
-    if (!value) return 'Awaiting update';
-    const date = new Date(value);
-    if (Number.isNaN(date.getTime())) return escapeHtml(value);
-    return new Intl.DateTimeFormat('en', {
-      month: 'short', day: 'numeric', year: 'numeric',
-      hour: value.includes('T') ? '2-digit' : undefined,
-      minute: value.includes('T') ? '2-digit' : undefined,
-      hour12: false
-    }).format(date);
-  };
-
-  const eventCard = (event, stateClass) => {
-    const rewards = Array.isArray(event.rewards) ? event.rewards.join(' · ') : (event.rewards || 'Rewards pending');
-    return `<article class="event-card ${stateClass}">
-      <span class="event-type">${escapeHtml(event.type || (stateClass === 'live' ? 'Limited Event' : 'Upcoming Event'))}</span>
-      <h3>${escapeHtml(event.name || 'Unnamed Event')}</h3>
-      <p>${escapeHtml(event.description || 'Event details will be published when confirmed.')}</p>
-      <div class="event-meta">
-        ${event.startsIn ? `<div><span>Starts in:</span> ${escapeHtml(event.startsIn)}</div>` : ''}
-        <div><span>Duration:</span> ${escapeHtml(event.duration || 'Pending')}</div>
-      </div>
-      <div class="event-rewards"><strong>Main rewards:</strong> ${escapeHtml(rewards)}</div>
-    </article>`;
-  };
-
-  const eventColumn = (events, stateClass) => {
-    if (!events?.length) {
-      return `<div class="empty-card"><div><strong>No featured event published</strong>Awaiting the next confirmed limited-time or seasonal event.</div></div>`;
-    }
-    return `<div class="event-card-grid">${events.slice(0, 4).map(event => eventCard(event, stateClass)).join('')}</div>`;
-  };
-
-  const allianceRows = state => {
-    const rows = state.activeAlliances?.alliances || [];
-    if (!rows.length) return `<tr class="muted-row"><td colspan="3">Weekly alliance data is awaiting update.</td></tr>`;
-    return rows.map((alliance, index) => `<tr>
-      <td class="rank-col">${index + 1}</td>
-      <td><strong>${escapeHtml(alliance.name)}</strong></td>
-      <td class="cp">${escapeHtml(alliance.totalCP || '—')}</td>
-    </tr>`).join('');
-  };
-
-  const keRows = state => {
-    const rows = state.keWatch?.alliances || [];
-    if (!rows.length) return `<tr class="muted-row"><td colspan="4">Saturday KE opponent data is awaiting the weekly update.</td></tr>`;
-    return rows.map(row => `<tr>
-      <td><strong>${escapeHtml(row.alliance)}</strong></td>
-      <td>${escapeHtml(row.opponentAlliance || '—')}</td>
-      <td>${escapeHtml(row.opponentServer || '—')}</td>
-      <td>${escapeHtml(row.totalCP || '—')}</td>
-    </tr>`).join('');
-  };
-
-  const armoryItems = state => {
-    const armories = state.sharedAssets?.armories || [];
-    return armories.map(item => {
-      const alliance = item.alliance;
-      const available = alliance === 'Available';
-      const pending = !alliance;
-      return `<div class="armory-item ${available ? 'available' : ''} ${pending ? 'pending' : ''}">
-        <span>Armory ${escapeHtml(item.number)}</span>
-        <strong>${escapeHtml(alliance || 'Awaiting registration')}</strong>
-      </div>`;
-    }).join('');
-  };
-
-  const announcements = state => {
-    const list = state.announcements || [];
-    if (!list.length) return `<div class="empty-card"><div><strong>No announcement published</strong>Server-wide notices will appear here.</div></div>`;
-    return `<div class="announcement-list">${list.slice(0, 5).map(item => {
-      const priority = String(item.priority || 'info').toLowerCase();
-      const tagClass = priority === 'action required' || priority === 'action' ? 'action' : priority === 'important' ? 'important' : '';
-      return `<article class="announcement-item">
-        <span class="priority-tag ${tagClass}">${escapeHtml(item.priority || 'Info')}</span>
-        <div class="announcement-copy"><strong>${escapeHtml(item.title)}</strong><p>${escapeHtml(item.body || '')}</p></div>
-        <time class="announcement-date">${displayDate(item.publishedAt)}</time>
-      </article>`;
-    }).join('')}</div>`;
-  };
-
-  const migrationValue = (value, empty = 'Awaiting Council update') => value ? escapeHtml(value) : `<span class="migration-empty">${empty}</span>`;
-
-  window.homePage = function homePageDashboard() {
-    const state = dashboardState || fallbackState;
-    const server = state.server || fallbackState.server;
-    const capital = state.sharedAssets?.capital || fallbackState.sharedAssets.capital;
-    const registeredArmories = (state.sharedAssets?.armories || []).filter(item => item.alliance && item.alliance !== 'Available').length;
-    const migration = state.migration || fallbackState.migration;
-
-    return `<section class="page ops-dashboard">
-      <div class="sealed-atmosphere dashboard-season-bg" aria-hidden="true">
-        <div class="seal-sigil"><i></i><b></b></div>
-        <div class="miasma miasma-one"></div><div class="miasma miasma-two"></div><div class="ember-field"></div>
-      </div>
-
-      <header class="dashboard-head">
-        <div>
-          <div class="eyebrow">Server 504 · Knowledge · Governance · Operations</div>
-          <h1>Server Operations Dashboard</h1>
-        </div>
-        <div class="dashboard-updated"><span>Last updated</span><strong>${displayDate(state.lastUpdated)}</strong></div>
-      </header>
-
-      <section class="status-strip" aria-label="Server status">
-        <div class="status-cell"><span class="status-icon">S4</span><div class="status-copy"><small>Season</small><strong>${escapeHtml(server.season)}</strong></div></div>
-        <div class="status-cell"><span class="status-icon">◇</span><div class="status-copy"><small>Theme</small><strong>${escapeHtml(server.theme)}</strong></div></div>
-        <div class="status-cell"><span class="status-icon">◎</span><div class="status-copy"><small>Server Council Status</small><strong class="${String(server.councilStatus).toLowerCase() === 'pending' ? 'pending' : ''}">${escapeHtml(server.councilStatus)}</strong></div></div>
-      </section>
-
-      <section class="dashboard-panel featured-panel">
-        <div class="panel-head"><h2>Featured Events</h2><span class="featured-note">Only limited-time and seasonal / cross-server events are shown.</span></div>
-        <div class="featured-columns">
-          <div class="featured-column"><div class="featured-column-title live">Live Now</div>${eventColumn(state.featuredEvents?.live, 'live')}</div>
-          <div class="featured-column"><div class="featured-column-title upcoming">Coming Up</div>${eventColumn(state.featuredEvents?.upcoming, 'upcoming')}</div>
-        </div>
-      </section>
-
-      <div class="dashboard-two-col">
-        <section class="dashboard-panel ke-panel">
-          <div class="panel-head"><h2>⚠ Saturday KE — Alliance Invasion Watch</h2><small>${displayDate(state.keWatch?.updatedAt)}</small></div>
-          <p class="ke-explainer">Each alliance faces a weekly Alliance Duel opponent. On <strong>Saturday — commonly known as KE (Kill Event)</strong> — opposing players may enter Server 504 and freely attack players from any alliance. This board shows each 504 alliance's opponent, their server and Total CP so the whole server can prepare.</p>
-          <div class="table-wrap"><table class="dashboard-table"><thead><tr><th>504 Alliance</th><th>Opponent Alliance</th><th>Opponent Server</th><th>Total CP</th></tr></thead><tbody>${keRows(state)}</tbody></table></div>
-        </section>
-
-        <section class="dashboard-panel alliance-table-panel">
-          <div class="panel-head"><h2>Active Alliances — Weekly Update</h2><small>${displayDate(state.activeAlliances?.updatedAt)}</small></div>
-          <div class="table-wrap"><table class="dashboard-table"><thead><tr><th class="rank-col">#</th><th>Alliance Name</th><th>Total CP</th></tr></thead><tbody>${allianceRows(state)}</tbody></table></div>
-        </section>
-      </div>
-
-      <section class="dashboard-panel shared-panel">
-        <div class="panel-head"><h2>Shared Assets</h2><small>Current operational allocation</small></div>
-        <div class="shared-body">
-          <div class="capital-rotation">
-            <div class="capital-node"><small>Current Capital Owner</small><strong>${escapeHtml(capital.current || 'Pending')}</strong><span>Current rotation holder</span></div>
-            <div class="capital-arrow">›</div>
-            <div class="capital-node next"><small>Next Capital Owner</small><strong>${escapeHtml(capital.next || 'Pending')}</strong><span>Next scheduled holder</span></div>
-          </div>
-          <div class="armory-registration">
-            <div class="armory-title-row"><h3>Armory Registration</h3><span class="armory-count">${registeredArmories} / 8 registered</span></div>
-            <div class="armory-grid">${armoryItems(state)}</div>
-          </div>
-        </div>
-      </section>
-
-      <div class="dashboard-bottom-grid">
-        <section class="dashboard-panel">
-          <div class="panel-head"><h2>Server Announcements</h2><small>Server-wide notices</small></div>
-          ${announcements(state)}
-        </section>
-        <section class="dashboard-panel">
-          <div class="panel-head"><h2>Migration & Recruitment Status</h2><small>Current planning status</small></div>
-          <div class="migration-body">
-            <div class="migration-row"><small>Current Window</small><strong class="${String(migration.windowStatus).toLowerCase() === 'pending' ? 'pending' : ''}">${migrationValue(migration.windowStatus)}</strong></div>
-            <div class="migration-row"><small>Available Seats</small><span>${migration.availableSeats == null ? '<span class="migration-empty">Awaiting allocation</span>' : escapeHtml(migration.availableSeats)}</span></div>
-            <div class="migration-row"><small>Recruitment Priority</small><span>${migration.priorities?.length ? migration.priorities.map(escapeHtml).join(' · ') : '<span class="migration-empty">Awaiting recruitment plan</span>'}</span></div>
-            <div class="migration-row"><small>Alliance Needs</small><span>${migration.allianceNeeds?.length ? migration.allianceNeeds.map(escapeHtml).join(' · ') : '<span class="migration-empty">Awaiting alliance placement needs</span>'}</span></div>
-          </div>
-        </section>
-      </div>
-
-      <nav class="quick-access" aria-label="Quick access">
-        <a href="#/wiki"><span>▣</span> Game Wiki</a>
-        <a href="#/charter"><span>▤</span> Server Charter</a>
-        <a href="#/codex"><span>▦</span> Operational Codex</a>
-        <button class="contribute-trigger" type="button"><span>✎</span> Contribute / Suggest</button>
-      </nav>
-    </section>`;
-  };
-
-  async function loadDashboardState() {
-    try {
-      const response = await fetch('./content/server-status.json', { cache: 'no-store' });
-      if (!response.ok) throw new Error(`HTTP ${response.status}`);
-      dashboardState = await response.json();
-    } catch (error) {
-      console.warn('Server 504 dashboard state unavailable; using fallback state.', error);
-      dashboardState = fallbackState;
-    }
-
-    const route = (location.hash.replace(/^#\//, '').split('?')[0] || 'home').split('/')[0];
-    if (route === 'home' && typeof render === 'function') render();
-  }
-
+  const locale=()=>{const v=window.Server504I18N?.locale?.()||localStorage.getItem('server504-locale')||'en';return copy[v]?v:'en'}; const tx=k=>copy[locale()]?.[k]??copy.en[k]??k; const dateLocales={en:'en-US',fr:'fr-FR',es:'es-ES',pt:'pt-PT',ko:'ko-KR',vi:'vi-VN'};
+  const escapeHtml=v=>String(v??'').replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'",'&#039;');
+  const statusValue=v=>{const n=String(v||'').trim().toLowerCase();const m={pending:'pending',open:'open',closed:'closed',upcoming:'upcoming',available:'available'};return m[n]?tx(m[n]):escapeHtml(v||tx('pending'))};
+  const displayDate=v=>{if(!v)return tx('awaitingUpdate');const d=new Date(v);if(Number.isNaN(d.getTime()))return escapeHtml(v);return new Intl.DateTimeFormat(dateLocales[locale()]||'en-US',{month:'short',day:'numeric',year:'numeric',hour:v.includes('T')?'2-digit':undefined,minute:v.includes('T')?'2-digit':undefined,hour12:false}).format(d)};
+  const eventCard=(e,s)=>{const r=Array.isArray(e.rewards)?e.rewards.join(' · '):(e.rewards||tx('rewardsPending'));return `<article class="event-card ${s}"><span class="event-type">${escapeHtml(e.type||(s==='live'?tx('limitedEvent'):tx('upcomingEvent')))}</span><h3>${escapeHtml(e.name||tx('unnamedEvent'))}</h3><p>${escapeHtml(e.description||tx('eventDetailsPending'))}</p><div class="event-meta">${e.startsIn?`<div><span>${tx('startsIn')}:</span> ${escapeHtml(e.startsIn)}</div>`:''}<div><span>${tx('duration')}:</span> ${escapeHtml(e.duration||tx('pending'))}</div></div><div class="event-rewards"><strong>${tx('mainRewards')}:</strong> ${escapeHtml(r)}</div></article>`};
+  const eventColumn=(e,s)=>!e?.length?`<div class="empty-card"><div><strong>${tx('noFeaturedTitle')}</strong>${tx('noFeaturedBody')}</div></div>`:`<div class="event-card-grid">${e.slice(0,4).map(x=>eventCard(x,s)).join('')}</div>`;
+  const allianceRows=s=>{const rows=s.activeAlliances?.alliances||[];if(!rows.length)return `<tr class="muted-row"><td colspan="3">${tx('allianceAwaiting')}</td></tr>`;return rows.map((a,i)=>`<tr><td class="rank-col">${i+1}</td><td><strong>${escapeHtml(a.name)}</strong></td><td class="cp">${escapeHtml(a.totalCP||'—')}</td></tr>`).join('')};
+  const keRows=s=>{const rows=s.keWatch?.alliances||[];if(!rows.length)return `<tr class="muted-row"><td colspan="4">${tx('keAwaiting')}</td></tr>`;return rows.map(r=>`<tr><td><strong>${escapeHtml(r.alliance)}</strong></td><td>${escapeHtml(r.opponentAlliance||'—')}</td><td>${escapeHtml(r.opponentServer||'—')}</td><td>${escapeHtml(r.totalCP||'—')}</td></tr>`).join('')};
+  const armoryItems=s=>(s.sharedAssets?.armories||[]).map(i=>{const a=i.alliance,av=String(a||'').toLowerCase()==='available',p=!a;return `<div class="armory-item ${av?'available':''} ${p?'pending':''}"><span>${tx('armory')} ${escapeHtml(i.number)}</span><strong>${av?tx('available'):escapeHtml(a||tx('awaitingRegistration'))}</strong></div>`}).join('');
+  const announcements=s=>{const l=s.announcements||[];if(!l.length)return `<div class="empty-card"><div><strong>${tx('noAnnouncementTitle')}</strong>${tx('noAnnouncementBody')}</div></div>`;return `<div class="announcement-list">${l.slice(0,5).map(i=>{const p=String(i.priority||'info').toLowerCase(),c=p==='action required'||p==='action'?'action':p==='important'?'important':'',label=c==='action'?tx('actionRequired'):c==='important'?tx('important'):tx('info');return `<article class="announcement-item"><span class="priority-tag ${c}">${label}</span><div class="announcement-copy"><strong>${escapeHtml(i.title)}</strong><p>${escapeHtml(i.body||'')}</p></div><time class="announcement-date">${displayDate(i.publishedAt)}</time></article>`}).join('')}</div>`};
+  window.homePage=function(){const s=dashboardState||fallbackState,server=s.server||fallbackState.server,capital=s.sharedAssets?.capital||fallbackState.sharedAssets.capital,n=(s.sharedAssets?.armories||[]).filter(i=>i.alliance&&String(i.alliance).toLowerCase()!=='available').length,m=s.migration||fallbackState.migration;return `<section class="page ops-dashboard"><div class="sealed-atmosphere dashboard-season-bg" aria-hidden="true"><div class="seal-sigil"><i></i><b></b></div><div class="miasma miasma-one"></div><div class="miasma miasma-two"></div><div class="ember-field"></div></div><header class="dashboard-head"><div><div class="eyebrow">${tx('eyebrow')}</div><h1>${tx('title')}</h1></div><div class="dashboard-updated"><span>${tx('lastUpdated')}</span><strong>${displayDate(s.lastUpdated)}</strong></div></header><section class="status-strip"><div class="status-cell"><span class="status-icon">S4</span><div class="status-copy"><small>${tx('season')}</small><strong>${escapeHtml(server.season)}</strong></div></div><div class="status-cell"><span class="status-icon">◇</span><div class="status-copy"><small>${tx('theme')}</small><strong>${escapeHtml(server.theme)}</strong></div></div><div class="status-cell"><span class="status-icon">◎</span><div class="status-copy"><small>${tx('councilStatus')}</small><strong class="${String(server.councilStatus).toLowerCase()==='pending'?'pending':''}">${statusValue(server.councilStatus)}</strong></div></div></section><section class="dashboard-panel featured-panel"><div class="panel-head"><h2>${tx('featuredEvents')}</h2><span class="featured-note">${tx('featuredNote')}</span></div><div class="featured-columns"><div class="featured-column"><div class="featured-column-title live">${tx('liveNow')}</div>${eventColumn(s.featuredEvents?.live,'live')}</div><div class="featured-column"><div class="featured-column-title upcoming">${tx('comingUp')}</div>${eventColumn(s.featuredEvents?.upcoming,'upcoming')}</div></div></section><div class="dashboard-two-col"><section class="dashboard-panel ke-panel"><div class="panel-head"><h2>⚠ ${tx('keTitle')}</h2><small>${displayDate(s.keWatch?.updatedAt)}</small></div><p class="ke-explainer">${tx('keExplainer')}</p><div class="table-wrap"><table class="dashboard-table"><thead><tr><th>${tx('alliance504')}</th><th>${tx('opponentAlliance')}</th><th>${tx('opponentServer')}</th><th>${tx('totalCP')}</th></tr></thead><tbody>${keRows(s)}</tbody></table></div></section><section class="dashboard-panel alliance-table-panel"><div class="panel-head"><h2>${tx('activeAlliances')}</h2><small>${displayDate(s.activeAlliances?.updatedAt)}</small></div><div class="table-wrap"><table class="dashboard-table"><thead><tr><th class="rank-col">#</th><th>${tx('allianceName')}</th><th>${tx('totalCP')}</th></tr></thead><tbody>${allianceRows(s)}</tbody></table></div></section></div><section class="dashboard-panel shared-panel"><div class="panel-head"><h2>${tx('sharedAssets')}</h2><small>${tx('currentAllocation')}</small></div><div class="shared-body"><div class="capital-rotation"><div class="capital-node"><small>${tx('currentCapital')}</small><strong>${escapeHtml(capital.current||tx('pending'))}</strong><span>${tx('currentRotation')}</span></div><div class="capital-arrow">›</div><div class="capital-node next"><small>${tx('nextCapital')}</small><strong>${escapeHtml(capital.next||tx('pending'))}</strong><span>${tx('nextRotation')}</span></div></div><div class="armory-registration"><div class="armory-title-row"><h3>${tx('armoryRegistration')}</h3><span class="armory-count">${n} / 8 ${tx('registered')}</span></div><div class="armory-grid">${armoryItems(s)}</div></div></div></section><div class="dashboard-bottom-grid"><section class="dashboard-panel"><div class="panel-head"><h2>${tx('announcements')}</h2><small>${tx('notices')}</small></div>${announcements(s)}</section><section class="dashboard-panel"><div class="panel-head"><h2>${tx('migration')}</h2><small>${tx('planningStatus')}</small></div><div class="migration-body"><div class="migration-row"><small>${tx('currentWindow')}</small><strong class="${String(m.windowStatus).toLowerCase()==='pending'?'pending':''}">${statusValue(m.windowStatus)}</strong></div><div class="migration-row"><small>${tx('availableSeats')}</small><span>${m.availableSeats==null?`<span class="migration-empty">${tx('awaitingAllocation')}</span>`:escapeHtml(m.availableSeats)}</span></div><div class="migration-row"><small>${tx('recruitmentPriority')}</small><span>${m.priorities?.length?m.priorities.map(escapeHtml).join(' · '):`<span class="migration-empty">${tx('awaitingRecruitment')}</span>`}</span></div><div class="migration-row"><small>${tx('allianceNeeds')}</small><span>${m.allianceNeeds?.length?m.allianceNeeds.map(escapeHtml).join(' · '):`<span class="migration-empty">${tx('awaitingAllianceNeeds')}</span>`}</span></div></div></section></div><nav class="quick-access" aria-label="${tx('quickAccess')}"><a href="#/wiki"><span>▣</span> ${tx('gameWiki')}</a><a href="#/charter"><span>▤</span> ${tx('charter')}</a><a href="#/codex"><span>▦</span> ${tx('codex')}</a><button class="contribute-trigger" type="button"><span>✎</span> ${tx('contribute')}</button></nav></section>`};
+  async function loadDashboardState(){try{const r=await fetch('./content/server-status.json',{cache:'no-store'});if(!r.ok)throw new Error(`HTTP ${r.status}`);dashboardState=await r.json()}catch(e){console.warn('Server 504 dashboard state unavailable; using fallback state.',e);dashboardState=fallbackState}const route=(location.hash.replace(/^#\//,'').split('?')[0]||'home').split('/')[0];if(route==='home'&&typeof render==='function')render()}
   loadDashboardState();
 })();
