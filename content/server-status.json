@@ -1,0 +1,50 @@
+{
+  "lastUpdated": "2026-08-14T04:57:00+07:00",
+  "server": {
+    "season": "4",
+    "theme": "Sealed Island",
+    "councilStatus": "Pending"
+  },
+  "featuredEvents": {
+    "live": [],
+    "upcoming": []
+  },
+  "activeAlliances": {
+    "updatedAt": null,
+    "alliances": []
+  },
+  "keWatch": {
+    "updatedAt": null,
+    "alliances": []
+  },
+  "sharedAssets": {
+    "capital": {
+      "current": null,
+      "next": null
+    },
+    "armories": [
+      { "number": 1, "alliance": null },
+      { "number": 2, "alliance": null },
+      { "number": 3, "alliance": null },
+      { "number": 4, "alliance": null },
+      { "number": 5, "alliance": null },
+      { "number": 6, "alliance": null },
+      { "number": 7, "alliance": null },
+      { "number": 8, "alliance": null }
+    ]
+  },
+  "announcements": [
+    {
+      "priority": "info",
+      "title": "Server Operations Dashboard",
+      "body": "The new Server 504 operational dashboard is now live. Dynamic server data will be published here as it is confirmed.",
+      "publishedAt": "2026-08-14"
+    }
+  ],
+  "migration": {
+    "windowStatus": "Pending",
+    "availableSeats": null,
+    "priorities": [],
+    "allianceNeeds": []
+  }
+}
