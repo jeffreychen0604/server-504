@@ -1,0 +1,548 @@
+{
+  "schemaVersion": 1,
+  "source": "AllClash",
+  "game": "Dark War: Survival",
+  "crawledAt": "2026-08-15T03:41:00+07:00",
+  "purpose": "Staging intake only. Do not publish source claims directly without Server 504 filtering and cross-checking.",
+  "discovery": {
+    "categoryUrl": "https://www.allclash.com/category/dark-war-survival/",
+    "categoryListedPosts": 38,
+    "tierListUrl": "https://www.allclash.com/the-best-heroes-in-dark-war-survival-tier-list/",
+    "discoveredPages": 40,
+    "buildGuides": 39,
+    "tierLists": 1,
+    "categoryOmissionsFound": [
+      {
+        "hero": "Noah",
+        "reason": "Linked from the Dark War Survival tier list but the page footer/category is misclassified as Darkest AFK."
+      },
+      {
+        "hero": "Catherine & Rex",
+        "reason": "Linked from the Dark War Survival tier list but omitted from the Dark War Survival category archive."
+      }
+    ]
+  },
+  "accessPolicy": {
+    "publicSectionsOnly": true,
+    "proBypassAttempted": false,
+    "proLockedContentAccessed": false,
+    "proHandling": "Record locked section presence and field names only. Do not bypass login, Patreon or AllClash PRO access controls.",
+    "userProvidedProMaterial": "May be processed if the user lawfully provides screenshots, exports or text from their own authorized access."
+  },
+  "copyrightPolicy": {
+    "storeFullArticleText": false,
+    "publishFullArticleText": false,
+    "method": "Extract structured facts/recommendations, paraphrase guidance, retain source URL and conflict notes."
+  },
+  "server504Filter": {
+    "currentSeason": 4,
+    "tierListSourceSeason": 6,
+    "tierListTreatment": "context-only; never publish as a Server 504 Season 4 ranking without re-evaluation",
+    "sourcePriority": [
+      "official/current in-game evidence",
+      "Server 504 evidence",
+      "cross-checked community sources",
+      "AllClash single-source advice"
+    ]
+  },
+  "knownConflicts": [
+    {
+      "subject": "Darian Exclusive Equipment",
+      "allClashClaim": "No Exclusive Weapon available yet.",
+      "server504Status": "Conflict: current Wiki has official patch-history evidence that Darian participates in Exclusive Equipment.",
+      "action": "Treat AllClash claim as stale and do not publish it as current."
+    },
+    {
+      "subject": "Lan faction",
+      "allClashClaim": "Fighter",
+      "server504Status": "Additional community evidence only; Server 504 Wiki currently keeps canonical faction verification pending.",
+      "action": "Do not resolve canonical faction from AllClash alone."
+    },
+    {
+      "subject": "Tristan tier-list description",
+      "allClashClaim": "Fighter/Training entry contains wording about a global Shooter bonus.",
+      "server504Status": "Likely source-text inconsistency.",
+      "action": "Flag for cross-check before reuse."
+    }
+  ],
+  "pages": [
+    {
+      "kind": "tier-list",
+      "title": "The Best Heroes in Dark War Survival – Tier List (Season 6)",
+      "url": "https://www.allclash.com/the-best-heroes-in-dark-war-survival-tier-list/",
+      "sourceSeason": 6,
+      "access": "public",
+      "publishStatus": "staging-only"
+    },
+    {
+      "kind": "hero-build",
+      "hero": "Sebastian",
+      "url": "https://www.allclash.com/best-sebastian-build-in-dark-war-survival-skill-upgrade-order-gear-priority/",
+      "discoveredFrom": "category",
+      "access": "mixed-public-pro",
+      "publicSectionsObserved": ["hero meta", "minimum build", "optimum build", "exclusive weapon commentary"],
+      "proLockedSectionsObserved": ["skill upgrade order detail", "sweetspot build"],
+      "extractionStatus": "indexed",
+      "publishStatus": "staging-only"
+    },
+    {
+      "kind": "hero-build",
+      "hero": "Ella",
+      "url": "https://www.allclash.com/best-ella-build-in-dark-war-survival-skill-upgrade-order-gear-priority/",
+      "discoveredFrom": "category",
+      "access": "mixed-public-pro",
+      "publicSectionsObserved": ["hero meta", "minimum build", "optimum build", "exclusive weapon commentary"],
+      "proLockedSectionsObserved": ["skill upgrade order detail", "sweetspot build"],
+      "extractionStatus": "indexed",
+      "publishStatus": "staging-only"
+    },
+    {
+      "kind": "hero-build",
+      "hero": "Angela",
+      "url": "https://www.allclash.com/best-angela-build-in-dark-war-survival-skill-upgrade-order-gear-priority-with-exclusive-weapon/",
+      "discoveredFrom": "category",
+      "access": "mixed-public-pro",
+      "publicSectionsObserved": ["hero meta", "minimum build", "optimum build", "exclusive weapon commentary"],
+      "proLockedSectionsObserved": ["skill upgrade order detail", "sweetspot build"],
+      "extractionStatus": "indexed",
+      "publishStatus": "staging-only"
+    },
+    {
+      "kind": "hero-build",
+      "hero": "Ryan",
+      "url": "https://www.allclash.com/best-ryan-build-in-dark-war-survival-skill-upgrade-order-gear-priority-with-exclusive-weapon/",
+      "discoveredFrom": "category",
+      "access": "mixed-public-pro",
+      "publicSectionsObserved": ["hero meta", "minimum build", "optimum build", "exclusive weapon commentary"],
+      "proLockedSectionsObserved": ["skill upgrade order detail", "sweetspot build"],
+      "extractionStatus": "indexed",
+      "publishStatus": "staging-only"
+    },
+    {
+      "kind": "hero-build",
+      "hero": "Shadow",
+      "url": "https://www.allclash.com/best-shadow-build-in-dark-war-survival-skill-upgrade-order-gear-priority-with-exclusive-weapon/",
+      "discoveredFrom": "category",
+      "access": "mixed-public-pro",
+      "publicSectionsObserved": ["hero meta", "minimum build", "optimum build", "exclusive weapon commentary"],
+      "proLockedSectionsObserved": ["skill upgrade order detail", "sweetspot build"],
+      "extractionStatus": "indexed",
+      "publishStatus": "staging-only"
+    },
+    {
+      "kind": "hero-build",
+      "hero": "Margaret",
+      "url": "https://www.allclash.com/best-margaret-build-in-dark-war-survival-skill-upgrade-order-gear-priority/",
+      "discoveredFrom": "category",
+      "access": "mixed-public-pro",
+      "publicSectionsObserved": ["hero meta", "minimum build", "optimum build", "exclusive weapon commentary"],
+      "proLockedSectionsObserved": ["skill upgrade order detail", "sweetspot build"],
+      "extractionStatus": "indexed",
+      "publishStatus": "staging-only"
+    },
+    {
+      "kind": "hero-build",
+      "hero": "Francis",
+      "url": "https://www.allclash.com/best-francis-build-in-dark-war-survival-skill-upgrade-order-gear-priority/",
+      "discoveredFrom": "category",
+      "access": "mixed-public-pro",
+      "publicSectionsObserved": ["hero meta", "minimum build", "optimum build", "exclusive weapon commentary"],
+      "proLockedSectionsObserved": ["skill upgrade order detail", "sweetspot build"],
+      "extractionStatus": "indexed",
+      "publishStatus": "staging-only"
+    },
+    {
+      "kind": "hero-build",
+      "hero": "Lucas",
+      "url": "https://www.allclash.com/best-lucas-build-in-dark-war-survival-skill-upgrade-order-gear-priority/",
+      "discoveredFrom": "category",
+      "access": "mixed-public-pro",
+      "publicSectionsObserved": ["hero meta", "minimum build", "optimum build", "exclusive weapon commentary"],
+      "proLockedSectionsObserved": ["skill upgrade order detail", "sweetspot build"],
+      "extractionStatus": "indexed",
+      "publishStatus": "staging-only"
+    },
+    {
+      "kind": "hero-build",
+      "hero": "Rosa",
+      "url": "https://www.allclash.com/best-rosa-build-in-dark-war-survival-skill-upgrade-order-gear-priority/",
+      "discoveredFrom": "category",
+      "access": "mixed-public-pro",
+      "publicSectionsObserved": ["hero meta", "minimum build", "optimum build", "exclusive weapon commentary"],
+      "proLockedSectionsObserved": ["skill upgrade order detail", "sweetspot build"],
+      "extractionStatus": "indexed",
+      "publishStatus": "staging-only"
+    },
+    {
+      "kind": "hero-build",
+      "hero": "Cyrus",
+      "url": "https://www.allclash.com/best-cyrus-build-in-dark-war-survival-skill-upgrade-order-gear-priority/",
+      "discoveredFrom": "category",
+      "access": "mixed-public-pro",
+      "publicSectionsObserved": ["hero meta", "minimum build", "optimum build", "exclusive weapon commentary"],
+      "proLockedSectionsObserved": ["skill upgrade order detail", "sweetspot build"],
+      "extractionStatus": "indexed",
+      "publishStatus": "staging-only"
+    },
+    {
+      "kind": "hero-build",
+      "hero": "Tristan",
+      "url": "https://www.allclash.com/best-tristan-build-in-dark-war-survival-skill-upgrade-order-gear-priority/",
+      "discoveredFrom": "category",
+      "access": "mixed-public-pro",
+      "publicSectionsObserved": ["hero meta", "minimum build", "optimum build", "exclusive weapon commentary"],
+      "proLockedSectionsObserved": ["skill upgrade order detail", "sweetspot build"],
+      "extractionStatus": "indexed",
+      "publishStatus": "staging-only"
+    },
+    {
+      "kind": "hero-build",
+      "hero": "Katrina",
+      "url": "https://www.allclash.com/best-katrina-build-in-dark-war-survival-skill-upgrade-order-gear-priority/",
+      "discoveredFrom": "category",
+      "access": "mixed-public-pro",
+      "publicSectionsObserved": ["hero meta", "minimum build", "optimum build", "exclusive weapon commentary"],
+      "proLockedSectionsObserved": ["skill upgrade order detail", "sweetspot build"],
+      "extractionStatus": "indexed",
+      "publishStatus": "staging-only"
+    },
+    {
+      "kind": "hero-build",
+      "hero": "Darian",
+      "url": "https://www.allclash.com/best-darian-build-in-dark-war-survival-skill-upgrade-order-gear-priority/",
+      "discoveredFrom": "category",
+      "access": "mixed-public-pro",
+      "publicSectionsObserved": ["hero meta", "minimum build", "optimum build", "exclusive weapon commentary"],
+      "proLockedSectionsObserved": ["skill upgrade order detail", "sweetspot build"],
+      "extractionStatus": "indexed",
+      "publishStatus": "staging-only"
+    },
+    {
+      "kind": "hero-build",
+      "hero": "Lan",
+      "url": "https://www.allclash.com/best-lan-build-in-dark-war-survival-skill-upgrade-order-gear-priority/",
+      "discoveredFrom": "category",
+      "access": "mixed-public-pro",
+      "publicSectionsObserved": ["hero meta", "minimum build", "optimum build", "exclusive weapon commentary"],
+      "proLockedSectionsObserved": ["skill upgrade order detail", "sweetspot build"],
+      "extractionStatus": "indexed",
+      "publishStatus": "staging-only"
+    },
+    {
+      "kind": "hero-build",
+      "hero": "Marcia",
+      "url": "https://www.allclash.com/best-marcia-build-in-dark-war-survival-skill-upgrade-order-gear-priority/",
+      "discoveredFrom": "category",
+      "access": "mixed-public-pro",
+      "publicSectionsObserved": ["hero meta", "minimum build", "optimum build", "exclusive weapon commentary"],
+      "proLockedSectionsObserved": ["skill upgrade order detail", "sweetspot build"],
+      "extractionStatus": "indexed",
+      "publishStatus": "staging-only"
+    },
+    {
+      "kind": "hero-build",
+      "hero": "Natasha",
+      "url": "https://www.allclash.com/best-natasha-build-in-dark-war-survival-skill-upgrade-order-gear-priority/",
+      "discoveredFrom": "category",
+      "access": "mixed-public-pro",
+      "publicSectionsObserved": ["hero meta", "minimum build", "optimum build", "exclusive weapon commentary"],
+      "proLockedSectionsObserved": ["skill upgrade order detail", "sweetspot build"],
+      "extractionStatus": "indexed",
+      "publishStatus": "staging-only"
+    },
+    {
+      "kind": "hero-build",
+      "hero": "Corleone",
+      "url": "https://www.allclash.com/best-corleone-build-in-dark-war-survival-skill-upgrade-order-gear-priority/",
+      "discoveredFrom": "category",
+      "access": "mixed-public-pro",
+      "publicSectionsObserved": ["hero meta", "minimum build", "optimum build", "exclusive weapon commentary"],
+      "proLockedSectionsObserved": ["skill upgrade order detail", "sweetspot build"],
+      "extractionStatus": "indexed",
+      "publishStatus": "staging-only"
+    },
+    {
+      "kind": "hero-build",
+      "hero": "Quinn",
+      "url": "https://www.allclash.com/best-quinn-build-in-dark-war-survival-skill-upgrade-order-gear-priority/",
+      "discoveredFrom": "category",
+      "access": "mixed-public-pro",
+      "publicSectionsObserved": ["hero meta", "minimum build", "optimum build", "exclusive weapon commentary"],
+      "proLockedSectionsObserved": ["skill upgrade order detail", "sweetspot build"],
+      "extractionStatus": "indexed",
+      "publishStatus": "staging-only"
+    },
+    {
+      "kind": "hero-build",
+      "hero": "Barnett",
+      "url": "https://www.allclash.com/best-barnett-build-in-dark-war-survival-skill-upgrade-order-gear-priority/",
+      "discoveredFrom": "category",
+      "access": "mixed-public-pro",
+      "publicSectionsObserved": ["hero meta", "minimum build", "optimum build", "exclusive weapon commentary"],
+      "proLockedSectionsObserved": ["skill upgrade order detail", "sweetspot build"],
+      "extractionStatus": "indexed",
+      "publishStatus": "staging-only"
+    },
+    {
+      "kind": "hero-build",
+      "hero": "Megan",
+      "url": "https://www.allclash.com/best-megan-build-in-dark-war-survival-skill-upgrade-order-gear-priority/",
+      "discoveredFrom": "category",
+      "access": "mixed-public-pro",
+      "publicSectionsObserved": ["hero meta", "minimum build", "optimum build", "exclusive weapon commentary"],
+      "proLockedSectionsObserved": ["skill upgrade order detail", "sweetspot build"],
+      "extractionStatus": "indexed",
+      "publishStatus": "staging-only"
+    },
+    {
+      "kind": "hero-build",
+      "hero": "Guy",
+      "url": "https://www.allclash.com/best-guy-build-in-dark-war-survival-skill-upgrade-order-gear-priority/",
+      "discoveredFrom": "category",
+      "access": "mixed-public-pro",
+      "publicSectionsObserved": ["hero meta", "minimum build", "optimum build", "exclusive weapon commentary"],
+      "proLockedSectionsObserved": ["skill upgrade order detail", "sweetspot build"],
+      "extractionStatus": "indexed",
+      "publishStatus": "staging-only"
+    },
+    {
+      "kind": "hero-build",
+      "hero": "Evans",
+      "url": "https://www.allclash.com/best-evans-build-in-dark-war-survival-skill-upgrade-order-gear-priority/",
+      "discoveredFrom": "category",
+      "access": "mixed-public-pro",
+      "publicSectionsObserved": ["hero meta", "minimum build", "optimum build", "exclusive weapon commentary"],
+      "proLockedSectionsObserved": ["skill upgrade order detail", "sweetspot build"],
+      "extractionStatus": "indexed",
+      "publishStatus": "staging-only"
+    },
+    {
+      "kind": "hero-build",
+      "hero": "Liz",
+      "url": "https://www.allclash.com/best-liz-build-in-dark-war-survival-skill-upgrade-order-gear-priority/",
+      "discoveredFrom": "category",
+      "access": "mixed-public-pro",
+      "publicSectionsObserved": ["hero meta", "minimum build", "optimum build", "exclusive weapon commentary"],
+      "proLockedSectionsObserved": ["skill upgrade order detail", "sweetspot build"],
+      "extractionStatus": "indexed",
+      "publishStatus": "staging-only"
+    },
+    {
+      "kind": "hero-build",
+      "hero": "Farhad",
+      "url": "https://www.allclash.com/best-farhad-build-in-dark-war-survival-skill-upgrade-order-gear-priority/",
+      "discoveredFrom": "category",
+      "access": "mixed-public-pro",
+      "publicSectionsObserved": ["hero meta", "minimum build", "optimum build", "exclusive weapon commentary"],
+      "proLockedSectionsObserved": ["skill upgrade order detail", "sweetspot build"],
+      "extractionStatus": "indexed",
+      "publishStatus": "staging-only"
+    },
+    {
+      "kind": "hero-build",
+      "hero": "Catherine",
+      "url": "https://www.allclash.com/best-catherine-build-in-dark-war-survival-skill-upgrade-order-gear-priority/",
+      "discoveredFrom": "category",
+      "access": "mixed-public-pro",
+      "publicSectionsObserved": ["hero meta", "minimum build", "optimum build", "exclusive weapon commentary"],
+      "proLockedSectionsObserved": ["skill upgrade order detail", "sweetspot build"],
+      "extractionStatus": "indexed",
+      "publishStatus": "staging-only"
+    },
+    {
+      "kind": "hero-build",
+      "hero": "Victor",
+      "url": "https://www.allclash.com/best-victor-build-in-dark-war-survival-skill-upgrade-order-gear-priority/",
+      "discoveredFrom": "category",
+      "access": "mixed-public-pro",
+      "publicSectionsObserved": ["hero meta", "minimum build", "optimum build", "exclusive weapon commentary"],
+      "proLockedSectionsObserved": ["skill upgrade order detail", "sweetspot build"],
+      "extractionStatus": "indexed",
+      "publishStatus": "staging-only"
+    },
+    {
+      "kind": "hero-build",
+      "hero": "Kylie",
+      "url": "https://www.allclash.com/best-kylie-build-in-dark-war-survival-skill-upgrade-order-gear-priority/",
+      "discoveredFrom": "category",
+      "access": "mixed-public-pro",
+      "publicSectionsObserved": ["hero meta", "minimum build", "optimum build", "exclusive weapon commentary"],
+      "proLockedSectionsObserved": ["skill upgrade order detail", "sweetspot build"],
+      "extractionStatus": "indexed",
+      "publishStatus": "staging-only"
+    },
+    {
+      "kind": "hero-build",
+      "hero": "Selena",
+      "url": "https://www.allclash.com/best-selena-build-in-dark-war-survival-skill-upgrade-order-gear-priority/",
+      "discoveredFrom": "category",
+      "access": "mixed-public-pro",
+      "publicSectionsObserved": ["hero meta", "minimum build", "optimum build", "exclusive weapon commentary"],
+      "proLockedSectionsObserved": ["skill upgrade order detail", "sweetspot build"],
+      "extractionStatus": "indexed",
+      "publishStatus": "staging-only"
+    },
+    {
+      "kind": "hero-build",
+      "hero": "Andre",
+      "url": "https://www.allclash.com/best-andre-build-in-dark-war-survival-skill-upgrade-order-gear-priority/",
+      "discoveredFrom": "category",
+      "access": "mixed-public-pro",
+      "publicSectionsObserved": ["hero meta", "minimum build", "optimum build", "exclusive weapon commentary"],
+      "proLockedSectionsObserved": ["skill upgrade order detail", "sweetspot build"],
+      "extractionStatus": "indexed",
+      "publishStatus": "staging-only"
+    },
+    {
+      "kind": "hero-build",
+      "hero": "Cecilia",
+      "url": "https://www.allclash.com/best-cecilia-build-in-dark-war-survival-skill-upgrade-order-gear-priority/",
+      "discoveredFrom": "category",
+      "access": "mixed-public-pro",
+      "publicSectionsObserved": ["hero meta", "minimum build", "optimum build", "exclusive weapon commentary"],
+      "proLockedSectionsObserved": ["skill upgrade order detail", "sweetspot build"],
+      "extractionStatus": "indexed",
+      "publishStatus": "staging-only"
+    },
+    {
+      "kind": "hero-build",
+      "hero": "Eddie",
+      "url": "https://www.allclash.com/best-eddie-build-in-dark-war-survival-skill-upgrade-order-gear-priority/",
+      "discoveredFrom": "category",
+      "access": "mixed-public-pro",
+      "publicSectionsObserved": ["hero meta", "minimum build", "optimum build", "exclusive weapon commentary"],
+      "proLockedSectionsObserved": ["skill upgrade order detail", "sweetspot build"],
+      "extractionStatus": "indexed",
+      "publishStatus": "staging-only"
+    },
+    {
+      "kind": "hero-build",
+      "hero": "Scarlett",
+      "url": "https://www.allclash.com/best-scarlett-build-in-dark-war-survival-skill-upgrade-order-gear-priority/",
+      "discoveredFrom": "category",
+      "access": "mixed-public-pro",
+      "publicSectionsObserved": ["hero meta", "minimum build", "optimum build", "exclusive weapon commentary"],
+      "proLockedSectionsObserved": ["skill upgrade order detail", "sweetspot build"],
+      "extractionStatus": "indexed",
+      "publishStatus": "staging-only"
+    },
+    {
+      "kind": "hero-build",
+      "hero": "Bob",
+      "url": "https://www.allclash.com/best-bob-build-in-dark-war-survival-skill-upgrade-order-gear-priority/",
+      "discoveredFrom": "category",
+      "access": "mixed-public-pro",
+      "publicSectionsObserved": ["hero meta", "minimum build", "optimum build", "exclusive weapon commentary"],
+      "proLockedSectionsObserved": ["skill upgrade order detail", "sweetspot build"],
+      "extractionStatus": "indexed",
+      "publishStatus": "staging-only"
+    },
+    {
+      "kind": "hero-build",
+      "hero": "Willow",
+      "url": "https://www.allclash.com/best-willow-build-in-dark-war-survival-skill-upgrade-order-gear-priority/",
+      "discoveredFrom": "category",
+      "access": "mixed-public-pro",
+      "publicSectionsObserved": ["hero meta", "minimum build", "optimum build", "exclusive weapon commentary"],
+      "proLockedSectionsObserved": ["skill upgrade order detail", "sweetspot build"],
+      "extractionStatus": "indexed",
+      "publishStatus": "staging-only"
+    },
+    {
+      "kind": "hero-build",
+      "hero": "Joe",
+      "url": "https://www.allclash.com/best-joe-build-in-dark-war-survival-skill-upgrade-order-gear-priority/",
+      "discoveredFrom": "category",
+      "access": "mixed-public-pro",
+      "publicSectionsObserved": ["hero meta", "minimum build", "optimum build", "exclusive weapon commentary"],
+      "proLockedSectionsObserved": ["skill upgrade order detail", "sweetspot build"],
+      "extractionStatus": "indexed",
+      "publishStatus": "staging-only"
+    },
+    {
+      "kind": "hero-build",
+      "hero": "Musashimaru",
+      "url": "https://www.allclash.com/best-musashimaru-build-in-dark-war-survival-skill-upgrade-order-gear-priority/",
+      "discoveredFrom": "category",
+      "access": "mixed-public-pro",
+      "publicSectionsObserved": ["hero meta", "minimum build", "optimum build", "exclusive weapon commentary"],
+      "proLockedSectionsObserved": ["skill upgrade order detail", "sweetspot build"],
+      "extractionStatus": "indexed",
+      "publishStatus": "staging-only"
+    },
+    {
+      "kind": "hero-build",
+      "hero": "Ruby",
+      "url": "https://www.allclash.com/best-ruby-build-in-dark-war-survival-skill-upgrade-order-gear-priority/",
+      "discoveredFrom": "category",
+      "access": "mixed-public-pro",
+      "publicSectionsObserved": ["hero meta", "minimum build", "optimum build", "exclusive weapon commentary"],
+      "proLockedSectionsObserved": ["skill upgrade order detail", "sweetspot build"],
+      "extractionStatus": "indexed",
+      "publishStatus": "staging-only"
+    },
+    {
+      "kind": "hero-build",
+      "hero": "Noah",
+      "url": "https://www.allclash.com/best-noah-build-in-dark-war-survival-skill-upgrade-order-gear-priority/",
+      "discoveredFrom": "tier-list-only",
+      "access": "mixed-public-pro",
+      "publicSectionsObserved": ["hero meta", "minimum build", "optimum build", "exclusive weapon commentary"],
+      "proLockedSectionsObserved": ["skill upgrade order detail", "sweetspot build"],
+      "extractionStatus": "indexed",
+      "publishStatus": "staging-only"
+    },
+    {
+      "kind": "hero-build",
+      "hero": "Catherine & Rex",
+      "url": "https://www.allclash.com/best-catherine-rex-build-in-dark-war-survival-skill-upgrade-order-gear-priority/",
+      "discoveredFrom": "tier-list-only",
+      "access": "mixed-public-pro",
+      "publicSectionsObserved": ["hero meta", "minimum build", "optimum build", "exclusive weapon commentary"],
+      "proLockedSectionsObserved": ["skill upgrade order detail", "sweetspot build"],
+      "extractionStatus": "indexed",
+      "publishStatus": "staging-only"
+    }
+  ],
+  "tierListSnapshotSeason6": [
+    {"hero":"Ella","tier":"S+","faction":"Fighter","specialty":"Combat","sourceSeason":6,"publishStatus":"context-only"},
+    {"hero":"Angela","tier":"S+","faction":"Fighter","specialty":"Combat","sourceSeason":6,"publishStatus":"context-only"},
+    {"hero":"Noah","tier":"S+","faction":"Fighter","specialty":"Combat","sourceSeason":6,"publishStatus":"context-only"},
+    {"hero":"Lan","tier":"S","faction":"Fighter","specialty":"Combat","sourceSeason":6,"publishStatus":"context-only"},
+    {"hero":"Francis","tier":"A+","faction":"Fighter","specialty":"Combat","sourceSeason":6,"publishStatus":"context-only"},
+    {"hero":"Guy","tier":"B+","faction":"Fighter","specialty":"Adventure","sourceSeason":6,"publishStatus":"context-only"},
+    {"hero":"Tristan","tier":"B+","faction":"Fighter","specialty":"Training","sourceSeason":6,"publishStatus":"context-only"},
+    {"hero":"Selena","tier":"B","faction":"Fighter","specialty":"Gathering","sourceSeason":6,"publishStatus":"context-only"},
+    {"hero":"Catherine & Rex","tier":"B","faction":"Fighter","specialty":"Missions","sourceSeason":6,"publishStatus":"context-only"},
+    {"hero":"Farhad","tier":"C+","faction":"Fighter","specialty":"Combat","sourceSeason":6,"publishStatus":"context-only"},
+    {"hero":"Barnett","tier":"C+","faction":"Fighter","specialty":"Training","sourceSeason":6,"publishStatus":"context-only"},
+    {"hero":"Bob","tier":"C+","faction":"Fighter","specialty":"Gathering","sourceSeason":6,"publishStatus":"context-only"},
+    {"hero":"Liz","tier":"C","faction":"Fighter","specialty":"Healing","sourceSeason":6,"publishStatus":"context-only"},
+    {"hero":"Ryan","tier":"S+","faction":"Rider","specialty":"Combat","sourceSeason":6,"publishStatus":"context-only"},
+    {"hero":"Lucas","tier":"S+","faction":"Rider","specialty":"Combat","sourceSeason":6,"publishStatus":"context-only"},
+    {"hero":"Marcia","tier":"S+","faction":"Rider","specialty":"Combat","sourceSeason":6,"publishStatus":"context-only"},
+    {"hero":"Katrina","tier":"S","faction":"Rider","specialty":"Combat","sourceSeason":6,"publishStatus":"context-only"},
+    {"hero":"Corleone","tier":"A+","faction":"Rider","specialty":"Research","sourceSeason":6,"publishStatus":"context-only"},
+    {"hero":"Quinn","tier":"A","faction":"Rider","specialty":"Alliance Duel","sourceSeason":6,"publishStatus":"context-only"},
+    {"hero":"Scarlett","tier":"B+","faction":"Rider","specialty":"Combat","sourceSeason":6,"publishStatus":"context-only"},
+    {"hero":"Eddie","tier":"B+","faction":"Rider","specialty":"Combat","sourceSeason":6,"publishStatus":"context-only"},
+    {"hero":"Cyrus","tier":"B+","faction":"Rider","specialty":"Training","sourceSeason":6,"publishStatus":"context-only"},
+    {"hero":"Victor","tier":"B","faction":"Rider","specialty":"Monsters","sourceSeason":6,"publishStatus":"context-only"},
+    {"hero":"Ruby","tier":"D+","faction":"Rider","specialty":"Gathering","sourceSeason":6,"publishStatus":"context-only"},
+    {"hero":"Joe","tier":"D","faction":"Rider","specialty":"Gathering","sourceSeason":6,"publishStatus":"context-only"},
+    {"hero":"Sebastian","tier":"S+","faction":"Shooter","specialty":"Combat","sourceSeason":6,"publishStatus":"context-only"},
+    {"hero":"Shadow","tier":"S+","faction":"Shooter","specialty":"Combat","sourceSeason":6,"publishStatus":"context-only"},
+    {"hero":"Rosa","tier":"S","faction":"Shooter","specialty":"Combat","sourceSeason":6,"publishStatus":"context-only"},
+    {"hero":"Evans","tier":"S","faction":"Shooter","specialty":"Vehicle Transformation","sourceSeason":6,"publishStatus":"context-only"},
+    {"hero":"Darian","tier":"S","faction":"Shooter","specialty":"Combat","sourceSeason":6,"publishStatus":"context-only"},
+    {"hero":"Margaret","tier":"A+","faction":"Shooter","specialty":"Combat","sourceSeason":6,"publishStatus":"context-only"},
+    {"hero":"Megan","tier":"A","faction":"Shooter","specialty":"Construction","sourceSeason":6,"publishStatus":"context-only"},
+    {"hero":"Cecilia","tier":"B+","faction":"Shooter","specialty":"Combat","sourceSeason":6,"publishStatus":"context-only"},
+    {"hero":"Natasha","tier":"B+","faction":"Shooter","specialty":"Training","sourceSeason":6,"publishStatus":"context-only"},
+    {"hero":"Kylie","tier":"B+","faction":"Shooter","specialty":"Combat","sourceSeason":6,"publishStatus":"context-only"},
+    {"hero":"Andre","tier":"B","faction":"Shooter","specialty":"Research","sourceSeason":6,"publishStatus":"context-only"},
+    {"hero":"Catherine","tier":"C+","faction":"Shooter","specialty":"Construction","sourceSeason":6,"publishStatus":"context-only"},
+    {"hero":"Musashimaru","tier":"D","faction":"Shooter","specialty":"Gathering","sourceSeason":6,"publishStatus":"context-only"},
+    {"hero":"Willow","tier":"D","faction":"Shooter","specialty":"Gathering","sourceSeason":6,"publishStatus":"context-only"}
+  ]
+}
