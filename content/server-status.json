@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-15T03:11:00+07:00",
+  "lastUpdated": "2026-08-15T03:15:00+07:00",
   "server": {
     "season": "4",
     "theme": "Sealed Island",
@@ -19,7 +19,31 @@
         ]
       }
     ],
-    "upcoming": []
+    "upcoming": [
+      {
+        "name": "Tech Lucky Chest",
+        "type": "Limited Event",
+        "description": "Limited-time Tech Lucky Chest event.",
+        "duration": "Aug 15–17, 2026"
+      },
+      {
+        "name": "Summer Paradise",
+        "type": "Big Event",
+        "description": "Major summer event series featuring four activities: Lord of the Beach, Coconut Cheer, Summer Puzzle and Beach Pass.",
+        "duration": "Aug 17–24, 2026"
+      },
+      {
+        "name": "Hero Lucky Chest",
+        "type": "Limited Event",
+        "description": "Hero Lucky Chest with three selectable hero options: Lan, Darian and Katrina.",
+        "duration": "Aug 18–20, 2026",
+        "rewards": [
+          "Lan",
+          "Darian",
+          "Katrina"
+        ]
+      }
+    ]
   },
   "activeAlliances": {
     "updatedAt": "2026-08-15",
