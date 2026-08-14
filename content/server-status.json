@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-15T05:26:00+07:00",
+  "lastUpdated": "2026-08-15T06:06:00+07:00",
   "server": {
     "season": "4",
     "theme": "Sealed Island",
@@ -81,14 +81,20 @@
       "next": "CMRD"
     },
     "armories": [
-      { "number": 1, "alliance": null },
-      { "number": 2, "alliance": null },
-      { "number": 3, "alliance": null },
-      { "number": 4, "alliance": null },
-      { "number": 5, "alliance": null },
-      { "number": 6, "alliance": null },
-      { "number": 7, "alliance": null },
-      { "number": 8, "alliance": null }
+      { "number": 1, "alliance": "AP3X" },
+      { "number": 2, "alliance": "LTNX" },
+      { "number": 3, "alliance": "UIC" },
+      {
+        "number": "4 · DUD / CMRD / IDS / iDGF",
+        "slot": 4,
+        "alliance": "available",
+        "status": "open-contest",
+        "contenders": ["DUD", "CMRD", "IDS", "iDGF"]
+      },
+      { "number": 5, "alliance": "iDGF" },
+      { "number": 6, "alliance": "DUD" },
+      { "number": 7, "alliance": "CMRD" },
+      { "number": 8, "alliance": "IDS" }
     ]
   },
   "announcements": [
