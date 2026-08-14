@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-14T04:57:00+07:00",
+  "lastUpdated": "2026-08-15T03:04:00+07:00",
   "server": {
     "season": "4",
     "theme": "Sealed Island",
@@ -10,8 +10,17 @@
     "upcoming": []
   },
   "activeAlliances": {
-    "updatedAt": null,
-    "alliances": []
+    "updatedAt": "2026-08-15",
+    "alliances": [
+      { "name": "[UIC]United Imperial Cmd", "totalCP": "42,751,479,998" },
+      { "name": "[AP3X]PR3D4TORS", "totalCP": "35,957,425,607" },
+      { "name": "[DUD]Global Elite Empire", "totalCP": "25,532,262,549" },
+      { "name": "[CMRD]CAMARADERIE", "totalCP": "23,240,087,960" },
+      { "name": "[IDGF]i Dont Give fckz", "totalCP": "22,066,062,563" },
+      { "name": "[IDS*]INDOALLSTAR", "totalCP": "19,534,849,202" },
+      { "name": "[LTNX]xLATINOSx", "totalCP": "5,885,316,881" },
+      { "name": "[IMMR]IMMORTALS", "totalCP": "4,732,796,802" }
+    ]
   },
   "keWatch": {
     "updatedAt": null,
