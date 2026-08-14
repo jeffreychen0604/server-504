@@ -10,9 +10,42 @@
   let revealObserver = null;
   let renderQueued = false;
 
+  const ensureRefinementStyles = () => {
+    if (document.getElementById('server504-home-ui-refine')) return;
+    const link = document.createElement('link');
+    link.id = 'server504-home-ui-refine';
+    link.rel = 'stylesheet';
+    link.href = './assets/home-ui-refine.css?v=20260815-0537';
+    document.head.appendChild(link);
+  };
+
   const parseNumber = value => {
     const n = Number(String(value || '').replace(/[^0-9.]/g, ''));
     return Number.isFinite(n) ? n : 0;
+  };
+
+  const markFeaturedHierarchy = dashboard => {
+    const liveColumn = dashboard.querySelector('.featured-column-title.live')?.closest('.featured-column');
+    const upcomingColumn = dashboard.querySelector('.featured-column-title.upcoming')?.closest('.featured-column');
+    liveColumn?.classList.add('live-column');
+    upcomingColumn?.classList.add('upcoming-column');
+
+    dashboard.querySelectorAll('.event-card').forEach(card => {
+      const title = card.querySelector('h3')?.textContent?.trim() || '';
+      const eventType = card.querySelector('.event-type')?.textContent?.trim().toLowerCase() || '';
+
+      if (title.toLowerCase() === 'summer paradise' || eventType === 'big event') {
+        card.classList.add('big-event-card');
+      }
+
+      if (card.classList.contains('live') && !card.querySelector('.event-live-signal')) {
+        const signal = document.createElement('span');
+        signal.className = 'event-live-signal';
+        signal.setAttribute('aria-hidden', 'true');
+        signal.innerHTML = '<i></i>';
+        card.appendChild(signal);
+      }
+    });
   };
 
   const enhancePowerTable = (panel, threatMode = false) => {
@@ -33,7 +66,7 @@
 
       const wrap = document.createElement('div');
       wrap.className = 'cp-cell-wrap';
-      wrap.innerHTML = `<span class="cp-number"></span><span class="cp-meter" aria-hidden="true"><i></i></span>`;
+      wrap.innerHTML = '<span class="cp-number"></span><span class="cp-meter" aria-hidden="true"><i></i></span>';
       wrap.querySelector('.cp-number').textContent = raw;
       wrap.querySelector('.cp-meter').style.setProperty('--cp-share', `${share.toFixed(1)}%`);
       cell.appendChild(wrap);
@@ -102,9 +135,7 @@
   };
 
   const wireReveals = dashboard => {
-    const targets = [
-      ...dashboard.querySelectorAll('.status-strip, .dashboard-panel, .quick-access')
-    ];
+    const targets = [...dashboard.querySelectorAll('.status-strip, .dashboard-panel, .quick-access')];
     targets.forEach((el, index) => {
       if (el.dataset.fancyRevealWired === '1') return;
       el.dataset.fancyRevealWired = '1';
@@ -131,6 +162,7 @@
     if (!dashboard) return;
 
     dashboard.classList.add('fancy-home-v2');
+    markFeaturedHierarchy(dashboard);
     addSeasonArtifact(dashboard);
     enhancePowerTable(dashboard.querySelector('.alliance-table-panel'), false);
     enhancePowerTable(dashboard.querySelector('.ke-panel'), true);
@@ -145,6 +177,7 @@
     requestAnimationFrame(enhance);
   };
 
+  ensureRefinementStyles();
   new MutationObserver(scheduleEnhance).observe(app, { childList: true, subtree: true });
   window.addEventListener('hashchange', scheduleEnhance);
   window.addEventListener('server504:localechange', scheduleEnhance);
