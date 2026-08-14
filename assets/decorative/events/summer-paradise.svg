@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 220" fill="none">
+  <defs>
+    <linearGradient id="sun" x1="65" y1="45" x2="250" y2="188" gradientUnits="userSpaceOnUse"><stop stop-color="#FFD26A"/><stop offset=".45" stop-color="#F58C4D"/><stop offset="1" stop-color="#9E3B62"/></linearGradient>
+    <linearGradient id="sea" x1="45" y1="142" x2="318" y2="186" gradientUnits="userSpaceOnUse"><stop stop-color="#64D1E4"/><stop offset="1" stop-color="#385B9F"/></linearGradient>
+  </defs>
+  <circle cx="242" cy="82" r="48" fill="url(#sun)" fill-opacity=".85"/>
+  <path d="M18 174c54-34 105-37 155-8 53 30 106 23 169-17v53H18v-28Z" fill="url(#sea)" fill-opacity=".78"/>
+  <path d="M87 178c18-42 21-83 11-123M97 70c-18-15-39-17-62-6M98 78c15-24 37-35 65-34M97 92c-22 0-41 8-57 24M101 94c22-9 45-7 68 6" stroke="#14191C" stroke-width="8" stroke-linecap="round"/>
+  <path d="M154 144h72l16 47h-104l16-47Z" fill="#252D31" stroke="#C59D60" stroke-width="3"/>
+  <path d="M160 154h60M151 175h84" stroke="#F1B65A" stroke-opacity=".7" stroke-width="3"/>
+  <path d="M280 128c16-15 33-17 52-7M293 143c10-8 22-8 34-1" stroke="#D8E4E5" stroke-opacity=".65" stroke-width="4" stroke-linecap="round"/>
+</svg>
