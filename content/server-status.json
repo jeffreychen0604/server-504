@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-15T03:04:00+07:00",
+  "lastUpdated": "2026-08-15T03:08:00+07:00",
   "server": {
     "season": "4",
     "theme": "Sealed Island",
@@ -23,13 +23,26 @@
     ]
   },
   "keWatch": {
-    "updatedAt": null,
-    "alliances": []
+    "updatedAt": "2026-08-15",
+    "alliances": [
+      {
+        "alliance": "AP3X",
+        "opponentAlliance": "UNTA",
+        "opponentServer": "#515",
+        "totalCP": "11,542,903,419"
+      },
+      {
+        "alliance": "UIC",
+        "opponentAlliance": "LUMJ",
+        "opponentServer": null,
+        "totalCP": "42,990,014,743"
+      }
+    ]
   },
   "sharedAssets": {
     "capital": {
-      "current": null,
-      "next": null
+      "current": "DUD",
+      "next": "CMRD"
     },
     "armories": [
       { "number": 1, "alliance": null },
