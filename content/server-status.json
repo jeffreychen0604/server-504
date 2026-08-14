@@ -1,12 +1,24 @@
 {
-  "lastUpdated": "2026-08-15T03:08:00+07:00",
+  "lastUpdated": "2026-08-15T03:11:00+07:00",
   "server": {
     "season": "4",
     "theme": "Sealed Island",
     "councilStatus": "Pending"
   },
   "featuredEvents": {
-    "live": [],
+    "live": [
+      {
+        "name": "Pet Supplies",
+        "type": "Limited Event",
+        "description": "Open or refresh 9 Rare, Elite and Epic supply chests using Lucky Crowbars. Spending Crowbars earns Personal and State Points for milestone rewards. One chest can be opened free each day, and up to 3 free refreshes are available daily; opening all 9 chests triggers an automatic free refresh.",
+        "duration": "Until Aug 21, 2026 09:00 (UTC+7)",
+        "rewards": [
+          "Advanced Training Protocols",
+          "Standard Training Protocols",
+          "Personal & State Milestone Rewards"
+        ]
+      }
+    ],
     "upcoming": []
   },
   "activeAlliances": {
