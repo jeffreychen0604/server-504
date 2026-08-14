@@ -6,7 +6,6 @@
   <meta name="theme-color" content="#0b0e12" />
   <meta name="description" content="Server 504 knowledge, governance and operations portal for Dark War: Survival." />
   <title>Server 504 | Dark War: Survival</title>
-  <link rel="preconnect" href="https://cdn.jsdelivr.net" />
   <link rel="stylesheet" href="./assets/styles.css" />
   <link rel="stylesheet" href="./assets/art-overrides.css" />
   <link rel="stylesheet" href="./assets/layout-simplify.css" />
@@ -93,7 +92,19 @@
       </div>
     </aside>
 
-    <main id="app" class="main-content" tabindex="-1"></main>
+    <main id="app" class="main-content" tabindex="-1">
+      <section class="page ops-dashboard" aria-label="Server 504 loading shell">
+        <header class="dashboard-head">
+          <div><div class="eyebrow">SERVER 504 · SEASON 4 · SEALED ISLAND</div><h1>Server Operations Dashboard</h1></div>
+          <div class="dashboard-updated"><span>Loading live server data</span><strong>…</strong></div>
+        </header>
+        <section class="status-strip">
+          <div class="status-cell"><span class="status-icon">S4</span><div class="status-copy"><small>Season</small><strong>4</strong></div></div>
+          <div class="status-cell"><span class="status-icon">◇</span><div class="status-copy"><small>Theme</small><strong>Sealed Island</strong></div></div>
+          <div class="status-cell"><span class="status-icon">◎</span><div class="status-copy"><small>Server Council</small><strong>Pending</strong></div></div>
+        </section>
+      </section>
+    </main>
   </div>
 
   <button id="mobileContribute" class="floating-contribute" type="button" aria-label="Contribute">+</button>
@@ -162,7 +173,7 @@
   <script src="./assets/feedback-config.js"></script>
   <script src="./assets/i18n.js"></script>
   <script src="./assets/app.js" defer></script>
-  <script src="./assets/fast-start.js" defer></script>
+  <script src="./assets/fast-start.js?v=20260815-0405" defer></script>
   <script src="./assets/dashboard.js" defer></script>
   <script src="./assets/dashboard-content-i18n.js" defer></script>
   <script src="./assets/pages-fancy.js" defer></script>
@@ -170,8 +181,6 @@
   <script src="./assets/feedback.js" defer></script>
   <script src="./assets/wiki-calculators.js" defer></script>
   <script src="./assets/guides-runtime.js" defer></script>
-  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js" defer></script>
-  <script src="./assets/wiki-runtime.js" defer></script>
-  <script src="./assets/search-discovery.js" defer></script>
+  <script src="./assets/lazy-wiki-loader.js" defer data-marked-runtime="https://cdn.jsdelivr.net/npm/marked/marked.min.js" data-wiki-runtime="./assets/wiki-runtime.js" data-search-runtime="./assets/search-discovery.js"></script>
 </body>
 </html>
