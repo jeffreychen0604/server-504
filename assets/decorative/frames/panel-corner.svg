@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180" fill="none">
+  <defs>
+    <linearGradient id="metal" x1="18" y1="12" x2="151" y2="161" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#17232A"/><stop offset=".52" stop-color="#29343A"/><stop offset="1" stop-color="#0A1015"/>
+    </linearGradient>
+    <linearGradient id="edge" x1="14" y1="8" x2="152" y2="166" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#D0AD68"/><stop offset=".38" stop-color="#6CC5D8"/><stop offset=".7" stop-color="#A64248"/><stop offset="1" stop-color="#6B4C2B"/>
+    </linearGradient>
+    <filter id="glow"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+  <path d="M7 82V28L29 7h77l17 13h36v18h-45L99 25H37L25 37v45H7Z" fill="url(#metal)" stroke="#7B552D" stroke-width="2"/>
+  <path d="M14 78V34L34 14h65l18 13h34" stroke="url(#edge)" stroke-width="3"/>
+  <path d="M27 33h21M36 24v18M72 16h21" stroke="#6CC5D8" stroke-opacity=".55" stroke-width="2" filter="url(#glow)"/>
+  <path d="M10 112v39l19 19h49v-13H36l-13-13v-32H10Z" fill="url(#metal)" stroke="#70482A" stroke-width="2"/>
+  <path d="M17 114v31l16 16h39" stroke="#B13E46" stroke-width="3"/>
+  <path d="M25 58c9-9 18-14 27-18M31 63c8-6 15-10 24-13" stroke="#9A3038" stroke-width="2" stroke-opacity=".75"/>
+  <path d="M18 89h15l7 7-7 7H18V89Z" fill="#6CC5D8" fill-opacity=".14" stroke="#6CC5D8" stroke-opacity=".55"/>
+</svg>
