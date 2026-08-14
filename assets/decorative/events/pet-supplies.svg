@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 220" fill="none">
+  <defs>
+    <linearGradient id="box" x1="54" y1="42" x2="252" y2="196" gradientUnits="userSpaceOnUse"><stop stop-color="#D57A2E"/><stop offset=".52" stop-color="#7E3B28"/><stop offset="1" stop-color="#20282C"/></linearGradient>
+    <linearGradient id="mist" x1="25" y1="40" x2="294" y2="196" gradientUnits="userSpaceOnUse"><stop stop-color="#853A9D"/><stop offset="1" stop-color="#62C6D7"/></linearGradient>
+  </defs>
+  <path d="M42 84h236l-18 104H60L42 84Z" fill="url(#box)" stroke="#CC9E5C" stroke-width="3"/>
+  <path d="M62 56h196l20 28H42l20-28Z" fill="#2B3337" stroke="#C96A35" stroke-width="3"/>
+  <path d="M112 106h96v58h-96v-58Z" fill="#10171B" stroke="#F0A04B" stroke-opacity=".7"/>
+  <circle cx="147" cy="129" r="11" fill="#F09A46"/><circle cx="174" cy="129" r="11" fill="#F09A46"/><circle cx="160" cy="148" r="17" fill="#F09A46"/>
+  <circle cx="130" cy="113" r="7" fill="#F09A46"/><circle cx="190" cy="113" r="7" fill="#F09A46"/>
+  <path d="M45 58C22 69 19 103 35 121M274 59c27 12 32 45 14 66" stroke="url(#mist)" stroke-width="8" stroke-linecap="round" stroke-opacity=".35"/>
+  <path d="M74 177h172" stroke="#67C6D7" stroke-opacity=".45" stroke-width="2"/>
+</svg>
