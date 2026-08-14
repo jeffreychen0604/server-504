@@ -1,0 +1,234 @@
+/*
+ * Server 504 — Home Decorative Asset Language / Batch 1
+ * Presentation-only layer. Loaded after Home UI refinement.
+ * Purpose: replace generic fantasy decoration with Dark War: Survival-native
+ * operations, reward, supply and Sealed Island motifs.
+ */
+
+/* ------------------------------------------------------------
+   Crest deprecation — no circular season artifact in production
+   ------------------------------------------------------------ */
+.season-artifact { display: none !important; }
+
+/* ------------------------------------------------------------
+   Hero — Sealed Island / Oni / Blood Moon, without crest
+   ------------------------------------------------------------ */
+.fancy-home-v2 .dashboard-head::before {
+  background:
+    linear-gradient(90deg, rgba(5,9,14,.988) 0%, rgba(6,11,17,.94) 34%, rgba(7,11,16,.58) 58%, rgba(5,8,12,.20) 100%),
+    linear-gradient(180deg, rgba(5,8,13,.12), rgba(5,9,14,.38) 55%, rgba(5,9,14,.95)),
+    url("./decorative/overlays/oni-moon.svg") 92% 48% / min(760px,72%) auto no-repeat,
+    url("./art/sealed-hero.webp") 70% 43% / cover no-repeat;
+}
+
+.fancy-home-v2 .dashboard-head > div:first-child::after {
+  content: "S4  /  SEALED ISLAND  /  SERVER 504";
+  display: block;
+  width: fit-content;
+  margin-top: 18px;
+  padding: 6px 10px 5px 13px;
+  border-left: 2px solid rgba(202,68,74,.74);
+  background: linear-gradient(90deg, rgba(139,45,52,.16), rgba(8,14,19,0));
+  color: rgba(206,221,224,.63);
+  font-size: .55rem;
+  font-weight: 900;
+  letter-spacing: .15em;
+}
+
+/* ------------------------------------------------------------
+   Reusable panel framing + divider grammar
+   ------------------------------------------------------------ */
+.fancy-home-v2 .dashboard-panel {
+  --asset-corner-size: 82px;
+}
+
+.fancy-home-v2 .dashboard-panel::after {
+  width: var(--asset-corner-size);
+  height: var(--asset-corner-size);
+  top: -1px;
+  right: -1px;
+  background: url("./decorative/frames/panel-corner.svg") top right / contain no-repeat;
+  opacity: .28;
+  filter: saturate(.82);
+}
+
+.fancy-home-v2 .panel-head {
+  position: relative;
+  background-image:
+    linear-gradient(90deg, rgba(86,169,190,.05), rgba(148,92,170,.016) 52%, transparent 88%),
+    url("./decorative/dividers/sealed-line.svg");
+  background-repeat: no-repeat;
+  background-position: center, center bottom -23px;
+  background-size: auto, 100% 56px;
+}
+
+/* ------------------------------------------------------------
+   Featured Events — event-specific visual identities
+   ------------------------------------------------------------ */
+.fancy-home-v2 .event-card::before {
+  opacity: .30;
+  background:
+    linear-gradient(90deg, rgba(7,13,18,.91) 0%, rgba(7,13,18,.68) 52%, rgba(7,13,18,.50) 100%),
+    linear-gradient(180deg, rgba(6,12,17,.12), rgba(6,12,17,.94));
+}
+
+.fancy-home-v2 .event-card.event-pet-supplies::before {
+  opacity: .66;
+  background:
+    linear-gradient(90deg, rgba(18,10,13,.96) 0%, rgba(18,10,13,.82) 48%, rgba(18,10,13,.35) 100%),
+    linear-gradient(180deg, rgba(23,8,16,.10), rgba(7,11,16,.94)),
+    url("./decorative/events/pet-supplies.svg") 108% 57% / 62% auto no-repeat;
+}
+
+.fancy-home-v2 .event-card.event-summer-paradise::before {
+  opacity: .72;
+  background:
+    linear-gradient(90deg, rgba(9,13,18,.95) 0%, rgba(9,13,18,.72) 43%, rgba(9,13,18,.28) 100%),
+    linear-gradient(180deg, rgba(13,8,18,.05), rgba(7,12,17,.88)),
+    url("./decorative/events/summer-paradise.svg") 105% 53% / 61% auto no-repeat;
+}
+
+.fancy-home-v2 .event-card.event-tech-lucky::before {
+  opacity: .66;
+  background:
+    linear-gradient(90deg, rgba(7,15,20,.96) 0%, rgba(7,15,20,.78) 48%, rgba(7,15,20,.32) 100%),
+    linear-gradient(180deg, rgba(5,13,18,.05), rgba(6,12,17,.92)),
+    url("./decorative/events/tech-lucky-chest.svg") 110% 57% / 58% auto no-repeat;
+}
+
+.fancy-home-v2 .event-card.event-hero-lucky::before {
+  opacity: .66;
+  background:
+    linear-gradient(90deg, rgba(12,10,17,.96) 0%, rgba(12,10,17,.78) 48%, rgba(12,10,17,.32) 100%),
+    linear-gradient(180deg, rgba(14,8,17,.05), rgba(6,12,17,.92)),
+    url("./decorative/events/hero-lucky-chest.svg") 110% 56% / 58% auto no-repeat;
+}
+
+.fancy-home-v2 .event-card.event-pet-supplies,
+.fancy-home-v2 .event-card.event-summer-paradise,
+.fancy-home-v2 .event-card.event-tech-lucky,
+.fancy-home-v2 .event-card.event-hero-lucky {
+  background-color: rgba(7,13,18,.96);
+}
+
+.fancy-home-v2 .event-card.event-summer-paradise {
+  border-color: rgba(218,164,78,.38);
+  box-shadow: inset 3px 0 rgba(219,164,76,.30), 0 14px 34px rgba(0,0,0,.14);
+}
+
+.fancy-home-v2 .event-card.event-pet-supplies .event-type {
+  border-color: rgba(223,104,84,.30);
+  background: rgba(126,43,38,.20);
+  color: #F18F77;
+}
+
+/* ------------------------------------------------------------
+   Saturday KE — operational warning language
+   ------------------------------------------------------------ */
+.fancy-home-v2 .ke-panel {
+  background:
+    linear-gradient(180deg, rgba(21,13,16,.94), rgba(8,13,18,.96)),
+    radial-gradient(circle at 94% 12%, rgba(199,55,61,.10), transparent 17rem);
+}
+
+.fancy-home-v2 .ke-panel::before {
+  background:
+    linear-gradient(135deg, rgba(188,50,58,.025), transparent 58%),
+    url("./decorative/operations/ke-alert.svg") calc(100% - 28px) 76px / 118px auto no-repeat;
+  opacity: .28;
+}
+
+.fancy-home-v2 .ke-panel .panel-head h2::before {
+  content: "";
+  display: inline-block;
+  width: 17px;
+  height: 17px;
+  margin-right: 8px;
+  vertical-align: -3px;
+  background: url("./decorative/operations/ke-alert.svg") center / contain no-repeat;
+}
+
+/* ------------------------------------------------------------
+   Shared Assets — operational transfer, no emblem watermark
+   ------------------------------------------------------------ */
+.fancy-home-v2 .capital-rotation::before {
+  width: min(420px,84%);
+  height: 142px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  opacity: .085;
+  background: url("./decorative/operations/capital-transfer.svg") center / contain no-repeat;
+  filter: none;
+}
+
+.fancy-home-v2 .capital-node,
+.fancy-home-v2 .capital-node.next {
+  border-radius: 12px;
+}
+
+.fancy-home-v2 .armory-item::before {
+  width: 22px;
+  height: 22px;
+  flex: 0 0 22px;
+  border: 0;
+  transform: none;
+  background: url("./decorative/operations/armory-slot.svg") center / contain no-repeat;
+  box-shadow: none;
+  opacity: .72;
+}
+
+.fancy-home-v2 .armory-item.pending::before { opacity: .28; filter: saturate(.45); }
+.fancy-home-v2 .armory-item.available::before { opacity: .90; }
+
+/* ------------------------------------------------------------
+   Quick access — compact operations plates
+   ------------------------------------------------------------ */
+.fancy-home-v2 .quick-access a::after,
+.fancy-home-v2 .quick-access button::after {
+  content: "";
+  position: absolute;
+  right: -8px;
+  bottom: -10px;
+  width: 50px;
+  height: 50px;
+  background: url("./decorative/frames/panel-corner.svg") center / contain no-repeat;
+  opacity: .12;
+  transform: rotate(180deg);
+  pointer-events: none;
+}
+
+/* Remove emblem-derived decoration from Guides too. */
+body[data-route="guides"] .guide-policy::after,
+body[data-route="guides"] .guide-card::after {
+  background-image: none !important;
+}
+
+@media (max-width: 820px) {
+  .fancy-home-v2 .dashboard-head::before {
+    background:
+      linear-gradient(90deg, rgba(5,9,14,.985) 0%, rgba(6,11,17,.91) 48%, rgba(7,11,16,.30) 100%),
+      linear-gradient(180deg, rgba(5,8,13,.10), rgba(5,9,14,.94)),
+      url("./decorative/overlays/oni-moon.svg") 78% 50% / 92% auto no-repeat,
+      url("./art/sealed-hero.webp") 60% 43% / cover no-repeat;
+  }
+  .fancy-home-v2 .dashboard-panel { --asset-corner-size: 66px; }
+  .fancy-home-v2 .event-card.event-pet-supplies::before,
+  .fancy-home-v2 .event-card.event-summer-paradise::before,
+  .fancy-home-v2 .event-card.event-tech-lucky::before,
+  .fancy-home-v2 .event-card.event-hero-lucky::before {
+    background-size: auto, auto, 72% auto;
+    background-position: center, center, 125% 60%;
+  }
+}
+
+@media (max-width: 560px) {
+  .fancy-home-v2 .dashboard-head > div:first-child::after { display: none; }
+  .fancy-home-v2 .dashboard-panel::after { opacity: .18; }
+  .fancy-home-v2 .ke-panel::before { background-size: auto, 90px auto; }
+  .fancy-home-v2 .capital-rotation::before { opacity: .055; width: 95%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fancy-home-v2 .ke-panel .panel-head h2::before { filter: none; }
+}
