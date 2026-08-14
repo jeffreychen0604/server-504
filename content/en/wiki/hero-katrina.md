@@ -51,34 +51,9 @@ Katrina is most valuable when:
 
 Her value should be judged from combat reports rather than CP alone: compare normal-attack contribution before and after swapping her out.
 
-## Practical Build Guide — community snapshot
+## Related practical guide
 
-> **Guide source:** AllClash, article updated 20 Mar 2026.  
-> **Use as:** investment guidance, not canonical Server 504 data.
-
-AllClash's public build section recommends concentrating resources on a usable equipment floor first, then only pushing toward the high-investment setup when Katrina is clearly part of the account's Rider core.
-
-### Minimum practical target
-
-- D5-Rider Submachine Gun — Lv.20
-- D5-Rider Commander Helmet — Lv.20
-- D3-Rider Battle Armor — Lv.40
-- D3-Rider Battle Boots — Lv.40
-- Night Owl — 1★
-
-### High-investment reference target
-
-- D6-Slayer — Max
-- D6-Helmet — Max
-- D5-Rider Guardian Armor — Lv.40
-- D5-Rider Doomsday Boots — Lv.40
-- Night Owl — 3★
-
-### How to use this on Server 504
-
-Do not copy the target blindly. Katrina's value depends heavily on whether the player's Rider march actually benefits from her normal-attack scaling. Before committing the expensive upper tiers, compare battle reports and check whether another Rider hero delivers more survivability or higher effective damage for the same materials.
-
-AllClash currently places Katrina around the upper part of its later-era hero rankings, but that list is maintained for a newer seasonal meta than Server 504. The Wiki therefore does **not** import the tier label as a Server 504 ranking.
+For build and investment advice, see the separate [Katrina Build Guide](#/guides/katrina-build) in **Tips & Guides**.
 
 ## Naming verification
 
@@ -91,5 +66,4 @@ Official patch history confirms an Exclusive Equipment animation associated with
 ## Sources
 
 - DarkWarData — Katrina: https://darkwardata.com/heroes/katrina/
-- AllClash — Best Katrina Build: https://www.allclash.com/best-katrina-build-in-dark-war-survival-skill-upgrade-order-gear-priority/
 - Apple App Store — official patch history mentioning Katerina Exclusive Equipment: https://apps.apple.com/app/dark-war-survival/id6670441558
