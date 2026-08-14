@@ -1,0 +1,630 @@
+/*
+ * Server 504 — Season 4: Sealed Island visual layer
+ * Presentation-only overrides. No routing, fetch, state or interaction logic lives here.
+ * Palette hierarchy: abyss navy -> miasma cyan -> seal violet -> blood-moon crimson -> ancient gold.
+ */
+
+:root {
+  --sealed-abyss: #06090d;
+  --sealed-abyss-2: #091018;
+  --sealed-panel: rgba(10, 18, 24, .90);
+  --sealed-panel-soft: rgba(12, 22, 29, .78);
+  --sealed-line: rgba(117, 174, 190, .17);
+  --sealed-line-strong: rgba(130, 201, 218, .30);
+  --sealed-miasma: #79c9dc;
+  --sealed-miasma-soft: rgba(91, 185, 207, .13);
+  --sealed-spirit: #a889c8;
+  --sealed-spirit-soft: rgba(151, 112, 187, .12);
+  --sealed-blood: #d85450;
+  --sealed-blood-soft: rgba(198, 58, 64, .13);
+  --sealed-gold: #c9a96c;
+  --sealed-gold-soft: rgba(201, 169, 108, .13);
+  --sealed-text: #eef5f6;
+  --sealed-muted: #91a2aa;
+}
+
+/* ------------------------------------------------------------
+   Global atmosphere
+   ------------------------------------------------------------ */
+body {
+  background:
+    radial-gradient(circle at 78% -8%, rgba(92, 151, 169, .12), transparent 29rem),
+    radial-gradient(circle at 14% 108%, rgba(136, 78, 153, .08), transparent 30rem),
+    radial-gradient(circle at 92% 62%, rgba(155, 43, 51, .055), transparent 28rem),
+    linear-gradient(180deg, #080d12 0%, #06090d 72%, #080b0f 100%);
+}
+
+.topbar {
+  background:
+    linear-gradient(180deg, rgba(6, 11, 16, .97), rgba(6, 10, 15, .90)),
+    radial-gradient(circle at 53% 0%, rgba(87, 166, 186, .055), transparent 26rem);
+  border-bottom-color: rgba(120, 177, 193, .12);
+  box-shadow: 0 9px 36px rgba(0, 0, 0, .24), inset 0 -1px rgba(201, 169, 108, .035);
+}
+
+.topbar::after {
+  background: linear-gradient(90deg,
+    transparent 0 12%,
+    rgba(105, 192, 211, .28) 30%,
+    rgba(201, 169, 108, .28) 48%,
+    rgba(203, 67, 70, .44) 58%,
+    transparent 88% 100%);
+  opacity: .75;
+}
+
+.brand-mark {
+  border-color: rgba(201, 169, 108, .55);
+  background:
+    radial-gradient(circle at 27% 18%, rgba(111, 194, 213, .22), transparent 36%),
+    radial-gradient(circle at 72% 79%, rgba(179, 54, 63, .20), transparent 45%),
+    linear-gradient(145deg, rgba(28, 47, 56, .96), rgba(18, 14, 21, .96));
+  box-shadow:
+    inset 0 0 24px rgba(89, 181, 203, .06),
+    0 0 24px rgba(74, 161, 183, .07),
+    0 0 18px rgba(197, 71, 77, .045);
+}
+
+.brand-copy small { color: #768c96; }
+
+.header-search {
+  border-color: rgba(113, 178, 194, .16);
+  background:
+    linear-gradient(180deg, rgba(87, 166, 186, .035), rgba(255,255,255,.014)),
+    rgba(7, 13, 18, .82);
+}
+.header-search:hover,
+.header-search:focus-within {
+  border-color: rgba(121, 201, 220, .35);
+  background:
+    linear-gradient(180deg, rgba(91, 185, 207, .06), rgba(178, 61, 70, .018)),
+    rgba(7, 13, 18, .91);
+  box-shadow: inset 0 1px rgba(255,255,255,.025), 0 0 0 3px rgba(91,185,207,.04), 0 0 24px rgba(91,185,207,.04);
+}
+
+.sidebar {
+  border-right-color: rgba(113, 171, 187, .09);
+  background:
+    radial-gradient(circle at 22% 92%, rgba(119, 72, 148, .075), transparent 18rem),
+    radial-gradient(circle at 95% 10%, rgba(74, 157, 179, .055), transparent 15rem),
+    linear-gradient(180deg, rgba(9, 16, 22, .96), rgba(6, 10, 15, .94));
+  box-shadow: inset -1px 0 rgba(201,169,108,.025);
+}
+
+.sidebar::after {
+  background:
+    linear-gradient(135deg, transparent 0 73%, rgba(201,169,108,.027) 73.2%, transparent 73.45%),
+    linear-gradient(45deg, transparent 0 88%, rgba(102,185,205,.025) 88.2%, transparent 88.45%);
+}
+
+.sidebar-label { color: #607985; }
+.sidebar a:hover,
+.sidebar-button:hover {
+  color: #f4f7f7;
+  border-color: rgba(110, 180, 198, .09);
+  background: linear-gradient(90deg, rgba(57, 123, 141, .09), rgba(255,255,255,.018));
+}
+.sidebar a.active {
+  color: #fff;
+  border-color: rgba(201, 169, 108, .23);
+  background:
+    linear-gradient(90deg, rgba(44, 102, 119, .27), rgba(126, 73, 145, .075) 58%, rgba(188, 57, 64, .04));
+  box-shadow: inset 2px 0 0 var(--sealed-miasma), 0 9px 24px rgba(0,0,0,.08);
+}
+
+.language-control {
+  border-color: rgba(115, 176, 192, .16);
+  background:
+    linear-gradient(180deg, rgba(81, 157, 176, .04), rgba(255,255,255,.014)),
+    rgba(7, 13, 18, .84);
+}
+.language-control::before {
+  background: linear-gradient(180deg, rgba(93,190,212,.20), var(--sealed-miasma), rgba(169,82,164,.18));
+}
+.language-control:hover,
+.language-control:focus-within { border-color: rgba(121,201,220,.36); }
+
+/* ------------------------------------------------------------
+   Route-level atmosphere
+   ------------------------------------------------------------ */
+body[data-route="wiki"],
+body[data-route="guides"],
+body[data-route="charter"],
+body[data-route="codex"] {
+  --page-accent: var(--sealed-miasma);
+  --page-accent-soft: var(--sealed-miasma-soft);
+  --page-accent-faint: rgba(91,185,207,.055);
+  --page-metal: #a8b8bd;
+}
+
+body[data-route="charter"] {
+  --page-accent: var(--sealed-gold);
+  --page-accent-soft: var(--sealed-gold-soft);
+  --page-accent-faint: rgba(201,169,108,.05);
+}
+body[data-route="codex"] {
+  --page-accent: #dc6962;
+  --page-accent-soft: rgba(216,84,80,.13);
+  --page-accent-faint: rgba(216,84,80,.05);
+}
+
+body[data-route="wiki"] .main-content,
+body[data-route="guides"] .main-content,
+body[data-route="charter"] .main-content,
+body[data-route="codex"] .main-content {
+  background:
+    radial-gradient(circle at 86% 5%, rgba(83, 162, 183, .07), transparent 28rem),
+    radial-gradient(circle at 10% 58%, rgba(132, 82, 157, .035), transparent 26rem),
+    linear-gradient(180deg, rgba(5,9,13,.02), rgba(5,9,13,.38));
+}
+
+/* ------------------------------------------------------------
+   Home / operations dashboard
+   ------------------------------------------------------------ */
+.ops-dashboard .dashboard-season-bg { opacity: .96; }
+
+.dashboard-head .eyebrow {
+  color: #83cfdf;
+  text-shadow: 0 0 22px rgba(91,185,207,.21), 0 0 36px rgba(139,91,173,.07);
+}
+
+.status-strip,
+.dashboard-panel {
+  border-color: rgba(112, 171, 187, .20);
+  background:
+    linear-gradient(180deg, rgba(10, 20, 27, .93), rgba(6, 12, 17, .94)),
+    radial-gradient(circle at 90% 0, rgba(80, 160, 181, .055), transparent 18rem),
+    radial-gradient(circle at 4% 100%, rgba(126, 80, 151, .032), transparent 14rem);
+  box-shadow: 0 22px 58px rgba(0,0,0,.24), inset 0 1px rgba(255,255,255,.02);
+}
+
+.status-strip { border-color: rgba(201, 169, 108, .30); }
+.panel-head {
+  background: linear-gradient(90deg, rgba(86,169,190,.045), rgba(148,92,170,.018) 52%, transparent 88%);
+  border-bottom-color: rgba(119,175,190,.10);
+}
+.panel-head h2 { color: #e8f1f2; }
+
+.event-card {
+  border-color: rgba(105, 174, 191, .20);
+  background:
+    linear-gradient(165deg, rgba(13, 29, 38, .91), rgba(7, 15, 21, .95)),
+    radial-gradient(circle at 88% 6%, rgba(96, 184, 205, .09), transparent 10rem);
+}
+.event-card.live {
+  border-color: rgba(205, 75, 78, .42);
+  background:
+    radial-gradient(circle at 92% 3%, rgba(199, 58, 66, .12), transparent 11rem),
+    linear-gradient(165deg, rgba(32, 22, 28, .90), rgba(8, 15, 20, .96));
+  box-shadow: inset 2px 0 rgba(208,76,78,.32), inset 0 0 30px rgba(156,46,53,.025);
+}
+.event-card.upcoming {
+  border-color: rgba(103, 177, 199, .34);
+  box-shadow: inset 2px 0 rgba(91,185,207,.20);
+}
+.event-type {
+  border-color: rgba(113, 188, 206, .17);
+  background: rgba(71, 151, 170, .11);
+  color: #91d4e2;
+}
+.event-card.live .event-type {
+  border-color: rgba(216,84,80,.20);
+  background: rgba(176,52,58,.12);
+  color: #f08a83;
+}
+
+.quick-access a,
+.quick-access button {
+  border-color: rgba(114, 176, 192, .15);
+  background: linear-gradient(180deg, rgba(71,143,161,.045), rgba(255,255,255,.015));
+}
+.quick-access a:hover,
+.quick-access button:hover {
+  border-color: rgba(201,169,108,.28);
+  background: linear-gradient(180deg, rgba(83,167,188,.08), rgba(117,72,143,.035));
+}
+
+/* ------------------------------------------------------------
+   Interior cover language — Wiki / Charter / Codex / Guides
+   ------------------------------------------------------------ */
+body[data-route="wiki"] .page-header,
+body[data-route="guides"] .page-header,
+body[data-route="charter"] .page-header,
+body[data-route="codex"] .page-header {
+  border-color: rgba(116, 177, 193, .17);
+  background: #081016;
+  box-shadow: 0 26px 72px rgba(0,0,0,.31), inset 0 0 0 1px rgba(201,169,108,.018);
+}
+
+body[data-route="wiki"] .page-header::before {
+  background-image:
+    linear-gradient(90deg, rgba(6,11,16,.96) 0%, rgba(7,14,20,.77) 43%, rgba(8,11,17,.34) 100%),
+    linear-gradient(180deg, rgba(5,9,14,.09), rgba(6,10,15,.91)),
+    url("./art/sacred-tree.webp");
+  background-position: 60% 40%;
+}
+
+body[data-route="guides"] .page-header {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 42px clamp(28px, 4.6vw, 58px) 34px;
+  margin: -10px 0 30px;
+  border-radius: 16px;
+}
+body[data-route="guides"] .page-header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background:
+    linear-gradient(90deg, rgba(6,11,16,.97) 0%, rgba(7,13,19,.79) 43%, rgba(7,9,14,.28) 100%),
+    linear-gradient(180deg, rgba(7,10,15,.08), rgba(6,10,15,.92)),
+    url("./art/sealed-hero.webp") 70% 44% / cover no-repeat;
+  transform: scale(1.015);
+}
+body[data-route="guides"] .page-header::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 79% 9%, rgba(91,185,207,.10), transparent 30%),
+    radial-gradient(circle at 90% 72%, rgba(187,52,62,.07), transparent 26%),
+    linear-gradient(90deg, rgba(126,82,153,.06), transparent 32%);
+  box-shadow: inset 0 -1px rgba(201,169,108,.045);
+}
+
+body[data-route="charter"] .page-header::before {
+  background-image:
+    linear-gradient(90deg, rgba(7,10,14,.97) 0%, rgba(9,11,15,.79) 47%, rgba(8,9,13,.36) 100%),
+    linear-gradient(180deg, rgba(8,9,13,.12), rgba(7,9,13,.92)),
+    url("./art/blood-moon-banner.webp");
+}
+body[data-route="codex"] .page-header::before {
+  background-image:
+    linear-gradient(90deg, rgba(6,11,16,.97) 0%, rgba(7,13,19,.81) 45%, rgba(8,9,14,.34) 100%),
+    linear-gradient(180deg, rgba(7,9,14,.08), rgba(6,10,15,.92)),
+    url("./art/sealed-hero.webp");
+}
+
+body[data-route="wiki"] .page-header::after,
+body[data-route="guides"] .page-header::after,
+body[data-route="charter"] .page-header::after,
+body[data-route="codex"] .page-header::after {
+  box-shadow: inset 0 -1px rgba(201,169,108,.045), inset 0 0 70px rgba(2,4,7,.15);
+}
+
+body[data-route="guides"] .page-header .eyebrow,
+body[data-route="guides"] .page-header h1 { position: relative; }
+body[data-route="guides"] .page-header .eyebrow {
+  color: var(--sealed-miasma);
+  text-shadow: 0 0 20px rgba(91,185,207,.19);
+}
+body[data-route="guides"] .page-header h1 {
+  margin: 10px 0 9px;
+  max-width: 760px;
+  font-size: clamp(2.35rem, 5vw, 4.65rem);
+  line-height: .96;
+  letter-spacing: -.055em;
+  text-shadow: 0 8px 28px rgba(0,0,0,.42);
+}
+body[data-route="guides"] .page-header p {
+  max-width: 700px;
+  color: #b5c5ca;
+  line-height: 1.62;
+}
+body[data-route="guides"] .meta-chip {
+  border-color: rgba(118,181,198,.18);
+  background: rgba(6,11,16,.56);
+  color: #c7d4d7;
+  backdrop-filter: blur(9px);
+}
+
+/* ------------------------------------------------------------
+   Wiki: compendium + research UI
+   ------------------------------------------------------------ */
+.wiki-trust-panel,
+.wiki-research-notice,
+.wiki-ia-audit-note {
+  border-color: rgba(112, 174, 191, .15);
+  background:
+    linear-gradient(135deg, rgba(19, 40, 49, .42), rgba(10, 16, 23, .70)),
+    radial-gradient(circle at 98% 0, rgba(146,95,172,.055), transparent 16rem);
+}
+
+.wiki-trust-chevron,
+.wiki-overview-head small,
+.wiki-browser-head small,
+.wiki-category-tile-top small,
+.wiki-browser-card small,
+.wiki-research-card small {
+  color: #88cddd;
+}
+
+.wiki-category-tile {
+  border-color: rgba(112, 174, 191, .12);
+  background:
+    radial-gradient(circle at 94% 0%, rgba(85,171,192,.075), transparent 44%),
+    radial-gradient(circle at 8% 100%, rgba(134,85,158,.035), transparent 40%),
+    rgba(9, 17, 23, .80);
+}
+.wiki-category-tile:hover {
+  border-color: rgba(121,201,220,.27);
+  background:
+    radial-gradient(circle at 94% 0%, rgba(91,185,207,.10), transparent 44%),
+    rgba(11, 21, 28, .89);
+}
+.wiki-category-tile.active {
+  border-color: rgba(201,169,108,.32);
+  box-shadow: inset 2px 0 0 var(--sealed-miasma), 0 13px 30px rgba(0,0,0,.16);
+  background:
+    radial-gradient(circle at 92% 0%, rgba(91,185,207,.10), transparent 46%),
+    linear-gradient(145deg, rgba(21,39,47,.83), rgba(12,18,25,.94));
+}
+.wiki-category-tile-all {
+  background:
+    radial-gradient(circle at 92% 5%, rgba(201,169,108,.09), transparent 46%),
+    rgba(9,17,23,.80);
+}
+
+.wiki-group-filters button {
+  border-color: rgba(111, 174, 190, .11);
+  background: rgba(76, 143, 158, .028);
+}
+.wiki-group-filters button:hover,
+.wiki-group-filters button.active {
+  border-color: rgba(121,201,220,.29);
+  background: rgba(68,145,164,.095);
+  color: #eef9fa;
+}
+
+.wiki-browser-card,
+.wiki-confidence-item {
+  border-color: rgba(111,174,190,.10);
+  background: rgba(10,19,25,.70);
+}
+.wiki-browser-card:hover {
+  border-color: rgba(121,201,220,.22);
+  background: rgba(64,137,155,.055);
+}
+
+.wiki-research-card {
+  border-color: rgba(112,174,191,.13);
+  background:
+    radial-gradient(circle at 100% 0%, rgba(91,185,207,.08), transparent 34%),
+    radial-gradient(circle at 0 100%, rgba(139,91,168,.035), transparent 34%),
+    rgba(9,18,24,.80);
+}
+.wiki-research-card::before {
+  background: linear-gradient(180deg, rgba(121,201,220,.78), rgba(151,112,187,0));
+}
+.wiki-research-card:hover {
+  border-color: rgba(121,201,220,.31);
+  background:
+    radial-gradient(circle at 100% 0%, rgba(91,185,207,.12), transparent 38%),
+    rgba(11,21,28,.88);
+}
+.wiki-research-card > span,
+.wiki-back { color: #9bd2dc; }
+
+.wiki-article-body h2 {
+  border-bottom-color: rgba(119,177,193,.14);
+}
+.wiki-article-body blockquote {
+  border-left-color: rgba(201,169,108,.42);
+  background: linear-gradient(90deg, rgba(201,169,108,.055), rgba(91,185,207,.025));
+}
+.wiki-article-body a { color: #88cfdd; }
+
+/* ------------------------------------------------------------
+   Tips & Guides — practical field manual, not generic SaaS cards
+   ------------------------------------------------------------ */
+.guide-policy {
+  position: relative;
+  overflow: hidden;
+  border-color: rgba(201,169,108,.21);
+  background:
+    linear-gradient(135deg, rgba(24,43,49,.78), rgba(10,18,25,.86)),
+    radial-gradient(circle at 88% 8%, rgba(126,82,153,.06), transparent 18rem);
+  box-shadow: inset 0 1px rgba(255,255,255,.025), 0 16px 38px rgba(0,0,0,.10);
+}
+.guide-policy::after {
+  content: "";
+  position: absolute;
+  right: -22px;
+  top: -44px;
+  width: 150px;
+  height: 150px;
+  pointer-events: none;
+  opacity: .075;
+  background: url("./art/sealed-emblem.webp") center / cover no-repeat;
+  filter: saturate(.75) hue-rotate(4deg);
+}
+.guide-policy strong { color: #dfecef; }
+
+.guide-section-head>div>small,
+.guide-build-panel>small,
+.guide-advice>small,
+.guide-source-box small,
+.guide-roadmap small { color: #7fc9d9; }
+
+.guide-section-head>span {
+  color: #9acbd4;
+  border-color: rgba(121,201,220,.20);
+  background: rgba(52,118,134,.18);
+}
+
+.guide-card {
+  border-color: rgba(111,174,190,.16);
+  background:
+    linear-gradient(160deg, rgba(13,28,36,.95), rgba(7,14,20,.97)),
+    radial-gradient(circle at 95% 5%, rgba(91,185,207,.055), transparent 38%);
+  box-shadow: inset 0 1px rgba(255,255,255,.016), 0 15px 34px rgba(0,0,0,.09);
+}
+.guide-card::before {
+  background:
+    radial-gradient(circle at 94% 4%, rgba(91,185,207,.105), transparent 34%),
+    linear-gradient(135deg, transparent 0 72%, rgba(201,169,108,.023) 72.2%, transparent 72.5%);
+}
+.guide-card::after {
+  content: "";
+  position: absolute;
+  right: -22px;
+  bottom: -30px;
+  width: 116px;
+  height: 116px;
+  opacity: .045;
+  pointer-events: none;
+  background: url("./art/sealed-emblem.webp") center / cover no-repeat;
+}
+.guide-card:hover {
+  border-color: rgba(201,169,108,.28);
+  background:
+    linear-gradient(160deg, rgba(16,34,42,.98), rgba(9,16,23,.98)),
+    radial-gradient(circle at 95% 5%, rgba(91,185,207,.09), transparent 38%);
+  box-shadow: 0 18px 40px rgba(0,0,0,.15), inset 2px 0 rgba(121,201,220,.18);
+}
+
+.guide-card-top>span {
+  border-color: rgba(201,169,108,.23);
+  background:
+    radial-gradient(circle at 25% 20%, rgba(91,185,207,.12), transparent 35%),
+    rgba(27,53,61,.34);
+  color: #e0f0f2;
+  box-shadow: inset 0 0 20px rgba(91,185,207,.03);
+}
+.guide-card-foot { color: #86cddd; }
+
+.guide-roadmap {
+  border-color: rgba(115,176,192,.13);
+  background:
+    linear-gradient(135deg, rgba(11,21,27,.74), rgba(7,13,18,.72)),
+    radial-gradient(circle at 80% 20%, rgba(140,87,165,.04), transparent 18rem);
+}
+.guide-roadmap-tags span {
+  border-color: rgba(112,174,191,.11);
+  background: rgba(59,126,142,.035);
+}
+
+.guide-build-panel,
+.guide-advice,
+.guide-source-box {
+  border-color: rgba(111,174,190,.15);
+  background:
+    linear-gradient(145deg, rgba(13,27,35,.92), rgba(7,14,20,.95)),
+    radial-gradient(circle at 92% 0, rgba(91,185,207,.045), transparent 14rem);
+}
+.guide-build-panel.accent {
+  border-color: rgba(201,169,108,.25);
+  background:
+    linear-gradient(145deg, rgba(39,35,28,.58), rgba(10,18,23,.96)),
+    radial-gradient(circle at 91% 0, rgba(201,169,108,.06), transparent 14rem);
+}
+.guide-build-list li {
+  border-color: rgba(111,174,190,.09);
+  background: rgba(70,138,153,.028);
+}
+.guide-build-list li::before { color: #7bc7d7; }
+.guide-advice li>span {
+  border-color: rgba(121,201,220,.25);
+  color: #9bd9e3;
+  background: rgba(63,135,151,.065);
+}
+.guide-source-actions a {
+  color: #99d5df;
+  border-color: rgba(121,201,220,.16);
+  background: rgba(52,119,135,.10);
+}
+
+/* Future-season content should read as forbidden knowledge, not as a generic error tag. */
+.spoiler-alert-tag {
+  border-color: rgba(201,169,108,.44) !important;
+  background:
+    linear-gradient(90deg, rgba(112,31,38,.40), rgba(58,29,49,.34)) !important;
+  color: #f2c98a !important;
+  box-shadow: inset 0 0 18px rgba(199,58,66,.05), 0 0 16px rgba(199,58,66,.045) !important;
+  text-shadow: 0 0 12px rgba(224,90,80,.12);
+}
+
+/* ------------------------------------------------------------
+   Charter / Codex reading surfaces
+   ------------------------------------------------------------ */
+body[data-route="charter"] .markdown-body,
+body[data-route="codex"] .markdown-body,
+body[data-route="charter"] .document-body,
+body[data-route="codex"] .document-body {
+  color: #dce6e8;
+}
+
+body[data-route="charter"] .markdown-body h2,
+body[data-route="codex"] .markdown-body h2,
+body[data-route="charter"] .document-body h2,
+body[data-route="codex"] .document-body h2 {
+  border-bottom-color: rgba(118,176,191,.13);
+}
+
+body[data-route="charter"] blockquote,
+body[data-route="codex"] blockquote {
+  border-left-color: rgba(201,169,108,.40);
+  background: linear-gradient(90deg, rgba(201,169,108,.05), rgba(86,166,186,.018));
+}
+
+/* ------------------------------------------------------------
+   Dialogs / global search / contribution
+   ------------------------------------------------------------ */
+.dialog {
+  border-color: rgba(118,178,194,.19);
+  background:
+    radial-gradient(circle at 92% 0, rgba(91,185,207,.07), transparent 18rem),
+    linear-gradient(180deg, rgba(10,20,27,.98), rgba(6,12,17,.99));
+  box-shadow: 0 35px 100px rgba(0,0,0,.55), 0 0 0 1px rgba(201,169,108,.025);
+}
+.dialog-head { border-bottom-color: rgba(116,176,192,.11); }
+.search-input,
+.dialog input,
+.dialog textarea,
+.dialog select {
+  border-color: rgba(112,174,191,.17);
+  background: rgba(6,13,18,.74);
+}
+.search-input:focus,
+.dialog input:focus,
+.dialog textarea:focus,
+.dialog select:focus {
+  border-color: rgba(121,201,220,.37);
+  box-shadow: 0 0 0 3px rgba(91,185,207,.05);
+}
+.search-result:hover {
+  border-color: rgba(121,201,220,.22);
+  background: rgba(61,134,151,.055);
+}
+
+/* ------------------------------------------------------------
+   Motion & small screens
+   ------------------------------------------------------------ */
+@media (max-width: 760px) {
+  body[data-route="guides"] .page-header {
+    min-height: 220px;
+    padding: 30px 20px 25px;
+    margin-top: 0;
+  }
+  body[data-route="guides"] .page-header::before { background-position: 61% 44%; }
+  .guide-policy::after { opacity: .045; right: -42px; }
+  .dashboard-panel,
+  .status-strip { backdrop-filter: blur(8px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sealed-atmosphere::before,
+  .sealed-atmosphere::after,
+  body[data-route="wiki"] .page-header .meta-row::after,
+  body[data-route="charter"] .page-header .meta-row::after,
+  body[data-route="codex"] .page-header .meta-row::after {
+    animation: none !important;
+  }
+}
