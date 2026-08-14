@@ -1,9 +1,33 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "updated": "2026-08-15",
   "source": "AllClash",
   "currentServerSeason": 4,
-  "rule": "Only move a source-derived hero build into public Tips & Guides when the hero already has a Server 504 Wiki profile or is otherwise confirmed current for Server 504. Season 6 ranking is not imported as Season 4 ranking.",
+  "contentScope": {
+    "minimumSeason": 1,
+    "maximumSeason": 6,
+    "rule": "Server 504 may publish useful Dark War: Survival reference and guide content through Season 6. Content from a season later than the server's current season must remain accessible but carry a Spoiler Alert tag instead of being blocked.",
+    "spoilerAfterSeason": 4,
+    "spoilerLabel": "⚠ Spoiler Alert"
+  },
+  "seasonRoster": {
+    "season4": {
+      "status": "server-504-canonical",
+      "heroes": ["Lucas", "Rosa", "Noah"],
+      "source": "Server 504 player confirmation"
+    },
+    "season5": {
+      "status": "community-cross-checked",
+      "heroes": ["Angela", "Ryan", "Shadow"],
+      "spoiler": true
+    },
+    "season6": {
+      "status": "community-cross-checked",
+      "heroes": ["Ella", "Sebastian", "Selwyn"],
+      "spoiler": true,
+      "note": "AllClash currently has Season 6 meta/build coverage for Ella and Sebastian but does not provide equivalent Selwyn coverage in the indexed Dark War: Survival set. Keep this as a source gap rather than assuming Selwyn does not exist."
+    }
+  },
   "published": [
     {"hero":"Darian","guideSlug":"darian-build","wikiSlug":"hero-darian"},
     {"hero":"Katrina","guideSlug":"katrina-build","wikiSlug":"hero-katrina"},
@@ -16,18 +40,31 @@
     {"hero":"Evans","wikiSlug":"hero-evans"},
     {"hero":"Catherine & Rex","wikiSlug":"hero-catherine-and-rex"},
     {"hero":"Francis","wikiSlug":"hero-francis"},
-    {"hero":"Lucas","wikiSlug":"hero-lucas"},
+    {"hero":"Lucas","wikiSlug":"hero-lucas","season":4},
     {"hero":"Guy","wikiSlug":"hero-guy"},
     {"hero":"Tristan","wikiSlug":"hero-tristan","note":"Cross-check AllClash wording inconsistency before publication."},
-    {"hero":"Noah","wikiSlug":"hero-noah"},
+    {"hero":"Noah","wikiSlug":"hero-noah","season":4},
     {"hero":"Cyrus","wikiSlug":"hero-cyrus"},
     {"hero":"Marcia","wikiSlug":"hero-marcia"},
     {"hero":"Natasha","wikiSlug":"hero-natasha"},
     {"hero":"Margaret","wikiSlug":"hero-margaret"},
-    {"hero":"Rosa","wikiSlug":"hero-rosa"}
+    {"hero":"Rosa","wikiSlug":"hero-rosa","season":4},
+    {"hero":"Angela","season":5,"spoiler":true},
+    {"hero":"Ryan","season":5,"spoiler":true},
+    {"hero":"Shadow","season":5,"spoiler":true},
+    {"hero":"Ella","season":6,"spoiler":true},
+    {"hero":"Sebastian","season":6,"spoiler":true},
+    {"hero":"Selwyn","season":6,"spoiler":true,"sourceGap":"No indexed AllClash build page yet; use other cross-checked community/official evidence when creating this guide."}
   ],
-  "holdForServer504Verification": [
-    "Ella","Angela","Ryan","Sebastian","Shadow","Selena","Farhad","Barnett","Bob","Liz","Scarlett","Eddie","Victor","Ruby","Joe","Cecilia","Kylie","Andre","Catherine","Musashimaru","Willow"
+  "sourceIndexedAwaitingEditorialValidation": [
+    "Selena","Farhad","Barnett","Bob","Liz","Scarlett","Eddie","Victor","Ruby","Joe","Cecilia","Kylie","Andre","Catherine","Musashimaru","Willow"
+  ],
+  "publicationRules": [
+    "Do not block a useful article only because it belongs to Season 5 or Season 6.",
+    "Anything with season > 4 must display the Spoiler Alert tag in public UI.",
+    "Season-specific ranking must identify its source season; never relabel a Season 6 tier list as Season 4 meta.",
+    "Official/current in-game evidence and Server 504 evidence still override stale community claims.",
+    "A source gap is not evidence that a hero or system does not exist."
   ],
   "conflictRules": [
     "Darian: ignore AllClash no-exclusive claim when publishing; official patch-history evidence wins.",
