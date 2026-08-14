@@ -45,38 +45,9 @@ The current community page contains three pieces of evidence that do not agree:
 
 The Wiki therefore records no canonical faction yet.
 
-## Practical Build Guide — community snapshot
+## Related practical guide
 
-> **Guide source:** AllClash, article updated 20 Mar 2026.  
-> **Use as:** investment guidance and additional faction evidence, not canonical Server 504 data.
-
-AllClash builds Lan entirely with **Fighter equipment**, which is another independent community signal leaning toward Fighter. This strengthens the case but still does not replace a current Server 504 screenshot for canonical faction verification.
-
-### Minimum practical target
-
-- D3-Fighter Pistol — Lv.40
-- D3-Fighter Battle Helmet — Lv.40
-- D5-Fighter Guardian Armor — Lv.20
-- D5-Fighter Doomsday Boots — Lv.20
-- Frost Fang — 1★
-
-### High-investment reference target
-
-- D5-Fighter Submachine Gun — Lv.40
-- D5-Fighter Commander Helmet — Lv.40
-- D6-Armor — Max
-- D6-Boots — Max
-- Frost Fang — 5★
-
-### How to use this on Server 504
-
-If the current in-game UI confirms Lan as Fighter, this build becomes directly compatible with her faction investment path. Until then:
-
-- avoid using this guide as proof for faction-specific chips or research allocation;
-- treat Frost Fang and Fighter gear recommendations as community build guidance;
-- prioritize a current Hero Index / hero-detail screenshot before publishing a final faction-specific recommendation.
-
-AllClash's later-era tier list continues to regard Lan as a strong combat hero, but Server 504 should not import a Season 6 tier placement into a Season 4 decision without considering stars, existing Fighter investment and replacement cost.
+For build and investment advice, see the separate [Lan Build Guide](#/guides/lan-build) in **Tips & Guides**. The guide's Fighter-oriented community build is not treated as canonical faction evidence.
 
 ## What will resolve it
 
@@ -97,5 +68,4 @@ Her combat skill structure can still be evaluated from battle reports, but recom
 ## Sources
 
 - DarkWarData — Lan Yan: https://darkwardata.com/heroes/lan-yan/
-- AllClash — Best Lan Build: https://www.allclash.com/best-lan-build-in-dark-war-survival-skill-upgrade-order-gear-priority/
 - Apple App Store — official hero / Exclusive Equipment patch history: https://apps.apple.com/app/dark-war-survival/id6670441558
