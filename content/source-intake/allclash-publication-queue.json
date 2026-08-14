@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "updated": "2026-08-15",
+  "source": "AllClash",
+  "currentServerSeason": 4,
+  "rule": "Only move a source-derived hero build into public Tips & Guides when the hero already has a Server 504 Wiki profile or is otherwise confirmed current for Server 504. Season 6 ranking is not imported as Season 4 ranking.",
+  "published": [
+    {"hero":"Darian","guideSlug":"darian-build","wikiSlug":"hero-darian"},
+    {"hero":"Katrina","guideSlug":"katrina-build","wikiSlug":"hero-katrina"},
+    {"hero":"Lan","guideSlug":"lan-build","wikiSlug":"hero-lan-yan-pending","note":"Guide may use build evidence, but canonical faction remains pending Server 504 verification."}
+  ],
+  "readyForEditorialFilter": [
+    {"hero":"Quinn","wikiSlug":"hero-quinn"},
+    {"hero":"Corleone","wikiSlug":"hero-corleone"},
+    {"hero":"Megan","wikiSlug":"hero-megan"},
+    {"hero":"Evans","wikiSlug":"hero-evans"},
+    {"hero":"Catherine & Rex","wikiSlug":"hero-catherine-and-rex"},
+    {"hero":"Francis","wikiSlug":"hero-francis"},
+    {"hero":"Lucas","wikiSlug":"hero-lucas"},
+    {"hero":"Guy","wikiSlug":"hero-guy"},
+    {"hero":"Tristan","wikiSlug":"hero-tristan","note":"Cross-check AllClash wording inconsistency before publication."},
+    {"hero":"Noah","wikiSlug":"hero-noah"},
+    {"hero":"Cyrus","wikiSlug":"hero-cyrus"},
+    {"hero":"Marcia","wikiSlug":"hero-marcia"},
+    {"hero":"Natasha","wikiSlug":"hero-natasha"},
+    {"hero":"Margaret","wikiSlug":"hero-margaret"},
+    {"hero":"Rosa","wikiSlug":"hero-rosa"}
+  ],
+  "holdForServer504Verification": [
+    "Ella","Angela","Ryan","Sebastian","Shadow","Selena","Farhad","Barnett","Bob","Liz","Scarlett","Eddie","Victor","Ruby","Joe","Cecilia","Kylie","Andre","Catherine","Musashimaru","Willow"
+  ],
+  "conflictRules": [
+    "Darian: ignore AllClash no-exclusive claim when publishing; official patch-history evidence wins.",
+    "Lan: AllClash Fighter classification is community evidence only, not canonical faction proof.",
+    "Tristan: resolve source wording inconsistency before turning the recommendation into public advice."
+  ]
+}
