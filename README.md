@@ -73,6 +73,7 @@ W19 adds `scripts/audit-wiki-content.py`, which separately checks the documentat
 - `assets/i18n.js` as the shared six-locale UI/taxonomy copy contract
 - `content/wiki-titles.json` as localized Wiki-title metadata
 - `content/wiki-manifest.json` as the single Wiki registry and taxonomy source
+- `content/wiki-search.json` as the generated, single-request localized Wiki search index
 - `content/wiki-coverage.json` as the machine-readable content coverage/backlog contract
 - `assets/wiki-runtime.js` as the single Wiki router, article loader, related-reference engine and Wiki search indexer
 - `assets/search-discovery.js` for ranked global search, synonyms, lightweight typo tolerance and category filtering
@@ -82,6 +83,8 @@ W19 adds `scripts/audit-wiki-content.py`, which separately checks the documentat
 - 117 registered Wiki article routes as of 8 Aug 2026
 - Cloudflare Worker + D1 anonymous feedback backend
 - GitHub Pages deployment through `.github/workflows/pages.yml`
+
+The localized Wiki search index is rebuilt with `scripts/build-wiki-search-index.py` and checked by the deployment validator. The browser loads that one JSON payload when Search is opened instead of fetching every localized Markdown article in parallel.
 
 ## Search & discovery behavior
 

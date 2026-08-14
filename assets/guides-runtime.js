@@ -28,7 +28,7 @@
   const esc = value => String(value ?? '').replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[ch]));
 
   function loadData() {
-    if (!dataPromise) dataPromise = fetch(DATA_URL,{cache:'no-store'}).then(r => {
+    if (!dataPromise) dataPromise = fetch(DATA_URL,{cache:'force-cache'}).then(r => {
       if (!r.ok) throw new Error(`Guide data HTTP ${r.status}`);
       return r.json();
     });
@@ -47,7 +47,8 @@
       link.dataset.guidesNav = '1';
       wikiLink.insertAdjacentElement('afterend', link);
     }
-    link.textContent = tx('nav');
+    const navLabel = tx('nav');
+    if (link.textContent !== navLabel) link.textContent = navLabel;
     link.classList.toggle('active', isGuideRoute());
     if (isGuideRoute()) sidebar.querySelectorAll('[data-route]').forEach(item => {
       if (item !== link) item.classList.remove('active');
@@ -58,12 +59,13 @@
       const a = document.createElement('a');
       a.href = '#/guides';
       a.dataset.guidesQuick = '1';
-      a.innerHTML = `<span>✦</span> ${esc(tx('nav'))}`;
+      a.innerHTML = `<span>✦</span> ${esc(navLabel)}`;
       const wiki = quick.querySelector('a[href="#/wiki"]');
       wiki?.insertAdjacentElement('afterend', a);
     } else if (quick) {
       const a = quick.querySelector('[data-guides-quick]');
-      if (a) a.innerHTML = `<span>✦</span> ${esc(tx('nav'))}`;
+      const nextMarkup = `<span>✦</span> ${esc(navLabel)}`;
+      if (a && a.innerHTML !== nextMarkup) a.innerHTML = nextMarkup;
     }
   }
 
@@ -192,7 +194,9 @@
       app.querySelector('[data-guides-root]')?.remove();
       scheduleRender(0);
     }
-    window.Server504Guides.refreshSearch();
+    if (isGuideRoute() || document.getElementById('searchDialog')?.open) {
+      window.Server504Guides.refreshSearch();
+    }
   });
   languageSelect?.addEventListener('change', () => setTimeout(() => {
     ensureNavigation();
@@ -203,6 +207,8 @@
   }, 0));
 
   ensureNavigation();
-  loadData().then(refreshSearch).catch(()=>{});
-  scheduleRender(20);
+  if (isGuideRoute()) {
+    loadData().then(refreshSearch).catch(()=>{});
+    scheduleRender(20);
+  }
 })();

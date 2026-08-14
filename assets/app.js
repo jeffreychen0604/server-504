@@ -150,10 +150,10 @@ async function fetchLocalizedDocument(file) {
   const localePath = `content/${currentLocale}/${file}`;
   const fallbackPath = `content/en/${file}`;
   let fallback = false;
-  let res = await fetch(localePath, { cache: 'no-store' });
+  let res = await fetch(localePath, { cache: 'force-cache' });
   if (!res.ok) {
     fallback = currentLocale !== 'en';
-    res = await fetch(fallbackPath, { cache: 'no-store' });
+    res = await fetch(fallbackPath, { cache: 'force-cache' });
   }
   if (!res.ok) throw new Error(`HTTP ${res.status}`);
   return { text: await res.text(), fallback };
@@ -162,7 +162,12 @@ async function fetchLocalizedDocument(file) {
 async function loadMarkdown(route) {
   const cfg = contentMap[route];
   try {
-    const { text, fallback } = await fetchLocalizedDocument(cfg.file);
+    const markedPromise = window.marked ? Promise.resolve(window.marked) : window.Server504LazyWiki?.ensureMarked?.();
+    const [{ text, fallback }] = await Promise.all([
+      fetchLocalizedDocument(cfg.file),
+      markedPromise
+    ]);
+    if (!window.marked) throw new Error('Markdown renderer unavailable');
     const localeBadge = fallback ? `${t('englishSource')} · ${currentLocale.toUpperCase()} ${t('translationPending')}` : currentLocale.toUpperCase();
     return `<section class="page">
       ${pageHeader(t(cfg.eyebrowKey), t(cfg.titleKey), t(cfg.descriptionKey), [t('version2'), t('august2026'), localeBadge])}
@@ -214,13 +219,26 @@ async function buildSearchIndex() {
     } catch (_) {}
   }
 
-  searchIndex = entries;
+  searchIndex = searchIndex.filter(entry => entry.route !== 'charter' && entry.route !== 'codex');
+  searchIndex.push(...entries);
+}
+
+let governanceSearchPromise;
+function ensureGovernanceSearchIndex() {
+  if (!governanceSearchPromise) {
+    governanceSearchPromise = buildSearchIndex();
+  }
+  return governanceSearchPromise;
 }
 
 function openSearch() {
   searchDialog.showModal();
   setTimeout(() => searchInput.focus(), 30);
   renderSearchResults(searchInput.value || '');
+  window.Server504Guides?.refreshSearch?.();
+  ensureGovernanceSearchIndex().then(() => {
+    if (searchDialog.open) renderSearchResults(searchInput.value || '');
+  });
 }
 
 function renderSearchResults(query) {
@@ -242,11 +260,19 @@ languageSelect.addEventListener('change', async () => {
   currentLocale = languageSelect.value;
   localStorage.setItem('server504-locale', currentLocale);
   applyUiLanguage();
-  await buildSearchIndex();
+  governanceSearchPromise = null;
   await render();
   window.dispatchEvent(new CustomEvent('server504:localechange', { detail: { locale: currentLocale } }));
+  if (searchDialog.open) {
+    ensureGovernanceSearchIndex().then(() => renderSearchResults(searchInput.value || ''));
+  }
 });
 
+searchInput.addEventListener('focus', () => {
+  ensureGovernanceSearchIndex().then(() => {
+    if (searchDialog.open) renderSearchResults(searchInput.value || '');
+  });
+});
 searchInput.addEventListener('input', e => renderSearchResults(e.target.value));
 document.querySelectorAll('.search-trigger').forEach(btn => btn.addEventListener('click', openSearch));
 document.getElementById('contributeSidebar').addEventListener('click', openContribute);
@@ -285,4 +311,4 @@ if (!feedbackApiConfigured) {
 }
 
 applyUiLanguage();
-buildSearchIndex().then(() => render());
+render();

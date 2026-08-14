@@ -77,6 +77,8 @@ active_js=(
   assets/i18n.js
   assets/app.js
   assets/feedback.js
+  assets/guides-runtime.js
+  assets/lazy-wiki-loader.js
   assets/wiki-runtime.js
   assets/wiki-calculators.js
   assets/search-discovery.js
@@ -95,6 +97,11 @@ fi
 
 # Wiki body localization contract: completed batches must exist in every declared locale.
 if ! python3 scripts/validate-wiki-localization.py; then
+  fail=1
+fi
+
+# Generated single-request search index must stay in sync with every localized body.
+if ! python3 scripts/build-wiki-search-index.py --check; then
   fail=1
 fi
 

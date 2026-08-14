@@ -7,6 +7,7 @@
 
   const MANIFEST_URL = 'content/wiki-manifest.json';
   const TITLES_URL = 'content/wiki-titles.json';
+  const SEARCH_INDEX_URL = 'content/wiki-search.json';
   const i18n = window.Server504I18N;
   const t = key => i18n?.t(key, locale()) || key;
   const STOP_WORDS = new Set([
@@ -31,6 +32,7 @@
 
   let manifestPromise;
   let titleMapPromise;
+  let searchIndexDataPromise;
   let searchEntriesPromise;
   let observer;
   let renderTimer;
@@ -67,7 +69,7 @@
 
   async function loadTitleMap() {
     if (!titleMapPromise) {
-      titleMapPromise = fetch(TITLES_URL, { cache: 'no-store' })
+      titleMapPromise = fetch(TITLES_URL, { cache: 'force-cache' })
         .then(res => res.ok ? res.json() : { titles: {} })
         .catch(() => ({ titles: {} }));
     }
@@ -86,7 +88,7 @@
 
   async function loadManifest() {
     if (!manifestPromise) {
-      manifestPromise = fetch(MANIFEST_URL, { cache: 'no-store' }).then(async res => {
+      manifestPromise = fetch(MANIFEST_URL, { cache: 'force-cache' }).then(async res => {
         if (!res.ok) throw new Error(`Manifest HTTP ${res.status}`);
         const data = await res.json();
         if (!Array.isArray(data.articles) || !Array.isArray(data.categories)) throw new Error('Invalid Wiki manifest');
@@ -96,6 +98,23 @@
       });
     }
     return manifestPromise;
+  }
+
+  async function loadSearchIndexData() {
+    if (!searchIndexDataPromise) {
+      searchIndexDataPromise = fetch(SEARCH_INDEX_URL, { cache: 'force-cache' }).then(async res => {
+        if (!res.ok) throw new Error(`Search index HTTP ${res.status}`);
+        const data = await res.json();
+        if (!data || data.version !== 1 || !data.locales || typeof data.locales !== 'object') {
+          throw new Error('Invalid Wiki search index');
+        }
+        return data;
+      }).catch(error => {
+        searchIndexDataPromise = null;
+        throw error;
+      });
+    }
+    return searchIndexDataPromise;
   }
 
   function categoryForArticle(manifest, article) {
@@ -305,10 +324,10 @@
     const localized = `content/${requestedLocale}/wiki/${article.file}`;
     const fallback = `content/en/wiki/${article.file}`;
     let usedFallback = false;
-    let res = await fetch(localized, { cache: 'no-store' });
+    let res = await fetch(localized, { cache: 'force-cache' });
     if (!res.ok) {
       usedFallback = requestedLocale !== 'en';
-      res = await fetch(fallback, { cache: 'no-store' });
+      res = await fetch(fallback, { cache: 'force-cache' });
     }
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
 
@@ -372,33 +391,25 @@
     renderTimer = setTimeout(() => renderWiki(force), delay);
   }
 
-  function cleanMarkdown(text) {
-    return text.replace(/^---[\s\S]*?---/m, ' ').replace(/https?:\/\/\S+/g, ' ').replace(/[#>*_`|\[\]()]/g, ' ').replace(/\s+/g, ' ').trim();
-  }
-
   async function getWikiSearchEntries() {
     const manifest = await loadManifest();
-    const titleMap = await loadTitleMap();
+    const searchData = await loadSearchIndexData();
     const lang = locale();
-    const entries = await Promise.all(manifest.articles.map(async article => {
-      let body = article.description;
-      try {
-        let res = await fetch(`content/${lang}/wiki/${article.file}`, { cache: 'no-store' });
-        if (!res.ok) res = await fetch(`content/en/wiki/${article.file}`, { cache: 'no-store' });
-        if (res.ok) body = cleanMarkdown(await res.text());
-      } catch (_) {}
+    const indexedArticles = new Map((searchData.locales?.[lang] || searchData.locales?.en || []).map(entry => [entry.slug, entry]));
+    const entries = manifest.articles.map(article => {
+      const indexed = indexedArticles.get(article.slug);
       const category = categoryForArticle(manifest, article);
       const localizedCategory = category ? localCategory(category).title : t('gameWiki');
       return {
         route: `wiki/${article.slug}`,
         label: `${t('gameWiki')} · ${localizedGroup(article.group)}`,
-        heading: localTitle(article, titleMap),
-        body,
+        heading: indexed?.heading || localTitle(article, {}),
+        body: indexed?.body || article.description,
         group: normalizeGroup(article.group),
         category: localizedCategory,
         aliases: [article.slug.replace(/-/g, ' '), article.title]
       };
-    }));
+    });
 
     entries.unshift({
       route: 'wiki', label: t('gameWiki'), heading: t('wikiTitle'), body: `${t('browseByCategoryDesc')} ${manifest.categories.map(x => localCategory(x).title).join(' ')}`,
@@ -446,7 +457,4 @@
 
   startObserver();
   setTimeout(() => scheduleRender(true, 0), 160);
-  setTimeout(ensureWikiSearchIndex, 350);
-  setTimeout(ensureWikiSearchIndex, 1400);
-  setTimeout(ensureWikiSearchIndex, 3200);
 })();

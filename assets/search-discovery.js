@@ -251,6 +251,7 @@
 
   input.addEventListener('focus', () => {
     window.Server504Wiki?.refreshSearch?.();
+    window.Server504Guides?.refreshSearch?.();
     setTimeout(() => enhancedRenderSearchResults(input.value || ''), 80);
   });
   dialog.addEventListener('close', () => { activeCategory = 'ALL'; });
@@ -262,7 +263,8 @@
   });
 
   setTimeout(() => {
+    if (!dialog.open) return;
     window.Server504Wiki?.refreshSearch?.();
-    if (dialog.open) enhancedRenderSearchResults(input.value || '');
+    enhancedRenderSearchResults(input.value || '');
   }, 500);
 })();

@@ -1,9 +1,11 @@
 /* Server 504 performance guard: load the heavy Wiki/search stack only when it is actually needed. */
 (() => {
   let stackPromise = null;
+  let markedPromise = null;
 
   const routeParts = () => location.hash.replace(/^#\//, '').split('?')[0].split('/').filter(Boolean);
   const isWikiRoute = () => routeParts()[0] === 'wiki';
+  const markedRuntime = document.currentScript?.dataset.markedRuntime || 'https://cdn.jsdelivr.net/npm/marked/marked.min.js';
 
   function loadScript(src) {
     return new Promise((resolve, reject) => {
@@ -23,14 +25,26 @@
     });
   }
 
+  function ensureMarked() {
+    if (window.marked) return Promise.resolve(window.marked);
+    if (!markedPromise) {
+      markedPromise = loadScript(markedRuntime).then(() => {
+        if (!window.marked) throw new Error('Marked runtime did not expose window.marked');
+        return window.marked;
+      }).catch(error => {
+        markedPromise = null;
+        throw error;
+      });
+    }
+    return markedPromise;
+  }
+
   async function loadWikiStack() {
     if (window.Server504Wiki) return window.Server504Wiki;
     if (stackPromise) return stackPromise;
 
     stackPromise = (async () => {
-      if (!window.marked) {
-        await loadScript('https://cdn.jsdelivr.net/npm/marked/marked.min.js');
-      }
+      await ensureMarked();
       if (!window.Server504Wiki) {
         await loadScript('./assets/wiki-runtime.js');
       }
@@ -50,7 +64,7 @@
     if (isWikiRoute()) loadWikiStack().catch(() => {});
   }
 
-  window.Server504LazyWiki = { load: loadWikiStack };
+  window.Server504LazyWiki = { load: loadWikiStack, ensureMarked };
 
   window.addEventListener('hashchange', maybeLoadForRoute);
   document.addEventListener('pointerdown', event => {
