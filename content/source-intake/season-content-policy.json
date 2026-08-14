@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "updated": "2026-08-15",
+  "currentServerSeason": 4,
+  "publishThroughSeason": 6,
+  "policy": {
+    "allowFutureSeasonContent": true,
+    "futureSeasonBehavior": "publish-with-spoiler-tag",
+    "spoilerLabel": "⚠ Spoiler Alert",
+    "spoilerCondition": "contentSeason > currentServerSeason",
+    "doNotHideFutureContent": true,
+    "keepSourceSeasonVisible": true
+  },
+  "canonicalServer504Season4Heroes": [
+    {"hero":"Lucas","faction":"Rider"},
+    {"hero":"Rosa","faction":"Shooter"},
+    {"hero":"Noah","faction":"Fighter"}
+  ],
+  "futureSeasonReference": {
+    "season5": {
+      "heroes": ["Angela", "Ryan", "Shadow"],
+      "status": "community-cross-checked",
+      "spoiler": true
+    },
+    "season6": {
+      "heroes": ["Ella", "Sebastian", "Selwyn"],
+      "status": "community-cross-checked",
+      "spoiler": true
+    }
+  },
+  "sourceNotes": [
+    "Server 504 player confirmation is authoritative for the Season 4 roster used by this site.",
+    "Community sources identify Angela/Ryan/Shadow as Season 5 heroes.",
+    "Community sources identify Ella/Sebastian/Selwyn as Season 6 heroes.",
+    "AllClash's indexed Season 6 set currently lacks a Selwyn build page, so AllClash must not be treated as a complete roster source.",
+    "Season 5-6 content may be useful for planning ahead, but it must never be presented as the current Server 504 meta without the Spoiler Alert and source-season context."
+  ]
+}
