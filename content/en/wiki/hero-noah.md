@@ -2,6 +2,7 @@
 
 > **Identity verified:** 7 Aug 2026  
 > **Meta reviewed:** 7 Aug 2026  
+> **Season:** 4  
 > **Rarity:** S / Orange  
 > **Faction:** Fighter  
 > **Specialty:** Fighter damage / normal-attack damage mitigation
