@@ -1,0 +1,587 @@
+/*
+ * Server 504 — Fancy Home V2
+ * Presentation-only enhancement for the Season 4 Sealed Island dashboard.
+ * No routing, fetch or application-state logic is defined here.
+ */
+
+body[data-route="home"] .main-content {
+  overflow-x: clip;
+}
+
+.fancy-home-v2 {
+  --parallax-x: 0px;
+  --parallax-y: 0px;
+  --pointer-x: 50%;
+  --pointer-y: 50%;
+}
+
+/* ------------------------------------------------------------
+   Cinematic command-deck header
+   ------------------------------------------------------------ */
+.fancy-home-v2 .dashboard-season-bg {
+  height: 610px;
+  opacity: .72 !important;
+  filter: saturate(.88) contrast(1.04);
+  transform: translate3d(calc(var(--parallax-x) * -.18), calc(var(--parallax-y) * -.12), 0) scale(1.025);
+  transition: transform .45s cubic-bezier(.2,.7,.2,1);
+}
+
+.fancy-home-v2 .dashboard-head {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: 330px;
+  align-items: flex-end;
+  padding: clamp(34px,5vw,64px);
+  margin: 0;
+  border: 1px solid rgba(121,190,207,.18);
+  border-radius: 22px 22px 8px 8px;
+  background: #071017;
+  box-shadow:
+    0 34px 90px rgba(0,0,0,.36),
+    inset 0 1px rgba(255,255,255,.025),
+    inset 0 -1px rgba(201,169,108,.055);
+}
+
+.fancy-home-v2 .dashboard-head::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -3;
+  background:
+    linear-gradient(90deg, rgba(5,9,14,.97) 0%, rgba(6,11,17,.90) 35%, rgba(7,11,16,.43) 62%, rgba(5,8,12,.16) 100%),
+    linear-gradient(180deg, rgba(5,8,13,.10), rgba(5,9,14,.32) 56%, rgba(5,9,14,.92)),
+    url("./art/sealed-hero.webp") 72% 43% / cover no-repeat;
+  transform: translate3d(calc(var(--parallax-x) * .16), calc(var(--parallax-y) * .10), 0) scale(1.055);
+  transition: transform .5s cubic-bezier(.2,.7,.2,1);
+}
+
+.fancy-home-v2 .dashboard-head::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at var(--pointer-x) var(--pointer-y), rgba(116,206,225,.075), transparent 21rem),
+    radial-gradient(circle at 82% 20%, rgba(173,72,174,.10), transparent 18rem),
+    radial-gradient(circle at 88% 80%, rgba(206,61,68,.09), transparent 20rem),
+    linear-gradient(105deg, rgba(201,169,108,.055), transparent 25% 77%, rgba(100,190,210,.035));
+  box-shadow: inset 0 0 100px rgba(2,4,7,.34);
+}
+
+.fancy-home-v2 .dashboard-head > div:first-child {
+  position: relative;
+  z-index: 3;
+  max-width: 690px;
+}
+
+.fancy-home-v2 .dashboard-head .eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  width: fit-content;
+  margin-bottom: 10px;
+  padding: 6px 9px;
+  border: 1px solid rgba(112,191,209,.19);
+  border-radius: 999px;
+  background: rgba(6,13,18,.44);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  font-size: .64rem;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+}
+
+.fancy-home-v2 .dashboard-head .eyebrow::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #8ed8e8;
+  box-shadow: 0 0 14px rgba(122,207,225,.85);
+}
+
+.fancy-home-v2 .dashboard-head h1 {
+  max-width: 630px;
+  margin: 0;
+  font-size: clamp(2.8rem,5.6vw,5.6rem);
+  line-height: .88;
+  letter-spacing: -.065em;
+  text-wrap: balance;
+  text-shadow: 0 14px 40px rgba(0,0,0,.55);
+}
+
+.fancy-home-v2 .dashboard-updated {
+  position: absolute;
+  top: 25px;
+  right: 28px;
+  z-index: 5;
+  padding: 8px 10px;
+  border: 1px solid rgba(255,255,255,.09);
+  border-radius: 8px;
+  background: rgba(5,10,14,.47);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.season-artifact {
+  position: absolute;
+  right: clamp(28px,5vw,68px);
+  bottom: 48px;
+  z-index: 4;
+  width: 152px;
+  height: 152px;
+  display: grid;
+  place-items: center;
+  pointer-events: none;
+  filter: drop-shadow(0 18px 30px rgba(0,0,0,.34));
+}
+
+.season-artifact::before,
+.season-artifact::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+}
+
+.season-artifact::before {
+  inset: 7px;
+  border: 1px solid rgba(141,207,218,.28);
+  background:
+    radial-gradient(circle, rgba(9,18,24,.22) 0 38%, rgba(113,189,207,.075) 39% 40%, transparent 41%),
+    conic-gradient(from 14deg, transparent 0 12%, rgba(196,162,100,.40) 12.3% 12.8%, transparent 13.1% 24%, rgba(112,190,208,.35) 24.3% 24.8%, transparent 25.1% 37%, rgba(162,100,183,.32) 37.3% 37.8%, transparent 38.1% 50%, rgba(207,72,78,.34) 50.3% 50.8%, transparent 51.1% 100%);
+  box-shadow: 0 0 28px rgba(92,185,205,.08), inset 0 0 28px rgba(100,190,210,.05);
+  animation: seasonArtifactSpin 34s linear infinite;
+}
+
+.season-artifact::after {
+  inset: 35px;
+  background:
+    linear-gradient(rgba(8,13,18,.12),rgba(8,13,18,.12)),
+    url("./art/sealed-emblem.webp") center 36% / 127% auto no-repeat;
+  border: 1px solid rgba(201,169,108,.26);
+  box-shadow: 0 0 26px rgba(167,91,186,.11), inset 0 0 20px rgba(0,0,0,.26);
+  animation: seasonArtifactPulse 5.5s ease-in-out infinite;
+}
+
+.season-artifact span {
+  position: absolute;
+  bottom: -17px;
+  min-width: 160px;
+  color: rgba(209,224,227,.64);
+  font-size: .55rem;
+  font-weight: 900;
+  letter-spacing: .17em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+/* ------------------------------------------------------------
+   Status deck overlap
+   ------------------------------------------------------------ */
+.fancy-home-v2 .status-strip {
+  position: relative;
+  z-index: 8;
+  margin: -24px 18px 18px;
+  border-radius: 13px;
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  box-shadow: 0 20px 50px rgba(0,0,0,.32), inset 0 1px rgba(255,255,255,.035);
+}
+
+.fancy-home-v2 .status-cell {
+  position: relative;
+  overflow: hidden;
+}
+
+.fancy-home-v2 .status-cell::after {
+  content: "";
+  position: absolute;
+  inset: auto 12% 0;
+  height: 1px;
+  background: linear-gradient(90deg,transparent,currentColor,transparent);
+  opacity: .13;
+}
+
+.fancy-home-v2 .status-icon {
+  transition: transform .2s ease,border-color .2s ease,box-shadow .2s ease;
+}
+
+.fancy-home-v2 .status-cell:hover .status-icon {
+  transform: translateY(-2px) scale(1.035);
+  border-color: rgba(126,208,224,.42);
+  box-shadow: 0 0 24px rgba(90,188,208,.08), inset 0 0 22px rgba(91,185,207,.075);
+}
+
+/* ------------------------------------------------------------
+   Rich panels and event artwork
+   ------------------------------------------------------------ */
+.fancy-home-v2 .dashboard-panel {
+  isolation: isolate;
+  transition: transform .22s ease,border-color .22s ease,box-shadow .22s ease;
+}
+
+.fancy-home-v2 .dashboard-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    linear-gradient(135deg, rgba(255,255,255,.018), transparent 22% 76%, rgba(201,169,108,.025)),
+    radial-gradient(circle at 100% 0, rgba(89,182,204,.035), transparent 15rem);
+}
+
+.fancy-home-v2 .dashboard-panel::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 58px;
+  height: 58px;
+  pointer-events: none;
+  background:
+    linear-gradient(135deg, transparent 48%, rgba(201,169,108,.18) 49% 50%, transparent 51%),
+    linear-gradient(135deg, transparent 63%, rgba(103,190,210,.11) 64% 65%, transparent 66%);
+  opacity: .55;
+}
+
+.fancy-home-v2 .dashboard-panel:hover {
+  border-color: rgba(127,198,214,.27);
+  box-shadow: 0 26px 66px rgba(0,0,0,.29),0 0 30px rgba(91,185,207,.025),inset 0 1px rgba(255,255,255,.026);
+}
+
+.fancy-home-v2 .event-card {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: 212px;
+  padding: 17px;
+  transform: perspective(900px) rotateX(var(--tilt-y,0deg)) rotateY(var(--tilt-x,0deg));
+  transform-style: preserve-3d;
+  transition: transform .18s ease,border-color .18s ease,box-shadow .18s ease;
+}
+
+.fancy-home-v2 .event-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  opacity: .27;
+  background:
+    linear-gradient(180deg,rgba(6,12,17,.18),rgba(6,12,17,.94)),
+    url("./art/sacred-tree.webp") center / cover no-repeat;
+  transform: scale(1.04);
+  transition: transform .35s ease,opacity .35s ease;
+}
+
+.fancy-home-v2 .event-card.live::before {
+  opacity: .38;
+  background:
+    linear-gradient(180deg,rgba(20,9,13,.10),rgba(7,11,16,.94)),
+    url("./art/blood-moon-banner.webp") center / cover no-repeat;
+}
+
+.fancy-home-v2 .event-card:nth-child(even)::before {
+  background-position: 70% center;
+}
+
+.fancy-home-v2 .event-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at var(--card-x,75%) var(--card-y,15%),rgba(123,211,228,.12),transparent 8rem),
+    linear-gradient(135deg,rgba(111,190,208,.035),transparent 45%,rgba(173,76,173,.025));
+}
+
+.fancy-home-v2 .event-card.live::after {
+  background:
+    radial-gradient(circle at var(--card-x,75%) var(--card-y,15%),rgba(226,92,91,.14),transparent 8rem),
+    linear-gradient(135deg,rgba(204,69,72,.055),transparent 48%,rgba(201,169,108,.028));
+}
+
+.fancy-home-v2 .event-card:hover {
+  border-color: rgba(132,211,227,.43);
+  box-shadow: 0 18px 42px rgba(0,0,0,.30),0 0 32px rgba(91,185,207,.05);
+}
+
+.fancy-home-v2 .event-card.live:hover {
+  border-color: rgba(229,100,96,.54);
+  box-shadow: 0 18px 42px rgba(0,0,0,.30),0 0 32px rgba(206,72,78,.06);
+}
+
+.fancy-home-v2 .event-card:hover::before {
+  transform: scale(1.085);
+  opacity: .43;
+}
+
+.fancy-home-v2 .event-card.live:hover::before { opacity: .52; }
+
+.fancy-home-v2 .event-type,
+.fancy-home-v2 .event-card h3,
+.fancy-home-v2 .event-card p,
+.fancy-home-v2 .event-meta,
+.fancy-home-v2 .event-rewards {
+  position: relative;
+  z-index: 2;
+  transform: translateZ(12px);
+}
+
+.fancy-home-v2 .featured-column-title.live::before {
+  animation: liveSignal 1.8s ease-in-out infinite;
+}
+
+/* ------------------------------------------------------------
+   Alliance power visualization
+   ------------------------------------------------------------ */
+.fancy-home-v2 .alliance-table-panel tbody tr,
+.fancy-home-v2 .ke-panel tbody tr {
+  position: relative;
+  transition: background .16s ease;
+}
+
+.fancy-home-v2 .alliance-table-panel tbody tr:hover,
+.fancy-home-v2 .ke-panel tbody tr:hover {
+  background: rgba(91,185,207,.035);
+}
+
+.cp-cell-wrap {
+  display: grid;
+  gap: 5px;
+  min-width: 140px;
+}
+
+.cp-number {
+  position: relative;
+  z-index: 2;
+  font-variant-numeric: tabular-nums;
+}
+
+.cp-meter {
+  position: relative;
+  height: 3px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(255,255,255,.05);
+}
+
+.cp-meter > i {
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: var(--cp-share,0%);
+  border-radius: inherit;
+  background: linear-gradient(90deg,rgba(91,185,207,.52),#84d0df 70%,rgba(201,169,108,.72));
+  box-shadow: 0 0 10px rgba(91,185,207,.20);
+}
+
+.ke-panel .cp-meter > i {
+  background: linear-gradient(90deg,rgba(196,61,66,.60),#e56d66 68%,rgba(222,172,86,.72));
+  box-shadow: 0 0 10px rgba(206,72,78,.16);
+}
+
+.ke-panel tbody tr[data-threat="high"] td:first-child {
+  box-shadow: inset 2px 0 0 rgba(226,91,86,.65);
+}
+.ke-panel tbody tr[data-threat="medium"] td:first-child {
+  box-shadow: inset 2px 0 0 rgba(220,168,86,.46);
+}
+
+/* ------------------------------------------------------------
+   Capital ritual & Armory sockets
+   ------------------------------------------------------------ */
+.fancy-home-v2 .capital-rotation {
+  position: relative;
+  overflow: hidden;
+}
+
+.fancy-home-v2 .capital-rotation::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 330px;
+  height: 330px;
+  transform: translate(-50%,-50%);
+  opacity: .10;
+  background: url("./art/sealed-emblem.webp") center 37% / 128% auto no-repeat;
+  filter: saturate(.7) hue-rotate(4deg);
+  pointer-events: none;
+}
+
+.fancy-home-v2 .capital-node {
+  position: relative;
+  z-index: 2;
+  min-height: 135px;
+  place-content: center;
+  padding: 16px;
+  border: 1px solid rgba(110,190,208,.11);
+  border-radius: 50%;
+  background: radial-gradient(circle,rgba(19,39,48,.48),rgba(6,13,18,.04) 67%);
+}
+
+.fancy-home-v2 .capital-node.next {
+  border-color: rgba(201,169,108,.16);
+  background: radial-gradient(circle,rgba(62,47,26,.36),rgba(6,13,18,.04) 67%);
+}
+
+.fancy-home-v2 .capital-arrow {
+  position: relative;
+  z-index: 3;
+  text-shadow: 0 0 18px rgba(119,203,220,.28);
+  animation: capitalFlow 2.4s ease-in-out infinite;
+}
+
+.fancy-home-v2 .armory-item {
+  position: relative;
+  overflow: hidden;
+  min-height: 45px;
+  border-color: rgba(117,184,199,.10);
+  background:
+    radial-gradient(circle at 9% 50%,rgba(94,184,203,.08),transparent 30%),
+    rgba(255,255,255,.013);
+  transition: border-color .16s ease,transform .16s ease,background .16s ease;
+}
+
+.fancy-home-v2 .armory-item::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  flex: 0 0 8px;
+  border: 1px solid rgba(119,198,214,.40);
+  transform: rotate(45deg);
+  box-shadow: 0 0 9px rgba(91,185,207,.08);
+}
+
+.fancy-home-v2 .armory-item:hover {
+  transform: translateY(-1px);
+  border-color: rgba(119,198,214,.26);
+  background: rgba(65,139,157,.045);
+}
+
+/* ------------------------------------------------------------
+   Quick-access shine
+   ------------------------------------------------------------ */
+.fancy-home-v2 .quick-access {
+  position: relative;
+  overflow: hidden;
+}
+
+.fancy-home-v2 .quick-access::before {
+  content: "";
+  position: absolute;
+  top: -40%;
+  left: -25%;
+  width: 22%;
+  height: 180%;
+  pointer-events: none;
+  background: linear-gradient(90deg,transparent,rgba(126,211,226,.07),transparent);
+  transform: skewX(-16deg);
+  animation: quickShine 8s ease-in-out infinite;
+}
+
+.fancy-home-v2 .quick-access a,
+.fancy-home-v2 .quick-access button {
+  position: relative;
+  overflow: hidden;
+  transition: transform .17s ease,border-color .17s ease,background .17s ease;
+}
+
+.fancy-home-v2 .quick-access a:hover,
+.fancy-home-v2 .quick-access button:hover {
+  transform: translateY(-2px);
+}
+
+/* ------------------------------------------------------------
+   Scroll reveal
+   ------------------------------------------------------------ */
+.home-reveal {
+  opacity: 0;
+  transform: translateY(15px);
+  transition:
+    opacity .56s cubic-bezier(.2,.7,.2,1),
+    transform .56s cubic-bezier(.2,.7,.2,1);
+  transition-delay: var(--reveal-delay,0ms);
+}
+
+.home-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ------------------------------------------------------------
+   Animations
+   ------------------------------------------------------------ */
+@keyframes seasonArtifactSpin { to { transform: rotate(360deg); } }
+@keyframes seasonArtifactPulse {
+  0%,100% { transform: scale(.98); filter: brightness(.92); }
+  50% { transform: scale(1.035); filter: brightness(1.12); }
+}
+@keyframes liveSignal {
+  0%,100% { box-shadow: 0 0 8px currentColor; opacity: .72; }
+  50% { box-shadow: 0 0 20px currentColor; opacity: 1; }
+}
+@keyframes capitalFlow {
+  0%,100% { transform: translateX(-2px); opacity: .5; }
+  50% { transform: translateX(3px); opacity: .92; }
+}
+@keyframes quickShine {
+  0%,62% { transform: translateX(-80%) skewX(-16deg); opacity: 0; }
+  70% { opacity: 1; }
+  84%,100% { transform: translateX(700%) skewX(-16deg); opacity: 0; }
+}
+
+@media (max-width: 980px) {
+  .fancy-home-v2 .dashboard-head {
+    min-height: 300px;
+    padding: 36px 30px;
+  }
+  .fancy-home-v2 .dashboard-head h1 { font-size: clamp(2.5rem,8vw,4.4rem); max-width: 68%; }
+  .season-artifact { width: 125px; height: 125px; right: 25px; bottom: 46px; }
+  .season-artifact span { min-width: 140px; font-size: .49rem; }
+}
+
+@media (max-width: 760px) {
+  .fancy-home-v2 .dashboard-head {
+    min-height: 300px;
+    justify-content: flex-end;
+    padding: 34px 24px 42px;
+  }
+  .fancy-home-v2 .dashboard-head::before {
+    background-position: 62% 43%;
+  }
+  .fancy-home-v2 .dashboard-head h1 { max-width: 88%; font-size: clamp(2.3rem,11vw,3.55rem); }
+  .fancy-home-v2 .dashboard-updated { top: 17px; right: 17px; }
+  .season-artifact { display: none; }
+  .fancy-home-v2 .status-strip { margin: -22px 10px 15px; }
+  .fancy-home-v2 .event-card { min-height: 195px; transform: none !important; }
+  .cp-cell-wrap { min-width: 112px; }
+  .fancy-home-v2 .capital-node { border-radius: 16px; min-height: 100px; }
+}
+
+@media (max-width: 560px) {
+  .fancy-home-v2 .dashboard-head { min-height: 270px; padding: 28px 18px 37px; border-radius: 16px 16px 7px 7px; }
+  .fancy-home-v2 .dashboard-head .eyebrow { max-width: 92%; white-space: normal; }
+  .fancy-home-v2 .dashboard-updated { font-size: .57rem; }
+  .fancy-home-v2 .status-strip { margin-inline: 6px; }
+  .cp-meter { display: none; }
+  .cp-cell-wrap { min-width: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fancy-home-v2 *,
+  .fancy-home-v2 *::before,
+  .fancy-home-v2 *::after {
+    animation-duration: .001ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: .001ms !important;
+  }
+  .home-reveal { opacity: 1 !important; transform: none !important; }
+  .fancy-home-v2 .event-card,
+  .fancy-home-v2 .dashboard-season-bg,
+  .fancy-home-v2 .dashboard-head::before { transform: none !important; }
+}
