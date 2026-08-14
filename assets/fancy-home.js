@@ -10,13 +10,18 @@
   let revealObserver = null;
   let renderQueued = false;
 
-  const ensureRefinementStyles = () => {
-    if (document.getElementById('server504-home-ui-refine')) return;
+  const ensureStyle = (id, href) => {
+    if (document.getElementById(id)) return;
     const link = document.createElement('link');
-    link.id = 'server504-home-ui-refine';
+    link.id = id;
     link.rel = 'stylesheet';
-    link.href = './assets/home-ui-refine.css?v=20260815-0537';
+    link.href = href;
     document.head.appendChild(link);
+  };
+
+  const ensurePresentationStyles = () => {
+    ensureStyle('server504-home-ui-refine', './assets/home-ui-refine.css?v=20260815-0537');
+    ensureStyle('server504-home-asset-language', './assets/home-asset-language.css?v=20260815-0558');
   };
 
   const parseNumber = value => {
@@ -32,9 +37,16 @@
 
     dashboard.querySelectorAll('.event-card').forEach(card => {
       const title = card.querySelector('h3')?.textContent?.trim() || '';
+      const key = title.toLowerCase();
       const eventType = card.querySelector('.event-type')?.textContent?.trim().toLowerCase() || '';
 
-      if (title.toLowerCase() === 'summer paradise' || eventType === 'big event') {
+      card.classList.remove('event-pet-supplies', 'event-summer-paradise', 'event-tech-lucky', 'event-hero-lucky');
+      if (key === 'pet supplies') card.classList.add('event-pet-supplies');
+      if (key === 'summer paradise') card.classList.add('event-summer-paradise');
+      if (key === 'tech lucky chest') card.classList.add('event-tech-lucky');
+      if (key === 'hero lucky chest') card.classList.add('event-hero-lucky');
+
+      if (key === 'summer paradise' || eventType === 'big event') {
         card.classList.add('big-event-card');
       }
 
@@ -77,14 +89,8 @@
     });
   };
 
-  const addSeasonArtifact = dashboard => {
-    const head = dashboard.querySelector('.dashboard-head');
-    if (!head || head.querySelector('.season-artifact')) return;
-    const artifact = document.createElement('div');
-    artifact.className = 'season-artifact';
-    artifact.setAttribute('aria-hidden', 'true');
-    artifact.innerHTML = '<span>S4 · SEALED ISLAND</span>';
-    head.appendChild(artifact);
+  const removeDeprecatedCrest = dashboard => {
+    dashboard.querySelectorAll('.season-artifact').forEach(node => node.remove());
   };
 
   const wireParallax = dashboard => {
@@ -162,8 +168,8 @@
     if (!dashboard) return;
 
     dashboard.classList.add('fancy-home-v2');
+    removeDeprecatedCrest(dashboard);
     markFeaturedHierarchy(dashboard);
-    addSeasonArtifact(dashboard);
     enhancePowerTable(dashboard.querySelector('.alliance-table-panel'), false);
     enhancePowerTable(dashboard.querySelector('.ke-panel'), true);
     wireParallax(dashboard);
@@ -177,7 +183,7 @@
     requestAnimationFrame(enhance);
   };
 
-  ensureRefinementStyles();
+  ensurePresentationStyles();
   new MutationObserver(scheduleEnhance).observe(app, { childList: true, subtree: true });
   window.addEventListener('hashchange', scheduleEnhance);
   window.addEventListener('server504:localechange', scheduleEnhance);
