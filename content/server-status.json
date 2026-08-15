@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-15T06:06:00+07:00",
+  "lastUpdated": "2026-08-15T16:34:00+07:00",
   "server": {
     "season": "4",
     "theme": "Sealed Island",
@@ -96,6 +96,12 @@
         "opponentAlliance": "LUMJ",
         "opponentServer": "#498",
         "totalCP": "42,990,014,743"
+      },
+      {
+        "alliance": "IMMR",
+        "opponentAlliance": "ACE~",
+        "opponentServer": "#502",
+        "totalCP": "21,031,182,895"
       }
     ]
   },
