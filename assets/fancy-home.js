@@ -1,6 +1,6 @@
 /*
  * Server 504 — Fancy Home V2 presentation enhancer
- * DOM-only visual polish: no routing, fetch, persistence or application-state changes.
+ * DOM-only visual polish: no routing, persistence or application-state changes.
  */
 (() => {
   const app = document.getElementById('app');
@@ -9,6 +9,21 @@
   const reducedMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
   let revealObserver = null;
   let renderQueued = false;
+  let armoryStatePromise = null;
+
+  const openContestCopy = {
+    en: 'Open contest',
+    fr: 'Contestation ouverte',
+    es: 'Disputa abierta',
+    pt: 'Disputa aberta',
+    ko: '자유 경쟁',
+    vi: 'Tranh chấp mở'
+  };
+
+  const currentLocale = () => {
+    const value = window.Server504I18N?.locale?.() || localStorage.getItem('server504.locale') || localStorage.getItem('server504-locale') || 'en';
+    return openContestCopy[value] ? value : 'en';
+  };
 
   const ensureStyle = (id, href) => {
     if (document.getElementById(id)) return;
@@ -22,6 +37,7 @@
   const ensurePresentationStyles = () => {
     ensureStyle('server504-home-ui-refine', './assets/home-ui-refine.css?v=20260815-0537');
     ensureStyle('server504-home-asset-language', './assets/home-asset-language.css?v=20260815-0558');
+    ensureStyle('server504-home-asset-v2', './assets/home-asset-v2.css?v=20260815-0648');
   };
 
   const parseNumber = value => {
@@ -86,6 +102,72 @@
       if (threatMode) {
         row.dataset.threat = share >= 72 ? 'high' : share >= 38 ? 'medium' : 'low';
       }
+    });
+  };
+
+  const getArmoryState = () => {
+    armoryStatePromise ||= fetch('./content/server-status.json', { cache: 'no-store' })
+      .then(response => response.ok ? response.json() : null)
+      .catch(() => null);
+    return armoryStatePromise;
+  };
+
+  const enhanceArmories = dashboard => {
+    const items = [...dashboard.querySelectorAll('.armory-item')];
+    if (!items.length) return;
+
+    getArmoryState().then(state => {
+      const armories = state?.sharedAssets?.armories || [];
+      if (!armories.length) return;
+
+      items.forEach((item, index) => {
+        const data = armories[index];
+        if (!data) return;
+
+        const status = String(data.status || (data.alliance ? 'registered' : 'pending')).toLowerCase();
+        const signature = [status, data.alliance || '', ...(Array.isArray(data.contenders) ? data.contenders : [])].join('|');
+        if (item.dataset.v2Armory === signature) return;
+        item.dataset.v2Armory = signature;
+
+        item.classList.remove('armory-registered', 'armory-open-contest', 'armory-available', 'armory-pending', 'pending', 'available');
+        if (status === 'open-contest') item.classList.add('armory-open-contest');
+        else if (status === 'available') item.classList.add('armory-available');
+        else if (data.alliance) item.classList.add('armory-registered');
+        else item.classList.add('armory-pending');
+
+        const existingStrong = item.querySelector(':scope > strong, .armory-state-copy strong');
+        let wrap = item.querySelector('.armory-state-copy');
+        if (!wrap) {
+          wrap = document.createElement('div');
+          wrap.className = 'armory-state-copy';
+          if (existingStrong) {
+            existingStrong.replaceWith(wrap);
+            wrap.appendChild(existingStrong);
+          } else {
+            item.appendChild(wrap);
+          }
+        }
+
+        let strong = wrap.querySelector('strong');
+        if (!strong) {
+          strong = document.createElement('strong');
+          wrap.prepend(strong);
+        }
+
+        let contenders = wrap.querySelector('.armory-contenders');
+        if (status === 'open-contest') {
+          strong.textContent = openContestCopy[currentLocale()];
+          if (!contenders) {
+            contenders = document.createElement('small');
+            contenders.className = 'armory-contenders';
+            wrap.appendChild(contenders);
+          }
+          contenders.textContent = Array.isArray(data.contenders) ? data.contenders.join(' · ') : '';
+        } else {
+          strong.textContent = data.alliance || strong.textContent || '—';
+          contenders?.remove();
+        }
+      });
     });
   };
 
@@ -172,6 +254,7 @@
     markFeaturedHierarchy(dashboard);
     enhancePowerTable(dashboard.querySelector('.alliance-table-panel'), false);
     enhancePowerTable(dashboard.querySelector('.ke-panel'), true);
+    enhanceArmories(dashboard);
     wireParallax(dashboard);
     wireEventTilt(dashboard);
     wireReveals(dashboard);
@@ -186,6 +269,9 @@
   ensurePresentationStyles();
   new MutationObserver(scheduleEnhance).observe(app, { childList: true, subtree: true });
   window.addEventListener('hashchange', scheduleEnhance);
-  window.addEventListener('server504:localechange', scheduleEnhance);
+  window.addEventListener('server504:localechange', () => {
+    armoryStatePromise = null;
+    scheduleEnhance();
+  });
   scheduleEnhance();
 })();
