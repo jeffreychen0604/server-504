@@ -7,7 +7,7 @@
   if (!app) return;
 
   const spriteSource = './assets/alliance-banners-sprite.webp.base64.txt?v=20260815-1357';
-  const supported = new Set(['uic','ap3x','dud','cmrd','idgf','ids','ltnx','immr','unta','lumj']);
+  const supported = new Set(['uic','ap3x','dud','cmrd','idgf','ids','ltnx','immr','unta','lumj','ace']);
   let spritePromise = null;
   let queued = false;
 
@@ -17,7 +17,7 @@
     const raw = (bracket ? bracket[1] : text.split(/\s+/)[0])
       .toUpperCase()
       .replace(/[^A-Z0-9]/g, '');
-    const aliases = { IDSSTAR: 'ids', IDS: 'ids', IDGF: 'idgf', LUMI: 'lumj', LUMJ: 'lumj' };
+    const aliases = { IDSSTAR: 'ids', IDS: 'ids', IDGF: 'idgf', LUMI: 'lumj', LUMJ: 'lumj', ACE: 'ace' };
     const code = aliases[raw] || raw.toLowerCase();
     return supported.has(code) ? code : null;
   };
