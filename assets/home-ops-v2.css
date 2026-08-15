@@ -67,6 +67,14 @@ html body .fancy-home-v2 .ke-panel table.dashboard-table tbody td {
   z-index: 1;
 }
 
+/* V1/V2 generic shield/star ornaments are replaced by the real in-game banners. */
+html body .fancy-home-v2 .ke-panel table.dashboard-table tbody td:nth-child(1)::before,
+html body .fancy-home-v2 .ke-panel table.dashboard-table tbody td:nth-child(2)::after {
+  content: none !important;
+  display: none !important;
+  background: none !important;
+}
+
 html body .fancy-home-v2 .ke-panel table.dashboard-table tbody td:nth-child(1) {
   background: linear-gradient(90deg, rgba(50,130,211,.15), transparent);
 }
@@ -99,9 +107,6 @@ html body .fancy-home-v2 .ke-panel table.dashboard-table tbody td:nth-child(3) {
   text-align: center;
   font-weight: 900;
   color: #ffd9e1;
-}
-
-html body .fancy-home-v2 .ke-panel table.dashboard-table tbody td:nth-child(3) {
   display: grid;
   place-items: center;
 }
@@ -138,14 +143,6 @@ html body .fancy-home-v2 .ke-panel .ke-alliance-identity strong {
   white-space: nowrap;
 }
 
-html body .fancy-home-v2 .alliance-banner {
-  width: 38px;
-  height: 46px;
-  object-fit: contain;
-  flex: 0 0 auto;
-  filter: drop-shadow(0 4px 6px rgba(0,0,0,.34));
-}
-
 /* ---------------------------------
    ACTIVE ALLIANCES — ranking roster
    --------------------------------- */
@@ -163,11 +160,6 @@ html body .fancy-home-v2 .alliance-table-panel .alliance-identity {
   align-items: center;
   gap: 9px;
   min-width: 0;
-}
-
-html body .fancy-home-v2 .alliance-table-panel .alliance-identity .alliance-banner {
-  width: 30px;
-  height: 36px;
 }
 
 html body .fancy-home-v2 .alliance-table-panel .alliance-identity strong {
@@ -202,9 +194,5 @@ html body .fancy-home-v2 .alliance-table-panel tbody tr:hover {
   }
   html body .fancy-home-v2 .ke-panel table.dashboard-table tbody td:nth-child(2)::before {
     left: 0;
-  }
-  html body .fancy-home-v2 .alliance-table-panel .alliance-identity .alliance-banner {
-    width: 26px;
-    height: 32px;
   }
 }
