@@ -1,0 +1,201 @@
+/* Server 504 — Shared Assets polish V2
+ * Armory stronghold identity + restrained Capital rotation presentation.
+ */
+
+/* -----------------------
+   SHARED PANEL FOUNDATION
+   ----------------------- */
+html body .fancy-home-v2 .shared-panel {
+  overflow: hidden;
+}
+
+html body .fancy-home-v2 .shared-panel .shared-body {
+  align-items: stretch;
+}
+
+/* -------------------------
+   CAPITAL — restrained relay
+   ------------------------- */
+html body .fancy-home-v2 .capital-rotation {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 18% 50%, rgba(76,178,210,.10), transparent 28%),
+    radial-gradient(circle at 82% 50%, rgba(235,184,80,.095), transparent 30%),
+    linear-gradient(180deg, rgba(9,17,24,.72), rgba(7,12,17,.30));
+}
+
+html body .fancy-home-v2 .capital-rotation::before {
+  content: "";
+  position: absolute;
+  left: 17%;
+  right: 17%;
+  top: 50%;
+  height: 1px;
+  transform: translateY(-50%);
+  z-index: 0;
+  pointer-events: none;
+  background: linear-gradient(90deg, rgba(88,190,219,.08), rgba(88,190,219,.58) 30%, rgba(231,183,76,.72) 70%, rgba(231,183,76,.08));
+  box-shadow: 0 0 14px rgba(132,199,207,.08);
+}
+
+html body .fancy-home-v2 .capital-rotation::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 10px;
+  height: 10px;
+  transform: translate(-50%,-50%) rotate(45deg);
+  z-index: 1;
+  border: 1px solid rgba(237,193,91,.58);
+  background: #111920;
+  box-shadow: 0 0 0 5px rgba(80,169,191,.035), 0 0 18px rgba(235,179,61,.10);
+}
+
+html body .fancy-home-v2 .capital-rotation > * {
+  position: relative;
+  z-index: 2;
+}
+
+html body .fancy-home-v2 .capital-arrow {
+  color: transparent !important;
+  width: 42px;
+  min-width: 42px;
+}
+
+html body .fancy-home-v2 .capital-arrow::before,
+html body .fancy-home-v2 .capital-arrow::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+}
+
+html body .fancy-home-v2 .capital-arrow::before {
+  left: 4px;
+  right: 7px;
+  height: 1px;
+  background: linear-gradient(90deg, #72cce2, #e6b849);
+}
+
+html body .fancy-home-v2 .capital-arrow::after {
+  right: 5px;
+  width: 7px;
+  height: 7px;
+  border-top: 1px solid #e6b849;
+  border-right: 1px solid #e6b849;
+  transform: translateY(-50%) rotate(45deg);
+}
+
+html body .fancy-home-v2 .capital-node {
+  backdrop-filter: blur(4px);
+  background: linear-gradient(135deg, rgba(25,55,67,.76), rgba(9,18,24,.88)) !important;
+}
+
+html body .fancy-home-v2 .capital-node.next {
+  background: linear-gradient(135deg, rgba(62,49,25,.76), rgba(18,17,13,.90)) !important;
+}
+
+/* ----------------------------
+   ARMORY — stronghold + states
+   ---------------------------- */
+html body .fancy-home-v2 .armory-registration {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: #0a1218;
+}
+
+html body .fancy-home-v2 .armory-registration::before {
+  content: "" !important;
+  display: block !important;
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  pointer-events: none;
+  opacity: .42;
+  background-image: url("./decorative/v2/operations/armory-stronghold.webp?v=20260815-1416") !important;
+  background-repeat: no-repeat !important;
+  background-position: 106% 50% !important;
+  background-size: auto 115% !important;
+  -webkit-mask-image: linear-gradient(90deg, transparent 20%, rgba(0,0,0,.24) 42%, #000 72%, #000 100%);
+  mask-image: linear-gradient(90deg, transparent 20%, rgba(0,0,0,.24) 42%, #000 72%, #000 100%);
+  filter: saturate(.75) brightness(.72) contrast(1.04);
+}
+
+html body .fancy-home-v2 .armory-registration::after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, rgba(8,15,20,.99) 0%, rgba(8,15,20,.95) 35%, rgba(8,15,20,.70) 65%, rgba(8,15,20,.36) 100%),
+    linear-gradient(180deg, rgba(8,15,20,.18), rgba(8,15,20,.62));
+}
+
+html body .fancy-home-v2 .armory-registration > * {
+  position: relative;
+  z-index: 2;
+}
+
+html body .fancy-home-v2 .armory-title-row {
+  padding-bottom: 5px;
+}
+
+html body .fancy-home-v2 .armory-grid {
+  gap: 9px 10px;
+}
+
+html body .fancy-home-v2 .armory-item {
+  min-height: 54px;
+  backdrop-filter: blur(5px);
+  background: linear-gradient(90deg, rgba(11,31,28,.90), rgba(10,22,25,.78)) !important;
+  border-color: rgba(82,178,132,.28) !important;
+  box-shadow: inset 0 1px rgba(255,255,255,.025), 0 8px 18px rgba(0,0,0,.12);
+}
+
+html body .fancy-home-v2 .armory-item.armory-open-contest {
+  background: linear-gradient(90deg, rgba(91,51,25,.94), rgba(39,25,21,.82)) !important;
+  border-color: rgba(235,147,62,.64) !important;
+  box-shadow: inset 3px 0 rgba(238,126,55,.42), inset 0 0 26px rgba(218,76,40,.065), 0 8px 20px rgba(0,0,0,.15) !important;
+}
+
+html body .fancy-home-v2 .armory-item.armory-open-contest::after {
+  content: "";
+  position: absolute;
+  right: 9px;
+  top: 8px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #f2a34c;
+  box-shadow: 0 0 0 4px rgba(242,163,76,.08), 0 0 12px rgba(242,126,55,.24);
+}
+
+html body .fancy-home-v2 .armory-count {
+  text-shadow: 0 1px 7px rgba(0,0,0,.55);
+}
+
+@media (max-width: 900px) {
+  html body .fancy-home-v2 .armory-registration::before {
+    opacity: .30;
+    background-position: 115% 50% !important;
+    background-size: auto 100% !important;
+  }
+}
+
+@media (max-width: 680px) {
+  html body .fancy-home-v2 .capital-rotation::before,
+  html body .fancy-home-v2 .capital-rotation::after {
+    display: none;
+  }
+  html body .fancy-home-v2 .armory-registration::before {
+    opacity: .20;
+    background-position: 125% 30% !important;
+  }
+  html body .fancy-home-v2 .armory-registration::after {
+    background: rgba(8,15,20,.82);
+  }
+}
