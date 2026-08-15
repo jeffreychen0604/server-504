@@ -48,14 +48,38 @@
   "activeAlliances": {
     "updatedAt": "2026-08-15",
     "alliances": [
-      { "name": "[UIC]United Imperial Cmd", "totalCP": "42,751,479,998" },
-      { "name": "[AP3X]PR3D4TORS", "totalCP": "35,957,425,607" },
-      { "name": "[DUD]Global Elite Empire", "totalCP": "25,532,262,549" },
-      { "name": "[CMRD]CAMARADERIE", "totalCP": "23,240,087,960" },
-      { "name": "[IDGF]i Dont Give fckz", "totalCP": "22,066,062,563" },
-      { "name": "[IDS*]INDOALLSTAR", "totalCP": "19,534,849,202" },
-      { "name": "[LTNX]xLATINOSx", "totalCP": "5,885,316,881" },
-      { "name": "[IMMR]IMMORTALS", "totalCP": "4,732,796,802" }
+      {
+        "name": "[UIC]United Imperial Cmd",
+        "totalCP": "42,751,479,998"
+      },
+      {
+        "name": "[AP3X]PR3D4TORS",
+        "totalCP": "35,957,425,607"
+      },
+      {
+        "name": "[DUD]Global Elite Empire",
+        "totalCP": "25,532,262,549"
+      },
+      {
+        "name": "[CMRD]CAMARADERIE",
+        "totalCP": "23,240,087,960"
+      },
+      {
+        "name": "[IDGF]i Dont Give fckz",
+        "totalCP": "22,066,062,563"
+      },
+      {
+        "name": "[IDS*]INDOALLSTAR",
+        "totalCP": "19,534,849,202"
+      },
+      {
+        "name": "[LTNX]xLATINOSx",
+        "totalCP": "5,885,316,881"
+      },
+      {
+        "name": "[IMMR]IMMORTALS",
+        "totalCP": "4,732,796,802"
+      }
     ]
   },
   "keWatch": {
@@ -81,20 +105,45 @@
       "next": "CMRD"
     },
     "armories": [
-      { "number": 1, "alliance": "AP3X" },
-      { "number": 2, "alliance": "LTNX" },
-      { "number": 3, "alliance": "UIC" },
       {
-        "number": "4 · DUD / CMRD / IDS / iDGF",
-        "slot": 4,
-        "alliance": "available",
-        "status": "open-contest",
-        "contenders": ["DUD", "CMRD", "IDS", "iDGF"]
+        "number": 1,
+        "alliance": "AP3X"
       },
-      { "number": 5, "alliance": "iDGF" },
-      { "number": 6, "alliance": "DUD" },
-      { "number": 7, "alliance": "CMRD" },
-      { "number": 8, "alliance": "IDS" }
+      {
+        "number": 2,
+        "alliance": "LTNX"
+      },
+      {
+        "number": 3,
+        "alliance": "UIC"
+      },
+      {
+        "number": 4,
+        "alliance": null,
+        "status": "open-contest",
+        "contenders": [
+          "DUD",
+          "CMRD",
+          "IDS",
+          "iDGF"
+        ]
+      },
+      {
+        "number": 5,
+        "alliance": "iDGF"
+      },
+      {
+        "number": 6,
+        "alliance": "DUD"
+      },
+      {
+        "number": 7,
+        "alliance": "CMRD"
+      },
+      {
+        "number": 8,
+        "alliance": "IDS"
+      }
     ]
   },
   "announcements": [
