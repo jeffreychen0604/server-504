@@ -110,27 +110,27 @@ html body .fancy-home-v2 .armory-registration {
   background: #0a1218;
 }
 
-/* Treat the stronghold like Featured Events artwork: it is a scenic layer
-   anchored to the right, its rendered height matches the panel, and its left
-   edge fades away instead of stretching/cropping across the entire board. */
+/* The source art contains a large amount of sky above the stronghold. Render
+   it taller than the panel and crop top/bottom so the actual structure, not
+   the source canvas, visually spans the registration board. */
 html body .fancy-home-v2 .armory-registration::before {
   content: "" !important;
   display: block !important;
   position: absolute;
   z-index: 0;
   top: 0;
-  right: -2%;
+  right: -4%;
   bottom: 0;
-  width: 72%;
+  width: 80%;
   pointer-events: none;
-  opacity: .82;
-  background-image: url("./decorative/v2/operations/armory-stronghold.webp?v=20260815-2037") !important;
+  opacity: .86;
+  background-image: url("./decorative/v2/operations/armory-stronghold.webp?v=20260815-2104") !important;
   background-repeat: no-repeat !important;
-  background-position: right center !important;
-  background-size: auto 100% !important;
+  background-position: right 62% !important;
+  background-size: auto 142% !important;
   -webkit-mask-image: linear-gradient(90deg, transparent 0%, rgba(0,0,0,.10) 10%, rgba(0,0,0,.45) 27%, rgba(0,0,0,.88) 47%, #000 64%, #000 100%);
   mask-image: linear-gradient(90deg, transparent 0%, rgba(0,0,0,.10) 10%, rgba(0,0,0,.45) 27%, rgba(0,0,0,.88) 47%, #000 64%, #000 100%);
-  filter: saturate(.94) brightness(.93) contrast(1.045);
+  filter: saturate(.96) brightness(.94) contrast(1.05);
 }
 
 /* Featured-event-like readability: dark on the left, progressively lighter
@@ -210,10 +210,11 @@ html body .fancy-home-v2 .armory-count {
   }
 
   html body .fancy-home-v2 .armory-registration::before {
-    right: -5%;
-    width: 76%;
-    opacity: .62;
-    background-size: auto 100% !important;
+    right: -8%;
+    width: 86%;
+    opacity: .68;
+    background-position: right 60% !important;
+    background-size: auto 132% !important;
   }
 
   html body .fancy-home-v2 .armory-registration::after {
@@ -234,11 +235,11 @@ html body .fancy-home-v2 .armory-count {
   }
 
   html body .fancy-home-v2 .armory-registration::before {
-    right: -24%;
-    width: 104%;
-    opacity: .40;
-    background-position: right 38% !important;
-    background-size: auto 96% !important;
+    right: -32%;
+    width: 118%;
+    opacity: .42;
+    background-position: right 58% !important;
+    background-size: auto 118% !important;
   }
 
   html body .fancy-home-v2 .armory-registration::after {
