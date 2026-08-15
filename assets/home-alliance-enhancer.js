@@ -1,5 +1,5 @@
 /* Server 504 — Home operations identity enhancer
- * Adds in-game alliance banners and loads final Shared Assets presentation.
+ * Adds in-game alliance banners and loads final Shared/Hero presentation layers.
  * No server data is changed.
  */
 (() => {
@@ -20,9 +20,10 @@
     document.head.appendChild(link);
   };
 
-  /* Loaded here deliberately: this enhancer executes after fancy-home.js, so Shared V2
-     remains the final authority over legacy/recovery Armory pseudo-elements. */
-  ensureStyle('server504-home-shared-v2', './assets/home-shared-v2.css?v=20260815-1416');
+  /* These load after fancy-home.js by design so they remain the final authority
+     over legacy/recovery pseudo-elements without rewriting the renderer. */
+  ensureStyle('server504-home-shared-v2', './assets/home-shared-v2.css?v=20260815-1425');
+  ensureStyle('server504-home-hero-v2', './assets/home-hero-v2.css?v=20260815-1425');
 
   const normalizeCode = value => {
     const text = String(value || '').trim();
