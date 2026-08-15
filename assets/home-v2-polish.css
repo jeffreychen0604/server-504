@@ -26,7 +26,7 @@ html body .fancy-home-v2 .event-card > * {
   z-index: 2 !important;
 }
 
-/* Soft readability veil; unlike the old artwork pseudo-element this contains no image. */
+/* Readability veil: slightly darker than the previous pass while keeping event identity visible. */
 html body .fancy-home-v2 .event-card::after {
   content: "" !important;
   display: block !important;
@@ -34,13 +34,25 @@ html body .fancy-home-v2 .event-card::after {
   inset: 0 !important;
   z-index: 1 !important;
   pointer-events: none !important;
-  background: linear-gradient(90deg, rgba(7,12,17,.96) 0%, rgba(7,12,17,.88) 34%, rgba(7,12,17,.42) 60%, rgba(7,12,17,.08) 100%) !important;
+  background: linear-gradient(90deg,
+    rgba(7,12,17,.978) 0%,
+    rgba(7,12,17,.925) 34%,
+    rgba(7,12,17,.58) 60%,
+    rgba(7,12,17,.20) 100%) !important;
+}
+
+/* Small shadow keeps typography readable over busy artwork without making it look embossed. */
+html body .fancy-home-v2 .event-card h3,
+html body .fancy-home-v2 .event-card p,
+html body .fancy-home-v2 .event-card .event-meta,
+html body .fancy-home-v2 .event-card .event-rewards {
+  text-shadow: 0 1px 2px rgba(0,0,0,.46);
 }
 
 /* Pet Supplies — the orange physical supply station is the event identity. */
 html body .fancy-home-v2 .event-card.event-pet-supplies {
   background:
-    linear-gradient(90deg, rgba(9,14,18,.38) 0%, rgba(9,14,18,.12) 43%, rgba(9,14,18,0) 68%),
+    linear-gradient(90deg, rgba(9,14,18,.46) 0%, rgba(9,14,18,.18) 43%, rgba(9,14,18,.04) 68%),
     url("./decorative/v2/events/pet-supplies-vignette.webp?v=20260815-1215") 72% 48% / cover no-repeat,
     #0a1117 !important;
   border-color: rgba(223,111,63,.55) !important;
@@ -50,7 +62,7 @@ html body .fancy-home-v2 .event-card.event-pet-supplies {
 /* Summer Paradise — event-local tropical palette is intentionally allowed inside the S4 shell. */
 html body .fancy-home-v2 .event-card.event-summer-paradise {
   background:
-    linear-gradient(90deg, rgba(8,14,18,.42) 0%, rgba(8,14,18,.15) 44%, rgba(8,14,18,0) 70%),
+    linear-gradient(90deg, rgba(8,14,18,.50) 0%, rgba(8,14,18,.22) 44%, rgba(8,14,18,.05) 70%),
     url("./decorative/v2/events/summer-paradise-vignette.webp?v=20260815-1215") 76% 49% / cover no-repeat,
     #0a1117 !important;
   border-color: rgba(231,184,78,.56) !important;
@@ -66,7 +78,7 @@ html body .fancy-home-v2 .event-card.event-hero-lucky {
 
 html body .fancy-home-v2 .event-card.event-tech-lucky {
   background:
-    linear-gradient(90deg, rgba(7,15,20,.48) 0%, rgba(7,15,20,.16) 48%, rgba(7,15,20,0) 72%),
+    linear-gradient(90deg, rgba(7,15,20,.58) 0%, rgba(7,15,20,.26) 48%, rgba(7,15,20,.07) 72%),
     url("./decorative/v2/events/lucky-chest-base.webp?v=20260815-1215") 73% 50% / cover no-repeat,
     #091219 !important;
   border-color: rgba(102,196,216,.38) !important;
@@ -74,10 +86,20 @@ html body .fancy-home-v2 .event-card.event-tech-lucky {
 
 html body .fancy-home-v2 .event-card.event-hero-lucky {
   background:
-    linear-gradient(90deg, rgba(15,10,19,.50) 0%, rgba(15,10,19,.18) 48%, rgba(15,10,19,0) 72%),
+    linear-gradient(90deg, rgba(15,10,19,.60) 0%, rgba(15,10,19,.28) 48%, rgba(15,10,19,.08) 72%),
     url("./decorative/v2/events/lucky-chest-base.webp?v=20260815-1215") 73% 50% / cover no-repeat,
     #120d17 !important;
   border-color: rgba(183,125,218,.40) !important;
+}
+
+/* Lucky Chest has bright reward nodes near the text field, so dim its veil one step further. */
+html body .fancy-home-v2 .event-card.event-tech-lucky::after,
+html body .fancy-home-v2 .event-card.event-hero-lucky::after {
+  background: linear-gradient(90deg,
+    rgba(7,12,17,.985) 0%,
+    rgba(7,12,17,.945) 36%,
+    rgba(7,12,17,.66) 62%,
+    rgba(7,12,17,.24) 100%) !important;
 }
 
 html body .fancy-home-v2 .event-card p,
@@ -136,7 +158,20 @@ html body .fancy-home-v2 .armory-item.armory-open-contest {
 
 @media (max-width: 680px) {
   html body .fancy-home-v2 .event-card::after {
-    background: linear-gradient(90deg, rgba(7,12,17,.985) 0%, rgba(7,12,17,.91) 48%, rgba(7,12,17,.42) 80%, rgba(7,12,17,.12) 100%) !important;
+    background: linear-gradient(90deg,
+      rgba(7,12,17,.99) 0%,
+      rgba(7,12,17,.955) 48%,
+      rgba(7,12,17,.68) 80%,
+      rgba(7,12,17,.26) 100%) !important;
+  }
+
+  html body .fancy-home-v2 .event-card.event-tech-lucky::after,
+  html body .fancy-home-v2 .event-card.event-hero-lucky::after {
+    background: linear-gradient(90deg,
+      rgba(7,12,17,.992) 0%,
+      rgba(7,12,17,.965) 50%,
+      rgba(7,12,17,.74) 82%,
+      rgba(7,12,17,.30) 100%) !important;
   }
 
   html body .fancy-home-v2 .event-card p,
