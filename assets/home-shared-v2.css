@@ -98,7 +98,7 @@ html body .fancy-home-v2 .capital-node.next {
 }
 
 /* ----------------------------
-   ARMORY — stronghold + states
+   ARMORY — full-panel stronghold environment + states
    ---------------------------- */
 html body .fancy-home-v2 .armory-registration {
   position: relative;
@@ -107,8 +107,8 @@ html body .fancy-home-v2 .armory-registration {
   background: #0a1218;
 }
 
-/* Stronghold is an environmental layer, not a watermark. Keep it inside the panel
-   and let it remain visible through the translucent registration cards. */
+/* Stronghold is the environment for the whole Armory area, not a corner object.
+   Cover the complete panel and let the veil/cards provide readability. */
 html body .fancy-home-v2 .armory-registration::before {
   content: "" !important;
   display: block !important;
@@ -116,16 +116,20 @@ html body .fancy-home-v2 .armory-registration::before {
   z-index: 0;
   inset: 0;
   pointer-events: none;
-  opacity: .78;
-  background-image: url("./decorative/v2/operations/armory-stronghold.webp?v=20260815-1738") !important;
+  opacity: .70;
+  background-image: url("./decorative/v2/operations/armory-stronghold.webp?v=20260815-1826") !important;
   background-repeat: no-repeat !important;
-  background-position: 82% 50% !important;
-  background-size: 54% auto !important;
-  -webkit-mask-image: linear-gradient(90deg, transparent 4%, rgba(0,0,0,.16) 18%, rgba(0,0,0,.78) 42%, #000 70%, #000 100%);
-  mask-image: linear-gradient(90deg, transparent 4%, rgba(0,0,0,.16) 18%, rgba(0,0,0,.78) 42%, #000 70%, #000 100%);
-  filter: saturate(.96) brightness(.98) contrast(1.025);
+  background-position: 66% 52% !important;
+  background-size: cover !important;
+  -webkit-mask-image: none !important;
+  mask-image: none !important;
+  filter: saturate(.92) brightness(.88) contrast(1.04);
+  transform: scale(1.025);
+  transform-origin: center;
 }
 
+/* Readability veil: strongest near title/left edge, substantially lighter over
+   the right side so the stronghold remains recognizable through the cards. */
 html body .fancy-home-v2 .armory-registration::after {
   content: "";
   position: absolute;
@@ -133,8 +137,8 @@ html body .fancy-home-v2 .armory-registration::after {
   inset: 0;
   pointer-events: none;
   background:
-    linear-gradient(90deg, rgba(8,15,20,.92) 0%, rgba(8,15,20,.78) 26%, rgba(8,15,20,.38) 58%, rgba(8,15,20,.10) 100%),
-    linear-gradient(180deg, rgba(8,15,20,.06), rgba(8,15,20,.30));
+    linear-gradient(90deg, rgba(8,15,20,.88) 0%, rgba(8,15,20,.69) 25%, rgba(8,15,20,.34) 56%, rgba(8,15,20,.16) 100%),
+    linear-gradient(180deg, rgba(8,15,20,.08), rgba(8,15,20,.28));
 }
 
 html body .fancy-home-v2 .armory-registration > * {
@@ -150,30 +154,29 @@ html body .fancy-home-v2 .armory-grid {
   gap: 9px 10px;
 }
 
-/* These cards used to be almost opaque, which hid the stronghold entirely.
-   Use glass-like state surfaces instead: enough density for labels, enough
-   transparency for the environment to read as one coherent Armory scene. */
+/* Glass-like state surfaces: dense enough for labels, transparent enough for
+   the full-panel stronghold environment to remain one coherent scene. */
 html body .fancy-home-v2 .armory-item {
   min-height: 54px;
-  backdrop-filter: blur(1.5px);
-  -webkit-backdrop-filter: blur(1.5px);
-  background: linear-gradient(90deg, rgba(10,31,28,.72), rgba(8,22,24,.58) 58%, rgba(7,18,21,.48)) !important;
-  border-color: rgba(82,178,132,.36) !important;
+  backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(1px);
+  background: linear-gradient(90deg, rgba(10,31,28,.68), rgba(8,22,24,.53) 58%, rgba(7,18,21,.43)) !important;
+  border-color: rgba(82,178,132,.38) !important;
   box-shadow:
     inset 0 1px rgba(255,255,255,.035),
-    inset 0 0 20px rgba(5,13,16,.12),
+    inset 0 0 20px rgba(5,13,16,.10),
     0 8px 18px rgba(0,0,0,.11);
 }
 
 html body .fancy-home-v2 .armory-item > * {
   position: relative;
   z-index: 1;
-  text-shadow: 0 1px 5px rgba(0,0,0,.60);
+  text-shadow: 0 1px 5px rgba(0,0,0,.68);
 }
 
 html body .fancy-home-v2 .armory-item.armory-open-contest {
-  background: linear-gradient(90deg, rgba(94,52,25,.84), rgba(49,30,23,.70) 58%, rgba(35,24,22,.60)) !important;
-  border-color: rgba(235,147,62,.76) !important;
+  background: linear-gradient(90deg, rgba(94,52,25,.82), rgba(49,30,23,.67) 58%, rgba(35,24,22,.55)) !important;
+  border-color: rgba(235,147,62,.78) !important;
   box-shadow:
     inset 3px 0 rgba(238,126,55,.55),
     inset 0 0 28px rgba(218,76,40,.095),
@@ -198,12 +201,18 @@ html body .fancy-home-v2 .armory-count {
 
 @media (max-width: 900px) {
   html body .fancy-home-v2 .armory-registration::before {
-    opacity: .62;
-    background-position: 90% 50% !important;
-    background-size: 60% auto !important;
+    opacity: .61;
+    background-position: 68% 50% !important;
+    background-size: cover !important;
+    transform: scale(1.04);
+  }
+  html body .fancy-home-v2 .armory-registration::after {
+    background:
+      linear-gradient(90deg, rgba(8,15,20,.89) 0%, rgba(8,15,20,.72) 30%, rgba(8,15,20,.40) 67%, rgba(8,15,20,.22) 100%),
+      linear-gradient(180deg, rgba(8,15,20,.08), rgba(8,15,20,.32));
   }
   html body .fancy-home-v2 .armory-item {
-    background: linear-gradient(90deg, rgba(10,31,28,.78), rgba(8,22,24,.66)) !important;
+    background: linear-gradient(90deg, rgba(10,31,28,.74), rgba(8,22,24,.61)) !important;
   }
 }
 
@@ -213,16 +222,17 @@ html body .fancy-home-v2 .armory-count {
     display: none;
   }
   html body .fancy-home-v2 .armory-registration::before {
-    opacity: .46;
-    background-position: 102% 34% !important;
-    background-size: 76% auto !important;
+    opacity: .43;
+    background-position: 64% 40% !important;
+    background-size: cover !important;
+    transform: scale(1.06);
   }
   html body .fancy-home-v2 .armory-registration::after {
-    background: rgba(8,15,20,.54);
+    background: rgba(8,15,20,.52);
   }
   html body .fancy-home-v2 .armory-item {
     backdrop-filter: none;
     -webkit-backdrop-filter: none;
-    background: rgba(8,25,24,.78) !important;
+    background: rgba(8,25,24,.77) !important;
   }
 }
