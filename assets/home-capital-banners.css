@@ -1,0 +1,99 @@
+/* Server 504 — Capital owner banner treatment
+ * Uses the same in-game alliance sprite as KE and Active Alliances.
+ */
+html body .fancy-home-v2 .capital-node {
+  position: relative;
+  overflow: hidden;
+  display: flex !important;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 14px;
+  min-width: 0;
+  padding: 18px 18px !important;
+  text-align: left !important;
+}
+
+html body .fancy-home-v2 .capital-node-copy {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  gap: 7px;
+  min-width: 0;
+  text-align: left;
+}
+
+html body .fancy-home-v2 .capital-node .capital-banner-main {
+  position: relative;
+  z-index: 2;
+  width: 52px;
+  height: 52px;
+  flex: 0 0 52px;
+  filter: drop-shadow(0 7px 12px rgba(0,0,0,.38));
+}
+
+html body .fancy-home-v2 .capital-node .capital-banner-watermark {
+  position: absolute !important;
+  z-index: 0;
+  right: -13px;
+  bottom: -21px;
+  width: 112px;
+  height: 112px;
+  opacity: .075;
+  pointer-events: none;
+  transform: rotate(-7deg) scale(1.08);
+  transform-origin: center;
+  filter: saturate(.72) brightness(.92);
+}
+
+html body .fancy-home-v2 .capital-node.next .capital-banner-watermark {
+  transform: rotate(7deg) scale(1.08);
+}
+
+html body .fancy-home-v2 .capital-node small,
+html body .fancy-home-v2 .capital-node strong,
+html body .fancy-home-v2 .capital-node span:not(.alliance-banner) {
+  position: relative;
+  z-index: 2;
+}
+
+html body .fancy-home-v2 .capital-node strong {
+  line-height: 1;
+  text-shadow: 0 2px 10px rgba(0,0,0,.28);
+}
+
+@media (max-width: 900px) {
+  html body .fancy-home-v2 .capital-node {
+    gap: 12px;
+    padding: 16px !important;
+  }
+
+  html body .fancy-home-v2 .capital-node .capital-banner-main {
+    width: 46px;
+    height: 46px;
+    flex-basis: 46px;
+  }
+
+  html body .fancy-home-v2 .capital-node .capital-banner-watermark {
+    width: 94px;
+    height: 94px;
+    right: -10px;
+    bottom: -17px;
+  }
+}
+
+@media (max-width: 680px) {
+  html body .fancy-home-v2 .capital-node {
+    gap: 10px;
+    padding: 14px 16px !important;
+  }
+
+  html body .fancy-home-v2 .capital-node .capital-banner-main {
+    width: 42px;
+    height: 42px;
+    flex-basis: 42px;
+  }
+
+  html body .fancy-home-v2 .capital-node .capital-banner-watermark {
+    opacity: .055;
+  }
+}
