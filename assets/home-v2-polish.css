@@ -41,7 +41,7 @@ html body .fancy-home-v2 .event-card::after {
 html body .fancy-home-v2 .event-card.event-pet-supplies {
   background:
     linear-gradient(90deg, rgba(9,14,18,.38) 0%, rgba(9,14,18,.12) 43%, rgba(9,14,18,0) 68%),
-    url("./decorative/v2/events/pet-supplies-vignette.webp?v=20260815-1200") 72% 48% / cover no-repeat,
+    url("./decorative/v2/events/pet-supplies-vignette.webp?v=20260815-1215") 72% 48% / cover no-repeat,
     #0a1117 !important;
   border-color: rgba(223,111,63,.55) !important;
   box-shadow: inset 3px 0 rgba(217,84,63,.24), 0 16px 34px rgba(0,0,0,.18) !important;
@@ -51,7 +51,7 @@ html body .fancy-home-v2 .event-card.event-pet-supplies {
 html body .fancy-home-v2 .event-card.event-summer-paradise {
   background:
     linear-gradient(90deg, rgba(8,14,18,.42) 0%, rgba(8,14,18,.15) 44%, rgba(8,14,18,0) 70%),
-    url("./decorative/v2/events/summer-paradise-vignette.webp?v=20260815-1200") 76% 49% / cover no-repeat,
+    url("./decorative/v2/events/summer-paradise-vignette.webp?v=20260815-1215") 76% 49% / cover no-repeat,
     #0a1117 !important;
   border-color: rgba(231,184,78,.56) !important;
   box-shadow: inset 3px 0 rgba(231,184,78,.22), 0 16px 34px rgba(0,0,0,.17) !important;
@@ -67,7 +67,7 @@ html body .fancy-home-v2 .event-card.event-hero-lucky {
 html body .fancy-home-v2 .event-card.event-tech-lucky {
   background:
     linear-gradient(90deg, rgba(7,15,20,.48) 0%, rgba(7,15,20,.16) 48%, rgba(7,15,20,0) 72%),
-    url("./decorative/v2/events/lucky-chest-base.webp?v=20260815-1200") 73% 50% / cover no-repeat,
+    url("./decorative/v2/events/lucky-chest-base.webp?v=20260815-1215") 73% 50% / cover no-repeat,
     #091219 !important;
   border-color: rgba(102,196,216,.38) !important;
 }
@@ -75,7 +75,7 @@ html body .fancy-home-v2 .event-card.event-tech-lucky {
 html body .fancy-home-v2 .event-card.event-hero-lucky {
   background:
     linear-gradient(90deg, rgba(15,10,19,.50) 0%, rgba(15,10,19,.18) 48%, rgba(15,10,19,0) 72%),
-    url("./decorative/v2/events/lucky-chest-base.webp?v=20260815-1200") 73% 50% / cover no-repeat,
+    url("./decorative/v2/events/lucky-chest-base.webp?v=20260815-1215") 73% 50% / cover no-repeat,
     #120d17 !important;
   border-color: rgba(183,125,218,.40) !important;
 }
