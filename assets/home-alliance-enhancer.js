@@ -1,5 +1,6 @@
-/* Server 504 — alliance identity enhancer
- * Adds in-game alliance banners to Active Alliances and Saturday KE without changing data.
+/* Server 504 — Home operations identity enhancer
+ * Adds in-game alliance banners and loads final Shared Assets presentation.
+ * No server data is changed.
  */
 (() => {
   const app = document.getElementById('app');
@@ -9,6 +10,19 @@
   const supported = new Set(['uic','ap3x','dud','cmrd','idgf','ids','ltnx','immr','unta','lumj']);
   let spritePromise = null;
   let queued = false;
+
+  const ensureStyle = (id, href) => {
+    if (document.getElementById(id)) return;
+    const link = document.createElement('link');
+    link.id = id;
+    link.rel = 'stylesheet';
+    link.href = href;
+    document.head.appendChild(link);
+  };
+
+  /* Loaded here deliberately: this enhancer executes after fancy-home.js, so Shared V2
+     remains the final authority over legacy/recovery Armory pseudo-elements. */
+  ensureStyle('server504-home-shared-v2', './assets/home-shared-v2.css?v=20260815-1416');
 
   const normalizeCode = value => {
     const text = String(value || '').trim();
