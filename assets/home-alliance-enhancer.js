@@ -78,12 +78,37 @@
     cell.appendChild(wrap);
   };
 
+  const enhanceCapitalNode = node => {
+    if (!node || node.dataset.bannerEnhanced === '1') return;
+    const owner = node.querySelector(':scope > strong');
+    const code = normalizeCode(owner?.textContent);
+    if (!code) return;
+
+    node.dataset.bannerEnhanced = '1';
+    node.dataset.allianceCode = code;
+
+    const copy = document.createElement('div');
+    copy.className = 'capital-node-copy';
+    [...node.children].forEach(child => copy.appendChild(child));
+
+    const watermark = makeBanner(code);
+    watermark.classList.add('capital-banner-watermark');
+    const banner = makeBanner(code);
+    banner.classList.add('capital-banner-main');
+
+    node.appendChild(watermark);
+    node.appendChild(banner);
+    node.appendChild(copy);
+  };
+
   const enhance = () => {
     queued = false;
     const dashboard = app.querySelector('.ops-dashboard.fancy-home-v2, .ops-dashboard');
     if (!dashboard) return;
 
     ensureSprite();
+
+    dashboard.querySelectorAll('.capital-rotation .capital-node').forEach(enhanceCapitalNode);
 
     dashboard.querySelectorAll('.alliance-table-panel tbody tr:not(.muted-row)').forEach(row => {
       wrapRosterCell(row.children[1]);
