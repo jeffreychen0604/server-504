@@ -1,1 +1,50 @@
-/* Alliance banner assets are injected by fancy-home.js. */
+/* Server 504 — in-game alliance banner sprite */
+:root { --server504-alliance-banner-sprite: none; }
+
+.alliance-banner {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  flex: 0 0 40px;
+  background-image: var(--server504-alliance-banner-sprite);
+  background-size: 500% 200%;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  filter: drop-shadow(0 4px 7px rgba(0,0,0,.35));
+}
+
+.alliance-banner--uic  { background-position: 0% 0%; }
+.alliance-banner--ap3x { background-position: 25% 0%; }
+.alliance-banner--dud  { background-position: 50% 0%; }
+.alliance-banner--cmrd { background-position: 75% 0%; }
+.alliance-banner--idgf { background-position: 100% 0%; }
+.alliance-banner--ids  { background-position: 0% 100%; }
+.alliance-banner--ltnx { background-position: 25% 100%; }
+.alliance-banner--immr { background-position: 50% 100%; }
+.alliance-banner--unta { background-position: 75% 100%; }
+.alliance-banner--lumj { background-position: 100% 100%; }
+
+.alliance-table-panel .alliance-banner {
+  width: 34px;
+  height: 34px;
+  flex-basis: 34px;
+}
+
+.ke-panel .alliance-banner {
+  width: 46px;
+  height: 46px;
+  flex-basis: 46px;
+}
+
+@media (max-width: 680px) {
+  .alliance-table-panel .alliance-banner {
+    width: 29px;
+    height: 29px;
+    flex-basis: 29px;
+  }
+  .ke-panel .alliance-banner {
+    width: 38px;
+    height: 38px;
+    flex-basis: 38px;
+  }
+}
