@@ -9,8 +9,11 @@ html body .fancy-home-v2 .shared-panel {
   overflow: hidden;
 }
 
+/* Armory does not need to dominate the full Shared Assets row. Keep the two
+   operational blocks close to 50/50 so the registration board feels compact. */
 html body .fancy-home-v2 .shared-panel .shared-body {
   align-items: stretch;
+  grid-template-columns: minmax(320px, 1fr) minmax(0, 1fr);
 }
 
 /* -------------------------
@@ -98,7 +101,7 @@ html body .fancy-home-v2 .capital-node.next {
 }
 
 /* ----------------------------
-   ARMORY — full-panel stronghold environment + states
+   ARMORY — right-anchored scenic stronghold + states
    ---------------------------- */
 html body .fancy-home-v2 .armory-registration {
   position: relative;
@@ -107,29 +110,31 @@ html body .fancy-home-v2 .armory-registration {
   background: #0a1218;
 }
 
-/* Stronghold is the environment for the whole Armory area, not a corner object.
-   Cover the complete panel and let the veil/cards provide readability. */
+/* Treat the stronghold like Featured Events artwork: it is a scenic layer
+   anchored to the right, its rendered height matches the panel, and its left
+   edge fades away instead of stretching/cropping across the entire board. */
 html body .fancy-home-v2 .armory-registration::before {
   content: "" !important;
   display: block !important;
   position: absolute;
   z-index: 0;
-  inset: 0;
+  top: 0;
+  right: -2%;
+  bottom: 0;
+  width: 72%;
   pointer-events: none;
-  opacity: .70;
-  background-image: url("./decorative/v2/operations/armory-stronghold.webp?v=20260815-1826") !important;
+  opacity: .82;
+  background-image: url("./decorative/v2/operations/armory-stronghold.webp?v=20260815-2037") !important;
   background-repeat: no-repeat !important;
-  background-position: 66% 52% !important;
-  background-size: cover !important;
-  -webkit-mask-image: none !important;
-  mask-image: none !important;
-  filter: saturate(.92) brightness(.88) contrast(1.04);
-  transform: scale(1.025);
-  transform-origin: center;
+  background-position: right center !important;
+  background-size: auto 100% !important;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, rgba(0,0,0,.10) 10%, rgba(0,0,0,.45) 27%, rgba(0,0,0,.88) 47%, #000 64%, #000 100%);
+  mask-image: linear-gradient(90deg, transparent 0%, rgba(0,0,0,.10) 10%, rgba(0,0,0,.45) 27%, rgba(0,0,0,.88) 47%, #000 64%, #000 100%);
+  filter: saturate(.94) brightness(.93) contrast(1.045);
 }
 
-/* Readability veil: strongest near title/left edge, substantially lighter over
-   the right side so the stronghold remains recognizable through the cards. */
+/* Featured-event-like readability: dark on the left, progressively lighter
+   toward the scenic stronghold on the right. */
 html body .fancy-home-v2 .armory-registration::after {
   content: "";
   position: absolute;
@@ -137,8 +142,8 @@ html body .fancy-home-v2 .armory-registration::after {
   inset: 0;
   pointer-events: none;
   background:
-    linear-gradient(90deg, rgba(8,15,20,.88) 0%, rgba(8,15,20,.69) 25%, rgba(8,15,20,.34) 56%, rgba(8,15,20,.16) 100%),
-    linear-gradient(180deg, rgba(8,15,20,.08), rgba(8,15,20,.28));
+    linear-gradient(90deg, rgba(8,15,20,.975) 0%, rgba(8,15,20,.93) 24%, rgba(8,15,20,.76) 44%, rgba(8,15,20,.42) 66%, rgba(8,15,20,.12) 100%),
+    linear-gradient(180deg, rgba(8,15,20,.10), rgba(8,15,20,.34));
 }
 
 html body .fancy-home-v2 .armory-registration > * {
@@ -155,12 +160,12 @@ html body .fancy-home-v2 .armory-grid {
 }
 
 /* Glass-like state surfaces: dense enough for labels, transparent enough for
-   the full-panel stronghold environment to remain one coherent scene. */
+   the scenic layer to remain visible behind the right half of the board. */
 html body .fancy-home-v2 .armory-item {
   min-height: 54px;
   backdrop-filter: blur(1px);
   -webkit-backdrop-filter: blur(1px);
-  background: linear-gradient(90deg, rgba(10,31,28,.68), rgba(8,22,24,.53) 58%, rgba(7,18,21,.43)) !important;
+  background: linear-gradient(90deg, rgba(10,31,28,.70), rgba(8,22,24,.55) 58%, rgba(7,18,21,.44)) !important;
   border-color: rgba(82,178,132,.38) !important;
   box-shadow:
     inset 0 1px rgba(255,255,255,.035),
@@ -175,7 +180,7 @@ html body .fancy-home-v2 .armory-item > * {
 }
 
 html body .fancy-home-v2 .armory-item.armory-open-contest {
-  background: linear-gradient(90deg, rgba(94,52,25,.82), rgba(49,30,23,.67) 58%, rgba(35,24,22,.55)) !important;
+  background: linear-gradient(90deg, rgba(94,52,25,.84), rgba(49,30,23,.69) 58%, rgba(35,24,22,.57)) !important;
   border-color: rgba(235,147,62,.78) !important;
   box-shadow:
     inset 3px 0 rgba(238,126,55,.55),
@@ -200,19 +205,25 @@ html body .fancy-home-v2 .armory-count {
 }
 
 @media (max-width: 900px) {
-  html body .fancy-home-v2 .armory-registration::before {
-    opacity: .61;
-    background-position: 68% 50% !important;
-    background-size: cover !important;
-    transform: scale(1.04);
+  html body .fancy-home-v2 .shared-panel .shared-body {
+    grid-template-columns: 1fr;
   }
+
+  html body .fancy-home-v2 .armory-registration::before {
+    right: -5%;
+    width: 76%;
+    opacity: .62;
+    background-size: auto 100% !important;
+  }
+
   html body .fancy-home-v2 .armory-registration::after {
     background:
-      linear-gradient(90deg, rgba(8,15,20,.89) 0%, rgba(8,15,20,.72) 30%, rgba(8,15,20,.40) 67%, rgba(8,15,20,.22) 100%),
-      linear-gradient(180deg, rgba(8,15,20,.08), rgba(8,15,20,.32));
+      linear-gradient(90deg, rgba(8,15,20,.96) 0%, rgba(8,15,20,.89) 28%, rgba(8,15,20,.66) 55%, rgba(8,15,20,.26) 100%),
+      linear-gradient(180deg, rgba(8,15,20,.10), rgba(8,15,20,.36));
   }
+
   html body .fancy-home-v2 .armory-item {
-    background: linear-gradient(90deg, rgba(10,31,28,.74), rgba(8,22,24,.61)) !important;
+    background: linear-gradient(90deg, rgba(10,31,28,.76), rgba(8,22,24,.63)) !important;
   }
 }
 
@@ -221,18 +232,22 @@ html body .fancy-home-v2 .armory-count {
   html body .fancy-home-v2 .capital-rotation::after {
     display: none;
   }
+
   html body .fancy-home-v2 .armory-registration::before {
-    opacity: .43;
-    background-position: 64% 40% !important;
-    background-size: cover !important;
-    transform: scale(1.06);
+    right: -24%;
+    width: 104%;
+    opacity: .40;
+    background-position: right 38% !important;
+    background-size: auto 96% !important;
   }
+
   html body .fancy-home-v2 .armory-registration::after {
-    background: rgba(8,15,20,.52);
+    background: rgba(8,15,20,.54);
   }
+
   html body .fancy-home-v2 .armory-item {
     backdrop-filter: none;
     -webkit-backdrop-filter: none;
-    background: rgba(8,25,24,.77) !important;
+    background: rgba(8,25,24,.78) !important;
   }
 }
