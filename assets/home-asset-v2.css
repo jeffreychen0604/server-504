@@ -1,0 +1,354 @@
+/* Server 504 — Dark War: Survival decorative asset system V2
+ * Grounded in in-game UI references. Presentation only.
+ */
+
+.fancy-home-v2 {
+  --dws-panel: rgba(13, 19, 27, .94);
+  --dws-panel-soft: rgba(20, 28, 39, .86);
+  --dws-cream: #f4ead8;
+  --dws-gold: #e8ba58;
+  --dws-blue: #69b8e7;
+  --dws-red: #e86367;
+  --dws-green: #7fca73;
+  --dws-purple: #9d81d8;
+}
+
+/* V1 cleanup — remove generic cyber corners / watermarks from Home. */
+.fancy-home-v2 .dashboard-panel::after,
+.fancy-home-v2 .panel-head::after,
+.fancy-home-v2 .panel-head::before,
+.fancy-home-v2 .dashboard-head::after,
+.fancy-home-v2 .dashboard-head::before {
+  content: none !important;
+  background-image: none !important;
+}
+
+.fancy-home-v2 .dashboard-panel {
+  border-radius: 14px;
+  border-color: rgba(166, 188, 204, .18);
+  background:
+    linear-gradient(180deg, rgba(18, 26, 36, .95), rgba(8, 13, 19, .96));
+  box-shadow: 0 18px 46px rgba(0, 0, 0, .26), inset 0 1px rgba(255,255,255,.025);
+}
+
+.fancy-home-v2 .panel-head {
+  min-height: 48px;
+  background: linear-gradient(180deg, rgba(34, 45, 58, .68), rgba(18, 27, 37, .62));
+  border-bottom-color: rgba(211, 224, 232, .10);
+}
+
+.fancy-home-v2 .panel-head h2 {
+  color: var(--dws-cream);
+  letter-spacing: .025em;
+  text-shadow: 0 2px 10px rgba(0,0,0,.38);
+}
+
+/* ------------------------------------------------------------------
+   FEATURED EVENTS — physical centerpieces rather than line-art marks
+   ------------------------------------------------------------------ */
+.fancy-home-v2 .event-card {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: 196px;
+  border-radius: 14px;
+  background: linear-gradient(180deg, rgba(25, 33, 43, .97), rgba(9, 15, 21, .97));
+  transform-style: flat;
+}
+
+.fancy-home-v2 .event-card::before {
+  content: "";
+  position: absolute;
+  z-index: -2;
+  inset: 0 0 0 42%;
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-size: cover;
+  opacity: .86;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, rgba(0,0,0,.32) 14%, #000 44%, #000 100%);
+  mask-image: linear-gradient(90deg, transparent 0%, rgba(0,0,0,.32) 14%, #000 44%, #000 100%);
+}
+
+.fancy-home-v2 .event-card::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(90deg, rgba(8,13,18,.98) 0%, rgba(8,13,18,.92) 43%, rgba(8,13,18,.48) 68%, rgba(8,13,18,.12) 100%);
+}
+
+.fancy-home-v2 .event-card > * { position: relative; z-index: 1; }
+.fancy-home-v2 .event-card h3 { color: #fff8ea; font-size: 1.08rem; }
+.fancy-home-v2 .event-card p { max-width: 72%; color: #c5ccd0; }
+.fancy-home-v2 .event-card .event-meta,
+.fancy-home-v2 .event-card .event-rewards { max-width: 72%; }
+
+.fancy-home-v2 .event-pet-supplies {
+  border-color: rgba(220, 111, 56, .48);
+  background: linear-gradient(180deg, rgba(80, 39, 27, .62), rgba(17, 17, 20, .96));
+}
+.fancy-home-v2 .event-pet-supplies::before {
+  background-image: url('./decorative/v2/events/pet-supplies-vignette.webp');
+  background-position: 75% center;
+}
+.fancy-home-v2 .event-pet-supplies .event-type {
+  color: #ffd09a;
+  border-color: rgba(245, 150, 82, .36);
+  background: rgba(166, 76, 35, .26);
+}
+
+.fancy-home-v2 .event-summer-paradise {
+  border-color: rgba(231, 184, 78, .52);
+  background: linear-gradient(180deg, rgba(45, 70, 76, .72), rgba(13, 21, 27, .96));
+}
+.fancy-home-v2 .event-summer-paradise::before {
+  inset-left: 38%;
+  background-image: url('./decorative/v2/events/summer-paradise-vignette.webp');
+  background-position: 64% center;
+  opacity: .92;
+}
+.fancy-home-v2 .event-summer-paradise .event-type {
+  color: #ffe493;
+  border-color: rgba(236, 190, 75, .45);
+  background: rgba(121, 91, 28, .28);
+}
+.fancy-home-v2 .event-summer-paradise h3 { color: #fff4c3; }
+
+.fancy-home-v2 .event-tech-lucky,
+.fancy-home-v2 .event-hero-lucky {
+  border-color: rgba(217, 165, 64, .36);
+  background: linear-gradient(180deg, rgba(54, 42, 31, .74), rgba(11, 16, 21, .97));
+}
+.fancy-home-v2 .event-tech-lucky::before,
+.fancy-home-v2 .event-hero-lucky::before {
+  background-image: url('./decorative/v2/events/lucky-chest-base.webp');
+  background-position: 72% center;
+  opacity: .72;
+}
+.fancy-home-v2 .event-tech-lucky::before {
+  filter: hue-rotate(168deg) saturate(.82) brightness(.86);
+}
+.fancy-home-v2 .event-tech-lucky {
+  box-shadow: inset 0 0 34px rgba(58, 156, 196, .05);
+}
+.fancy-home-v2 .event-tech-lucky .event-type {
+  color: #9ce4ef;
+  border-color: rgba(102, 196, 216, .34);
+  background: rgba(39, 110, 128, .22);
+}
+.fancy-home-v2 .event-hero-lucky {
+  box-shadow: inset 0 0 34px rgba(168, 100, 201, .055);
+}
+.fancy-home-v2 .event-hero-lucky .event-type {
+  color: #e9c1ff;
+  border-color: rgba(183, 125, 218, .35);
+  background: rgba(97, 54, 121, .24);
+}
+
+/* ------------------------------------------------------------------
+   SATURDAY KE — Dark War Alliance Duel visual grammar
+   ------------------------------------------------------------------ */
+.fancy-home-v2 .ke-panel {
+  border-color: rgba(157, 172, 190, .22);
+  background:
+    linear-gradient(90deg, rgba(34, 92, 155, .12), transparent 43%, transparent 57%, rgba(162, 55, 82, .13)),
+    linear-gradient(180deg, rgba(17, 25, 36, .97), rgba(9, 14, 20, .97));
+}
+
+.fancy-home-v2 .ke-panel .panel-head {
+  background:
+    linear-gradient(90deg, rgba(60, 125, 197, .19), rgba(30,36,45,.54) 45%, rgba(30,36,45,.54) 55%, rgba(186, 74, 96, .19));
+}
+
+.fancy-home-v2 .ke-panel .panel-head h2 {
+  color: #fff2da;
+}
+
+.fancy-home-v2 .ke-panel .ke-explainer {
+  background: rgba(9, 14, 21, .44);
+  color: #bac4cb;
+}
+
+.fancy-home-v2 .ke-panel tbody tr {
+  background:
+    url('./decorative/v2/operations/ke-conflict-seam.svg') center center / 28px 28px no-repeat,
+    linear-gradient(90deg, rgba(47, 118, 199, .13) 0%, rgba(47,118,199,.07) 44%, transparent 48%, transparent 52%, rgba(188,64,88,.07) 56%, rgba(188,64,88,.13) 100%);
+}
+
+.fancy-home-v2 .ke-panel tbody td:first-child {
+  position: relative;
+  padding-left: 39px;
+  color: #b9ddff;
+}
+.fancy-home-v2 .ke-panel tbody td:first-child::before {
+  content: "";
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  width: 21px;
+  height: 26px;
+  transform: translateY(-50%);
+  background: url('./decorative/v2/operations/ke-neutral-banner.svg') center / contain no-repeat;
+  opacity: .82;
+}
+.fancy-home-v2 .ke-panel tbody td:nth-child(2),
+.fancy-home-v2 .ke-panel tbody td:nth-child(3) { color: #ffd0d5; }
+.fancy-home-v2 .ke-panel .cp-meter i {
+  background: linear-gradient(90deg, #5aaee6, #f2cc63, #e96972);
+}
+
+/* ------------------------------------------------------------------
+   ACTIVE ALLIANCES — rank plate system based on in-game rankings
+   ------------------------------------------------------------------ */
+.fancy-home-v2 .alliance-table-panel .rank-col {
+  position: relative;
+  min-width: 42px;
+  height: 42px;
+  color: #e8edf0;
+  font-weight: 900;
+  text-shadow: 0 1px 3px #000;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 31px 31px;
+}
+.fancy-home-v2 .alliance-table-panel tbody tr:nth-child(1) .rank-col {
+  background-image: url('./decorative/v2/ranking/rank-plate-1.svg');
+  color: #3a250d;
+}
+.fancy-home-v2 .alliance-table-panel tbody tr:nth-child(2) .rank-col {
+  background-image: url('./decorative/v2/ranking/rank-plate-2.svg');
+  color: #24343e;
+}
+.fancy-home-v2 .alliance-table-panel tbody tr:nth-child(3) .rank-col {
+  background-image: url('./decorative/v2/ranking/rank-plate-3.svg');
+  color: #3a251c;
+}
+.fancy-home-v2 .alliance-table-panel tbody tr:nth-child(n+4) .rank-col {
+  background-image: url('./decorative/v2/ranking/rank-plate-neutral.svg');
+  color: #e6edf0;
+}
+.fancy-home-v2 .alliance-table-panel tbody tr:nth-child(1) { background: rgba(220,172,55,.055); }
+.fancy-home-v2 .alliance-table-panel tbody tr:nth-child(2) { background: rgba(103,164,198,.045); }
+.fancy-home-v2 .alliance-table-panel tbody tr:nth-child(3) { background: rgba(166,106,72,.04); }
+
+/* ------------------------------------------------------------------
+   ARMORY — stronghold + semantic states
+   ------------------------------------------------------------------ */
+.fancy-home-v2 .armory-registration {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+.fancy-home-v2 .armory-registration::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  right: -5%;
+  bottom: -22%;
+  width: 55%;
+  aspect-ratio: 16/9;
+  background: url('./decorative/v2/operations/armory-stronghold.webp') center / cover no-repeat;
+  opacity: .12;
+  filter: saturate(.76) contrast(1.06);
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 38%);
+  mask-image: linear-gradient(90deg, transparent, #000 38%);
+}
+
+.fancy-home-v2 .armory-grid { gap: 9px; }
+.fancy-home-v2 .armory-item {
+  position: relative;
+  min-height: 48px;
+  padding: 8px 11px 8px 47px;
+  border-radius: 11px;
+  border-color: rgba(145, 164, 176, .16);
+  background: linear-gradient(180deg, rgba(30, 40, 49, .8), rgba(17,24,31,.84));
+}
+.fancy-home-v2 .armory-item::before {
+  content: "";
+  position: absolute;
+  left: 9px;
+  top: 50%;
+  width: 31px;
+  height: 31px;
+  transform: translateY(-50%);
+  background: url('./decorative/v2/operations/armory-state-pending.svg') center / contain no-repeat;
+}
+.fancy-home-v2 .armory-item.armory-registered::before {
+  background-image: url('./decorative/v2/operations/armory-state-registered.svg');
+}
+.fancy-home-v2 .armory-item.armory-open-contest::before {
+  background-image: url('./decorative/v2/operations/armory-state-open-contest.svg');
+}
+.fancy-home-v2 .armory-item.armory-available::before {
+  background-image: url('./decorative/v2/operations/armory-state-available.svg');
+}
+.fancy-home-v2 .armory-item.armory-pending::before {
+  background-image: url('./decorative/v2/operations/armory-state-pending.svg');
+}
+.fancy-home-v2 .armory-item.armory-registered {
+  border-color: rgba(101, 193, 132, .24);
+  background: linear-gradient(180deg, rgba(31, 61, 48, .34), rgba(17, 27, 28, .8));
+}
+.fancy-home-v2 .armory-item.armory-open-contest {
+  border-color: rgba(224, 153, 62, .42);
+  background: linear-gradient(180deg, rgba(86, 50, 28, .42), rgba(31, 23, 22, .86));
+  box-shadow: inset 0 0 26px rgba(209, 88, 58, .045);
+}
+.fancy-home-v2 .armory-item.armory-open-contest strong { color: #ffca70; }
+.fancy-home-v2 .armory-state-copy {
+  display: grid;
+  gap: 2px;
+  text-align: right;
+  min-width: 0;
+}
+.fancy-home-v2 .armory-contenders {
+  color: #d9a879;
+  font-size: .58rem;
+  letter-spacing: .03em;
+  white-space: nowrap;
+}
+
+/* Capital remains restrained until a direct in-game Capital reference exists. */
+.fancy-home-v2 .capital-rotation::before,
+.fancy-home-v2 .capital-rotation::after { content: none !important; }
+.fancy-home-v2 .capital-node {
+  border-radius: 13px;
+  border: 1px solid rgba(119, 183, 208, .20);
+  background: linear-gradient(180deg, rgba(28, 46, 57, .62), rgba(14, 23, 29, .72));
+  padding: 18px 12px;
+}
+.fancy-home-v2 .capital-node.next {
+  border-color: rgba(220, 177, 87, .25);
+  background: linear-gradient(180deg, rgba(62, 48, 26, .46), rgba(27, 23, 18, .72));
+}
+
+@media (max-width: 980px) {
+  .fancy-home-v2 .event-card::before { inset-left: 46%; opacity: .68; }
+  .fancy-home-v2 .event-card p,
+  .fancy-home-v2 .event-card .event-meta,
+  .fancy-home-v2 .event-card .event-rewards { max-width: 78%; }
+  .fancy-home-v2 .armory-registration::before { opacity: .08; width: 70%; }
+}
+
+@media (max-width: 720px) {
+  .fancy-home-v2 .event-card::before {
+    inset: 0 0 42% 48%;
+    opacity: .36;
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 36%);
+    mask-image: linear-gradient(90deg, transparent, #000 36%);
+  }
+  .fancy-home-v2 .event-card::after {
+    background: linear-gradient(180deg, rgba(8,13,18,.72), rgba(8,13,18,.93) 58%, rgba(8,13,18,.99));
+  }
+  .fancy-home-v2 .event-card p,
+  .fancy-home-v2 .event-card .event-meta,
+  .fancy-home-v2 .event-card .event-rewards { max-width: 100%; }
+  .fancy-home-v2 .ke-panel tbody tr { background-size: 22px 22px, auto; }
+  .fancy-home-v2 .armory-registration::before { display: none; }
+  .fancy-home-v2 .armory-contenders { white-space: normal; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fancy-home-v2 .event-card { transform: none !important; }
+}
