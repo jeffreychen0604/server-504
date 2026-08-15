@@ -1,39 +1,32 @@
 /* Server 504 — Home V2 polish pass
- * Focus: event artwork stacking/crops + KE cleanup/height.
- * Loaded after home-v2-recovery.css.
+ * Stable presentation authority for event artwork + KE compact layout.
+ * Event artwork is rendered on the card background itself instead of pseudo-elements.
  */
 
-/* ------------------------------------------
-   FEATURED EVENTS — correct stacking layers
-   ------------------------------------------ */
+/* -------------------------------------------------
+   FEATURED EVENTS — direct background-image rendering
+   ------------------------------------------------- */
 html body .fancy-home-v2 .event-card {
+  position: relative !important;
   isolation: isolate;
-  overflow: hidden;
+  overflow: hidden !important;
 }
 
+/* Disable every legacy/pseudo artwork layer. The actual raster now lives on the card. */
+html body .fancy-home-v2 .event-card::before {
+  content: none !important;
+  display: none !important;
+  background: none !important;
+  background-image: none !important;
+}
+
+/* Keep card text above its own direct background. */
 html body .fancy-home-v2 .event-card > * {
   position: relative;
   z-index: 2 !important;
 }
 
-html body .fancy-home-v2 .event-card::before {
-  content: "" !important;
-  display: block !important;
-  position: absolute !important;
-  z-index: 0 !important;
-  top: 0 !important;
-  right: 0 !important;
-  bottom: 0 !important;
-  left: 40% !important;
-  opacity: .96 !important;
-  pointer-events: none !important;
-  background-repeat: no-repeat !important;
-  background-position: right center !important;
-  background-size: cover !important;
-  -webkit-mask-image: linear-gradient(90deg, transparent 0%, rgba(0,0,0,.22) 12%, #000 38%, #000 100%) !important;
-  mask-image: linear-gradient(90deg, transparent 0%, rgba(0,0,0,.22) 12%, #000 38%, #000 100%) !important;
-}
-
+/* Soft readability veil; unlike the old artwork pseudo-element this contains no image. */
 html body .fancy-home-v2 .event-card::after {
   content: "" !important;
   display: block !important;
@@ -41,42 +34,65 @@ html body .fancy-home-v2 .event-card::after {
   inset: 0 !important;
   z-index: 1 !important;
   pointer-events: none !important;
-  background: linear-gradient(90deg, rgba(7,12,17,.985) 0%, rgba(7,12,17,.92) 34%, rgba(7,12,17,.58) 59%, rgba(7,12,17,.18) 100%) !important;
+  background: linear-gradient(90deg, rgba(7,12,17,.96) 0%, rgba(7,12,17,.88) 34%, rgba(7,12,17,.42) 60%, rgba(7,12,17,.08) 100%) !important;
 }
 
-/* Pet Supplies — show the physical supply station, not just the mascot head. */
-html body .fancy-home-v2 .event-card.event-pet-supplies::before {
-  left: 41% !important;
-  background-image: url("./decorative/v2/events/pet-supplies-vignette.webp") !important;
-  background-position: 58% 42% !important;
-  background-size: 118% auto !important;
-  filter: saturate(.96) contrast(1.02) brightness(.92) !important;
+/* Pet Supplies — the orange physical supply station is the event identity. */
+html body .fancy-home-v2 .event-card.event-pet-supplies {
+  background:
+    linear-gradient(90deg, rgba(9,14,18,.38) 0%, rgba(9,14,18,.12) 43%, rgba(9,14,18,0) 68%),
+    url("./decorative/v2/events/pet-supplies-vignette.webp?v=20260815-1200") 72% 48% / cover no-repeat,
+    #0a1117 !important;
+  border-color: rgba(223,111,63,.55) !important;
+  box-shadow: inset 3px 0 rgba(217,84,63,.24), 0 16px 34px rgba(0,0,0,.18) !important;
 }
 
-/* Summer Paradise — preserve a clean text field while keeping tropical identity visible. */
-html body .fancy-home-v2 .event-card.event-summer-paradise::before {
-  left: 37% !important;
-  background-image: url("./decorative/v2/events/summer-paradise-vignette.webp") !important;
-  background-position: 78% 48% !important;
-  background-size: 115% auto !important;
-  filter: saturate(.95) brightness(.92) contrast(1.01) !important;
+/* Summer Paradise — event-local tropical palette is intentionally allowed inside the S4 shell. */
+html body .fancy-home-v2 .event-card.event-summer-paradise {
+  background:
+    linear-gradient(90deg, rgba(8,14,18,.42) 0%, rgba(8,14,18,.15) 44%, rgba(8,14,18,0) 70%),
+    url("./decorative/v2/events/summer-paradise-vignette.webp?v=20260815-1200") 76% 49% / cover no-repeat,
+    #0a1117 !important;
+  border-color: rgba(231,184,78,.56) !important;
+  box-shadow: inset 3px 0 rgba(231,184,78,.22), 0 16px 34px rgba(0,0,0,.17) !important;
 }
 
-/* Tech/Hero Lucky Chest — use the verified base asset until dedicated variants exist. */
-html body .fancy-home-v2 .event-card.event-tech-lucky::before {
-  left: 47% !important;
-  background-image: url("./decorative/v2/events/lucky-chest-base.webp") !important;
-  background-position: 72% 50% !important;
-  background-size: cover !important;
-  filter: hue-rotate(150deg) saturate(.78) brightness(.76) contrast(1.04) !important;
+/* Tech/Hero Lucky Chest — use the verified base artwork until dedicated variants exist. */
+html body .fancy-home-v2 .event-card.event-tech-lucky,
+html body .fancy-home-v2 .event-card.event-hero-lucky {
+  min-height: 220px;
+  background-color: #0a1117 !important;
 }
 
-html body .fancy-home-v2 .event-card.event-hero-lucky::before {
-  left: 47% !important;
-  background-image: url("./decorative/v2/events/lucky-chest-base.webp") !important;
-  background-position: 72% 50% !important;
-  background-size: cover !important;
-  filter: hue-rotate(286deg) saturate(.9) brightness(.8) contrast(1.04) !important;
+html body .fancy-home-v2 .event-card.event-tech-lucky {
+  background:
+    linear-gradient(90deg, rgba(7,15,20,.48) 0%, rgba(7,15,20,.16) 48%, rgba(7,15,20,0) 72%),
+    url("./decorative/v2/events/lucky-chest-base.webp?v=20260815-1200") 73% 50% / cover no-repeat,
+    #091219 !important;
+  border-color: rgba(102,196,216,.38) !important;
+}
+
+html body .fancy-home-v2 .event-card.event-hero-lucky {
+  background:
+    linear-gradient(90deg, rgba(15,10,19,.50) 0%, rgba(15,10,19,.18) 48%, rgba(15,10,19,0) 72%),
+    url("./decorative/v2/events/lucky-chest-base.webp?v=20260815-1200") 73% 50% / cover no-repeat,
+    #120d17 !important;
+  border-color: rgba(183,125,218,.40) !important;
+}
+
+html body .fancy-home-v2 .event-card p,
+html body .fancy-home-v2 .event-card .event-meta,
+html body .fancy-home-v2 .event-card .event-rewards {
+  max-width: 66% !important;
+}
+
+html body .fancy-home-v2 .event-card.event-tech-lucky p,
+html body .fancy-home-v2 .event-card.event-tech-lucky .event-meta,
+html body .fancy-home-v2 .event-card.event-tech-lucky .event-rewards,
+html body .fancy-home-v2 .event-card.event-hero-lucky p,
+html body .fancy-home-v2 .event-card.event-hero-lucky .event-meta,
+html body .fancy-home-v2 .event-card.event-hero-lucky .event-rewards {
+  max-width: 61% !important;
 }
 
 /* -----------------------------------------
@@ -88,21 +104,20 @@ html body .fancy-home-v2 .ke-panel {
   min-height: 0 !important;
 }
 
-/* The conflict-seam decoration reads like an unexplained medal in the compact row. */
+/* Remove the unexplained center ornament; VS is the only separator. */
 html body .fancy-home-v2 .ke-panel table.dashboard-table tbody tr::after {
   content: none !important;
   display: none !important;
   background: none !important;
 }
 
-/* Keep VS as the only matchup separator. */
 html body .fancy-home-v2 .ke-panel table.dashboard-table tbody td:nth-child(2)::before {
   color: #f4c95f !important;
   font-size: .7rem !important;
   font-weight: 1000 !important;
 }
 
-/* Armory Open Contest: small depth polish only; semantics/layout remain unchanged. */
+/* Armory Open Contest: depth only; semantics/layout remain unchanged. */
 html body .fancy-home-v2 .armory-item.armory-open-contest {
   box-shadow:
     inset 3px 0 rgba(237,128,65,.32),
@@ -111,28 +126,28 @@ html body .fancy-home-v2 .armory-item.armory-open-contest {
 }
 
 @media (max-width: 900px) {
-  html body .fancy-home-v2 .event-card::before {
-    left: 48% !important;
+  html body .fancy-home-v2 .event-card.event-pet-supplies {
+    background-position: center, 70% 48%, center !important;
   }
-
-  html body .fancy-home-v2 .event-card.event-pet-supplies::before {
-    background-position: 62% 44% !important;
-    background-size: auto 112% !important;
-  }
-
-  html body .fancy-home-v2 .event-card.event-summer-paradise::before {
-    background-position: 78% 50% !important;
-    background-size: auto 110% !important;
+  html body .fancy-home-v2 .event-card.event-summer-paradise {
+    background-position: center, 77% 50%, center !important;
   }
 }
 
 @media (max-width: 680px) {
-  html body .fancy-home-v2 .event-card::before {
-    left: 54% !important;
-    opacity: .72 !important;
+  html body .fancy-home-v2 .event-card::after {
+    background: linear-gradient(90deg, rgba(7,12,17,.985) 0%, rgba(7,12,17,.91) 48%, rgba(7,12,17,.42) 80%, rgba(7,12,17,.12) 100%) !important;
   }
 
-  html body .fancy-home-v2 .event-card::after {
-    background: linear-gradient(90deg, rgba(7,12,17,.99) 0%, rgba(7,12,17,.94) 50%, rgba(7,12,17,.54) 78%, rgba(7,12,17,.24) 100%) !important;
+  html body .fancy-home-v2 .event-card p,
+  html body .fancy-home-v2 .event-card .event-meta,
+  html body .fancy-home-v2 .event-card .event-rewards,
+  html body .fancy-home-v2 .event-card.event-tech-lucky p,
+  html body .fancy-home-v2 .event-card.event-tech-lucky .event-meta,
+  html body .fancy-home-v2 .event-card.event-tech-lucky .event-rewards,
+  html body .fancy-home-v2 .event-card.event-hero-lucky p,
+  html body .fancy-home-v2 .event-card.event-hero-lucky .event-meta,
+  html body .fancy-home-v2 .event-card.event-hero-lucky .event-rewards {
+    max-width: 78% !important;
   }
 }
