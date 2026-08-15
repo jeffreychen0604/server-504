@@ -1,0 +1,138 @@
+/* Server 504 — Home V2 polish pass
+ * Focus: event artwork stacking/crops + KE cleanup/height.
+ * Loaded after home-v2-recovery.css.
+ */
+
+/* ------------------------------------------
+   FEATURED EVENTS — correct stacking layers
+   ------------------------------------------ */
+html body .fancy-home-v2 .event-card {
+  isolation: isolate;
+  overflow: hidden;
+}
+
+html body .fancy-home-v2 .event-card > * {
+  position: relative;
+  z-index: 2 !important;
+}
+
+html body .fancy-home-v2 .event-card::before {
+  content: "" !important;
+  display: block !important;
+  position: absolute !important;
+  z-index: 0 !important;
+  top: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  left: 40% !important;
+  opacity: .96 !important;
+  pointer-events: none !important;
+  background-repeat: no-repeat !important;
+  background-position: right center !important;
+  background-size: cover !important;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, rgba(0,0,0,.22) 12%, #000 38%, #000 100%) !important;
+  mask-image: linear-gradient(90deg, transparent 0%, rgba(0,0,0,.22) 12%, #000 38%, #000 100%) !important;
+}
+
+html body .fancy-home-v2 .event-card::after {
+  content: "" !important;
+  display: block !important;
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 1 !important;
+  pointer-events: none !important;
+  background: linear-gradient(90deg, rgba(7,12,17,.985) 0%, rgba(7,12,17,.92) 34%, rgba(7,12,17,.58) 59%, rgba(7,12,17,.18) 100%) !important;
+}
+
+/* Pet Supplies — show the physical supply station, not just the mascot head. */
+html body .fancy-home-v2 .event-card.event-pet-supplies::before {
+  left: 41% !important;
+  background-image: url("./decorative/v2/events/pet-supplies-vignette.webp") !important;
+  background-position: 58% 42% !important;
+  background-size: 118% auto !important;
+  filter: saturate(.96) contrast(1.02) brightness(.92) !important;
+}
+
+/* Summer Paradise — preserve a clean text field while keeping tropical identity visible. */
+html body .fancy-home-v2 .event-card.event-summer-paradise::before {
+  left: 37% !important;
+  background-image: url("./decorative/v2/events/summer-paradise-vignette.webp") !important;
+  background-position: 78% 48% !important;
+  background-size: 115% auto !important;
+  filter: saturate(.95) brightness(.92) contrast(1.01) !important;
+}
+
+/* Tech/Hero Lucky Chest — use the verified base asset until dedicated variants exist. */
+html body .fancy-home-v2 .event-card.event-tech-lucky::before {
+  left: 47% !important;
+  background-image: url("./decorative/v2/events/lucky-chest-base.webp") !important;
+  background-position: 72% 50% !important;
+  background-size: cover !important;
+  filter: hue-rotate(150deg) saturate(.78) brightness(.76) contrast(1.04) !important;
+}
+
+html body .fancy-home-v2 .event-card.event-hero-lucky::before {
+  left: 47% !important;
+  background-image: url("./decorative/v2/events/lucky-chest-base.webp") !important;
+  background-position: 72% 50% !important;
+  background-size: cover !important;
+  filter: hue-rotate(286deg) saturate(.9) brightness(.8) contrast(1.04) !important;
+}
+
+/* -----------------------------------------
+   SATURDAY KE — compact matchup presentation
+   ----------------------------------------- */
+html body .fancy-home-v2 .ke-panel {
+  align-self: start !important;
+  height: auto !important;
+  min-height: 0 !important;
+}
+
+/* The conflict-seam decoration reads like an unexplained medal in the compact row. */
+html body .fancy-home-v2 .ke-panel table.dashboard-table tbody tr::after {
+  content: none !important;
+  display: none !important;
+  background: none !important;
+}
+
+/* Keep VS as the only matchup separator. */
+html body .fancy-home-v2 .ke-panel table.dashboard-table tbody td:nth-child(2)::before {
+  color: #f4c95f !important;
+  font-size: .7rem !important;
+  font-weight: 1000 !important;
+}
+
+/* Armory Open Contest: small depth polish only; semantics/layout remain unchanged. */
+html body .fancy-home-v2 .armory-item.armory-open-contest {
+  box-shadow:
+    inset 3px 0 rgba(237,128,65,.32),
+    inset 0 0 26px rgba(224,93,54,.055),
+    0 8px 18px rgba(0,0,0,.12) !important;
+}
+
+@media (max-width: 900px) {
+  html body .fancy-home-v2 .event-card::before {
+    left: 48% !important;
+  }
+
+  html body .fancy-home-v2 .event-card.event-pet-supplies::before {
+    background-position: 62% 44% !important;
+    background-size: auto 112% !important;
+  }
+
+  html body .fancy-home-v2 .event-card.event-summer-paradise::before {
+    background-position: 78% 50% !important;
+    background-size: auto 110% !important;
+  }
+}
+
+@media (max-width: 680px) {
+  html body .fancy-home-v2 .event-card::before {
+    left: 54% !important;
+    opacity: .72 !important;
+  }
+
+  html body .fancy-home-v2 .event-card::after {
+    background: linear-gradient(90deg, rgba(7,12,17,.99) 0%, rgba(7,12,17,.94) 50%, rgba(7,12,17,.54) 78%, rgba(7,12,17,.24) 100%) !important;
+  }
+}
