@@ -1,0 +1,407 @@
+/* Server 504 — V2 Recovery Pass
+ * Final presentation authority for Home. This layer deliberately outranks
+ * legacy decorative selectors so V1 and V2 cannot render simultaneously.
+ */
+
+/* -----------------------------
+   HERO — restore Sealed Island
+   ----------------------------- */
+html body .fancy-home-v2 .dashboard-head {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: #08121a !important;
+}
+
+html body .fancy-home-v2 .dashboard-head::before {
+  content: "" !important;
+  display: block !important;
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 0 !important;
+  pointer-events: none !important;
+  opacity: 1 !important;
+  border-radius: inherit;
+  background:
+    linear-gradient(90deg, rgba(5,10,15,.99) 0%, rgba(5,10,15,.94) 31%, rgba(7,12,18,.62) 54%, rgba(7,10,15,.18) 78%, rgba(7,10,15,.08) 100%),
+    linear-gradient(180deg, rgba(5,8,13,.04) 0%, rgba(5,9,14,.15) 54%, rgba(5,9,14,.78) 100%),
+    url("./art/sealed-hero.webp") 72% 43% / cover no-repeat !important;
+  background-image:
+    linear-gradient(90deg, rgba(5,10,15,.99) 0%, rgba(5,10,15,.94) 31%, rgba(7,12,18,.62) 54%, rgba(7,10,15,.18) 78%, rgba(7,10,15,.08) 100%),
+    linear-gradient(180deg, rgba(5,8,13,.04) 0%, rgba(5,9,14,.15) 54%, rgba(5,9,14,.78) 100%),
+    url("./art/sealed-hero.webp") !important;
+  background-position: center, center, 72% 43% !important;
+  background-size: auto, auto, cover !important;
+  background-repeat: no-repeat !important;
+}
+
+html body .fancy-home-v2 .dashboard-head::after {
+  content: none !important;
+  display: none !important;
+}
+
+html body .fancy-home-v2 .dashboard-head > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* ------------------------------------------
+   FEATURED EVENTS — real raster centerpieces
+   ------------------------------------------ */
+html body .fancy-home-v2 .event-card {
+  isolation: isolate;
+  overflow: hidden;
+  background-image: none !important;
+}
+
+html body .fancy-home-v2 .event-card::before {
+  content: "" !important;
+  display: block !important;
+  position: absolute !important;
+  z-index: -2 !important;
+  top: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  left: 40% !important;
+  opacity: .94 !important;
+  pointer-events: none !important;
+  background-repeat: no-repeat !important;
+  background-position: right center !important;
+  background-size: cover !important;
+  filter: none !important;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, rgba(0,0,0,.28) 12%, #000 40%, #000 100%) !important;
+  mask-image: linear-gradient(90deg, transparent 0%, rgba(0,0,0,.28) 12%, #000 40%, #000 100%) !important;
+}
+
+html body .fancy-home-v2 .event-card::after {
+  content: "" !important;
+  display: block !important;
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: -1 !important;
+  pointer-events: none !important;
+  background: linear-gradient(90deg, rgba(7,12,17,.985) 0%, rgba(7,12,17,.92) 38%, rgba(7,12,17,.58) 61%, rgba(7,12,17,.16) 100%) !important;
+}
+
+html body .fancy-home-v2 .event-card.event-pet-supplies::before {
+  left: 39% !important;
+  background-image: url("./decorative/v2/events/pet-supplies-vignette.webp") !important;
+  background-position: 68% 50% !important;
+  filter: saturate(.94) contrast(1.02) brightness(.93) !important;
+}
+
+html body .fancy-home-v2 .event-card.event-summer-paradise::before {
+  left: 36% !important;
+  background-image: url("./decorative/v2/events/summer-paradise-vignette.webp") !important;
+  background-position: 64% 49% !important;
+  filter: saturate(.92) brightness(.89) !important;
+}
+
+html body .fancy-home-v2 .event-card.event-tech-lucky::before {
+  left: 46% !important;
+  background-image: url("./decorative/v2/events/lucky-chest-tech.webp") !important;
+  background-position: 67% 50% !important;
+  filter: hue-rotate(154deg) saturate(.72) brightness(.74) contrast(1.06) !important;
+}
+
+html body .fancy-home-v2 .event-card.event-hero-lucky::before {
+  left: 46% !important;
+  background-image: url("./decorative/v2/events/lucky-chest-hero.webp") !important;
+  background-position: 67% 50% !important;
+  filter: hue-rotate(292deg) saturate(.82) brightness(.78) contrast(1.05) !important;
+}
+
+html body .fancy-home-v2 .event-card.event-pet-supplies,
+html body .fancy-home-v2 .event-card.event-summer-paradise,
+html body .fancy-home-v2 .event-card.event-tech-lucky,
+html body .fancy-home-v2 .event-card.event-hero-lucky {
+  background-color: #0a1117 !important;
+}
+
+html body .fancy-home-v2 .event-card.event-pet-supplies {
+  border-color: rgba(223,111,63,.52) !important;
+  box-shadow: inset 3px 0 rgba(217,84,63,.24), 0 16px 34px rgba(0,0,0,.18) !important;
+}
+
+html body .fancy-home-v2 .event-card.event-summer-paradise {
+  border-color: rgba(231,184,78,.54) !important;
+  box-shadow: inset 3px 0 rgba(231,184,78,.22), 0 16px 34px rgba(0,0,0,.17) !important;
+}
+
+html body .fancy-home-v2 .event-card.event-tech-lucky,
+html body .fancy-home-v2 .event-card.event-hero-lucky {
+  min-height: 220px;
+}
+
+html body .fancy-home-v2 .event-card p,
+html body .fancy-home-v2 .event-card .event-meta,
+html body .fancy-home-v2 .event-card .event-rewards {
+  max-width: 68% !important;
+}
+
+html body .fancy-home-v2 .event-card.event-tech-lucky p,
+html body .fancy-home-v2 .event-card.event-tech-lucky .event-meta,
+html body .fancy-home-v2 .event-card.event-tech-lucky .event-rewards,
+html body .fancy-home-v2 .event-card.event-hero-lucky p,
+html body .fancy-home-v2 .event-card.event-hero-lucky .event-meta,
+html body .fancy-home-v2 .event-card.event-hero-lucky .event-rewards {
+  max-width: 63% !important;
+}
+
+/* -----------------------------------------
+   SATURDAY KE — matchup cards, not HUD art
+   ----------------------------------------- */
+html body .fancy-home-v2 .ke-panel::before,
+html body .fancy-home-v2 .ke-panel::after,
+html body .fancy-home-v2 .ke-panel .panel-head h2::before,
+html body .fancy-home-v2 .ke-panel .panel-head h2::after {
+  content: none !important;
+  display: none !important;
+  background: none !important;
+}
+
+html body .fancy-home-v2 .ke-panel {
+  background:
+    linear-gradient(90deg, rgba(45,105,174,.11), transparent 42%, transparent 58%, rgba(180,58,82,.12)),
+    linear-gradient(180deg, rgba(17,25,35,.98), rgba(8,13,19,.98)) !important;
+}
+
+html body .fancy-home-v2 .ke-panel .ke-explainer {
+  margin: 0;
+  padding: 13px 16px 8px;
+  background: transparent !important;
+  color: #aebbc3;
+  line-height: 1.5;
+}
+
+html body .fancy-home-v2 .ke-panel .table-wrap {
+  overflow: visible;
+  padding: 7px 13px 15px;
+}
+
+html body .fancy-home-v2 .ke-panel table.dashboard-table,
+html body .fancy-home-v2 .ke-panel table.dashboard-table tbody {
+  display: block !important;
+  width: 100% !important;
+}
+
+html body .fancy-home-v2 .ke-panel table.dashboard-table thead {
+  display: none !important;
+}
+
+html body .fancy-home-v2 .ke-panel table.dashboard-table tbody {
+  display: grid !important;
+  gap: 10px;
+}
+
+html body .fancy-home-v2 .ke-panel table.dashboard-table tbody tr {
+  display: grid !important;
+  grid-template-columns: minmax(105px,.85fr) minmax(122px,1fr) 82px minmax(142px,.95fr);
+  align-items: center;
+  min-height: 78px;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(153,178,194,.16) !important;
+  border-radius: 12px;
+  background:
+    linear-gradient(90deg, rgba(49,119,199,.18) 0%, rgba(49,119,199,.08) 46%, rgba(186,64,86,.08) 54%, rgba(186,64,86,.18) 100%) !important;
+  box-shadow: inset 0 1px rgba(255,255,255,.025), 0 8px 22px rgba(0,0,0,.13);
+}
+
+html body .fancy-home-v2 .ke-panel table.dashboard-table tbody tr::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 48.8%;
+  width: 2.4%;
+  min-width: 18px;
+  transform: translateX(-50%);
+  background: url("./decorative/v2/operations/ke-conflict-seam.svg") center / 28px 56px no-repeat;
+  opacity: .62;
+  pointer-events: none;
+}
+
+html body .fancy-home-v2 .ke-panel table.dashboard-table tbody td {
+  display: block !important;
+  border: 0 !important;
+  padding: 13px 11px !important;
+  background: transparent !important;
+  min-width: 0;
+}
+
+html body .fancy-home-v2 .ke-panel table.dashboard-table tbody td:first-child {
+  padding-left: 44px !important;
+  color: #c7e6ff !important;
+}
+
+html body .fancy-home-v2 .ke-panel table.dashboard-table tbody td:first-child::before {
+  left: 12px !important;
+  width: 23px !important;
+  height: 30px !important;
+  background-image: url("./decorative/v2/operations/ke-neutral-banner.svg") !important;
+  opacity: .95 !important;
+}
+
+html body .fancy-home-v2 .ke-panel table.dashboard-table tbody td:nth-child(2) {
+  position: relative;
+  padding-left: 35px !important;
+  color: #ffd2d8 !important;
+  font-weight: 800;
+}
+
+html body .fancy-home-v2 .ke-panel table.dashboard-table tbody td:nth-child(2)::before {
+  content: "VS";
+  position: absolute;
+  left: 4px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #f4c95f;
+  font-size: .64rem;
+  font-weight: 1000;
+  letter-spacing: -.04em;
+  text-shadow: 0 2px 8px rgba(0,0,0,.7);
+}
+
+html body .fancy-home-v2 .ke-panel table.dashboard-table tbody td:nth-child(3) {
+  justify-self: center;
+  padding: 6px 9px !important;
+  border: 1px solid rgba(229,115,131,.25) !important;
+  border-radius: 999px;
+  background: rgba(117,39,55,.22) !important;
+  color: #ffd9dd !important;
+  font-weight: 800;
+}
+
+html body .fancy-home-v2 .ke-panel table.dashboard-table tbody td:last-child {
+  text-align: right;
+}
+
+html body .fancy-home-v2 .ke-panel .cp-cell-wrap {
+  gap: 6px;
+}
+
+html body .fancy-home-v2 .ke-panel .cp-number {
+  color: #fff2da;
+  font-weight: 900;
+}
+
+html body .fancy-home-v2 .ke-panel .cp-meter {
+  height: 3px;
+  background: rgba(255,255,255,.07);
+}
+
+/* -----------------------------------
+   ACTIVE ALLIANCES — keep good V2 work
+   ----------------------------------- */
+html body .fancy-home-v2 .alliance-table-panel tbody tr {
+  transition: background .18s ease, transform .18s ease;
+}
+
+html body .fancy-home-v2 .alliance-table-panel tbody tr:hover {
+  background: rgba(100,166,190,.065) !important;
+}
+
+/* -----------------------------------
+   ARMORY — semantic states stay primary
+   ----------------------------------- */
+html body .fancy-home-v2 .armory-registration::before {
+  content: none !important;
+  display: none !important;
+  background: none !important;
+}
+
+html body .fancy-home-v2 .armory-item {
+  min-height: 52px;
+}
+
+html body .fancy-home-v2 .armory-item.armory-open-contest {
+  border-color: rgba(232,157,65,.55) !important;
+  background:
+    linear-gradient(90deg, rgba(111,62,29,.48), rgba(37,27,25,.92)) !important;
+  box-shadow: inset 3px 0 rgba(237,128,65,.32), inset 0 0 26px rgba(224,93,54,.055) !important;
+}
+
+html body .fancy-home-v2 .armory-item.armory-open-contest .armory-contenders {
+  color: #e9b57e;
+  font-size: .61rem;
+}
+
+html body .fancy-home-v2 .capital-node,
+html body .fancy-home-v2 .capital-node.next {
+  box-shadow: inset 0 1px rgba(255,255,255,.025), 0 12px 28px rgba(0,0,0,.13);
+}
+
+/* Legacy decorative language should not re-enter recovered sections. */
+html body .fancy-home-v2 .featured-panel .panel-head::before,
+html body .fancy-home-v2 .featured-panel .panel-head::after,
+html body .fancy-home-v2 .shared-panel .panel-head::before,
+html body .fancy-home-v2 .shared-panel .panel-head::after {
+  content: none !important;
+  display: none !important;
+  background: none !important;
+}
+
+@media (max-width: 900px) {
+  html body .fancy-home-v2 .ke-panel table.dashboard-table tbody tr {
+    grid-template-columns: minmax(100px,1fr) minmax(110px,1fr) 74px minmax(125px,.9fr);
+  }
+  html body .fancy-home-v2 .event-card::before {
+    left: 48% !important;
+  }
+}
+
+@media (max-width: 680px) {
+  html body .fancy-home-v2 .dashboard-head::before {
+    background-position: center, center, 62% 42% !important;
+  }
+
+  html body .fancy-home-v2 .event-card::before,
+  html body .fancy-home-v2 .event-card.event-pet-supplies::before,
+  html body .fancy-home-v2 .event-card.event-summer-paradise::before,
+  html body .fancy-home-v2 .event-card.event-tech-lucky::before,
+  html body .fancy-home-v2 .event-card.event-hero-lucky::before {
+    left: 38% !important;
+    opacity: .56 !important;
+  }
+
+  html body .fancy-home-v2 .event-card::after {
+    background: linear-gradient(90deg, rgba(7,12,17,.99) 0%, rgba(7,12,17,.93) 55%, rgba(7,12,17,.43) 100%) !important;
+  }
+
+  html body .fancy-home-v2 .event-card p,
+  html body .fancy-home-v2 .event-card .event-meta,
+  html body .fancy-home-v2 .event-card .event-rewards {
+    max-width: 86% !important;
+  }
+
+  html body .fancy-home-v2 .ke-panel table.dashboard-table tbody tr {
+    grid-template-columns: 1fr 1fr;
+    min-height: 0;
+  }
+
+  html body .fancy-home-v2 .ke-panel table.dashboard-table tbody tr::after {
+    display: none;
+  }
+
+  html body .fancy-home-v2 .ke-panel table.dashboard-table tbody td:nth-child(3),
+  html body .fancy-home-v2 .ke-panel table.dashboard-table tbody td:last-child {
+    border-top: 1px solid rgba(255,255,255,.055) !important;
+  }
+
+  html body .fancy-home-v2 .ke-panel table.dashboard-table tbody td:nth-child(3) {
+    justify-self: stretch;
+    margin: 0 10px 9px;
+    text-align: center;
+  }
+
+  html body .fancy-home-v2 .ke-panel table.dashboard-table tbody td:last-child {
+    padding-top: 10px !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html body .fancy-home-v2 .alliance-table-panel tbody tr {
+    transition: none;
+  }
+}
