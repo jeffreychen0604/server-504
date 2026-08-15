@@ -29,8 +29,8 @@ html body .fancy-home-v2 .capital-rotation {
 html body .fancy-home-v2 .capital-rotation::before {
   content: "";
   position: absolute;
-  left: 17%;
-  right: 17%;
+  left: 22%;
+  right: 22%;
   top: 50%;
   height: 1px;
   transform: translateY(-50%);
@@ -61,8 +61,8 @@ html body .fancy-home-v2 .capital-rotation > * {
 
 html body .fancy-home-v2 .capital-arrow {
   color: transparent !important;
-  width: 42px;
-  min-width: 42px;
+  width: 34px;
+  min-width: 34px;
 }
 
 html body .fancy-home-v2 .capital-arrow::before,
@@ -114,14 +114,14 @@ html body .fancy-home-v2 .armory-registration::before {
   z-index: 0;
   inset: 0;
   pointer-events: none;
-  opacity: .42;
-  background-image: url("./decorative/v2/operations/armory-stronghold.webp?v=20260815-1416") !important;
+  opacity: .60;
+  background-image: url("./decorative/v2/operations/armory-stronghold.webp?v=20260815-1545") !important;
   background-repeat: no-repeat !important;
-  background-position: 106% 50% !important;
-  background-size: auto 115% !important;
-  -webkit-mask-image: linear-gradient(90deg, transparent 20%, rgba(0,0,0,.24) 42%, #000 72%, #000 100%);
-  mask-image: linear-gradient(90deg, transparent 20%, rgba(0,0,0,.24) 42%, #000 72%, #000 100%);
-  filter: saturate(.75) brightness(.72) contrast(1.04);
+  background-position: 97% 50% !important;
+  background-size: auto 112% !important;
+  -webkit-mask-image: linear-gradient(90deg, transparent 10%, rgba(0,0,0,.15) 29%, rgba(0,0,0,.74) 55%, #000 76%, #000 100%);
+  mask-image: linear-gradient(90deg, transparent 10%, rgba(0,0,0,.15) 29%, rgba(0,0,0,.74) 55%, #000 76%, #000 100%);
+  filter: saturate(.86) brightness(.88) contrast(1.035);
 }
 
 html body .fancy-home-v2 .armory-registration::after {
@@ -131,8 +131,8 @@ html body .fancy-home-v2 .armory-registration::after {
   inset: 0;
   pointer-events: none;
   background:
-    linear-gradient(90deg, rgba(8,15,20,.99) 0%, rgba(8,15,20,.95) 35%, rgba(8,15,20,.70) 65%, rgba(8,15,20,.36) 100%),
-    linear-gradient(180deg, rgba(8,15,20,.18), rgba(8,15,20,.62));
+    linear-gradient(90deg, rgba(8,15,20,.985) 0%, rgba(8,15,20,.92) 34%, rgba(8,15,20,.54) 62%, rgba(8,15,20,.12) 100%),
+    linear-gradient(180deg, rgba(8,15,20,.08), rgba(8,15,20,.42));
 }
 
 html body .fancy-home-v2 .armory-registration > * {
@@ -157,9 +157,9 @@ html body .fancy-home-v2 .armory-item {
 }
 
 html body .fancy-home-v2 .armory-item.armory-open-contest {
-  background: linear-gradient(90deg, rgba(91,51,25,.94), rgba(39,25,21,.82)) !important;
-  border-color: rgba(235,147,62,.64) !important;
-  box-shadow: inset 3px 0 rgba(238,126,55,.42), inset 0 0 26px rgba(218,76,40,.065), 0 8px 20px rgba(0,0,0,.15) !important;
+  background: linear-gradient(90deg, rgba(91,51,25,.95), rgba(43,27,22,.84)) !important;
+  border-color: rgba(235,147,62,.70) !important;
+  box-shadow: inset 3px 0 rgba(238,126,55,.48), inset 0 0 28px rgba(218,76,40,.075), 0 10px 22px rgba(0,0,0,.16) !important;
 }
 
 html body .fancy-home-v2 .armory-item.armory-open-contest::after {
@@ -180,9 +180,9 @@ html body .fancy-home-v2 .armory-count {
 
 @media (max-width: 900px) {
   html body .fancy-home-v2 .armory-registration::before {
-    opacity: .30;
-    background-position: 115% 50% !important;
-    background-size: auto 100% !important;
+    opacity: .42;
+    background-position: 102% 50% !important;
+    background-size: auto 104% !important;
   }
 }
 
@@ -192,10 +192,10 @@ html body .fancy-home-v2 .armory-count {
     display: none;
   }
   html body .fancy-home-v2 .armory-registration::before {
-    opacity: .20;
-    background-position: 125% 30% !important;
+    opacity: .28;
+    background-position: 108% 36% !important;
   }
   html body .fancy-home-v2 .armory-registration::after {
-    background: rgba(8,15,20,.82);
+    background: rgba(8,15,20,.70);
   }
 }

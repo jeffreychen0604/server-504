@@ -1,6 +1,6 @@
 /* Server 504 — Home operations identity enhancer
- * Adds in-game alliance banners and loads final Shared/Hero presentation layers.
- * No server data is changed.
+ * Adds in-game alliance banners. Shared/Hero presentation layers are loaded statically
+ * from index.html so CSS order remains deterministic. No server data is changed.
  */
 (() => {
   const app = document.getElementById('app');
@@ -10,20 +10,6 @@
   const supported = new Set(['uic','ap3x','dud','cmrd','idgf','ids','ltnx','immr','unta','lumj']);
   let spritePromise = null;
   let queued = false;
-
-  const ensureStyle = (id, href) => {
-    if (document.getElementById(id)) return;
-    const link = document.createElement('link');
-    link.id = id;
-    link.rel = 'stylesheet';
-    link.href = href;
-    document.head.appendChild(link);
-  };
-
-  /* These load after fancy-home.js by design so they remain the final authority
-     over legacy/recovery pseudo-elements without rewriting the renderer. */
-  ensureStyle('server504-home-shared-v2', './assets/home-shared-v2.css?v=20260815-1425');
-  ensureStyle('server504-home-hero-v2', './assets/home-hero-v2.css?v=20260815-1425');
 
   const normalizeCode = value => {
     const text = String(value || '').trim();
