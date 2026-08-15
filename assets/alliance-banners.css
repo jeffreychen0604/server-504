@@ -13,7 +13,8 @@
   filter: drop-shadow(0 4px 7px rgba(0,0,0,.35));
 }
 
-.alliance-banner--uic  { background-position: 0% 0%; }
+.alliance-banner--uic,
+.alliance-banner--ace  { background-position: 0% 0%; }
 .alliance-banner--ap3x { background-position: 25% 0%; }
 .alliance-banner--dud  { background-position: 50% 0%; }
 .alliance-banner--cmrd { background-position: 75% 0%; }
