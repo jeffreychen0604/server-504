@@ -100,6 +100,11 @@ if ! python3 scripts/validate-wiki-localization.py; then
   fail=1
 fi
 
+# Tips & Guides localization contract: every Hero Build must resolve in all six public locales.
+if ! python3 scripts/validate-guides-localization.py; then
+  fail=1
+fi
+
 # Generated single-request search index must stay in sync with every localized body.
 if ! python3 scripts/build-wiki-search-index.py --check; then
   fail=1
