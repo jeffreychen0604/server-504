@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-15T16:34:00+07:00",
+  "lastUpdated": "2026-08-16T18:00:00+07:00",
   "server": {
     "season": "4",
     "theme": "Sealed Island",
@@ -17,15 +17,15 @@
           "Standard Training Protocols",
           "Personal & State Milestone Rewards"
         ]
-      }
-    ],
-    "upcoming": [
+      },
       {
         "name": "Tech Lucky Chest",
         "type": "Limited Event",
         "description": "Limited-time Tech Lucky Chest event.",
         "duration": "Aug 15–17, 2026"
-      },
+      }
+    ],
+    "upcoming": [
       {
         "name": "Summer Paradise",
         "type": "Big Event",
