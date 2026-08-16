@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "updated": "2026-08-16",
+  "supportedLocales": ["en", "fr", "es", "pt", "ko", "vi"],
+  "baseLocales": ["en", "vi"],
+  "overlayLocales": {
+    "fr": "content/guides-l10n/fr.json",
+    "es": "content/guides-l10n/es.json",
+    "pt": "content/guides-l10n/pt.json",
+    "ko": "content/guides-l10n/ko.json"
+  },
+  "coverageMode": "full",
+  "policy": "Every Hero Build must provide localized title, summary, advice and source note in all six public locales. Official in-game names, faction names, gear names, event names and equipment names remain untranslated where searchability matters."
+}
