@@ -6,13 +6,15 @@
   if (!app) return;
 
   const DATA_URL = './content/guides.json';
+  const GUIDE_L10N_URL = locale => `./content/guides-l10n/${locale}.json`;
+  const OVERLAY_LOCALES = new Set(['fr','es','pt','ko']);
   const UI = {
-    en:{nav:'Tips & Guides',eyebrow:'DARK WAR: SURVIVAL · PRACTICAL ADVICE',title:'Tips & Guides',lead:'Practical builds, priorities and strategy. Guides are advice, not canonical game data.',guideCount:'guides',heroBuilds:'Hero Builds',heroBuildsDesc:'Gear and investment paths for combat heroes.',planned:'Planned',eventStrategy:'Event Strategy',resourcePlanning:'Resource Planning',combatTips:'Combat & Formation',sourcePolicy:'Guide source policy',sourcePolicyDesc:'Community guides are summarized and cross-checked. Official or current Server 504 evidence wins when a source conflicts with the live game.',openGuide:'OPEN GUIDE →',back:'← Tips & Guides',minimum:'Minimum practical target',target:'High-investment reference target',serverAdvice:'How to use this on Server 504',sourceNotes:'Source notes',source:'Community source',updated:'Reviewed',wikiProfile:'Open factual Wiki profile',notFound:'Guide not found',notFoundDesc:'The requested practical guide does not exist.',roadmap:'Guide roadmap',roadmapDesc:'More strategy categories can be added without mixing advice into the factual Wiki.'},
-    fr:{nav:'Conseils & Guides',eyebrow:'DARK WAR: SURVIVAL · CONSEILS PRATIQUES',title:'Conseils & Guides',lead:'Builds, priorités et stratégies pratiques. Les guides sont des conseils, pas des données canoniques.',guideCount:'guides',heroBuilds:'Builds de héros',heroBuildsDesc:'Parcours d’équipement et d’investissement pour les héros de combat.',planned:'Prévu',eventStrategy:'Stratégie d’événements',resourcePlanning:'Planification des ressources',combatTips:'Combat & Formation',sourcePolicy:'Politique des sources',sourcePolicyDesc:'Les guides communautaires sont résumés et recoupés. Les sources officielles ou les preuves actuelles du Server 504 priment en cas de conflit.',openGuide:'OUVRIR LE GUIDE →',back:'← Conseils & Guides',minimum:'Objectif pratique minimum',target:'Objectif de référence à fort investissement',serverAdvice:'Comment l’utiliser sur Server 504',sourceNotes:'Notes sur la source',source:'Source communautaire',updated:'Vérifié',wikiProfile:'Ouvrir le profil factuel du Wiki',notFound:'Guide introuvable',notFoundDesc:'Le guide pratique demandé n’existe pas.',roadmap:'Feuille de route des guides',roadmapDesc:'D’autres catégories de stratégie peuvent être ajoutées sans mélanger les conseils au Wiki factuel.'},
-    es:{nav:'Consejos y Guías',eyebrow:'DARK WAR: SURVIVAL · CONSEJOS PRÁCTICOS',title:'Consejos y Guías',lead:'Builds, prioridades y estrategia práctica. Las guías son consejos, no datos canónicos del juego.',guideCount:'guías',heroBuilds:'Builds de héroes',heroBuildsDesc:'Rutas de equipo e inversión para héroes de combate.',planned:'Planificado',eventStrategy:'Estrategia de eventos',resourcePlanning:'Planificación de recursos',combatTips:'Combate y Formación',sourcePolicy:'Política de fuentes',sourcePolicyDesc:'Las guías comunitarias se resumen y contrastan. La evidencia oficial o actual de Server 504 prevalece cuando existe conflicto.',openGuide:'ABRIR GUÍA →',back:'← Consejos y Guías',minimum:'Objetivo práctico mínimo',target:'Objetivo de referencia de alta inversión',serverAdvice:'Cómo usarlo en Server 504',sourceNotes:'Notas de fuente',source:'Fuente comunitaria',updated:'Revisado',wikiProfile:'Abrir perfil factual del Wiki',notFound:'Guía no encontrada',notFoundDesc:'La guía práctica solicitada no existe.',roadmap:'Hoja de ruta de guías',roadmapDesc:'Se pueden añadir más categorías de estrategia sin mezclar consejos con el Wiki factual.'},
-    pt:{nav:'Dicas e Guias',eyebrow:'DARK WAR: SURVIVAL · ORIENTAÇÃO PRÁTICA',title:'Dicas e Guias',lead:'Builds, prioridades e estratégia prática. Guias são recomendações, não dados canônicos do jogo.',guideCount:'guias',heroBuilds:'Builds de Heróis',heroBuildsDesc:'Caminhos de equipamento e investimento para heróis de combate.',planned:'Planejado',eventStrategy:'Estratégia de Eventos',resourcePlanning:'Planejamento de Recursos',combatTips:'Combate e Formação',sourcePolicy:'Política de fontes',sourcePolicyDesc:'Guias da comunidade são resumidos e cruzados. Evidência oficial ou atual do Server 504 prevalece em caso de conflito.',openGuide:'ABRIR GUIA →',back:'← Dicas e Guias',minimum:'Alvo prático mínimo',target:'Alvo de referência de alto investimento',serverAdvice:'Como usar no Server 504',sourceNotes:'Notas da fonte',source:'Fonte da comunidade',updated:'Revisado',wikiProfile:'Abrir perfil factual do Wiki',notFound:'Guia não encontrado',notFoundDesc:'O guia prático solicitado não existe.',roadmap:'Roteiro de guias',roadmapDesc:'Mais categorias de estratégia podem ser adicionadas sem misturar recomendações ao Wiki factual.'},
-    ko:{nav:'팁 & 가이드',eyebrow:'DARK WAR: SURVIVAL · 실전 가이드',title:'팁 & 가이드',lead:'실전 빌드, 투자 우선순위와 전략을 제공합니다. 가이드는 조언이며 게임의 확정 데이터가 아닙니다.',guideCount:'개 가이드',heroBuilds:'영웅 빌드',heroBuildsDesc:'전투 영웅의 장비 및 투자 경로.',planned:'예정',eventStrategy:'이벤트 전략',resourcePlanning:'자원 계획',combatTips:'전투 & 편성',sourcePolicy:'가이드 출처 정책',sourcePolicyDesc:'커뮤니티 가이드는 요약하고 교차 확인합니다. 충돌 시 공식 정보 또는 현재 Server 504 게임 내 증거가 우선합니다.',openGuide:'가이드 열기 →',back:'← 팁 & 가이드',minimum:'최소 실전 목표',target:'고투자 참고 목표',serverAdvice:'Server 504에서 활용하는 법',sourceNotes:'출처 메모',source:'커뮤니티 출처',updated:'검토일',wikiProfile:'사실 기반 Wiki 프로필 열기',notFound:'가이드를 찾을 수 없음',notFoundDesc:'요청한 실전 가이드가 없습니다.',roadmap:'가이드 로드맵',roadmapDesc:'사실 기반 Wiki와 조언을 섞지 않고 더 많은 전략 카테고리를 추가할 수 있습니다.'},
-    vi:{nav:'Tips & Guides',eyebrow:'DARK WAR: SURVIVAL · HƯỚNG DẪN THỰC DỤNG',title:'Tips & Guides',lead:'Build, ưu tiên đầu tư và chiến thuật thực dụng. Guide là lời khuyên, không phải dữ liệu canonical của game.',guideCount:'guide',heroBuilds:'Hero Builds',heroBuildsDesc:'Lộ trình trang bị và đầu tư cho hero chiến đấu.',planned:'Dự kiến',eventStrategy:'Event Strategy',resourcePlanning:'Resource Planning',combatTips:'Combat & Formation',sourcePolicy:'Chính sách nguồn của Guide',sourcePolicyDesc:'Guide cộng đồng được tóm tắt và đối chiếu. Khi có xung đột, nguồn chính thức hoặc bằng chứng hiện tại từ Server 504 được ưu tiên.',openGuide:'MỞ GUIDE →',back:'← Tips & Guides',minimum:'Mốc thực dụng tối thiểu',target:'Mốc tham chiếu đầu tư cao',serverAdvice:'Cách áp dụng tại Server 504',sourceNotes:'Ghi chú nguồn',source:'Nguồn cộng đồng',updated:'Đối chiếu',wikiProfile:'Mở factual Wiki profile',notFound:'Không tìm thấy guide',notFoundDesc:'Guide thực dụng được yêu cầu không tồn tại.',roadmap:'Guide roadmap',roadmapDesc:'Có thể bổ sung thêm các nhóm strategy mà không trộn advice vào factual Wiki.'}
+    en:{nav:'Tips & Guides',eyebrow:'DARK WAR: SURVIVAL · PRACTICAL ADVICE',title:'Tips & Guides',lead:'Practical builds, priorities and strategy. Guides are advice, not canonical game data.',guideCount:'guides',heroBuilds:'Hero Builds',heroBuildsDesc:'Gear and investment paths for combat heroes.',heroBuildsBadge:'LEGACY HERO BUILDS · ALLCLASH REFERENCE',legacyReference:'Legacy reference',planned:'Planned',eventStrategy:'Event Strategy',resourcePlanning:'Resource Planning',combatTips:'Combat & Formation',sourcePolicy:'Guide source policy',sourcePolicyDesc:'Community guides are summarized and cross-checked. Official or current Server 504 evidence wins when a source conflicts with the live game.',openGuide:'OPEN GUIDE →',back:'← Tips & Guides',minimum:'Minimum practical target',target:'High-investment reference target',serverAdvice:'How to use this on Server 504',sourceNotes:'Source notes',source:'Community source',updated:'Reviewed',wikiProfile:'Open factual Wiki profile',notFound:'Guide not found',notFoundDesc:'The requested practical guide does not exist.',roadmap:'Guide roadmap',roadmapDesc:'More strategy categories can be added without mixing advice into the factual Wiki.'},
+    fr:{nav:'Conseils & Guides',eyebrow:'DARK WAR: SURVIVAL · CONSEILS PRATIQUES',title:'Conseils & Guides',lead:'Builds, priorités et stratégies pratiques. Les guides sont des conseils, pas des données canoniques.',guideCount:'guides',heroBuilds:'Builds de héros',heroBuildsDesc:'Parcours d’équipement et d’investissement pour les héros de combat.',heroBuildsBadge:'BUILDS DE HÉROS ANTÉRIEURS · RÉFÉRENCE ALLCLASH',legacyReference:'Référence legacy',planned:'Prévu',eventStrategy:'Stratégie d’événements',resourcePlanning:'Planification des ressources',combatTips:'Combat & Formation',sourcePolicy:'Politique des sources',sourcePolicyDesc:'Les guides communautaires sont résumés et recoupés. Les sources officielles ou les preuves actuelles du Server 504 priment en cas de conflit.',openGuide:'OUVRIR LE GUIDE →',back:'← Conseils & Guides',minimum:'Objectif pratique minimum',target:'Objectif de référence à fort investissement',serverAdvice:'Comment l’utiliser sur Server 504',sourceNotes:'Notes sur la source',source:'Source communautaire',updated:'Vérifié',wikiProfile:'Ouvrir le profil factuel du Wiki',notFound:'Guide introuvable',notFoundDesc:'Le guide pratique demandé n’existe pas.',roadmap:'Feuille de route des guides',roadmapDesc:'D’autres catégories de stratégie peuvent être ajoutées sans mélanger les conseils au Wiki factuel.'},
+    es:{nav:'Consejos y Guías',eyebrow:'DARK WAR: SURVIVAL · CONSEJOS PRÁCTICOS',title:'Consejos y Guías',lead:'Builds, prioridades y estrategia práctica. Las guías son consejos, no datos canónicos del juego.',guideCount:'guías',heroBuilds:'Builds de héroes',heroBuildsDesc:'Rutas de equipo e inversión para héroes de combate.',heroBuildsBadge:'BUILDS DE HÉROES ANTERIORES · REFERENCIA ALLCLASH',legacyReference:'Referencia legacy',planned:'Planificado',eventStrategy:'Estrategia de eventos',resourcePlanning:'Planificación de recursos',combatTips:'Combate y Formación',sourcePolicy:'Política de fuentes',sourcePolicyDesc:'Las guías comunitarias se resumen y contrastan. La evidencia oficial o actual de Server 504 prevalece cuando existe conflicto.',openGuide:'ABRIR GUÍA →',back:'← Consejos y Guías',minimum:'Objetivo práctico mínimo',target:'Objetivo de referencia de alta inversión',serverAdvice:'Cómo usarlo en Server 504',sourceNotes:'Notas de fuente',source:'Fuente comunitaria',updated:'Revisado',wikiProfile:'Abrir perfil factual del Wiki',notFound:'Guía no encontrada',notFoundDesc:'La guía práctica solicitada no existe.',roadmap:'Hoja de ruta de guías',roadmapDesc:'Se pueden añadir más categorías de estrategia sin mezclar consejos con el Wiki factual.'},
+    pt:{nav:'Dicas e Guias',eyebrow:'DARK WAR: SURVIVAL · ORIENTAÇÃO PRÁTICA',title:'Dicas e Guias',lead:'Builds, prioridades e estratégia prática. Guias são recomendações, não dados canônicos do jogo.',guideCount:'guias',heroBuilds:'Builds de Heróis',heroBuildsDesc:'Caminhos de equipamento e investimento para heróis de combate.',heroBuildsBadge:'BUILDS DE HERÓIS ANTERIORES · REFERÊNCIA ALLCLASH',legacyReference:'Referência legacy',planned:'Planejado',eventStrategy:'Estratégia de Eventos',resourcePlanning:'Planejamento de Recursos',combatTips:'Combate e Formação',sourcePolicy:'Política de fontes',sourcePolicyDesc:'Guias da comunidade são resumidos e cruzados. Evidência oficial ou atual do Server 504 prevalece em caso de conflito.',openGuide:'ABRIR GUIA →',back:'← Dicas e Guias',minimum:'Alvo prático mínimo',target:'Alvo de referência de alto investimento',serverAdvice:'Como usar no Server 504',sourceNotes:'Notas da fonte',source:'Fonte da comunidade',updated:'Revisado',wikiProfile:'Abrir perfil factual do Wiki',notFound:'Guia não encontrado',notFoundDesc:'O guia prático solicitado não existe.',roadmap:'Roteiro de guias',roadmapDesc:'Mais categorias de estratégia podem ser adicionadas sem misturar recomendações ao Wiki factual.'},
+    ko:{nav:'팁 & 가이드',eyebrow:'DARK WAR: SURVIVAL · 실전 가이드',title:'팁 & 가이드',lead:'실전 빌드, 투자 우선순위와 전략을 제공합니다. 가이드는 조언이며 게임의 확정 데이터가 아닙니다.',guideCount:'개 가이드',heroBuilds:'영웅 빌드',heroBuildsDesc:'전투 영웅의 장비 및 투자 경로.',heroBuildsBadge:'이전 시즌 영웅 빌드 · ALLCLASH 참고',legacyReference:'이전 시즌 참고',planned:'예정',eventStrategy:'이벤트 전략',resourcePlanning:'자원 계획',combatTips:'전투 & 편성',sourcePolicy:'가이드 출처 정책',sourcePolicyDesc:'커뮤니티 가이드는 요약하고 교차 확인합니다. 충돌 시 공식 정보 또는 현재 Server 504 게임 내 증거가 우선합니다.',openGuide:'가이드 열기 →',back:'← 팁 & 가이드',minimum:'최소 실전 목표',target:'고투자 참고 목표',serverAdvice:'Server 504에서 활용하는 법',sourceNotes:'출처 메모',source:'커뮤니티 출처',updated:'검토일',wikiProfile:'사실 기반 Wiki 프로필 열기',notFound:'가이드를 찾을 수 없음',notFoundDesc:'요청한 실전 가이드가 없습니다.',roadmap:'가이드 로드맵',roadmapDesc:'사실 기반 Wiki와 조언을 섞지 않고 더 많은 전략 카테고리를 추가할 수 있습니다.'},
+    vi:{nav:'Tips & Guides',eyebrow:'DARK WAR: SURVIVAL · HƯỚNG DẪN THỰC DỤNG',title:'Tips & Guides',lead:'Build, ưu tiên đầu tư và chiến thuật thực dụng. Guide là lời khuyên, không phải dữ liệu canonical của game.',guideCount:'guide',heroBuilds:'Hero Builds',heroBuildsDesc:'Lộ trình trang bị và đầu tư cho hero chiến đấu.',heroBuildsBadge:'HERO BUILD MÙA TRƯỚC · THAM CHIẾU ALLCLASH',legacyReference:'Tham chiếu mùa trước',planned:'Dự kiến',eventStrategy:'Event Strategy',resourcePlanning:'Resource Planning',combatTips:'Combat & Formation',sourcePolicy:'Chính sách nguồn của Guide',sourcePolicyDesc:'Guide cộng đồng được tóm tắt và đối chiếu. Khi có xung đột, nguồn chính thức hoặc bằng chứng hiện tại từ Server 504 được ưu tiên.',openGuide:'MỞ GUIDE →',back:'← Tips & Guides',minimum:'Mốc thực dụng tối thiểu',target:'Mốc tham chiếu đầu tư cao',serverAdvice:'Cách áp dụng tại Server 504',sourceNotes:'Ghi chú nguồn',source:'Nguồn cộng đồng',updated:'Đối chiếu',wikiProfile:'Mở factual Wiki profile',notFound:'Không tìm thấy guide',notFoundDesc:'Guide thực dụng được yêu cầu không tồn tại.',roadmap:'Guide roadmap',roadmapDesc:'Có thể bổ sung thêm các nhóm strategy mà không trộn advice vào factual Wiki.'}
   };
 
   let dataPromise;
@@ -27,11 +29,27 @@
   const tx = key => UI[locale()]?.[key] || UI.en[key] || key;
   const esc = value => String(value ?? '').replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[ch]));
 
+  async function fetchJson(url) {
+    const response = await fetch(url,{cache:'force-cache'});
+    if (!response.ok) throw new Error(`Guide data HTTP ${response.status}`);
+    return response.json();
+  }
+
   function loadData() {
-    if (!dataPromise) dataPromise = fetch(DATA_URL,{cache:'force-cache'}).then(r => {
-      if (!r.ok) throw new Error(`Guide data HTTP ${r.status}`);
-      return r.json();
-    });
+    if (!dataPromise) dataPromise = (async () => {
+      const base = await fetchJson(DATA_URL);
+      const loc = locale();
+      if (!OVERLAY_LOCALES.has(loc)) return base;
+      const overlay = await fetchJson(GUIDE_L10N_URL(loc));
+      const localized = overlay?.guides || {};
+      return {
+        ...base,
+        guides:(base.guides || []).map(g => ({
+          ...g,
+          locales:{...(g.locales || {}),[loc]:localized[g.slug] || g.locales?.[loc] || g.locales?.en}
+        }))
+      };
+    })();
     return dataPromise;
   }
 
@@ -76,8 +94,9 @@
   function rootPage(data) {
     const cards = data.guides.map(g => {
       const c = localGuide(g);
+      const legacy = g.legacyReference ? ` · ${tx('legacyReference')}` : '';
       return `<a class="guide-card" href="#/guides/${esc(g.slug)}">
-        <div class="guide-card-top"><span>${esc(g.hero)}</span><small>${tx('heroBuilds')}</small></div>
+        <div class="guide-card-top"><span>${esc(g.hero)}</span><small>${tx('heroBuilds')}${legacy}</small></div>
         <h3>${esc(c.title || g.hero)}</h3>
         <p>${esc(c.summary || '')}</p>
         <div class="guide-card-foot"><span>${tx('openGuide')}</span><time>${esc(g.updated)}</time></div>
@@ -88,7 +107,7 @@
         <div class="eyebrow">${tx('eyebrow')}</div>
         <h1>${tx('title')}</h1>
         <p>${tx('lead')}</p>
-        <div class="meta-row"><span class="meta-chip">${data.guides.length} ${tx('guideCount')}</span><span class="meta-chip">SEASON 4 · SEALED ISLAND</span></div>
+        <div class="meta-row"><span class="meta-chip">${data.guides.length} ${tx('guideCount')}</span><span class="meta-chip">${tx('heroBuildsBadge')}</span></div>
       </header>
       <section class="guide-policy"><strong>${tx('sourcePolicy')}</strong><span>${tx('sourcePolicyDesc')}</span></section>
       <section class="guide-category-block">
@@ -108,13 +127,14 @@
     const c = localGuide(g);
     const list = items => `<ul class="guide-build-list">${(items||[]).map(x=>`<li>${esc(x)}</li>`).join('')}</ul>`;
     const advice = (c.advice||[]).map((x,i)=>`<li><span>${i+1}</span><p>${esc(x)}</p></li>`).join('');
+    const legacy = g.legacyReference ? `<span class="meta-chip">${tx('legacyReference')}</span>` : '';
     return `<section class="page guides-page guide-detail" data-guides-root="1">
       <a class="guide-back" href="#/guides">${tx('back')}</a>
       <header class="page-header guides-header">
         <div class="eyebrow">${tx('heroBuilds')} · ${esc(g.hero)}</div>
         <h1>${esc(c.title || g.hero)}</h1>
         <p>${esc(c.summary || '')}</p>
-        <div class="meta-row"><span class="meta-chip">${tx('updated')}: ${esc(g.updated)}</span><span class="meta-chip">${tx('source')}: ${esc(g.sourceName)}</span></div>
+        <div class="meta-row"><span class="meta-chip">${tx('updated')}: ${esc(g.updated)}</span><span class="meta-chip">${tx('source')}: ${esc(g.sourceName)}</span>${legacy}</div>
       </header>
       <div class="guide-detail-grid">
         <section class="guide-build-panel"><small>01</small><h2>${tx('minimum')}</h2>${list(g.minimumBuild)}</section>
@@ -200,6 +220,7 @@
   });
   languageSelect?.addEventListener('change', () => setTimeout(() => {
     ensureNavigation();
+    dataPromise = null;
     if (isGuideRoute()) {
       app.innerHTML = '';
       scheduleRender(0);
