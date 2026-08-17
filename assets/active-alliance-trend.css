@@ -1,0 +1,73 @@
+/* Server 504 — subtle weekly movement references for Active Alliances */
+html body .fancy-home-v2 .alliance-table-panel .alliance-trend-reference {
+  color: rgba(206,219,229,.48);
+  font-size: .64rem;
+  font-weight: 700;
+  letter-spacing: .02em;
+  white-space: nowrap;
+}
+
+html body .fancy-home-v2 .alliance-table-panel .rank-col {
+  white-space: nowrap;
+}
+
+html body .fancy-home-v2 .alliance-table-panel .rank-move {
+  display: inline-block;
+  margin-left: 4px;
+  font-size: .56rem;
+  line-height: 1;
+  font-weight: 900;
+  vertical-align: .08em;
+  opacity: .74;
+}
+
+html body .fancy-home-v2 .alliance-table-panel .rank-move.up,
+html body .fancy-home-v2 .alliance-table-panel .cp-trend.up {
+  color: #82d8aa;
+}
+
+html body .fancy-home-v2 .alliance-table-panel .rank-move.down,
+html body .fancy-home-v2 .alliance-table-panel .cp-trend.down {
+  color: #eaa0aa;
+}
+
+html body .fancy-home-v2 .alliance-table-panel .cp-trend-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 2px;
+  min-width: 0;
+}
+
+html body .fancy-home-v2 .alliance-table-panel .cp-current-value {
+  display: block;
+  white-space: nowrap;
+}
+
+html body .fancy-home-v2 .alliance-table-panel .cp-trend {
+  display: block;
+  font-size: .62rem;
+  line-height: 1;
+  font-weight: 850;
+  letter-spacing: .015em;
+  opacity: .78;
+  white-space: nowrap;
+}
+
+html body .fancy-home-v2 .alliance-table-panel .cp-trend.flat {
+  color: rgba(222,230,236,.52);
+}
+
+@media (max-width: 680px) {
+  html body .fancy-home-v2 .alliance-table-panel .alliance-trend-reference {
+    font-size: .58rem;
+  }
+  html body .fancy-home-v2 .alliance-table-panel .cp-trend {
+    font-size: .58rem;
+  }
+  html body .fancy-home-v2 .alliance-table-panel .rank-move {
+    margin-left: 3px;
+    font-size: .52rem;
+  }
+}
