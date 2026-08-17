@@ -30,6 +30,8 @@
     return code && !reservedCodes.has(code) ? code : null;
   };
 
+  const rosterDisplayLabel = value => String(value || '').trim().replace(/^(\[[^\]]+\])\s*/, '$1 ');
+
   const ensureSprite = () => {
     spritePromise ||= fetch(spriteSource, { cache: 'force-cache' })
       .then(r => r.ok ? r.text() : Promise.reject(new Error(`HTTP ${r.status}`)))
@@ -122,7 +124,7 @@
     wrap.className = 'alliance-identity';
     wrap.appendChild(makeBanner(code));
     const strong = document.createElement('strong');
-    strong.textContent = label;
+    strong.textContent = rosterDisplayLabel(label);
     wrap.appendChild(strong);
     cell.textContent = '';
     cell.appendChild(wrap);
