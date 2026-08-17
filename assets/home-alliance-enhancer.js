@@ -12,6 +12,7 @@
   if (!app) return;
 
   const spriteSource = './assets/alliance-banners-sprite.webp.base64.txt?v=20260815-1357';
+  const customBannerVersion = '20260817-1615';
   const spriteCodes = new Set(['uic','ap3x','dud','cmrd','idgf','ids','ltnx','immr','unta','lumj','ace']);
   const reservedCodes = new Set(['unknown','pending','tbd','none','null']);
   const customBannerPromises = new Map();
@@ -48,8 +49,8 @@
     if (!code || spriteCodes.has(code)) return Promise.resolve(null);
     if (customBannerPromises.has(code)) return customBannerPromises.get(code);
 
-    const source = `./assets/opponent-banners/${encodeURIComponent(code)}.webp.base64.txt`;
-    const promise = fetch(source, { cache: 'force-cache' })
+    const source = `./assets/opponent-banners/${encodeURIComponent(code)}.webp.base64.txt?v=${customBannerVersion}`;
+    const promise = fetch(source, { cache: 'no-store' })
       .then(r => r.ok ? r.text() : Promise.reject(new Error(`HTTP ${r.status}`)))
       .then(base64 => {
         const clean = base64.trim();
