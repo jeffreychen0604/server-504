@@ -1,0 +1,196 @@
+/* Server 504 — Featured Events V3
+ * Adaptive hero + grid layout with high-contrast state badges.
+ */
+
+html body .fancy-home-v2 .featured-event-layout-v3 {
+  display: grid;
+  gap: 14px;
+  padding: 14px 14px 16px;
+}
+
+html body .fancy-home-v2 .featured-event-grid-v3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 12px;
+  align-items: stretch;
+}
+
+html body .fancy-home-v2 .featured-event-grid-v3 .event-card {
+  min-height: 220px;
+  height: 100%;
+}
+
+html body .fancy-home-v2 .featured-card-kicker {
+  position: relative;
+  z-index: 6;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+html body .fancy-home-v2 .featured-card-kicker .event-type {
+  margin: 0 !important;
+}
+
+html body .fancy-home-v2 .featured-state-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 27px;
+  padding: 5px 10px 5px 8px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  font-size: .68rem;
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: .105em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  box-shadow: 0 8px 18px rgba(0,0,0,.18), inset 0 1px rgba(255,255,255,.08);
+}
+
+html body .fancy-home-v2 .featured-state-badge i {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  flex: 0 0 auto;
+}
+
+html body .fancy-home-v2 .featured-state-badge.live {
+  color: #fff4f1;
+  border-color: rgba(255,105,94,.82);
+  background: linear-gradient(180deg, rgba(143,43,38,.96), rgba(91,25,24,.96));
+  box-shadow:
+    0 0 0 1px rgba(255,91,83,.06),
+    0 0 18px rgba(232,71,63,.20),
+    0 8px 18px rgba(0,0,0,.20),
+    inset 0 1px rgba(255,255,255,.10);
+}
+
+html body .fancy-home-v2 .featured-state-badge.live i {
+  background: #ff6a60;
+  box-shadow: 0 0 0 3px rgba(255,93,85,.12), 0 0 10px rgba(255,91,83,.72);
+  animation: featuredLivePulse 1.9s ease-in-out infinite;
+}
+
+html body .fancy-home-v2 .featured-state-badge.upcoming {
+  color: #eef9ff;
+  border-color: rgba(91,190,244,.80);
+  background: linear-gradient(180deg, rgba(25,92,132,.96), rgba(16,56,85,.96));
+  box-shadow:
+    0 0 0 1px rgba(84,184,237,.05),
+    0 0 18px rgba(64,164,220,.16),
+    0 8px 18px rgba(0,0,0,.20),
+    inset 0 1px rgba(255,255,255,.09);
+}
+
+html body .fancy-home-v2 .featured-state-badge.upcoming i {
+  background: #78d1ff;
+  box-shadow: 0 0 0 3px rgba(107,204,255,.10), 0 0 9px rgba(92,193,247,.50);
+}
+
+html body .fancy-home-v2 .featured-hero-event {
+  min-height: 265px !important;
+  width: 100%;
+  padding: 22px 24px 21px !important;
+}
+
+html body .fancy-home-v2 .featured-hero-event h3 {
+  font-size: 1.36rem !important;
+  margin-top: 4px !important;
+}
+
+html body .fancy-home-v2 .featured-hero-event p {
+  font-size: .82rem !important;
+  line-height: 1.58 !important;
+  -webkit-line-clamp: 4 !important;
+}
+
+html body .fancy-home-v2 .featured-hero-event.event-summer-paradise {
+  background-position: center, 76% 50%, center !important;
+  background-size: auto, cover, auto !important;
+}
+
+html body .fancy-home-v2 .featured-hero-event.event-summer-paradise p,
+html body .fancy-home-v2 .featured-hero-event.event-summer-paradise .event-meta,
+html body .fancy-home-v2 .featured-hero-event.event-summer-paradise .event-rewards {
+  max-width: 54% !important;
+}
+
+html body .fancy-home-v2 .featured-event-grid-v3 .event-card h3 {
+  margin-top: 2px;
+}
+
+html body .fancy-home-v2 .featured-event-grid-v3 .event-card p {
+  -webkit-line-clamp: 3;
+}
+
+html body .fancy-home-v2 .featured-panel .featured-columns {
+  display: none !important;
+}
+
+@keyframes featuredLivePulse {
+  0%, 100% { transform: scale(1); opacity: .90; }
+  50% { transform: scale(1.22); opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html body .fancy-home-v2 .featured-state-badge.live i {
+    animation: none;
+  }
+}
+
+@media (max-width: 900px) {
+  html body .fancy-home-v2 .featured-event-layout-v3 {
+    padding: 12px;
+  }
+
+  html body .fancy-home-v2 .featured-event-grid-v3 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  html body .fancy-home-v2 .featured-hero-event.event-summer-paradise p,
+  html body .fancy-home-v2 .featured-hero-event.event-summer-paradise .event-meta,
+  html body .fancy-home-v2 .featured-hero-event.event-summer-paradise .event-rewards {
+    max-width: 62% !important;
+  }
+}
+
+@media (max-width: 680px) {
+  html body .fancy-home-v2 .featured-event-layout-v3 {
+    gap: 10px;
+    padding: 10px;
+  }
+
+  html body .fancy-home-v2 .featured-event-grid-v3 {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  html body .fancy-home-v2 .featured-event-grid-v3 .event-card {
+    min-height: 205px;
+  }
+
+  html body .fancy-home-v2 .featured-hero-event {
+    min-height: 230px !important;
+    padding: 18px !important;
+  }
+
+  html body .fancy-home-v2 .featured-hero-event.event-summer-paradise {
+    background-position: center, 72% 50%, center !important;
+  }
+
+  html body .fancy-home-v2 .featured-hero-event.event-summer-paradise p,
+  html body .fancy-home-v2 .featured-hero-event.event-summer-paradise .event-meta,
+  html body .fancy-home-v2 .featured-hero-event.event-summer-paradise .event-rewards {
+    max-width: 82% !important;
+  }
+
+  html body .fancy-home-v2 .featured-state-badge {
+    min-height: 25px;
+    font-size: .64rem;
+    padding: 5px 9px 5px 7px;
+  }
+}
