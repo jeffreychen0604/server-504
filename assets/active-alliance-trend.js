@@ -1,6 +1,10 @@
 /* Server 504 — Active Alliances weekly trend enhancer
  * Adds lightweight CP and rank movement references using the previous snapshot
- * stored in content/server-status.json. The base dashboard renderer remains unchanged.
+ * stored in content/server-status.json.
+ *
+ * Important: Fancy Home owns the CP meter. This enhancer waits for .cp-cell-wrap
+ * and decorates it without changing the raw CP text, preventing trend percentages
+ * from being parsed as part of Total CP.
  */
 (() => {
   const app = document.getElementById('app');
@@ -20,7 +24,7 @@
     const match = String(value || '').match(/^(\d{4})-(\d{2})-(\d{2})$/);
     if (!match) return String(value || '');
     const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-    return `${Number(match[3])} ${months[Number(match[2]) - 1]}`;
+    return `${months[Number(match[2]) - 1]} ${Number(match[3])}`;
   };
 
   const trendMeta = (current, previous) => {
@@ -44,10 +48,11 @@
     const headDate = panel.querySelector('.panel-head > small');
     if (headDate && reference && headDate.dataset.trendReference !== reference) {
       headDate.dataset.trendReference = reference;
+      headDate.querySelector('.alliance-trend-reference')?.remove();
       const ref = document.createElement('span');
       ref.className = 'alliance-trend-reference';
-      ref.textContent = ` · Δ ${referenceLabel(reference)}`;
-      ref.title = `Trend reference: previous snapshot ${reference}`;
+      ref.textContent = ` · vs ${referenceLabel(reference)}`;
+      ref.title = `Compared with previous snapshot: ${reference}`;
       headDate.appendChild(ref);
     }
 
@@ -58,9 +63,14 @@
       const item = alliances[index];
       if (!item || row.dataset.trendEnhanced === '1') return;
 
-      const rankCell = row.children[0];
       const cpCell = row.children[2];
-      if (!rankCell || !cpCell) return;
+      if (!cpCell) return;
+
+      /* Wait until Fancy Home has created a clean CP number + meter structure. */
+      const cpWrap = cpCell.querySelector('.cp-cell-wrap');
+      const cpNumber = cpWrap?.querySelector('.cp-number');
+      const cpMeter = cpWrap?.querySelector('.cp-meter');
+      if (!cpWrap || !cpNumber || !cpMeter) return;
 
       const currentRank = Number(item.rank ?? index + 1);
       const previousRank = Number(item.previousRank ?? currentRank);
@@ -68,32 +78,31 @@
       const previousCP = parseCP(item.previousTotalCP);
       const trend = trendMeta(currentCP, previousCP);
 
-      if (currentRank !== previousRank) {
-        const rankMove = document.createElement('span');
-        const movedUp = currentRank < previousRank;
-        rankMove.className = `rank-move ${movedUp ? 'up' : 'down'}`;
-        rankMove.textContent = `${movedUp ? '▲' : '▼'}${Math.abs(previousRank - currentRank)}`;
-        rankMove.title = `Rank ${movedUp ? 'up' : 'down'} ${Math.abs(previousRank - currentRank)} vs ${reference || 'previous snapshot'}`;
-        rankCell.appendChild(rankMove);
-      }
+      const primaryLine = document.createElement('div');
+      primaryLine.className = 'cp-primary-line';
+      cpNumber.replaceWith(primaryLine);
+      primaryLine.appendChild(cpNumber);
 
       if (trend) {
-        const currentText = cpCell.textContent.trim();
-        const stack = document.createElement('div');
-        stack.className = 'cp-trend-stack';
-
-        const value = document.createElement('span');
-        value.className = 'cp-current-value';
-        value.textContent = currentText;
-
         const indicator = document.createElement('small');
         indicator.className = `cp-trend ${trend.dir}`;
-        indicator.textContent = `${trend.symbol} ${Math.abs(trend.pct).toFixed(1)}%`;
         indicator.title = `${exactDelta(trend.delta)} vs ${reference || 'previous snapshot'}`;
 
-        stack.append(value, indicator);
-        cpCell.textContent = '';
-        cpCell.appendChild(stack);
+        const cpMove = document.createElement('span');
+        cpMove.className = 'cp-trend-cp';
+        cpMove.textContent = `${trend.symbol} ${Math.abs(trend.pct).toFixed(1)}%`;
+        indicator.appendChild(cpMove);
+
+        if (currentRank !== previousRank) {
+          const movedUp = currentRank < previousRank;
+          const rankMove = document.createElement('span');
+          rankMove.className = `rank-move-inline ${movedUp ? 'up' : 'down'}`;
+          rankMove.textContent = `Rank ${movedUp ? '▲' : '▼'}${Math.abs(previousRank - currentRank)}`;
+          rankMove.title = `Rank ${movedUp ? 'up' : 'down'} ${Math.abs(previousRank - currentRank)} vs ${reference || 'previous snapshot'}`;
+          indicator.appendChild(rankMove);
+        }
+
+        primaryLine.appendChild(indicator);
       }
 
       row.dataset.trendEnhanced = '1';
