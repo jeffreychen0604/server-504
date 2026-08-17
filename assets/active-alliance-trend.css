@@ -1,73 +1,144 @@
-/* Server 504 — subtle weekly movement references for Active Alliances */
-html body .fancy-home-v2 .alliance-table-panel .alliance-trend-reference {
-  color: rgba(206,219,229,.48);
-  font-size: .64rem;
-  font-weight: 700;
-  letter-spacing: .02em;
+/* Server 504 — Active Alliances weekly trend references
+ * Trend is intentionally secondary to rank, alliance identity and current CP.
+ */
+html body .fancy-home-v2 .alliance-table-panel .panel-head > small {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0;
   white-space: nowrap;
 }
 
+html body .fancy-home-v2 .alliance-table-panel .alliance-trend-reference {
+  color: rgba(206,219,229,.44);
+  font-size: .61rem;
+  font-weight: 700;
+  letter-spacing: .01em;
+  white-space: nowrap;
+}
+
+/* Keep rank medals/badges visually clean. Rank movement is shown with CP trend instead. */
 html body .fancy-home-v2 .alliance-table-panel .rank-col {
   white-space: nowrap;
 }
 
 html body .fancy-home-v2 .alliance-table-panel .rank-move {
-  display: inline-block;
-  margin-left: 4px;
-  font-size: .56rem;
-  line-height: 1;
-  font-weight: 900;
-  vertical-align: .08em;
-  opacity: .74;
+  display: none !important;
 }
 
-html body .fancy-home-v2 .alliance-table-panel .rank-move.up,
-html body .fancy-home-v2 .alliance-table-panel .cp-trend.up {
-  color: #82d8aa;
+/* Current CP remains the primary value; trend is a compact secondary chip. */
+html body .fancy-home-v2 .alliance-table-panel .cp-cell-wrap {
+  gap: 5px;
 }
 
-html body .fancy-home-v2 .alliance-table-panel .rank-move.down,
-html body .fancy-home-v2 .alliance-table-panel .cp-trend.down {
-  color: #eaa0aa;
-}
-
-html body .fancy-home-v2 .alliance-table-panel .cp-trend-stack {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  justify-content: center;
-  gap: 2px;
+html body .fancy-home-v2 .alliance-table-panel .cp-primary-line {
+  width: 100%;
   min-width: 0;
+  display: flex;
+  align-items: baseline;
+  justify-content: flex-end;
+  gap: 8px;
 }
 
+html body .fancy-home-v2 .alliance-table-panel .cp-number,
 html body .fancy-home-v2 .alliance-table-panel .cp-current-value {
-  display: block;
+  min-width: 0;
   white-space: nowrap;
+  font-variant-numeric: tabular-nums;
 }
 
 html body .fancy-home-v2 .alliance-table-panel .cp-trend {
-  display: block;
-  font-size: .62rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 5px;
+  flex: 0 0 auto;
+  font-size: .57rem;
   line-height: 1;
-  font-weight: 850;
-  letter-spacing: .015em;
-  opacity: .78;
+  font-weight: 900;
+  letter-spacing: .01em;
   white-space: nowrap;
 }
 
-html body .fancy-home-v2 .alliance-table-panel .cp-trend.flat {
-  color: rgba(222,230,236,.52);
+html body .fancy-home-v2 .alliance-table-panel .cp-trend-cp,
+html body .fancy-home-v2 .alliance-table-panel .rank-move-inline {
+  display: inline-flex;
+  align-items: center;
+  min-height: 18px;
+  padding: 2px 5px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+}
+
+html body .fancy-home-v2 .alliance-table-panel .cp-trend.up .cp-trend-cp {
+  color: #8bd7ae;
+  background: rgba(67,154,108,.09);
+  border-color: rgba(107,205,151,.14);
+}
+
+html body .fancy-home-v2 .alliance-table-panel .cp-trend.down .cp-trend-cp {
+  color: #e5a0aa;
+  background: rgba(171,76,91,.08);
+  border-color: rgba(224,132,146,.13);
+}
+
+html body .fancy-home-v2 .alliance-table-panel .cp-trend.flat .cp-trend-cp {
+  color: rgba(222,230,236,.54);
+  background: rgba(255,255,255,.035);
+  border-color: rgba(255,255,255,.06);
+}
+
+html body .fancy-home-v2 .alliance-table-panel .rank-move-inline {
+  color: rgba(218,226,233,.62);
+  background: rgba(255,255,255,.035);
+  border-color: rgba(255,255,255,.065);
+}
+
+html body .fancy-home-v2 .alliance-table-panel .rank-move-inline.up {
+  color: #8bd7ae;
+}
+
+html body .fancy-home-v2 .alliance-table-panel .rank-move-inline.down {
+  color: #e5a0aa;
+}
+
+/* CP meter must reflect only current CP; keep it visually quiet. */
+html body .fancy-home-v2 .alliance-table-panel .cp-meter {
+  opacity: .72;
+}
+
+@media (max-width: 1080px) {
+  html body .fancy-home-v2 .alliance-table-panel .cp-primary-line {
+    gap: 6px;
+  }
+  html body .fancy-home-v2 .alliance-table-panel .cp-trend {
+    font-size: .54rem;
+    gap: 4px;
+  }
+  html body .fancy-home-v2 .alliance-table-panel .cp-trend-cp,
+  html body .fancy-home-v2 .alliance-table-panel .rank-move-inline {
+    padding-inline: 4px;
+  }
 }
 
 @media (max-width: 680px) {
+  html body .fancy-home-v2 .alliance-table-panel .panel-head > small {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 2px;
+  }
+
   html body .fancy-home-v2 .alliance-table-panel .alliance-trend-reference {
-    font-size: .58rem;
+    font-size: .56rem;
   }
+
+  html body .fancy-home-v2 .alliance-table-panel .cp-primary-line {
+    align-items: flex-end;
+    flex-direction: column;
+    gap: 3px;
+  }
+
   html body .fancy-home-v2 .alliance-table-panel .cp-trend {
-    font-size: .58rem;
-  }
-  html body .fancy-home-v2 .alliance-table-panel .rank-move {
-    margin-left: 3px;
-    font-size: .52rem;
+    font-size: .53rem;
   }
 }
