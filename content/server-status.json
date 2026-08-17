@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-17T15:55:00+07:00",
+  "lastUpdated": "2026-08-17T16:46:00+07:00",
   "server": {
     "season": "4",
     "theme": "Sealed Island",
@@ -48,128 +48,40 @@
   "activeAlliances": {
     "updatedAt": "2026-08-15",
     "alliances": [
-      {
-        "name": "[UIC]United Imperial Cmd",
-        "totalCP": "42,751,479,998"
-      },
-      {
-        "name": "[AP3X]PR3D4TORS",
-        "totalCP": "35,957,425,607"
-      },
-      {
-        "name": "[DUD]Global Elite Empire",
-        "totalCP": "25,532,262,549"
-      },
-      {
-        "name": "[CMRD]CAMARADERIE",
-        "totalCP": "23,240,087,960"
-      },
-      {
-        "name": "[IDGF]i Dont Give fckz",
-        "totalCP": "22,066,062,563"
-      },
-      {
-        "name": "[IDS*]INDOALLSTAR",
-        "totalCP": "19,534,849,202"
-      },
-      {
-        "name": "[LTNX]xLATINOSx",
-        "totalCP": "5,885,316,881"
-      },
-      {
-        "name": "[IMMR]IMMORTALS",
-        "totalCP": "4,732,796,802"
-      }
+      {"name":"[UIC]United Imperial Cmd","totalCP":"42,751,479,998"},
+      {"name":"[AP3X]PR3D4TORS","totalCP":"35,957,425,607"},
+      {"name":"[DUD]Global Elite Empire","totalCP":"25,532,262,549"},
+      {"name":"[CMRD]CAMARADERIE","totalCP":"23,240,087,960"},
+      {"name":"[IDGF]i Dont Give fckz","totalCP":"22,066,062,563"},
+      {"name":"[IDS*]INDOALLSTAR","totalCP":"19,534,849,202"},
+      {"name":"[LTNX]xLATINOSx","totalCP":"5,885,316,881"},
+      {"name":"[IMMR]IMMORTALS","totalCP":"4,732,796,802"}
     ]
   },
   "keWatch": {
     "updatedAt": "2026-08-17",
     "alliances": [
-      {
-        "alliance": "AP3X",
-        "opponentAlliance": "OML",
-        "opponentServer": "#510",
-        "totalCP": "30,808,054,215"
-      },
-      {
-        "alliance": "DUD",
-        "opponentAlliance": "REN",
-        "opponentServer": "#499",
-        "totalCP": "16,310,121,231"
-      },
-      {
-        "alliance": "UIC",
-        "opponentAlliance": "Unknown",
-        "opponentServer": "Unknown",
-        "totalCP": "Unknown"
-      },
-      {
-        "alliance": "IMMR",
-        "opponentAlliance": "<E-PX> Eternal-Phoenix",
-        "opponentServer": "#512",
-        "totalCP": "18,841,739,494"
-      }
+      {"alliance":"AP3X","opponentAlliance":"OML","opponentServer":"#510","totalCP":"30,808,054,215"},
+      {"alliance":"DUD","opponentAlliance":"REN","opponentServer":"#499","totalCP":"16,310,121,231"},
+      {"alliance":"UIC","opponentAlliance":"Unknown","opponentServer":"Unknown","totalCP":"Unknown"},
+      {"alliance":"IMMR","opponentAlliance":"E-PX","opponentServer":"#512","totalCP":"18,841,739,494"}
     ]
   },
   "sharedAssets": {
-    "capital": {
-      "current": "DUD",
-      "next": "CMRD"
-    },
+    "capital": {"current":"DUD","next":"CMRD"},
     "armories": [
-      {
-        "number": 1,
-        "alliance": "AP3X"
-      },
-      {
-        "number": 2,
-        "alliance": "LTNX"
-      },
-      {
-        "number": 3,
-        "alliance": "UIC"
-      },
-      {
-        "number": 4,
-        "alliance": null,
-        "status": "open-contest",
-        "contenders": [
-          "DUD",
-          "CMRD",
-          "IDS",
-          "iDGF"
-        ]
-      },
-      {
-        "number": 5,
-        "alliance": "iDGF"
-      },
-      {
-        "number": 6,
-        "alliance": "DUD"
-      },
-      {
-        "number": 7,
-        "alliance": "CMRD"
-      },
-      {
-        "number": 8,
-        "alliance": "IDS"
-      }
+      {"number":1,"alliance":"AP3X"},
+      {"number":2,"alliance":"LTNX"},
+      {"number":3,"alliance":"UIC"},
+      {"number":4,"alliance":null,"status":"open-contest","contenders":["DUD","CMRD","IDS","iDGF"]},
+      {"number":5,"alliance":"iDGF"},
+      {"number":6,"alliance":"DUD"},
+      {"number":7,"alliance":"CMRD"},
+      {"number":8,"alliance":"IDS"}
     ]
   },
   "announcements": [
-    {
-      "priority": "info",
-      "title": "Server Operations Dashboard",
-      "body": "The new Server 504 operational dashboard is now live. Dynamic server data will be published here as it is confirmed.",
-      "publishedAt": "2026-08-14"
-    }
+    {"priority":"info","title":"Server Operations Dashboard","body":"The new Server 504 operational dashboard is now live. Dynamic server data will be published here as it is confirmed.","publishedAt":"2026-08-14"}
   ],
-  "migration": {
-    "windowStatus": "Pending",
-    "availableSeats": null,
-    "priorities": [],
-    "allianceNeeds": []
-  }
+  "migration": {"windowStatus":"Pending","availableSeats":null,"priorities":[],"allianceNeeds":[]}
 }
