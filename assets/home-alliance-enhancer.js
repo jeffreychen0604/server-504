@@ -1,13 +1,20 @@
 /* Server 504 — Home operations identity enhancer
  * Adds in-game alliance banners. Shared/Hero presentation layers are loaded statically
  * from index.html so CSS order remains deterministic. No server data is changed.
+ *
+ * Banner policy:
+ * - Server 504 and legacy known opponents use the shared sprite.
+ * - Any other opponent tag is resolved from ./assets/opponent-banners/<normalized-tag>.webp.base64.txt.
+ *   This lets weekly KE updates add the real opponent banner without rebuilding the sprite.
  */
 (() => {
   const app = document.getElementById('app');
   if (!app) return;
 
   const spriteSource = './assets/alliance-banners-sprite.webp.base64.txt?v=20260815-1357';
-  const supported = new Set(['uic','ap3x','dud','cmrd','idgf','ids','ltnx','immr','unta','lumj','ace']);
+  const spriteCodes = new Set(['uic','ap3x','dud','cmrd','idgf','ids','ltnx','immr','unta','lumj','ace']);
+  const reservedCodes = new Set(['unknown','pending','tbd','none','null']);
+  const customBannerPromises = new Map();
   let spritePromise = null;
   let queued = false;
 
@@ -19,7 +26,7 @@
       .replace(/[^A-Z0-9]/g, '');
     const aliases = { IDSSTAR: 'ids', IDS: 'ids', IDGF: 'idgf', LUMI: 'lumj', LUMJ: 'lumj', ACE: 'ace' };
     const code = aliases[raw] || raw.toLowerCase();
-    return supported.has(code) ? code : null;
+    return code && !reservedCodes.has(code) ? code : null;
   };
 
   const ensureSprite = () => {
@@ -37,10 +44,41 @@
     return spritePromise;
   };
 
+  const ensureCustomBanner = code => {
+    if (!code || spriteCodes.has(code)) return Promise.resolve(null);
+    if (customBannerPromises.has(code)) return customBannerPromises.get(code);
+
+    const source = `./assets/opponent-banners/${encodeURIComponent(code)}.webp.base64.txt`;
+    const promise = fetch(source, { cache: 'force-cache' })
+      .then(r => r.ok ? r.text() : Promise.reject(new Error(`HTTP ${r.status}`)))
+      .then(base64 => {
+        const clean = base64.trim();
+        if (!clean.startsWith('UklG')) throw new Error('Invalid WebP banner payload');
+        return `url("data:image/webp;base64,${clean}")`;
+      })
+      .catch(() => null);
+
+    customBannerPromises.set(code, promise);
+    return promise;
+  };
+
   const makeBanner = code => {
     const span = document.createElement('span');
-    span.className = `alliance-banner alliance-banner--${code}`;
+    span.className = 'alliance-banner';
     span.setAttribute('aria-hidden', 'true');
+
+    if (spriteCodes.has(code)) {
+      span.classList.add(`alliance-banner--${code}`);
+      return span;
+    }
+
+    span.classList.add('alliance-banner--custom');
+    span.dataset.bannerCode = code;
+    ensureCustomBanner(code).then(backgroundImage => {
+      if (!backgroundImage || !span.isConnected) return;
+      span.style.backgroundImage = backgroundImage;
+      span.classList.add('is-loaded');
+    });
     return span;
   };
 
@@ -65,7 +103,7 @@
     if (!cell || cell.dataset.bannerEnhanced === '1') return;
     const label = cell.textContent.trim();
     const code = normalizeCode(label);
-    if (!code) return;
+    if (!code || !spriteCodes.has(code)) return;
 
     cell.dataset.bannerEnhanced = '1';
     const wrap = document.createElement('div');
@@ -82,7 +120,7 @@
     if (!node || node.dataset.bannerEnhanced === '1') return;
     const owner = node.querySelector(':scope > strong');
     const code = normalizeCode(owner?.textContent);
-    if (!code) return;
+    if (!code || !spriteCodes.has(code)) return;
 
     node.dataset.bannerEnhanced = '1';
     node.dataset.allianceCode = code;
