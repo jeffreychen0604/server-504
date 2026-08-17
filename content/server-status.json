@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-17T15:47:00+07:00",
+  "lastUpdated": "2026-08-17T15:49:00+07:00",
   "server": {
     "season": "4",
     "theme": "Sealed Island",
@@ -90,6 +90,12 @@
         "opponentAlliance": "OML",
         "opponentServer": "#510",
         "totalCP": "30,808,054,215"
+      },
+      {
+        "alliance": "DUD",
+        "opponentAlliance": "REN",
+        "opponentServer": "#499",
+        "totalCP": "16,310,121,231"
       },
       {
         "alliance": "UIC",
