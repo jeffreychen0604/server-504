@@ -34,8 +34,11 @@
   background-repeat: no-repeat;
 }
 
-.alliance-banner--custom:not(.is-loaded) {
+.alliance-banner--custom:not(.is-loaded),
+.alliance-banner--placeholder {
   opacity: 0;
+  background: none !important;
+  filter: none !important;
 }
 
 .alliance-table-panel .alliance-banner {
@@ -50,6 +53,24 @@
   flex-basis: 46px;
 }
 
+/* Fixed opponent identity grid: every row reserves the same banner slot,
+   including Unknown/Pending rows, so text starts on the same axis. */
+html body .fancy-home-v2 .ke-panel .ke-alliance-identity.is-opponent {
+  display: grid;
+  grid-template-columns: 46px minmax(0, 1fr);
+  align-items: center;
+  column-gap: 10px;
+  min-width: 0;
+}
+
+html body .fancy-home-v2 .ke-panel .ke-alliance-identity.is-opponent .alliance-banner {
+  width: 46px;
+  height: 46px;
+  margin: 0;
+  justify-self: center;
+  align-self: center;
+}
+
 @media (max-width: 680px) {
   .alliance-table-panel .alliance-banner {
     width: 29px;
@@ -60,5 +81,13 @@
     width: 38px;
     height: 38px;
     flex-basis: 38px;
+  }
+  html body .fancy-home-v2 .ke-panel .ke-alliance-identity.is-opponent {
+    grid-template-columns: 38px minmax(0, 1fr);
+    column-gap: 9px;
+  }
+  html body .fancy-home-v2 .ke-panel .ke-alliance-identity.is-opponent .alliance-banner {
+    width: 38px;
+    height: 38px;
   }
 }
