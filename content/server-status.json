@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-17T15:51:00+07:00",
+  "lastUpdated": "2026-08-17T15:55:00+07:00",
   "server": {
     "season": "4",
     "theme": "Sealed Island",
@@ -105,9 +105,9 @@
       },
       {
         "alliance": "IMMR",
-        "opponentAlliance": "ACE~",
-        "opponentServer": "#502",
-        "totalCP": "21,031,182,895"
+        "opponentAlliance": "<E-PX> Eternal-Phoenix",
+        "opponentServer": "#512",
+        "totalCP": "18,841,739,494"
       }
     ]
   },
