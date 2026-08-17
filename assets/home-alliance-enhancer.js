@@ -75,7 +75,11 @@
     span.classList.add('alliance-banner--custom');
     span.dataset.bannerCode = code;
     ensureCustomBanner(code).then(backgroundImage => {
-      if (!backgroundImage || !span.isConnected) return;
+      if (!span.isConnected) return;
+      if (!backgroundImage) {
+        span.remove();
+        return;
+      }
       span.style.backgroundImage = backgroundImage;
       span.classList.add('is-loaded');
     });
