@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-16T18:00:00+07:00",
+  "lastUpdated": "2026-08-17T15:47:00+07:00",
   "server": {
     "season": "4",
     "theme": "Sealed Island",
@@ -83,13 +83,13 @@
     ]
   },
   "keWatch": {
-    "updatedAt": "2026-08-15",
+    "updatedAt": "2026-08-17",
     "alliances": [
       {
         "alliance": "AP3X",
-        "opponentAlliance": "UNTA",
-        "opponentServer": "#515",
-        "totalCP": "11,542,903,419"
+        "opponentAlliance": "OML",
+        "opponentServer": "#510",
+        "totalCP": "30,808,054,215"
       },
       {
         "alliance": "UIC",
