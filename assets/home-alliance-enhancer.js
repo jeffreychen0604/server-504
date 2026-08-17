@@ -12,7 +12,7 @@
   if (!app) return;
 
   const spriteSource = './assets/alliance-banners-sprite.webp.base64.txt?v=20260815-1357';
-  const customBannerVersion = '20260817-1639';
+  const customBannerVersion = '20260817-1646';
   const spriteCodes = new Set(['uic','ap3x','dud','cmrd','idgf','ids','ltnx','immr','unta','lumj','ace']);
   const reservedCodes = new Set(['unknown','pending','tbd','none','null']);
   const customBannerPromises = new Map();
@@ -63,6 +63,13 @@
     return promise;
   };
 
+  const makePlaceholderBanner = () => {
+    const span = document.createElement('span');
+    span.className = 'alliance-banner alliance-banner--placeholder';
+    span.setAttribute('aria-hidden', 'true');
+    return span;
+  };
+
   const makeBanner = code => {
     const span = document.createElement('span');
     span.className = 'alliance-banner';
@@ -78,7 +85,7 @@
     ensureCustomBanner(code).then(backgroundImage => {
       if (!span.isConnected) return;
       if (!backgroundImage) {
-        span.remove();
+        span.classList.add('alliance-banner--placeholder');
         return;
       }
       span.style.backgroundImage = backgroundImage;
@@ -91,12 +98,12 @@
     if (!cell || cell.dataset.bannerEnhanced === '1') return;
     const label = cell.textContent.trim();
     const code = normalizeCode(label);
-    if (!code) return;
+    if (!code && !opponent) return;
 
     cell.dataset.bannerEnhanced = '1';
     const wrap = document.createElement('div');
     wrap.className = opponent ? 'ke-alliance-identity is-opponent' : 'ke-alliance-identity';
-    wrap.appendChild(makeBanner(code));
+    wrap.appendChild(code ? makeBanner(code) : makePlaceholderBanner());
     const strong = document.createElement('strong');
     strong.textContent = label;
     wrap.appendChild(strong);
