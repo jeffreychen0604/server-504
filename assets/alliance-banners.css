@@ -1,4 +1,4 @@
-/* Server 504 — in-game alliance banner sprite */
+/* Server 504 — in-game alliance banner sprite + per-opponent assets */
 :root { --server504-alliance-banner-sprite: none; }
 
 .alliance-banner {
@@ -24,6 +24,19 @@
 .alliance-banner--immr { background-position: 50% 100%; }
 .alliance-banner--unta { background-position: 75% 100%; }
 .alliance-banner--lumj { background-position: 100% 100%; }
+
+/* Weekly opponents outside the shared sprite are loaded from
+   assets/opponent-banners/<normalized-tag>.webp.base64.txt. */
+.alliance-banner--custom {
+  background-image: none;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.alliance-banner--custom:not(.is-loaded) {
+  opacity: 0;
+}
 
 .alliance-table-panel .alliance-banner {
   width: 34px;
