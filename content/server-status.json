@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-17T17:54:00+07:00",
+  "lastUpdated": "2026-08-17T21:34:00+07:00",
   "server": {
     "season": "4",
     "theme": "Sealed Island",
@@ -7,6 +7,18 @@
   },
   "featuredEvents": {
     "live": [
+      {
+        "name": "Summer Paradise",
+        "type": "Big Event",
+        "description": "Summer Paradise is now live with six confirmed activities: Coconut Cheers, Lord of the Beach, Summer Puzzle, Beachside Station, Beach Pass and Recharge Mania.",
+        "duration": "Aug 17–24, 2026",
+        "rewards": [
+          "Lifetime Summer Skin",
+          "Bar Level milestone rewards",
+          "Drink Reward pools",
+          "Recharge Mania milestone rewards"
+        ]
+      },
       {
         "name": "Pet Supplies",
         "type": "Limited Event",
@@ -26,12 +38,6 @@
       }
     ],
     "upcoming": [
-      {
-        "name": "Summer Paradise",
-        "type": "Big Event",
-        "description": "Major summer event series featuring four activities: Lord of the Beach, Coconut Cheer, Summer Puzzle and Beach Pass.",
-        "duration": "Aug 17–24, 2026"
-      },
       {
         "name": "Hero Lucky Chest",
         "type": "Limited Event",
