@@ -12,7 +12,7 @@
   if (!app) return;
 
   const spriteSource = './assets/alliance-banners-sprite.webp.base64.txt?v=20260815-1357';
-  const customBannerVersion = '20260817-1615';
+  const customBannerVersion = '20260817-1639';
   const spriteCodes = new Set(['uic','ap3x','dud','cmrd','idgf','ids','ltnx','immr','unta','lumj','ace']);
   const reservedCodes = new Set(['unknown','pending','tbd','none','null']);
   const customBannerPromises = new Map();
