@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-17T16:46:00+07:00",
+  "lastUpdated": "2026-08-17T17:54:00+07:00",
   "server": {
     "season": "4",
     "theme": "Sealed Island",
@@ -46,16 +46,17 @@
     ]
   },
   "activeAlliances": {
-    "updatedAt": "2026-08-15",
+    "updatedAt": "2026-08-17",
+    "previousUpdatedAt": "2026-08-15",
     "alliances": [
-      {"name":"[UIC]United Imperial Cmd","totalCP":"42,751,479,998"},
-      {"name":"[AP3X]PR3D4TORS","totalCP":"35,957,425,607"},
-      {"name":"[DUD]Global Elite Empire","totalCP":"25,532,262,549"},
-      {"name":"[CMRD]CAMARADERIE","totalCP":"23,240,087,960"},
-      {"name":"[IDGF]i Dont Give fckz","totalCP":"22,066,062,563"},
-      {"name":"[IDS*]INDOALLSTAR","totalCP":"19,534,849,202"},
-      {"name":"[LTNX]xLATINOSx","totalCP":"5,885,316,881"},
-      {"name":"[IMMR]IMMORTALS","totalCP":"4,732,796,802"}
+      {"rank":1,"previousRank":1,"name":"[UIC]United Imperial Cmd","totalCP":"41,098,477,598","previousTotalCP":"42,751,479,998"},
+      {"rank":2,"previousRank":2,"name":"[AP3X]PR3D4TORS","totalCP":"38,968,006,237","previousTotalCP":"35,957,425,607"},
+      {"rank":3,"previousRank":3,"name":"[DUD]Global Elite Empire","totalCP":"25,691,504,922","previousTotalCP":"25,532,262,549"},
+      {"rank":4,"previousRank":4,"name":"[CMRD]CAMARADERIE","totalCP":"23,070,847,469","previousTotalCP":"23,240,087,960"},
+      {"rank":5,"previousRank":6,"name":"[IDS*]INDOALLSTAR","totalCP":"19,375,775,028","previousTotalCP":"19,534,849,202"},
+      {"rank":6,"previousRank":5,"name":"[IDGF]i Dont Give fckz","totalCP":"18,395,524,571","previousTotalCP":"22,066,062,563"},
+      {"rank":7,"previousRank":7,"name":"[LTNX]xLATINOSx","totalCP":"5,651,649,961","previousTotalCP":"5,885,316,881"},
+      {"rank":8,"previousRank":8,"name":"[IMMR]IMMORTALS","totalCP":"4,205,364,365","previousTotalCP":"4,732,796,802"}
     ]
   },
   "keWatch": {
