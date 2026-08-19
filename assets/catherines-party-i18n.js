@@ -4,41 +4,36 @@
     en: {
       type: 'Big Event',
       description: "A balloon-shooting party event featuring Catherine's Party, Catherine's Gift and Puzzle Battle. In the main activity, players shoot balloons across layers to find the hidden jackpot and earn layer prizes.",
-      duration: 'Aug 21, 2026 00:00 – Aug 28, 2026 00:00 (UTC+7)',
-      rewards: 'Jackpot rewards · Layer Prize rewards · Catherine event rewards'
+      duration: 'Aug 21, 2026 00:00 – Aug 28, 2026 00:00 (UTC+7)'
     },
     fr: {
       type: 'Événement majeur',
       description: "Un événement de tir sur ballons comprenant Catherine's Party, Catherine's Gift et Puzzle Battle. Dans l'activité principale, les joueurs tirent sur les ballons étage après étage pour trouver le jackpot caché et obtenir les récompenses de niveau.",
-      duration: '21 août 2026 00:00 – 28 août 2026 00:00 (UTC+7)',
-      rewards: 'Récompenses du jackpot · Récompenses de niveau · Récompenses de l’événement Catherine'
+      duration: '21 août 2026 00:00 – 28 août 2026 00:00 (UTC+7)'
     },
     es: {
       type: 'Gran evento',
       description: "Evento de disparos a globos con Catherine's Party, Catherine's Gift y Puzzle Battle. En la actividad principal, los jugadores disparan a los globos por capas para encontrar el jackpot oculto y conseguir premios de capa.",
-      duration: '21 ago 2026 00:00 – 28 ago 2026 00:00 (UTC+7)',
-      rewards: 'Recompensas del jackpot · Premios de capa · Recompensas del evento Catherine'
+      duration: '21 ago 2026 00:00 – 28 ago 2026 00:00 (UTC+7)'
     },
     pt: {
       type: 'Grande evento',
       description: "Evento de tiro em balões com Catherine's Party, Catherine's Gift e Puzzle Battle. Na atividade principal, os jogadores atiram nos balões por camadas para encontrar o jackpot escondido e receber prêmios de camada.",
-      duration: '21 ago 2026 00:00 – 28 ago 2026 00:00 (UTC+7)',
-      rewards: 'Recompensas do jackpot · Prêmios de camada · Recompensas do evento Catherine'
+      duration: '21 ago 2026 00:00 – 28 ago 2026 00:00 (UTC+7)'
     },
     ko: {
       type: '대형 이벤트',
       description: "Catherine's Party, Catherine's Gift, Puzzle Battle로 구성된 풍선 사격 이벤트입니다. 메인 활동에서는 층별로 풍선을 쏘아 숨겨진 잭팟을 찾고 Layer Prize를 획득합니다.",
-      duration: '2026년 8월 21일 00:00 – 8월 28일 00:00 (UTC+7)',
-      rewards: '잭팟 보상 · Layer Prize 보상 · Catherine 이벤트 보상'
+      duration: '2026년 8월 21일 00:00 – 8월 28일 00:00 (UTC+7)'
     },
     vi: {
       type: 'Sự kiện lớn',
       description: "Sự kiện bắn bóng gồm Catherine's Party, Catherine's Gift và Puzzle Battle. Ở hoạt động chính, người chơi bắn các quả bóng theo từng layer để tìm jackpot đang được giấu và nhận Layer Prize.",
-      duration: '21/08/2026 00:00 – 28/08/2026 00:00 (UTC+7)',
-      rewards: 'Phần thưởng Jackpot · Layer Prize · Phần thưởng sự kiện Catherine'
+      duration: '21/08/2026 00:00 – 28/08/2026 00:00 (UTC+7)'
     }
   };
 
+  const officialRewards = 'Purple Chip Chest · Blue Chip Chest · Design Blueprint';
   const app = document.getElementById('app');
   if (!app) return;
   let queued = false;
@@ -67,6 +62,7 @@
     app.querySelectorAll('.event-card').forEach(card => {
       const title = card.querySelector('h3')?.textContent?.trim();
       if (title !== "Catherine's Party") return;
+
       const type = card.querySelector('.event-type');
       const description = card.querySelector('p');
       if (type) type.textContent = tr.type;
@@ -84,7 +80,8 @@
           node.nodeValue = ' ' + tr.duration;
         }
       }
-      setTrailingText(card.querySelector('.event-rewards'), tr.rewards);
+
+      setTrailingText(card.querySelector('.event-rewards'), officialRewards);
     });
   };
 
@@ -96,7 +93,7 @@
 
   new MutationObserver(schedule).observe(app, { childList: true, subtree: true });
   document.getElementById('languageSelect')?.addEventListener('change', () => setTimeout(schedule, 0));
-  window.addEventListener('server504:localechange', schedule);
   window.addEventListener('hashchange', schedule);
+  window.addEventListener('server504:localechange', schedule);
   schedule();
 })();
