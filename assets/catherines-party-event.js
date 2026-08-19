@@ -3,9 +3,16 @@
   const app = document.getElementById('app');
   if (!app) return;
 
-  const artworkSource = './assets/catherines-party-featured.webp.base64.txt?v=20260819-2208';
+  const artworkSource = './assets/catherines-party-featured.webp.base64.txt?v=20260819-2212';
   let queued = false;
   let artworkPromise = null;
+
+  const verifyImage = dataUrl => new Promise((resolve, reject) => {
+    const img = new Image();
+    img.onload = () => resolve(dataUrl);
+    img.onerror = () => reject(new Error('Catherine artwork could not be decoded'));
+    img.src = dataUrl;
+  });
 
   const getArtwork = () => {
     artworkPromise ||= fetch(artworkSource, { cache: 'no-store' })
@@ -13,8 +20,9 @@
       .then(base64 => {
         const clean = base64.trim();
         if (!clean.startsWith('UklG')) throw new Error('Invalid Catherine artwork payload');
-        return `url("data:image/webp;base64,${clean}")`;
+        return verifyImage(`data:image/webp;base64,${clean}`);
       })
+      .then(dataUrl => `url("${dataUrl}")`)
       .catch(err => {
         console.warn("Catherine's Party artwork unavailable.", err);
         return null;
@@ -29,6 +37,8 @@
     getArtwork().then(image => {
       if (!image || !card.isConnected) {
         delete card.dataset.catherineGeneratedArt;
+        card.classList.remove('event-catherines-party-generated');
+        card.style.removeProperty('background-image');
         return;
       }
       card.style.setProperty('background-image', image, 'important');
