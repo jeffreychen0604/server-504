@@ -3,7 +3,7 @@
   const app = document.getElementById('app');
   if (!app) return;
 
-  const artworkSource = './assets/catherines-party-featured.webp.base64.txt?v=20260819-1615';
+  const artworkSource = './assets/catherines-party-featured.webp.base64.txt?v=20260819-1935';
   let queued = false;
   let artworkPromise = null;
 
@@ -28,10 +28,8 @@
 
     getArtwork().then(image => {
       if (!image || !card.isConnected) return;
-      card.style.backgroundImage = `linear-gradient(90deg, rgba(10,6,12,.94) 0%, rgba(10,6,12,.84) 34%, rgba(10,6,12,.56) 62%, rgba(10,6,12,.24) 100%), ${image}`;
-      card.style.backgroundSize = 'cover';
-      card.style.backgroundPosition = 'center center';
-      card.style.backgroundRepeat = 'no-repeat';
+      /* Only the generated artwork lives in background-image. Readability overlay is CSS. */
+      card.style.setProperty('background-image', image, 'important');
       card.classList.add('event-catherines-party-generated');
     });
   };
