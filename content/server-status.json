@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-19T13:52:00+07:00",
+  "lastUpdated": "2026-08-19T16:15:00+07:00",
   "server": {
     "season": "4",
     "theme": "Sealed Island",
@@ -49,9 +49,9 @@
         "description": "A balloon-shooting party event featuring Catherine's Party, Catherine's Gift and Puzzle Battle. In the main activity, players shoot balloons across layers to find the hidden jackpot and earn layer prizes.",
         "duration": "Aug 21, 2026 00:00 – Aug 28, 2026 00:00 (UTC+7)",
         "rewards": [
-          "Jackpot rewards",
-          "Layer Prize rewards",
-          "Catherine event rewards"
+          "Purple Chip Chest",
+          "Blue Chip Chest",
+          "Design Blueprint"
         ]
       }
     ]
