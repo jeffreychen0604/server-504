@@ -1,11 +1,77 @@
-/* Server 504 — Featured Events V3
- * Adaptive hero + grid layout with high-contrast state badges.
+/* Server 504 — Featured Events grouped layout
+ * LIVE NOW and COMING UP are visually separated so upcoming events never
+ * appear mixed into the active-event grid.
  */
 
 html body .fancy-home-v2 .featured-event-layout-v3 {
   display: grid;
-  gap: 14px;
+  gap: 18px;
   padding: 14px 14px 16px;
+}
+
+html body .fancy-home-v2 .featured-event-section {
+  display: grid;
+  gap: 12px;
+  min-width: 0;
+}
+
+html body .fancy-home-v2 .featured-upcoming-section {
+  padding-top: 16px;
+  border-top: 1px solid rgba(119,168,197,.18);
+}
+
+html body .fancy-home-v2 .featured-section-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 28px;
+  padding: 0 3px;
+}
+
+html body .fancy-home-v2 .featured-section-title {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+html body .fancy-home-v2 .featured-section-title i {
+  width: 8px;
+  height: 8px;
+  flex: 0 0 8px;
+  border-radius: 50%;
+}
+
+html body .fancy-home-v2 .featured-section-head strong {
+  font-size: .72rem;
+  font-weight: 950;
+  letter-spacing: .10em;
+  text-transform: uppercase;
+}
+
+html body .fancy-home-v2 .featured-section-head small {
+  color: rgba(203,216,225,.48);
+  font-size: .62rem;
+  font-weight: 700;
+  letter-spacing: .02em;
+}
+
+html body .fancy-home-v2 .featured-section-head.live strong {
+  color: #ffb1a9;
+}
+
+html body .fancy-home-v2 .featured-section-head.live .featured-section-title i {
+  background: #ff6a60;
+  box-shadow: 0 0 0 4px rgba(255,93,85,.10), 0 0 12px rgba(255,91,83,.50);
+}
+
+html body .fancy-home-v2 .featured-section-head.upcoming strong {
+  color: #a9dcf8;
+}
+
+html body .fancy-home-v2 .featured-section-head.upcoming .featured-section-title i {
+  background: #78d1ff;
+  box-shadow: 0 0 0 4px rgba(107,204,255,.08), 0 0 10px rgba(92,193,247,.36);
 }
 
 html body .fancy-home-v2 .featured-event-grid-v3 {
@@ -13,6 +79,14 @@ html body .fancy-home-v2 .featured-event-grid-v3 {
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 12px;
   align-items: stretch;
+}
+
+html body .fancy-home-v2 .featured-live-grid[data-card-count="2"] {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+html body .fancy-home-v2 .featured-upcoming-grid[data-card-count="1"] {
+  grid-template-columns: 1fr;
 }
 
 html body .fancy-home-v2 .featured-event-grid-v3 .event-card {
@@ -145,9 +219,11 @@ html body .fancy-home-v2 .featured-panel .featured-columns {
 @media (max-width: 900px) {
   html body .fancy-home-v2 .featured-event-layout-v3 {
     padding: 12px;
+    gap: 16px;
   }
 
-  html body .fancy-home-v2 .featured-event-grid-v3 {
+  html body .fancy-home-v2 .featured-event-grid-v3,
+  html body .fancy-home-v2 .featured-live-grid[data-card-count="2"] {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -160,11 +236,16 @@ html body .fancy-home-v2 .featured-panel .featured-columns {
 
 @media (max-width: 680px) {
   html body .fancy-home-v2 .featured-event-layout-v3 {
-    gap: 10px;
+    gap: 14px;
     padding: 10px;
   }
 
-  html body .fancy-home-v2 .featured-event-grid-v3 {
+  html body .fancy-home-v2 .featured-upcoming-section {
+    padding-top: 14px;
+  }
+
+  html body .fancy-home-v2 .featured-event-grid-v3,
+  html body .fancy-home-v2 .featured-live-grid[data-card-count="2"] {
     grid-template-columns: 1fr;
     gap: 10px;
   }
@@ -192,5 +273,9 @@ html body .fancy-home-v2 .featured-panel .featured-columns {
     min-height: 25px;
     font-size: .64rem;
     padding: 5px 9px 5px 7px;
+  }
+
+  html body .fancy-home-v2 .featured-section-head strong {
+    font-size: .68rem;
   }
 }
