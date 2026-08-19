@@ -3,7 +3,7 @@
   const app = document.getElementById('app');
   if (!app) return;
 
-  const artworkSource = './assets/catherines-party-featured.webp.base64.txt?v=20260819-2102';
+  const artworkSource = './assets/catherines-party-featured.webp.base64.txt?v=20260819-2208';
   let queued = false;
   let artworkPromise = null;
 
