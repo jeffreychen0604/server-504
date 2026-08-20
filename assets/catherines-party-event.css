@@ -1,7 +1,6 @@
 /* Catherine's Party — generated promotional artwork presentation.
- * Artwork itself is loaded by catherines-party-event.js from
- * assets/catherines-party-featured.webp.base64.txt.
- * No legacy gameplay screenshot is embedded here.
+ * Artwork is loaded as a real binary WebP from
+ * assets/catherines-party-featured.webp.
  */
 html body .fancy-home-v2 .event-card.event-catherines-party {
   min-height: 230px;
@@ -13,7 +12,7 @@ html body .fancy-home-v2 .event-card.event-catherines-party {
 
 html body .fancy-home-v2 .event-card.event-catherines-party.event-catherines-party-generated {
   background-size: cover !important;
-  background-position: 62% center !important;
+  background-position: center center !important;
   background-repeat: no-repeat !important;
 }
 
@@ -23,13 +22,13 @@ html body .fancy-home-v2 .event-card.event-catherines-party.event-catherines-par
   inset: 0;
   z-index: 0;
   pointer-events: none;
-  background:
-    linear-gradient(90deg,
-      rgba(8,6,10,.96) 0%,
-      rgba(8,6,10,.91) 34%,
-      rgba(8,6,10,.62) 54%,
-      rgba(8,6,10,.18) 78%,
-      rgba(8,6,10,.06) 100%);
+  background: linear-gradient(90deg,
+    rgba(8,6,10,.97) 0%,
+    rgba(8,6,10,.93) 28%,
+    rgba(8,6,10,.70) 44%,
+    rgba(8,6,10,.32) 58%,
+    rgba(8,6,10,.08) 76%,
+    rgba(8,6,10,.03) 100%);
 }
 
 html body .fancy-home-v2 .event-card.event-catherines-party.event-catherines-party-generated > * {
@@ -41,7 +40,7 @@ html body .fancy-home-v2 .event-card.event-catherines-party h3,
 html body .fancy-home-v2 .event-card.event-catherines-party p,
 html body .fancy-home-v2 .event-card.event-catherines-party .event-meta,
 html body .fancy-home-v2 .event-card.event-catherines-party .event-rewards {
-  max-width: 58%;
+  max-width: 56%;
 }
 
 html body .fancy-home-v2 .event-card.event-catherines-party .event-rewards {
@@ -49,15 +48,11 @@ html body .fancy-home-v2 .event-card.event-catherines-party .event-rewards {
 }
 
 @media (max-width: 900px) {
-  html body .fancy-home-v2 .event-card.event-catherines-party.event-catherines-party-generated {
-    background-position: 68% center !important;
-  }
-
   html body .fancy-home-v2 .event-card.event-catherines-party h3,
   html body .fancy-home-v2 .event-card.event-catherines-party p,
   html body .fancy-home-v2 .event-card.event-catherines-party .event-meta,
   html body .fancy-home-v2 .event-card.event-catherines-party .event-rewards {
-    max-width: 70%;
+    max-width: 68%;
   }
 }
 
@@ -67,15 +62,15 @@ html body .fancy-home-v2 .event-card.event-catherines-party .event-rewards {
   }
 
   html body .fancy-home-v2 .event-card.event-catherines-party.event-catherines-party-generated {
-    background-position: 72% center !important;
+    background-position: 64% center !important;
   }
 
   html body .fancy-home-v2 .event-card.event-catherines-party.event-catherines-party-generated::after {
     background: linear-gradient(90deg,
-      rgba(8,6,10,.97) 0%,
-      rgba(8,6,10,.91) 48%,
-      rgba(8,6,10,.56) 76%,
-      rgba(8,6,10,.15) 100%);
+      rgba(8,6,10,.98) 0%,
+      rgba(8,6,10,.94) 50%,
+      rgba(8,6,10,.62) 74%,
+      rgba(8,6,10,.18) 100%);
   }
 
   html body .fancy-home-v2 .event-card.event-catherines-party h3,
