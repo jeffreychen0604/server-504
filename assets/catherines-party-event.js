@@ -1,22 +1,61 @@
-/* Catherine's Party featured-event identity + binary artwork loader. */
+/* Catherine's Party featured-event identity + verified chunked artwork loader.
+ * The artwork is split into small text chunks to avoid transport truncation during repo updates.
+ * The browser reconstructs the exact WebP payload and validates it before applying it.
+ */
 (() => {
   const app = document.getElementById('app');
   if (!app) return;
 
-  const artworkSource = './assets/catherines-party-featured.webp?v=20260820-1525';
+  const ART_VERSION = '20260820-1540';
+  const EXPECTED_BASE64_LENGTH = 48628;
+  const artworkParts = [
+    './assets/catherine-party-art/part-00a.txt',
+    './assets/catherine-party-art/part-00b.txt',
+    './assets/catherine-party-art/part-01.txt',
+    './assets/catherine-party-art/part-02.txt',
+    './assets/catherine-party-art/part-03.txt',
+    './assets/catherine-party-art/part-04.txt'
+  ].map(src => `${src}?v=${ART_VERSION}`);
+
   let queued = false;
   let artworkPromise = null;
 
+  const loadPart = source => fetch(source, { cache: 'no-store' })
+    .then(response => {
+      if (!response.ok) throw new Error(`Artwork chunk HTTP ${response.status}`);
+      return response.text();
+    })
+    .then(text => text.trim());
+
+  const validateImage = dataUrl => new Promise((resolve, reject) => {
+    const img = new Image();
+    img.onload = () => {
+      if (img.naturalWidth < 1000 || img.naturalHeight < 200) {
+        reject(new Error(`Unexpected Catherine artwork dimensions ${img.naturalWidth}x${img.naturalHeight}`));
+        return;
+      }
+      resolve(`url("${dataUrl}")`);
+    };
+    img.onerror = () => reject(new Error('Catherine artwork decode failed'));
+    img.src = dataUrl;
+  });
+
   const getArtwork = () => {
-    artworkPromise ||= new Promise(resolve => {
-      const img = new Image();
-      img.onload = () => resolve(`url("${artworkSource}")`);
-      img.onerror = () => {
-        console.warn("Catherine's Party artwork unavailable.");
-        resolve(null);
-      };
-      img.src = artworkSource;
-    });
+    artworkPromise ||= Promise.all(artworkParts.map(loadPart))
+      .then(parts => {
+        const base64 = parts.join('');
+        if (base64.length !== EXPECTED_BASE64_LENGTH) {
+          throw new Error(`Incomplete Catherine artwork: ${base64.length}/${EXPECTED_BASE64_LENGTH}`);
+        }
+        if (!base64.startsWith('UklG')) {
+          throw new Error('Invalid Catherine WebP signature');
+        }
+        return validateImage(`data:image/webp;base64,${base64}`);
+      })
+      .catch(error => {
+        console.warn("Catherine's Party artwork unavailable.", error);
+        return null;
+      });
     return artworkPromise;
   };
 
