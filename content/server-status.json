@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-19T16:15:00+07:00",
+  "lastUpdated": "2026-08-23T18:27:00+07:00",
   "server": {
     "season": "4",
     "theme": "Sealed Island",
@@ -80,7 +80,7 @@
     ]
   },
   "sharedAssets": {
-    "capital": {"current":"DUD","next":"CMRD"},
+    "capital": {"current":"DUD","next":"UIC"},
     "armories": [
       {"number":1,"alliance":"AP3X"},
       {"number":2,"alliance":"LTNX"},
