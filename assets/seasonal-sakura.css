@@ -1,0 +1,101 @@
+/* Server 504 — Sealed Island ambient sakura layer
+   Independent from Home renderer so redesigns cannot accidentally remove it. */
+
+.seasonal-sakura {
+  position: fixed;
+  inset: 0;
+  z-index: 12;
+  overflow: hidden;
+  pointer-events: none;
+  user-select: none;
+  contain: strict;
+  opacity: .92;
+}
+
+.seasonal-sakura .sakura-petal {
+  --size: 9px;
+  --duration: 16s;
+  --delay: 0s;
+  --drift: 90px;
+  --spin: 540deg;
+  --petal-opacity: .56;
+  position: absolute;
+  top: -10vh;
+  left: var(--left, 50%);
+  width: var(--size);
+  height: calc(var(--size) * .72);
+  opacity: 0;
+  will-change: transform, opacity;
+  animation: sealed-sakura-fall var(--duration) linear var(--delay) infinite;
+}
+
+.seasonal-sakura .sakura-petal::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 72% 18% 72% 58%;
+  background:
+    radial-gradient(circle at 32% 30%, rgba(255,255,255,.72), transparent 24%),
+    linear-gradient(145deg, #ffd2df 0%, #ee8fb0 58%, #d75f8b 100%);
+  box-shadow:
+    0 0 8px rgba(238, 126, 164, .16),
+    inset -1px -1px 2px rgba(130, 37, 79, .18);
+  transform: rotate(28deg) skewX(-8deg);
+}
+
+.seasonal-sakura .sakura-petal:nth-child(3n)::before {
+  background:
+    radial-gradient(circle at 32% 30%, rgba(255,255,255,.66), transparent 22%),
+    linear-gradient(145deg, #fbc7d8 0%, #df80a4 60%, #bb537c 100%);
+}
+
+.seasonal-sakura .sakura-petal:nth-child(4n)::before {
+  filter: saturate(.82) brightness(.94);
+}
+
+@keyframes sealed-sakura-fall {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, -8vh, 0) rotate(0deg) scale(.88);
+  }
+  7% { opacity: var(--petal-opacity); }
+  34% {
+    transform: translate3d(calc(var(--drift) * .36), 34vh, 0) rotate(calc(var(--spin) * .34)) scale(1);
+  }
+  68% {
+    opacity: calc(var(--petal-opacity) * .92);
+    transform: translate3d(calc(var(--drift) * .72), 74vh, 0) rotate(calc(var(--spin) * .72)) scale(.94);
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(var(--drift), 116vh, 0) rotate(var(--spin)) scale(.82);
+  }
+}
+
+/* Home keeps the strongest seasonal atmosphere. */
+body[data-route="home"] .seasonal-sakura {
+  opacity: 1;
+}
+
+/* Interior knowledge pages remain quieter so reading is not distracted. */
+body[data-route="wiki"] .seasonal-sakura,
+body[data-route="guides"] .seasonal-sakura,
+body[data-route="charter"] .seasonal-sakura,
+body[data-route="codex"] .seasonal-sakura {
+  opacity: .55;
+}
+
+@media (max-width: 900px) {
+  .seasonal-sakura { opacity: .72; }
+  .seasonal-sakura .sakura-petal:nth-child(2n) { display: none; }
+}
+
+@media (max-width: 560px) {
+  .seasonal-sakura { opacity: .56; }
+  .seasonal-sakura .sakura-petal:nth-child(3n) { display: none; }
+  .seasonal-sakura .sakura-petal { --petal-opacity: .42; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .seasonal-sakura { display: none !important; }
+}
