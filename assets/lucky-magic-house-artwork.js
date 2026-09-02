@@ -1,14 +1,16 @@
-/* Lucky Magic House artwork loader.
- * Reassembles the validated 960x320 WebP from small text chunks so GitHub
- * transport limits cannot corrupt the decorative asset.
+/* Featured Event reusable artwork bridge.
+ * Lucky Magic House uses validated chunked artwork from the canonical event library.
+ * Recurring Lucky Chest variants reuse stable raster assets from the same library.
  */
 (() => {
+  const app = document.getElementById('app');
+
   const chunks = [
-    './assets/lucky-magic-house/chunk-00a.txt',
-    './assets/lucky-magic-house/chunk-00b.txt',
-    './assets/lucky-magic-house/chunk-01.txt',
-    './assets/lucky-magic-house/chunk-02.txt',
-    './assets/lucky-magic-house/chunk-03.txt'
+    './assets/event-library/lucky-magic-house/part-00a.txt',
+    './assets/event-library/lucky-magic-house/part-00b.txt',
+    './assets/event-library/lucky-magic-house/part-01.txt',
+    './assets/event-library/lucky-magic-house/part-02.txt',
+    './assets/event-library/lucky-magic-house/part-03.txt'
   ];
   const expectedLength = 30636;
 
@@ -44,4 +46,18 @@
       document.documentElement.dataset.luckyMagicHouseArtwork = 'error';
       console.warn('Lucky Magic House artwork unavailable.', error);
     });
+
+  if (!app) return;
+
+  const markReusableCards = () => {
+    app.querySelectorAll('.event-card').forEach(card => {
+      const key = card.querySelector('h3')?.textContent?.trim().toLowerCase() || '';
+      card.classList.toggle('event-lucky-chest', key === 'lucky chest');
+    });
+  };
+
+  new MutationObserver(markReusableCards).observe(app, { childList: true, subtree: true });
+  window.addEventListener('hashchange', markReusableCards);
+  window.addEventListener('server504:localechange', markReusableCards);
+  markReusableCards();
 })();
