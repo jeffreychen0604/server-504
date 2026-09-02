@@ -1,20 +1,20 @@
 /* Catherine's Party featured-event identity + verified chunked artwork loader.
- * The artwork is split into small text chunks to avoid transport truncation during repo updates.
+ * Canonical reusable artwork lives in assets/event-library/catherines-party/.
  * The browser reconstructs the exact WebP payload and validates it before applying it.
  */
 (() => {
   const app = document.getElementById('app');
   if (!app) return;
 
-  const ART_VERSION = '20260820-1540';
+  const ART_VERSION = '20260902-0900';
   const EXPECTED_BASE64_LENGTH = 48628;
   const artworkParts = [
-    './assets/catherine-party-art/part-00a.txt',
-    './assets/catherine-party-art/part-00b.txt',
-    './assets/catherine-party-art/part-01.txt',
-    './assets/catherine-party-art/part-02.txt',
-    './assets/catherine-party-art/part-03.txt',
-    './assets/catherine-party-art/part-04.txt'
+    './assets/event-library/catherines-party/part-00a.txt',
+    './assets/event-library/catherines-party/part-00b.txt',
+    './assets/event-library/catherines-party/part-01.txt',
+    './assets/event-library/catherines-party/part-02.txt',
+    './assets/event-library/catherines-party/part-03.txt',
+    './assets/event-library/catherines-party/part-04.txt'
   ].map(src => `${src}?v=${ART_VERSION}`);
 
   let queued = false;
