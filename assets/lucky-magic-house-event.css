@@ -1,6 +1,9 @@
 /* Lucky Magic House — standard featured-event card presentation.
  * Intentionally uses the same grid/card tier as Hero Lucky Chest, not a big-event hero.
+ * The artwork URL is supplied by fancy-home.js after validating the chunk payload.
  */
+:root { --lucky-magic-house-art: none; }
+
 html body .fancy-home-v2 .event-card.event-lucky-magic-house {
   position: relative;
   overflow: hidden;
@@ -13,7 +16,7 @@ html body .fancy-home-v2 .event-card.event-lucky-magic-house {
       rgba(13, 7, 31, .74) 47%,
       rgba(13, 7, 31, .28) 66%,
       rgba(13, 7, 31, .08) 100%),
-    url('./lucky-magic-house-featured.webp') !important;
+    var(--lucky-magic-house-art) !important;
   background-size: cover, cover !important;
   background-position: center, center !important;
   background-repeat: no-repeat !important;
