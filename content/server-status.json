@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-23T18:27:00+07:00",
+  "lastUpdated": "2026-09-02T07:53:00+07:00",
   "server": {
     "season": "4",
     "theme": "Sealed Island",
@@ -8,45 +8,56 @@
   "featuredEvents": {
     "live": [
       {
+        "name": "Lucky Magic House",
+        "type": "Limited Event",
+        "startAt": "2026-08-28T00:00:00+07:00",
+        "endAt": "2026-09-04T00:00:00+07:00",
+        "description": "Reveal rewards from the Lucky Magic House prize pool, build the reward multiplier and collect the event packs to claim the Ultimate Prize.",
+        "duration": "Aug 28, 2026 00:00 – Sep 4, 2026 00:00 (UTC+7)",
+        "rewards": [
+          "Ultimate Prize",
+          "Featured material rewards"
+        ]
+      },
+      {
+        "name": "Lucky Chest",
+        "type": "Limited Event",
+        "startAt": "2026-09-01T00:00:00+07:00",
+        "endAt": "2026-09-03T23:59:00+07:00",
+        "description": "Your go-to limited event for obtaining heroes and hero enhancement items.",
+        "duration": "Sep 1, 2026 00:00 – Sep 3, 2026 23:59 (UTC+7)",
+        "rewards": [
+          "Heroes",
+          "Hero enhancement items"
+        ]
+      }
+    ],
+    "upcoming": [],
+    "archive": [
+      {
         "name": "Summer Paradise",
         "type": "Big Event",
-        "description": "Summer Paradise is now live with six confirmed activities: Coconut Cheers, Lord of the Beach, Summer Puzzle, Beachside Station, Beach Pass and Recharge Mania.",
-        "duration": "Aug 17–24, 2026",
-        "rewards": [
-          "Lifetime Summer Skin",
-          "Bar Level milestone rewards",
-          "Drink Reward pools",
-          "Recharge Mania milestone rewards"
-        ]
+        "description": "Summer Paradise featured six confirmed activities: Coconut Cheers, Lord of the Beach, Summer Puzzle, Beachside Station, Beach Pass and Recharge Mania.",
+        "duration": "Aug 17–24, 2026"
       },
       {
         "name": "Pet Supplies",
         "type": "Limited Event",
-        "description": "Open or refresh 9 Rare, Elite and Epic supply chests using Lucky Crowbars. Spending Crowbars earns Personal and State Points for milestone rewards. One chest can be opened free each day, and up to 3 free refreshes are available daily; opening all 9 chests triggers an automatic free refresh.",
-        "duration": "Until Aug 21, 2026 09:00 (UTC+7)",
-        "rewards": [
-          "Advanced Training Protocols",
-          "Standard Training Protocols",
-          "Personal & State Milestone Rewards"
-        ]
+        "description": "Open or refresh Rare, Elite and Epic supply chests using Lucky Crowbars for milestone rewards.",
+        "duration": "Until Aug 21, 2026 09:00 (UTC+7)"
       },
       {
         "name": "Hero Lucky Chest",
         "type": "Limited Event",
-        "description": "Hero Lucky Chest with three selectable hero options: Lan, Darian and Katrina.",
-        "duration": "Aug 18–20, 2026",
-        "rewards": [
-          "Lan",
-          "Darian",
-          "Katrina"
-        ]
-      }
-    ],
-    "upcoming": [
+        "description": "Hero Lucky Chest with selectable hero options Lan, Darian and Katrina.",
+        "duration": "Aug 18–20, 2026"
+      },
       {
         "name": "Catherine's Party",
         "type": "Big Event",
-        "description": "A balloon-shooting party event featuring Catherine's Party, Catherine's Gift and Puzzle Battle. In the main activity, players shoot balloons across layers to find the hidden jackpot and earn layer prizes.",
+        "startAt": "2026-08-21T00:00:00+07:00",
+        "endAt": "2026-08-28T00:00:00+07:00",
+        "description": "A balloon-shooting party event featuring Catherine's Party, Catherine's Gift and Puzzle Battle.",
         "duration": "Aug 21, 2026 00:00 – Aug 28, 2026 00:00 (UTC+7)",
         "rewards": [
           "Purple Chip Chest",
