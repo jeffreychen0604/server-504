@@ -1,0 +1,63 @@
+{
+  "version": 1,
+  "canonicalRoot": "assets/event-library",
+  "events": {
+    "lucky-chest": {
+      "aliases": ["Lucky Chest", "Hero Lucky Chest", "Tech Lucky Chest"],
+      "tier": "standard",
+      "reusable": true,
+      "variants": {
+        "base": "lucky-chest/base.webp",
+        "hero": "lucky-chest/hero.webp",
+        "tech": "lucky-chest/tech.webp"
+      }
+    },
+    "lucky-magic-house": {
+      "aliases": ["Lucky Magic House"],
+      "tier": "standard",
+      "reusable": true,
+      "format": "chunked-webp-base64",
+      "dimensions": [960, 320],
+      "expectedBase64Length": 30636,
+      "parts": [
+        "lucky-magic-house/part-00a.txt",
+        "lucky-magic-house/part-00b.txt",
+        "lucky-magic-house/part-01.txt",
+        "lucky-magic-house/part-02.txt",
+        "lucky-magic-house/part-03.txt"
+      ]
+    },
+    "catherines-party": {
+      "aliases": ["Catherine's Party"],
+      "tier": "big-event",
+      "reusable": true,
+      "format": "chunked-webp-base64",
+      "expectedBase64Length": 48628,
+      "parts": [
+        "catherines-party/part-00a.txt",
+        "catherines-party/part-00b.txt",
+        "catherines-party/part-01.txt",
+        "catherines-party/part-02.txt",
+        "catherines-party/part-03.txt",
+        "catherines-party/part-04.txt"
+      ]
+    },
+    "summer-paradise": {
+      "aliases": ["Summer Paradise"],
+      "tier": "big-event",
+      "reusable": true,
+      "variants": {
+        "hero": "summer-paradise/hero.webp",
+        "card": "summer-paradise/card.webp"
+      }
+    },
+    "pet-supplies": {
+      "aliases": ["Pet Supplies"],
+      "tier": "standard",
+      "reusable": true,
+      "variants": {
+        "card": "pet-supplies/card.webp"
+      }
+    }
+  }
+}
