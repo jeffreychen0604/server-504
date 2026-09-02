@@ -1,0 +1,80 @@
+/* Lucky Magic House — standard featured-event card presentation.
+ * Intentionally uses the same grid/card tier as Hero Lucky Chest, not a big-event hero.
+ */
+html body .fancy-home-v2 .event-card.event-lucky-magic-house {
+  position: relative;
+  overflow: hidden;
+  min-height: 220px;
+  border-color: rgba(153, 97, 226, .42);
+  background-image:
+    linear-gradient(90deg,
+      rgba(9, 5, 23, .97) 0%,
+      rgba(9, 5, 23, .94) 30%,
+      rgba(13, 7, 31, .74) 47%,
+      rgba(13, 7, 31, .28) 66%,
+      rgba(13, 7, 31, .08) 100%),
+    url('./lucky-magic-house-featured.webp') !important;
+  background-size: cover, cover !important;
+  background-position: center, center !important;
+  background-repeat: no-repeat !important;
+  box-shadow:
+    inset 0 1px rgba(255,255,255,.06),
+    0 16px 34px rgba(0,0,0,.20),
+    0 0 24px rgba(112,55,205,.08);
+}
+
+html body .fancy-home-v2 .event-card.event-lucky-magic-house::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 72% 47%, rgba(151,75,255,.13), transparent 34%),
+    linear-gradient(180deg, rgba(255,255,255,.025), transparent 32%);
+}
+
+html body .fancy-home-v2 .event-card.event-lucky-magic-house > * {
+  position: relative;
+  z-index: 2;
+}
+
+html body .fancy-home-v2 .event-card.event-lucky-magic-house h3,
+html body .fancy-home-v2 .event-card.event-lucky-magic-house p,
+html body .fancy-home-v2 .event-card.event-lucky-magic-house .event-meta,
+html body .fancy-home-v2 .event-card.event-lucky-magic-house .event-rewards {
+  max-width: 58%;
+}
+
+html body .fancy-home-v2 .event-card.event-lucky-magic-house .event-rewards {
+  color: #dfc8ff;
+}
+
+/* Guardrail: Lucky Magic House is never promoted into the large hero tier. */
+html body .fancy-home-v2 .event-card.event-lucky-magic-house.featured-hero-event {
+  min-height: 220px !important;
+  padding: inherit !important;
+}
+
+@media (max-width: 900px) {
+  html body .fancy-home-v2 .event-card.event-lucky-magic-house h3,
+  html body .fancy-home-v2 .event-card.event-lucky-magic-house p,
+  html body .fancy-home-v2 .event-card.event-lucky-magic-house .event-meta,
+  html body .fancy-home-v2 .event-card.event-lucky-magic-house .event-rewards {
+    max-width: 64%;
+  }
+}
+
+@media (max-width: 680px) {
+  html body .fancy-home-v2 .event-card.event-lucky-magic-house {
+    min-height: 215px;
+    background-position: center, 61% center !important;
+  }
+
+  html body .fancy-home-v2 .event-card.event-lucky-magic-house h3,
+  html body .fancy-home-v2 .event-card.event-lucky-magic-house p,
+  html body .fancy-home-v2 .event-card.event-lucky-magic-house .event-meta,
+  html body .fancy-home-v2 .event-card.event-lucky-magic-house .event-rewards {
+    max-width: 82%;
+  }
+}
