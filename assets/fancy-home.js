@@ -56,13 +56,25 @@
       const key = title.toLowerCase();
       const eventType = card.querySelector('.event-type')?.textContent?.trim().toLowerCase() || '';
 
-      card.classList.remove('event-pet-supplies', 'event-summer-paradise', 'event-tech-lucky', 'event-hero-lucky');
+      card.classList.remove(
+        'event-pet-supplies',
+        'event-summer-paradise',
+        'event-tech-lucky',
+        'event-hero-lucky',
+        'event-lucky-magic-house',
+        'event-lucky-chest',
+        'big-event-card'
+      );
       if (key === 'pet supplies') card.classList.add('event-pet-supplies');
       if (key === 'summer paradise') card.classList.add('event-summer-paradise');
       if (key === 'tech lucky chest') card.classList.add('event-tech-lucky');
       if (key === 'hero lucky chest') card.classList.add('event-hero-lucky');
+      if (key === 'lucky magic house') card.classList.add('event-lucky-magic-house');
+      if (key === 'lucky chest') card.classList.add('event-lucky-chest');
 
-      if (key === 'summer paradise' || eventType === 'big event') {
+      // Only true Big Events enter the hero tier. Lucky Magic House and Lucky Chest
+      // are explicitly standard cards, matching the Hero Lucky Chest card tier.
+      if (key !== 'lucky magic house' && key !== 'lucky chest' && (key === 'summer paradise' || eventType === 'big event')) {
         card.classList.add('big-event-card');
       }
 
