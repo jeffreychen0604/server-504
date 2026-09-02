@@ -7,9 +7,17 @@
   if (!app) return;
 
   const reducedMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+  const luckyMagicChunks = [
+    './assets/lucky-magic-house/chunk-00.txt',
+    './assets/lucky-magic-house/chunk-01.txt',
+    './assets/lucky-magic-house/chunk-02.txt',
+    './assets/lucky-magic-house/chunk-03.txt'
+  ];
+  const luckyMagicExpectedLength = 30636;
   let revealObserver = null;
   let renderQueued = false;
   let armoryStatePromise = null;
+  let luckyMagicArtworkPromise = null;
 
   const openContestCopy = {
     en: 'Open contest',
@@ -34,10 +42,43 @@
     document.head.appendChild(link);
   };
 
+  const ensureLuckyMagicArtwork = () => {
+    luckyMagicArtworkPromise ||= Promise.all(
+      luckyMagicChunks.map(source => fetch(source, { cache: 'force-cache' })
+        .then(response => response.ok ? response.text() : Promise.reject(new Error(`HTTP ${response.status}: ${source}`))))
+    )
+      .then(parts => parts.map(part => part.trim()).join(''))
+      .then(base64 => {
+        if (base64.length !== luckyMagicExpectedLength || !base64.startsWith('UklG')) {
+          throw new Error(`Invalid Lucky Magic House artwork payload (${base64.length})`);
+        }
+        const dataUrl = `data:image/webp;base64,${base64}`;
+        return new Promise((resolve, reject) => {
+          const image = new Image();
+          image.onload = () => {
+            if (image.naturalWidth !== 960 || image.naturalHeight !== 320) {
+              reject(new Error(`Unexpected Lucky Magic House artwork size ${image.naturalWidth}x${image.naturalHeight}`));
+              return;
+            }
+            resolve(dataUrl);
+          };
+          image.onerror = () => reject(new Error('Lucky Magic House artwork could not be decoded'));
+          image.src = dataUrl;
+        });
+      })
+      .then(dataUrl => {
+        document.documentElement.style.setProperty('--lucky-magic-house-art', `url("${dataUrl}")`);
+      })
+      .catch(error => console.warn('Lucky Magic House artwork unavailable.', error));
+    return luckyMagicArtworkPromise;
+  };
+
   const ensurePresentationStyles = () => {
     ensureStyle('server504-home-ui-refine', './assets/home-ui-refine.css?v=20260815-0537');
     ensureStyle('server504-home-asset-language', './assets/home-asset-language.css?v=20260815-0558');
     ensureStyle('server504-home-asset-v2', './assets/home-asset-v2.css?v=20260815-0648');
+    ensureStyle('server504-lucky-magic-house-event', './assets/lucky-magic-house-event.css?v=20260902-0830');
+    ensureLuckyMagicArtwork();
   };
 
   const parseNumber = value => {
