@@ -1,15 +1,26 @@
 /* Server 504 — Sealed Island ambient sakura layer
-   Independent from Home renderer so redesigns cannot accidentally remove it. */
+   Independent from Home renderer so redesigns cannot accidentally remove it.
+   Ambient particles must stay BEHIND operational content and never cross data tables/text.
+ */
 
 .seasonal-sakura {
   position: fixed;
   inset: 0;
-  z-index: 12;
+  z-index: 1;
   overflow: hidden;
   pointer-events: none;
   user-select: none;
   contain: strict;
   opacity: .92;
+}
+
+/* Keep all primary UI above the ambient particle plane. */
+.topbar,
+.shell,
+.floating-contribute,
+dialog {
+  position: relative;
+  z-index: 2;
 }
 
 .seasonal-sakura .sakura-petal {
@@ -72,7 +83,7 @@
   }
 }
 
-/* Home keeps the strongest seasonal atmosphere. */
+/* Home keeps the strongest seasonal atmosphere, but always behind content. */
 body[data-route="home"] .seasonal-sakura {
   opacity: 1;
 }
