@@ -3,25 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#071017" />
-  <meta name="description" content="Server 504 knowledge, governance and operations portal for Dark War: Survival." />
-  <title>Server 504 | Dark War: Survival</title>
+  <meta name="theme-color" content="#0a0d12" />
+  <title>Server 504 Knowledge & Operations</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="./assets/styles.css" />
-  <link rel="stylesheet" href="./assets/art-overrides.css" />
-  <link rel="stylesheet" href="./assets/layout-simplify.css" />
   <link rel="stylesheet" href="./assets/pages-fancy.css" />
-  <link rel="stylesheet" href="./assets/layout-refine.css" />
-  <link rel="stylesheet" href="./assets/feedback.css" />
-  <link rel="stylesheet" href="./assets/wiki-research.css" />
-  <link rel="stylesheet" href="./assets/wiki-calculators.css" />
-  <link rel="stylesheet" href="./assets/wiki-ia.css" />
-  <link rel="stylesheet" href="./assets/search-discovery.css" />
-  <link rel="stylesheet" href="./assets/language-switcher.css" />
-  <link rel="stylesheet" href="./assets/dashboard.css" />
-  <link rel="stylesheet" href="./assets/guides.css" />
-  <link rel="stylesheet" href="./assets/sealed-island-theme.css" />
-  <link rel="stylesheet" href="./assets/fancy-home.css" />
-  <link rel="stylesheet" href="./assets/home-v2-recovery.css?v=20260815-0755" />
   <link rel="stylesheet" href="./assets/home-v2-polish.css?v=20260815-1226" />
   <link rel="stylesheet" href="./assets/home-ops-v2.css?v=20260815-1357" />
   <link rel="stylesheet" href="./assets/alliance-banners.css?v=20260817-1646" />
@@ -34,7 +22,7 @@
   <link rel="stylesheet" href="./assets/home-featured-v3.css?v=20260819-2102" />
   <link id="server504-lucky-magic-house-event" rel="stylesheet" href="./assets/lucky-magic-house-event.css?v=20260902-0858" />
   <link rel="stylesheet" href="./assets/catherines-party-event.css?v=20260820-1540" />
-  <link rel="stylesheet" href="./assets/seasonal-sakura.css?v=20260902-0639" />
+  <link rel="stylesheet" href="./assets/seasonal-sakura.css?v=20260905-2320" />
 </head>
 <body>
   <div class="noise" aria-hidden="true"></div>
@@ -145,48 +133,26 @@
       </div>
       <button class="dialog-close" type="button" data-close-dialog="contributeDialog">×</button>
     </div>
-
-    <form id="contributeForm">
+    <form id="contributeForm" class="contribute-form">
       <label>
-        <span data-i18n="type">Type</span>
-        <select id="contributionType" required>
-          <option value="Game Wiki correction">Game Wiki correction</option>
-          <option value="New Wiki information">New Wiki information</option>
-          <option value="Charter proposal">Charter proposal</option>
-          <option value="Operational Codex proposal">Operational Codex proposal</option>
-          <option value="Translation correction">Translation correction</option>
-          <option value="Server operation suggestion">Server operation suggestion</option>
-          <option value="Other">Other</option>
+        <span data-i18n="suggestionType">Type</span>
+        <select id="contributeType" name="type">
+          <option value="correction">Correction</option>
+          <option value="addition">New information</option>
+          <option value="suggestion">Suggestion</option>
         </select>
       </label>
       <label>
-        <span data-i18n="title">Title</span>
-        <input id="contributionTitle" required maxlength="120" />
+        <span data-i18n="suggestionMessage">Message</span>
+        <textarea id="contributeMessage" name="message" rows="5" required></textarea>
       </label>
-      <label>
-        <span data-i18n="details">Details</span>
-        <textarea id="contributionDetails" required minlength="10" maxlength="6000" rows="7" placeholder="Please provide at least 10 characters."></textarea>
-      </label>
-      <label>
-        <span data-i18n="allianceOptional">Alliance / player name (optional)</span>
-        <input id="contributionIdentity" maxlength="80" />
-      </label>
-      <label>
-        <span data-i18n="contactOptional">Contact (optional)</span>
-        <input id="contributionContact" maxlength="160" placeholder="Discord, email, or other contact" />
-      </label>
-      <label class="feedback-honeypot" aria-hidden="true" tabindex="-1">
-        <span>Website</span>
-        <input id="contributionWebsite" autocomplete="off" tabindex="-1" />
-      </label>
-      <div id="feedbackTurnstile" class="feedback-turnstile" hidden aria-label="Human verification"></div>
-      <p class="form-note" data-i18n="feedbackNote">No account is required. Protected by Cloudflare Turnstile; submissions go directly to the Server 504 moderation inbox.</p>
-      <p id="feedbackStatus" class="feedback-status" hidden aria-live="polite"></p>
-      <button class="primary-button" type="submit" data-i18n="submitFeedback">Submit feedback</button>
+      <div class="form-actions">
+        <button class="button-secondary" type="button" data-close-dialog="contributeDialog" data-i18n="cancel">Cancel</button>
+        <button class="button-primary" type="submit" data-i18n="send">Send</button>
+      </div>
     </form>
   </dialog>
 
-  <script src="./assets/feedback-config.js"></script>
   <script src="./assets/i18n.js"></script>
   <script src="./assets/seasonal-sakura.js?v=20260902-0639" defer></script>
   <script src="./assets/app.js" defer></script>
