@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-05T23:15:00+07:00",
+  "lastUpdated": "2026-11-03",
   "server": {
     "season": "4",
     "theme": "Sealed Island",
@@ -68,64 +68,56 @@
     ]
   },
   "activeAlliances": {
-    "updatedAt": "2026-09-05",
-    "previousUpdatedAt": "2026-08-17",
+    "updatedAt": "2026-11-03",
+    "previousUpdatedAt": "2026-09-05",
     "alliances": [
       {
         "rank": 1,
-        "previousRank": 2,
-        "name": "[AP3X]PR3D4TORS",
-        "totalCP": "40,431,092,153",
-        "previousTotalCP": "38,968,006,237"
+        "previousRank": 1,
+        "name": "[AP3X]PR3DATORS",
+        "totalCP": "54,237,643,887",
+        "previousTotalCP": "40,431,092,153"
       },
       {
         "rank": 2,
-        "previousRank": 1,
+        "previousRank": 2,
         "name": "[UIC]United Imperial Cmd",
-        "totalCP": "37,901,483,863",
-        "previousTotalCP": "41,098,477,598"
+        "totalCP": "51,164,072,674",
+        "previousTotalCP": "37,901,483,863"
       },
       {
         "rank": 3,
-        "previousRank": 3,
-        "name": "[DUD]Global Elite Empire",
-        "totalCP": "25,827,370,520",
-        "previousTotalCP": "25,691,504,922"
+        "name": "[A§T]ALL STAND TOGETHER",
+        "totalCP": "45,969,028,935"
       },
       {
         "rank": 4,
-        "previousRank": 5,
-        "name": "[IDS*]INDOALLSTAR",
-        "totalCP": "25,110,229,866",
-        "previousTotalCP": "19,375,775,028"
+        "name": "[ONE]OUR NEW ERA",
+        "totalCP": "25,813,360,882"
       },
       {
         "rank": 5,
-        "previousRank": 4,
-        "name": "[CMRD]CAMARADERIE",
-        "totalCP": "23,171,662,170",
-        "previousTotalCP": "23,070,847,469"
+        "previousRank": 6,
+        "name": "[IDGF]i Dont Give fckz",
+        "totalCP": "16,683,699,744",
+        "previousTotalCP": "20,060,268,020"
       },
       {
         "rank": 6,
-        "previousRank": 6,
-        "name": "[IDGF]i Dont Give fckz",
-        "totalCP": "20,060,268,020",
-        "previousTotalCP": "18,395,524,571"
+        "name": "[ÀSU]ALL STARS UNITED",
+        "totalCP": "10,970,238,831"
       },
       {
         "rank": 7,
         "previousRank": 7,
         "name": "[LTNX]xLATINOSx",
-        "totalCP": "5,514,005,954",
-        "previousTotalCP": "5,651,649,961"
+        "totalCP": "6,094,770,588",
+        "previousTotalCP": "5,514,005,954"
       },
       {
         "rank": 8,
-        "previousRank": 8,
-        "name": "[IMMR]IMMORTALS",
-        "totalCP": "3,730,228,428",
-        "previousTotalCP": "4,205,364,365"
+        "name": "[H3IL]ANONYMOUS",
+        "totalCP": "3,271,088,021"
       }
     ]
   },
