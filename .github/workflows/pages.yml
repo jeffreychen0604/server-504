@@ -24,6 +24,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Validate shared UI entrypoint
+        run: python3 scripts/validate-entrypoint.py
+
       - name: Validate public Wiki
         run: bash scripts/validate-wiki.sh
 
