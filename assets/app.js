@@ -37,6 +37,10 @@ function applyUiLanguage() {
     if (key) el.textContent = t(key);
   });
 
+  document.querySelectorAll('[data-i18n-aria-label]').forEach(el => {
+    el.setAttribute('aria-label', t(el.dataset.i18nAriaLabel));
+  });
+
   const headerSearchInput = document.getElementById('headerSearchInput');
   if (headerSearchInput) headerSearchInput.placeholder = t('searchPlaceholder');
   if (searchInput) searchInput.placeholder = t('searchPlaceholder');
@@ -182,6 +186,7 @@ async function render() {
   const route = routeName();
   setActive(route);
   sidebar.classList.remove('open');
+  document.getElementById('menuToggle').setAttribute('aria-expanded', 'false');
   app.innerHTML = `<div class="page loading">${t('loading')}</div>`;
 
   if (route === 'home') app.innerHTML = homePage();
@@ -277,7 +282,10 @@ searchInput.addEventListener('input', e => renderSearchResults(e.target.value));
 document.querySelectorAll('.search-trigger').forEach(btn => btn.addEventListener('click', openSearch));
 document.getElementById('contributeSidebar').addEventListener('click', openContribute);
 document.getElementById('mobileContribute').addEventListener('click', openContribute);
-document.getElementById('menuToggle').addEventListener('click', () => sidebar.classList.toggle('open'));
+document.getElementById('menuToggle').addEventListener('click', event => {
+  const expanded = sidebar.classList.toggle('open');
+  event.currentTarget.setAttribute('aria-expanded', String(expanded));
+});
 
 document.querySelectorAll('[data-close-dialog]').forEach(btn => btn.addEventListener('click', () => document.getElementById(btn.dataset.closeDialog)?.close()));
 

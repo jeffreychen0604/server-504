@@ -27,7 +27,16 @@ html body .fancy-home-v2 .alliance-table-panel .rank-move {
 }
 
 /* Current CP remains the primary value; trend is a compact secondary chip. */
+html body .fancy-home-v2 .alliance-table-panel .dashboard-table {
+  table-layout: fixed;
+}
+
+html body .fancy-home-v2 .alliance-table-panel .dashboard-table th:last-child {
+  width: 140px;
+}
+
 html body .fancy-home-v2 .alliance-table-panel .cp-cell-wrap {
+  min-width: 0;
   gap: 5px;
 }
 
@@ -35,6 +44,7 @@ html body .fancy-home-v2 .alliance-table-panel .cp-primary-line {
   width: 100%;
   min-width: 0;
   display: flex;
+  flex-wrap: wrap;
   align-items: baseline;
   justify-content: flex-end;
   gap: 8px;
@@ -43,6 +53,7 @@ html body .fancy-home-v2 .alliance-table-panel .cp-primary-line {
 html body .fancy-home-v2 .alliance-table-panel .cp-number,
 html body .fancy-home-v2 .alliance-table-panel .cp-current-value {
   min-width: 0;
+  flex: 0 0 auto;
   white-space: nowrap;
   font-variant-numeric: tabular-nums;
 }

@@ -6,6 +6,7 @@
    SATURDAY KE — Alliance Duel look
    ------------------------------- */
 html body .fancy-home-v2 .ke-panel {
+  container-type: inline-size;
   overflow: hidden;
 }
 
@@ -36,7 +37,7 @@ html body .fancy-home-v2 .ke-panel table.dashboard-table tbody {
 
 html body .fancy-home-v2 .ke-panel table.dashboard-table tbody tr:not(.muted-row) {
   display: grid;
-  grid-template-columns: minmax(150px, 1fr) minmax(150px, 1fr) 86px minmax(150px, .82fr);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) 72px 155px;
   align-items: center;
   min-height: 82px;
   border: 1px solid rgba(125,161,190,.2);
@@ -125,6 +126,14 @@ html body .fancy-home-v2 .ke-panel table.dashboard-table tbody td:nth-child(4) {
   text-align: right;
 }
 
+html body .fancy-home-v2 .ke-panel .cp-cell-wrap {
+  min-width: 0;
+}
+
+html body .fancy-home-v2 .ke-panel .cp-number {
+  white-space: nowrap;
+}
+
 html body .fancy-home-v2 .ke-panel .ke-alliance-identity {
   display: flex;
   align-items: center;
@@ -177,15 +186,10 @@ html body .fancy-home-v2 .alliance-table-panel tbody tr:hover {
   background: linear-gradient(90deg, rgba(84,184,212,.055), rgba(236,186,88,.035));
 }
 
-@media (max-width: 900px) {
+/* A desktop panel can be narrower than a tablet viewport. */
+@container (max-width: 620px) {
   html body .fancy-home-v2 .ke-panel table.dashboard-table tbody tr:not(.muted-row) {
-    grid-template-columns: minmax(130px,1fr) minmax(130px,1fr) 74px minmax(128px,.8fr);
-  }
-}
-
-@media (max-width: 680px) {
-  html body .fancy-home-v2 .ke-panel table.dashboard-table tbody tr:not(.muted-row) {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     gap: 0;
   }
   html body .fancy-home-v2 .ke-panel table.dashboard-table tbody td:nth-child(3),

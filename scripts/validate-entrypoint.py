@@ -14,11 +14,16 @@ class EntryPoint(HTMLParser):
         self.styles = []
         self.scripts = []
         self.ids = set()
+        self.elements = {}
+        self.dialog_closers = []
 
     def handle_starttag(self, tag, attrs):
         attrs = dict(attrs)
         if attrs.get('id'):
             self.ids.add(attrs['id'])
+            self.elements[attrs['id']] = attrs
+        if tag == 'button' and 'data-close-dialog' in attrs:
+            self.dialog_closers.append(attrs)
         if tag == 'link' and attrs.get('rel') == 'stylesheet':
             self.styles.append(urlsplit(attrs.get('href', '')).path)
         if tag == 'script' and attrs.get('src'):
@@ -57,6 +62,16 @@ def validate(html):
         errors.append('Feedback config/runtime must be included')
     elif page.scripts.index(config) > page.scripts.index(runtime):
         errors.append('Feedback config must precede the runtime')
+    for element_id in ('searchDialog', 'contributeDialog', 'searchInput'):
+        label_ids = page.elements.get(element_id, {}).get('aria-labelledby', '').split()
+        if not label_ids or any(label_id not in page.ids for label_id in label_ids):
+            errors.append(f'Missing accessible name reference: #{element_id}')
+    for button in page.dialog_closers:
+        if not button.get('aria-label', '').strip():
+            errors.append(f'Missing close button name: #{button["data-close-dialog"]}')
+    menu = page.elements.get('menuToggle', {})
+    if menu.get('aria-controls') != 'sidebar' or menu.get('aria-expanded') not in ('true', 'false'):
+        errors.append('Menu toggle must expose its target and expanded state')
     return errors
 
 
@@ -66,4 +81,4 @@ if __name__ == '__main__':
         print(f'::error file=index.html::{problem}')
     if problems:
         sys.exit(1)
-    print('Entrypoint validation passed: UI styles, cascade, assets and feedback DOM.')
+    print('Entrypoint validation passed: UI styles, cascade, assets, feedback DOM and accessible names.')

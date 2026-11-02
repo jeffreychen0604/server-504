@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="./assets/wiki-research.css" />
   <link rel="stylesheet" href="./assets/wiki-calculators.css" />
   <link rel="stylesheet" href="./assets/wiki-ia.css" />
-  <link rel="stylesheet" href="./assets/search-discovery.css" />
+  <link rel="stylesheet" href="./assets/search-discovery.css?v=20261103-ui" />
   <link rel="stylesheet" href="./assets/language-switcher.css" />
   <link rel="stylesheet" href="./assets/dashboard.css" />
   <link rel="stylesheet" href="./assets/guides.css" />
@@ -23,9 +23,9 @@
   <link rel="stylesheet" href="./assets/fancy-home.css" />
   <link rel="stylesheet" href="./assets/home-v2-recovery.css?v=20260815-0755" />
   <link rel="stylesheet" href="./assets/home-v2-polish.css?v=20260815-1226" />
-  <link rel="stylesheet" href="./assets/home-ops-v2.css?v=20260815-1357" />
+  <link rel="stylesheet" href="./assets/home-ops-v2.css?v=20261103-ui" />
   <link rel="stylesheet" href="./assets/alliance-banners.css?v=20260817-1646" />
-  <link rel="stylesheet" href="./assets/active-alliance-trend.css?v=20260817-1829" />
+  <link rel="stylesheet" href="./assets/active-alliance-trend.css?v=20261103-ui" />
   <link rel="stylesheet" href="./assets/home-shared-v2.css?v=20260815-2104" />
   <link rel="stylesheet" href="./assets/home-capital-banners.css?v=20260815-2125" />
   <link rel="stylesheet" href="./assets/home-hero-v2.css?v=20260815-1545" />
@@ -75,7 +75,7 @@
         </span>
         <span class="language-control-chevron" aria-hidden="true"></span>
       </label>
-      <button id="menuToggle" class="icon-button menu-toggle" type="button" aria-label="Open menu">☰</button>
+      <button id="menuToggle" class="icon-button menu-toggle" type="button" aria-label="Toggle menu" data-i18n-aria-label="toggleMenu" aria-expanded="false" aria-controls="sidebar">☰</button>
     </div>
   </header>
 
@@ -125,27 +125,27 @@
 
   <button id="mobileContribute" class="floating-contribute" type="button" aria-label="Contribute">+</button>
 
-  <dialog id="searchDialog" class="dialog search-dialog">
+  <dialog id="searchDialog" class="dialog search-dialog" aria-labelledby="searchTitle">
     <div class="dialog-head">
       <div>
         <small data-i18n="searchLabel">GLOBAL SEARCH</small>
-        <h2 data-i18n="searchTitle">Search Server 504</h2>
+        <h2 id="searchTitle" data-i18n="searchTitle">Search Server 504</h2>
       </div>
-      <button class="dialog-close" type="button" data-close-dialog="searchDialog">×</button>
+      <button class="dialog-close" type="button" data-close-dialog="searchDialog" aria-label="Close search" data-i18n-aria-label="closeSearch">×</button>
     </div>
-    <input id="searchInput" class="search-input" type="search" autocomplete="off" placeholder="Search WT, APC, Frankenstein, Armory, Precision Parts..." />
+    <input id="searchInput" class="search-input" type="search" aria-labelledby="searchTitle" autocomplete="off" placeholder="Search WT, APC, Frankenstein, Armory, Precision Parts..." />
     <div id="searchResults" class="search-results"></div>
   </dialog>
 
-  <dialog id="contributeDialog" class="dialog contribute-dialog">
+  <dialog id="contributeDialog" class="dialog contribute-dialog" aria-labelledby="contributeTitle">
     <div class="dialog-head">
       <div>
         <small data-i18n="communityContribution">COMMUNITY CONTRIBUTION</small>
-        <h2 data-i18n="sendSuggestion">Send a suggestion</h2>
+        <h2 id="contributeTitle" data-i18n="sendSuggestion">Send a suggestion</h2>
       </div>
-      <button class="dialog-close" type="button" data-close-dialog="contributeDialog">×</button>
+      <button class="dialog-close" type="button" data-close-dialog="contributeDialog" aria-label="Close suggestion form" data-i18n-aria-label="closeSuggestion">×</button>
     </div>
-    <form id="contributeForm">
+    <form id="contributeForm" aria-describedby="feedbackNote">
       <label>
         <span data-i18n="type">Type</span>
         <select id="contributionType" required>
@@ -179,16 +179,16 @@
         <input id="contributionWebsite" autocomplete="off" tabindex="-1" />
       </label>
       <div id="feedbackTurnstile" class="feedback-turnstile" hidden aria-label="Human verification"></div>
-      <p class="form-note" data-i18n="feedbackNote">No account is required. Protected by Cloudflare Turnstile; submissions go directly to the Server 504 moderation inbox.</p>
+      <p id="feedbackNote" class="form-note" data-i18n="feedbackNote">No account is required. Protected by Cloudflare Turnstile; submissions go directly to the Server 504 moderation inbox.</p>
       <p id="feedbackStatus" class="feedback-status" hidden aria-live="polite"></p>
       <button class="primary-button" type="submit" data-i18n="submitFeedback">Submit feedback</button>
     </form>
   </dialog>
 
   <script src="./assets/feedback-config.js"></script>
-  <script src="./assets/i18n.js"></script>
+  <script src="./assets/i18n.js?v=20261103-ui"></script>
   <script src="./assets/seasonal-sakura.js?v=20260902-0639" defer></script>
-  <script src="./assets/app.js" defer></script>
+  <script src="./assets/app.js?v=20261103-ui" defer></script>
   <script src="./assets/dashboard.js" defer></script>
   <script src="./assets/dashboard-content-i18n.js?v=20260817-2134" defer></script>
   <script src="./assets/pages-fancy.js" defer></script>
