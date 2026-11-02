@@ -14,6 +14,9 @@
   const spriteSource = './assets/alliance-banners-sprite.webp.base64.txt?v=20260815-1357';
   const customBannerVersion = '20260817-1646';
   const spriteCodes = new Set(['uic','ap3x','dud','cmrd','idgf','ids','ltnx','immr','unta','lumj','ace']);
+  const customBannerSources = {
+    h3il: './assets/alliance-banners/h3il.png?v=20261103'
+  };
   const reservedCodes = new Set(['unknown','pending','tbd','none','null']);
   const customBannerPromises = new Map();
   let spritePromise = null;
@@ -23,9 +26,11 @@
     const text = String(value || '').trim();
     const bracket = text.match(/\[([^\]]+)\]/);
     const raw = (bracket ? bracket[1] : text.split(/\s+/)[0])
+      .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+      .replace(/§/g, 'S')
       .toUpperCase()
       .replace(/[^A-Z0-9]/g, '');
-    const aliases = { IDSSTAR: 'ids', IDS: 'ids', IDGF: 'idgf', LUMI: 'lumj', LUMJ: 'lumj', ACE: 'ace' };
+    const aliases = { AST: 'cmrd', ONE: 'dud', ASU: 'ids', IDSSTAR: 'ids', IDS: 'ids', IDGF: 'idgf', LUMI: 'lumj', LUMJ: 'lumj', ACE: 'ace' };
     const code = aliases[raw] || raw.toLowerCase();
     return code && !reservedCodes.has(code) ? code : null;
   };
@@ -49,6 +54,7 @@
 
   const ensureCustomBanner = code => {
     if (!code || spriteCodes.has(code)) return Promise.resolve(null);
+    if (customBannerSources[code]) return Promise.resolve(`url("${customBannerSources[code]}")`);
     if (customBannerPromises.has(code)) return customBannerPromises.get(code);
 
     const source = `./assets/opponent-banners/${encodeURIComponent(code)}.webp.base64.txt?v=${customBannerVersion}`;
@@ -117,7 +123,7 @@
     if (!cell || cell.dataset.bannerEnhanced === '1') return;
     const label = cell.textContent.trim();
     const code = normalizeCode(label);
-    if (!code || !spriteCodes.has(code)) return;
+    if (!code || (!spriteCodes.has(code) && !customBannerSources[code])) return;
 
     cell.dataset.bannerEnhanced = '1';
     const wrap = document.createElement('div');
