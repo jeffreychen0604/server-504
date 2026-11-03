@@ -114,12 +114,37 @@ button,a,input,select,textarea { transition:background-color .16s,border-color .
 .alliance-table-panel tr:nth-child(3) .s5-rank-shield { background:linear-gradient(135deg,#edc38e,#a97742); color:#382610; }
 .cp-trend { border-radius:0; background:#1e4028; border:1px solid #5c9562; color:#b8e8b7; }
 .cp-trend.down { background:#4d2a20; border-color:#a56b46; color:#f5b99a; }
-.s5-ui-remake .ke-panel tbody tr { border:1px solid #9e7c45; border-radius:5px 12px 5px 12px; background:radial-gradient(ellipse at 8% 5%,#8fc3bc1f,transparent 45%),url('./relic-etching.svg') center/220px,linear-gradient(105deg,#1b343e 0 48%,#0a151a 49%,#ab8b4b 50%,#0b1518 51%,#342b24 52%); box-shadow:inset 0 2px #d1bb7c38,inset 0 0 0 4px #0a151a,inset 0 0 0 5px #bfa85c44,inset 0 -10px 12px #0005,0 5px #050d12,0 0 0 1px #342b20; }
-.s5-ui-remake .ke-panel table.dashboard-table tbody td:nth-child(1),.s5-ui-remake .ke-panel table.dashboard-table tbody td:nth-child(2) { background:transparent; }
-.s5-ui-remake .ke-panel table.dashboard-table tbody td:nth-child(2)::before { color:#fff1bd; background:radial-gradient(circle at 35% 20%,#f9e8ae44,transparent 65%),linear-gradient(135deg,#c79e5a,#7d5d35 40%,#293e42 45%,#12252e); border:2px solid #e3c47d; border-radius:50%; box-shadow:inset 0 0 0 2px #222e2d,inset 0 0 0 3px #c8a96a66,0 3px 0 #050e15,0 0 0 3px #493d29,0 0 14px #63bfb333; clip-path:none; text-shadow:0 2px #000; }
-.s5-ui-remake .ke-alliance-identity,.s5-ui-remake .ke-alliance-identity.is-opponent { color:#f8ebc4; }
-.s5-ui-remake .ke-panel table.dashboard-table tbody td:nth-child(3) { color:#ffe0a0; }
-.s5-ui-remake .ke-panel table.dashboard-table tbody td:nth-child(3)::before { color:#c8ba87; }
+/* KE: two equal team areas; the opponent owns both server and CP metadata. */
+.s5-ui-remake .ke-panel { align-self:start; height:auto; min-height:0; container:ke-matchup / inline-size; overflow:hidden; }
+.s5-ui-remake .ke-panel .ke-explainer { margin:0; padding:14px 16px; max-width:none; line-height:1.6; color:#e0e4d5; }
+.s5-ui-remake .ke-panel .table-wrap { padding:8px 14px 20px; overflow:visible; background:none; }
+.s5-ui-remake .ke-panel table.dashboard-table { display:block; width:100%; }
+.s5-ui-remake .ke-panel table.dashboard-table thead { display:none; }
+.s5-ui-remake .ke-panel table.dashboard-table tbody { display:grid; gap:12px; width:100%; }
+.s5-ui-remake .ke-panel tbody tr:not(.muted-row) { display:grid; grid-template-columns:minmax(0,1fr) 52px minmax(56px,.34fr) minmax(0,.66fr); grid-template-rows:auto auto; align-items:center; gap:8px 0; min-height:116px; --ke-split:50%; padding:14px 16px; position:relative; isolation:isolate; overflow:hidden; border:1px solid #987344; border-radius:5px 12px; background:radial-gradient(ellipse at 8% 5%,#8fc3bc16,transparent 45%),url('./relic-etching.svg') center/220px,linear-gradient(90deg,#0b2430 0 calc(var(--ke-split) - .3%),#af8d4e calc(var(--ke-split) - .1%) calc(var(--ke-split) + .1%),#261e18 calc(var(--ke-split) + .3%)); box-shadow:inset 0 1px #d1bb7c44,inset 0 0 0 3px #07131b,inset 0 -8px 12px #0005,0 4px #050d12; }
+.s5-ui-remake .ke-panel table.dashboard-table tbody td { display:block; min-width:0; margin:0; padding:0; border:0; background:transparent; position:static; z-index:auto; }
+.s5-ui-remake .ke-panel tbody td:first-child { grid-column:1; grid-row:1 / span 2; align-self:center; }
+.s5-ui-remake .ke-panel tbody td:nth-child(2) { grid-column:3 / span 2; grid-row:1; }
+.s5-ui-remake .ke-panel tbody td:nth-child(2)::before { content:'VS'; display:grid; place-items:center; position:absolute; z-index:2; left:var(--ke-split); top:50%; transform:translate(-50%,-50%); width:34px; height:34px; color:#fff1bd; background:radial-gradient(circle at 35% 20%,#f9e8ae44,transparent 65%),linear-gradient(135deg,#c79e5a,#7d5d35 40%,#293e42 45%,#12252e); border:2px solid #e3c47d; border-radius:50%; box-shadow:inset 0 0 0 2px #222e2d,inset 0 0 0 3px #c8a96a66,0 3px #050e15,0 0 0 3px #493d29; font:900 10px var(--s5-title-font); text-shadow:0 2px #000; pointer-events:none; }
+.s5-ui-remake .ke-panel tbody td:nth-child(3) { grid-column:3; grid-row:2; display:grid; justify-items:center; align-content:start; gap:3px; text-align:center; color:#ffe4ac; font:800 12px var(--s5-title-font); }
+.s5-ui-remake .ke-panel tbody td:nth-child(3)::before { content:'SERVER'; display:block; color:#bfb39b; font-size:8px; font-weight:700; letter-spacing:.1em; }
+.s5-ui-remake .ke-panel tbody td:nth-child(4) { grid-column:4; grid-row:2; text-align:right; }
+.s5-ui-remake .ke-panel tbody td:nth-child(4)::before { content:'CP'; display:block; margin-bottom:3px; color:#bfb39b; font:700 8px var(--s5-title-font); letter-spacing:.1em; }
+.s5-ui-remake .ke-panel .cp-cell-wrap { display:grid; gap:5px; min-width:0; }
+.s5-ui-remake .ke-panel .cp-number { color:#fff0cb; font-size:13px; font-weight:900; white-space:nowrap; }
+.s5-ui-remake .ke-panel .cp-meter { height:3px; }
+body.s5-ui-remake .ops-dashboard .ke-panel .ke-alliance-identity,body.s5-ui-remake .ops-dashboard .ke-panel .ke-alliance-identity.is-opponent { display:flex; align-items:center; justify-content:center; gap:9px; min-width:0; color:#fff4d8; }
+.s5-ui-remake .ke-panel .ke-alliance-identity strong { min-width:0; font:900 16px var(--s5-title-font); white-space:normal; overflow-wrap:anywhere; text-overflow:clip; text-shadow:0 2px #000; }
+@container ke-matchup (max-width:520px) {
+  .s5-ui-remake .ke-panel tbody tr:not(.muted-row) { grid-template-columns:minmax(0,1fr) 44px minmax(0,1fr); grid-template-rows:auto auto auto; min-height:156px; padding:14px 12px; gap:8px 0; }
+  .s5-ui-remake .ke-panel tbody td:first-child { grid-row:1 / span 3; }
+  .s5-ui-remake .ke-panel tbody td:nth-child(2) { grid-column:3; }
+  .s5-ui-remake .ke-panel tbody td:nth-child(3) { grid-column:3; grid-row:2; justify-items:center; }
+  .s5-ui-remake .ke-panel tbody td:nth-child(4) { grid-column:3; grid-row:3; text-align:center; }
+  body.s5-ui-remake .ops-dashboard .ke-panel .ke-alliance-identity,body.s5-ui-remake .ops-dashboard .ke-panel .ke-alliance-identity.is-opponent { flex-direction:column; gap:6px; text-align:center; }
+  .s5-ui-remake .ke-panel .ke-alliance-identity strong { font-size:clamp(11px,4cqi,15px); }
+  .s5-ui-remake .ke-panel .cp-number { font-size:clamp(10px,3.4cqi,13px); }
+}
 .capital-node { border:0; border-radius:0; background:none; box-shadow:none; }
 html body.s5-ui-remake .fancy-home-v2 .capital-node { display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px; min-height:210px; padding:18px 12px 28px!important; text-align:center!important; clip-path:none; }
 .s5-ui-remake .capital-node::before { content:''; position:absolute; left:50%; width:min(140px,70%); bottom:2px; height:18px; transform:translateX(-50%); z-index:1; background:linear-gradient(165deg,#47605c,#1a3038 35%,#0a1821 38%,#142b33 67%,#4d6861 70%,#13252d); clip-path:polygon(14% 0,86% 0,100% 37%,100% 67%,86% 100%,14% 100%,0 67%,0 37%); box-shadow:inset 0 1px #a6c1a540; }

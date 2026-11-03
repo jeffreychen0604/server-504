@@ -3,6 +3,7 @@
  * Preserves responsive layout, article/tool geometry and legacy DOM hooks;
  * Season 4 paint, artwork and motion are owned only by the new component skin.
  */
+/* KE matchup geometry is owned by ui-remake.css; historical overrides removed. */
 /* styles.css */
 :root{--sidebar:260px;--topbar:68px;}
 *{box-sizing:border-box;}
@@ -658,7 +659,7 @@ body[data-route="home"] .main-content{overflow-x:clip;}
 .fancy-home-v2 .event-card::after{content:"";position:absolute;top:0px;right:0px;bottom:0px;left:0px;z-index:-1;pointer-events:none;}
 .fancy-home-v2 .event-card:hover::before{transform:scale(1.085);}
 .fancy-home-v2 .event-type, .fancy-home-v2 .event-card h3, .fancy-home-v2 .event-card p, .fancy-home-v2 .event-meta, .fancy-home-v2 .event-rewards{position:relative;z-index:2;transform:translateZ(12px);}
-.fancy-home-v2 .alliance-table-panel tbody tr, .fancy-home-v2 .ke-panel tbody tr{position:relative;}
+.fancy-home-v2 .alliance-table-panel tbody tr{position:relative;}
 .cp-cell-wrap{display:grid;row-gap:5px;column-gap:5px;min-width:140px;}
 .cp-number{position:relative;z-index:2;}
 .cp-meter{position:relative;height:3px;overflow-x:hidden;overflow-y:hidden;}
@@ -712,36 +713,18 @@ html body .fancy-home-v2 .event-card.event-hero-lucky::before{left:46% !importan
 html body .fancy-home-v2 .event-card.event-tech-lucky, html body .fancy-home-v2 .event-card.event-hero-lucky{min-height:220px;}
 html body .fancy-home-v2 .event-card p, html body .fancy-home-v2 .event-card .event-meta, html body .fancy-home-v2 .event-card .event-rewards{max-width:68% !important;}
 html body .fancy-home-v2 .event-card.event-tech-lucky p, html body .fancy-home-v2 .event-card.event-tech-lucky .event-meta, html body .fancy-home-v2 .event-card.event-tech-lucky .event-rewards, html body .fancy-home-v2 .event-card.event-hero-lucky p, html body .fancy-home-v2 .event-card.event-hero-lucky .event-meta, html body .fancy-home-v2 .event-card.event-hero-lucky .event-rewards{max-width:63% !important;}
-html body .fancy-home-v2 .ke-panel::before, html body .fancy-home-v2 .ke-panel::after, html body .fancy-home-v2 .ke-panel .panel-head h2::before, html body .fancy-home-v2 .ke-panel .panel-head h2::after{content:none !important;display:none !important;}
-html body .fancy-home-v2 .ke-panel .ke-explainer{margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px;padding-top:13px;padding-right:16px;padding-bottom:8px;padding-left:16px;line-height:1.5;}
-html body .fancy-home-v2 .ke-panel .table-wrap{overflow-x:visible;overflow-y:visible;padding-top:7px;padding-right:13px;padding-bottom:15px;padding-left:13px;}
-html body .fancy-home-v2 .ke-panel table.dashboard-table, html body .fancy-home-v2 .ke-panel table.dashboard-table tbody{display:block !important;width:100% !important;}
-html body .fancy-home-v2 .ke-panel table.dashboard-table thead{display:none !important;}
-html body .fancy-home-v2 .ke-panel table.dashboard-table tbody{row-gap:10px;column-gap:10px;display:grid !important;}
-html body .fancy-home-v2 .ke-panel table.dashboard-table tbody tr{grid-template-columns:minmax(105px, 0.85fr) minmax(122px, 1fr) 82px minmax(142px, 0.95fr);align-items:center;min-height:78px;position:relative;overflow-x:hidden;overflow-y:hidden;display:grid !important;}
-html body .fancy-home-v2 .ke-panel table.dashboard-table tbody tr::after{content:"";position:absolute;top:0px;bottom:0px;left:48.8%;width:2.4%;min-width:18px;transform:translateX(-50%);pointer-events:none;}
-html body .fancy-home-v2 .ke-panel table.dashboard-table tbody td{min-width:0px;display:block !important;padding-top:13px !important;padding-right:11px !important;padding-bottom:13px !important;padding-left:11px !important;}
-html body .fancy-home-v2 .ke-panel table.dashboard-table tbody td:first-child{padding-left:44px !important;}
-html body .fancy-home-v2 .ke-panel table.dashboard-table tbody td:first-child::before{left:12px !important;width:23px !important;height:30px !important;}
-html body .fancy-home-v2 .ke-panel table.dashboard-table tbody td:nth-child(2){position:relative;font-weight:800;padding-left:35px !important;}
-html body .fancy-home-v2 .ke-panel table.dashboard-table tbody td:nth-child(2)::before{content:"VS";position:absolute;left:4px;top:50%;transform:translateY(-50%);font-size:0.64rem;font-weight:1000;letter-spacing:-0.04em;}
-html body .fancy-home-v2 .ke-panel table.dashboard-table tbody td:nth-child(3){justify-self:center;font-weight:800;padding-top:6px !important;padding-right:9px !important;padding-bottom:6px !important;padding-left:9px !important;}
-html body .fancy-home-v2 .ke-panel table.dashboard-table tbody td:last-child{text-align:right;}
-html body .fancy-home-v2 .ke-panel .cp-cell-wrap{row-gap:6px;column-gap:6px;}
-html body .fancy-home-v2 .ke-panel .cp-number{font-weight:900;}
-html body .fancy-home-v2 .ke-panel .cp-meter{height:3px;}
+
 html body .fancy-home-v2 .armory-registration::before{content:none !important;display:none !important;}
 html body .fancy-home-v2 .armory-item{min-height:52px;}
 html body .fancy-home-v2 .armory-item.armory-open-contest .armory-contenders{font-size:0.61rem;}
 html body .fancy-home-v2 .featured-panel .panel-head::before, html body .fancy-home-v2 .featured-panel .panel-head::after, html body .fancy-home-v2 .shared-panel .panel-head::before, html body .fancy-home-v2 .shared-panel .panel-head::after{content:none !important;display:none !important;}
-@media (max-width: 900px) {html body .fancy-home-v2 .ke-panel table.dashboard-table tbody tr{grid-template-columns:minmax(100px, 1fr) minmax(110px, 1fr) 74px minmax(125px, 0.9fr);}
+@media (max-width: 900px) {
+
 html body .fancy-home-v2 .event-card::before{left:48% !important;}}
 @media (max-width: 680px) {html body .fancy-home-v2 .event-card::before, html body .fancy-home-v2 .event-card.event-pet-supplies::before, html body .fancy-home-v2 .event-card.event-summer-paradise::before, html body .fancy-home-v2 .event-card.event-tech-lucky::before, html body .fancy-home-v2 .event-card.event-hero-lucky::before{left:38% !important;}
 html body .fancy-home-v2 .event-card p, html body .fancy-home-v2 .event-card .event-meta, html body .fancy-home-v2 .event-card .event-rewards{max-width:86% !important;}
-html body .fancy-home-v2 .ke-panel table.dashboard-table tbody tr{grid-template-columns:1fr 1fr;min-height:0px;}
-html body .fancy-home-v2 .ke-panel table.dashboard-table tbody tr::after{display:none;}
-html body .fancy-home-v2 .ke-panel table.dashboard-table tbody td:nth-child(3){justify-self:stretch;margin-top:0px;margin-right:10px;margin-bottom:9px;margin-left:10px;text-align:center;}
-html body .fancy-home-v2 .ke-panel table.dashboard-table tbody td:last-child{padding-top:10px !important;}}
+
+}
 /* home-v2-polish.css?v=20260815-1226 */
 html body .fancy-home-v2 .event-card{isolation:isolate;position:relative !important;overflow-x:hidden !important;overflow-y:hidden !important;}
 html body .fancy-home-v2 .event-card::before{content:none !important;display:none !important;}
@@ -750,44 +733,21 @@ html body .fancy-home-v2 .event-card::after{content:"" !important;display:block 
 html body .fancy-home-v2 .event-card.event-tech-lucky, html body .fancy-home-v2 .event-card.event-hero-lucky{min-height:220px;}
 html body .fancy-home-v2 .event-card p, html body .fancy-home-v2 .event-card .event-meta, html body .fancy-home-v2 .event-card .event-rewards{max-width:66% !important;}
 html body .fancy-home-v2 .event-card.event-tech-lucky p, html body .fancy-home-v2 .event-card.event-tech-lucky .event-meta, html body .fancy-home-v2 .event-card.event-tech-lucky .event-rewards, html body .fancy-home-v2 .event-card.event-hero-lucky p, html body .fancy-home-v2 .event-card.event-hero-lucky .event-meta, html body .fancy-home-v2 .event-card.event-hero-lucky .event-rewards{max-width:61% !important;}
-html body .fancy-home-v2 .ke-panel{align-self:start !important;height:auto !important;min-height:0px !important;}
-html body .fancy-home-v2 .ke-panel table.dashboard-table tbody tr::after{content:none !important;display:none !important;}
-html body .fancy-home-v2 .ke-panel table.dashboard-table tbody td:nth-child(2)::before{font-size:0.7rem;font-weight:1000;}
+
 @media (max-width: 680px) {html body .fancy-home-v2 .event-card p, html body .fancy-home-v2 .event-card .event-meta, html body .fancy-home-v2 .event-card .event-rewards, html body .fancy-home-v2 .event-card.event-tech-lucky p, html body .fancy-home-v2 .event-card.event-tech-lucky .event-meta, html body .fancy-home-v2 .event-card.event-tech-lucky .event-rewards, html body .fancy-home-v2 .event-card.event-hero-lucky p, html body .fancy-home-v2 .event-card.event-hero-lucky .event-meta, html body .fancy-home-v2 .event-card.event-hero-lucky .event-rewards{max-width:78% !important;}}
-/* home-ops-v2.css?v=20261103-ui */
-html body .fancy-home-v2 .ke-panel{container-type:inline-size;overflow-x:hidden;overflow-y:hidden;}
-html body .fancy-home-v2 .ke-panel .ke-explainer{max-width:94%;margin-top:0px;margin-right:0px;margin-bottom:12px;margin-left:0px;}
-html body .fancy-home-v2 .ke-panel .table-wrap{overflow-x:visible;overflow-y:visible;}
-html body .fancy-home-v2 .ke-panel table.dashboard-table thead{display:none;}
-html body .fancy-home-v2 .ke-panel table.dashboard-table, html body .fancy-home-v2 .ke-panel table.dashboard-table tbody{display:block;width:100%;}
-html body .fancy-home-v2 .ke-panel table.dashboard-table tbody{display:grid;row-gap:10px;column-gap:10px;}
-html body .fancy-home-v2 .ke-panel table.dashboard-table tbody tr:not(.muted-row){display:grid;grid-template-columns:minmax(0px, 1fr) minmax(0px, 1fr) 72px 155px;align-items:center;min-height:82px;overflow-x:hidden;overflow-y:hidden;position:relative;}
-html body .fancy-home-v2 .ke-panel table.dashboard-table tbody tr:not(.muted-row)::before{content:"";position:absolute;top:0px;right:0px;bottom:0px;left:0px;pointer-events:none;}
-html body .fancy-home-v2 .ke-panel table.dashboard-table tbody td{min-width:0px;position:relative;z-index:1;padding-top:11px !important;padding-right:13px !important;padding-bottom:11px !important;padding-left:13px !important;}
-html body .fancy-home-v2 .ke-panel table.dashboard-table tbody td:nth-child(1)::before, html body .fancy-home-v2 .ke-panel table.dashboard-table tbody td:nth-child(2)::after{content:none !important;display:none !important;}
-html body .fancy-home-v2 .ke-panel table.dashboard-table tbody td:nth-child(2)::before{position:absolute;left:-15px;top:50%;transform:translate(-50%, -50%);width:34px;height:34px;display:grid;align-items:center;justify-items:center;letter-spacing:-0.03em;content:"VS" !important;font-size:0.68rem;font-weight:1000;}
-html body .fancy-home-v2 .ke-panel table.dashboard-table tbody td:nth-child(3){text-align:center;font-weight:900;display:grid;align-items:center;justify-items:center;}
-html body .fancy-home-v2 .ke-panel table.dashboard-table tbody td:nth-child(3)::before{content:"SERVER";display:block;font-size:0.52rem;line-height:1;letter-spacing:0.12em;margin-bottom:4px;}
-html body .fancy-home-v2 .ke-panel table.dashboard-table tbody td:nth-child(4){text-align:right;}
-html body .fancy-home-v2 .ke-panel .cp-cell-wrap{min-width:0px;}
-html body .fancy-home-v2 .ke-panel .ke-alliance-identity{display:flex;align-items:center;row-gap:10px;column-gap:10px;min-width:0px;}
-html body .fancy-home-v2 .ke-panel .ke-alliance-identity strong{font-size:0.9rem;overflow-x:hidden;overflow-y:hidden;text-overflow:ellipsis;}
+
 html body .fancy-home-v2 .alliance-table-panel table.dashboard-table tbody tr{min-height:50px;}
 html body .fancy-home-v2 .alliance-table-panel table.dashboard-table tbody td:nth-child(2){padding-top:6px !important;padding-bottom:6px !important;}
 html body .fancy-home-v2 .alliance-table-panel .alliance-identity{display:flex;align-items:center;row-gap:9px;column-gap:9px;min-width:0px;}
 html body .fancy-home-v2 .alliance-table-panel .alliance-identity strong{min-width:0px;overflow-x:hidden;overflow-y:hidden;text-overflow:ellipsis;}
-@container (max-width: 620px) {html body .fancy-home-v2 .ke-panel table.dashboard-table tbody tr:not(.muted-row){grid-template-columns:minmax(0px, 1fr) minmax(0px, 1fr);row-gap:0px;column-gap:0px;}
-html body .fancy-home-v2 .ke-panel table.dashboard-table tbody td:nth-child(2)::before{left:0px;}}
+
 /* alliance-banners.css?v=20260817-1646 */
 .alliance-banner{display:inline-block;width:40px;height:40px;flex-grow:0;flex-shrink:0;flex-basis:40px;}
 .alliance-table-panel .alliance-banner{width:34px;height:34px;flex-basis:34px;}
-.ke-panel .alliance-banner{width:46px;height:46px;flex-basis:46px;}
-html body .fancy-home-v2 .ke-panel .ke-alliance-identity.is-opponent{display:grid;grid-template-columns:46px minmax(0px, 1fr);align-items:center;column-gap:10px;min-width:0px;}
-html body .fancy-home-v2 .ke-panel .ke-alliance-identity.is-opponent .alliance-banner{width:46px;height:46px;margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px;justify-self:center;align-self:center;}
+
 @media (max-width: 680px) {.alliance-table-panel .alliance-banner{width:29px;height:29px;flex-basis:29px;}
-.ke-panel .alliance-banner{width:38px;height:38px;flex-basis:38px;}
-html body .fancy-home-v2 .ke-panel .ke-alliance-identity.is-opponent{grid-template-columns:38px minmax(0px, 1fr);column-gap:9px;}
-html body .fancy-home-v2 .ke-panel .ke-alliance-identity.is-opponent .alliance-banner{width:38px;height:38px;}}
+
+}
 /* active-alliance-trend.css?v=20261103-ui */
 html body .fancy-home-v2 .alliance-table-panel .panel-head > small{display:inline-flex;align-items:center;justify-content:flex-end;row-gap:0px;column-gap:0px;}
 html body .fancy-home-v2 .alliance-table-panel .alliance-trend-reference{font-size:0.61rem;font-weight:700;letter-spacing:0.01em;}
@@ -985,7 +945,7 @@ html body .fancy-home-v2 .event-card.event-catherines-party h3, html body .fancy
 .fancy-home-v2 .dashboard-head > div:first-child::after{content:"S4  /  SEALED ISLAND  /  SERVER 504";display:block;width:fit-content;margin-top:18px;padding-top:6px;padding-right:10px;padding-bottom:5px;padding-left:13px;font-size:0.55rem;font-weight:900;letter-spacing:0.15em;}
 .fancy-home-v2 .dashboard-panel::after{width:var(--asset-corner-size);height:var(--asset-corner-size);top:-1px;right:-1px;}
 .fancy-home-v2 .panel-head{position:relative;}
-.fancy-home-v2 .ke-panel .panel-head h2::before{content:"";display:inline-block;width:17px;height:17px;margin-right:8px;vertical-align:-3px;}
+
 .fancy-home-v2 .capital-rotation::before{width:min(420px, 84%);height:142px;left:50%;top:50%;transform:translate(-50%, -50%);}
 .fancy-home-v2 .armory-item::before{width:22px;height:22px;flex-grow:0;flex-shrink:0;flex-basis:22px;transform:none;}
 .fancy-home-v2 .quick-access a::after, .fancy-home-v2 .quick-access button::after{content:"";position:absolute;right:-8px;bottom:-10px;width:50px;height:50px;transform:rotate(180deg);pointer-events:none;}
@@ -1002,8 +962,7 @@ html body .fancy-home-v2 .event-card.event-catherines-party h3, html body .fancy
 .fancy-home-v2 .event-card h3{font-size:1.08rem;}
 .fancy-home-v2 .event-card p{max-width:72%;}
 .fancy-home-v2 .event-card .event-meta, .fancy-home-v2 .event-card .event-rewards{max-width:72%;}
-.fancy-home-v2 .ke-panel tbody td:first-child{position:relative;padding-left:39px;}
-.fancy-home-v2 .ke-panel tbody td:first-child::before{content:"";position:absolute;left:10px;top:50%;width:21px;height:26px;transform:translateY(-50%);}
+
 .fancy-home-v2 .alliance-table-panel .rank-col{position:relative;min-width:42px;height:42px;font-weight:900;}
 .fancy-home-v2 .armory-registration{position:relative;isolation:isolate;overflow-x:hidden;overflow-y:hidden;}
 .fancy-home-v2 .armory-registration::before{content:"";position:absolute;z-index:-1;right:-5%;bottom:-22%;width:55%;aspect-ratio:16 / 9;}
