@@ -1,0 +1,16 @@
+{
+  "created": "2026-11-03",
+  "tool": "built-in image_gen",
+  "purpose": "V3.2 sculpted component assets; concept artwork, not official game exports",
+  "processing": "PNG masters copied without edits; resize/format only, alpha preserved. No image compositing.",
+  "assets": [
+    {
+      "file": "relic-frame",
+      "prompt": "Use case: stylized-concept. Asset type: production 9-slice fantasy strategy game UI panel FRAME on a genuine transparent background. Create ONE square front-facing ornamental frame, 1024x1024 composition. Empty genuinely transparent central opening occupying 80% of image. Outer frame fits fully within image, minimal transparent margin, each side 8-10% thick. Materials: heavy cast aged bronze with bright worn gold bevels, deep black iron recesses, chipped dark basalt inserts, small inlaid turquoise cabochons. Egyptian desert serpent temple theme, premium hand-painted 3D videogame interface artwork, tactile sculpted relief, dramatic but controlled directional light. Each of the FOUR corners has a strong solid sculpted angular armor bracket, engraved cobra scale motifs, bolted layered bronze plates, small turquoise jewel. Middle lengths of all four rails remain narrow continuous linear bronze, with small etched details, NO large center ornaments. Keep all complex corner details inside outer 16% corner squares so the four straight middle rails can stretch for 9-slice use. Absolute front orthographic, straight rectangular rails, symmetry, no perspective. No text, no letters, no numbers, no UI content, no scenery, no symbols in the center, no drop shadow filling center. No white/checkerboard background; real alpha transparency through opening and around silhouette."
+    },
+    {
+      "file": "relic-header",
+      "prompt": "Use case: stylized-concept. Asset type: one transparent horizontal sculpted ornament to crown a premium Egyptian desert strategy game UI title bar. Isolated single winged bronze scarab-like solar relic with a faceted turquoise oval gem in center and stylized cobra heads curving outward to left and right; broad stepped feathered bronze wings extend symmetrically to both sides. Worn gold highlights on thick cast bronze, deep obsidian recesses, tiny turquoise inlays, rich sculpted 3D relief hand-painted high-end fantasy game UI quality. Wide horizontal silhouette, centered, perfectly front-facing orthographic, no perspective, fully visible with generous transparent margin. The ornament should occupy approximately 85% width and 35% height of a 1536x1024 transparent canvas. No panel frame, no backdrop, no text, no letters, no logo, no watermark. Real alpha transparency everywhere around the isolated metal ornament. Details readable when displayed 150px wide."
+    }
+  ]
+}

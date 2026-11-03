@@ -1,5 +1,7 @@
 """Guard the shared UI dependencies and feedback DOM contract before publishing."""
 from html.parser import HTMLParser
+import hashlib
+import json
 from pathlib import Path
 import re
 import sys
@@ -16,9 +18,15 @@ class EntryPoint(HTMLParser):
         self.ids = set()
         self.elements = {}
         self.dialog_closers = []
+        self.body_classes = set()
+        self.preview_markup = False
 
     def handle_starttag(self, tag, attrs):
         attrs = dict(attrs)
+        if tag == 'body':
+            self.body_classes = set(attrs.get('class', '').split())
+        if tag == 'base' or (tag == 'meta' and 'noindex' in attrs.get('content', '')):
+            self.preview_markup = True
         if attrs.get('id'):
             self.ids.add(attrs['id'])
             self.elements[attrs['id']] = attrs
@@ -34,12 +42,11 @@ def validate(html):
     page = EntryPoint()
     page.feed(html)
     errors = []
-    # These layers supply layout and components across all public routes.
+    # Explicit production contract: layout + functional tools + one Season 5 skin.
     required = [
-        'styles', 'art-overrides', 'layout-simplify', 'pages-fancy',
-        'layout-refine', 'feedback', 'wiki-research', 'wiki-calculators',
-        'wiki-ia', 'search-discovery', 'language-switcher', 'dashboard',
-        'guides', 'sealed-island-theme', 'fancy-home', 'home-v2-recovery',
+        'season-5/tokens', 'season-5/layout', 'feedback', 'wiki-research',
+        'wiki-calculators', 'search-discovery', 'guides',
+        'season-5/ui-remake', 'season-5/sandstorm', 'alliance-banners',
     ]
     positions = []
     for name in required:
@@ -50,9 +57,38 @@ def validate(html):
             positions.append(page.styles.index(path))
     if positions != sorted(positions):
         errors.append('Shared stylesheet cascade order changed')
+    if set(page.styles) != {f'./assets/{name}.css' for name in required} or len(page.styles) != len(required):
+        errors.append('Unexpected / duplicate stylesheet; do not restore competing S4 presentation layers')
+    if not {'s5-season', 's5-ui-remake'} <= page.body_classes or 's5-preview' in page.body_classes:
+        errors.append('Production must mount the Season 5 theme without preview mode')
+    if page.preview_markup or 'ui-preview-guard.js' in html or 'UI preview V3' in html:
+        errors.append('Preview-only markup / form guard must not ship in the production entrypoint')
+    for name in ('home-runtime', 'ui-remake', 'sandstorm'):
+        if page.scripts.count(f'./assets/season-5/{name}.js') != 1:
+            errors.append(f'Season 5 runtime must load exactly once: {name}')
+    for path in page.scripts:
+        if any(name in path for name in ('seasonal-sakura', 'fancy-home.js', 'lucky-magic-house-artwork', 'catherines-party')):
+            errors.append(f'Retired presentation runtime must not compete with the Season 5 theme: {path}')
     for path in page.styles + page.scripts:
         if path.startswith('./') and not (ROOT / path).is_file():
             errors.append(f'Missing entrypoint asset: {path}')
+    for path in page.styles:
+        stylesheet = ROOT / path
+        if not stylesheet.is_file():
+            continue
+        for raw in re.findall(r'url\(\s*[\'"]?([^\)\'"\s]+)', stylesheet.read_text(encoding='utf-8')):
+            target = urlsplit(raw)
+            if not target.scheme and target.path and not (stylesheet.parent / target.path).is_file():
+                errors.append(f'Missing CSS resource: {path} -> {target.path}')
+    for folder in ('draft-v1', 'relic-ui'):
+        manifest = ROOT / f'assets/season-5/{folder}/manifest.json'
+        if not manifest.is_file():
+            errors.append(f'Missing Season 5 asset manifest: {folder}')
+            continue
+        for item in json.loads(manifest.read_text(encoding='utf-8'))['variants']:
+            file = ROOT / item['file']
+            if not file.is_file() or file.stat().st_size != item['bytes'] or hashlib.sha256(file.read_bytes()).hexdigest() != item['sha256']:
+                errors.append(f'Missing or altered reviewed artwork: {item["file"]}')
     feedback = (ROOT / 'assets/feedback.js').read_text(encoding='utf-8')
     for element_id in set(re.findall(r"getElementById\(['\"]([^'\"]+)['\"]\)", feedback)):
         if element_id not in page.ids:

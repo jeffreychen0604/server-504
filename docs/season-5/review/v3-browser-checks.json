@@ -1,0 +1,1038 @@
+{
+  "version": 3,
+  "scope": "UI component remake on existing production layout. Read-only content; feedback blocked.",
+  "viewportChecks": [
+    {
+      "viewport": [
+        320,
+        568
+      ],
+      "home": {
+        "overflow": false,
+        "cp": [
+          {
+            "text": "30,808,054,215",
+            "ok": true
+          },
+          {
+            "text": "16,310,121,231",
+            "ok": true
+          },
+          {
+            "text": "Unknown",
+            "ok": true
+          },
+          {
+            "text": "18,841,739,494",
+            "ok": true
+          },
+          {
+            "text": "54,237,643,887",
+            "ok": true
+          },
+          {
+            "text": "51,164,072,674",
+            "ok": true
+          },
+          {
+            "text": "45,969,028,935",
+            "ok": true
+          },
+          {
+            "text": "25,813,360,882",
+            "ok": true
+          },
+          {
+            "text": "16,683,699,744",
+            "ok": true
+          },
+          {
+            "text": "10,970,238,831",
+            "ok": true
+          },
+          {
+            "text": "6,094,770,588",
+            "ok": true
+          },
+          {
+            "text": "3,271,088,021",
+            "ok": true
+          }
+        ],
+        "alliances": 8,
+        "flags": 8,
+        "structure": [
+          "sealed-atmosphere dashboard-season-bg",
+          "dashboard-head",
+          "status-strip status-pulse-v2",
+          "dashboard-panel featured-panel",
+          "dashboard-two-col",
+          "dashboard-panel shared-panel",
+          "dashboard-bottom-grid",
+          "quick-access"
+        ],
+        "columns": "292px",
+        "shell": "260px minmax(0px, 1fr)"
+      },
+      "wiki": {
+        "overflow": false,
+        "categories": 8,
+        "icons": 8,
+        "hasOriginalGrid": true
+      },
+      "form": {
+        "overflow": false,
+        "inside": true,
+        "labels": true,
+        "fields": [
+          "contributionType",
+          "contributionTitle",
+          "contributionDetails",
+          "contributionIdentity",
+          "contributionContact"
+        ]
+      },
+      "search": {
+        "open": true,
+        "overflow": false,
+        "inside": true,
+        "results": 16
+      }
+    },
+    {
+      "viewport": [
+        375,
+        667
+      ],
+      "home": {
+        "overflow": false,
+        "cp": [
+          {
+            "text": "30,808,054,215",
+            "ok": true
+          },
+          {
+            "text": "16,310,121,231",
+            "ok": true
+          },
+          {
+            "text": "Unknown",
+            "ok": true
+          },
+          {
+            "text": "18,841,739,494",
+            "ok": true
+          },
+          {
+            "text": "54,237,643,887",
+            "ok": true
+          },
+          {
+            "text": "51,164,072,674",
+            "ok": true
+          },
+          {
+            "text": "45,969,028,935",
+            "ok": true
+          },
+          {
+            "text": "25,813,360,882",
+            "ok": true
+          },
+          {
+            "text": "16,683,699,744",
+            "ok": true
+          },
+          {
+            "text": "10,970,238,831",
+            "ok": true
+          },
+          {
+            "text": "6,094,770,588",
+            "ok": true
+          },
+          {
+            "text": "3,271,088,021",
+            "ok": true
+          }
+        ],
+        "alliances": 8,
+        "flags": 8,
+        "structure": [
+          "sealed-atmosphere dashboard-season-bg",
+          "dashboard-head",
+          "status-strip status-pulse-v2",
+          "dashboard-panel featured-panel",
+          "dashboard-two-col",
+          "dashboard-panel shared-panel",
+          "dashboard-bottom-grid",
+          "quick-access"
+        ],
+        "columns": "347px",
+        "shell": "260px minmax(0px, 1fr)"
+      },
+      "wiki": {
+        "overflow": false,
+        "categories": 8,
+        "icons": 8,
+        "hasOriginalGrid": true
+      },
+      "form": {
+        "overflow": false,
+        "inside": true,
+        "labels": true,
+        "fields": [
+          "contributionType",
+          "contributionTitle",
+          "contributionDetails",
+          "contributionIdentity",
+          "contributionContact"
+        ]
+      },
+      "search": {
+        "open": true,
+        "overflow": false,
+        "inside": true,
+        "results": 16
+      }
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "home": {
+        "overflow": false,
+        "cp": [
+          {
+            "text": "30,808,054,215",
+            "ok": true
+          },
+          {
+            "text": "16,310,121,231",
+            "ok": true
+          },
+          {
+            "text": "Unknown",
+            "ok": true
+          },
+          {
+            "text": "18,841,739,494",
+            "ok": true
+          },
+          {
+            "text": "54,237,643,887",
+            "ok": true
+          },
+          {
+            "text": "51,164,072,674",
+            "ok": true
+          },
+          {
+            "text": "45,969,028,935",
+            "ok": true
+          },
+          {
+            "text": "25,813,360,882",
+            "ok": true
+          },
+          {
+            "text": "16,683,699,744",
+            "ok": true
+          },
+          {
+            "text": "10,970,238,831",
+            "ok": true
+          },
+          {
+            "text": "6,094,770,588",
+            "ok": true
+          },
+          {
+            "text": "3,271,088,021",
+            "ok": true
+          }
+        ],
+        "alliances": 8,
+        "flags": 8,
+        "structure": [
+          "sealed-atmosphere dashboard-season-bg",
+          "dashboard-head",
+          "status-strip status-pulse-v2",
+          "dashboard-panel featured-panel",
+          "dashboard-two-col",
+          "dashboard-panel shared-panel",
+          "dashboard-bottom-grid",
+          "quick-access"
+        ],
+        "columns": "362px",
+        "shell": "260px minmax(0px, 1fr)"
+      },
+      "wiki": {
+        "overflow": false,
+        "categories": 8,
+        "icons": 8,
+        "hasOriginalGrid": true
+      },
+      "form": {
+        "overflow": false,
+        "inside": true,
+        "labels": true,
+        "fields": [
+          "contributionType",
+          "contributionTitle",
+          "contributionDetails",
+          "contributionIdentity",
+          "contributionContact"
+        ]
+      },
+      "search": {
+        "open": true,
+        "overflow": false,
+        "inside": true,
+        "results": 16
+      }
+    },
+    {
+      "viewport": [
+        768,
+        1024
+      ],
+      "home": {
+        "overflow": false,
+        "cp": [
+          {
+            "text": "30,808,054,215",
+            "ok": true
+          },
+          {
+            "text": "16,310,121,231",
+            "ok": true
+          },
+          {
+            "text": "Unknown",
+            "ok": true
+          },
+          {
+            "text": "18,841,739,494",
+            "ok": true
+          },
+          {
+            "text": "54,237,643,887",
+            "ok": true
+          },
+          {
+            "text": "51,164,072,674",
+            "ok": true
+          },
+          {
+            "text": "45,969,028,935",
+            "ok": true
+          },
+          {
+            "text": "25,813,360,882",
+            "ok": true
+          },
+          {
+            "text": "16,683,699,744",
+            "ok": true
+          },
+          {
+            "text": "10,970,238,831",
+            "ok": true
+          },
+          {
+            "text": "6,094,770,588",
+            "ok": true
+          },
+          {
+            "text": "3,271,088,021",
+            "ok": true
+          }
+        ],
+        "alliances": 8,
+        "flags": 8,
+        "structure": [
+          "sealed-atmosphere dashboard-season-bg",
+          "dashboard-head",
+          "status-strip status-pulse-v2",
+          "dashboard-panel featured-panel",
+          "dashboard-two-col",
+          "dashboard-panel shared-panel",
+          "dashboard-bottom-grid",
+          "quick-access"
+        ],
+        "columns": "416.219px",
+        "shell": "260px 493px"
+      },
+      "wiki": {
+        "overflow": false,
+        "categories": 8,
+        "icons": 8,
+        "hasOriginalGrid": true
+      },
+      "form": {
+        "overflow": false,
+        "inside": true,
+        "labels": true,
+        "fields": [
+          "contributionType",
+          "contributionTitle",
+          "contributionDetails",
+          "contributionIdentity",
+          "contributionContact"
+        ]
+      },
+      "search": {
+        "open": true,
+        "overflow": false,
+        "inside": true,
+        "results": 16
+      }
+    },
+    {
+      "viewport": [
+        1024,
+        768
+      ],
+      "home": {
+        "overflow": false,
+        "cp": [
+          {
+            "text": "30,808,054,215",
+            "ok": true
+          },
+          {
+            "text": "16,310,121,231",
+            "ok": true
+          },
+          {
+            "text": "Unknown",
+            "ok": true
+          },
+          {
+            "text": "18,841,739,494",
+            "ok": true
+          },
+          {
+            "text": "54,237,643,887",
+            "ok": true
+          },
+          {
+            "text": "51,164,072,674",
+            "ok": true
+          },
+          {
+            "text": "45,969,028,935",
+            "ok": true
+          },
+          {
+            "text": "25,813,360,882",
+            "ok": true
+          },
+          {
+            "text": "16,683,699,744",
+            "ok": true
+          },
+          {
+            "text": "10,970,238,831",
+            "ok": true
+          },
+          {
+            "text": "6,094,770,588",
+            "ok": true
+          },
+          {
+            "text": "3,271,088,021",
+            "ok": true
+          }
+        ],
+        "alliances": 8,
+        "flags": 8,
+        "structure": [
+          "sealed-atmosphere dashboard-season-bg",
+          "dashboard-head",
+          "status-strip status-pulse-v2",
+          "dashboard-panel featured-panel",
+          "dashboard-two-col",
+          "dashboard-panel shared-panel",
+          "dashboard-bottom-grid",
+          "quick-access"
+        ],
+        "columns": "646.625px",
+        "shell": "260px 749px"
+      },
+      "wiki": {
+        "overflow": false,
+        "categories": 8,
+        "icons": 8,
+        "hasOriginalGrid": true
+      },
+      "form": {
+        "overflow": false,
+        "inside": true,
+        "labels": true,
+        "fields": [
+          "contributionType",
+          "contributionTitle",
+          "contributionDetails",
+          "contributionIdentity",
+          "contributionContact"
+        ]
+      },
+      "search": {
+        "open": true,
+        "overflow": false,
+        "inside": true,
+        "results": 16
+      }
+    },
+    {
+      "viewport": [
+        1280,
+        900
+      ],
+      "home": {
+        "overflow": false,
+        "cp": [
+          {
+            "text": "30,808,054,215",
+            "ok": true
+          },
+          {
+            "text": "16,310,121,231",
+            "ok": true
+          },
+          {
+            "text": "Unknown",
+            "ok": true
+          },
+          {
+            "text": "18,841,739,494",
+            "ok": true
+          },
+          {
+            "text": "54,237,643,887",
+            "ok": true
+          },
+          {
+            "text": "51,164,072,674",
+            "ok": true
+          },
+          {
+            "text": "45,969,028,935",
+            "ok": true
+          },
+          {
+            "text": "25,813,360,882",
+            "ok": true
+          },
+          {
+            "text": "16,683,699,744",
+            "ok": true
+          },
+          {
+            "text": "10,970,238,831",
+            "ok": true
+          },
+          {
+            "text": "6,094,770,588",
+            "ok": true
+          },
+          {
+            "text": "3,271,088,021",
+            "ok": true
+          }
+        ],
+        "alliances": 8,
+        "flags": 8,
+        "structure": [
+          "sealed-atmosphere dashboard-season-bg",
+          "dashboard-head",
+          "status-strip status-pulse-v2",
+          "dashboard-panel featured-panel",
+          "dashboard-two-col",
+          "dashboard-panel shared-panel",
+          "dashboard-bottom-grid",
+          "quick-access"
+        ],
+        "columns": "532.484px 330.516px",
+        "shell": "260px 1005px"
+      },
+      "wiki": {
+        "overflow": false,
+        "categories": 8,
+        "icons": 8,
+        "hasOriginalGrid": true
+      },
+      "form": {
+        "overflow": false,
+        "inside": true,
+        "labels": true,
+        "fields": [
+          "contributionType",
+          "contributionTitle",
+          "contributionDetails",
+          "contributionIdentity",
+          "contributionContact"
+        ]
+      },
+      "search": {
+        "open": true,
+        "overflow": false,
+        "inside": true,
+        "results": 16
+      }
+    },
+    {
+      "viewport": [
+        1440,
+        1080
+      ],
+      "home": {
+        "overflow": false,
+        "cp": [
+          {
+            "text": "30,808,054,215",
+            "ok": true
+          },
+          {
+            "text": "16,310,121,231",
+            "ok": true
+          },
+          {
+            "text": "Unknown",
+            "ok": true
+          },
+          {
+            "text": "18,841,739,494",
+            "ok": true
+          },
+          {
+            "text": "54,237,643,887",
+            "ok": true
+          },
+          {
+            "text": "51,164,072,674",
+            "ok": true
+          },
+          {
+            "text": "45,969,028,935",
+            "ok": true
+          },
+          {
+            "text": "25,813,360,882",
+            "ok": true
+          },
+          {
+            "text": "16,683,699,744",
+            "ok": true
+          },
+          {
+            "text": "10,970,238,831",
+            "ok": true
+          },
+          {
+            "text": "6,094,770,588",
+            "ok": true
+          },
+          {
+            "text": "3,271,088,021",
+            "ok": true
+          }
+        ],
+        "alliances": 8,
+        "flags": 8,
+        "structure": [
+          "sealed-atmosphere dashboard-season-bg",
+          "dashboard-head",
+          "status-strip status-pulse-v2",
+          "dashboard-panel featured-panel",
+          "dashboard-two-col",
+          "dashboard-panel shared-panel",
+          "dashboard-bottom-grid",
+          "quick-access"
+        ],
+        "columns": "621.328px 385.672px",
+        "shell": "260px 1165px"
+      },
+      "wiki": {
+        "overflow": false,
+        "categories": 8,
+        "icons": 8,
+        "hasOriginalGrid": true
+      },
+      "form": {
+        "overflow": false,
+        "inside": true,
+        "labels": true,
+        "fields": [
+          "contributionType",
+          "contributionTitle",
+          "contributionDetails",
+          "contributionIdentity",
+          "contributionContact"
+        ]
+      },
+      "search": {
+        "open": true,
+        "overflow": false,
+        "inside": true,
+        "results": 16
+      }
+    },
+    {
+      "viewport": [
+        1920,
+        1080
+      ],
+      "home": {
+        "overflow": false,
+        "cp": [
+          {
+            "text": "30,808,054,215",
+            "ok": true
+          },
+          {
+            "text": "16,310,121,231",
+            "ok": true
+          },
+          {
+            "text": "Unknown",
+            "ok": true
+          },
+          {
+            "text": "18,841,739,494",
+            "ok": true
+          },
+          {
+            "text": "54,237,643,887",
+            "ok": true
+          },
+          {
+            "text": "51,164,072,674",
+            "ok": true
+          },
+          {
+            "text": "45,969,028,935",
+            "ok": true
+          },
+          {
+            "text": "25,813,360,882",
+            "ok": true
+          },
+          {
+            "text": "16,683,699,744",
+            "ok": true
+          },
+          {
+            "text": "10,970,238,831",
+            "ok": true
+          },
+          {
+            "text": "6,094,770,588",
+            "ok": true
+          },
+          {
+            "text": "3,271,088,021",
+            "ok": true
+          }
+        ],
+        "alliances": 8,
+        "flags": 8,
+        "structure": [
+          "sealed-atmosphere dashboard-season-bg",
+          "dashboard-head",
+          "status-strip status-pulse-v2",
+          "dashboard-panel featured-panel",
+          "dashboard-two-col",
+          "dashboard-panel shared-panel",
+          "dashboard-bottom-grid",
+          "quick-access"
+        ],
+        "columns": "830.5px 515.5px",
+        "shell": "260px 1645px"
+      },
+      "wiki": {
+        "overflow": false,
+        "categories": 8,
+        "icons": 8,
+        "hasOriginalGrid": true
+      },
+      "form": {
+        "overflow": false,
+        "inside": true,
+        "labels": true,
+        "fields": [
+          "contributionType",
+          "contributionTitle",
+          "contributionDetails",
+          "contributionIdentity",
+          "contributionContact"
+        ]
+      },
+      "search": {
+        "open": true,
+        "overflow": false,
+        "inside": true,
+        "results": 16
+      }
+    }
+  ],
+  "localeSmokeChecks": [
+    {
+      "viewport": [
+        1440,
+        1080
+      ],
+      "reports": [
+        {
+          "locale": "en",
+          "home": {
+            "cp": true,
+            "overflow": false,
+            "flags": 8
+          },
+          "wiki": {
+            "overflow": false,
+            "categories": 8
+          },
+          "form": {
+            "overflow": false,
+            "closeName": "Close suggestion form",
+            "note": "Season 5 UI preview · Form simulation only; no data is sent."
+          }
+        },
+        {
+          "locale": "fr",
+          "home": {
+            "cp": true,
+            "overflow": false,
+            "flags": 8
+          },
+          "wiki": {
+            "overflow": false,
+            "categories": 8
+          },
+          "form": {
+            "overflow": false,
+            "closeName": "Fermer le formulaire de suggestion",
+            "note": "Aperçu UI Saison 5 · Simulation, aucune donnée envoyée."
+          }
+        },
+        {
+          "locale": "es",
+          "home": {
+            "cp": true,
+            "overflow": false,
+            "flags": 8
+          },
+          "wiki": {
+            "overflow": false,
+            "categories": 8
+          },
+          "form": {
+            "overflow": false,
+            "closeName": "Cerrar formulario de sugerencias",
+            "note": "Vista previa UI Temporada 5 · Simulación, no se envían datos."
+          }
+        },
+        {
+          "locale": "pt",
+          "home": {
+            "cp": true,
+            "overflow": false,
+            "flags": 8
+          },
+          "wiki": {
+            "overflow": false,
+            "categories": 8
+          },
+          "form": {
+            "overflow": false,
+            "closeName": "Fechar formulário de sugestões",
+            "note": "Prévia UI Temporada 5 · Simulação, nenhum dado é enviado."
+          }
+        },
+        {
+          "locale": "ko",
+          "home": {
+            "cp": true,
+            "overflow": false,
+            "flags": 8
+          },
+          "wiki": {
+            "overflow": false,
+            "categories": 8
+          },
+          "form": {
+            "overflow": false,
+            "closeName": "제안 양식 닫기",
+            "note": "시즌 5 UI 미리보기 · 폼은 시뮬레이션이며 데이터가 전송되지 않습니다."
+          }
+        },
+        {
+          "locale": "vi",
+          "home": {
+            "cp": true,
+            "overflow": false,
+            "flags": 8
+          },
+          "wiki": {
+            "overflow": false,
+            "categories": 8
+          },
+          "form": {
+            "overflow": false,
+            "closeName": "Đóng biểu mẫu góp ý",
+            "note": "Bản thử UI Season 5 · Form chỉ mô phỏng, không gửi dữ liệu thật."
+          }
+        }
+      ]
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "reports": [
+        {
+          "locale": "en",
+          "home": {
+            "cp": true,
+            "overflow": false,
+            "flags": 8
+          },
+          "wiki": {
+            "overflow": false,
+            "categories": 8
+          },
+          "form": {
+            "overflow": false,
+            "closeName": "Close suggestion form",
+            "note": "Season 5 UI preview · Form simulation only; no data is sent."
+          }
+        },
+        {
+          "locale": "fr",
+          "home": {
+            "cp": true,
+            "overflow": false,
+            "flags": 8
+          },
+          "wiki": {
+            "overflow": false,
+            "categories": 8
+          },
+          "form": {
+            "overflow": false,
+            "closeName": "Fermer le formulaire de suggestion",
+            "note": "Aperçu UI Saison 5 · Simulation, aucune donnée envoyée."
+          }
+        },
+        {
+          "locale": "es",
+          "home": {
+            "cp": true,
+            "overflow": false,
+            "flags": 8
+          },
+          "wiki": {
+            "overflow": false,
+            "categories": 8
+          },
+          "form": {
+            "overflow": false,
+            "closeName": "Cerrar formulario de sugerencias",
+            "note": "Vista previa UI Temporada 5 · Simulación, no se envían datos."
+          }
+        },
+        {
+          "locale": "pt",
+          "home": {
+            "cp": true,
+            "overflow": false,
+            "flags": 8
+          },
+          "wiki": {
+            "overflow": false,
+            "categories": 8
+          },
+          "form": {
+            "overflow": false,
+            "closeName": "Fechar formulário de sugestões",
+            "note": "Prévia UI Temporada 5 · Simulação, nenhum dado é enviado."
+          }
+        },
+        {
+          "locale": "ko",
+          "home": {
+            "cp": true,
+            "overflow": false,
+            "flags": 8
+          },
+          "wiki": {
+            "overflow": false,
+            "categories": 8
+          },
+          "form": {
+            "overflow": false,
+            "closeName": "제안 양식 닫기",
+            "note": "시즌 5 UI 미리보기 · 폼은 시뮬레이션이며 데이터가 전송되지 않습니다."
+          }
+        },
+        {
+          "locale": "vi",
+          "home": {
+            "cp": true,
+            "overflow": false,
+            "flags": 8
+          },
+          "wiki": {
+            "overflow": false,
+            "categories": 8
+          },
+          "form": {
+            "overflow": false,
+            "closeName": "Đóng biểu mẫu góp ý",
+            "note": "Bản thử UI Season 5 · Form chỉ mô phỏng, không gửi dữ liệu thật."
+          }
+        }
+      ]
+    }
+  ],
+  "layoutSources": [
+    "styles.css",
+    "art-overrides.css",
+    "layout-simplify.css",
+    "pages-fancy.css",
+    "layout-refine.css",
+    "feedback.css",
+    "wiki-research.css",
+    "wiki-calculators.css",
+    "wiki-ia.css",
+    "search-discovery.css?v=20261103-ui",
+    "language-switcher.css",
+    "dashboard.css",
+    "guides.css",
+    "sealed-island-theme.css",
+    "fancy-home.css",
+    "home-v2-recovery.css?v=20260815-0755",
+    "home-v2-polish.css?v=20260815-1226",
+    "home-ops-v2.css?v=20261103-ui",
+    "alliance-banners.css?v=20260817-1646",
+    "active-alliance-trend.css?v=20261103-ui",
+    "home-shared-v2.css?v=20260815-2104",
+    "home-capital-banners.css?v=20260815-2125",
+    "home-hero-v2.css?v=20260815-1545",
+    "home-status-pulse-v2.css?v=20260815-2155",
+    "home-summer-paradise-live.css?v=20260817-2135",
+    "home-featured-v3.css?v=20260819-2102",
+    "lucky-magic-house-event.css?v=20260902-0858",
+    "catherines-party-event.css?v=20260820-1540",
+    "seasonal-sakura.css?v=20260905-2320",
+    "home-ui-refine.css?v=20260815-0537",
+    "home-asset-language.css?v=20260815-0558",
+    "home-asset-v2.css?v=20260815-0648"
+  ]
+}

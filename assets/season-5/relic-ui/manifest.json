@@ -1,0 +1,22 @@
+{
+  "generator": "built-in image_gen",
+  "processing": "Resize / format only; original composition and transparency preserved.",
+  "variants": [
+    {
+      "file": "assets/season-5/relic-ui/relic-frame.webp",
+      "width": 768,
+      "height": 768,
+      "bytes": 106900,
+      "sha256": "940342c665e11a7910be1738f6b796a333f561246c1d15ebce7b361fa63e87fb",
+      "hasAlpha": true
+    },
+    {
+      "file": "assets/season-5/relic-ui/relic-header.webp",
+      "width": 640,
+      "height": 213,
+      "bytes": 64206,
+      "sha256": "a879c364db98efa87c87118a24f907b8bc0dc60d403ab89a97519923ef506a07",
+      "hasAlpha": true
+    }
+  ]
+}

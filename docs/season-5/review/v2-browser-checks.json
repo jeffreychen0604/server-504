@@ -1,0 +1,846 @@
+{
+  "version": 2,
+  "scope": "Local UI prototype only; no production deployment or real feedback submission.",
+  "checks": [
+    {
+      "viewport": [
+        320,
+        568
+      ],
+      "dashboard": {
+        "overflow": false,
+        "cp": [
+          {
+            "text": "54,237,643,887",
+            "ok": true
+          },
+          {
+            "text": "51,164,072,674",
+            "ok": true
+          },
+          {
+            "text": "45,969,028,935",
+            "ok": true
+          },
+          {
+            "text": "54,237,643,887",
+            "ok": true
+          },
+          {
+            "text": "51,164,072,674",
+            "ok": true
+          },
+          {
+            "text": "45,969,028,935",
+            "ok": true
+          },
+          {
+            "text": "25,813,360,882",
+            "ok": true
+          },
+          {
+            "text": "16,683,699,744",
+            "ok": true
+          },
+          {
+            "text": "10,970,238,831",
+            "ok": true
+          },
+          {
+            "text": "6,094,770,588",
+            "ok": true
+          },
+          {
+            "text": "3,271,088,021",
+            "ok": true
+          },
+          {
+            "text": "30,808,054,215",
+            "ok": true
+          },
+          {
+            "text": "16,310,121,231",
+            "ok": true
+          },
+          {
+            "text": "Chưa có CP",
+            "ok": true
+          },
+          {
+            "text": "18,841,739,494",
+            "ok": true
+          }
+        ],
+        "roster": 8,
+        "banners": 8,
+        "podium": 3,
+        "power": "214,203,903,562"
+      },
+      "wiki": {
+        "overflow": false,
+        "categories": 8,
+        "results": 3,
+        "brief": "Watchtower & Industrial",
+        "link": "https://jeffreychen0604.github.io/server-504/#/wiki/watchtower-and-industrial",
+        "filtered": 0,
+        "archiveResults": 8,
+        "pagination": [
+          12,
+          24
+        ],
+        "empty": true
+      },
+      "assets": {
+        "overflow": false,
+        "groups": 4,
+        "downloads": 8
+      },
+      "form": {
+        "overflow": false,
+        "inside": true,
+        "unnamed": 0,
+        "radios": 3
+      },
+      "search": {
+        "overflow": false,
+        "inside": true,
+        "results": 3
+      }
+    },
+    {
+      "viewport": [
+        375,
+        667
+      ],
+      "dashboard": {
+        "overflow": false,
+        "cp": [
+          {
+            "text": "54,237,643,887",
+            "ok": true
+          },
+          {
+            "text": "51,164,072,674",
+            "ok": true
+          },
+          {
+            "text": "45,969,028,935",
+            "ok": true
+          },
+          {
+            "text": "54,237,643,887",
+            "ok": true
+          },
+          {
+            "text": "51,164,072,674",
+            "ok": true
+          },
+          {
+            "text": "45,969,028,935",
+            "ok": true
+          },
+          {
+            "text": "25,813,360,882",
+            "ok": true
+          },
+          {
+            "text": "16,683,699,744",
+            "ok": true
+          },
+          {
+            "text": "10,970,238,831",
+            "ok": true
+          },
+          {
+            "text": "6,094,770,588",
+            "ok": true
+          },
+          {
+            "text": "3,271,088,021",
+            "ok": true
+          },
+          {
+            "text": "30,808,054,215",
+            "ok": true
+          },
+          {
+            "text": "16,310,121,231",
+            "ok": true
+          },
+          {
+            "text": "Chưa có CP",
+            "ok": true
+          },
+          {
+            "text": "18,841,739,494",
+            "ok": true
+          }
+        ],
+        "roster": 8,
+        "banners": 8,
+        "podium": 3,
+        "power": "214,203,903,562"
+      },
+      "wiki": {
+        "overflow": false,
+        "categories": 8,
+        "results": 3,
+        "brief": "Watchtower & Industrial",
+        "link": "https://jeffreychen0604.github.io/server-504/#/wiki/watchtower-and-industrial",
+        "filtered": 0,
+        "archiveResults": 8,
+        "pagination": [
+          12,
+          24
+        ],
+        "empty": true
+      },
+      "assets": {
+        "overflow": false,
+        "groups": 4,
+        "downloads": 8
+      },
+      "form": {
+        "overflow": false,
+        "inside": true,
+        "unnamed": 0,
+        "radios": 3
+      },
+      "search": {
+        "overflow": false,
+        "inside": true,
+        "results": 3
+      }
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "dashboard": {
+        "overflow": false,
+        "cp": [
+          {
+            "text": "54,237,643,887",
+            "ok": true
+          },
+          {
+            "text": "51,164,072,674",
+            "ok": true
+          },
+          {
+            "text": "45,969,028,935",
+            "ok": true
+          },
+          {
+            "text": "54,237,643,887",
+            "ok": true
+          },
+          {
+            "text": "51,164,072,674",
+            "ok": true
+          },
+          {
+            "text": "45,969,028,935",
+            "ok": true
+          },
+          {
+            "text": "25,813,360,882",
+            "ok": true
+          },
+          {
+            "text": "16,683,699,744",
+            "ok": true
+          },
+          {
+            "text": "10,970,238,831",
+            "ok": true
+          },
+          {
+            "text": "6,094,770,588",
+            "ok": true
+          },
+          {
+            "text": "3,271,088,021",
+            "ok": true
+          },
+          {
+            "text": "30,808,054,215",
+            "ok": true
+          },
+          {
+            "text": "16,310,121,231",
+            "ok": true
+          },
+          {
+            "text": "Chưa có CP",
+            "ok": true
+          },
+          {
+            "text": "18,841,739,494",
+            "ok": true
+          }
+        ],
+        "roster": 8,
+        "banners": 8,
+        "podium": 3,
+        "power": "214,203,903,562"
+      },
+      "wiki": {
+        "overflow": false,
+        "categories": 8,
+        "results": 3,
+        "brief": "Watchtower & Industrial",
+        "link": "https://jeffreychen0604.github.io/server-504/#/wiki/watchtower-and-industrial",
+        "filtered": 0,
+        "archiveResults": 8,
+        "pagination": [
+          12,
+          24
+        ],
+        "empty": true
+      },
+      "assets": {
+        "overflow": false,
+        "groups": 4,
+        "downloads": 8
+      },
+      "form": {
+        "overflow": false,
+        "inside": true,
+        "unnamed": 0,
+        "radios": 3
+      },
+      "search": {
+        "overflow": false,
+        "inside": true,
+        "results": 3
+      }
+    },
+    {
+      "viewport": [
+        768,
+        1024
+      ],
+      "dashboard": {
+        "overflow": false,
+        "cp": [
+          {
+            "text": "54,237,643,887",
+            "ok": true
+          },
+          {
+            "text": "51,164,072,674",
+            "ok": true
+          },
+          {
+            "text": "45,969,028,935",
+            "ok": true
+          },
+          {
+            "text": "54,237,643,887",
+            "ok": true
+          },
+          {
+            "text": "51,164,072,674",
+            "ok": true
+          },
+          {
+            "text": "45,969,028,935",
+            "ok": true
+          },
+          {
+            "text": "25,813,360,882",
+            "ok": true
+          },
+          {
+            "text": "16,683,699,744",
+            "ok": true
+          },
+          {
+            "text": "10,970,238,831",
+            "ok": true
+          },
+          {
+            "text": "6,094,770,588",
+            "ok": true
+          },
+          {
+            "text": "3,271,088,021",
+            "ok": true
+          },
+          {
+            "text": "30,808,054,215",
+            "ok": true
+          },
+          {
+            "text": "16,310,121,231",
+            "ok": true
+          },
+          {
+            "text": "Chưa có CP",
+            "ok": true
+          },
+          {
+            "text": "18,841,739,494",
+            "ok": true
+          }
+        ],
+        "roster": 8,
+        "banners": 8,
+        "podium": 3,
+        "power": "214,203,903,562"
+      },
+      "wiki": {
+        "overflow": false,
+        "categories": 8,
+        "results": 3,
+        "brief": "Watchtower & Industrial",
+        "link": "https://jeffreychen0604.github.io/server-504/#/wiki/watchtower-and-industrial",
+        "filtered": 0,
+        "archiveResults": 8,
+        "pagination": [
+          12,
+          24
+        ],
+        "empty": true
+      },
+      "assets": {
+        "overflow": false,
+        "groups": 4,
+        "downloads": 8
+      },
+      "form": {
+        "overflow": false,
+        "inside": true,
+        "unnamed": 0,
+        "radios": 3
+      },
+      "search": {
+        "overflow": false,
+        "inside": true,
+        "results": 3
+      }
+    },
+    {
+      "viewport": [
+        1024,
+        768
+      ],
+      "dashboard": {
+        "overflow": false,
+        "cp": [
+          {
+            "text": "54,237,643,887",
+            "ok": true
+          },
+          {
+            "text": "51,164,072,674",
+            "ok": true
+          },
+          {
+            "text": "45,969,028,935",
+            "ok": true
+          },
+          {
+            "text": "54,237,643,887",
+            "ok": true
+          },
+          {
+            "text": "51,164,072,674",
+            "ok": true
+          },
+          {
+            "text": "45,969,028,935",
+            "ok": true
+          },
+          {
+            "text": "25,813,360,882",
+            "ok": true
+          },
+          {
+            "text": "16,683,699,744",
+            "ok": true
+          },
+          {
+            "text": "10,970,238,831",
+            "ok": true
+          },
+          {
+            "text": "6,094,770,588",
+            "ok": true
+          },
+          {
+            "text": "3,271,088,021",
+            "ok": true
+          },
+          {
+            "text": "30,808,054,215",
+            "ok": true
+          },
+          {
+            "text": "16,310,121,231",
+            "ok": true
+          },
+          {
+            "text": "Chưa có CP",
+            "ok": true
+          },
+          {
+            "text": "18,841,739,494",
+            "ok": true
+          }
+        ],
+        "roster": 8,
+        "banners": 8,
+        "podium": 3,
+        "power": "214,203,903,562"
+      },
+      "wiki": {
+        "overflow": false,
+        "categories": 8,
+        "results": 3,
+        "brief": "Watchtower & Industrial",
+        "link": "https://jeffreychen0604.github.io/server-504/#/wiki/watchtower-and-industrial",
+        "filtered": 0,
+        "archiveResults": 8,
+        "pagination": [
+          12,
+          24
+        ],
+        "empty": true
+      },
+      "assets": {
+        "overflow": false,
+        "groups": 4,
+        "downloads": 8
+      },
+      "form": {
+        "overflow": false,
+        "inside": true,
+        "unnamed": 0,
+        "radios": 3
+      },
+      "search": {
+        "overflow": false,
+        "inside": true,
+        "results": 3
+      }
+    },
+    {
+      "viewport": [
+        1280,
+        900
+      ],
+      "dashboard": {
+        "overflow": false,
+        "cp": [
+          {
+            "text": "54,237,643,887",
+            "ok": true
+          },
+          {
+            "text": "51,164,072,674",
+            "ok": true
+          },
+          {
+            "text": "45,969,028,935",
+            "ok": true
+          },
+          {
+            "text": "54,237,643,887",
+            "ok": true
+          },
+          {
+            "text": "51,164,072,674",
+            "ok": true
+          },
+          {
+            "text": "45,969,028,935",
+            "ok": true
+          },
+          {
+            "text": "25,813,360,882",
+            "ok": true
+          },
+          {
+            "text": "16,683,699,744",
+            "ok": true
+          },
+          {
+            "text": "10,970,238,831",
+            "ok": true
+          },
+          {
+            "text": "6,094,770,588",
+            "ok": true
+          },
+          {
+            "text": "3,271,088,021",
+            "ok": true
+          },
+          {
+            "text": "30,808,054,215",
+            "ok": true
+          },
+          {
+            "text": "16,310,121,231",
+            "ok": true
+          },
+          {
+            "text": "Chưa có CP",
+            "ok": true
+          },
+          {
+            "text": "18,841,739,494",
+            "ok": true
+          }
+        ],
+        "roster": 8,
+        "banners": 8,
+        "podium": 3,
+        "power": "214,203,903,562"
+      },
+      "wiki": {
+        "overflow": false,
+        "categories": 8,
+        "results": 3,
+        "brief": "Watchtower & Industrial",
+        "link": "https://jeffreychen0604.github.io/server-504/#/wiki/watchtower-and-industrial",
+        "filtered": 0,
+        "archiveResults": 8,
+        "pagination": [
+          12,
+          24
+        ],
+        "empty": true
+      },
+      "assets": {
+        "overflow": false,
+        "groups": 4,
+        "downloads": 8
+      },
+      "form": {
+        "overflow": false,
+        "inside": true,
+        "unnamed": 0,
+        "radios": 3
+      },
+      "search": {
+        "overflow": false,
+        "inside": true,
+        "results": 3
+      }
+    },
+    {
+      "viewport": [
+        1440,
+        1080
+      ],
+      "dashboard": {
+        "overflow": false,
+        "cp": [
+          {
+            "text": "54,237,643,887",
+            "ok": true
+          },
+          {
+            "text": "51,164,072,674",
+            "ok": true
+          },
+          {
+            "text": "45,969,028,935",
+            "ok": true
+          },
+          {
+            "text": "54,237,643,887",
+            "ok": true
+          },
+          {
+            "text": "51,164,072,674",
+            "ok": true
+          },
+          {
+            "text": "45,969,028,935",
+            "ok": true
+          },
+          {
+            "text": "25,813,360,882",
+            "ok": true
+          },
+          {
+            "text": "16,683,699,744",
+            "ok": true
+          },
+          {
+            "text": "10,970,238,831",
+            "ok": true
+          },
+          {
+            "text": "6,094,770,588",
+            "ok": true
+          },
+          {
+            "text": "3,271,088,021",
+            "ok": true
+          },
+          {
+            "text": "30,808,054,215",
+            "ok": true
+          },
+          {
+            "text": "16,310,121,231",
+            "ok": true
+          },
+          {
+            "text": "Chưa có CP",
+            "ok": true
+          },
+          {
+            "text": "18,841,739,494",
+            "ok": true
+          }
+        ],
+        "roster": 8,
+        "banners": 8,
+        "podium": 3,
+        "power": "214,203,903,562"
+      },
+      "wiki": {
+        "overflow": false,
+        "categories": 8,
+        "results": 3,
+        "brief": "Watchtower & Industrial",
+        "link": "https://jeffreychen0604.github.io/server-504/#/wiki/watchtower-and-industrial",
+        "filtered": 0,
+        "archiveResults": 8,
+        "pagination": [
+          12,
+          24
+        ],
+        "empty": true
+      },
+      "assets": {
+        "overflow": false,
+        "groups": 4,
+        "downloads": 8
+      },
+      "form": {
+        "overflow": false,
+        "inside": true,
+        "unnamed": 0,
+        "radios": 3
+      },
+      "search": {
+        "overflow": false,
+        "inside": true,
+        "results": 3
+      }
+    },
+    {
+      "viewport": [
+        1920,
+        1080
+      ],
+      "dashboard": {
+        "overflow": false,
+        "cp": [
+          {
+            "text": "54,237,643,887",
+            "ok": true
+          },
+          {
+            "text": "51,164,072,674",
+            "ok": true
+          },
+          {
+            "text": "45,969,028,935",
+            "ok": true
+          },
+          {
+            "text": "54,237,643,887",
+            "ok": true
+          },
+          {
+            "text": "51,164,072,674",
+            "ok": true
+          },
+          {
+            "text": "45,969,028,935",
+            "ok": true
+          },
+          {
+            "text": "25,813,360,882",
+            "ok": true
+          },
+          {
+            "text": "16,683,699,744",
+            "ok": true
+          },
+          {
+            "text": "10,970,238,831",
+            "ok": true
+          },
+          {
+            "text": "6,094,770,588",
+            "ok": true
+          },
+          {
+            "text": "3,271,088,021",
+            "ok": true
+          },
+          {
+            "text": "30,808,054,215",
+            "ok": true
+          },
+          {
+            "text": "16,310,121,231",
+            "ok": true
+          },
+          {
+            "text": "Chưa có CP",
+            "ok": true
+          },
+          {
+            "text": "18,841,739,494",
+            "ok": true
+          }
+        ],
+        "roster": 8,
+        "banners": 8,
+        "podium": 3,
+        "power": "214,203,903,562"
+      },
+      "wiki": {
+        "overflow": false,
+        "categories": 8,
+        "results": 3,
+        "brief": "Watchtower & Industrial",
+        "link": "https://jeffreychen0604.github.io/server-504/#/wiki/watchtower-and-industrial",
+        "filtered": 0,
+        "archiveResults": 8,
+        "pagination": [
+          12,
+          24
+        ],
+        "empty": true
+      },
+      "assets": {
+        "overflow": false,
+        "groups": 4,
+        "downloads": 8
+      },
+      "form": {
+        "overflow": false,
+        "inside": true,
+        "unnamed": 0,
+        "radios": 3
+      },
+      "search": {
+        "overflow": false,
+        "inside": true,
+        "results": 3
+      }
+    }
+  ]
+}

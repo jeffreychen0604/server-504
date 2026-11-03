@@ -1,0 +1,16 @@
+/* Season 5 art direction. Game season/data remain controlled by server-status.json. */
+.s5-season,.s5-preview {
+  --s5-bg: #100e0c;
+  --s5-panel: #1b1813;
+  --s5-panel-raised: #252017;
+  --s5-line: #51412c;
+  --s5-gold: #e7b967;
+  --s5-gold-dark: #a6793a;
+  --s5-text: #f5eddf;
+  --s5-muted: #c0b29d;
+  --s5-teal: #85cabc;
+  --s5-danger: #f2937c;
+  --s5-title-font: 'Bahnschrift', 'Aptos Display', 'Arial Narrow', sans-serif;
+  --s5-body-font: 'Segoe UI', 'Helvetica Neue', sans-serif;
+  color-scheme: dark;
+}

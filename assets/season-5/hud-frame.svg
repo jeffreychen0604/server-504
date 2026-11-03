@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600" preserveAspectRatio="none" fill="none">
+  <defs><linearGradient id="metal" x2="0" y2="1"><stop stop-color="#ffe8aa"/><stop offset=".15" stop-color="#af8549"/><stop offset=".55" stop-color="#705735"/><stop offset="1" stop-color="#d9b677"/></linearGradient></defs>
+  <path d="M2 2H980L998 20V598H20L2 580Z" stroke="#090e14" stroke-width="6" vector-effect="non-scaling-stroke"/>
+  <path d="M2 2H980L998 20V598H20L2 580Z" stroke="url(#metal)" stroke-width="3" vector-effect="non-scaling-stroke"/>
+  <path d="M8 8H974L992 26V592H26L8 574Z" stroke="#e8c68244" stroke-width="1" vector-effect="non-scaling-stroke"/>
+  <path d="M2 30V2H76M924 598H998V568M2 537V580L20 598H65M924 2H980L998 20V63" stroke="#f0d58f" stroke-width="4" vector-effect="non-scaling-stroke"/>
+  <path d="M13 13H90L84 18H13ZM910 582H987V587H904Z" fill="#a4824c80"/>
+  <path d="M945 4H962M38 596H55" stroke="#85d4c3" stroke-width="3" vector-effect="non-scaling-stroke"/>
+  <path d="M14 29L19 34 14 39 9 34ZM986 561L991 566 986 571 981 566Z" fill="#d6b06a" stroke="#ffe2a1" stroke-width="1" vector-effect="non-scaling-stroke"/>
+</svg>

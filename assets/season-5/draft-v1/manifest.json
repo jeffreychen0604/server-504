@@ -1,0 +1,80 @@
+{
+  "status": "design-preview",
+  "created": "2026-11-03",
+  "generator": "built-in image_gen",
+  "description": "Reference-inspired concept artwork; not original game exports.",
+  "variants": [
+    {
+      "asset": "hero-desktop",
+      "file": "assets/season-5/draft-v1/hero-desktop.webp",
+      "width": 1760,
+      "height": 880,
+      "bytes": 128082,
+      "sha256": "e79c32178eadf1df5862c8d09c770ec63f477e4d73b5515da6155b0c27327347",
+      "hasAlpha": false
+    },
+    {
+      "asset": "hero-desktop",
+      "file": "assets/season-5/draft-v1/hero-desktop-960.webp",
+      "width": 960,
+      "height": 480,
+      "bytes": 44364,
+      "sha256": "82b58edb95f220198e594556f61fb4a63ff41aa8a67ceb8b0539586a63a87f08",
+      "hasAlpha": false
+    },
+    {
+      "asset": "hero-mobile",
+      "file": "assets/season-5/draft-v1/hero-mobile.webp",
+      "width": 768,
+      "height": 1152,
+      "bytes": 64704,
+      "sha256": "191d15e7f00f21314a6bdb01931ce5ab68bece3df9c9f2875f1d3e50ed2e7402",
+      "hasAlpha": false
+    },
+    {
+      "asset": "hero-mobile",
+      "file": "assets/season-5/draft-v1/hero-mobile-480.webp",
+      "width": 480,
+      "height": 720,
+      "bytes": 26396,
+      "sha256": "8189c720a76ef7f6b0977090f39ef82d54530c69d32a1634fe521817e6710b3b",
+      "hasAlpha": false
+    },
+    {
+      "asset": "wiki-sanctuary",
+      "file": "assets/season-5/draft-v1/wiki-sanctuary.webp",
+      "width": 1280,
+      "height": 640,
+      "bytes": 63738,
+      "sha256": "4d673449556e8a0bf96b5b2d891908da51b91bcc402b1d35ab36262ad3cf66b0",
+      "hasAlpha": false
+    },
+    {
+      "asset": "wiki-sanctuary",
+      "file": "assets/season-5/draft-v1/wiki-sanctuary-640.webp",
+      "width": 640,
+      "height": 320,
+      "bytes": 19126,
+      "sha256": "b8ddcf73f8f529cda78811f5446aa5682ac9a087be5f087409ec27f216851f27",
+      "hasAlpha": false
+    },
+    {
+      "asset": "serpent-crest",
+      "file": "assets/season-5/draft-v1/serpent-crest.webp",
+      "width": 512,
+      "height": 512,
+      "bytes": 80858,
+      "sha256": "c5cf25eece36602328386bcd449536c726d0aa069eaf5b1a8a37567f2adbe305",
+      "hasAlpha": true
+    },
+    {
+      "asset": "serpent-crest",
+      "file": "assets/season-5/draft-v1/serpent-crest-128.png",
+      "width": 128,
+      "height": 128,
+      "bytes": 29991,
+      "sha256": "e7428da571b85ed2934f3745837c21ced5009ee769b27dd99dbf997626af3da4",
+      "hasAlpha": true
+    }
+  ]
+}

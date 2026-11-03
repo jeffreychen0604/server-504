@@ -1,0 +1,82 @@
+{
+  "created": "2026-11-03",
+  "tool": "built-in image_gen",
+  "status": "concept-artwork-not-official-game-exports",
+  "processing": "Composition preserved. PNG masters copied into docs/season-5/masters. Responsive WebP/PNG variants exported with Lanczos resizing and alpha preservation.",
+  "references": [
+    {
+      "id": "01",
+      "filename": "codex-clipboard-fc1d080a-3d34-4a38-bf43-87f2c28323a4.png",
+      "role": "Season preview / temple, ring, serpent"
+    },
+    {
+      "id": "02",
+      "filename": "codex-clipboard-3f01e63a-94e2-4bff-b713-52d1b9a75c58.png",
+      "role": "Intact desert citadel"
+    },
+    {
+      "id": "03",
+      "filename": "codex-clipboard-4fcac20c-8962-48fc-92ce-75cad10d6d4d.png",
+      "role": "Ruined desert building"
+    },
+    {
+      "id": "04",
+      "filename": "codex-clipboard-39fa0e92-59be-4bed-b506-d399a3f87d9e.png",
+      "role": "Cobra relief gateway"
+    },
+    {
+      "id": "05",
+      "filename": "codex-clipboard-264a5539-c93d-4866-b10a-8532b651ca35.png",
+      "role": "Scales / civic sanctuary"
+    },
+    {
+      "id": "06",
+      "filename": "codex-clipboard-9afb51b2-785b-4e8e-ab4c-eab820e354ed.png",
+      "role": "Battle / golden guardian"
+    },
+    {
+      "id": "07",
+      "filename": "codex-clipboard-128fc698-b0be-4e5a-b805-d6d3d734b4dc.png",
+      "role": "Battle / serpent temple"
+    },
+    {
+      "id": "08",
+      "filename": "codex-clipboard-eb29d04c-4eeb-43bf-b5b3-7c2bcd772eb4.png",
+      "role": "Skill tree / circular progression motifs"
+    },
+    {
+      "id": "09",
+      "filename": "codex-clipboard-da84b3fb-1838-40ce-b7d7-d9efaa5de73a.png",
+      "role": "Sands Catastrophe / mummy priest"
+    },
+    {
+      "id": "10",
+      "filename": "codex-clipboard-bb6d51a9-f0ee-43ec-a5c3-175f999fddd7.png",
+      "role": "Season Weekly Pass / ceremonial basin"
+    }
+  ],
+  "prompts": [
+    {
+      "id": "hero-desktop",
+      "prompt": "Use case: stylized-concept.\nAsset type: Season 5 website desktop hero background, a single horizontal 2:1 landscape image, no UI.\nInput images: Image 1 is the user's season preview for the desert temple / gigantic coiling serpent atmosphere. Image 2 is a style and architecture reference for the Egyptian-inspired serpent temple. These are references, not literal screenshots to copy.\nPrimary request: Create a polished game cinematic background for a Dark War Survival community portal preparing for Season 5. Recognizable ancient sandstone serpent citadel on the RIGHT 45% of the frame, a monumental ring held above the temple by curved gold supports, colossal dark bronze cobra coils partly buried around its base, warm tiny braziers, distant desert cliffs and dusty sunset. Match the references' stylized 3D strategy-game art, carved stone, aged gold, subtle turquoise inlays, hand-painted material shading. The LEFT 50% is quiet very dark umber desert haze and low dunes, intentionally clean for readable HTML heading and buttons. The architecture remains fully within the frame with breathing room, cinematic strong silhouette rather than clutter.\nLighting/mood: dusk sandstorm, amber rim light on the right, deep charcoal brown shadows, gentle atmospheric depth, restrained ember glow.\nConstraints: no text, letters, numbers, logos, interface, frames, badges, watermark, characters or modern skyscrapers; no Japanese motifs or Norse snow. Background extends edge-to-edge. This is one finished background, not a collage."
+    },
+    {
+      "id": "hero-mobile",
+      "prompt": "Use case: stylized-concept. Asset type: mobile website hero background, one vertical 2:3 portrait image.\nInput image: visual continuity reference, the approved desktop Season 5 desert serpent citadel background. Generate a mobile companion composition of the same temple, same monumental gold ring with turquoise inlays, same coiling dark bronze serpent, braziers, dusky golden desert.\nComposition: the UPPER 43% is quiet dark umber/charcoal sky and dust haze, no detailed objects, reserved for HTML text. Place the entire ring and temple together in the LOWER 55%, centered slightly right with the full ring visible and generous side margins. Layered dunes in foreground, thin warm rim light. Match the polished stylized 3D strategy-game art and aged sandstone/gold materials, no photoreal humans.\nConstraints: one continuous cinematic image; no interface, text, letters, numbers, watermark, badge or borders. No bright objects in the upper third. Preserve the architecture's identity; this is a responsive mobile companion, not a different theme."
+    },
+    {
+      "id": "wiki-sanctuary",
+      "prompt": "Use case: stylized-concept. Asset type: Wiki / knowledge archive banner for the same Season 5 gaming website. A single horizontal 2:1 image.\nInput images: Image 1 establishes the Egyptian-inspired sandstone ruins and desert setting; Image 2 establishes the gold ceremonial scales and turquoise stone inlays; Image 3 establishes the final website hero's dark dusk palette and polished 3D art continuity.\nScene: an ancient desert knowledge sanctuary, weathered sandstone courtyard, fragments of monumental columns, one circular doorway with a gold stylized cobra relief, subtle turquoise inlays, and a small gold balance scale on a stone plinth. Composition: architectural subjects concentrated on the RIGHT half, LEFT half open deep umber dust haze with only low ruins at the edge so HTML Wiki titles remain readable. Strong architectural silhouette, warm bronze highlights, restrained turquoise glow, minimal clutter, dusk light. Match stylized 3D strategy-game rendering, not a real photograph. Medium-wide view, calm archive mood rather than battle.\nConstraints: no writing, readable hieroglyphs, letters, numbers, text, map labels, borders, watermark or interface; no books, humans, floating holograms or unrelated modern objects. One continuous landscape image."
+    },
+    {
+      "id": "serpent-crest",
+      "prompt": "Use case: stylized-concept. Asset type: a single standalone decorative Season 5 crest, square canvas with a genuinely transparent background, suitable for a gaming website header and season card.\nInput image: the final desktop hero establishes gold/bronze sandstone serpent temple and turquoise inlays. Create a matching original crest: one upright stylized cobra hood and head sculpted in aged gold, inside a thick partially open ceremonial gold ring, two small restrained turquoise stone inlays. Symmetric frontal composition, strong readable silhouette at 64 pixels, sculpted bevels and soft material highlights, dark recesses, warm patina. Solid three-dimensional ceremonial medallion with no enclosing square tile; ample transparent margin around the ring. Match polished strategy game art. This is a conceptual season emblem, not an official game logo.\nConstraints: actual transparent alpha outside the crest, no background, floor, drop shadow outside the object, caption, letters, numbers, watermark, UI, huge bloom, excess tiny ornamentation or crown. Only one crest, centered."
+    }
+  ],
+  "masters": [
+    "masters/hero-desktop.png",
+    "masters/hero-mobile.png",
+    "masters/wiki-sanctuary.png",
+    "masters/serpent-crest.png"
+  ]
+}

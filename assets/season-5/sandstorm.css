@@ -1,0 +1,23 @@
+/* Ambient layers do not participate in layout or pointer hit testing. */
+.s5-sandstorm { position:fixed; inset:0; z-index:100; overflow:hidden; pointer-events:none; contain:strict; }
+.s5-sandstorm canvas { position:absolute; inset:0; width:100%; height:100%; opacity:.95; }
+.s5-dust-veil { position:absolute; inset:-25%; opacity:0; pointer-events:none; background:radial-gradient(ellipse at 28% 58%,#c48d4266,transparent 45%),radial-gradient(ellipse at 65% 78%,#dea95c45,transparent 40%); transform:translate3d(-18%,8%,0) rotate(-9deg); }
+body[data-sand-active=true] .s5-dust-veil { animation:s5-sand-gust 9s ease-in-out infinite; }
+.s5-dust-veil.far { background:radial-gradient(ellipse at 18% 28%,#a87c4245,transparent 46%),radial-gradient(ellipse at 68% 62%,#e7b96f50,transparent 42%); animation-duration:14s; animation-delay:-7s; }
+body[data-sand-active=false] .s5-sandstorm { visibility:hidden; }
+.s5-weather { flex:1 0 100%; display:flex; align-items:center; justify-content:space-between; gap:10px; min-height:44px; margin-top:8px; padding:9px 12px; border:1px solid #87663d; border-radius:2px; color:#ecd5a9; background:linear-gradient(#2e2820,#151a19); box-shadow:inset 0 1px #f5d49720,0 3px #090b0b; text-align:left; cursor:pointer; font:650 10px var(--s5-title-font); letter-spacing:.05em; }
+.s5-weather svg { width:21px; height:21px; flex:0 0 21px; fill:none; stroke:#e6b96c; stroke-width:1.5; }
+.s5-weather>span { flex:1; }
+.s5-weather>b { color:#6fa797; font-size:9px; }
+.s5-weather[aria-pressed=true]>b { color:#9fe5d4; text-shadow:0 0 8px #6bdbb944; }
+.s5-weather:hover { border-color:#e2b975; background:linear-gradient(#453727,#1b2320); }
+.s5-weather:focus-visible { outline:2px solid #a0dfcf; outline-offset:3px; }
+.s5-weather:disabled { cursor:default; opacity:.65; }
+.sidebar-foot:has(.s5-weather) { flex-wrap:wrap; }
+body[data-sand-active=true] .s5-crest-halo::before { animation:s5-sigil-turn 48s linear infinite; }
+body[data-sand-active=true] .s5-crest-halo { animation:s5-sigil-glow 7s ease-in-out infinite; }
+@keyframes s5-sigil-turn { from { transform:rotate(22deg); } to { transform:rotate(382deg); } }
+@keyframes s5-sigil-glow { 0%,100% { opacity:.65; } 50% { opacity:1; } }
+@keyframes s5-sand-gust { 0%,100% { opacity:.35; transform:translate3d(-18%,8%,0) rotate(-9deg); } 40% { opacity:.85; } 65% { opacity:.5; transform:translate3d(18%,-6%,0) rotate(-6deg); } }
+@media(max-width:760px) { .s5-sandstorm canvas { opacity:.85; } .s5-dust-veil.far { display:none; } }
+@media(prefers-reduced-motion:reduce) { .s5-sandstorm { display:none!important; } .s5-dust-veil { animation:none!important; } }

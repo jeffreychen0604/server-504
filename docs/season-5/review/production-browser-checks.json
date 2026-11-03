@@ -1,0 +1,1534 @@
+{
+  "date": "2026-11-03",
+  "version": "V3.2",
+  "scope": "Production entrypoint on localhost. Real feedback config/runtime retained; browser-only Turnstile stub for layout checks, no real submission.",
+  "viewports": [
+    {
+      "viewport": [
+        320,
+        568
+      ],
+      "locale": "vi",
+      "home": {
+        "overflow": false,
+        "cp": [
+          {
+            "text": "30,808,054,215",
+            "insideCell": true,
+            "insideOwnBox": true
+          },
+          {
+            "text": "16,310,121,231",
+            "insideCell": true,
+            "insideOwnBox": true
+          },
+          {
+            "text": "Unknown",
+            "insideCell": true,
+            "insideOwnBox": true
+          },
+          {
+            "text": "18,841,739,494",
+            "insideCell": true,
+            "insideOwnBox": true
+          },
+          {
+            "text": "54,237,643,887",
+            "insideCell": true,
+            "insideOwnBox": true
+          },
+          {
+            "text": "51,164,072,674",
+            "insideCell": true,
+            "insideOwnBox": true
+          },
+          {
+            "text": "45,969,028,935",
+            "insideCell": true,
+            "insideOwnBox": true
+          },
+          {
+            "text": "25,813,360,882",
+            "insideCell": true,
+            "insideOwnBox": true
+          },
+          {
+            "text": "16,683,699,744",
+            "insideCell": true,
+            "insideOwnBox": true
+          },
+          {
+            "text": "10,970,238,831",
+            "insideCell": true,
+            "insideOwnBox": true
+          },
+          {
+            "text": "6,094,770,588",
+            "insideCell": true,
+            "insideOwnBox": true
+          },
+          {
+            "text": "3,271,088,021",
+            "insideCell": true,
+            "insideOwnBox": true
+          }
+        ],
+        "flags": 8,
+        "frames": 7,
+        "medals": 6,
+        "capitalFrames": 0,
+        "capital": [
+          {
+            "direction": "column",
+            "border": "0px",
+            "copyFits": true
+          },
+          {
+            "direction": "column",
+            "border": "0px",
+            "copyFits": true
+          }
+        ],
+        "armory": true
+      },
+      "wiki": {
+        "overflow": false,
+        "tiles": 8,
+        "icons": 8,
+        "frames": 17,
+        "selected": "combat-heroes",
+        "panels": 1
+      },
+      "form": {
+        "overflow": false,
+        "fields": [
+          {
+            "id": "contributionType",
+            "label": true,
+            "insideHorizontally": true
+          },
+          {
+            "id": "contributionTitle",
+            "label": true,
+            "insideHorizontally": true
+          },
+          {
+            "id": "contributionDetails",
+            "label": true,
+            "insideHorizontally": true
+          },
+          {
+            "id": "contributionIdentity",
+            "label": true,
+            "insideHorizontally": true
+          },
+          {
+            "id": "contributionContact",
+            "label": true,
+            "insideHorizontally": true
+          }
+        ],
+        "closeWidth": 44,
+        "closeHeight": 44,
+        "accessibleName": "contributeTitle",
+        "frames": 1
+      },
+      "search": {
+        "overflow": false,
+        "insideViewport": true
+      },
+      "weather": {
+        "requested": true,
+        "running": false,
+        "reduced": false,
+        "hidden": false,
+        "dialogOpen": false,
+        "frameCount": 52,
+        "coverage": "viewport",
+        "intensity": "storm",
+        "backgroundParticles": 300,
+        "dustBanks": 6,
+        "heroParticles": 0,
+        "canvasCount": 1,
+        "dpr": 1
+      },
+      "loadedArt": true
+    },
+    {
+      "viewport": [
+        375,
+        667
+      ],
+      "locale": "vi",
+      "home": {
+        "overflow": false,
+        "cp": [
+          {
+            "text": "30,808,054,215",
+            "insideCell": true,
+            "insideOwnBox": true
+          },
+          {
+            "text": "16,310,121,231",
+            "insideCell": true,
+            "insideOwnBox": true
+          },
+          {
+            "text": "Unknown",
+            "insideCell": true,
+            "insideOwnBox": true
+          },
+          {
+            "text": "18,841,739,494",
+            "insideCell": true,
+            "insideOwnBox": true
+          },
+          {
+            "text": "54,237,643,887",
+            "insideCell": true,
+            "insideOwnBox": true
+          },
+          {
+            "text": "51,164,072,674",
+            "insideCell": true,
+            "insideOwnBox": true
+          },
+          {
+            "text": "45,969,028,935",
+            "insideCell": true,
+            "insideOwnBox": true
+          },
+          {
+            "text": "25,813,360,882",
+            "insideCell": true,
+            "insideOwnBox": true
+          },
+          {
+            "text": "16,683,699,744",
+            "insideCell": true,
+            "insideOwnBox": true
+          },
+          {
+            "text": "10,970,238,831",
+            "insideCell": true,
+            "insideOwnBox": true
+          },
+          {
+            "text": "6,094,770,588",
+            "insideCell": true,
+            "insideOwnBox": true
+          },
+          {
+            "text": "3,271,088,021",
+            "insideCell": true,
+            "insideOwnBox": true
+          }
+        ],
+        "flags": 8,
+        "frames": 7,
+        "medals": 6,
+        "capitalFrames": 0,
+        "capital": [
+          {
+            "direction": "column",
+            "border": "0px",
+            "copyFits": true
+          },
+          {
+            "direction": "column",
+            "border": "0px",
+            "copyFits": true
+          }
+        ],
+        "armory": true
+      },
+      "wiki": {
+        "overflow": false,
+        "tiles": 8,
+        "icons": 8,
+        "frames": 17,
+        "selected": "combat-heroes",
+        "panels": 1
+      },
+      "form": {
+        "overflow": false,
+        "fields": [
+          {
+            "id": "contributionType",
+            "label": true,
+            "insideHorizontally": true
+          },
+          {
+            "id": "contributionTitle",
+            "label": true,
+            "insideHorizontally": true
+          },
+          {
+            "id": "contributionDetails",
+            "label": true,
+            "insideHorizontally": true
+          },
+          {
+            "id": "contributionIdentity",
+            "label": true,
+            "insideHorizontally": true
+          },
+          {
+            "id": "contributionContact",
+            "label": true,
+            "insideHorizontally": true
+          }
+        ],
+        "closeWidth": 44,
+        "closeHeight": 44,
+        "accessibleName": "contributeTitle",
+        "frames": 1
+      },
+      "search": {
+        "overflow": false,
+        "insideViewport": true
+      },
+      "weather": {
+        "requested": true,
+        "running": false,
+        "reduced": false,
+        "hidden": false,
+        "dialogOpen": false,
+        "frameCount": 106,
+        "coverage": "viewport",
+        "intensity": "storm",
+        "backgroundParticles": 300,
+        "dustBanks": 6,
+        "heroParticles": 0,
+        "canvasCount": 1,
+        "dpr": 1
+      },
+      "loadedArt": true
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "locale": "vi",
+      "home": {
+        "overflow": false,
+        "cp": [
+          {
+            "text": "30,808,054,215",
+            "insideCell": true,
+            "insideOwnBox": true
+          },
+          {
+            "text": "16,310,121,231",
+            "insideCell": true,
+            "insideOwnBox": true
+          },
+          {
+            "text": "Unknown",
+            "insideCell": true,
+            "insideOwnBox": true
+          },
+          {
+            "text": "18,841,739,494",
+            "insideCell": true,
+            "insideOwnBox": true
+          },
+          {
+            "text": "54,237,643,887",
+            "insideCell": true,
+            "insideOwnBox": true
+          },
+          {
+            "text": "51,164,072,674",
+            "insideCell": true,
+            "insideOwnBox": true
+          },
+          {
+            "text": "45,969,028,935",
+            "insideCell": true,
+            "insideOwnBox": true
+          },
+          {
+            "text": "25,813,360,882",
+            "insideCell": true,
+            "insideOwnBox": true
+          },
+          {
+            "text": "16,683,699,744",
+            "insideCell": true,
+            "insideOwnBox": true
+          },
+          {
+            "text": "10,970,238,831",
+            "insideCell": true,
+            "insideOwnBox": true
+          },
+          {
+            "text": "6,094,770,588",
+            "insideCell": true,
+            "insideOwnBox": true
+          },
+          {
+            "text": "3,271,088,021",
+            "insideCell": true,
+            "insideOwnBox": true
+          }
+        ],
+        "flags": 8,
+        "frames": 7,
+        "medals": 6,
+        "capitalFrames": 0,
+        "capital": [
+          {
+            "direction": "column",
+            "border": "0px",
+            "copyFits": true
+          },
+          {
+            "direction": "column",
+            "border": "0px",
+            "copyFits": true
+          }
+        ],
+        "armory": true
+      },
+      "wiki": {
+        "overflow": false,
+        "tiles": 8,
+        "icons": 8,
+        "frames": 17,
+        "selected": "combat-heroes",
+        "panels": 1
+      },
+      "form": {
+        "overflow": false,
+        "fields": [
+          {
+            "id": "contributionType",
+            "label": true,
+            "insideHorizontally": true
+          },
+          {
+            "id": "contributionTitle",
+            "label": true,
+            "insideHorizontally": true
+          },
+          {
+            "id": "contributionDetails",
+            "label": true,
+            "insideHorizontally": true
+          },
+          {
+            "id": "contributionIdentity",
+            "label": true,
+            "insideHorizontally": true
+          },
+          {
+            "id": "contributionContact",
+            "label": true,
+            "insideHorizontally": true
+          }
+        ],
+        "closeWidth": 44,
+        "closeHeight": 44,
+        "accessibleName": "contributeTitle",
+        "frames": 1
+      },
+      "search": {
+        "overflow": false,
+        "insideViewport": true
+      },
+      "weather": {
+        "requested": true,
+        "running": false,
+        "reduced": false,
+        "hidden": false,
+        "dialogOpen": false,
+        "frameCount": 160,
+        "coverage": "viewport",
+        "intensity": "storm",
+        "backgroundParticles": 300,
+        "dustBanks": 6,
+        "heroParticles": 0,
+        "canvasCount": 1,
+        "dpr": 1
+      },
+      "loadedArt": true
+    },
+    {
+      "viewport": [
+        768,
+        1024
+      ],
+      "locale": "vi",
+      "home": {
+        "overflow": false,
+        "cp": [
+          {
+            "text": "30,808,054,215",
+            "insideCell": true,
+            "insideOwnBox": true
+          },
+          {
+            "text": "16,310,121,231",
+            "insideCell": true,
+            "insideOwnBox": true
+          },
+          {
+            "text": "Unknown",
+            "insideCell": true,
+            "insideOwnBox": true
+          },
+          {
+            "text": "18,841,739,494",
+            "insideCell": true,
+            "insideOwnBox": true
+          },
+          {
+            "text": "54,237,643,887",
+            "insideCell": true,
+            "insideOwnBox": true
+          },
+          {
+            "text": "51,164,072,674",
+            "insideCell": true,
+            "insideOwnBox": true
+          },
+          {
+            "text": "45,969,028,935",
+            "insideCell": true,
+            "insideOwnBox": true
+          },
+          {
+            "text": "25,813,360,882",
+            "insideCell": true,
+            "insideOwnBox": true
+          },
+          {
+            "text": "16,683,699,744",
+            "insideCell": true,
+            "insideOwnBox": true
+          },
+          {
+            "text": "10,970,238,831",
+            "insideCell": true,
+            "insideOwnBox": true
+          },
+          {
+            "text": "6,094,770,588",
+            "insideCell": true,
+            "insideOwnBox": true
+          },
+          {
+            "text": "3,271,088,021",
+            "insideCell": true,
+            "insideOwnBox": true
+          }
+        ],
+        "flags": 8,
+        "frames": 7,
+        "medals": 6,
+        "capitalFrames": 0,
+        "capital": [
+          {
+            "direction": "column",
+            "border": "0px",
+            "copyFits": true
+          },
+          {
+            "direction": "column",
+            "border": "0px",
+            "copyFits": true
+          }
+        ],
+        "armory": true
+      },
+      "wiki": {
+        "overflow": false,
+        "tiles": 8,
+        "icons": 8,
+        "frames": 17,
+        "selected": "combat-heroes",
+        "panels": 1
+      },
+      "form": {
+        "overflow": false,
+        "fields": [
+          {
+            "id": "contributionType",
+            "label": true,
+            "insideHorizontally": true
+          },
+          {
+            "id": "contributionTitle",
+            "label": true,
+            "insideHorizontally": true
+          },
+          {
+            "id": "contributionDetails",
+            "label": true,
+            "insideHorizontally": true
+          },
+          {
+            "id": "contributionIdentity",
+            "label": true,
+            "insideHorizontally": true
+          },
+          {
+            "id": "contributionContact",
+            "label": true,
+            "insideHorizontally": true
+          }
+        ],
+        "closeWidth": 44,
+        "closeHeight": 44,
+        "accessibleName": "contributeTitle",
+        "frames": 1
+      },
+      "search": {
+        "overflow": false,
+        "insideViewport": true
+      },
+      "weather": {
+        "requested": true,
+        "running": false,
+        "reduced": false,
+        "hidden": false,
+        "dialogOpen": false,
+        "frameCount": 52,
+        "coverage": "viewport",
+        "intensity": "storm",
+        "backgroundParticles": 780,
+        "dustBanks": 11,
+        "heroParticles": 0,
+        "canvasCount": 1,
+        "dpr": 1
+      },
+      "loadedArt": true
+    },
+    {
+      "viewport": [
+        1024,
+        768
+      ],
+      "locale": "vi",
+      "home": {
+        "overflow": false,
+        "cp": [
+          {
+            "text": "30,808,054,215",
+            "insideCell": true,
+            "insideOwnBox": true
+          },
+          {
+            "text": "16,310,121,231",
+            "insideCell": true,
+            "insideOwnBox": true
+          },
+          {
+            "text": "Unknown",
+            "insideCell": true,
+            "insideOwnBox": true
+          },
+          {
+            "text": "18,841,739,494",
+            "insideCell": true,
+            "insideOwnBox": true
+          },
+          {
+            "text": "54,237,643,887",
+            "insideCell": true,
+            "insideOwnBox": true
+          },
+          {
+            "text": "51,164,072,674",
+            "insideCell": true,
+            "insideOwnBox": true
+          },
+          {
+            "text": "45,969,028,935",
+            "insideCell": true,
+            "insideOwnBox": true
+          },
+          {
+            "text": "25,813,360,882",
+            "insideCell": true,
+            "insideOwnBox": true
+          },
+          {
+            "text": "16,683,699,744",
+            "insideCell": true,
+            "insideOwnBox": true
+          },
+          {
+            "text": "10,970,238,831",
+            "insideCell": true,
+            "insideOwnBox": true
+          },
+          {
+            "text": "6,094,770,588",
+            "insideCell": true,
+            "insideOwnBox": true
+          },
+          {
+            "text": "3,271,088,021",
+            "insideCell": true,
+            "insideOwnBox": true
+          }
+        ],
+        "flags": 8,
+        "frames": 7,
+        "medals": 6,
+        "capitalFrames": 0,
+        "capital": [
+          {
+            "direction": "column",
+            "border": "0px",
+            "copyFits": true
+          },
+          {
+            "direction": "column",
+            "border": "0px",
+            "copyFits": true
+          }
+        ],
+        "armory": true
+      },
+      "wiki": {
+        "overflow": false,
+        "tiles": 8,
+        "icons": 8,
+        "frames": 17,
+        "selected": "combat-heroes",
+        "panels": 1
+      },
+      "form": {
+        "overflow": false,
+        "fields": [
+          {
+            "id": "contributionType",
+            "label": true,
+            "insideHorizontally": true
+          },
+          {
+            "id": "contributionTitle",
+            "label": true,
+            "insideHorizontally": true
+          },
+          {
+            "id": "contributionDetails",
+            "label": true,
+            "insideHorizontally": true
+          },
+          {
+            "id": "contributionIdentity",
+            "label": true,
+            "insideHorizontally": true
+          },
+          {
+            "id": "contributionContact",
+            "label": true,
+            "insideHorizontally": true
+          }
+        ],
+        "closeWidth": 44,
+        "closeHeight": 44,
+        "accessibleName": "contributeTitle",
+        "frames": 1
+      },
+      "search": {
+        "overflow": false,
+        "insideViewport": true
+      },
+      "weather": {
+        "requested": true,
+        "running": false,
+        "reduced": false,
+        "hidden": false,
+        "dialogOpen": false,
+        "frameCount": 107,
+        "coverage": "viewport",
+        "intensity": "storm",
+        "backgroundParticles": 780,
+        "dustBanks": 11,
+        "heroParticles": 0,
+        "canvasCount": 1,
+        "dpr": 1
+      },
+      "loadedArt": true
+    },
+    {
+      "viewport": [
+        1280,
+        900
+      ],
+      "locale": "vi",
+      "home": {
+        "overflow": false,
+        "cp": [
+          {
+            "text": "30,808,054,215",
+            "insideCell": true,
+            "insideOwnBox": true
+          },
+          {
+            "text": "16,310,121,231",
+            "insideCell": true,
+            "insideOwnBox": true
+          },
+          {
+            "text": "Unknown",
+            "insideCell": true,
+            "insideOwnBox": true
+          },
+          {
+            "text": "18,841,739,494",
+            "insideCell": true,
+            "insideOwnBox": true
+          },
+          {
+            "text": "54,237,643,887",
+            "insideCell": true,
+            "insideOwnBox": true
+          },
+          {
+            "text": "51,164,072,674",
+            "insideCell": true,
+            "insideOwnBox": true
+          },
+          {
+            "text": "45,969,028,935",
+            "insideCell": true,
+            "insideOwnBox": true
+          },
+          {
+            "text": "25,813,360,882",
+            "insideCell": true,
+            "insideOwnBox": true
+          },
+          {
+            "text": "16,683,699,744",
+            "insideCell": true,
+            "insideOwnBox": true
+          },
+          {
+            "text": "10,970,238,831",
+            "insideCell": true,
+            "insideOwnBox": true
+          },
+          {
+            "text": "6,094,770,588",
+            "insideCell": true,
+            "insideOwnBox": true
+          },
+          {
+            "text": "3,271,088,021",
+            "insideCell": true,
+            "insideOwnBox": true
+          }
+        ],
+        "flags": 8,
+        "frames": 7,
+        "medals": 6,
+        "capitalFrames": 0,
+        "capital": [
+          {
+            "direction": "column",
+            "border": "0px",
+            "copyFits": true
+          },
+          {
+            "direction": "column",
+            "border": "0px",
+            "copyFits": true
+          }
+        ],
+        "armory": true
+      },
+      "wiki": {
+        "overflow": false,
+        "tiles": 8,
+        "icons": 8,
+        "frames": 17,
+        "selected": "combat-heroes",
+        "panels": 1
+      },
+      "form": {
+        "overflow": false,
+        "fields": [
+          {
+            "id": "contributionType",
+            "label": true,
+            "insideHorizontally": true
+          },
+          {
+            "id": "contributionTitle",
+            "label": true,
+            "insideHorizontally": true
+          },
+          {
+            "id": "contributionDetails",
+            "label": true,
+            "insideHorizontally": true
+          },
+          {
+            "id": "contributionIdentity",
+            "label": true,
+            "insideHorizontally": true
+          },
+          {
+            "id": "contributionContact",
+            "label": true,
+            "insideHorizontally": true
+          }
+        ],
+        "closeWidth": 44,
+        "closeHeight": 44,
+        "accessibleName": "contributeTitle",
+        "frames": 1
+      },
+      "search": {
+        "overflow": false,
+        "insideViewport": true
+      },
+      "weather": {
+        "requested": true,
+        "running": false,
+        "reduced": false,
+        "hidden": false,
+        "dialogOpen": false,
+        "frameCount": 161,
+        "coverage": "viewport",
+        "intensity": "storm",
+        "backgroundParticles": 780,
+        "dustBanks": 11,
+        "heroParticles": 0,
+        "canvasCount": 1,
+        "dpr": 1
+      },
+      "loadedArt": true
+    },
+    {
+      "viewport": [
+        1440,
+        1080
+      ],
+      "locale": "vi",
+      "home": {
+        "overflow": false,
+        "cp": [
+          {
+            "text": "30,808,054,215",
+            "insideCell": true,
+            "insideOwnBox": true
+          },
+          {
+            "text": "16,310,121,231",
+            "insideCell": true,
+            "insideOwnBox": true
+          },
+          {
+            "text": "Unknown",
+            "insideCell": true,
+            "insideOwnBox": true
+          },
+          {
+            "text": "18,841,739,494",
+            "insideCell": true,
+            "insideOwnBox": true
+          },
+          {
+            "text": "54,237,643,887",
+            "insideCell": true,
+            "insideOwnBox": true
+          },
+          {
+            "text": "51,164,072,674",
+            "insideCell": true,
+            "insideOwnBox": true
+          },
+          {
+            "text": "45,969,028,935",
+            "insideCell": true,
+            "insideOwnBox": true
+          },
+          {
+            "text": "25,813,360,882",
+            "insideCell": true,
+            "insideOwnBox": true
+          },
+          {
+            "text": "16,683,699,744",
+            "insideCell": true,
+            "insideOwnBox": true
+          },
+          {
+            "text": "10,970,238,831",
+            "insideCell": true,
+            "insideOwnBox": true
+          },
+          {
+            "text": "6,094,770,588",
+            "insideCell": true,
+            "insideOwnBox": true
+          },
+          {
+            "text": "3,271,088,021",
+            "insideCell": true,
+            "insideOwnBox": true
+          }
+        ],
+        "flags": 8,
+        "frames": 7,
+        "medals": 6,
+        "capitalFrames": 0,
+        "capital": [
+          {
+            "direction": "column",
+            "border": "0px",
+            "copyFits": true
+          },
+          {
+            "direction": "column",
+            "border": "0px",
+            "copyFits": true
+          }
+        ],
+        "armory": true
+      },
+      "wiki": {
+        "overflow": false,
+        "tiles": 8,
+        "icons": 8,
+        "frames": 17,
+        "selected": "combat-heroes",
+        "panels": 1
+      },
+      "form": {
+        "overflow": false,
+        "fields": [
+          {
+            "id": "contributionType",
+            "label": true,
+            "insideHorizontally": true
+          },
+          {
+            "id": "contributionTitle",
+            "label": true,
+            "insideHorizontally": true
+          },
+          {
+            "id": "contributionDetails",
+            "label": true,
+            "insideHorizontally": true
+          },
+          {
+            "id": "contributionIdentity",
+            "label": true,
+            "insideHorizontally": true
+          },
+          {
+            "id": "contributionContact",
+            "label": true,
+            "insideHorizontally": true
+          }
+        ],
+        "closeWidth": 44,
+        "closeHeight": 44,
+        "accessibleName": "contributeTitle",
+        "frames": 1
+      },
+      "search": {
+        "overflow": false,
+        "insideViewport": true
+      },
+      "weather": {
+        "requested": true,
+        "running": false,
+        "reduced": false,
+        "hidden": false,
+        "dialogOpen": false,
+        "frameCount": 214,
+        "coverage": "viewport",
+        "intensity": "storm",
+        "backgroundParticles": 780,
+        "dustBanks": 11,
+        "heroParticles": 0,
+        "canvasCount": 1,
+        "dpr": 1
+      },
+      "loadedArt": true
+    },
+    {
+      "viewport": [
+        1920,
+        1080
+      ],
+      "locale": "vi",
+      "home": {
+        "overflow": false,
+        "cp": [
+          {
+            "text": "30,808,054,215",
+            "insideCell": true,
+            "insideOwnBox": true
+          },
+          {
+            "text": "16,310,121,231",
+            "insideCell": true,
+            "insideOwnBox": true
+          },
+          {
+            "text": "Unknown",
+            "insideCell": true,
+            "insideOwnBox": true
+          },
+          {
+            "text": "18,841,739,494",
+            "insideCell": true,
+            "insideOwnBox": true
+          },
+          {
+            "text": "54,237,643,887",
+            "insideCell": true,
+            "insideOwnBox": true
+          },
+          {
+            "text": "51,164,072,674",
+            "insideCell": true,
+            "insideOwnBox": true
+          },
+          {
+            "text": "45,969,028,935",
+            "insideCell": true,
+            "insideOwnBox": true
+          },
+          {
+            "text": "25,813,360,882",
+            "insideCell": true,
+            "insideOwnBox": true
+          },
+          {
+            "text": "16,683,699,744",
+            "insideCell": true,
+            "insideOwnBox": true
+          },
+          {
+            "text": "10,970,238,831",
+            "insideCell": true,
+            "insideOwnBox": true
+          },
+          {
+            "text": "6,094,770,588",
+            "insideCell": true,
+            "insideOwnBox": true
+          },
+          {
+            "text": "3,271,088,021",
+            "insideCell": true,
+            "insideOwnBox": true
+          }
+        ],
+        "flags": 8,
+        "frames": 7,
+        "medals": 6,
+        "capitalFrames": 0,
+        "capital": [
+          {
+            "direction": "column",
+            "border": "0px",
+            "copyFits": true
+          },
+          {
+            "direction": "column",
+            "border": "0px",
+            "copyFits": true
+          }
+        ],
+        "armory": true
+      },
+      "wiki": {
+        "overflow": false,
+        "tiles": 8,
+        "icons": 8,
+        "frames": 17,
+        "selected": "combat-heroes",
+        "panels": 1
+      },
+      "form": {
+        "overflow": false,
+        "fields": [
+          {
+            "id": "contributionType",
+            "label": true,
+            "insideHorizontally": true
+          },
+          {
+            "id": "contributionTitle",
+            "label": true,
+            "insideHorizontally": true
+          },
+          {
+            "id": "contributionDetails",
+            "label": true,
+            "insideHorizontally": true
+          },
+          {
+            "id": "contributionIdentity",
+            "label": true,
+            "insideHorizontally": true
+          },
+          {
+            "id": "contributionContact",
+            "label": true,
+            "insideHorizontally": true
+          }
+        ],
+        "closeWidth": 44,
+        "closeHeight": 44,
+        "accessibleName": "contributeTitle",
+        "frames": 1
+      },
+      "search": {
+        "overflow": false,
+        "insideViewport": true
+      },
+      "weather": {
+        "requested": true,
+        "running": false,
+        "reduced": false,
+        "hidden": false,
+        "dialogOpen": false,
+        "frameCount": 267,
+        "coverage": "viewport",
+        "intensity": "storm",
+        "backgroundParticles": 780,
+        "dustBanks": 11,
+        "heroParticles": 0,
+        "canvasCount": 1,
+        "dpr": 1
+      },
+      "loadedArt": true
+    }
+  ],
+  "locales": [
+    {
+      "viewport": [
+        1440,
+        1080
+      ],
+      "locale": "en",
+      "homeOverflow": false,
+      "copyFits": true,
+      "wikiOverflow": false,
+      "formOverflow": false,
+      "realFeedbackNote": true,
+      "closeName": "Close suggestion form"
+    },
+    {
+      "viewport": [
+        1440,
+        1080
+      ],
+      "locale": "fr",
+      "homeOverflow": false,
+      "copyFits": true,
+      "wikiOverflow": false,
+      "formOverflow": false,
+      "realFeedbackNote": true,
+      "closeName": "Fermer le formulaire de suggestion"
+    },
+    {
+      "viewport": [
+        1440,
+        1080
+      ],
+      "locale": "es",
+      "homeOverflow": false,
+      "copyFits": true,
+      "wikiOverflow": false,
+      "formOverflow": false,
+      "realFeedbackNote": true,
+      "closeName": "Cerrar formulario de sugerencias"
+    },
+    {
+      "viewport": [
+        1440,
+        1080
+      ],
+      "locale": "pt",
+      "homeOverflow": false,
+      "copyFits": true,
+      "wikiOverflow": false,
+      "formOverflow": false,
+      "realFeedbackNote": true,
+      "closeName": "Fechar formulário de sugestões"
+    },
+    {
+      "viewport": [
+        1440,
+        1080
+      ],
+      "locale": "ko",
+      "homeOverflow": false,
+      "copyFits": true,
+      "wikiOverflow": false,
+      "formOverflow": false,
+      "realFeedbackNote": true,
+      "closeName": "제안 양식 닫기"
+    },
+    {
+      "viewport": [
+        1440,
+        1080
+      ],
+      "locale": "vi",
+      "homeOverflow": false,
+      "copyFits": true,
+      "wikiOverflow": false,
+      "formOverflow": false,
+      "realFeedbackNote": true,
+      "closeName": "Đóng biểu mẫu góp ý"
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "locale": "en",
+      "homeOverflow": false,
+      "copyFits": true,
+      "wikiOverflow": false,
+      "formOverflow": false,
+      "realFeedbackNote": true,
+      "closeName": "Close suggestion form"
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "locale": "fr",
+      "homeOverflow": false,
+      "copyFits": true,
+      "wikiOverflow": false,
+      "formOverflow": false,
+      "realFeedbackNote": true,
+      "closeName": "Fermer le formulaire de suggestion"
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "locale": "es",
+      "homeOverflow": false,
+      "copyFits": true,
+      "wikiOverflow": false,
+      "formOverflow": false,
+      "realFeedbackNote": true,
+      "closeName": "Cerrar formulario de sugerencias"
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "locale": "pt",
+      "homeOverflow": false,
+      "copyFits": true,
+      "wikiOverflow": false,
+      "formOverflow": false,
+      "realFeedbackNote": true,
+      "closeName": "Fechar formulário de sugestões"
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "locale": "ko",
+      "homeOverflow": false,
+      "copyFits": true,
+      "wikiOverflow": false,
+      "formOverflow": false,
+      "realFeedbackNote": true,
+      "closeName": "제안 양식 닫기"
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "locale": "vi",
+      "homeOverflow": false,
+      "copyFits": true,
+      "wikiOverflow": false,
+      "formOverflow": false,
+      "realFeedbackNote": true,
+      "closeName": "Đóng biểu mẫu góp ý"
+    }
+  ],
+  "routes": [
+    {
+      "viewport": [
+        1440,
+        1080
+      ],
+      "routes": [
+        {
+          "route": "charter",
+          "heading": "Server 504 Charter",
+          "overflow": false,
+          "textLength": 8715,
+          "article": true
+        },
+        {
+          "route": "codex",
+          "heading": "Operational Codex",
+          "overflow": false,
+          "textLength": 12909,
+          "article": true
+        },
+        {
+          "route": "guides",
+          "heading": "Tips & Guides",
+          "overflow": false,
+          "textLength": 3934,
+          "article": false
+        },
+        {
+          "route": "#/guides/margaret-build",
+          "heading": "Margaret Build Guide",
+          "overflow": false,
+          "guideDetail": true
+        },
+        {
+          "route": "wiki/game-overview",
+          "heading": "Game Overview",
+          "overflow": false,
+          "textLength": 3742,
+          "article": true
+        },
+        {
+          "route": "wiki/hero-quinn",
+          "heading": "Quinn",
+          "overflow": false,
+          "textLength": 3004,
+          "article": true
+        },
+        {
+          "route": "wiki/apc-chips",
+          "heading": "APC Chips",
+          "overflow": false,
+          "textLength": 3930,
+          "article": true
+        },
+        {
+          "route": "wiki/wiki-calculators",
+          "heading": "Resource Calculators",
+          "overflow": false,
+          "textLength": 3391,
+          "article": true
+        }
+      ],
+      "calculator": {
+        "mounted": true,
+        "honor": "134",
+        "needed": "2,200",
+        "craftable": "Craftable now: 1"
+      },
+      "search": {
+        "results": 16,
+        "overflow": false
+      }
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "routes": [
+        {
+          "route": "charter",
+          "heading": "Server 504 Charter",
+          "overflow": false,
+          "textLength": 8715,
+          "article": true
+        },
+        {
+          "route": "codex",
+          "heading": "Operational Codex",
+          "overflow": false,
+          "textLength": 12909,
+          "article": true
+        },
+        {
+          "route": "guides",
+          "heading": "Tips & Guides",
+          "overflow": false,
+          "textLength": 3934,
+          "article": false
+        },
+        {
+          "route": "#/guides/margaret-build",
+          "heading": "Margaret Build Guide",
+          "overflow": false,
+          "guideDetail": true
+        },
+        {
+          "route": "wiki/game-overview",
+          "heading": "Game Overview",
+          "overflow": false,
+          "textLength": 3742,
+          "article": true
+        },
+        {
+          "route": "wiki/hero-quinn",
+          "heading": "Quinn",
+          "overflow": false,
+          "textLength": 3004,
+          "article": true
+        },
+        {
+          "route": "wiki/apc-chips",
+          "heading": "APC Chips",
+          "overflow": false,
+          "textLength": 3930,
+          "article": true
+        },
+        {
+          "route": "wiki/wiki-calculators",
+          "heading": "Resource Calculators",
+          "overflow": false,
+          "textLength": 3391,
+          "article": true
+        }
+      ],
+      "calculator": {
+        "mounted": true,
+        "honor": "134",
+        "needed": "2,200",
+        "craftable": "Craftable now: 1"
+      },
+      "search": {
+        "results": 16,
+        "overflow": false
+      }
+    }
+  ],
+  "checks": {
+    "entrypoint": true,
+    "negativeGuardCases": 4,
+    "wikiRegistry": 117,
+    "wikiLocales": 6,
+    "guidesPerLocale": 18,
+    "contentAudit": true
+  },
+  "limits": [
+    "Actual Turnstile is checked after Pages deployment; local layout tests use a browser-only stub.",
+    "No real feedback message was submitted.",
+    "No physical-device performance benchmark or full contrast/zoom audit."
+  ]
+}

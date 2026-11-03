@@ -82,6 +82,9 @@ active_js=(
   assets/wiki-runtime.js
   assets/wiki-calculators.js
   assets/search-discovery.js
+  assets/season-5/home-runtime.js
+  assets/season-5/ui-remake.js
+  assets/season-5/sandstorm.js
 )
 for script in "${active_js[@]}"; do
   if ! node --check "$script" >/dev/null; then

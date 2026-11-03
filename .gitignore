@@ -1,0 +1,4 @@
+# Local design review bundles and full-resolution generation masters.
+docs/season-5/*.zip
+docs/season-5/masters/
+__pycache__/

@@ -11,6 +11,14 @@ Community knowledge, governance and operations portal for Dark War: Survival Ser
 - Anonymous community contributions with moderation
 - Multilingual UI: English, Français, Español, Português, 한국어, Tiếng Việt
 
+## Visual theme
+
+The public site uses the reviewed Season 5 V3.2 desert / bronze component theme with a full-page sandstorm. The section layout, alliance flags and server data remain unchanged; the artwork does not advance the current game season in `content/server-status.json`.
+
+`assets/season-5/layout.css` preserves the responsive geometry migrated from the previous production cascade. `ui-remake.css` owns the new component skin, while `home-runtime.js` keeps CP meters and Armory data without loading the retired S4 theme. Feedback, Wiki, search, calculators and Guides keep their functional styles and runtimes. The sandstorm has a persistent sidebar toggle, pauses for dialogs / hidden tabs and respects reduced motion.
+
+See [production integration and checks](docs/season-5/PRODUCTION-MIGRATION.md). Full-resolution art masters and downloadable design ZIPs stay local and are excluded from Git; reviewed web variants and provenance are versioned. The guarded [design preview](docs/season-5/preview.html) remains separate from the real feedback flow.
+
 ## Localization policy
 
 The public language contract is exactly six locales: `en`, `fr`, `es`, `pt`, `ko`, `vi`.

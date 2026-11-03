@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <base href="../../">
+  <meta name="robots" content="noindex,nofollow">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0d1215" />
+  <meta name="description" content="Server 504 knowledge, governance and operations portal for Dark War: Survival." />
+  <title>Server 504 | Dark War: Survival</title>
+  <link rel="stylesheet" href="./assets/season-5/tokens.css?v=s5-v32" />
+  <link rel="stylesheet" href="./assets/season-5/layout.css?v=s5-v32" />
+  <link rel="stylesheet" href="./assets/feedback.css?v=s5-v32" />
+  <link rel="stylesheet" href="./assets/wiki-research.css?v=s5-v32" />
+  <link rel="stylesheet" href="./assets/wiki-calculators.css?v=s5-v32" />
+  <link rel="stylesheet" href="./assets/search-discovery.css?v=s5-v32" />
+  <link rel="stylesheet" href="./assets/guides.css?v=s5-v32" />
+  <link rel="stylesheet" href="./assets/season-5/ui-remake.css?v=s5-v32" />
+  <link rel="stylesheet" href="./assets/season-5/sandstorm.css?v=s5-v32" />
+  <link rel="stylesheet" href="./assets/alliance-banners.css?v=20261103-banners" />
+  <link rel="preload" as="image" href="./assets/season-5/relic-ui/relic-frame.webp" />
+</head>
+<body class="s5-season s5-ui-remake s5-preview">
+<a class="s5-skip" href="docs/season-5/preview.html#/home">Season 5 · UI preview V3.2</a>
+  <div class="noise" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <a class="brand" href="#/home" aria-label="Server 504 Home">
+      <span class="brand-mark">504</span>
+      <span class="brand-copy">
+        <strong>SERVER 504</strong>
+        <small>KNOWLEDGE & OPERATIONS</small>
+      </span>
+    </a>
+
+    <label class="header-search" aria-label="Search Server 504">
+      <span class="header-search-icon" aria-hidden="true"></span>
+      <input id="headerSearchInput" type="search" placeholder="Search Server 504 knowledge..." autocomplete="off" readonly />
+      <kbd>/</kbd>
+    </label>
+
+    <div class="header-actions">
+      <label class="language-control" for="languageSelect" title="Change language">
+        <span class="language-control-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" role="presentation" focusable="false">
+            <circle cx="12" cy="12" r="8.5"></circle>
+            <path d="M3.9 12h16.2M12 3.5c2.4 2.3 3.7 5.1 3.7 8.5S14.4 18.2 12 20.5M12 3.5C9.6 5.8 8.3 8.6 8.3 12s1.3 6.2 3.7 8.5"></path>
+          </svg>
+        </span>
+        <span class="language-control-copy">
+          <small>LANGUAGE</small>
+          <select id="languageSelect" class="language-select" aria-label="Select language">
+            <option value="en">English</option>
+            <option value="fr">Français</option>
+            <option value="es">Español</option>
+            <option value="pt">Português</option>
+            <option value="ko">한국어</option>
+            <option value="vi">Tiếng Việt</option>
+          </select>
+        </span>
+        <span class="language-control-chevron" aria-hidden="true"></span>
+      </label>
+      <button id="menuToggle" class="icon-button menu-toggle" type="button" aria-label="Toggle menu" data-i18n-aria-label="toggleMenu" aria-expanded="false" aria-controls="sidebar">☰</button>
+    </div>
+  </header>
+
+  <div class="shell">
+    <aside id="sidebar" class="sidebar">
+      <div class="sidebar-section">
+        <div class="sidebar-label" data-i18n="knowledge">Knowledge</div>
+        <a href="#/home" data-route="home" data-i18n="home">Home</a>
+        <a href="#/wiki" data-route="wiki" data-i18n="gameWiki">Game Wiki</a>
+        <a href="#/guides" data-route="guides" data-guides-nav="1">Tips &amp; Guides</a>
+      </div>
+
+      <div class="sidebar-section">
+        <div class="sidebar-label">Server 504</div>
+        <a href="#/charter" data-route="charter" data-i18n="serverCharter">Server Charter</a>
+        <a href="#/codex" data-route="codex" data-i18n="operationalCodex">Operational Codex</a>
+      </div>
+
+      <div class="sidebar-section">
+        <div class="sidebar-label" data-i18n="community">Community</div>
+        <button id="contributeSidebar" class="sidebar-button" type="button" data-i18n="contribute">Contribute / Suggest</button>
+      </div>
+
+      <div class="sidebar-foot">
+        <span class="status-dot"></span>
+        <div>
+          <strong>Governance V2</strong>
+          <small>August 2026</small>
+        </div>
+      </div>
+    </aside>
+
+    <main id="app" class="main-content" tabindex="-1">
+      <section class="page ops-dashboard" aria-label="Server 504 loading shell">
+        <header class="dashboard-head">
+          <div><div class="eyebrow">SERVER 504 · SEASON 4 · SEALED ISLAND</div><h1>Server Operations Dashboard</h1></div>
+          <div class="dashboard-updated"><span>Loading live server data</span><strong>…</strong></div>
+        </header>
+        <section class="status-strip">
+          <div class="status-cell"><span class="status-icon">S4</span><div class="status-copy"><small>Season</small><strong>4</strong></div></div>
+          <div class="status-cell"><span class="status-icon">◇</span><div class="status-copy"><small>Theme</small><strong>Sealed Island</strong></div></div>
+          <div class="status-cell"><span class="status-icon">◎</span><div class="status-copy"><small>Server Council</small><strong>Pending</strong></div></div>
+        </section>
+      </section>
+    </main>
+  </div>
+
+  <button id="mobileContribute" class="floating-contribute" type="button" aria-label="Contribute">+</button>
+
+  <dialog id="searchDialog" class="dialog search-dialog" aria-labelledby="searchTitle">
+    <div class="dialog-head">
+      <div>
+        <small data-i18n="searchLabel">GLOBAL SEARCH</small>
+        <h2 id="searchTitle" data-i18n="searchTitle">Search Server 504</h2>
+      </div>
+      <button class="dialog-close" type="button" data-close-dialog="searchDialog" aria-label="Close search" data-i18n-aria-label="closeSearch">×</button>
+    </div>
+    <input id="searchInput" class="search-input" type="search" aria-labelledby="searchTitle" autocomplete="off" placeholder="Search WT, APC, Frankenstein, Armory, Precision Parts..." />
+    <div id="searchResults" class="search-results"></div>
+  </dialog>
+
+  <dialog id="contributeDialog" class="dialog contribute-dialog" aria-labelledby="contributeTitle">
+    <div class="dialog-head">
+      <div>
+        <small data-i18n="communityContribution">COMMUNITY CONTRIBUTION</small>
+        <h2 id="contributeTitle" data-i18n="sendSuggestion">Send a suggestion</h2>
+      </div>
+      <button class="dialog-close" type="button" data-close-dialog="contributeDialog" aria-label="Close suggestion form" data-i18n-aria-label="closeSuggestion">×</button>
+    </div>
+    <form id="contributeForm" aria-describedby="feedbackNote">
+      <label>
+        <span data-i18n="type">Type</span>
+        <select id="contributionType" required>
+          <option value="Game Wiki correction">Game Wiki correction</option>
+          <option value="New Wiki information">New Wiki information</option>
+          <option value="Charter proposal">Charter proposal</option>
+          <option value="Operational Codex proposal">Operational Codex proposal</option>
+          <option value="Translation correction">Translation correction</option>
+          <option value="Server operation suggestion">Server operation suggestion</option>
+          <option value="Other">Other</option>
+        </select>
+      </label>
+      <label>
+        <span data-i18n="title">Title</span>
+        <input id="contributionTitle" required maxlength="120" />
+      </label>
+      <label>
+        <span data-i18n="details">Details</span>
+        <textarea id="contributionDetails" required minlength="10" maxlength="6000" rows="7" placeholder="Please provide at least 10 characters."></textarea>
+      </label>
+      <label>
+        <span data-i18n="allianceOptional">Alliance / player name (optional)</span>
+        <input id="contributionIdentity" maxlength="80" />
+      </label>
+      <label>
+        <span data-i18n="contactOptional">Contact (optional)</span>
+        <input id="contributionContact" maxlength="160" placeholder="Discord, email, or other contact" />
+      </label>
+      <label class="feedback-honeypot" aria-hidden="true" tabindex="-1">
+        <span>Website</span>
+        <input id="contributionWebsite" autocomplete="off" tabindex="-1" />
+      </label>
+      <div id="feedbackTurnstile" class="feedback-turnstile" hidden aria-label="Human verification"></div>
+      <p id="feedbackNote" class="form-note" data-i18n="feedbackNote">No account is required. Protected by Cloudflare Turnstile; submissions go directly to the Server 504 moderation inbox.</p>
+      <p id="feedbackStatus" class="feedback-status" hidden aria-live="polite"></p>
+      <button class="primary-button" type="submit" data-i18n="submitFeedback">Submit feedback</button>
+    </form>
+  </dialog>
+
+  <script src="assets/season-5/ui-preview-guard.js"></script>
+  <script src="./assets/i18n.js?v=20261103-ui"></script>
+  <script src="./assets/app.js?v=20261103-ui" defer></script>
+  <script src="./assets/dashboard.js" defer></script>
+  <script src="./assets/dashboard-content-i18n.js?v=20260817-2134" defer></script>
+  <script src="./assets/pages-fancy.js" defer></script>
+  <script src="./assets/season-5/home-runtime.js?v=s5-v32" defer></script>
+  <script src="./assets/home-alliance-enhancer.js?v=20261103-banners" defer></script>
+  <script src="./assets/active-alliance-trend.js?v=20260817-1829" defer></script>
+  <script src="./assets/home-status-pulse-v2.js?v=20260815-2155" defer></script>
+  <script src="./assets/home-featured-v3.js?v=20260902-0830" defer></script>
+  <script src="./assets/header-search.js" defer></script>
+  <script src="./assets/wiki-calculators.js" defer></script>
+  <script src="./assets/guides-runtime.js" defer></script>
+  <script src="./assets/lazy-wiki-loader.js?v=20260815-0412" defer data-marked-runtime="https://cdn.jsdelivr.net/npm/marked/marked.min.js" data-wiki-runtime="./assets/wiki-runtime.js" data-search-runtime="./assets/search-discovery.js"></script>
+  <script src="./assets/season-5/ui-remake.js?v=s5-v32" defer></script>
+  <script src="./assets/season-5/sandstorm.js?v=s5-v32" defer></script>
+</body>
+</html>

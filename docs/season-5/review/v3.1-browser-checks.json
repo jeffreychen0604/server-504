@@ -1,0 +1,977 @@
+{
+  "version": "3.1",
+  "scope": "Local preview; existing layout retained; no real feedback or production deployment.",
+  "geometry": {
+    "before": {
+      ".topbar": [
+        0,
+        0,
+        1425,
+        68
+      ],
+      ".sidebar": [
+        0,
+        68,
+        260,
+        1012
+      ],
+      ".main-content": [
+        260,
+        136,
+        1165,
+        1939
+      ],
+      ".dashboard-head": [
+        332,
+        184,
+        1021,
+        305
+      ],
+      ".status-strip": [
+        350,
+        469,
+        985,
+        78
+      ],
+      ".dashboard-two-col": [
+        332,
+        565,
+        1021,
+        661
+      ],
+      ".shared-panel": [
+        332,
+        1240,
+        1021,
+        361
+      ],
+      ".alliance-table-panel": [
+        967,
+        565,
+        386,
+        661
+      ],
+      ".ke-panel": [
+        332,
+        565,
+        621,
+        661
+      ]
+    },
+    "after": {
+      ".topbar": [
+        0,
+        0,
+        1425,
+        68
+      ],
+      ".sidebar": [
+        0,
+        68,
+        260,
+        1012
+      ],
+      ".main-content": [
+        260,
+        136,
+        1165,
+        1939
+      ],
+      ".dashboard-head": [
+        332,
+        184,
+        1021,
+        305
+      ],
+      ".status-strip": [
+        350,
+        469,
+        985,
+        78
+      ],
+      ".dashboard-two-col": [
+        332,
+        565,
+        1021,
+        661
+      ],
+      ".shared-panel": [
+        332,
+        1240,
+        1021,
+        361
+      ],
+      ".alliance-table-panel": [
+        967,
+        565,
+        386,
+        661
+      ],
+      ".ke-panel": [
+        332,
+        565,
+        621,
+        661
+      ]
+    },
+    "same": true
+  },
+  "viewports": [
+    {
+      "viewport": [
+        320,
+        568
+      ],
+      "home": {
+        "overflow": false,
+        "cp": [
+          {
+            "text": "30,808,054,215",
+            "ok": true
+          },
+          {
+            "text": "16,310,121,231",
+            "ok": true
+          },
+          {
+            "text": "Unknown",
+            "ok": true
+          },
+          {
+            "text": "18,841,739,494",
+            "ok": true
+          },
+          {
+            "text": "54,237,643,887",
+            "ok": true
+          },
+          {
+            "text": "51,164,072,674",
+            "ok": true
+          },
+          {
+            "text": "45,969,028,935",
+            "ok": true
+          },
+          {
+            "text": "25,813,360,882",
+            "ok": true
+          },
+          {
+            "text": "16,683,699,744",
+            "ok": true
+          },
+          {
+            "text": "10,970,238,831",
+            "ok": true
+          },
+          {
+            "text": "6,094,770,588",
+            "ok": true
+          },
+          {
+            "text": "3,271,088,021",
+            "ok": true
+          }
+        ],
+        "flags": 8,
+        "weatherCount": 1,
+        "state": {
+          "requested": true,
+          "running": true,
+          "reduced": false,
+          "hidden": false,
+          "dialogOpen": false,
+          "frameCount": 4,
+          "backgroundParticles": 36,
+          "heroParticles": 30,
+          "canvasCount": 2,
+          "dpr": 1
+        }
+      },
+      "wiki": {
+        "overflow": false,
+        "categories": 8,
+        "icons": 8,
+        "state": {
+          "requested": true,
+          "running": true,
+          "reduced": false,
+          "hidden": false,
+          "dialogOpen": false,
+          "frameCount": 8,
+          "backgroundParticles": 36,
+          "heroParticles": 30,
+          "canvasCount": 2,
+          "dpr": 1
+        }
+      },
+      "form": {
+        "overflow": false,
+        "inside": true,
+        "labels": true,
+        "effectPaused": true
+      },
+      "search": {
+        "overflow": false,
+        "results": 16,
+        "effectPaused": true
+      }
+    },
+    {
+      "viewport": [
+        375,
+        667
+      ],
+      "home": {
+        "overflow": false,
+        "cp": [
+          {
+            "text": "30,808,054,215",
+            "ok": true
+          },
+          {
+            "text": "16,310,121,231",
+            "ok": true
+          },
+          {
+            "text": "Unknown",
+            "ok": true
+          },
+          {
+            "text": "18,841,739,494",
+            "ok": true
+          },
+          {
+            "text": "54,237,643,887",
+            "ok": true
+          },
+          {
+            "text": "51,164,072,674",
+            "ok": true
+          },
+          {
+            "text": "45,969,028,935",
+            "ok": true
+          },
+          {
+            "text": "25,813,360,882",
+            "ok": true
+          },
+          {
+            "text": "16,683,699,744",
+            "ok": true
+          },
+          {
+            "text": "10,970,238,831",
+            "ok": true
+          },
+          {
+            "text": "6,094,770,588",
+            "ok": true
+          },
+          {
+            "text": "3,271,088,021",
+            "ok": true
+          }
+        ],
+        "flags": 8,
+        "weatherCount": 1,
+        "state": {
+          "requested": true,
+          "running": true,
+          "reduced": false,
+          "hidden": false,
+          "dialogOpen": false,
+          "frameCount": 17,
+          "backgroundParticles": 36,
+          "heroParticles": 30,
+          "canvasCount": 2,
+          "dpr": 1
+        }
+      },
+      "wiki": {
+        "overflow": false,
+        "categories": 8,
+        "icons": 8,
+        "state": {
+          "requested": true,
+          "running": true,
+          "reduced": false,
+          "hidden": false,
+          "dialogOpen": false,
+          "frameCount": 20,
+          "backgroundParticles": 36,
+          "heroParticles": 30,
+          "canvasCount": 2,
+          "dpr": 1
+        }
+      },
+      "form": {
+        "overflow": false,
+        "inside": true,
+        "labels": true,
+        "effectPaused": true
+      },
+      "search": {
+        "overflow": false,
+        "results": 16,
+        "effectPaused": true
+      }
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "home": {
+        "overflow": false,
+        "cp": [
+          {
+            "text": "30,808,054,215",
+            "ok": true
+          },
+          {
+            "text": "16,310,121,231",
+            "ok": true
+          },
+          {
+            "text": "Unknown",
+            "ok": true
+          },
+          {
+            "text": "18,841,739,494",
+            "ok": true
+          },
+          {
+            "text": "54,237,643,887",
+            "ok": true
+          },
+          {
+            "text": "51,164,072,674",
+            "ok": true
+          },
+          {
+            "text": "45,969,028,935",
+            "ok": true
+          },
+          {
+            "text": "25,813,360,882",
+            "ok": true
+          },
+          {
+            "text": "16,683,699,744",
+            "ok": true
+          },
+          {
+            "text": "10,970,238,831",
+            "ok": true
+          },
+          {
+            "text": "6,094,770,588",
+            "ok": true
+          },
+          {
+            "text": "3,271,088,021",
+            "ok": true
+          }
+        ],
+        "flags": 8,
+        "weatherCount": 1,
+        "state": {
+          "requested": true,
+          "running": true,
+          "reduced": false,
+          "hidden": false,
+          "dialogOpen": false,
+          "frameCount": 29,
+          "backgroundParticles": 36,
+          "heroParticles": 30,
+          "canvasCount": 2,
+          "dpr": 1
+        }
+      },
+      "wiki": {
+        "overflow": false,
+        "categories": 8,
+        "icons": 8,
+        "state": {
+          "requested": true,
+          "running": true,
+          "reduced": false,
+          "hidden": false,
+          "dialogOpen": false,
+          "frameCount": 33,
+          "backgroundParticles": 36,
+          "heroParticles": 30,
+          "canvasCount": 2,
+          "dpr": 1
+        }
+      },
+      "form": {
+        "overflow": false,
+        "inside": true,
+        "labels": true,
+        "effectPaused": true
+      },
+      "search": {
+        "overflow": false,
+        "results": 16,
+        "effectPaused": true
+      }
+    },
+    {
+      "viewport": [
+        768,
+        1024
+      ],
+      "home": {
+        "overflow": false,
+        "cp": [
+          {
+            "text": "30,808,054,215",
+            "ok": true
+          },
+          {
+            "text": "16,310,121,231",
+            "ok": true
+          },
+          {
+            "text": "Unknown",
+            "ok": true
+          },
+          {
+            "text": "18,841,739,494",
+            "ok": true
+          },
+          {
+            "text": "54,237,643,887",
+            "ok": true
+          },
+          {
+            "text": "51,164,072,674",
+            "ok": true
+          },
+          {
+            "text": "45,969,028,935",
+            "ok": true
+          },
+          {
+            "text": "25,813,360,882",
+            "ok": true
+          },
+          {
+            "text": "16,683,699,744",
+            "ok": true
+          },
+          {
+            "text": "10,970,238,831",
+            "ok": true
+          },
+          {
+            "text": "6,094,770,588",
+            "ok": true
+          },
+          {
+            "text": "3,271,088,021",
+            "ok": true
+          }
+        ],
+        "flags": 8,
+        "weatherCount": 1,
+        "state": {
+          "requested": true,
+          "running": true,
+          "reduced": false,
+          "hidden": false,
+          "dialogOpen": false,
+          "frameCount": 4,
+          "backgroundParticles": 90,
+          "heroParticles": 68,
+          "canvasCount": 2,
+          "dpr": 1
+        }
+      },
+      "wiki": {
+        "overflow": false,
+        "categories": 8,
+        "icons": 8,
+        "state": {
+          "requested": true,
+          "running": true,
+          "reduced": false,
+          "hidden": false,
+          "dialogOpen": false,
+          "frameCount": 8,
+          "backgroundParticles": 90,
+          "heroParticles": 68,
+          "canvasCount": 2,
+          "dpr": 1
+        }
+      },
+      "form": {
+        "overflow": false,
+        "inside": true,
+        "labels": true,
+        "effectPaused": true
+      },
+      "search": {
+        "overflow": false,
+        "results": 16,
+        "effectPaused": true
+      }
+    },
+    {
+      "viewport": [
+        1024,
+        768
+      ],
+      "home": {
+        "overflow": false,
+        "cp": [
+          {
+            "text": "30,808,054,215",
+            "ok": true
+          },
+          {
+            "text": "16,310,121,231",
+            "ok": true
+          },
+          {
+            "text": "Unknown",
+            "ok": true
+          },
+          {
+            "text": "18,841,739,494",
+            "ok": true
+          },
+          {
+            "text": "54,237,643,887",
+            "ok": true
+          },
+          {
+            "text": "51,164,072,674",
+            "ok": true
+          },
+          {
+            "text": "45,969,028,935",
+            "ok": true
+          },
+          {
+            "text": "25,813,360,882",
+            "ok": true
+          },
+          {
+            "text": "16,683,699,744",
+            "ok": true
+          },
+          {
+            "text": "10,970,238,831",
+            "ok": true
+          },
+          {
+            "text": "6,094,770,588",
+            "ok": true
+          },
+          {
+            "text": "3,271,088,021",
+            "ok": true
+          }
+        ],
+        "flags": 8,
+        "weatherCount": 1,
+        "state": {
+          "requested": true,
+          "running": true,
+          "reduced": false,
+          "hidden": false,
+          "dialogOpen": false,
+          "frameCount": 17,
+          "backgroundParticles": 90,
+          "heroParticles": 68,
+          "canvasCount": 2,
+          "dpr": 1
+        }
+      },
+      "wiki": {
+        "overflow": false,
+        "categories": 8,
+        "icons": 8,
+        "state": {
+          "requested": true,
+          "running": true,
+          "reduced": false,
+          "hidden": false,
+          "dialogOpen": false,
+          "frameCount": 20,
+          "backgroundParticles": 90,
+          "heroParticles": 68,
+          "canvasCount": 2,
+          "dpr": 1
+        }
+      },
+      "form": {
+        "overflow": false,
+        "inside": true,
+        "labels": true,
+        "effectPaused": true
+      },
+      "search": {
+        "overflow": false,
+        "results": 16,
+        "effectPaused": true
+      }
+    },
+    {
+      "viewport": [
+        1280,
+        900
+      ],
+      "home": {
+        "overflow": false,
+        "cp": [
+          {
+            "text": "30,808,054,215",
+            "ok": true
+          },
+          {
+            "text": "16,310,121,231",
+            "ok": true
+          },
+          {
+            "text": "Unknown",
+            "ok": true
+          },
+          {
+            "text": "18,841,739,494",
+            "ok": true
+          },
+          {
+            "text": "54,237,643,887",
+            "ok": true
+          },
+          {
+            "text": "51,164,072,674",
+            "ok": true
+          },
+          {
+            "text": "45,969,028,935",
+            "ok": true
+          },
+          {
+            "text": "25,813,360,882",
+            "ok": true
+          },
+          {
+            "text": "16,683,699,744",
+            "ok": true
+          },
+          {
+            "text": "10,970,238,831",
+            "ok": true
+          },
+          {
+            "text": "6,094,770,588",
+            "ok": true
+          },
+          {
+            "text": "3,271,088,021",
+            "ok": true
+          }
+        ],
+        "flags": 8,
+        "weatherCount": 1,
+        "state": {
+          "requested": true,
+          "running": true,
+          "reduced": false,
+          "hidden": false,
+          "dialogOpen": false,
+          "frameCount": 29,
+          "backgroundParticles": 90,
+          "heroParticles": 68,
+          "canvasCount": 2,
+          "dpr": 1
+        }
+      },
+      "wiki": {
+        "overflow": false,
+        "categories": 8,
+        "icons": 8,
+        "state": {
+          "requested": true,
+          "running": true,
+          "reduced": false,
+          "hidden": false,
+          "dialogOpen": false,
+          "frameCount": 33,
+          "backgroundParticles": 90,
+          "heroParticles": 68,
+          "canvasCount": 2,
+          "dpr": 1
+        }
+      },
+      "form": {
+        "overflow": false,
+        "inside": true,
+        "labels": true,
+        "effectPaused": true
+      },
+      "search": {
+        "overflow": false,
+        "results": 16,
+        "effectPaused": true
+      }
+    },
+    {
+      "viewport": [
+        1440,
+        1080
+      ],
+      "home": {
+        "overflow": false,
+        "cp": [
+          {
+            "text": "30,808,054,215",
+            "ok": true
+          },
+          {
+            "text": "16,310,121,231",
+            "ok": true
+          },
+          {
+            "text": "Unknown",
+            "ok": true
+          },
+          {
+            "text": "18,841,739,494",
+            "ok": true
+          },
+          {
+            "text": "54,237,643,887",
+            "ok": true
+          },
+          {
+            "text": "51,164,072,674",
+            "ok": true
+          },
+          {
+            "text": "45,969,028,935",
+            "ok": true
+          },
+          {
+            "text": "25,813,360,882",
+            "ok": true
+          },
+          {
+            "text": "16,683,699,744",
+            "ok": true
+          },
+          {
+            "text": "10,970,238,831",
+            "ok": true
+          },
+          {
+            "text": "6,094,770,588",
+            "ok": true
+          },
+          {
+            "text": "3,271,088,021",
+            "ok": true
+          }
+        ],
+        "flags": 8,
+        "weatherCount": 1,
+        "state": {
+          "requested": true,
+          "running": true,
+          "reduced": false,
+          "hidden": false,
+          "dialogOpen": false,
+          "frameCount": 42,
+          "backgroundParticles": 90,
+          "heroParticles": 68,
+          "canvasCount": 2,
+          "dpr": 1
+        }
+      },
+      "wiki": {
+        "overflow": false,
+        "categories": 8,
+        "icons": 8,
+        "state": {
+          "requested": true,
+          "running": true,
+          "reduced": false,
+          "hidden": false,
+          "dialogOpen": false,
+          "frameCount": 45,
+          "backgroundParticles": 90,
+          "heroParticles": 68,
+          "canvasCount": 2,
+          "dpr": 1
+        }
+      },
+      "form": {
+        "overflow": false,
+        "inside": true,
+        "labels": true,
+        "effectPaused": true
+      },
+      "search": {
+        "overflow": false,
+        "results": 16,
+        "effectPaused": true
+      }
+    },
+    {
+      "viewport": [
+        1920,
+        1080
+      ],
+      "home": {
+        "overflow": false,
+        "cp": [
+          {
+            "text": "30,808,054,215",
+            "ok": true
+          },
+          {
+            "text": "16,310,121,231",
+            "ok": true
+          },
+          {
+            "text": "Unknown",
+            "ok": true
+          },
+          {
+            "text": "18,841,739,494",
+            "ok": true
+          },
+          {
+            "text": "54,237,643,887",
+            "ok": true
+          },
+          {
+            "text": "51,164,072,674",
+            "ok": true
+          },
+          {
+            "text": "45,969,028,935",
+            "ok": true
+          },
+          {
+            "text": "25,813,360,882",
+            "ok": true
+          },
+          {
+            "text": "16,683,699,744",
+            "ok": true
+          },
+          {
+            "text": "10,970,238,831",
+            "ok": true
+          },
+          {
+            "text": "6,094,770,588",
+            "ok": true
+          },
+          {
+            "text": "3,271,088,021",
+            "ok": true
+          }
+        ],
+        "flags": 8,
+        "weatherCount": 1,
+        "state": {
+          "requested": true,
+          "running": true,
+          "reduced": false,
+          "hidden": false,
+          "dialogOpen": false,
+          "frameCount": 54,
+          "backgroundParticles": 90,
+          "heroParticles": 68,
+          "canvasCount": 2,
+          "dpr": 1
+        }
+      },
+      "wiki": {
+        "overflow": false,
+        "categories": 8,
+        "icons": 8,
+        "state": {
+          "requested": true,
+          "running": true,
+          "reduced": false,
+          "hidden": false,
+          "dialogOpen": false,
+          "frameCount": 57,
+          "backgroundParticles": 90,
+          "heroParticles": 68,
+          "canvasCount": 2,
+          "dpr": 1
+        }
+      },
+      "form": {
+        "overflow": false,
+        "inside": true,
+        "labels": true,
+        "effectPaused": true
+      },
+      "search": {
+        "overflow": false,
+        "results": 16,
+        "effectPaused": true
+      }
+    }
+  ],
+  "weatherLocales": [
+    {
+      "locale": "en",
+      "text": "SANDSTORMON",
+      "label": "Toggle sandstorm effects",
+      "overflow": false
+    },
+    {
+      "locale": "fr",
+      "text": "VENT DE SABLEON",
+      "label": "Activer ou désactiver le vent de sable",
+      "overflow": false
+    },
+    {
+      "locale": "es",
+      "text": "VIENTO DE ARENAON",
+      "label": "Activar o desactivar el viento de arena",
+      "overflow": false
+    },
+    {
+      "locale": "pt",
+      "text": "VENTO DE AREIAON",
+      "label": "Ativar ou desativar o vento de areia",
+      "overflow": false
+    },
+    {
+      "locale": "ko",
+      "text": "모래바람ON",
+      "label": "모래바람 효과 켜기 또는 끄기",
+      "overflow": false
+    },
+    {
+      "locale": "vi",
+      "text": "GIÓ CÁTBẬT",
+      "label": "Bật hoặc tắt hiệu ứng bão cát",
+      "overflow": false
+    }
+  ],
+  "lifecycleChecks": {
+    "manualToggleStopsFrames": true,
+    "persistsAfterReload": true,
+    "dialogStopsFrames": true,
+    "reducedMotionZeroAnimations": true,
+    "mobileDpr3CanvasDpr1": true,
+    "entrancesCompleteAfter1100ms": true,
+    "wikiCategoryTransition": true,
+    "hiddenTab": "visibilitychange handler present; headless tool keeps targets visible, not directly asserted"
+  }
+}
