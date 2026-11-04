@@ -1,6 +1,18 @@
 /* Server 504 — in-game alliance banner sprite + per-opponent assets */
 :root { --server504-alliance-banner-sprite: none; }
 
+/* Assemble the untouched, larger game sprites in the browser. The square
+   footprint matches the legacy sprite, including room for the country badge. */
+.alliance-banner--original { position:relative; background-image:none!important; isolation:isolate; }
+.alliance-banner--original .alliance-banner-layer { position:absolute; display:block; pointer-events:none; }
+.alliance-banner--original .alliance-banner-layer img { display:block; width:100%; height:100%; max-width:none; object-fit:fill; }
+.alliance-banner-layer--cloth { left:16%; top:11%; width:68%; height:78%; background:var(--banner-cloth); mask:url('./alliance-banners/original/cloth.png') center/100% 100% no-repeat; }
+.alliance-banner-layer--cloth img { mix-blend-mode:multiply; }
+.alliance-banner-layer--trim { left:24%; top:12%; width:52%; height:57%; }
+.alliance-banner-layer--emblem { left:27%; top:27%; width:46%; height:46%; }
+.alliance-banner-layer--rod { left:16%; top:10%; width:68%; height:9.6%; }
+.alliance-banner-layer--country { left:64%; top:70%; width:28%; height:20.5%; }
+
 .alliance-banner {
   display: inline-block;
   width: 40px;

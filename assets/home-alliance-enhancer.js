@@ -14,6 +14,11 @@
   const spriteSource = './assets/alliance-banners-sprite.webp.base64.txt?v=20260815-1357';
   const customBannerVersion = '20260817-1646';
   const spriteCodes = new Set(['uic','ap3x','dud','cmrd','idgf','ids','ltnx','immr','unta','lumj','ace']);
+  // Original game layers retain their detail at Capital's large display size.
+  const originalBanners = {
+    dud: { emblem: 'shield', country: 'kr', color: '#d5a432' },
+    uic: { emblem: 'star', country: 'un', color: '#b94f25' }
+  };
   const customBannerSources = {
     h3il: './assets/alliance-banners/h3il.png?v=20261103'
   };
@@ -82,6 +87,24 @@
     const span = document.createElement('span');
     span.className = 'alliance-banner';
     span.setAttribute('aria-hidden', 'true');
+
+    if (originalBanners[code]) {
+      const { emblem, country, color } = originalBanners[code];
+      span.classList.add('alliance-banner--original');
+      span.dataset.bannerCode = code;
+      span.style.setProperty('--banner-cloth', color);
+      for (const [layer, asset] of [['cloth', 'cloth'], ['trim', 'trim'], ['emblem', emblem], ['rod', 'rod'], ['country', country]]) {
+        const part = document.createElement('i');
+        part.className = `alliance-banner-layer alliance-banner-layer--${layer}`;
+        const img = document.createElement('img');
+        img.src = `./assets/alliance-banners/original/${asset}.png`;
+        img.alt = '';
+        img.draggable = false;
+        part.appendChild(img);
+        span.appendChild(part);
+      }
+      return span;
+    }
 
     if (spriteCodes.has(code)) {
       span.classList.add(`alliance-banner--${code}`);
