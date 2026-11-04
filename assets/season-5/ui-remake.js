@@ -41,6 +41,21 @@
     if (preview && !document.title.includes('UI Preview V3.3')) document.title = document.title.replace(/ · UI Preview V3(?:\.[123])?$/, '') + ' · UI Preview V3.3';
     const note = document.getElementById('feedbackNote');
     const locale = document.documentElement.lang;
+    app.querySelectorAll('.capital-node-copy').forEach(copy => {
+      const node = copy.parentElement;
+      if (node.querySelector('.capital-monument')) return;
+      const title = copy.querySelector('small');
+      const owner = copy.querySelector('strong');
+      const description = copy.querySelector('span');
+      if (!title || !owner) return;
+      const monument = document.createElement('div');
+      monument.className = 'capital-monument';
+      monument.appendChild(owner);
+      node.prepend(title);
+      node.appendChild(monument);
+      if (description) { description.classList.add('capital-description'); node.appendChild(description); }
+      copy.remove();
+    });
     if (preview && note && note.textContent !== (previewNote[locale] || previewNote.en)) note.textContent = previewNote[locale] || previewNote.en;
     document.body.dataset.route = (location.hash.replace(/^#\//,'').split('/')[0] || 'home');
     // Reusable 9-slice skins are decorative siblings; labels and flags stay live.
@@ -69,6 +84,15 @@
       frame.setAttribute('aria-hidden','true');panel.appendChild(frame);
     });
     app.querySelectorAll('.dashboard-head,.page-header,.fancy-page-header').forEach(head => {
+      if (head.matches('.dashboard-head') && !head.querySelector('.s5-hero-relic')) {
+        const ornament = document.createElement('img');
+        ornament.className = 's5-hero-relic';
+        ornament.src = 'assets/season-5/relic-ui/relic-header.webp';
+        ornament.alt = '';
+        ornament.width = 240;
+        ornament.height = 80;
+        head.appendChild(ornament);
+      }
       if (!head.querySelector('.s5-crest')) {
         const crest = document.createElement('img'); crest.className = 's5-crest';
         crest.src = 'assets/season-5/draft-v1/serpent-crest-128.png'; crest.alt = ''; crest.width = 72; crest.height = 72;
