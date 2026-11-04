@@ -222,7 +222,7 @@ body[data-route="charter"] .markdown-body::after,body[data-route="codex"] .markd
 .markdown-body table td { border-color:#5e6c3c; }
 .markdown-body blockquote { border-color:#c5a35a; background:#273b3c; color:#d4dbc2; }
 .dialog { color:#f3e8ca; border:3px solid #735834; border-radius:5px; background:radial-gradient(ellipse at 50% 0,#709a8822,transparent 70%),url('./relic-etching.svg') center/240px,#10232c; box-shadow:inset 0 0 0 5px #08141b,inset 0 0 40px #0008,0 0 0 2px #32281e,0 25px 100px #000c; }
-.s5-ui-remake dialog { position:fixed; inset:0; margin:auto; }
+.s5-ui-remake dialog { position:fixed; inset:0; margin:auto; max-height:min(760px,calc(100dvh - 18px)); overscroll-behavior:contain; }
 .dialog>.s5-relic-frame { --relic-edge:54px; }
 .dialog::backdrop { background:#050c08d9; backdrop-filter:blur(5px); }
 .dialog-head { position:relative; gap:14px; min-height:96px; padding:24px 28px 20px; color:#fff1c4; background:url('./relic-etching.svg') center/180px,linear-gradient(#645234,#263335); border-bottom:2px solid #a78a51; box-shadow:inset 0 1px #e3d08b66,inset 0 -3px #09161c99; }
@@ -393,4 +393,8 @@ input:focus-visible,select:focus-visible,textarea:focus-visible { outline:2px so
 @media(max-width:480px) {
   /* The decorative seal otherwise crosses localized hero copy on narrow phones. */
   .s5-crest,.s5-crest-halo { display:none; }
+  .dialog-head { padding:18px 20px 14px; min-height:0; }
+  .dialog-head::before { display:none; }
+  .panel-head h2 { overflow-wrap:anywhere; }
+  html body .fancy-home-v2 .alliance-table-panel .panel-head > small { justify-content:flex-start; }
 }

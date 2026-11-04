@@ -51,20 +51,18 @@
     if (turnstileLoadPromise) return turnstileLoadPromise;
 
     turnstileLoadPromise = new Promise((resolve, reject) => {
-      const existing = document.querySelector('script[data-server504-turnstile]');
-      if (existing) {
-        existing.addEventListener('load', () => resolve(window.turnstile), { once: true });
-        existing.addEventListener('error', () => reject(new Error(t('feedbackHumanLoad'))), { once: true });
-        return;
-      }
-
       const script = document.createElement('script');
       script.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit';
       script.async = true;
       script.defer = true;
       script.dataset.server504Turnstile = 'true';
-      script.onload = () => resolve(window.turnstile);
-      script.onerror = () => reject(new Error(t('feedbackHumanLoad')));
+      const fail = () => {
+        script.remove();
+        turnstileLoadPromise = null;
+        reject(new Error(t('feedbackHumanLoad')));
+      };
+      script.onload = () => window.turnstile ? resolve(window.turnstile) : fail();
+      script.onerror = fail;
       document.head.appendChild(script);
     });
 
@@ -84,7 +82,7 @@
 
     try {
       const turnstile = await loadTurnstile();
-      if (!turnstile || turnstileWidgetId !== null) return;
+      if (!contributeDialog?.open || turnstileWidgetId !== null) return;
 
       turnstileWidgetId = turnstile.render(turnstileContainer, {
         sitekey: turnstileSiteKey,
@@ -105,7 +103,7 @@
         }
       });
     } catch (error) {
-      showStatus('error', error.message || t('feedbackHumanLoad'));
+      if (contributeDialog?.open) showStatus('error', error.message || t('feedbackHumanLoad'));
     }
   };
 
@@ -114,15 +112,16 @@
       if (contributeDialog.open) prepareTurnstile();
     });
     observer.observe(contributeDialog, { attributes: true, attributeFilter: ['open'] });
-    contributeDialog.addEventListener('close', () => {
-      clearStatus();
-      resetTurnstile();
-    });
   }
+  contributeDialog?.addEventListener('close', () => {
+    clearStatus();
+    resetTurnstile();
+  });
 
   form.addEventListener('submit', async event => {
     event.preventDefault();
     event.stopImmediatePropagation();
+    if (submit?.disabled) return;
 
     const details = detailsInput?.value.trim() || '';
     if (details.length < 10) {
@@ -163,10 +162,6 @@
 
       form.reset();
       showStatus('success', t('feedbackSuccess'));
-      setTimeout(() => {
-        contributeDialog?.close();
-        clearStatus();
-      }, 1400);
     } catch (error) {
       showStatus('error', error.message || t('feedbackSubmitError'));
     } finally {

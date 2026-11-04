@@ -210,8 +210,6 @@
     host.querySelectorAll('[data-search-category]').forEach(button => button.addEventListener('click', () => {
       activeCategory = button.dataset.searchCategory || 'ALL';
       enhancedRenderSearchResults(input.value || '');
-      // Filters are rebuilt; restore focus to the newly selected button.
-      [...host.querySelectorAll('[data-search-category]')].find(item => item.dataset.searchCategory === activeCategory)?.focus({ preventScroll: true });
     }));
   }
 
@@ -224,6 +222,9 @@
   }
 
   function enhancedRenderSearchResults(query) {
+    const focused = document.activeElement;
+    const focusedCategory = filterHost?.contains(focused) ? focused.dataset.searchCategory : null;
+    const focusedResult = results.contains(focused) && focused.matches('[data-search-link]') ? focused : null;
     renderFilters();
     const entries = currentEntries();
     const filteredByCategory = entries.filter(entry => activeCategory === 'ALL' || categoryOf(entry) === activeCategory);
@@ -247,6 +248,17 @@
       : `<div class="empty-state">${escapeHtml(t('searchNoResults'))}</div>`;
 
     results.querySelectorAll('[data-search-link]').forEach(anchor => anchor.addEventListener('click', () => dialog.close()));
+
+    // The index can finish loading while someone is navigating the filters or results.
+    if (focusedCategory) {
+      const replacement = [...filterHost.querySelectorAll('[data-search-category]')]
+        .find(button => button.dataset.searchCategory === focusedCategory);
+      (replacement || input).focus({ preventScroll: true });
+    } else if (focusedResult) {
+      const replacement = [...results.querySelectorAll('[data-search-link]')].find(anchor =>
+        anchor.hash === focusedResult.hash && anchor.querySelector('strong').textContent === focusedResult.querySelector('strong').textContent);
+      (replacement || input).focus();
+    }
   }
 
   try { renderSearchResults = enhancedRenderSearchResults; } catch (_) { window.renderSearchResults = enhancedRenderSearchResults; }

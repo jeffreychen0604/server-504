@@ -80,7 +80,7 @@ function routeName() {
 }
 
 function setActive(route) {
-  document.querySelectorAll('[data-route]').forEach(a => {
+  sidebar.querySelectorAll('a[data-route]').forEach(a => {
     const active = a.dataset.route === route;
     a.classList.toggle('active', active);
     if (active) a.setAttribute('aria-current', 'page');
@@ -254,7 +254,7 @@ async function render() {
 
 function bindDynamicTriggers() {
   document.querySelectorAll('.search-trigger').forEach(btn => btn.onclick = openSearch);
-  document.querySelectorAll('.contribute-trigger').forEach(btn => btn.onclick = () => contributeDialog.showModal());
+  document.querySelectorAll('.contribute-trigger').forEach(btn => btn.onclick = openContribute);
 }
 
 async function buildSearchIndex() {
@@ -292,7 +292,7 @@ function ensureGovernanceSearchIndex() {
 function openSearch() {
   if (document.querySelector('dialog[open]')) return;
   searchDialog.showModal();
-  setTimeout(() => searchInput.focus(), 30);
+  searchInput.focus();
   renderSearchResults(searchInput.value || '');
   window.Server504Guides?.refreshSearch?.();
   ensureGovernanceSearchIndex().then(() => {
@@ -309,7 +309,11 @@ function renderSearchResults(query) {
   searchResults.querySelectorAll('[data-search-link]').forEach(a => a.addEventListener('click', () => searchDialog.close()));
 }
 
-function openContribute() {
+function openContribute(event) {
+  if (document.querySelector('dialog[open]')) return;
+  if (event?.currentTarget === document.getElementById('contributeSidebar') && mobileNavigation.matches) {
+    setMenuOpen(false, true);
+  }
   contributeDialog.showModal();
 }
 
@@ -348,6 +352,13 @@ menuToggle.addEventListener('click', () => {
   const open = !sidebar.classList.contains('open');
   setMenuOpen(open);
   if (open) sidebar.querySelector('a')?.focus({ preventScroll: true });
+});
+sidebar.addEventListener('click', event => {
+  const link = event.target.closest('a[data-route]');
+  if (link?.hash === location.hash && mobileNavigation.matches &&
+      !event.ctrlKey && !event.metaKey && !event.shiftKey && !event.altKey) {
+    setMenuOpen(false, true);
+  }
 });
 mobileNavigation.addEventListener('change', () => {
   const hidingFocus = mobileNavigation.matches && sidebar.contains(document.activeElement);
