@@ -1,6 +1,8 @@
-# Bộ thiết kế Season 5 — Server 504 / UI remake V3.2
+# Bộ thiết kế Season 5 — Server 504 / UI remake V3.3
 
-Bản V3.2 đã được tích hợp vào entrypoint website chính, giữ layout và dữ liệu hiện tại, remake component theo phong cách game. [Bản chính](https://jeffreychen0604.github.io/server-504/) dùng form thật; [preview](preview.html) có nhãn thử nghiệm và chặn gửi form. [Chi tiết tích hợp](PRODUCTION-MIGRATION.md).
+Bản V3.3 áp dụng mockup phòng chỉ huy sa mạc đã duyệt vào entrypoint website chính, giữ layout và dữ liệu hiện tại. [Bản chính](https://jeffreychen0604.github.io/server-504/) dùng form thật; [preview](preview.html) có nhãn thử nghiệm và chặn gửi form. [Chi tiết tích hợp](PRODUCTION-MIGRATION.md).
+
+V3.3 bổ sung mặt đá 9-slice, bảng tên đồng rèn và bệ tượng Capital từ Image Gen; icon điều hướng SVG, trạng thái chọn xanh ngọc, huy chương hạng và thanh CP cùng hệ vật liệu. [Ba asset web mới](../../assets/season-5/command-ui/manifest.json) tổng 176,248 byte (khoảng 172 KiB). [Prompt gốc](command-ui-prompts.json) · [Kiểm tra V3.3](review/VALIDATION-V3.3.md). Chữ, số, cờ và nội dung vẫn được lấy từ runtime thật. Sương cát giảm độ đục, số hạt và phạm vi toàn trang giữ nguyên.
 
 V3.1 nâng vật liệu sang đá tối / đồng / xanh ngọc, thêm vành huy hiệu, góc chạm khắc, thanh CP có vạch sáng và ambient gió cát. Các khối xuất hiện nhẹ khi vào trang, thanh CP chạy khi tải, chuyển chuyên mục Wiki có fade ngắn, nút có ánh kim và phản hồi nhấn. Số CP luôn hiển thị nguyên giá trị.
 
@@ -62,10 +64,12 @@ Chỉ đổi kích thước / định dạng và giữ alpha, không thay đổi
 
 Tái xuất hai asset component bằng Python có Pillow: `python scripts/export-season5-relic-ui.py`. Master local ở `docs/season-5/masters/relic-ui`; WebP ở `assets/season-5/relic-ui`. Script chỉ resize / đổi định dạng, giữ alpha, không sửa ảnh sinh ra. Master và ZIP được giữ local, không đưa lên Git / Pages; repository chứa bản web và prompt nguồn.
 
+Tái xuất ba asset V3.3: `python scripts/export-season5-command-ui.py`, dùng master tại `masters/command-ui/`. Chỉ resize / đổi định dạng, giữ alpha.
+
 ## Đóng gói lại
 
 ```powershell
 python scripts/package-season5.py
 ```
 
-Gói hiện tại: `docs/season-5/season5-design-kit-v3.2.zip`. Giữ nguyên các hình trong `draft-v1`; số phiên bản phản ánh UI remake. Gói chứa các runtime / nội dung cần để xem layout hiện tại với UI mới. Wiki dùng runtime Markdown qua CDN như website gốc nên cần mạng khi tải lần đầu. Khi giải nén, chạy lệnh Node.js tại thư mục gốc của gói.
+Script xuất `docs/season-5/season5-design-kit-v3.3.zip` khi được chạy; ZIP V3.2 cũ là bản lịch sử. Giữ nguyên các hình trong `draft-v1`; số phiên bản phản ánh UI remake. Gói chứa các runtime / nội dung cần để xem layout hiện tại với UI mới. Wiki dùng runtime Markdown qua CDN như website gốc nên cần mạng khi tải lần đầu. Khi giải nén, chạy lệnh Node.js tại thư mục gốc của gói.

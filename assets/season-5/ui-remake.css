@@ -1,4 +1,4 @@
-/* V3.2: sculpted relic components; the original site section layout stays intact. */
+/* V3.3: command-room materials, live components and original section layout. */
 :root { --bg:#0c1113; --bg-elevated:#1b2020; --panel:#171e20; --panel-2:#242a2b; --line:#645638; --line-strong:#a78a4c; --text:#f5edda; --muted:#bcb7a2; --muted-2:#938b73; --gold:#efc977; --gold-soft:#ffe0a0; --red:#d87952; --red-hot:#f29f69; --ok:#95d7b4; color-scheme:dark; }
 body.s5-ui-remake { color:var(--text); font-family:'Segoe UI',sans-serif; background:radial-gradient(ellipse at 70% 5%,#70512a24,transparent 65%),repeating-linear-gradient(135deg,#c6b98903 0 1px,transparent 1px 7px),#0d1215; overflow-x:visible; }
 body::before,body::after,.noise,.dashboard-season-bg,.ops-dashboard::before,.sealed-atmosphere,.miasma,.ember-field { display:none; }
@@ -274,3 +274,123 @@ body[data-route="charter"] .markdown-body::after,body[data-route="codex"] .markd
   .dialog>.s5-relic-frame { --relic-edge:36px; }
 }
 @media(prefers-reduced-motion:reduce) { *,*::before,*::after { animation:none!important; transition:none!important; scroll-behavior:auto!important; } }
+
+/* V3.3 — shared material layer. Nine-slice art never contains text or data. */
+:root { --command-stone:url('./command-ui/stone-slab.webp'); --command-title:Georgia,'Times New Roman',serif; }
+body.s5-ui-remake { background:radial-gradient(ellipse at 0 85%,#b77b3320,transparent 40%),radial-gradient(ellipse at 85% 0,#2b605027,transparent 65%),#0b1418; }
+.s5-stone-skin { display:block; position:absolute!important; inset:0; z-index:-1!important; margin:0!important; padding:0!important; border:0 solid transparent; border-image:var(--command-stone) 100 110 fill / 14px / 0 stretch; pointer-events:none; user-select:none; }
+.sidebar a,.sidebar-button,.status-strip,.armory-item,.wiki-reference-card,.guide-card { isolation:isolate; }
+.sidebar a,.sidebar-button { min-height:46px; margin-block:5px; padding:11px 15px; gap:12px; border:0; background:none; box-shadow:0 3px 5px #0008; color:#eee9d9; text-shadow:0 1px 2px #000; }
+.sidebar a::before,.sidebar-button::before { display:none; }
+.s5-nav-icon { width:23px; height:23px; flex:0 0 23px; fill:none; stroke:#e5c184; stroke-width:1.7; filter:drop-shadow(0 2px 1px #000); }
+.sidebar a.active { border:0; border-radius:0; background:linear-gradient(90deg,#29baa540,#29baa500); box-shadow:inset 4px 0 #75dac9,0 3px 6px #000a,0 0 18px #4cd6bf15; }
+.sidebar a.active .s5-nav-icon { stroke:#a9fff0; filter:drop-shadow(0 0 4px #39bcae); }
+.sidebar a:hover,.sidebar-button:hover { background:#6eb4a91c; }
+.sidebar a:active,.sidebar-button:active { transform:translateY(1px); }
+.sidebar { background:radial-gradient(ellipse at 0 95%,#8a5d2b20,transparent 70%),#101c20; }
+.topbar { background:linear-gradient(#243336,#101a1f 65%); }
+.s5-ui-remake .dashboard-head h1,.page-header h1,.fancy-page-header h1 { font-family:var(--command-title); font-weight:700; letter-spacing:-.025em; }
+.dashboard-panel,.wiki-browser-panel,.markdown-body,.doc-card,.card { background:radial-gradient(ellipse at 10% 0,#41635e1c,transparent 60%),#101c21; }
+.dashboard-panel>.s5-relic-frame { --relic-edge:30px; opacity:.88; }
+.panel-head { background:transparent; box-shadow:none; padding:18px 24px 16px; isolation:isolate; grid-template-columns:42px minmax(0,1fr); gap:4px 14px; }
+.panel-head>* { position:relative; z-index:1; }
+.s5-nameplate { position:absolute!important; inset:7px 8px 7px 14px; z-index:-1!important; background:url('./command-ui/bronze-nameplate.webp') center / 100% 175% no-repeat; pointer-events:none; filter:drop-shadow(0 3px 2px #0009); }
+.panel-head h2 { font-family:var(--command-title); font-size:14px; font-weight:700; line-height:1.35; color:#fff0c9; letter-spacing:.015em; }
+.panel-head small,.panel-head .featured-note { color:#eadbc0; }
+.s5-sector-medallion { width:40px; height:40px; border-radius:50%; border:2px solid #f0cf8b; color:#fff5d4; font-size:16px; background:radial-gradient(circle at 35% 18%,#e0bd6960,transparent 70%),linear-gradient(#6e512e,#151e20 55%,#26302b); box-shadow:inset 0 0 0 3px #20201a,inset 0 0 0 4px #a1804a,0 3px 4px #000d,0 0 0 4px #4d3b25; }
+.status-strip { position:relative; border:0; background:none; box-shadow:0 5px 10px #0008; padding-block:18px; }
+.status-strip>.s5-stone-skin { border-image-width:18px; }
+.pulse-metric-copy strong { color:#f9edce; }
+.pulse-brand-copy>span { color:#bcc8c6; }
+.dashboard-table thead { background:#0a171c; }
+.dashboard-table th { color:#e0d3b5; }
+.dashboard-table td { border-color:#728b8230; }
+.s5-ui-remake .alliance-table-panel tbody tr { background:linear-gradient(90deg,#42594b12,transparent 70%); }
+.s5-ui-remake .alliance-table-panel tbody tr:hover { background:#6a9c8b13; }
+.cp-number { font-variant-numeric:tabular-nums; color:#fff4d6; }
+.s5-ui-remake .cp-meter { height:7px; border:1px solid #71867c; border-radius:3px; background:#040e14; box-shadow:inset 0 2px 3px #000,0 1px #c2b88825; padding:1px; }
+.s5-ui-remake .cp-meter i { border-radius:1px; background:repeating-linear-gradient(100deg,transparent 0 20px,#062327aa 21px 23px),linear-gradient(#d5fff0,#66cdb7 40%,#258779 55%,#88d4b8); box-shadow:0 0 5px #6dd7c140; }
+.s5-rank-shield { width:30px; height:34px; font-size:14px; position:relative; clip-path:polygon(50% 0,94% 15%,100% 67%,85% 85%,50% 100%,15% 85%,0 67%,6% 15%); }
+.alliance-table-panel tr:nth-child(-n+3) .s5-rank-shield { border-radius:50%; clip-path:none; width:31px; height:31px; border:3px double #e5c386; box-shadow:inset 0 0 0 2px #1b2928,0 2px 4px #000c; }
+.alliance-table-panel tr:nth-child(2) .s5-rank-shield { border-color:#d7e2dc; }
+.alliance-table-panel tr:nth-child(3) .s5-rank-shield { border-color:#cf9c70; border-radius:8px 8px 50% 50%; }
+.s5-ui-remake .ke-panel tbody tr:not(.muted-row) { border:0; border-radius:0; background:none; box-shadow:none; padding:16px; min-height:130px; }
+.s5-ui-remake .ke-panel tbody tr:not(.muted-row)::before,.s5-ui-remake .ke-panel tbody tr:not(.muted-row)::after { content:''; display:block; position:absolute; top:0; bottom:0; z-index:-1; border:0 solid transparent; border-image:var(--command-stone) 100 110 fill / 16px / 0 stretch; pointer-events:none; }
+.s5-ui-remake .ke-panel tbody tr:not(.muted-row)::before { left:0; right:calc(50% + 12px); }
+.s5-ui-remake .ke-panel tbody tr:not(.muted-row)::after { right:0; left:calc(50% + 12px); }
+.s5-ui-remake .ke-panel tbody td:nth-child(2)::before { width:36px; height:36px; border:2px solid #f5d18b; background:radial-gradient(circle at 40% 20%,#9c7945,#312a1d 65%,#121e22); box-shadow:inset 0 0 0 3px #241c13,inset 0 0 0 4px #b88e4d,0 3px 4px #000d,0 0 0 3px #0a1419; }
+.s5-ui-remake .ke-panel tbody td:nth-child(3),.s5-ui-remake .ke-panel tbody td:nth-child(4) { background:#030d1199; padding:7px 4px; align-self:stretch; border-top:1px solid #7b80604a; }
+.s5-ui-remake .ke-panel .ke-alliance-identity strong { font-size:15px; }
+body.s5-ui-remake .ops-dashboard .ke-panel .ke-alliance-identity { gap:8px; }
+.s5-ui-remake .ke-panel .cp-meter { height:4px; padding:0; border:0; }
+
+/* Capital is a sculpture, not another framed card inside the parent frame. */
+html body.s5-ui-remake .fancy-home-v2 .capital-rotation { grid-template-columns:minmax(0,1fr) 12px minmax(0,1fr); gap:4px; padding:20px 8px; align-items:start; }
+html body.s5-ui-remake .fancy-home-v2 .capital-node { min-height:338px; padding:0 0 12px!important; justify-content:flex-start; gap:0; overflow:visible; }
+.s5-ui-remake .capital-node::before { inset:auto; left:50%; top:74px; bottom:auto; width:230px; max-width:150%; height:230px; transform:translateX(-50%); background:url('./command-ui/capital-pedestal.webp') center/contain no-repeat; box-shadow:none; clip-path:none; z-index:0; }
+.s5-ui-remake .capital-node::after { inset:0 0 20px; background:radial-gradient(ellipse at 50% 30%,#69d7bf15,transparent 60%); }
+html body.s5-ui-remake .fancy-home-v2 .capital-node .capital-banner-main { width:92px; height:92px; flex:0 0 92px; margin-bottom:92px; filter:drop-shadow(0 6px 4px #000b); }
+html body.s5-ui-remake .fancy-home-v2 .capital-node-copy { width:100%; max-width:142px; gap:5px; padding:0 4px; }
+html body.s5-ui-remake .fancy-home-v2 .capital-node-copy small { min-height:28px; display:grid; place-items:center; font-size:9px; letter-spacing:.06em; line-height:1.35; color:#f6dfaa; white-space:normal; overflow-wrap:anywhere; }
+html body.s5-ui-remake .fancy-home-v2 .capital-node-copy strong { font:700 28px/1.1 var(--command-title); color:#fff2d0; }
+html body.s5-ui-remake .fancy-home-v2 .capital-node-copy>span { margin-top:52px; font-size:11px; line-height:1.5; color:#becbc7; }
+html body.s5-ui-remake .fancy-home-v2 .capital-arrow { opacity:.45; min-width:0; width:12px; margin-top:160px; }
+html body.s5-ui-remake .fancy-home-v2 .armory-registration { align-self:center; padding:20px 18px; }
+html body.s5-ui-remake .fancy-home-v2 .armory-item { display:grid; grid-template-columns:minmax(0,1fr); gap:3px; min-height:76px; padding:14px 26px 14px 50px; border:0; border-radius:0; background:none; box-shadow:0 3px 5px #0006; }
+html body.s5-ui-remake .fancy-home-v2 .armory-item>.s5-stone-skin { position:absolute; z-index:-1; }
+html body.s5-ui-remake .fancy-home-v2 .armory-item::before { content:attr(data-slot-number); width:29px; height:32px; left:12px; color:#ffe8b6; font:700 17px var(--command-title); border:1px solid #c8a36a; clip-path:polygon(20% 0,80% 0,100% 20%,100% 80%,80% 100%,20% 100%,0 80%,0 20%); background:linear-gradient(140deg,#d8ae63,#6a5030 35%,#1b2929 40%,#4e4631); box-shadow:inset 0 0 0 3px #102022; }
+html body.s5-ui-remake .fancy-home-v2 .armory-item::after { content:''; position:absolute; right:13px; top:18px; width:8px; height:8px; transform:rotate(45deg); background:linear-gradient(135deg,#d8fff0,#44c8b6 48%,#1d776e 50%,#99e4d1); border:1px solid #8edfc7; box-shadow:0 0 0 2px #10272b,0 0 6px #5dcabf44; }
+html body.s5-ui-remake .fancy-home-v2 .armory-item.pending::after,html body.s5-ui-remake .fancy-home-v2 .armory-item.available::after { background:#87918a; border-color:#b5b9a2; box-shadow:none; }
+html body.s5-ui-remake .fancy-home-v2 .armory-item.armory-open-contest::after { background:#edb85c; border-color:#ffe4a4; box-shadow:0 0 7px #d79c4a55; }
+.s5-ui-remake .armory-item>span:not(.s5-stone-skin) { color:#d6c8ab; font-size:11px; }
+html body.s5-ui-remake .fancy-home-v2 .armory-state-copy { text-align:left; }
+.armory-item strong { color:#fff3d8; font-size:14px; overflow-wrap:anywhere; }
+.s5-ui-remake .armory-contenders { color:#d5c7a7; }
+
+/* Same material hierarchy for knowledge and interaction surfaces. */
+.wiki-category-tile { background:radial-gradient(ellipse at 95% 0,#48c9b21f,transparent 60%),linear-gradient(#14292bdb,#0d1a21f5),url('./draft-v1/wiki-sanctuary-640.webp') center/cover; border-color:#758076; }
+.wiki-category-tile>.s5-relic-frame { --relic-edge:26px; opacity:.75; }
+.wiki-category-tile.active { border-color:#8bc8b6; background:radial-gradient(ellipse at 95% 5%,#70dbc43b,transparent 60%),linear-gradient(#183b3aeb,#0b1b22f5),url('./draft-v1/wiki-sanctuary-640.webp') center/cover; box-shadow:inset 0 0 0 4px #07131b,0 5px #050e15,0 0 16px #65d9bc22; }
+.wiki-category-tile::before { border-radius:10px; transform:rotate(6deg); background:linear-gradient(135deg,#c5aa68,#283e3d 45%,#0c252c 50%,#426458); }
+.wiki-category-tile>strong { font-family:var(--command-title); font-weight:700; color:#fff0cf; }
+.wiki-reference-card,.guide-card { border:0; border-radius:0; background:none; box-shadow:0 4px 6px #0006; }
+.wiki-reference-card>.s5-stone-skin,.guide-card>.s5-stone-skin { border-image-width:16px; }
+.wiki-reference-card:hover,.guide-card:hover { background:#6ac7b316; }
+.wiki-group-title,.wiki-browser-head h2 { color:#f8e8bd; }
+.search-result,.search-discovery-result { border-color:#5a756b; background:linear-gradient(110deg,#1c3438,#101e25); box-shadow:inset 3px 0 #64b4a3,0 3px #071014; }
+.search-filter-chip[aria-pressed=true],.search-discovery-filters button[aria-pressed=true] { color:#e2fff7; background:#1d4c46; border-color:#87cdbb; }
+.dialog { background:radial-gradient(ellipse at 0 0,#44635d20,transparent 65%),#111f25; }
+.dialog-head { background:linear-gradient(110deg,#75542e66,transparent 70%),#142327; }
+.contribute-dialog .form-note { background:#173531; color:#dde9df; }
+input:focus-visible,select:focus-visible,textarea:focus-visible { outline:2px solid #91dfce; outline-offset:3px; }
+@container ke-matchup (max-width:520px) {
+  .s5-ui-remake .ke-panel tbody tr:not(.muted-row) { min-height:180px; padding:14px 12px; }
+  .s5-ui-remake .ke-panel tbody tr:not(.muted-row)::before { right:calc(50% + 10px); }
+  .s5-ui-remake .ke-panel tbody tr:not(.muted-row)::after { left:calc(50% + 10px); }
+  .s5-ui-remake .ke-panel tbody td:nth-child(4) { border-top:0; padding-top:0; }
+  .s5-ui-remake .ke-panel .ke-alliance-identity strong { font-size:clamp(11px,4cqi,15px); }
+}
+@media(max-width:760px) {
+  .panel-head { padding:17px 18px; grid-template-columns:30px minmax(0,1fr); gap:4px 10px; }
+  .s5-sector-medallion { width:29px; height:29px; font-size:12px; }
+  .s5-ui-remake .panel-head h2 { font-size:12px; }
+  .s5-ui-remake .panel-head small { font-size:10px; }
+  .dashboard-panel>.s5-relic-frame { --relic-edge:24px; }
+  .shared-panel>.panel-head { grid-template-columns:30px minmax(0,1fr); }
+  .shared-panel .s5-header-relic { display:none; }
+  .s5-ui-remake .dashboard-head h1 { font-size:clamp(27px,7vw,40px); }
+  html body.s5-ui-remake .fancy-home-v2 .capital-rotation { grid-template-columns:minmax(0,1fr) 10px minmax(0,1fr); padding:16px 4px; }
+  html body.s5-ui-remake .fancy-home-v2 .capital-node { min-height:310px; }
+  .s5-ui-remake .capital-node::before { width:210px; height:210px; max-width:none; top:70px; }
+  html body.s5-ui-remake .fancy-home-v2 .capital-node .capital-banner-main { width:78px; height:78px; flex-basis:78px; margin-bottom:92px; }
+  html body.s5-ui-remake .fancy-home-v2 .capital-node-copy { max-width:116px; padding:0 5px; }
+  html body.s5-ui-remake .fancy-home-v2 .capital-node-copy small { font-size:8px; min-height:32px; letter-spacing:.025em; }
+  html body.s5-ui-remake .fancy-home-v2 .capital-node-copy strong { font-size:24px; }
+  html body.s5-ui-remake .fancy-home-v2 .capital-node-copy>span { margin-top:42px; }
+  html body.s5-ui-remake .fancy-home-v2 .armory-registration { padding:12px 10px 22px; }
+  .s5-ui-remake .alliance-table-panel tr:nth-child(-n+3) .s5-rank-shield { width:26px; height:28px; }
+}
+@media(max-width:480px) {
+  /* The decorative seal otherwise crosses localized hero copy on narrow phones. */
+  .s5-crest,.s5-crest-halo { display:none; }
+}

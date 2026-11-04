@@ -1,0 +1,29 @@
+{
+  "version": "V3.3",
+  "generator": "built-in image_gen",
+  "approvedMockup": "exec-83d7b5fa-fda9-4f36-9a03-399e07279044.png",
+  "usage": "Decorative UI only. Live HTML carries all labels, values, flags and interactions.",
+  "assets": [
+    {
+      "name": "stone-slab",
+      "source": "exec-ccb64bc6-4d09-4ff2-91c7-922f9d67d8e7.png",
+      "transparent_background": true,
+      "prompt": "Production game UI asset, single empty scalable stone panel, orthographic perfectly straight front view. Wide 3:2 rectangle centered on genuinely transparent canvas with only 3 percent transparent padding. Obsidian dark petrol slate stone face, refined small-scale texture, chunky shallow chamfered corners, worn steel-bronze beveled edge with strong top edge highlights and dark bottom contact shadow, like a premium ancient Egyptian strategy game command interface. Restrained antique bronze corner brackets, otherwise dark grey metal rim. Clear material depth and stone relief, not just a thin line. Center is filled opaque dark stone #142126 with quiet finely mottled texture, NO symbols, no writing, no glyphs, no icons, no gems, no buttons, no labels. Straight rectangular horizontal/vertical rails with consistent thickness suitable for CSS nine-slice scaling; keep corners within 15 percent of asset width and height. No external scenery or giant ornamental curls. Outer silhouette transparent, interior opaque. Highly polished AAA game UI, legibility-friendly dark interior. This will be used as background skin for inventory slots and navigation buttons."
+    },
+    {
+      "name": "capital-pedestal",
+      "source": "exec-25f06352-0c0b-48b1-bf88-43d24c9e1ad0.png",
+      "reference": "approvedMockup",
+      "transparent_background": true,
+      "prompt": "Create a standalone production game UI asset based on the small Capital pedestals in the reference website, not an entire screenshot. ONE freestanding ancient Egyptian dark stone pedestal with a small gold-bronze sphinx bust resting on top, straight front orthographic view, truly transparent background, roughly square canvas, centered complete object fills 94 percent height. The sphinx bust occupies top third; below it a substantial dark rectangular stone plinth with beveled sandstone-bronze ledges and worn dark petrol stone. Broad completely EMPTY dark plaque in middle lower third reserved for live website text; NO letters, no numbers, no symbol on the plaque. Bottom base has a modest tiny winged turquoise scarab and stepped stone feet. Material palette charcoal teal stone, weathered bronze-gold accent, detailed but restrained. Crisp silhouette and realistic contact shadows within object. NO banners, NO flags, NO poles, NO hanging ribbons, NO frame around entire asset, no desert, no ground plane, no interface, no text anywhere. Only the single pedestal+sphinx, all surrounding area transparent. This object will sit underneath a real alliance flag with live accessible labels over its plaque."
+    },
+    {
+      "name": "bronze-nameplate",
+      "source": "exec-55999faf-2ab0-4b10-a8e5-d94007160ca8.png",
+      "transparent_background": true,
+      "prompt": "Single production UI asset: a long horizontal ANTIQUE BRONZE NAMEPLATE for a premium ancient Egyptian strategy game interface, perfectly front-facing orthographic, roughly 6:1 aspect ratio, centered on transparent canvas. Empty brushed and pitted dark bronze face with realistic sculpted thick upper and lower rim, crisp worn gold highlights, dark contact-shadow bevels, layered narrow engraved geometric border at top and bottom. Left end straight vertical, right end a strong faceted diagonal spear-tip/chamfer termination with tiny geometric engraving in the rightmost 10 percent only. Clear depth, physically believable dark gold/bronze material, aged but refined. Central 75 percent quiet, EMPTY dark warm bronze so ivory live HTML text is readable. No letters, numbers, emblems, badges, jewels, or text anywhere. No scene. No surrounding frame. Shape fills 96 percent of canvas; fully transparent outer area. Straight horizontal rails designed for CSS nine-slice stretching, modest simple corner details only. Avoid smooth synthetic gradients; use rich fine-scale forged metal texture and believable directional lighting. This is the title bar of a dark stone command panel."
+    }
+  ],
+  "processing": "Resize and WebP conversion only; preserve generated composition and alpha. CSS controls display sizing. Masters remain local in docs/season-5/masters/command-ui/.",
+  "manifest": "../../assets/season-5/command-ui/manifest.json"
+}

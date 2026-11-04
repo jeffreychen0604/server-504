@@ -1,0 +1,30 @@
+{
+  "generator": "built-in image_gen",
+  "processing": "Resize / format only. Generated composition and alpha preserved.",
+  "variants": [
+    {
+      "file": "assets/season-5/command-ui/stone-slab.webp",
+      "width": 768,
+      "height": 512,
+      "bytes": 50066,
+      "sha256": "5e38b900ea6408d7ccff2c13dc0a7a9a0462c13039221667c1f88ef9c66695f2",
+      "hasAlpha": true
+    },
+    {
+      "file": "assets/season-5/command-ui/capital-pedestal.webp",
+      "width": 480,
+      "height": 480,
+      "bytes": 47746,
+      "sha256": "f8d6eacce95a6c98a48bca9ef749df7fe3a3fd17e77bcd40bc2b4c4b0ac2331a",
+      "hasAlpha": true
+    },
+    {
+      "file": "assets/season-5/command-ui/bronze-nameplate.webp",
+      "width": 960,
+      "height": 320,
+      "bytes": 78436,
+      "sha256": "1af2f5fe85d7c2ea69fee9407b8236407512ff195045020c4c69d1a2bdd4937e",
+      "hasAlpha": true
+    }
+  ]
+}

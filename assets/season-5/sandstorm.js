@@ -66,14 +66,15 @@
     const surge = .5+.5*Math.sin(time*.00065 + .7*Math.sin(time*.00018));
     const gust = .9 + surge*.95;
     // Broad dust banks roll across the full screen at different depths.
-    ctx.fillStyle='rgba(168,116,55,'+(.045+surge*.035).toFixed(3)+')';
+    // Keep the full-page particle density, but separate dust from the readable UI.
+    ctx.fillStyle='rgba(168,116,55,'+(.008+surge*.009).toFixed(3)+')';
     ctx.fillRect(0,0,width,height);
     for(const cloud of surface.clouds) {
       cloud.x += delta*(45+cloud.depth*85)*gust;
       if(cloud.x-cloud.span*.5>width) {cloud.x=-cloud.span*.5;cloud.y=random()*height;}
       const tall=Math.max(height*.34,cloud.span*.4);
       const y=cloud.y+Math.sin(time*.00055+cloud.phase)*height*.09;
-      ctx.globalAlpha=(.28+cloud.depth*.26)*( .7+surge*.3 );
+      ctx.globalAlpha=(.07+cloud.depth*.07)*( .7+surge*.3 );
       ctx.drawImage(dust,cloud.x-cloud.span*.5,y-tall*.5,cloud.span,tall);
     }
     ctx.globalAlpha=1;
@@ -93,13 +94,13 @@
     {
       const sweep = ((time*.000025)%1)*1.8-.4;
       const haze = ctx.createLinearGradient(width*sweep,height,width*(sweep+.35),0);
-      haze.addColorStop(0,'rgba(206,146,60,0)'); haze.addColorStop(.5,'rgba(218,166,88,.09)'); haze.addColorStop(1,'rgba(206,146,60,0)');
+      haze.addColorStop(0,'rgba(206,146,60,0)'); haze.addColorStop(.5,'rgba(218,166,88,.025)'); haze.addColorStop(1,'rgba(206,146,60,0)');
       ctx.fillStyle=haze; ctx.fillRect(0,0,width,height);
       // Wide, feathered dust ribbons read as sand gusts rather than rain streaks.
       for(let i=0;i<3;i++) {
         const y=height*(.15+i*.34)+Math.sin(time*.00055+i*2)*height*.14;
         const band=ctx.createLinearGradient(0,y-height*.11,0,y+height*.15);
-        band.addColorStop(0,'rgba(222,169,91,0)');band.addColorStop(.45,'rgba(222,169,91,.11)');band.addColorStop(1,'rgba(222,169,91,0)');
+        band.addColorStop(0,'rgba(222,169,91,0)');band.addColorStop(.45,'rgba(222,169,91,.035)');band.addColorStop(1,'rgba(222,169,91,0)');
         ctx.fillStyle=band;ctx.beginPath();ctx.moveTo(-width*.1,y);
         ctx.bezierCurveTo(width*.5,y-height*.3,width*.7,y+height*.1,width*1.1,y-height*.2);
         ctx.lineTo(width*1.1,y+height*.1);ctx.bezierCurveTo(width*.7,y+height*.4,width*.5,y-height*.1,-width*.1,y+height*.2);ctx.closePath();ctx.fill();

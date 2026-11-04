@@ -38,11 +38,30 @@
     ko: '시즌 5 UI 미리보기 · 폼은 시뮬레이션이며 데이터가 전송되지 않습니다.',
   };
   function decorate() {
-    if (preview && !document.title.includes('UI Preview V3.2')) document.title = document.title.replace(/ · UI Preview V3(?:\.[12])?$/, '') + ' · UI Preview V3.2';
+    if (preview && !document.title.includes('UI Preview V3.3')) document.title = document.title.replace(/ · UI Preview V3(?:\.[123])?$/, '') + ' · UI Preview V3.3';
     const note = document.getElementById('feedbackNote');
     const locale = document.documentElement.lang;
     if (preview && note && note.textContent !== (previewNote[locale] || previewNote.en)) note.textContent = previewNote[locale] || previewNote.en;
     document.body.dataset.route = (location.hash.replace(/^#\//,'').split('/')[0] || 'home');
+    // Reusable 9-slice skins are decorative siblings; labels and flags stay live.
+    document.querySelectorAll('.sidebar a,.sidebar-button,.status-strip,.armory-item,.wiki-reference-card,.guide-card').forEach(element => {
+      if (element.querySelector(':scope > .s5-stone-skin')) return;
+      const skin=document.createElement('span');skin.className='s5-stone-skin';
+      skin.setAttribute('aria-hidden','true');element.appendChild(skin);
+    });
+    const navSymbols={home:'dashboard',wiki:'atlas',guides:'battle',charter:'scroll',codex:'council'};
+    document.querySelectorAll('.sidebar a,.sidebar-button').forEach(link => {
+      if(link.querySelector('.s5-nav-icon'))return;
+      const symbol=navSymbols[(link.getAttribute('href')||'').replace('#/','')]||'scroll';
+      const svg=document.createElementNS('http://www.w3.org/2000/svg','svg');
+      svg.classList.add('s5-nav-icon');svg.setAttribute('aria-hidden','true');
+      const use=document.createElementNS(svg.namespaceURI,'use');
+      use.setAttribute('href',`assets/season-5/ui-symbols.svg#${symbol}`);svg.appendChild(use);link.prepend(svg);
+    });
+    app.querySelectorAll('.armory-item').forEach(item => {
+      const number=item.querySelector(':scope > span:not(.s5-stone-skin)')?.textContent.match(/\d+/)?.[0];
+      if(number && item.dataset.slotNumber!==number)item.dataset.slotNumber=number;
+    });
     // Decorative 9-slice frames never contain labels, data or pointer targets.
     document.querySelectorAll('.dashboard-head,.page-header,.fancy-page-header,.dashboard-panel,.wiki-category-tile,.wiki-browser-panel,.dialog').forEach(panel => {
       if (panel.querySelector(':scope > .s5-relic-frame')) return;
@@ -64,6 +83,9 @@
       const sector = String(index + 1).padStart(2,'0');
       if (head.dataset.sector !== sector) head.dataset.sector = sector;
       if (head.matches('.panel-head')) {
+        if(!head.querySelector(':scope > .s5-nameplate')) {
+          const plate=document.createElement('span');plate.className='s5-nameplate';plate.setAttribute('aria-hidden','true');head.appendChild(plate);
+        }
         let medal=head.querySelector(':scope > .s5-sector-medallion');
         if (!medal) { medal=document.createElement('span');medal.className='s5-sector-medallion';medal.setAttribute('aria-hidden','true');head.prepend(medal); }
         if(medal.textContent!==sector)medal.textContent=sector;

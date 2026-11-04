@@ -80,7 +80,7 @@ def validate(html):
             target = urlsplit(raw)
             if not target.scheme and target.path and not (stylesheet.parent / target.path).is_file():
                 errors.append(f'Missing CSS resource: {path} -> {target.path}')
-    for folder in ('draft-v1', 'relic-ui'):
+    for folder in ('draft-v1', 'relic-ui', 'command-ui'):
         manifest = ROOT / f'assets/season-5/{folder}/manifest.json'
         if not manifest.is_file():
             errors.append(f'Missing Season 5 asset manifest: {folder}')

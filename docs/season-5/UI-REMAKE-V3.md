@@ -1,6 +1,8 @@
 # UI remake V3 — game interface, layout hiện tại
 
-**Bản hiện tại: V3.2.** Component chạm nổi và phân cấp chất liệu, giữ cấu trúc section V3 và bão cát toàn trang.
+**Bản hiện tại: V3.3.** Phòng chỉ huy sa mạc theo mockup được duyệt: mặt đá viền kim loại, bảng tên đồng rèn, bệ tượng Capital và ô Armory có số / trạng thái. Giữ cấu trúc section V3 và bão cát toàn trang.
+
+V3.3 giữ cờ và dữ liệu thật; chữ / CP / nút là HTML, không nhúng screenshot vào giao diện. Ba asset mới ở `assets/season-5/command-ui/`, có manifest hash và prompt nguồn. Hình đá dùng 9-slice để giữ cạnh khi component đổi kích thước. KE tách hai mặt đá với VS ở giữa; metadata của đối thủ có nền chìm riêng. Điều hướng dùng icon SVG chức năng, active xanh ngọc; Wiki và Guides cùng hệ chất liệu. Tiêu đề lớn dùng serif để gần mockup, chữ đọc dài giữ font hệ thống có hỗ trợ sáu ngôn ngữ. Bụi vẫn phủ toàn trang và giữ số hạt nhưng giảm độ đục lớp sương để đọc dữ liệu rõ hơn. [Kết quả kiểm tra V3.3](review/VALIDATION-V3.3.md).
 
 Yêu cầu: **giữ bố cục website cũ, remake component để có cảm giác giao diện game**. Bộ hình Season 5 đã được chọn và giữ nguyên.
 

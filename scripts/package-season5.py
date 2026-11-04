@@ -6,7 +6,7 @@ import zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
 KIT = ROOT / 'docs/season-5'
-for manifest_path in ('assets/season-5/draft-v1/manifest.json', 'assets/season-5/relic-ui/manifest.json'):
+for manifest_path in ('assets/season-5/draft-v1/manifest.json', 'assets/season-5/relic-ui/manifest.json', 'assets/season-5/command-ui/manifest.json'):
     manifest = json.loads((ROOT / manifest_path).read_text(encoding='utf-8'))
     for item in manifest['variants']:
         file = ROOT / item['file']
@@ -21,12 +21,12 @@ for filename in (
     'assets/alliance-banners-sprite.webp.base64.txt', 'assets/alliance-banners/h3il.png',
     'content/server-status.json', 'content/wiki-manifest.json',
     'scripts/preview-season5.cjs', 'scripts/export-season5-assets.py', 'scripts/package-season5.py',
-    'scripts/build-season5-ui-preview.py', 'scripts/export-season5-relic-ui.py', 'index.html',
+    'scripts/build-season5-ui-preview.py', 'scripts/export-season5-relic-ui.py', 'scripts/export-season5-command-ui.py', 'index.html',
 ):
     file = ROOT / filename
     assert file.is_file(), f'Missing dependency: {file}'
     files.add(file)
-target = KIT / 'season5-design-kit-v3.2.zip'
+target = KIT / 'season5-design-kit-v3.3.zip'
 with zipfile.ZipFile(target, 'w', compression=zipfile.ZIP_DEFLATED) as archive:
     for file in sorted(files):
         archive.write(file, file.relative_to(ROOT).as_posix())
