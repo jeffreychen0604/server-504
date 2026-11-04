@@ -241,6 +241,10 @@ body[data-route="charter"] .markdown-body::after,body[data-route="codex"] .markd
 .search-filters button,.search-discovery-filters button,.search-filter-chip { border:1px solid #9e8c4c; border-radius:0; color:#e7d395; background:#31433f; }
 .search-result:hover { border-color:#eed28d; background:#334c4f; }
 .home-reveal,.home-reveal.is-visible { transform:none!important; opacity:1; }
+@media(min-width:761px) and (max-width:1180px) {
+  .s5-ui-remake .topbar { grid-template-columns:235px minmax(0,1fr) auto; }
+  .s5-ui-remake .header-search { min-width:0; }
+}
 @media(max-width:760px) {
   .s5-ui-remake .topbar { grid-template-columns:38px minmax(0,1fr) auto; }
   .s5-ui-remake .header-search { min-width:0; }
