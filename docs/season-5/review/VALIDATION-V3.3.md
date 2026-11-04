@@ -23,6 +23,12 @@ Implements the approved Image Gen mockup while preserving header/sidebar placeme
 - Reduced motion stops the storm; only one visible storm canvas is mounted.
 - Entrypoint/cascade/asset-hash checks, changed-JS syntax checks and complete Wiki validation passed. Existing linguistic review advisories remain non-blocking and unrelated to this visual change.
 
+## Slow-network navigation follow-up
+
+Public-site testing exposed an existing asynchronous navigation race: the URL had moved from Wiki to Codex, but the late Wiki response replaced the main content. Added request, route and locale guards before document, Wiki and Guides commits; stale successful responses and stale errors cannot replace the active screen. Cache keys for the affected runtimes are versioned together.
+
+`scripts/qa-navigation-race.js` deterministically holds actual network requests until after navigation. All five cases passed: Wiki manifest → Codex, Wiki article → Home, Charter → Home, Guides → Home, and an English Wiki article → Vietnamese while its original response is delayed. No form submission or backend mutation is involved.
+
 Screenshots captured locally under `output/playwright/v33/`: Home/Wiki/Guides desktop and mobile plus Capital/Armory detail. Full-page captures freeze fixed-position weather at one viewport; this is not a limitation on weather coverage while scrolling.
 
 ## Scope and limits

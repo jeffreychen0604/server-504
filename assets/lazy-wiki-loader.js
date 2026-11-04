@@ -46,7 +46,7 @@
     stackPromise = (async () => {
       await ensureMarked();
       if (!window.Server504Wiki) {
-        await loadScript('./assets/wiki-runtime.js?v=20261104-ux');
+        await loadScript('./assets/wiki-runtime.js?v=20261104-v33nav');
       }
       await loadScript('./assets/search-discovery.js?v=20261104-ux');
       if (isWikiRoute()) window.Server504Wiki?.render?.();

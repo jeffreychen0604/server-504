@@ -227,7 +227,11 @@ async function loadMarkdown(route) {
   }
 }
 
+let pageRenderRequest = 0;
 async function render() {
+  const request = ++pageRenderRequest;
+  const routeHash = location.hash;
+  const renderLocale = currentLocale;
   const route = routeName();
   setActive(route);
   setMenuOpen(false);
@@ -235,7 +239,12 @@ async function render() {
 
   if (route === 'home') app.innerHTML = homePage();
   else if (route === 'wiki') app.innerHTML = wikiPage();
-  else if (contentMap[route]) app.innerHTML = await loadMarkdown(route);
+  else if (contentMap[route]) {
+    const html = await loadMarkdown(route);
+    // A slow document must not replace a newer route or language selection.
+    if (request !== pageRenderRequest || location.hash !== routeHash || currentLocale !== renderLocale) return;
+    app.innerHTML = html;
+  }
   else app.innerHTML = `<section class="page">${pageHeader('404', t('pageNotFound'), t('pageNotFoundDesc'))}</section>`;
 
   bindDynamicTriggers();

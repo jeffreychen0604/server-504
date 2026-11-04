@@ -145,10 +145,16 @@
     </section>`;
   }
 
+  let guideRenderRequest = 0;
   async function renderGuides() {
+    const request = ++guideRenderRequest;
+    const routeHash = location.hash;
+    const renderLocale = locale();
+    const isCurrent = () => request === guideRenderRequest && location.hash === routeHash && locale() === renderLocale && isGuideRoute();
     if (!isGuideRoute()) return;
     try {
       const data = await loadData();
+      if (!isCurrent()) return;
       const slug = parts()[1] || '';
       app.innerHTML = slug ? guidePage(data, slug) : rootPage(data);
       document.body.dataset.route = 'guides';
@@ -157,6 +163,7 @@
       window.scrollTo({top:0,behavior:'auto'});
       refreshSearch(data);
     } catch (error) {
+      if (!isCurrent()) return;
       app.innerHTML = `<section class="page guides-page" data-guides-root="1"><div class="error-box">${esc(error.message)}</div></section>`;
     }
   }

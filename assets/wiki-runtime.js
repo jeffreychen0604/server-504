@@ -353,7 +353,12 @@
     observer.observe(app, { childList: true, subtree: false });
   }
 
+  let wikiRenderRequest = 0;
   async function renderWiki(force = false) {
+    const request = ++wikiRenderRequest;
+    const routeHash = location.hash;
+    const renderLocale = locale();
+    const isCurrent = () => request === wikiRenderRequest && location.hash === routeHash && locale() === renderLocale && isWikiRoute();
     if (!isWikiRoute()) {
       activeKey = '';
       app.removeAttribute('data-wiki-runtime-route');
@@ -361,6 +366,7 @@
     }
 
     const manifest = await loadManifest();
+    if (!isCurrent()) return;
     const parts = routeParts();
     const slug = parts[1] || '';
     const key = `${slug || 'root'}:${locale()}`;
@@ -373,13 +379,18 @@
 
     try {
       if (!slug) {
-        app.innerHTML = await rootPage(manifest);
+        const html = await rootPage(manifest);
+        if (!isCurrent()) return;
+        app.innerHTML = html;
         bindRootInteractions();
       } else {
         const article = manifest.articleMap.get(slug);
-        app.innerHTML = article ? await articlePage(manifest, article) : `<section class="page wiki-research-page">${header(t('wikiNotFound'), t('wikiNotFoundDesc'), ['404'])}<a class="wiki-back" href="#/wiki">${t('returnWiki')}</a></section>`;
+        const html = article ? await articlePage(manifest, article) : `<section class="page wiki-research-page">${header(t('wikiNotFound'), t('wikiNotFoundDesc'), ['404'])}<a class="wiki-back" href="#/wiki">${t('returnWiki')}</a></section>`;
+        if (!isCurrent()) return;
+        app.innerHTML = html;
       }
     } catch (error) {
+      if (!isCurrent()) return;
       app.innerHTML = `<section class="page"><div class="error-box">${t('unableDocument')}: ${error.message}</div></section>`;
     }
 
