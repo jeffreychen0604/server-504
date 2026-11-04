@@ -30,7 +30,7 @@
       .replace(/§/g, 'S')
       .toUpperCase()
       .replace(/[^A-Z0-9]/g, '');
-    const aliases = { AST: 'cmrd', ONE: 'dud', ASU: 'ids', IDSSTAR: 'ids', IDS: 'ids', IDGF: 'idgf', LUMI: 'lumj', LUMJ: 'lumj', ACE: 'ace' };
+    const aliases = { AST: 'cmrd', ONE: 'dud', '0NE': 'dud', ASU: 'ids', IDSSTAR: 'ids', IDS: 'ids', IDGF: 'idgf', LUMI: 'lumj', LUMJ: 'lumj', ACE: 'ace' };
     const code = aliases[raw] || raw.toLowerCase();
     return code && !reservedCodes.has(code) ? code : null;
   };
