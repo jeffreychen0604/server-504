@@ -242,6 +242,8 @@ body[data-route="charter"] .markdown-body::after,body[data-route="codex"] .markd
 .search-result:hover { border-color:#eed28d; background:#334c4f; }
 .home-reveal,.home-reveal.is-visible { transform:none!important; opacity:1; }
 @media(max-width:760px) {
+  .s5-ui-remake .topbar { grid-template-columns:38px minmax(0,1fr) auto; }
+  .s5-ui-remake .header-search { min-width:0; }
   .sidebar:not(.open) { visibility:hidden; }
   .sidebar a,.sidebar-button,.menu-toggle { min-height:44px; }
   .wiki-open-search,.wiki-group-filters button,.search-discovery-filters button { min-height:44px; }

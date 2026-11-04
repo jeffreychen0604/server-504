@@ -34,3 +34,4 @@ Browser checks use Chromium emulation, not physical iOS/Android devices. Automat
 - Production entrypoint validation and JavaScript syntax checks passed.
 - Dense sandstorm is intentionally preserved per the approved design; users can turn it off for reading.
 - Direct cold loads of Charter/Codex could render `Markdown renderer unavailable` before the deferred Wiki loader initialized. The document renderer now waits for that loader. Both direct routes passed with an injected 800ms loader delay, visible chapter headings, one H1 and no horizontal overflow at 320px.
+- Final screenshot review found the 320px header search column overlapping the logo (the grid retained a 120px minimum). Reserve the logo column and let search shrink; verified five viewport widths across all six locales (30 cases), no header overlap or overflow.
