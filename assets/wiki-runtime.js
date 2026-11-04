@@ -161,7 +161,7 @@
     return `<a class="wiki-browser-card${showDescription ? '' : ' wiki-browser-card-compact'}" href="#/wiki/${article.slug}" data-wiki-browser-group="${group}">
       <div><small>${localizedGroup(article.group)}</small><h3>${localTitle(article, titleMap)}</h3></div>
       ${showDescription ? `<p>${article.description}</p>` : ''}
-      <span aria-hidden="true">→</span>
+      <span class="wiki-browser-action" aria-hidden="true">${t('openReference')}</span>
     </a>`;
   }
 
