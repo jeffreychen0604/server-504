@@ -14,8 +14,13 @@ button,a,input,select,textarea { transition:background-color .16s,border-color .
 .s5-relic-frame { --relic-edge:42px; display:block; position:absolute!important; inset:0; margin:0!important; z-index:5!important; border:0 solid transparent; border-image:url('./relic-ui/relic-frame.webp') 196 / var(--relic-edge) / 0 stretch; pointer-events:none; user-select:none; }
 .topbar { background:linear-gradient(#34342c,#1b2528 55%,#0d171b); border-bottom:2px solid #9a7e45; box-shadow:0 4px 0 #090d09,0 7px 22px #0008,inset 0 1px #d9c18740; }
 .topbar::after { display:none; }
-/* Preserve the current shell's flow, including the former ambient layer's geometry rule. */
-.s5-ui-remake .topbar,.s5-ui-remake .shell,.s5-ui-remake .floating-contribute,.s5-ui-remake dialog { position:relative; z-index:2; }
+/* Keep navigation anchored; only the content shell belongs in normal flow. */
+.s5-ui-remake .shell { position:relative; z-index:2; }
+.s5-ui-remake .topbar { position:fixed; z-index:50; }
+.s5-ui-remake .floating-contribute { position:fixed; z-index:35; bottom:max(18px,env(safe-area-inset-bottom)); }
+.skip-to-content { position:fixed; top:8px; left:12px; z-index:101; transform:translateY(-160%); padding:12px 16px; color:#fff0c4; background:#10232c; border:2px solid #e7b967; }
+.skip-to-content:focus { transform:none; }
+body:has(dialog[open]) { overflow:hidden; }
 .brand-mark { color:#fff0c9; border:2px solid #ddb666; border-radius:7px 2px; clip-path:none; background:radial-gradient(ellipse at 35% 15%,#e9cc8355,transparent 65%),linear-gradient(135deg,#967043,#33302a 45%,#1f282d 47%,#3b4b4c); box-shadow:inset 0 0 0 3px #151a12,inset 0 0 0 5px #bb9551,inset 0 -8px 9px #0007,0 4px 0 #060a0b,0 0 0 2px #4d3c25; text-shadow:0 2px 0 #000; }
 .brand-copy strong { letter-spacing:.07em; text-shadow:0 2px #080b07; }
 .brand-copy small { color:#bdab80; }
@@ -204,7 +209,13 @@ html body.s5-ui-remake .fancy-home-v2 .capital-node-copy { display:flex; flex-di
 input,select,textarea { color:#f8eed6; background:linear-gradient(#07141b,#122730); border:1px solid #aa9151; border-radius:3px; box-shadow:inset 0 0 0 2px #070e13,inset 0 4px 10px #0009,inset 0 -1px #b8e8ce0c,0 1px #e2cc8c44,0 0 0 2px #060d12; }
 input::placeholder,textarea::placeholder { color:#a8b69c; }
 input:focus,select:focus,textarea:focus { border-color:#ebd08d; outline-color:#a4d4aa; box-shadow:inset 0 3px 7px #0007,0 0 0 2px #c6c4781c; }
-.markdown-body { color:#e1e4cf; background:#132329; }
+.markdown-body { color:#e1e4cf; background:#132329; overflow-wrap:anywhere; }
+.markdown-body code { overflow-wrap:anywhere; }
+.markdown-body .markdown-table-scroll { width:100%; max-width:100%; overflow-x:auto; overscroll-behavior-x:contain; scrollbar-width:thin; margin-block:16px; }
+.markdown-body .markdown-table-scroll table { display:table; overflow:visible; margin-block:0; }
+body[data-route="charter"] .markdown-body,body[data-route="codex"] .markdown-body { counter-reset:interior-section; }
+body[data-route="charter"] .markdown-body h2,body[data-route="codex"] .markdown-body h2 { counter-increment:interior-section; }
+body[data-route="charter"] .markdown-body::after,body[data-route="codex"] .markdown-body::after { color:#d3ae6814; }
 .markdown-body h2,.markdown-body h3 { color:#f1d28c; border-color:#8d7d43; }
 .markdown-body a { color:#b4dfbc; text-decoration:underline; }
 .markdown-body table th { color:#f0d49c; background:#3a4529; border-color:#8c7b44; }
@@ -231,6 +242,10 @@ input:focus,select:focus,textarea:focus { border-color:#ebd08d; outline-color:#a
 .search-result:hover { border-color:#eed28d; background:#334c4f; }
 .home-reveal,.home-reveal.is-visible { transform:none!important; opacity:1; }
 @media(max-width:760px) {
+  .sidebar:not(.open) { visibility:hidden; }
+  .sidebar a,.sidebar-button,.menu-toggle { min-height:44px; }
+  .wiki-open-search,.wiki-group-filters button,.search-discovery-filters button { min-height:44px; }
+  .main-content { padding-bottom:88px; }
   .s5-crest { top:16px; right:16px; width:54px; height:54px; opacity:.7; }
   .s5-crest-halo { top:11px; right:11px; width:64px; height:64px; }
   .s5-skip { bottom:8px; left:8px; font-size:8px; padding:4px 6px; }

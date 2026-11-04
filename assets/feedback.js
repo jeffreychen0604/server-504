@@ -89,6 +89,9 @@
       turnstileWidgetId = turnstile.render(turnstileContainer, {
         sitekey: turnstileSiteKey,
         theme: 'dark',
+        // The normal widget is 300px wide and overflows the form on narrow phones.
+        // Keep the compact footprint even after rotating or resizing the viewport.
+        size: 'compact',
         appearance: 'interaction-only',
         callback(token) {
           window.server504TurnstileToken = token || '';

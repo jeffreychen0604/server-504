@@ -179,7 +179,7 @@
   function categoryTile(def, articles, active) {
     const localized = localCategory(def);
     const groupLabels = [...new Set(articles.map(article => localizedGroup(article.group)))];
-    return `<button class="wiki-category-tile${active ? ' active' : ''}" type="button" data-wiki-category-button="${def.id}" aria-selected="${active ? 'true' : 'false'}">
+    return `<button class="wiki-category-tile${active ? ' active' : ''}" type="button" data-wiki-category-button="${def.id}" aria-controls="wiki-category-${def.id}" aria-pressed="${active ? 'true' : 'false'}">
       <span class="wiki-category-tile-top"><small>${articles.length} ${t('wikiReferences')}</small><b aria-hidden="true">↘</b></span>
       <strong>${localized.title}</strong><span>${localized.description}</span>
       <em>${groupLabels.slice(0, 4).join(' · ')}${groupLabels.length > 4 ? ' · +' : ''}</em>
@@ -197,9 +197,9 @@
 
   function categoryPanel(def, articles, active, titleMap) {
     const localized = localCategory(def);
-    return `<section class="wiki-browser-panel" id="wiki-category-${def.id}" data-wiki-category-panel="${def.id}" ${active ? '' : 'hidden'}>
+    return `<section class="wiki-browser-panel" id="wiki-category-${def.id}" tabindex="-1" aria-labelledby="wiki-title-${def.id}" data-wiki-category-panel="${def.id}" ${active ? '' : 'hidden'}>
       <div class="wiki-browser-head">
-        <div><small>${t('browseCategory')}</small><h2>${localized.title}</h2><p>${localized.description}</p></div>
+        <div><small>${t('browseCategory')}</small><h2 id="wiki-title-${def.id}">${localized.title}</h2><p>${localized.description}</p></div>
         <span class="wiki-ia-count">${articles.length} ${t('wikiReferences')}</span>
       </div>
       ${groupFilters(articles, def.id)}
@@ -209,9 +209,9 @@
 
   function allReferencesPanel(manifest, active, titleMap) {
     const articles = [...manifest.articles].sort((a, b) => localTitle(a, titleMap).localeCompare(localTitle(b, titleMap), locale()));
-    return `<section class="wiki-browser-panel wiki-browser-panel-all" id="wiki-category-all" data-wiki-category-panel="all" ${active ? '' : 'hidden'}>
+    return `<section class="wiki-browser-panel wiki-browser-panel-all" id="wiki-category-all" tabindex="-1" aria-labelledby="wiki-title-all" data-wiki-category-panel="all" ${active ? '' : 'hidden'}>
       <div class="wiki-browser-head">
-        <div><small>${t('fullIndex')}</small><h2>${t('allReferences')}</h2><p>${t('allReferencesDesc')}</p></div>
+        <div><small>${t('fullIndex')}</small><h2 id="wiki-title-all">${t('allReferences')}</h2><p>${t('allReferencesDesc')}</p></div>
         <span class="wiki-ia-count">${articles.length} ${t('wikiReferences')}</span>
       </div>
       <div class="wiki-all-reference-list">${articles.map(article => `<a href="#/wiki/${article.slug}"><span>${localTitle(article, titleMap)}</span><small>${localizedGroup(article.group)}</small></a>`).join('')}</div>
@@ -228,7 +228,7 @@
       categoryButtons.forEach(button => {
         const active = button.dataset.wikiCategoryButton === categoryId;
         button.classList.toggle('active', active);
-        button.setAttribute('aria-selected', String(active));
+        button.setAttribute('aria-pressed', String(active));
       });
       panels.forEach(panel => { panel.hidden = panel.dataset.wikiCategoryPanel !== categoryId; });
       try { sessionStorage.setItem('server504-wiki-category', categoryId); } catch (_) {}
@@ -239,7 +239,11 @@
       }
     };
 
-    categoryButtons.forEach(button => button.addEventListener('click', () => selectCategory(button.dataset.wikiCategoryButton)));
+    categoryButtons.forEach(button => button.addEventListener('click', event => {
+      selectCategory(button.dataset.wikiCategoryButton);
+      // Keyboard users continue inside the selected content rather than the next category.
+      if (event.detail === 0) panels.find(panel => !panel.hidden)?.focus({ preventScroll: true });
+    }));
     root.querySelectorAll('[data-wiki-group-filter]').forEach(button => {
       button.addEventListener('click', () => {
         const panel = root.querySelector(`[data-wiki-category-panel="${button.dataset.wikiGroupPanel}"]`);
@@ -264,7 +268,7 @@
     const categorySets = manifest.categories.map(def => ({ def, articles: categoryArticles(manifest, def) }));
     const categoryTiles = categorySets.filter(item => item.articles.length).map(item => categoryTile(item.def, item.articles, selectedCategory === item.def.id));
 
-    categoryTiles.push(`<button class="wiki-category-tile wiki-category-tile-all${selectedCategory === 'all' ? ' active' : ''}" type="button" data-wiki-category-button="all" aria-selected="${selectedCategory === 'all' ? 'true' : 'false'}">
+    categoryTiles.push(`<button class="wiki-category-tile wiki-category-tile-all${selectedCategory === 'all' ? ' active' : ''}" type="button" data-wiki-category-button="all" aria-controls="wiki-category-all" aria-pressed="${selectedCategory === 'all' ? 'true' : 'false'}">
       <span class="wiki-category-tile-top"><small>${manifest.articles.length} ${t('wikiReferences')}</small><b aria-hidden="true">↘</b></span>
       <strong>${t('allReferences')}</strong><span>${t('allReferencesDesc')}</span><em>${t('fullIndex')}</em>
     </button>`);
@@ -277,7 +281,7 @@
       ${confidenceLegend()}
       <section class="wiki-category-overview" aria-labelledby="wikiBrowseTitle">
         <div class="wiki-overview-head"><div><small>${t('knowledgeMap')}</small><h2 id="wikiBrowseTitle">${t('browseByCategory')}</h2><p>${t('browseByCategoryDesc')}</p></div><button class="wiki-open-search search-trigger" type="button">${t('searchWiki')} <kbd>/</kbd></button></div>
-        <div class="wiki-category-dashboard" role="tablist" aria-label="${t('browseByCategory')}">${categoryTiles.join('')}</div>
+        <div class="wiki-category-dashboard" role="group" aria-label="${t('browseByCategory')}">${categoryTiles.join('')}</div>
       </section>
       <div class="wiki-browser">${panels.join('')}</div>
       <div class="wiki-ia-audit-note">${manifest.articles.length} ${t('wikiAuditNote')}</div>
@@ -337,7 +341,7 @@
     return `<section class="page wiki-research-page wiki-article-page" data-wiki-runtime-article="${article.slug}">
       <a class="wiki-back" href="#/wiki">${t('backWiki')}</a>
       ${header(localTitle(article, titleMap), description, [t('august2026'), localeBadge])}
-      <article class="markdown-body wiki-article-body">${marked.parse(text)}</article>
+      <article class="markdown-body wiki-article-body">${renderArticleMarkdown(text)}</article>
       ${await relatedSection(manifest, article, titleMap)}
     </section>`;
   }

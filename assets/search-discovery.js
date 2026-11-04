@@ -192,6 +192,7 @@
     if (filterHost?.isConnected) return filterHost;
     filterHost = document.createElement('div');
     filterHost.className = 'search-discovery-filters';
+    filterHost.setAttribute('role', 'group');
     filterHost.setAttribute('aria-label', t('filterCategory'));
     results.insertAdjacentElement('beforebegin', filterHost);
     return filterHost;
@@ -203,12 +204,14 @@
     const valid = new Set(['ALL', ...categories]);
     if (!valid.has(activeCategory)) activeCategory = 'ALL';
     host.innerHTML = [
-      `<button type="button" data-search-category="ALL" class="${activeCategory === 'ALL' ? 'active' : ''}">${escapeHtml(t('searchAll'))}</button>`,
-      ...categories.map(category => `<button type="button" data-search-category="${escapeHtml(category)}" class="${activeCategory === category ? 'active' : ''}">${escapeHtml(category)}</button>`)
+      `<button type="button" data-search-category="ALL" aria-pressed="${activeCategory === 'ALL'}" class="${activeCategory === 'ALL' ? 'active' : ''}">${escapeHtml(t('searchAll'))}</button>`,
+      ...categories.map(category => `<button type="button" data-search-category="${escapeHtml(category)}" aria-pressed="${activeCategory === category}" class="${activeCategory === category ? 'active' : ''}">${escapeHtml(category)}</button>`)
     ].join('');
     host.querySelectorAll('[data-search-category]').forEach(button => button.addEventListener('click', () => {
       activeCategory = button.dataset.searchCategory || 'ALL';
       enhancedRenderSearchResults(input.value || '');
+      // Filters are rebuilt; restore focus to the newly selected button.
+      [...host.querySelectorAll('[data-search-category]')].find(item => item.dataset.searchCategory === activeCategory)?.focus({ preventScroll: true });
     }));
   }
 

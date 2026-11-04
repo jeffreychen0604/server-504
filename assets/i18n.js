@@ -1,6 +1,8 @@
 (() => {
   const strings = {
     en: {
+      scrollTable:'Table, scroll horizontally if needed',
+      skipContent:'Skip to content', humanVerification:'Human verification',
       closeSearch:'Close search', closeSuggestion:'Close suggestion form', toggleMenu:'Toggle menu',
       knowledge:'Knowledge', home:'Home', gameWiki:'Game Wiki', serverCharter:'Server Charter', operationalCodex:'Operational Codex', community:'Community', contribute:'Contribute / Suggest',
       searchLabel:'GLOBAL SEARCH', searchTitle:'Search Server 504', searchPlaceholder:'Search WT, APC, Frankenstein, Armory, Precision Parts...', searchAll:'All', searchNoResults:'No matching results. Try a shorter term, an abbreviation, or another category.',
@@ -17,6 +19,8 @@
       governanceOperations:'Governance & Operations', other:'Other'
     },
     fr: {
+      scrollTable:'Tableau, défilement horizontal si nécessaire',
+      skipContent:'Aller au contenu', humanVerification:'Vérification humaine',
       closeSearch:'Fermer la recherche', closeSuggestion:'Fermer le formulaire de suggestion', toggleMenu:'Afficher ou masquer le menu',
       knowledge:'Connaissances', home:'Accueil', gameWiki:'Wiki du jeu', serverCharter:'Charte du serveur', operationalCodex:'Codex opérationnel', community:'Communauté', contribute:'Contribuer / Suggérer',
       searchLabel:'RECHERCHE GLOBALE', searchTitle:'Rechercher sur Server 504', searchPlaceholder:'Rechercher WT, APC, Frankenstein, Armory, Precision Parts...', searchAll:'Tout', searchNoResults:'Aucun résultat. Essayez un terme plus court, une abréviation ou une autre catégorie.',
@@ -32,6 +36,8 @@
       feedbackBackendActivating:'Le backend de retours anonymes est en cours d’activation. GitHub reste le recours temporaire.', feedbackNoAccountTurnstile:'Aucun compte requis. Protégé par Cloudflare Turnstile et envoyé directement à la modération du Server 504.', feedbackNoAccount:'Aucun compte requis. Votre envoi arrive directement à la modération du Server 504.', feedbackHumanLoad:'Impossible de charger la vérification humaine.', feedbackHumanError:'La vérification humaine a échoué. Veuillez réessayer.', feedbackDetailsMin:'Veuillez saisir au moins 10 caractères dans Détails.', feedbackHumanWait:'La vérification humaine est encore en cours. Attendez un instant puis renvoyez.', feedbackSending:'Envoi de votre retour…', feedbackSubmitError:'Impossible d’envoyer le retour.', feedbackSuccess:'Merci. Votre retour a été reçu et attend maintenant la modération.', governanceOperations:'Gouvernance & Opérations', other:'Autre'
     },
     es: {
+      scrollTable:'Tabla, desplázate horizontalmente si es necesario',
+      skipContent:'Saltar al contenido', humanVerification:'Verificación humana',
       closeSearch:'Cerrar búsqueda', closeSuggestion:'Cerrar formulario de sugerencias', toggleMenu:'Mostrar u ocultar el menú',
       knowledge:'Conocimiento', home:'Inicio', gameWiki:'Wiki del juego', serverCharter:'Carta del servidor', operationalCodex:'Códice operativo', community:'Comunidad', contribute:'Contribuir / Sugerir',
       searchLabel:'BÚSQUEDA GLOBAL', searchTitle:'Buscar en Server 504', searchPlaceholder:'Buscar WT, APC, Frankenstein, Armory, Precision Parts...', searchAll:'Todo', searchNoResults:'No hay resultados. Prueba un término más corto, una abreviatura u otra categoría.',
@@ -47,6 +53,8 @@
       feedbackBackendActivating:'El backend de comentarios anónimos se está activando. GitHub sigue como alternativa temporal.', feedbackNoAccountTurnstile:'No se necesita cuenta. Protegido por Cloudflare Turnstile y enviado directamente a moderación de Server 504.', feedbackNoAccount:'No se necesita cuenta. Tu envío llega directamente a moderación de Server 504.', feedbackHumanLoad:'No se pudo cargar la verificación humana.', feedbackHumanError:'No se pudo completar la verificación humana. Inténtalo de nuevo.', feedbackDetailsMin:'Introduce al menos 10 caracteres en Detalles.', feedbackHumanWait:'La verificación humana sigue en curso. Espera un momento y vuelve a enviar.', feedbackSending:'Enviando tu comentario…', feedbackSubmitError:'No se pudo enviar el comentario.', feedbackSuccess:'Gracias. Tu comentario se recibió y está pendiente de revisión.', governanceOperations:'Gobernanza y Operaciones', other:'Otro'
     },
     pt: {
+      scrollTable:'Tabela, role horizontalmente se necessário',
+      skipContent:'Ir para o conteúdo', humanVerification:'Verificação humana',
       closeSearch:'Fechar pesquisa', closeSuggestion:'Fechar formulário de sugestões', toggleMenu:'Mostrar ou ocultar o menu',
       knowledge:'Conhecimento', home:'Início', gameWiki:'Wiki do jogo', serverCharter:'Carta do servidor', operationalCodex:'Códice operacional', community:'Comunidade', contribute:'Contribuir / Sugerir',
       searchLabel:'BUSCA GLOBAL', searchTitle:'Pesquisar no Server 504', searchPlaceholder:'Pesquisar WT, APC, Frankenstein, Armory, Precision Parts...', searchAll:'Tudo', searchNoResults:'Nenhum resultado. Tente um termo mais curto, uma abreviação ou outra categoria.',
@@ -62,6 +70,8 @@
       feedbackBackendActivating:'O backend de feedback anônimo está sendo ativado. GitHub continua como alternativa temporária.', feedbackNoAccountTurnstile:'Nenhuma conta é necessária. Protegido pelo Cloudflare Turnstile e enviado diretamente à moderação do Server 504.', feedbackNoAccount:'Nenhuma conta é necessária. Seu envio vai diretamente à moderação do Server 504.', feedbackHumanLoad:'Não foi possível carregar a verificação humana.', feedbackHumanError:'A verificação humana não pôde ser concluída. Tente novamente.', feedbackDetailsMin:'Digite pelo menos 10 caracteres em Detalhes.', feedbackHumanWait:'A verificação humana ainda está em andamento. Aguarde um momento e envie novamente.', feedbackSending:'Enviando seu feedback…', feedbackSubmitError:'Não foi possível enviar o feedback.', feedbackSuccess:'Obrigado. Seu feedback foi recebido e aguarda revisão.', governanceOperations:'Governança e Operações', other:'Outro'
     },
     ko: {
+      scrollTable:'표, 필요한 경우 가로로 스크롤',
+      skipContent:'본문으로 건너뛰기', humanVerification:'사람 확인',
       closeSearch:'검색 닫기', closeSuggestion:'제안 양식 닫기', toggleMenu:'메뉴 열기 또는 닫기',
       knowledge:'지식', home:'홈', gameWiki:'게임 위키', serverCharter:'서버 헌장', operationalCodex:'운영 코덱스', community:'커뮤니티', contribute:'기여 / 제안',
       searchLabel:'전체 검색', searchTitle:'Server 504 검색', searchPlaceholder:'WT, APC, Frankenstein, Armory, Precision Parts 검색...', searchAll:'전체', searchNoResults:'일치하는 결과가 없습니다. 더 짧은 검색어, 약어 또는 다른 카테고리를 사용해 보세요.',
@@ -77,6 +87,8 @@
       feedbackBackendActivating:'익명 피드백 백엔드를 활성화 중입니다. GitHub는 임시 대체 수단으로 유지됩니다.', feedbackNoAccountTurnstile:'계정이 필요하지 않습니다. Cloudflare Turnstile로 보호되며 Server 504 검토함으로 직접 전송됩니다.', feedbackNoAccount:'계정이 필요하지 않습니다. 제출 내용은 Server 504 검토함으로 직접 전송됩니다.', feedbackHumanLoad:'사람 확인 기능을 불러올 수 없습니다.', feedbackHumanError:'사람 확인을 완료할 수 없습니다. 다시 시도해 주세요.', feedbackDetailsMin:'내용에 10자 이상 입력해 주세요.', feedbackHumanWait:'사람 확인이 아직 진행 중입니다. 잠시 후 다시 제출해 주세요.', feedbackSending:'피드백을 전송하는 중…', feedbackSubmitError:'피드백을 제출할 수 없습니다.', feedbackSuccess:'감사합니다. 피드백이 접수되었으며 검토 대기 중입니다.', governanceOperations:'거버넌스 및 운영', other:'기타'
     },
     vi: {
+      scrollTable:'Bảng, cuộn ngang nếu cần',
+      skipContent:'Đến nội dung chính', humanVerification:'Xác minh người dùng',
       closeSearch:'Đóng tìm kiếm', closeSuggestion:'Đóng biểu mẫu góp ý', toggleMenu:'Mở hoặc đóng menu',
       knowledge:'Tri thức', home:'Trang chủ', gameWiki:'Wiki game', serverCharter:'Hiến chương Server 504', operationalCodex:'Bộ quy tắc vận hành', community:'Cộng đồng', contribute:'Đóng góp / Góp ý',
       searchLabel:'TRA CỨU TOÀN SITE', searchTitle:'Tra cứu Server 504', searchPlaceholder:'Tìm WT, APC, Frankenstein, Armory, Precision Parts...', searchAll:'Tất cả', searchNoResults:'Không tìm thấy kết quả phù hợp. Hãy thử từ khóa ngắn hơn, từ viết tắt hoặc danh mục khác.',

@@ -80,7 +80,12 @@ function routeName() {
 }
 
 function setActive(route) {
-  document.querySelectorAll('[data-route]').forEach(a => a.classList.toggle('active', a.dataset.route === route));
+  document.querySelectorAll('[data-route]').forEach(a => {
+    const active = a.dataset.route === route;
+    a.classList.toggle('active', active);
+    if (active) a.setAttribute('aria-current', 'page');
+    else a.removeAttribute('aria-current');
+  });
   document.body.dataset.route = route;
 }
 
@@ -163,10 +168,50 @@ async function fetchLocalizedDocument(file) {
   return { text: await res.text(), fallback };
 }
 
+function renderArticleMarkdown(text) {
+  const template = document.createElement('template');
+  template.innerHTML = marked.parse(text);
+  // Use the localized page title instead of the duplicate, previously hidden document title.
+  if (template.content.firstElementChild?.matches('h1')) template.content.firstElementChild.remove();
+  // Codex chapter H1s were also hidden by the old stylesheet. Nest their hierarchy
+  // beneath the page H1; documents already starting at H2 need no adjustment.
+  const chapters = template.content.querySelector('h1') ? template.content.querySelectorAll('h1,h2,h3,h4,h5') : [];
+  chapters.forEach(heading => {
+    const nested = document.createElement(`h${Number(heading.tagName[1]) + 1}`);
+    for (const attribute of heading.attributes) nested.setAttribute(attribute.name, attribute.value);
+    nested.append(...heading.childNodes);
+    heading.replaceWith(nested);
+  });
+  template.content.querySelectorAll('table').forEach((table, index) => {
+    const scroll = document.createElement('div');
+    scroll.className = 'markdown-table-scroll';
+    scroll.tabIndex = 0;
+    scroll.setAttribute('role', 'region');
+    scroll.setAttribute('aria-label', `${t('scrollTable')} ${index + 1}`);
+    table.replaceWith(scroll);
+    scroll.append(table);
+  });
+  return template.innerHTML;
+}
+
+async function ensureMarkdownRenderer() {
+  if (window.marked) return window.marked;
+  if (!window.Server504LazyWiki) {
+    // On a direct Charter/Codex visit, app.js can run before the deferred loader.
+    const loader = document.querySelector('script[src*="lazy-wiki-loader.js"]');
+    if (!loader) throw new Error('Markdown loader unavailable');
+    await new Promise((resolve, reject) => {
+      loader.addEventListener('load', resolve, { once: true });
+      loader.addEventListener('error', () => reject(new Error('Markdown loader unavailable')), { once: true });
+    });
+  }
+  return window.Server504LazyWiki.ensureMarked();
+}
+
 async function loadMarkdown(route) {
   const cfg = contentMap[route];
   try {
-    const markedPromise = window.marked ? Promise.resolve(window.marked) : window.Server504LazyWiki?.ensureMarked?.();
+    const markedPromise = ensureMarkdownRenderer();
     const [{ text, fallback }] = await Promise.all([
       fetchLocalizedDocument(cfg.file),
       markedPromise
@@ -175,7 +220,7 @@ async function loadMarkdown(route) {
     const localeBadge = fallback ? `${t('englishSource')} · ${currentLocale.toUpperCase()} ${t('translationPending')}` : currentLocale.toUpperCase();
     return `<section class="page">
       ${pageHeader(t(cfg.eyebrowKey), t(cfg.titleKey), t(cfg.descriptionKey), [t('version2'), t('august2026'), localeBadge])}
-      <article class="markdown-body">${marked.parse(text)}</article>
+      <article class="markdown-body">${renderArticleMarkdown(text)}</article>
     </section>`;
   } catch (error) {
     return `<section class="page"><div class="error-box">${t('unableDocument')}: ${error.message}</div></section>`;
@@ -185,8 +230,7 @@ async function loadMarkdown(route) {
 async function render() {
   const route = routeName();
   setActive(route);
-  sidebar.classList.remove('open');
-  document.getElementById('menuToggle').setAttribute('aria-expanded', 'false');
+  setMenuOpen(false);
   app.innerHTML = `<div class="page loading">${t('loading')}</div>`;
 
   if (route === 'home') app.innerHTML = homePage();
@@ -237,6 +281,7 @@ function ensureGovernanceSearchIndex() {
 }
 
 function openSearch() {
+  if (document.querySelector('dialog[open]')) return;
   searchDialog.showModal();
   setTimeout(() => searchInput.focus(), 30);
   renderSearchResults(searchInput.value || '');
@@ -282,15 +327,47 @@ searchInput.addEventListener('input', e => renderSearchResults(e.target.value));
 document.querySelectorAll('.search-trigger').forEach(btn => btn.addEventListener('click', openSearch));
 document.getElementById('contributeSidebar').addEventListener('click', openContribute);
 document.getElementById('mobileContribute').addEventListener('click', openContribute);
-document.getElementById('menuToggle').addEventListener('click', event => {
-  const expanded = sidebar.classList.toggle('open');
-  event.currentTarget.setAttribute('aria-expanded', String(expanded));
+const menuToggle = document.getElementById('menuToggle');
+const mobileNavigation = window.matchMedia('(max-width: 760px)');
+function setMenuOpen(open, restoreFocus = false) {
+  sidebar.classList.toggle('open', open);
+  sidebar.inert = mobileNavigation.matches && !open;
+  menuToggle.setAttribute('aria-expanded', String(open));
+  if (restoreFocus) menuToggle.focus({ preventScroll: true });
+}
+menuToggle.addEventListener('click', () => {
+  const open = !sidebar.classList.contains('open');
+  setMenuOpen(open);
+  if (open) sidebar.querySelector('a')?.focus({ preventScroll: true });
 });
+mobileNavigation.addEventListener('change', () => {
+  const hidingFocus = mobileNavigation.matches && sidebar.contains(document.activeElement);
+  setMenuOpen(false, hidingFocus);
+});
+document.addEventListener('click', event => {
+  if (mobileNavigation.matches && sidebar.classList.contains('open') && !sidebar.contains(event.target) && !menuToggle.contains(event.target)) {
+    setMenuOpen(false, sidebar.contains(document.activeElement));
+  }
+});
+document.addEventListener('focusin', event => {
+  if (mobileNavigation.matches && sidebar.classList.contains('open') && !sidebar.contains(event.target) && event.target !== menuToggle) setMenuOpen(false);
+});
+document.querySelector('.skip-to-content')?.addEventListener('click', event => {
+  event.preventDefault();
+  setMenuOpen(false);
+  app.focus({ preventScroll: true });
+  window.scrollTo({ top: 0, behavior: 'auto' });
+});
+setMenuOpen(false);
 
 document.querySelectorAll('[data-close-dialog]').forEach(btn => btn.addEventListener('click', () => document.getElementById(btn.dataset.closeDialog)?.close()));
 
 document.addEventListener('keydown', e => {
-  if (e.key === '/' && !['INPUT','TEXTAREA','SELECT'].includes(document.activeElement.tagName)) {
+  if (e.key === 'Escape' && sidebar.classList.contains('open') && !document.querySelector('dialog[open]')) {
+    e.preventDefault();
+    setMenuOpen(false, true);
+  }
+  if (e.key === '/' && !e.ctrlKey && !e.metaKey && !e.altKey && !document.querySelector('dialog[open]') && !document.activeElement.isContentEditable && !['INPUT','TEXTAREA','SELECT'].includes(document.activeElement.tagName)) {
     e.preventDefault();
     openSearch();
   }
